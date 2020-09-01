@@ -111,10 +111,7 @@ class CDKService{
 			// lists.push({'key': i, 'isUse': false });
 			await mongodb.insertData(tableName, {'key': i, 'isUse': false } );
 		}
-		
-
 		// await mongodb.insertManyData(tableName, lists );
-		
 		new Promise((resolove, reject ) => {
 			data['tablename'] = tableName;
 			this.cdkToCsv(data);
@@ -175,19 +172,19 @@ class CDKService{
 	}
 	//cdk进度
 	async cdkCreateSchedule(data){
-		let {tablename} = data;
+		let { tablename } = data;
 		let res = await mongodb.count(tablename);
 		let sql = `select num , table_true as tabelTrue  from gm_cdk where cdkid = '${tablename}' `;
-		let num =  await dbSequelize.query(sql, {
+		let nums =  await dbSequelize.query(sql, {
 			replacements:['active'], type:Sequelize.QueryTypes.SELECT
 		});
 		try{
-			num = num[0]['num'];
+			let num = nums[0]['num'];
 			let schedule = 0;
 			if(res/res === num/num){
 				schedule = res/num;
 			}
-			let tableTrue = num[0]['tabelTrue'];
+			let tableTrue = nums[0]['tabeltrue'];
 			return tableTrue?1:schedule*0.5;
 		}catch (err){
 			return '啥也没有';
@@ -237,6 +234,7 @@ class CDKService{
 	}
 	async findByKey(data){
 		let {key} = data;
+		console.log(key);
 		switch (key){
 			case 'CDKID' :return byCdkId(data);
 			case 'CDKKEY': return byCdkKey(data);
@@ -346,19 +344,25 @@ class CDKService{
 	}
 	async detailsFind(data){
 		let { tablename, page, pagesize} = data;
-		// console.log(data);
 		pagesize = Number(pagesize);
 		let res = await mongodb.findall(tablename, pagesize, pagesize*(page-1));
 		let total = await mongodb.count(tablename);
 		return {res, total};
 	}
 
-
+	async cdkkeyfind(data){
+		let { tablename, value:key, page, pagesize} = data;
+		pagesize = Number(pagesize);
+		let res = await mongodb.findbyCDKkey(tablename, pagesize, pagesize*(page-1), {key});
+		let total = await mongodb.count(tablename);
+		total = tablename === key ?total : 1;
+		let only = tablename === key;
+		return {res, total, only};
+	}
 
 
 	async test(data){
-		let {tablename} = data;
-		
+		let { tablename } = data;
 		let i = 200;
 		let j = 100;
 		return await mongodb.find(tablename,  i, j);

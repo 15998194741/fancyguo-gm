@@ -37,3 +37,24 @@ export function detailsFind(params) {
     params
   });
 }
+
+
+
+export function cdkkeyfind(params) { 
+  return request({
+    url: `cdk/cdkkeyfind`,
+    method: 'get',
+    params
+  });
+}
+
+
+
+
+export function cdkCreateSchedule(params) { 
+  return request({
+    url: `cdk/cdkCreateSchedule`,
+    method: 'get',
+    params
+  });
+}

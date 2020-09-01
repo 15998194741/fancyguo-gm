@@ -71,5 +71,13 @@ export class CDKController {
     	ctx.body = statusCode.SUCCESS_200('查找成功', result);
 	}
 
+	@get('/cdkkeyfind')
+	async cdkkeyfind(ctx) {
+		ctx.log.resourceDesc = 'CDK详情查找';
+		const data = ctx.data;
+		const result = await CDKService.cdkkeyfind(data);
+		ctx.body = statusCode.SUCCESS_200('查找成功', result);
+	}
+
 	
 }

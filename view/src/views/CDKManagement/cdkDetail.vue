@@ -27,13 +27,13 @@ ref="CDKContainer" v-loading='cdkLoading'
           </el-option>
         </el-select>
       </div>
-     <div class="timefilter"> 生效时间:  <el-date-picker   v-model="filterForm['takeEffectTime']"  size='small' type="datetimerange" range-separator="至" start-placeholder="开始日期" end-placeholder="结束日期"   @change="filterFormChange('change')"></el-date-picker></div> 
-     <div class="timefilter"> 失效时间:  <el-date-picker   v-model="filterForm['srtfailureTimetime']"  size='small' type="datetimerange" range-separator="至" start-placeholder="开始日期" end-placeholder="结束日期"  @change="filterFormChange('change')"></el-date-picker></div> </div>
+     <div class="timefilter"> 领取时间:  <el-date-picker   v-model="filterForm['takeEffectTime']"  size='small' type="datetimerange" range-separator="至" start-placeholder="开始日期" end-placeholder="结束日期"   @change="filterFormChange('change')"></el-date-picker></div> 
+     <!-- <div class="timefilter"> 失效时间:  <el-date-picker   v-model="filterForm['srtfailureTimetime']"  size='small' type="datetimerange" range-separator="至" start-placeholder="开始日期" end-placeholder="结束日期"  @change="filterFormChange('change')"></el-date-picker></div>  -->
+ </div>
   </div>
 
   <div v-show='tableDataShwo' id='v-show-test-body' class="role-container-body-one">
     <el-table
- 
     ref="multipleTable"
     border
     :data="tableData" 
@@ -220,6 +220,8 @@ import { findComponents } from '@/api/components.js';
 import { getQueryAnnexOptionsLazy, getQueryAnnexOptions } from '@/api/mail.js';
 import { generateCodeFrame } from './cdkGenerate.js';
 import { CDKcreate, CDKFind, cdkDownload, detailsFind } from '@/api/cdk'; 
+import { cdkkeyfind } from '@/api/cdk'; 
+import dayjs from 'dayjs';
 let id = 0;
 export default {
   name: 'CDKmanagement',
@@ -371,7 +373,7 @@ export default {
         { label: '客户端', prop: 'channel' },
         { label: 'CDKKEY', prop: 'key' },
         { label: '是否领取', prop: 'isUse' },
-        { label: '领取时间', prop: 'start_time' }
+        { label: '领取时间', prop: 'receive' }
       ],
       createFormRulesLeft: {
         name: { required: true, message: '请输入CDK名称', trigger: ['blur', 'change'] },
@@ -471,11 +473,11 @@ export default {
       this.filterFormChangeSubmit();
     },
     async filterFormChangeChange() {
-      this.filterForm['value'] = '';
+      if (this.tableDataTwo.length < 2) {return;}
       this.filterFormChangeSubmit();
     },
     async filterFormChangeSubmit() {
-      // this.cdkLoading = true;
+      this.tableDataShwo = true;
       const loading = this.$loading({
         lock: true,
         text: '拼命加载中',
@@ -485,29 +487,83 @@ export default {
       let { code, data } = await CDKFind(this.filterForm);
       if (+code !== 200) {
         this.tableData = [];
-        // this.cdkLoading = false;
         loading.close();
         return;
       }
       let { res } = data;
       this.tableData = res;
+      let { pagesize, page, value, key } = this.filterForm;
+      if (res.length === 0) {
+        this.$message.warning(`查找${key},${value}不存在`);
+        this.tableDataTwo = [];
+        this.tableData = [];
+        loading.close();
+        return;
+      } else if (res.length !== 1) {
+        loading.close();
+        return;
+      }
       let { cdkid: tablename } = res[0];
-      let { pagesize, page } = this.filterForm;
       let querys = { page, tablename, pagesize };
-      let { data: detailsdata } = await detailsFind(querys);
-      let { res: detailsres, total } = detailsdata;
-      this.total = total;
-      this.tableDataTwo = detailsres.map(item => {
-        item['isUse'] = item['isUse'] ? '是' : '否';
-        return item;
-      });
+      let queryByKey = { page, tablename, pagesize, value };
+      // let responseData;
+      switch (!!value) {
+        case key === 'CDKKEY': await this.ByCdkKey(queryByKey); break;
+        case key === 'CDKID':await this.ByCdkID(querys); break;
+      }
+   
+      // let { data: detailsdata } = responseData;
+      // let { res: detailsres, total } = detailsdata;
+      // this.total = total;
+      // this.tableDataTwo = key === 'CDKKEY' ? [detailsdata] : detailsres;
+      // if (this.tableDataTwo) {
+      //   this.tableDataTwo.map(item => {
+      //     item['isUse'] = item['isUse'] ? '是' : '否';
+      //     return item;
+      //   });
+      // }
       this.$refs['CDKContainer'].parentElement.scrollTo({
         top: 0, 
         behavior: 'smooth' 
       });
-      // this.cdkLoading = false;
       loading.close();
+      
     },
+    async ByCdkKey(val) {
+      let res = await cdkkeyfind(val);
+      let { data } = res;
+      let { res: responseData, total, only } = data;
+      if (!responseData) {this.tableDataTwo = []; return;}
+      this.total = total;
+      this.tableDataTwo = responseData.map(item => {
+        item['isUse'] = item['isUse'] || only ? '是' : '否';
+        item['receive'] = dayjs(item['receive']).format('YYYY-MM-DD HH:mm:ss');
+        return item;
+      });
+      
+    },
+    async ByCdkID(val) {
+      let res = await detailsFind(val);
+      let { data } = res;
+      let { res: responseData, total } = data;
+      if (!responseData) {this.tableDataTwo = []; return;}
+      this.total = total;
+      this.tableDataTwo = responseData.map(item => {
+        item['isUse'] = item['isUse'] ? '是' : '否';
+        item['receive'] = item['receive'] ? dayjs(item['receive']).format('YYYY-MM-DD HH:mm:ss') : '';
+        return item;
+      });
+    },
+
+
+
+
+
+
+
+
+
+    
     async createCdkForm() {
       this.dialogFormchange = true;
       let { code, data } = await getQueryAnnexOptions();
@@ -556,7 +612,7 @@ export default {
       this.filterFormChangeClick();
     }
     
-    console.log(this);
+    // console.log(this);
   } 
    
 

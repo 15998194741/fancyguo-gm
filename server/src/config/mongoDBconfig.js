@@ -234,9 +234,22 @@ class mongodb{
      */
 	async count(table_name){
 		let nodeModel =await  this.getConnection(table_name);
-        
 		let res = await new Promise((resolve, reject)=>{
 			nodeModel.count( (err, res) => {
+				if (err) {
+					return reject(err);
+				} else {
+					return resolve(res);
+				}
+			});
+		});
+		return res;
+	}
+	async findbyCDKkey(table_name,  num, step, filter, key) {
+		let nodeModel = await this.getConnection(table_name);
+		let options = {limit:num, skip:step, lean:true};
+		let res = await new Promise((resolve, reject)=>{
+			nodeModel.find(filter, key, options, (err, res) => {
 				if (err) {
 					return reject(err);
 				} else {

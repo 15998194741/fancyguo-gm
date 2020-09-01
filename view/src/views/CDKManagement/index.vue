@@ -47,8 +47,9 @@
        </template>
     </el-table-column>
    <el-table-column  label="CSV下载">
-       <template slot-scope="scope"> 
-         <el-button type="primary" plain @click='downloadCDK(scope)'>点击下载</el-button>
+       <template slot-scope="scope" > 
+         <el-button v-if="+scope['row']['type'] !== 1" type="primary" plain @click='downloadCDK(scope)'>点击下载</el-button>
+         <p v-else>{{scope['row']['cdkid']}}</p>
        </template>
     </el-table-column>
   </el-table>
@@ -194,6 +195,8 @@ import { findComponents } from '@/api/components.js';
 import { getQueryAnnexOptionsLazy, getQueryAnnexOptions } from '@/api/mail.js';
 import { generateCodeFrame } from './cdkGenerate.js';
 import { CDKcreate, CDKFind, cdkDownload } from '@/api/cdk'; 
+import { cdkCreateSchedule } from '@/api/cdk'; 
+
 let id = 0;
 export default {
   name: 'CDKmanagement',
@@ -366,7 +369,13 @@ export default {
   methods: {
     async downloadCDK(val) {
       let tablename = val['row']['cdkid'];
-      let activityname = val['row']['name'];
+      // let activityname = val['row']['name'];
+      let ScheduleQuery = await cdkCreateSchedule({ tablename });
+      if (!ScheduleQuery) {this.$message.warning('下载失败'); return;}
+      let { data: ScheduleData } = ScheduleQuery;
+      if (+ScheduleData !== +1) {
+        this.$message.info('cdk生成中');
+      }
       let res = await cdkDownload({ tablename });
       if (res) {
         let blob = new Blob([res], { type: 'application.octet-stream' });
@@ -405,13 +414,21 @@ export default {
       this.createForm['cdkkey'] = generateCodeFrame();  
     },
     async createFormSubmit() {
-      this.creatinng = true;
+      // this.creatinng = true;
+      const loading = this.$loading({
+        lock: true,
+        text: '拼命加载中',
+        spinner: 'el-icon-loading',
+        background: 'rgba(0, 0, 0, 0.8)'
+      });
       let right = await this.$refs['createFormRulesRight'].validate().catch(err=>false);
       let left = await this.$refs['createFormRulesLeft'].validate().catch(err=>false);
-      if (!(right && left)) {this.creatinng = false; return;}
+      if (!(right && left)) {
+        loading.close(); return;
+      }
       let { code, data } = await CDKcreate(this.createForm);
-      if (+code !== +200) {this.$message.info('创建失败'); this.creatinng = true; return; }
-      this.creatinng = false;
+      if (+code !== +200) {this.$message.info('创建失败'); loading.close(); return; }
+      loading.close();
       this.$message.success(`创建成功,您创建的CDKID为   ${data}`);
       
     },
@@ -458,7 +475,6 @@ export default {
       if (code === 200) {
         this.annexOptions = data;
       }
-     
     },
     
     annexListAdd() {

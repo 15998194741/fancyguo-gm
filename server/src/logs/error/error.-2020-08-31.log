@@ -1344,3 +1344,15 @@ err message: ENOENT: no such file or directory, stat 'H:\project\server\src\cdk\
 err stack: Error: ENOENT: no such file or directory, stat 'H:\project\server\src\cdk\undefined.csv'
 *************** error log end ***************
 
+[2020-08-31T20:46:59.927] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/cdk/cdkDownload?tablename=d58F1kFFgT
+request client ip:  ::ffff:127.0.0.1
+request query:  {"tablename":"d58F1kFFgT","gameid":"1"}
+response time: 1598878019926
+err name: Error
+err message: ENOENT: no such file or directory, stat 'H:\fancyguo-gm\server\src\cdk\d58F1kFFgT.csv'
+err stack: Error: ENOENT: no such file or directory, stat 'H:\fancyguo-gm\server\src\cdk\d58F1kFFgT.csv'
+*************** error log end ***************
+
