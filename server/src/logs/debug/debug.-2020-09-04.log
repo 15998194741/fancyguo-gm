@@ -1,0 +1,1761 @@
+[2020-09-04T11:14:43.915] [DEBUG] debugLogger - Executing (default): CREATE TABLE IF NOT EXISTS "gm_announcement" ("id" INTEGER NOT NULL , "status" INTEGER DEFAULT 1, "create_user_id" INTEGER, "update_user_id" INTEGER, "create_time" TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP, "update_time" TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP, "type" VARCHAR(255), "end_time" TIMESTAMP WITH TIME ZONE, "start_time" TIMESTAMP WITH TIME ZONE, "anno_status" VARCHAR(255), "title" VARCHAR(255), "area_server_id" VARCHAR(255), "client" VARCHAR(255), "platform" INTEGER, "game_id" INTEGER, "text" VARCHAR(255), "time_interval " VARCHAR(255), "img_url" VARCHAR(255), "weights" INTEGER, "link" VARCHAR(255), PRIMARY KEY ("id"));
+[2020-09-04T11:14:43.916] [DEBUG] debugLogger - Executing (default): CREATE TABLE IF NOT EXISTS "gm_area_server" ("id" INTEGER NOT NULL , "status" INTEGER DEFAULT 1, "create_user_id" INTEGER, "update_user_id" INTEGER, "create_time" TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP, "update_time" TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP, "server_id" INTEGER, "parent_server_id" INTEGER, "name" VARCHAR(255), "platform" INTEGER, "code_show" INTEGER, "code_load" INTEGER, "is_new_server" VARCHAR(255), "open_time" TIMESTAMP WITH TIME ZONE, "resource_adde" VARCHAR(255), "ip_port" VARCHAR(255), "game_id" INTEGER, "client" VARCHAR(255)[], PRIMARY KEY ("id"));
+[2020-09-04T11:14:43.917] [DEBUG] debugLogger - Executing (default): CREATE TABLE IF NOT EXISTS "gm_cdk_depot" ("id" INTEGER NOT NULL , "status" INTEGER DEFAULT 1, "create_user_id" INTEGER, "update_user_id" INTEGER, "create_time" TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP, "update_time" TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP, "cdkid" INTEGER, "value" VARCHAR(255), PRIMARY KEY ("id"));
+[2020-09-04T11:14:43.918] [DEBUG] debugLogger - Executing (default): CREATE TABLE IF NOT EXISTS "gm_cdk" ("id" INTEGER NOT NULL , "status" INTEGER DEFAULT 1, "create_user_id" INTEGER, "update_user_id" INTEGER, "create_time" TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP, "update_time" TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP, "cdkid" INTEGER, "name " VARCHAR(255), "platform" VARCHAR(255), "client" VARCHAR(255), "type" VARCHAR(255), "num" INTEGER, "start_time" TIMESTAMP WITH TIME ZONE, "end_time " TIMESTAMP WITH TIME ZONE, "content" VARCHAR(255), "game_id" INTEGER, PRIMARY KEY ("id"));
+[2020-09-04T11:14:43.918] [DEBUG] debugLogger - Executing (default): CREATE TABLE IF NOT EXISTS "gm_dict" ("id" INTEGER NOT NULL , "status" INTEGER DEFAULT 1, "create_user_id" INTEGER, "update_user_id" INTEGER, "create_time" TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP, "update_time" TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP, "code" VARCHAR(255), "desc" VARCHAR(255), "priority" VARCHAR(255), "values" VARCHAR(255)[], "gameid" INTEGER, PRIMARY KEY ("id"));
+[2020-09-04T11:14:44.030] [DEBUG] debugLogger - Executing (default): CREATE TABLE IF NOT EXISTS "gm_game" ("id" INTEGER NOT NULL , "status" INTEGER DEFAULT 1, "create_user_id" INTEGER, "update_user_id" INTEGER, "create_time" TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP, "update_time" TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP, "game_name" VARCHAR(255), "code" VARCHAR(255), PRIMARY KEY ("id"));
+[2020-09-04T11:14:44.031] [DEBUG] debugLogger - Executing (default): CREATE TABLE IF NOT EXISTS "gm_purview" ("id" INTEGER NOT NULL , "status" INTEGER DEFAULT 1, "create_user_id" INTEGER, "update_user_id" INTEGER, "create_time" TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP, "update_time" TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP, "uid" INTEGER, "gid" INTEGER, PRIMARY KEY ("id"));
+[2020-09-04T11:14:44.033] [DEBUG] debugLogger - Executing (default): CREATE TABLE IF NOT EXISTS "gm_server" ("id"  SERIAL , "status" INTEGER DEFAULT 1, "create_user_id" INTEGER, "update_user_id" INTEGER, "create_time" TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP, "update_time" TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP, "servername" VARCHAR(255), "ip" VARCHAR(255), "address" VARCHAR(255), "plaform" VARCHAR(255), "display" VARCHAR(255), "srttime" TIMESTAMP WITH TIME ZONE, "channel" VARCHAR(255)[], "gamename" VARCHAR(255), "pid" VARCHAR(255), "serverid" VARCHAR(255), "test" VARCHAR(255), "load" VARCHAR(255), "gameid" INTEGER, PRIMARY KEY ("id"));
+[2020-09-04T11:14:44.033] [DEBUG] debugLogger - Executing (default): CREATE TABLE IF NOT EXISTS "gm_smtp" ("id" INTEGER NOT NULL , "status" INTEGER DEFAULT 1, "create_user_id" INTEGER, "update_user_id" INTEGER, "create_time" TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP, "update_time" TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP, "smtp_id" VARCHAR(255), "title" VARCHAR(255), "platform" VARCHAR(255), "client" VARCHAR(255), "player" VARCHAR(255), "content" VARCHAR(255), "sendtime" TIMESTAMP WITH TIME ZONE, "annex" VARCHAR(255)[], "game_id" INTEGER, PRIMARY KEY ("id"));
+[2020-09-04T11:14:44.034] [DEBUG] debugLogger - Executing (default): CREATE TABLE IF NOT EXISTS "gm_url_purview" ("id" INTEGER NOT NULL , "status" INTEGER DEFAULT 1, "create_user_id" INTEGER, "update_user_id" INTEGER, "create_time" TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP, "update_time" TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP, "purview_id" INTEGER, "url_id" INTEGER, "grede" INTEGER, PRIMARY KEY ("id"));
+[2020-09-04T11:14:44.041] [DEBUG] debugLogger - Executing (default): CREATE TABLE IF NOT EXISTS "gm_url" ("id" INTEGER NOT NULL , "status" INTEGER DEFAULT 1, "create_user_id" INTEGER, "update_user_id" INTEGER, "create_time" TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP, "update_time" TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP, "purview" VARCHAR(255), "url" VARCHAR(255), "pid" INTEGER, "name" VARCHAR(255), "priority" INTEGER, PRIMARY KEY ("id"));
+[2020-09-04T11:14:44.042] [DEBUG] debugLogger - Executing (default): CREATE TABLE IF NOT EXISTS "gm_user" ("status" INTEGER NOT NULL DEFAULT 1 , "create_user_id" INTEGER, "update_user_id" INTEGER, "create_time" TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP, "update_time" TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP, "username" VARCHAR(255), "password" VARCHAR(255), "nick_name" VARCHAR(255), "avatar" VARCHAR(255), "email" VARCHAR(255), "source" INTEGER NOT NULL DEFAULT 1, "alias" VARCHAR(255), "phone" VARCHAR(255), "wechat_user_id" VARCHAR(255), "id" INTEGER NOT NULL, PRIMARY KEY ("status"));
+[2020-09-04T11:14:44.044] [DEBUG] debugLogger - Executing (default): CREATE TABLE IF NOT EXISTS "auth_user" ("id"   SERIAL , "username" VARCHAR(255) NOT NULL, "password" VARCHAR(255) NOT NULL, "source" VARCHAR(255), "nick_name" VARCHAR(255), "status" VARCHAR(255), "version" VARCHAR(255), "create_time" TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP, "update_time" TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP, PRIMARY KEY ("id"));
+[2020-09-04T11:14:44.044] [DEBUG] debugLogger - Executing (default): SELECT i.relname AS name, ix.indisprimary AS primary, ix.indisunique AS unique, ix.indkey AS indkey, array_agg(a.attnum) as column_indexes, array_agg(a.attname) AS column_names, pg_get_indexdef(ix.indexrelid) AS definition FROM pg_class t, pg_class i, pg_index ix, pg_attribute a WHERE t.oid = ix.indrelid AND i.oid = ix.indexrelid AND a.attrelid = t.oid AND t.relkind = 'r' and t.relname = 'gm_announcement' GROUP BY i.relname, ix.indexrelid, ix.indisprimary, ix.indisunique, ix.indkey ORDER BY i.relname;
+[2020-09-04T11:14:44.044] [DEBUG] debugLogger - Executing (default): SELECT i.relname AS name, ix.indisprimary AS primary, ix.indisunique AS unique, ix.indkey AS indkey, array_agg(a.attnum) as column_indexes, array_agg(a.attname) AS column_names, pg_get_indexdef(ix.indexrelid) AS definition FROM pg_class t, pg_class i, pg_index ix, pg_attribute a WHERE t.oid = ix.indrelid AND i.oid = ix.indexrelid AND a.attrelid = t.oid AND t.relkind = 'r' and t.relname = 'gm_dict' GROUP BY i.relname, ix.indexrelid, ix.indisprimary, ix.indisunique, ix.indkey ORDER BY i.relname;
+[2020-09-04T11:14:44.047] [DEBUG] debugLogger - Executing (default): SELECT i.relname AS name, ix.indisprimary AS primary, ix.indisunique AS unique, ix.indkey AS indkey, array_agg(a.attnum) as column_indexes, array_agg(a.attname) AS column_names, pg_get_indexdef(ix.indexrelid) AS definition FROM pg_class t, pg_class i, pg_index ix, pg_attribute a WHERE t.oid = ix.indrelid AND i.oid = ix.indexrelid AND a.attrelid = t.oid AND t.relkind = 'r' and t.relname = 'gm_area_server' GROUP BY i.relname, ix.indexrelid, ix.indisprimary, ix.indisunique, ix.indkey ORDER BY i.relname;
+[2020-09-04T11:14:44.048] [DEBUG] debugLogger - Executing (default): SELECT i.relname AS name, ix.indisprimary AS primary, ix.indisunique AS unique, ix.indkey AS indkey, array_agg(a.attnum) as column_indexes, array_agg(a.attname) AS column_names, pg_get_indexdef(ix.indexrelid) AS definition FROM pg_class t, pg_class i, pg_index ix, pg_attribute a WHERE t.oid = ix.indrelid AND i.oid = ix.indexrelid AND a.attrelid = t.oid AND t.relkind = 'r' and t.relname = 'gm_cdk' GROUP BY i.relname, ix.indexrelid, ix.indisprimary, ix.indisunique, ix.indkey ORDER BY i.relname;
+[2020-09-04T11:14:44.049] [DEBUG] debugLogger - Executing (default): SELECT i.relname AS name, ix.indisprimary AS primary, ix.indisunique AS unique, ix.indkey AS indkey, array_agg(a.attnum) as column_indexes, array_agg(a.attname) AS column_names, pg_get_indexdef(ix.indexrelid) AS definition FROM pg_class t, pg_class i, pg_index ix, pg_attribute a WHERE t.oid = ix.indrelid AND i.oid = ix.indexrelid AND a.attrelid = t.oid AND t.relkind = 'r' and t.relname = 'gm_cdk_depot' GROUP BY i.relname, ix.indexrelid, ix.indisprimary, ix.indisunique, ix.indkey ORDER BY i.relname;
+[2020-09-04T11:14:44.376] [DEBUG] debugLogger - Executing (default): SELECT i.relname AS name, ix.indisprimary AS primary, ix.indisunique AS unique, ix.indkey AS indkey, array_agg(a.attnum) as column_indexes, array_agg(a.attname) AS column_names, pg_get_indexdef(ix.indexrelid) AS definition FROM pg_class t, pg_class i, pg_index ix, pg_attribute a WHERE t.oid = ix.indrelid AND i.oid = ix.indexrelid AND a.attrelid = t.oid AND t.relkind = 'r' and t.relname = 'gm_game' GROUP BY i.relname, ix.indexrelid, ix.indisprimary, ix.indisunique, ix.indkey ORDER BY i.relname;
+[2020-09-04T11:14:44.377] [DEBUG] debugLogger - Executing (default): SELECT i.relname AS name, ix.indisprimary AS primary, ix.indisunique AS unique, ix.indkey AS indkey, array_agg(a.attnum) as column_indexes, array_agg(a.attname) AS column_names, pg_get_indexdef(ix.indexrelid) AS definition FROM pg_class t, pg_class i, pg_index ix, pg_attribute a WHERE t.oid = ix.indrelid AND i.oid = ix.indexrelid AND a.attrelid = t.oid AND t.relkind = 'r' and t.relname = 'gm_purview' GROUP BY i.relname, ix.indexrelid, ix.indisprimary, ix.indisunique, ix.indkey ORDER BY i.relname;
+[2020-09-04T11:14:44.381] [DEBUG] debugLogger - Executing (default): SELECT i.relname AS name, ix.indisprimary AS primary, ix.indisunique AS unique, ix.indkey AS indkey, array_agg(a.attnum) as column_indexes, array_agg(a.attname) AS column_names, pg_get_indexdef(ix.indexrelid) AS definition FROM pg_class t, pg_class i, pg_index ix, pg_attribute a WHERE t.oid = ix.indrelid AND i.oid = ix.indexrelid AND a.attrelid = t.oid AND t.relkind = 'r' and t.relname = 'gm_server' GROUP BY i.relname, ix.indexrelid, ix.indisprimary, ix.indisunique, ix.indkey ORDER BY i.relname;
+[2020-09-04T11:14:44.394] [DEBUG] debugLogger - Executing (default): SELECT i.relname AS name, ix.indisprimary AS primary, ix.indisunique AS unique, ix.indkey AS indkey, array_agg(a.attnum) as column_indexes, array_agg(a.attname) AS column_names, pg_get_indexdef(ix.indexrelid) AS definition FROM pg_class t, pg_class i, pg_index ix, pg_attribute a WHERE t.oid = ix.indrelid AND i.oid = ix.indexrelid AND a.attrelid = t.oid AND t.relkind = 'r' and t.relname = 'gm_smtp' GROUP BY i.relname, ix.indexrelid, ix.indisprimary, ix.indisunique, ix.indkey ORDER BY i.relname;
+[2020-09-04T11:14:44.395] [DEBUG] debugLogger - Executing (default): SELECT i.relname AS name, ix.indisprimary AS primary, ix.indisunique AS unique, ix.indkey AS indkey, array_agg(a.attnum) as column_indexes, array_agg(a.attname) AS column_names, pg_get_indexdef(ix.indexrelid) AS definition FROM pg_class t, pg_class i, pg_index ix, pg_attribute a WHERE t.oid = ix.indrelid AND i.oid = ix.indexrelid AND a.attrelid = t.oid AND t.relkind = 'r' and t.relname = 'gm_url_purview' GROUP BY i.relname, ix.indexrelid, ix.indisprimary, ix.indisunique, ix.indkey ORDER BY i.relname;
+[2020-09-04T11:14:44.396] [DEBUG] debugLogger - Executing (default): SELECT i.relname AS name, ix.indisprimary AS primary, ix.indisunique AS unique, ix.indkey AS indkey, array_agg(a.attnum) as column_indexes, array_agg(a.attname) AS column_names, pg_get_indexdef(ix.indexrelid) AS definition FROM pg_class t, pg_class i, pg_index ix, pg_attribute a WHERE t.oid = ix.indrelid AND i.oid = ix.indexrelid AND a.attrelid = t.oid AND t.relkind = 'r' and t.relname = 'gm_url' GROUP BY i.relname, ix.indexrelid, ix.indisprimary, ix.indisunique, ix.indkey ORDER BY i.relname;
+[2020-09-04T11:14:44.396] [DEBUG] debugLogger - Executing (default): SELECT i.relname AS name, ix.indisprimary AS primary, ix.indisunique AS unique, ix.indkey AS indkey, array_agg(a.attnum) as column_indexes, array_agg(a.attname) AS column_names, pg_get_indexdef(ix.indexrelid) AS definition FROM pg_class t, pg_class i, pg_index ix, pg_attribute a WHERE t.oid = ix.indrelid AND i.oid = ix.indexrelid AND a.attrelid = t.oid AND t.relkind = 'r' and t.relname = 'gm_user' GROUP BY i.relname, ix.indexrelid, ix.indisprimary, ix.indisunique, ix.indkey ORDER BY i.relname;
+[2020-09-04T11:14:44.398] [DEBUG] debugLogger - Executing (default): SELECT i.relname AS name, ix.indisprimary AS primary, ix.indisunique AS unique, ix.indkey AS indkey, array_agg(a.attnum) as column_indexes, array_agg(a.attname) AS column_names, pg_get_indexdef(ix.indexrelid) AS definition FROM pg_class t, pg_class i, pg_index ix, pg_attribute a WHERE t.oid = ix.indrelid AND i.oid = ix.indexrelid AND a.attrelid = t.oid AND t.relkind = 'r' and t.relname = 'auth_user' GROUP BY i.relname, ix.indexrelid, ix.indisprimary, ix.indisunique, ix.indkey ORDER BY i.relname;
+[2020-09-04T11:16:01.140] [DEBUG] debugLogger - Executing (default): SELECT gm_game.game_name,gm_game.id from (gm_user LEFT JOIN gm_purview on gm_purview.uid=gm_user.id) LEFT JOIN gm_game on gm_game.id = gm_purview.gid where gm_user.id=1
+[2020-09-04T11:16:01.328] [DEBUG] debugLogger - Executing (default): select gm_url_purview.grede AS meta,gm_url.name,gm_url.url,gm_url.id AS urlid,gm_url.pid  from (((gm_user LEFT JOIN gm_purview ON gm_purview.uid=gm_user.id) LEFT JOIN gm_game on gm_game.id= gm_purview.gid)LEFT JOIN gm_url_purview on gm_url_purview.purview_id = gm_purview.id )left join gm_url on gm_url.id = gm_url_purview.url_id where gm_user.id=1 and gm_game.game_name = '空翼冒险团'
+[2020-09-04T11:16:01.361] [DEBUG] debugLogger - Executing (default): select id from gm_game where game_name='空翼冒险团'
+[2020-09-04T11:16:05.243] [DEBUG] debugLogger - Executing (default): select channel  as  values from gm_game_token where type='areaclothing'  and  gameid='1'
+[2020-09-04T11:16:11.592] [DEBUG] debugLogger - Executing (default): select channel  as  values from gm_game_token where type='areaclothing'  and  gameid='1'
+[2020-09-04T11:16:41.103] [DEBUG] debugLogger - Executing (default): select channel  as  values from gm_game_token where type='areaclothing'  and  gameid='1'
+[2020-09-04T11:16:41.110] [DEBUG] debugLogger - Executing (default): select * from gm_server  where gameid='1' and (pid is null or  trim(pid) ='') order by id limit 20 offset (20*0)
+[2020-09-04T11:16:41.162] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_server where gameid='1' and (pid is null or  trim(pid) ='')
+[2020-09-04T11:16:41.175] [DEBUG] debugLogger - Executing (default): SELECT count(display) as num,display  from gm_server where id in ( SELECT id from gm_server where gameid='1' and (pid is null or  trim(pid) ='')  ORDER BY id limit 20 offset (20*0) ) GROUP BY display
+[2020-09-04T11:16:41.270] [DEBUG] debugLogger - Executing (default): select servername from gm_server where gameid='1'
+[2020-09-04T11:16:42.272] [DEBUG] debugLogger - Executing (default): select * from gm_server  where gameid='1' and (pid is null or  trim(pid) ='') order by id limit 20 offset (20*0)
+[2020-09-04T11:16:42.276] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_server where gameid='1' and (pid is null or  trim(pid) ='')
+[2020-09-04T11:16:42.277] [DEBUG] debugLogger - Executing (default): SELECT count(display) as num,display  from gm_server where id in ( SELECT id from gm_server where gameid='1' and (pid is null or  trim(pid) ='')  ORDER BY id limit 20 offset (20*0) ) GROUP BY display
+[2020-09-04T11:16:45.244] [DEBUG] debugLogger - Executing (default): select * from gm_server  where plaform='1' and gameid='1' and (pid is null or  trim(pid) ='') order by id limit 20 offset (20*0)
+[2020-09-04T11:16:45.247] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_server where plaform='1' and gameid='1' and (pid is null or  trim(pid) ='')
+[2020-09-04T11:16:45.248] [DEBUG] debugLogger - Executing (default): SELECT count(display) as num,display  from gm_server where id in ( SELECT id from gm_server where plaform='1' and gameid='1' and (pid is null or  trim(pid) ='')  ORDER BY id limit 20 offset (20*0) ) GROUP BY display
+[2020-09-04T11:16:47.554] [DEBUG] debugLogger - Executing (default): select * from gm_server  where plaform='2' and gameid='1' and (pid is null or  trim(pid) ='') order by id limit 20 offset (20*0)
+[2020-09-04T11:16:47.559] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_server where plaform='2' and gameid='1' and (pid is null or  trim(pid) ='')
+[2020-09-04T11:16:47.562] [DEBUG] debugLogger - Executing (default): SELECT count(display) as num,display  from gm_server where id in ( SELECT id from gm_server where plaform='2' and gameid='1' and (pid is null or  trim(pid) ='')  ORDER BY id limit 20 offset (20*0) ) GROUP BY display
+[2020-09-04T11:16:49.168] [DEBUG] debugLogger - Executing (default): select * from gm_server  where gameid='1' and (pid is null or  trim(pid) ='') order by id limit 20 offset (20*0)
+[2020-09-04T11:16:49.171] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_server where gameid='1' and (pid is null or  trim(pid) ='')
+[2020-09-04T11:16:49.172] [DEBUG] debugLogger - Executing (default): SELECT count(display) as num,display  from gm_server where id in ( SELECT id from gm_server where gameid='1' and (pid is null or  trim(pid) ='')  ORDER BY id limit 20 offset (20*0) ) GROUP BY display
+[2020-09-04T11:17:24.213] [DEBUG] debugLogger - Executing (default): select * from gm_server  where gameid='1' and '久游'=ANY(channel)  and (pid is null or  trim(pid) ='') order by id limit 20 offset (20*0)
+[2020-09-04T11:17:24.219] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_server where gameid='1' and '久游'=ANY(channel)  and (pid is null or  trim(pid) ='')
+[2020-09-04T11:17:24.220] [DEBUG] debugLogger - Executing (default): SELECT count(display) as num,display  from gm_server where id in ( SELECT id from gm_server where gameid='1' and '久游'=ANY(channel)  and (pid is null or  trim(pid) ='')  ORDER BY id limit 20 offset (20*0) ) GROUP BY display
+[2020-09-04T11:17:24.364] [DEBUG] debugLogger - Executing (default): select * from gm_server  where gameid='1' and array['久游','小米']::varchar[] <@  channel  and (pid is null or  trim(pid) ='') order by id limit 20 offset (20*0)
+[2020-09-04T11:17:24.404] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_server where gameid='1' and array['久游','小米']::varchar[] <@  channel  and (pid is null or  trim(pid) ='')
+[2020-09-04T11:17:24.406] [DEBUG] debugLogger - Executing (default): SELECT count(display) as num,display  from gm_server where id in ( SELECT id from gm_server where gameid='1' and array['久游','小米']::varchar[] <@  channel  and (pid is null or  trim(pid) ='')  ORDER BY id limit 20 offset (20*0) ) GROUP BY display
+[2020-09-04T11:17:24.550] [DEBUG] debugLogger - Executing (default): select * from gm_server  where gameid='1' and array['久游','小米','腾讯']::varchar[] <@  channel  and (pid is null or  trim(pid) ='') order by id limit 20 offset (20*0)
+[2020-09-04T11:17:24.554] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_server where gameid='1' and array['久游','小米','腾讯']::varchar[] <@  channel  and (pid is null or  trim(pid) ='')
+[2020-09-04T11:17:24.556] [DEBUG] debugLogger - Executing (default): SELECT count(display) as num,display  from gm_server where id in ( SELECT id from gm_server where gameid='1' and array['久游','小米','腾讯']::varchar[] <@  channel  and (pid is null or  trim(pid) ='')  ORDER BY id limit 20 offset (20*0) ) GROUP BY display
+[2020-09-04T11:17:25.414] [DEBUG] debugLogger - Executing (default): select * from gm_server  where gameid='1' and array['小米','腾讯']::varchar[] <@  channel  and (pid is null or  trim(pid) ='') order by id limit 20 offset (20*0)
+[2020-09-04T11:17:25.416] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_server where gameid='1' and array['小米','腾讯']::varchar[] <@  channel  and (pid is null or  trim(pid) ='')
+[2020-09-04T11:17:25.417] [DEBUG] debugLogger - Executing (default): SELECT count(display) as num,display  from gm_server where id in ( SELECT id from gm_server where gameid='1' and array['小米','腾讯']::varchar[] <@  channel  and (pid is null or  trim(pid) ='')  ORDER BY id limit 20 offset (20*0) ) GROUP BY display
+[2020-09-04T11:17:25.689] [DEBUG] debugLogger - Executing (default): select * from gm_server  where gameid='1' and '腾讯'=ANY(channel)  and (pid is null or  trim(pid) ='') order by id limit 20 offset (20*0)
+[2020-09-04T11:17:25.691] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_server where gameid='1' and '腾讯'=ANY(channel)  and (pid is null or  trim(pid) ='')
+[2020-09-04T11:17:25.694] [DEBUG] debugLogger - Executing (default): SELECT count(display) as num,display  from gm_server where id in ( SELECT id from gm_server where gameid='1' and '腾讯'=ANY(channel)  and (pid is null or  trim(pid) ='')  ORDER BY id limit 20 offset (20*0) ) GROUP BY display
+[2020-09-04T11:17:28.637] [DEBUG] debugLogger - Executing (default): select * from gm_server  where gameid='1' and (pid is null or  trim(pid) ='') order by id limit 20 offset (20*0)
+[2020-09-04T11:17:28.641] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_server where gameid='1' and (pid is null or  trim(pid) ='')
+[2020-09-04T11:17:28.642] [DEBUG] debugLogger - Executing (default): SELECT count(display) as num,display  from gm_server where id in ( SELECT id from gm_server where gameid='1' and (pid is null or  trim(pid) ='')  ORDER BY id limit 20 offset (20*0) ) GROUP BY display
+[2020-09-04T11:17:29.863] [DEBUG] debugLogger - Executing (default): select * from gm_server  where gameid='1' and '小米'=ANY(channel)  and (pid is null or  trim(pid) ='') order by id limit 20 offset (20*0)
+[2020-09-04T11:17:29.868] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_server where gameid='1' and '小米'=ANY(channel)  and (pid is null or  trim(pid) ='')
+[2020-09-04T11:17:29.870] [DEBUG] debugLogger - Executing (default): SELECT count(display) as num,display  from gm_server where id in ( SELECT id from gm_server where gameid='1' and '小米'=ANY(channel)  and (pid is null or  trim(pid) ='')  ORDER BY id limit 20 offset (20*0) ) GROUP BY display
+[2020-09-04T11:17:30.583] [DEBUG] debugLogger - Executing (default): select * from gm_server  where gameid='1' and array['小米','久游']::varchar[] <@  channel  and (pid is null or  trim(pid) ='') order by id limit 20 offset (20*0)
+[2020-09-04T11:17:30.586] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_server where gameid='1' and array['小米','久游']::varchar[] <@  channel  and (pid is null or  trim(pid) ='')
+[2020-09-04T11:17:30.588] [DEBUG] debugLogger - Executing (default): SELECT count(display) as num,display  from gm_server where id in ( SELECT id from gm_server where gameid='1' and array['小米','久游']::varchar[] <@  channel  and (pid is null or  trim(pid) ='')  ORDER BY id limit 20 offset (20*0) ) GROUP BY display
+[2020-09-04T11:17:31.909] [DEBUG] debugLogger - Executing (default): select * from gm_server  where gameid='1' and '小米'=ANY(channel)  and (pid is null or  trim(pid) ='') order by id limit 20 offset (20*0)
+[2020-09-04T11:17:31.916] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_server where gameid='1' and '小米'=ANY(channel)  and (pid is null or  trim(pid) ='')
+[2020-09-04T11:17:31.918] [DEBUG] debugLogger - Executing (default): SELECT count(display) as num,display  from gm_server where id in ( SELECT id from gm_server where gameid='1' and '小米'=ANY(channel)  and (pid is null or  trim(pid) ='')  ORDER BY id limit 20 offset (20*0) ) GROUP BY display
+[2020-09-04T11:17:32.710] [DEBUG] debugLogger - Executing (default): select * from gm_server  where gameid='1' and (pid is null or  trim(pid) ='') order by id limit 20 offset (20*0)
+[2020-09-04T11:17:32.714] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_server where gameid='1' and (pid is null or  trim(pid) ='')
+[2020-09-04T11:17:32.715] [DEBUG] debugLogger - Executing (default): SELECT count(display) as num,display  from gm_server where id in ( SELECT id from gm_server where gameid='1' and (pid is null or  trim(pid) ='')  ORDER BY id limit 20 offset (20*0) ) GROUP BY display
+[2020-09-04T11:19:16.317] [DEBUG] debugLogger - Executing (default): SELECT gm_game.game_name,gm_game.id from (gm_user LEFT JOIN gm_purview on gm_purview.uid=gm_user.id) LEFT JOIN gm_game on gm_game.id = gm_purview.gid where gm_user.id=1
+[2020-09-04T11:19:16.322] [DEBUG] debugLogger - Executing (default): select gm_url_purview.grede AS meta,gm_url.name,gm_url.url,gm_url.id AS urlid,gm_url.pid  from (((gm_user LEFT JOIN gm_purview ON gm_purview.uid=gm_user.id) LEFT JOIN gm_game on gm_game.id= gm_purview.gid)LEFT JOIN gm_url_purview on gm_url_purview.purview_id = gm_purview.id )left join gm_url on gm_url.id = gm_url_purview.url_id where gm_user.id=1 and gm_game.game_name = '空翼冒险团'
+[2020-09-04T11:19:16.332] [DEBUG] debugLogger - Executing (default): select id from gm_game where game_name='空翼冒险团'
+[2020-09-04T11:52:29.465] [DEBUG] debugLogger - Executing (default): SELECT gm_game.game_name,gm_game.id from (gm_user LEFT JOIN gm_purview on gm_purview.uid=gm_user.id) LEFT JOIN gm_game on gm_game.id = gm_purview.gid where gm_user.id=1
+[2020-09-04T11:52:29.471] [DEBUG] debugLogger - Executing (default): select gm_url_purview.grede AS meta,gm_url.name,gm_url.url,gm_url.id AS urlid,gm_url.pid  from (((gm_user LEFT JOIN gm_purview ON gm_purview.uid=gm_user.id) LEFT JOIN gm_game on gm_game.id= gm_purview.gid)LEFT JOIN gm_url_purview on gm_url_purview.purview_id = gm_purview.id )left join gm_url on gm_url.id = gm_url_purview.url_id where gm_user.id=1 and gm_game.game_name = '空翼冒险团'
+[2020-09-04T11:52:29.482] [DEBUG] debugLogger - Executing (default): select id from gm_game where game_name='空翼冒险团'
+[2020-09-04T11:52:29.743] [DEBUG] debugLogger - Executing (default): select channel  as  values from gm_game_token where type='areaclothing'  and  gameid='1'
+[2020-09-04T11:52:32.496] [DEBUG] debugLogger - Executing (default): with asd as (select (jsonb_array_elements(annex) ->> 'annexName')::jsonb ->> 1  as name, jsonb_array_elements(annex) ->> 'annexNumber' as numbers ,id  from  gm_cdk),
+		dsa as (select  asd.id, string_to_array(string_agg(concat(art.name,'  ',asd.numbers,'个'),','),',')  as annexs  from asd  left join gm_article art on art.article_id = asd.name GROUP BY asd.id ),
+	sda as (select cdk.*,dsa.annexs   from dsa left join  gm_cdk cdk on dsa.id = cdk.id where cdk.game_id='1'   limit 100 offset 0   ),
+	pla as (select  jsonb_array_elements(plaform) as plaform ,id from gm_cdk  where id in (select id from sda)),
+	pls as (select id,string_to_array(string_agg((case 
+	when pla.plaform = '"1"' then '安卓'
+	when pla.plaform = '"2"' then '苹果'
+	end),','),',') as plaforms  from pla  GROUP BY pla.id)
+	select  sda.*,pls.plaforms ,(case 
+		when sda.type = '1' then '唯一'
+		when sda.type = '2' then '互斥'
+		when sda.type = '3' then '通用'
+		end
+		) as types  from sda left JOIN pls on pls.id=sda.id
+[2020-09-04T11:52:32.660] [DEBUG] debugLogger - Executing (default): select count(id) as total  from gm_cdk cdk where cdk.game_id='1'
+[2020-09-04T11:52:45.628] [DEBUG] debugLogger - Executing (default): select channel  as  values from gm_game_token where type='areaclothing'  and  gameid='1'
+[2020-09-04T11:52:46.789] [DEBUG] debugLogger - Executing (default): with asd as (select (jsonb_array_elements(annex) ->> 'annexName')::jsonb ->> 1  as name, jsonb_array_elements(annex) ->> 'annexNumber' as numbers ,id  from  gm_cdk),
+		dsa as (select  asd.id, string_to_array(string_agg(concat(art.name,'  ',asd.numbers,'个'),','),',')  as annexs  from asd  left join gm_article art on art.article_id = asd.name GROUP BY asd.id ),
+	sda as (select cdk.*,dsa.annexs   from dsa left join  gm_cdk cdk on dsa.id = cdk.id where cdk.game_id='1'   limit 10 offset 0   ),
+	pla as (select  jsonb_array_elements(plaform) as plaform ,id from gm_cdk  where id in (select id from sda)),
+	pls as (select id,string_to_array(string_agg((case 
+	when pla.plaform = '"1"' then '安卓'
+	when pla.plaform = '"2"' then '苹果'
+	end),','),',') as plaforms  from pla  GROUP BY pla.id)
+	select  sda.*,pls.plaforms ,(case 
+		when sda.type = '1' then '唯一'
+		when sda.type = '2' then '互斥'
+		when sda.type = '3' then '通用'
+		end
+		) as types  from sda left JOIN pls on pls.id=sda.id
+[2020-09-04T11:52:46.796] [DEBUG] debugLogger - Executing (default): select count(id) as total  from gm_cdk cdk where cdk.game_id='1'
+[2020-09-04T11:52:47.757] [DEBUG] debugLogger - Executing (default): select channel  as  values from gm_game_token where type='areaclothing'  and  gameid='1'
+[2020-09-04T11:52:48.098] [DEBUG] debugLogger - Executing (default): with asd as (select (jsonb_array_elements(annex) ->> 'annexName')::jsonb ->> 1  as name, jsonb_array_elements(annex) ->> 'annexNumber' as numbers ,id  from  gm_cdk),
+				dsa as (select  asd.id, string_to_array(string_agg(concat(art.name,'  ',asd.numbers,'个'),','),',')  as annexs  from asd  left join gm_article art on art.article_id = asd.name GROUP BY asd.id ),
+			sda as (select cdk.*,dsa.annexs   from dsa left join  gm_cdk cdk on dsa.id = cdk.id where cdk.game_id='1' and cdk.id=68 ),
+			pla as (select  jsonb_array_elements(plaform) as plaform ,id from gm_cdk  where id in (select id from sda)),
+			pls as (select id,string_to_array(string_agg((case 
+			when pla.plaform = '"1"' then '安卓'
+			when pla.plaform = '"2"' then '苹果'
+			end),','),',') as plaforms  from pla  GROUP BY pla.id)
+			select  sda.*,pls.plaforms ,(case 
+				when sda.type = '1' then '唯一'
+				when sda.type = '2' then '互斥'
+				when sda.type = '3' then '通用'
+				end
+				) as types from sda left JOIN pls on pls.id=sda.id
+[2020-09-04T11:52:57.094] [DEBUG] debugLogger - Executing (default): with asd as (select (jsonb_array_elements(annex) ->> 'annexName')::jsonb ->> 1  as name, jsonb_array_elements(annex) ->> 'annexNumber' as numbers ,id  from  gm_cdk),
+			dsa as (select  asd.id, string_to_array(string_agg(concat(art.name,'  ',asd.numbers,'个'),','),',')  as annexs  from asd  left join gm_article art on art.article_id = asd.name GROUP BY asd.id ),
+		sda as (select cdk.*,dsa.annexs   from dsa left join  gm_cdk cdk on dsa.id = cdk.id where cdk.game_id='1' and case 
+		when cdk.type = '1'
+		then cdk.cdkid = '9A9NsBQ6Sr'
+		else cdk.cdkid = '9A9N'
+		end
+		),
+		pla as (select  jsonb_array_elements(plaform) as plaform ,id from gm_cdk  where id in (select id from sda)),
+		pls as (select id,string_to_array(string_agg((case 
+		when pla.plaform = '"1"' then '安卓'
+		when pla.plaform = '"2"' then '苹果'
+		end),','),',') as plaforms  from pla  GROUP BY pla.id)
+		select  sda.*,pls.plaforms ,(case 
+			when sda.type = '1' then '唯一'
+			when sda.type = '2' then '互斥'
+			when sda.type = '3' then '通用'
+			end
+			) as types from sda left JOIN pls on pls.id=sda.id
+[2020-09-04T11:53:03.380] [DEBUG] debugLogger - Executing (default): with asd as (select (jsonb_array_elements(annex) ->> 'annexName')::jsonb ->> 1  as name, jsonb_array_elements(annex) ->> 'annexNumber' as numbers ,id  from  gm_cdk),
+		dsa as (select  asd.id, string_to_array(string_agg(concat(art.name,'  ',asd.numbers,'个'),','),',')  as annexs  from asd  left join gm_article art on art.article_id = asd.name GROUP BY asd.id ),
+	sda as (select cdk.*,dsa.annexs   from dsa left join  gm_cdk cdk on dsa.id = cdk.id where cdk.game_id='1'   limit 100 offset 0   ),
+	pla as (select  jsonb_array_elements(plaform) as plaform ,id from gm_cdk  where id in (select id from sda)),
+	pls as (select id,string_to_array(string_agg((case 
+	when pla.plaform = '"1"' then '安卓'
+	when pla.plaform = '"2"' then '苹果'
+	end),','),',') as plaforms  from pla  GROUP BY pla.id)
+	select  sda.*,pls.plaforms ,(case 
+		when sda.type = '1' then '唯一'
+		when sda.type = '2' then '互斥'
+		when sda.type = '3' then '通用'
+		end
+		) as types  from sda left JOIN pls on pls.id=sda.id
+[2020-09-04T11:53:03.386] [DEBUG] debugLogger - Executing (default): select count(id) as total  from gm_cdk cdk where cdk.game_id='1'
+[2020-09-04T11:53:06.439] [DEBUG] debugLogger - Executing (default): select channel  as  values from gm_game_token where type='areaclothing'  and  gameid='1'
+[2020-09-04T11:53:06.902] [DEBUG] debugLogger - Executing (default): with asd as (select (jsonb_array_elements(annex) ->> 'annexName')::jsonb ->> 1  as name, jsonb_array_elements(annex) ->> 'annexNumber' as numbers ,id  from  gm_cdk),
+		dsa as (select  asd.id, string_to_array(string_agg(concat(art.name,'  ',asd.numbers,'个'),','),',')  as annexs  from asd  left join gm_article art on art.article_id = asd.name GROUP BY asd.id ),
+	sda as (select cdk.*,dsa.annexs   from dsa left join  gm_cdk cdk on dsa.id = cdk.id where cdk.game_id='1'   limit 10 offset 0   ),
+	pla as (select  jsonb_array_elements(plaform) as plaform ,id from gm_cdk  where id in (select id from sda)),
+	pls as (select id,string_to_array(string_agg((case 
+	when pla.plaform = '"1"' then '安卓'
+	when pla.plaform = '"2"' then '苹果'
+	end),','),',') as plaforms  from pla  GROUP BY pla.id)
+	select  sda.*,pls.plaforms ,(case 
+		when sda.type = '1' then '唯一'
+		when sda.type = '2' then '互斥'
+		when sda.type = '3' then '通用'
+		end
+		) as types  from sda left JOIN pls on pls.id=sda.id
+[2020-09-04T11:53:06.906] [DEBUG] debugLogger - Executing (default): select count(id) as total  from gm_cdk cdk where cdk.game_id='1'
+[2020-09-04T11:53:12.687] [DEBUG] debugLogger - Executing (default): select channel  as  values from gm_game_token where type='areaclothing'  and  gameid='1'
+[2020-09-04T11:53:12.944] [DEBUG] debugLogger - Executing (default): with asd as (select (jsonb_array_elements(annex) ->> 'annexName')::jsonb ->> 1  as name, jsonb_array_elements(annex) ->> 'annexNumber' as numbers ,id  from  gm_cdk),
+				dsa as (select  asd.id, string_to_array(string_agg(concat(art.name,'  ',asd.numbers,'个'),','),',')  as annexs  from asd  left join gm_article art on art.article_id = asd.name GROUP BY asd.id ),
+			sda as (select cdk.*,dsa.annexs   from dsa left join  gm_cdk cdk on dsa.id = cdk.id where cdk.game_id='1' and cdk.id=zxJSMwgmg4 ),
+			pla as (select  jsonb_array_elements(plaform) as plaform ,id from gm_cdk  where id in (select id from sda)),
+			pls as (select id,string_to_array(string_agg((case 
+			when pla.plaform = '"1"' then '安卓'
+			when pla.plaform = '"2"' then '苹果'
+			end),','),',') as plaforms  from pla  GROUP BY pla.id)
+			select  sda.*,pls.plaforms ,(case 
+				when sda.type = '1' then '唯一'
+				when sda.type = '2' then '互斥'
+				when sda.type = '3' then '通用'
+				end
+				) as types from sda left JOIN pls on pls.id=sda.id
+[2020-09-04T11:53:25.712] [DEBUG] debugLogger - Executing (default): with asd as (select (jsonb_array_elements(annex) ->> 'annexName')::jsonb ->> 1  as name, jsonb_array_elements(annex) ->> 'annexNumber' as numbers ,id  from  gm_cdk),
+			dsa as (select  asd.id, string_to_array(string_agg(concat(art.name,'  ',asd.numbers,'个'),','),',')  as annexs  from asd  left join gm_article art on art.article_id = asd.name GROUP BY asd.id ),
+		sda as (select cdk.*,dsa.annexs   from dsa left join  gm_cdk cdk on dsa.id = cdk.id where cdk.game_id='1' and case 
+		when cdk.type = '1'
+		then cdk.cdkid = 'zxJSMwgmg4'
+		else cdk.cdkid = 'zxJS'
+		end
+		),
+		pla as (select  jsonb_array_elements(plaform) as plaform ,id from gm_cdk  where id in (select id from sda)),
+		pls as (select id,string_to_array(string_agg((case 
+		when pla.plaform = '"1"' then '安卓'
+		when pla.plaform = '"2"' then '苹果'
+		end),','),',') as plaforms  from pla  GROUP BY pla.id)
+		select  sda.*,pls.plaforms ,(case 
+			when sda.type = '1' then '唯一'
+			when sda.type = '2' then '互斥'
+			when sda.type = '3' then '通用'
+			end
+			) as types from sda left JOIN pls on pls.id=sda.id
+[2020-09-04T11:54:35.453] [DEBUG] debugLogger - Executing (default): select channel  as  values from gm_game_token where type='areaclothing'  and  gameid='1'
+[2020-09-04T11:54:36.269] [DEBUG] debugLogger - Executing (default): with asd as (select (jsonb_array_elements(annex) ->> 'annexName')::jsonb ->> 1  as name, jsonb_array_elements(annex) ->> 'annexNumber' as numbers ,id  from  gm_cdk),
+		dsa as (select  asd.id, string_to_array(string_agg(concat(art.name,'  ',asd.numbers,'个'),','),',')  as annexs  from asd  left join gm_article art on art.article_id = asd.name GROUP BY asd.id ),
+	sda as (select cdk.*,dsa.annexs   from dsa left join  gm_cdk cdk on dsa.id = cdk.id where cdk.game_id='1'   limit 10 offset 0   ),
+	pla as (select  jsonb_array_elements(plaform) as plaform ,id from gm_cdk  where id in (select id from sda)),
+	pls as (select id,string_to_array(string_agg((case 
+	when pla.plaform = '"1"' then '安卓'
+	when pla.plaform = '"2"' then '苹果'
+	end),','),',') as plaforms  from pla  GROUP BY pla.id)
+	select  sda.*,pls.plaforms ,(case 
+		when sda.type = '1' then '唯一'
+		when sda.type = '2' then '互斥'
+		when sda.type = '3' then '通用'
+		end
+		) as types  from sda left JOIN pls on pls.id=sda.id
+[2020-09-04T11:54:36.278] [DEBUG] debugLogger - Executing (default): select count(id) as total  from gm_cdk cdk where cdk.game_id='1'
+[2020-09-04T11:54:37.901] [DEBUG] debugLogger - Executing (default): select channel  as  values from gm_game_token where type='areaclothing'  and  gameid='1'
+[2020-09-04T11:54:38.151] [DEBUG] debugLogger - Executing (default): with asd as (select (jsonb_array_elements(annex) ->> 'annexName')::jsonb ->> 1  as name, jsonb_array_elements(annex) ->> 'annexNumber' as numbers ,id  from  gm_cdk),
+				dsa as (select  asd.id, string_to_array(string_agg(concat(art.name,'  ',asd.numbers,'个'),','),',')  as annexs  from asd  left join gm_article art on art.article_id = asd.name GROUP BY asd.id ),
+			sda as (select cdk.*,dsa.annexs   from dsa left join  gm_cdk cdk on dsa.id = cdk.id where cdk.game_id='1' and cdk.id=69 ),
+			pla as (select  jsonb_array_elements(plaform) as plaform ,id from gm_cdk  where id in (select id from sda)),
+			pls as (select id,string_to_array(string_agg((case 
+			when pla.plaform = '"1"' then '安卓'
+			when pla.plaform = '"2"' then '苹果'
+			end),','),',') as plaforms  from pla  GROUP BY pla.id)
+			select  sda.*,pls.plaforms ,(case 
+				when sda.type = '1' then '唯一'
+				when sda.type = '2' then '互斥'
+				when sda.type = '3' then '通用'
+				end
+				) as types from sda left JOIN pls on pls.id=sda.id
+[2020-09-04T11:54:43.873] [DEBUG] debugLogger - Executing (default): select channel  as  values from gm_game_token where type='areaclothing'  and  gameid='1'
+[2020-09-04T11:54:45.979] [DEBUG] debugLogger - Executing (default): with asd as (select (jsonb_array_elements(annex) ->> 'annexName')::jsonb ->> 1  as name, jsonb_array_elements(annex) ->> 'annexNumber' as numbers ,id  from  gm_cdk),
+		dsa as (select  asd.id, string_to_array(string_agg(concat(art.name,'  ',asd.numbers,'个'),','),',')  as annexs  from asd  left join gm_article art on art.article_id = asd.name GROUP BY asd.id ),
+	sda as (select cdk.*,dsa.annexs   from dsa left join  gm_cdk cdk on dsa.id = cdk.id where cdk.game_id='1'   limit 10 offset 0   ),
+	pla as (select  jsonb_array_elements(plaform) as plaform ,id from gm_cdk  where id in (select id from sda)),
+	pls as (select id,string_to_array(string_agg((case 
+	when pla.plaform = '"1"' then '安卓'
+	when pla.plaform = '"2"' then '苹果'
+	end),','),',') as plaforms  from pla  GROUP BY pla.id)
+	select  sda.*,pls.plaforms ,(case 
+		when sda.type = '1' then '唯一'
+		when sda.type = '2' then '互斥'
+		when sda.type = '3' then '通用'
+		end
+		) as types  from sda left JOIN pls on pls.id=sda.id
+[2020-09-04T11:54:45.982] [DEBUG] debugLogger - Executing (default): select count(id) as total  from gm_cdk cdk where cdk.game_id='1'
+[2020-09-04T11:54:47.105] [DEBUG] debugLogger - Executing (default): select channel  as  values from gm_game_token where type='areaclothing'  and  gameid='1'
+[2020-09-04T11:54:47.439] [DEBUG] debugLogger - Executing (default): with asd as (select (jsonb_array_elements(annex) ->> 'annexName')::jsonb ->> 1  as name, jsonb_array_elements(annex) ->> 'annexNumber' as numbers ,id  from  gm_cdk),
+				dsa as (select  asd.id, string_to_array(string_agg(concat(art.name,'  ',asd.numbers,'个'),','),',')  as annexs  from asd  left join gm_article art on art.article_id = asd.name GROUP BY asd.id ),
+			sda as (select cdk.*,dsa.annexs   from dsa left join  gm_cdk cdk on dsa.id = cdk.id where cdk.game_id='1' and cdk.id=68 ),
+			pla as (select  jsonb_array_elements(plaform) as plaform ,id from gm_cdk  where id in (select id from sda)),
+			pls as (select id,string_to_array(string_agg((case 
+			when pla.plaform = '"1"' then '安卓'
+			when pla.plaform = '"2"' then '苹果'
+			end),','),',') as plaforms  from pla  GROUP BY pla.id)
+			select  sda.*,pls.plaforms ,(case 
+				when sda.type = '1' then '唯一'
+				when sda.type = '2' then '互斥'
+				when sda.type = '3' then '通用'
+				end
+				) as types from sda left JOIN pls on pls.id=sda.id
+[2020-09-04T11:54:49.708] [DEBUG] debugLogger - Executing (default): select channel  as  values from gm_game_token where type='areaclothing'  and  gameid='1'
+[2020-09-04T11:54:50.754] [DEBUG] debugLogger - Executing (default): select channel  as  values from gm_game_token where type='areaclothing'  and  gameid='1'
+[2020-09-04T11:54:51.144] [DEBUG] debugLogger - Executing (default): select channel  as  values from gm_game_token where type='areaclothing'  and  gameid='1'
+[2020-09-04T11:54:52.787] [DEBUG] debugLogger - Executing (default): with asd as (select (jsonb_array_elements(annex) ->> 'annexName')::jsonb ->> 1  as name, jsonb_array_elements(annex) ->> 'annexNumber' as numbers ,id  from  gm_cdk),
+		dsa as (select  asd.id, string_to_array(string_agg(concat(art.name,'  ',asd.numbers,'个'),','),',')  as annexs  from asd  left join gm_article art on art.article_id = asd.name GROUP BY asd.id ),
+	sda as (select cdk.*,dsa.annexs   from dsa left join  gm_cdk cdk on dsa.id = cdk.id where cdk.game_id='1'   limit 10 offset 0   ),
+	pla as (select  jsonb_array_elements(plaform) as plaform ,id from gm_cdk  where id in (select id from sda)),
+	pls as (select id,string_to_array(string_agg((case 
+	when pla.plaform = '"1"' then '安卓'
+	when pla.plaform = '"2"' then '苹果'
+	end),','),',') as plaforms  from pla  GROUP BY pla.id)
+	select  sda.*,pls.plaforms ,(case 
+		when sda.type = '1' then '唯一'
+		when sda.type = '2' then '互斥'
+		when sda.type = '3' then '通用'
+		end
+		) as types  from sda left JOIN pls on pls.id=sda.id
+[2020-09-04T11:54:52.791] [DEBUG] debugLogger - Executing (default): select count(id) as total  from gm_cdk cdk where cdk.game_id='1'
+[2020-09-04T11:54:56.645] [DEBUG] debugLogger - Executing (default): with asd as (select (jsonb_array_elements(annex) ->> 'annexName')::jsonb ->> 1  as name, jsonb_array_elements(annex) ->> 'annexNumber' as numbers ,id  from  gm_cdk),
+			dsa as (select  asd.id, string_to_array(string_agg(concat(art.name,'  ',asd.numbers,'个'),','),',')  as annexs  from asd  left join gm_article art on art.article_id = asd.name GROUP BY asd.id ),
+		sda as (select cdk.*,dsa.annexs   from dsa left join  gm_cdk cdk on dsa.id = cdk.id where cdk.game_id='1' and case 
+		when cdk.type = '1'
+		then cdk.cdkid = 'zxJSMwgmg4'
+		else cdk.cdkid = 'zxJS'
+		end
+		),
+		pla as (select  jsonb_array_elements(plaform) as plaform ,id from gm_cdk  where id in (select id from sda)),
+		pls as (select id,string_to_array(string_agg((case 
+		when pla.plaform = '"1"' then '安卓'
+		when pla.plaform = '"2"' then '苹果'
+		end),','),',') as plaforms  from pla  GROUP BY pla.id)
+		select  sda.*,pls.plaforms ,(case 
+			when sda.type = '1' then '唯一'
+			when sda.type = '2' then '互斥'
+			when sda.type = '3' then '通用'
+			end
+			) as types from sda left JOIN pls on pls.id=sda.id
+[2020-09-04T11:54:58.320] [DEBUG] debugLogger - Executing (default): select channel  as  values from gm_game_token where type='areaclothing'  and  gameid='1'
+[2020-09-04T11:54:58.571] [DEBUG] debugLogger - Executing (default): with asd as (select (jsonb_array_elements(annex) ->> 'annexName')::jsonb ->> 1  as name, jsonb_array_elements(annex) ->> 'annexNumber' as numbers ,id  from  gm_cdk),
+			dsa as (select  asd.id, string_to_array(string_agg(concat(art.name,'  ',asd.numbers,'个'),','),',')  as annexs  from asd  left join gm_article art on art.article_id = asd.name GROUP BY asd.id ),
+		sda as (select cdk.*,dsa.annexs   from dsa left join  gm_cdk cdk on dsa.id = cdk.id where cdk.game_id='1' and case 
+		when cdk.type = '1'
+		then cdk.cdkid = 'zxJSMwgmg4'
+		else cdk.cdkid = 'zxJS'
+		end
+		),
+		pla as (select  jsonb_array_elements(plaform) as plaform ,id from gm_cdk  where id in (select id from sda)),
+		pls as (select id,string_to_array(string_agg((case 
+		when pla.plaform = '"1"' then '安卓'
+		when pla.plaform = '"2"' then '苹果'
+		end),','),',') as plaforms  from pla  GROUP BY pla.id)
+		select  sda.*,pls.plaforms ,(case 
+			when sda.type = '1' then '唯一'
+			when sda.type = '2' then '互斥'
+			when sda.type = '3' then '通用'
+			end
+			) as types from sda left JOIN pls on pls.id=sda.id
+[2020-09-04T11:58:13.882] [DEBUG] debugLogger - Executing (default): select channel  as  values from gm_game_token where type='areaclothing'  and  gameid='1'
+[2020-09-04T11:58:14.630] [DEBUG] debugLogger - Executing (default): with asd as (select (jsonb_array_elements(annex) ->> 'annexName')::jsonb ->> 1  as name, jsonb_array_elements(annex) ->> 'annexNumber' as numbers ,id  from  gm_cdk),
+		dsa as (select  asd.id, string_to_array(string_agg(concat(art.name,'  ',asd.numbers,'个'),','),',')  as annexs  from asd  left join gm_article art on art.article_id = asd.name GROUP BY asd.id ),
+	sda as (select cdk.*,dsa.annexs   from dsa left join  gm_cdk cdk on dsa.id = cdk.id where cdk.game_id='1'   limit 10 offset 0   ),
+	pla as (select  jsonb_array_elements(plaform) as plaform ,id from gm_cdk  where id in (select id from sda)),
+	pls as (select id,string_to_array(string_agg((case 
+	when pla.plaform = '"1"' then '安卓'
+	when pla.plaform = '"2"' then '苹果'
+	end),','),',') as plaforms  from pla  GROUP BY pla.id)
+	select  sda.*,pls.plaforms ,(case 
+		when sda.type = '1' then '唯一'
+		when sda.type = '2' then '互斥'
+		when sda.type = '3' then '通用'
+		end
+		) as types  from sda left JOIN pls on pls.id=sda.id
+[2020-09-04T11:58:14.639] [DEBUG] debugLogger - Executing (default): select count(id) as total  from gm_cdk cdk where cdk.game_id='1'
+[2020-09-04T11:58:20.394] [DEBUG] debugLogger - Executing (default): select channel  as  values from gm_game_token where type='areaclothing'  and  gameid='1'
+[2020-09-04T11:58:20.650] [DEBUG] debugLogger - Executing (default): with tableone as (select servername from gm_server GROUP BY servername having count(servername)>1),
+        tabletwo as (select min(id) from gm_server GROUP BY servername HAVING count(servername)>1),
+        tablethere as (select min(id) from gm_server GROUP BY servername HAVING count(servername)=1),
+        tablemain as (select * from gm_server)
+        select serverid as value ,servername as label from  tablemain where   tablemain.gameid = 1 and  tablemain.id in (select * from tablethere ) or  tablemain.servername in  (select * from  tableone) and tablemain.id in (select * from  tabletwo)
+[2020-09-04T11:58:20.740] [DEBUG] debugLogger - Executing (default): select 
+        name as label ,
+        article_id as value  from gm_article where gameid=1
+[2020-09-04T11:58:22.467] [DEBUG] debugLogger - Executing (default): with asd as (			
+				select * from gm_smtp where  game_id= '1' limit 50 offset 0 
+			)	,
+			dsa as (select * from gm_server),
+			ssss as( 
+			select asd.servername, string_to_array(string_agg(dsa.servername, ','),',') as servernames from asd LEFT JOIN dsa on dsa.serverid::jsonb <@ (asd.servername)
+			GROUP BY  asd.servername),
+			qweqweqwe  as (select asd.* ,ssss.servernames from asd left join ssss on ssss.servername = asd.servername),
+			asdasd as (select jsonb_array_elements(annex) ->> 'ID' as names, jsonb_array_elements(annex) ->> 'number' as numbers ,id  from  qweqweqwe ),
+			qweqwe as (select asdasd.id,string_to_array(string_agg(concat(gm_article.name,'  ',asdasd.numbers,'个'),','),',') as annexnames from asdasd left JOIN gm_article on gm_article.article_id = asdasd.names GROUP BY asdasd.id )
+			select asd.*,qweqwe.annexnames from asd left join qweqwe on qweqwe.id = asd.id
+[2020-09-04T11:58:22.559] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_smtp where  game_id= '1'
+[2020-09-04T11:58:28.785] [DEBUG] debugLogger - Executing (default): with asd as (			
+				select * from gm_smtp where  game_id= '1' limit 50 offset 0 
+			)	,
+			dsa as (select * from gm_server),
+			ssss as( 
+			select asd.servername, string_to_array(string_agg(dsa.servername, ','),',') as servernames from asd LEFT JOIN dsa on dsa.serverid::jsonb <@ (asd.servername)
+			GROUP BY  asd.servername),
+			qweqweqwe  as (select asd.* ,ssss.servernames from asd left join ssss on ssss.servername = asd.servername),
+			asdasd as (select jsonb_array_elements(annex) ->> 'ID' as names, jsonb_array_elements(annex) ->> 'number' as numbers ,id  from  qweqweqwe ),
+			qweqwe as (select asdasd.id,string_to_array(string_agg(concat(gm_article.name,'  ',asdasd.numbers,'个'),','),',') as annexnames from asdasd left JOIN gm_article on gm_article.article_id = asdasd.names GROUP BY asdasd.id )
+			select asd.*,qweqwe.annexnames from asd left join qweqwe on qweqwe.id = asd.id
+[2020-09-04T11:58:28.788] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_smtp where  game_id= '1'
+[2020-09-04T11:58:30.629] [DEBUG] debugLogger - Executing (default): with asd as (			
+				select * from gm_smtp where  game_id= '1' limit 50 offset 0 
+			)	,
+			dsa as (select * from gm_server),
+			ssss as( 
+			select asd.servername, string_to_array(string_agg(dsa.servername, ','),',') as servernames from asd LEFT JOIN dsa on dsa.serverid::jsonb <@ (asd.servername)
+			GROUP BY  asd.servername),
+			qweqweqwe  as (select asd.* ,ssss.servernames from asd left join ssss on ssss.servername = asd.servername),
+			asdasd as (select jsonb_array_elements(annex) ->> 'ID' as names, jsonb_array_elements(annex) ->> 'number' as numbers ,id  from  qweqweqwe ),
+			qweqwe as (select asdasd.id,string_to_array(string_agg(concat(gm_article.name,'  ',asdasd.numbers,'个'),','),',') as annexnames from asdasd left JOIN gm_article on gm_article.article_id = asdasd.names GROUP BY asdasd.id )
+			select asd.*,qweqwe.annexnames from asd left join qweqwe on qweqwe.id = asd.id
+[2020-09-04T11:58:30.632] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_smtp where  game_id= '1'
+[2020-09-04T11:58:31.213] [DEBUG] debugLogger - Executing (default): with asd as (			
+				select * from gm_smtp where  game_id= '1' limit 50 offset 0 
+			)	,
+			dsa as (select * from gm_server),
+			ssss as( 
+			select asd.servername, string_to_array(string_agg(dsa.servername, ','),',') as servernames from asd LEFT JOIN dsa on dsa.serverid::jsonb <@ (asd.servername)
+			GROUP BY  asd.servername),
+			qweqweqwe  as (select asd.* ,ssss.servernames from asd left join ssss on ssss.servername = asd.servername),
+			asdasd as (select jsonb_array_elements(annex) ->> 'ID' as names, jsonb_array_elements(annex) ->> 'number' as numbers ,id  from  qweqweqwe ),
+			qweqwe as (select asdasd.id,string_to_array(string_agg(concat(gm_article.name,'  ',asdasd.numbers,'个'),','),',') as annexnames from asdasd left JOIN gm_article on gm_article.article_id = asdasd.names GROUP BY asdasd.id )
+			select asd.*,qweqwe.annexnames from asd left join qweqwe on qweqwe.id = asd.id
+[2020-09-04T11:58:31.217] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_smtp where  game_id= '1'
+[2020-09-04T11:58:31.713] [DEBUG] debugLogger - Executing (default): with asd as (			
+				select * from gm_smtp where  game_id= '1' limit 50 offset 0 
+			)	,
+			dsa as (select * from gm_server),
+			ssss as( 
+			select asd.servername, string_to_array(string_agg(dsa.servername, ','),',') as servernames from asd LEFT JOIN dsa on dsa.serverid::jsonb <@ (asd.servername)
+			GROUP BY  asd.servername),
+			qweqweqwe  as (select asd.* ,ssss.servernames from asd left join ssss on ssss.servername = asd.servername),
+			asdasd as (select jsonb_array_elements(annex) ->> 'ID' as names, jsonb_array_elements(annex) ->> 'number' as numbers ,id  from  qweqweqwe ),
+			qweqwe as (select asdasd.id,string_to_array(string_agg(concat(gm_article.name,'  ',asdasd.numbers,'个'),','),',') as annexnames from asdasd left JOIN gm_article on gm_article.article_id = asdasd.names GROUP BY asdasd.id )
+			select asd.*,qweqwe.annexnames from asd left join qweqwe on qweqwe.id = asd.id
+[2020-09-04T11:58:31.716] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_smtp where  game_id= '1'
+[2020-09-04T11:58:37.840] [DEBUG] debugLogger - Executing (default): SELECT gm_game.game_name,gm_game.id from (gm_user LEFT JOIN gm_purview on gm_purview.uid=gm_user.id) LEFT JOIN gm_game on gm_game.id = gm_purview.gid where gm_user.id=1
+[2020-09-04T11:58:37.849] [DEBUG] debugLogger - Executing (default): select gm_url_purview.grede AS meta,gm_url.name,gm_url.url,gm_url.id AS urlid,gm_url.pid  from (((gm_user LEFT JOIN gm_purview ON gm_purview.uid=gm_user.id) LEFT JOIN gm_game on gm_game.id= gm_purview.gid)LEFT JOIN gm_url_purview on gm_url_purview.purview_id = gm_purview.id )left join gm_url on gm_url.id = gm_url_purview.url_id where gm_user.id=1 and gm_game.game_name = '空翼冒险团'
+[2020-09-04T11:58:37.868] [DEBUG] debugLogger - Executing (default): select id from gm_game where game_name='空翼冒险团'
+[2020-09-04T11:58:38.252] [DEBUG] debugLogger - Executing (default): select channel  as  values from gm_game_token where type='areaclothing'  and  gameid='1'
+[2020-09-04T11:58:38.308] [DEBUG] debugLogger - Executing (default): with tableone as (select servername from gm_server GROUP BY servername having count(servername)>1),
+        tabletwo as (select min(id) from gm_server GROUP BY servername HAVING count(servername)>1),
+        tablethere as (select min(id) from gm_server GROUP BY servername HAVING count(servername)=1),
+        tablemain as (select * from gm_server)
+        select serverid as value ,servername as label from  tablemain where   tablemain.gameid = 1 and  tablemain.id in (select * from tablethere ) or  tablemain.servername in  (select * from  tableone) and tablemain.id in (select * from  tabletwo)
+[2020-09-04T11:58:38.493] [DEBUG] debugLogger - Executing (default): select 
+        name as label ,
+        article_id as value  from gm_article where gameid=1
+[2020-09-04T11:58:40.147] [DEBUG] debugLogger - Executing (default): with asd as (			
+				select * from gm_smtp where  game_id= '1' limit 50 offset 0 
+			)	,
+			dsa as (select * from gm_server),
+			ssss as( 
+			select asd.servername, string_to_array(string_agg(dsa.servername, ','),',') as servernames from asd LEFT JOIN dsa on dsa.serverid::jsonb <@ (asd.servername)
+			GROUP BY  asd.servername),
+			qweqweqwe  as (select asd.* ,ssss.servernames from asd left join ssss on ssss.servername = asd.servername),
+			asdasd as (select jsonb_array_elements(annex) ->> 'ID' as names, jsonb_array_elements(annex) ->> 'number' as numbers ,id  from  qweqweqwe ),
+			qweqwe as (select asdasd.id,string_to_array(string_agg(concat(gm_article.name,'  ',asdasd.numbers,'个'),','),',') as annexnames from asdasd left JOIN gm_article on gm_article.article_id = asdasd.names GROUP BY asdasd.id )
+			select asd.*,qweqwe.annexnames from asd left join qweqwe on qweqwe.id = asd.id
+[2020-09-04T11:58:40.150] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_smtp where  game_id= '1'
+[2020-09-04T11:58:43.109] [DEBUG] debugLogger - Executing (default): SELECT gm_game.game_name,gm_game.id from (gm_user LEFT JOIN gm_purview on gm_purview.uid=gm_user.id) LEFT JOIN gm_game on gm_game.id = gm_purview.gid where gm_user.id=1
+[2020-09-04T11:58:43.111] [DEBUG] debugLogger - Executing (default): select gm_url_purview.grede AS meta,gm_url.name,gm_url.url,gm_url.id AS urlid,gm_url.pid  from (((gm_user LEFT JOIN gm_purview ON gm_purview.uid=gm_user.id) LEFT JOIN gm_game on gm_game.id= gm_purview.gid)LEFT JOIN gm_url_purview on gm_url_purview.purview_id = gm_purview.id )left join gm_url on gm_url.id = gm_url_purview.url_id where gm_user.id=1 and gm_game.game_name = '空翼冒险团'
+[2020-09-04T11:58:43.124] [DEBUG] debugLogger - Executing (default): select id from gm_game where game_name='空翼冒险团'
+[2020-09-04T11:58:43.476] [DEBUG] debugLogger - Executing (default): select channel  as  values from gm_game_token where type='areaclothing'  and  gameid='1'
+[2020-09-04T11:58:43.563] [DEBUG] debugLogger - Executing (default): with tableone as (select servername from gm_server GROUP BY servername having count(servername)>1),
+        tabletwo as (select min(id) from gm_server GROUP BY servername HAVING count(servername)>1),
+        tablethere as (select min(id) from gm_server GROUP BY servername HAVING count(servername)=1),
+        tablemain as (select * from gm_server)
+        select serverid as value ,servername as label from  tablemain where   tablemain.gameid = 1 and  tablemain.id in (select * from tablethere ) or  tablemain.servername in  (select * from  tableone) and tablemain.id in (select * from  tabletwo)
+[2020-09-04T11:58:43.716] [DEBUG] debugLogger - Executing (default): select 
+        name as label ,
+        article_id as value  from gm_article where gameid=1
+[2020-09-04T11:58:53.114] [DEBUG] debugLogger - Executing (default): with asd as (			
+				select * from gm_smtp where  game_id= '1' limit 50 offset 0 
+			)	,
+			dsa as (select * from gm_server),
+			ssss as( 
+			select asd.servername, string_to_array(string_agg(dsa.servername, ','),',') as servernames from asd LEFT JOIN dsa on dsa.serverid::jsonb <@ (asd.servername)
+			GROUP BY  asd.servername),
+			qweqweqwe  as (select asd.* ,ssss.servernames from asd left join ssss on ssss.servername = asd.servername),
+			asdasd as (select jsonb_array_elements(annex) ->> 'ID' as names, jsonb_array_elements(annex) ->> 'number' as numbers ,id  from  qweqweqwe ),
+			qweqwe as (select asdasd.id,string_to_array(string_agg(concat(gm_article.name,'  ',asdasd.numbers,'个'),','),',') as annexnames from asdasd left JOIN gm_article on gm_article.article_id = asdasd.names GROUP BY asdasd.id )
+			select asd.*,qweqwe.annexnames from asd left join qweqwe on qweqwe.id = asd.id
+[2020-09-04T11:58:53.118] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_smtp where  game_id= '1'
+[2020-09-04T12:00:28.309] [DEBUG] debugLogger - Executing (default): with asd as (			
+				select * from gm_smtp where  game_id= '1' limit 50 offset 0 
+			)	,
+			dsa as (select * from gm_server),
+			ssss as( 
+			select asd.servername, string_to_array(string_agg(dsa.servername, ','),',') as servernames from asd LEFT JOIN dsa on dsa.serverid::jsonb <@ (asd.servername)
+			GROUP BY  asd.servername),
+			qweqweqwe  as (select asd.* ,ssss.servernames from asd left join ssss on ssss.servername = asd.servername),
+			asdasd as (select jsonb_array_elements(annex) ->> 'ID' as names, jsonb_array_elements(annex) ->> 'number' as numbers ,id  from  qweqweqwe ),
+			qweqwe as (select asdasd.id,string_to_array(string_agg(concat(gm_article.name,'  ',asdasd.numbers,'个'),','),',') as annexnames from asdasd left JOIN gm_article on gm_article.article_id = asdasd.names GROUP BY asdasd.id )
+			select asd.*,qweqwe.annexnames from asd left join qweqwe on qweqwe.id = asd.id
+[2020-09-04T12:00:28.315] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_smtp where  game_id= '1'
+[2020-09-04T12:00:56.977] [DEBUG] debugLogger - Executing (default): with asd as (			
+				select * from gm_smtp where  game_id= '1' limit 50 offset 0 
+			)	,
+			dsa as (select * from gm_server),
+			ssss as( 
+			select asd.servername, string_to_array(string_agg(dsa.servername, ','),',') as servernames from asd LEFT JOIN dsa on dsa.serverid::jsonb <@ (asd.servername)
+			GROUP BY  asd.servername),
+			qweqweqwe  as (select asd.* ,ssss.servernames from asd left join ssss on ssss.servername = asd.servername),
+			asdasd as (select jsonb_array_elements(annex) ->> 'ID' as names, jsonb_array_elements(annex) ->> 'number' as numbers ,id  from  qweqweqwe ),
+			qweqwe as (select asdasd.id,string_to_array(string_agg(concat(gm_article.name,'  ',asdasd.numbers,'个'),','),',') as annexnames from asdasd left JOIN gm_article on gm_article.article_id = asdasd.names GROUP BY asdasd.id )
+			select asd.*,qweqwe.annexnames from asd left join qweqwe on qweqwe.id = asd.id
+[2020-09-04T12:00:56.984] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_smtp where  game_id= '1'
+[2020-09-04T12:00:57.166] [DEBUG] debugLogger - Executing (default): with asd as (			
+				select * from gm_smtp where  game_id= '1' limit 50 offset 0 
+			)	,
+			dsa as (select * from gm_server),
+			ssss as( 
+			select asd.servername, string_to_array(string_agg(dsa.servername, ','),',') as servernames from asd LEFT JOIN dsa on dsa.serverid::jsonb <@ (asd.servername)
+			GROUP BY  asd.servername),
+			qweqweqwe  as (select asd.* ,ssss.servernames from asd left join ssss on ssss.servername = asd.servername),
+			asdasd as (select jsonb_array_elements(annex) ->> 'ID' as names, jsonb_array_elements(annex) ->> 'number' as numbers ,id  from  qweqweqwe ),
+			qweqwe as (select asdasd.id,string_to_array(string_agg(concat(gm_article.name,'  ',asdasd.numbers,'个'),','),',') as annexnames from asdasd left JOIN gm_article on gm_article.article_id = asdasd.names GROUP BY asdasd.id )
+			select asd.*,qweqwe.annexnames from asd left join qweqwe on qweqwe.id = asd.id
+[2020-09-04T12:00:57.170] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_smtp where  game_id= '1'
+[2020-09-04T12:00:57.631] [DEBUG] debugLogger - Executing (default): with asd as (			
+				select * from gm_smtp where  game_id= '1' limit 50 offset 0 
+			)	,
+			dsa as (select * from gm_server),
+			ssss as( 
+			select asd.servername, string_to_array(string_agg(dsa.servername, ','),',') as servernames from asd LEFT JOIN dsa on dsa.serverid::jsonb <@ (asd.servername)
+			GROUP BY  asd.servername),
+			qweqweqwe  as (select asd.* ,ssss.servernames from asd left join ssss on ssss.servername = asd.servername),
+			asdasd as (select jsonb_array_elements(annex) ->> 'ID' as names, jsonb_array_elements(annex) ->> 'number' as numbers ,id  from  qweqweqwe ),
+			qweqwe as (select asdasd.id,string_to_array(string_agg(concat(gm_article.name,'  ',asdasd.numbers,'个'),','),',') as annexnames from asdasd left JOIN gm_article on gm_article.article_id = asdasd.names GROUP BY asdasd.id )
+			select asd.*,qweqwe.annexnames from asd left join qweqwe on qweqwe.id = asd.id
+[2020-09-04T12:00:57.637] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_smtp where  game_id= '1'
+[2020-09-04T12:01:00.113] [DEBUG] debugLogger - Executing (default): SELECT gm_game.game_name,gm_game.id from (gm_user LEFT JOIN gm_purview on gm_purview.uid=gm_user.id) LEFT JOIN gm_game on gm_game.id = gm_purview.gid where gm_user.id=1
+[2020-09-04T12:01:00.196] [DEBUG] debugLogger - Executing (default): select gm_url_purview.grede AS meta,gm_url.name,gm_url.url,gm_url.id AS urlid,gm_url.pid  from (((gm_user LEFT JOIN gm_purview ON gm_purview.uid=gm_user.id) LEFT JOIN gm_game on gm_game.id= gm_purview.gid)LEFT JOIN gm_url_purview on gm_url_purview.purview_id = gm_purview.id )left join gm_url on gm_url.id = gm_url_purview.url_id where gm_user.id=1 and gm_game.game_name = '空翼冒险团'
+[2020-09-04T12:01:00.215] [DEBUG] debugLogger - Executing (default): select id from gm_game where game_name='空翼冒险团'
+[2020-09-04T12:01:00.672] [DEBUG] debugLogger - Executing (default): select channel  as  values from gm_game_token where type='areaclothing'  and  gameid='1'
+[2020-09-04T12:01:00.795] [DEBUG] debugLogger - Executing (default): with tableone as (select servername from gm_server GROUP BY servername having count(servername)>1),
+        tabletwo as (select min(id) from gm_server GROUP BY servername HAVING count(servername)>1),
+        tablethere as (select min(id) from gm_server GROUP BY servername HAVING count(servername)=1),
+        tablemain as (select * from gm_server)
+        select serverid as value ,servername as label from  tablemain where   tablemain.gameid = 1 and  tablemain.id in (select * from tablethere ) or  tablemain.servername in  (select * from  tableone) and tablemain.id in (select * from  tabletwo)
+[2020-09-04T12:01:01.164] [DEBUG] debugLogger - Executing (default): select 
+        name as label ,
+        article_id as value  from gm_article where gameid=1
+[2020-09-04T12:01:02.644] [DEBUG] debugLogger - Executing (default): with asd as (			
+				select * from gm_smtp where  game_id= '1' limit 50 offset 0 
+			)	,
+			dsa as (select * from gm_server),
+			ssss as( 
+			select asd.servername, string_to_array(string_agg(dsa.servername, ','),',') as servernames from asd LEFT JOIN dsa on dsa.serverid::jsonb <@ (asd.servername)
+			GROUP BY  asd.servername),
+			qweqweqwe  as (select asd.* ,ssss.servernames from asd left join ssss on ssss.servername = asd.servername),
+			asdasd as (select jsonb_array_elements(annex) ->> 'ID' as names, jsonb_array_elements(annex) ->> 'number' as numbers ,id  from  qweqweqwe ),
+			qweqwe as (select asdasd.id,string_to_array(string_agg(concat(gm_article.name,'  ',asdasd.numbers,'个'),','),',') as annexnames from asdasd left JOIN gm_article on gm_article.article_id = asdasd.names GROUP BY asdasd.id )
+			select asd.*,qweqwe.annexnames from asd left join qweqwe on qweqwe.id = asd.id
+[2020-09-04T12:01:02.648] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_smtp where  game_id= '1'
+[2020-09-04T12:01:17.652] [DEBUG] debugLogger - Executing (default): with asd as (			
+				select * from gm_smtp where  game_id= '1' limit 50 offset 0 
+			)	,
+			dsa as (select * from gm_server),
+			ssss as( 
+			select asd.servername, string_to_array(string_agg(dsa.servername, ','),',') as servernames from asd LEFT JOIN dsa on dsa.serverid::jsonb <@ (asd.servername)
+			GROUP BY  asd.servername),
+			qweqweqwe  as (select asd.* ,ssss.servernames from asd left join ssss on ssss.servername = asd.servername),
+			asdasd as (select jsonb_array_elements(annex) ->> 'ID' as names, jsonb_array_elements(annex) ->> 'number' as numbers ,id  from  qweqweqwe ),
+			qweqwe as (select asdasd.id,string_to_array(string_agg(concat(gm_article.name,'  ',asdasd.numbers,'个'),','),',') as annexnames from asdasd left JOIN gm_article on gm_article.article_id = asdasd.names GROUP BY asdasd.id )
+			select asd.*,qweqwe.annexnames from asd left join qweqwe on qweqwe.id = asd.id
+[2020-09-04T12:01:17.659] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_smtp where  game_id= '1'
+[2020-09-04T12:03:17.871] [DEBUG] debugLogger - Executing (default): with asd as (			
+				select * from gm_smtp where  game_id= '1'  and   plaform= '1' limit 50 offset 0 
+			)	,
+			dsa as (select * from gm_server),
+			ssss as( 
+			select asd.servername, string_to_array(string_agg(dsa.servername, ','),',') as servernames from asd LEFT JOIN dsa on dsa.serverid::jsonb <@ (asd.servername)
+			GROUP BY  asd.servername),
+			qweqweqwe  as (select asd.* ,ssss.servernames from asd left join ssss on ssss.servername = asd.servername),
+			asdasd as (select jsonb_array_elements(annex) ->> 'ID' as names, jsonb_array_elements(annex) ->> 'number' as numbers ,id  from  qweqweqwe ),
+			qweqwe as (select asdasd.id,string_to_array(string_agg(concat(gm_article.name,'  ',asdasd.numbers,'个'),','),',') as annexnames from asdasd left JOIN gm_article on gm_article.article_id = asdasd.names GROUP BY asdasd.id )
+			select asd.*,qweqwe.annexnames from asd left join qweqwe on qweqwe.id = asd.id
+[2020-09-04T12:03:17.877] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_smtp where  game_id= '1'  and   plaform= '1'
+[2020-09-04T12:03:19.233] [DEBUG] debugLogger - Executing (default): with asd as (			
+				select * from gm_smtp where  game_id= '1'  and   plaform= '2' limit 50 offset 0 
+			)	,
+			dsa as (select * from gm_server),
+			ssss as( 
+			select asd.servername, string_to_array(string_agg(dsa.servername, ','),',') as servernames from asd LEFT JOIN dsa on dsa.serverid::jsonb <@ (asd.servername)
+			GROUP BY  asd.servername),
+			qweqweqwe  as (select asd.* ,ssss.servernames from asd left join ssss on ssss.servername = asd.servername),
+			asdasd as (select jsonb_array_elements(annex) ->> 'ID' as names, jsonb_array_elements(annex) ->> 'number' as numbers ,id  from  qweqweqwe ),
+			qweqwe as (select asdasd.id,string_to_array(string_agg(concat(gm_article.name,'  ',asdasd.numbers,'个'),','),',') as annexnames from asdasd left JOIN gm_article on gm_article.article_id = asdasd.names GROUP BY asdasd.id )
+			select asd.*,qweqwe.annexnames from asd left join qweqwe on qweqwe.id = asd.id
+[2020-09-04T12:03:19.237] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_smtp where  game_id= '1'  and   plaform= '2'
+[2020-09-04T12:03:20.552] [DEBUG] debugLogger - Executing (default): with asd as (			
+				select * from gm_smtp where  game_id= '1' limit 50 offset 0 
+			)	,
+			dsa as (select * from gm_server),
+			ssss as( 
+			select asd.servername, string_to_array(string_agg(dsa.servername, ','),',') as servernames from asd LEFT JOIN dsa on dsa.serverid::jsonb <@ (asd.servername)
+			GROUP BY  asd.servername),
+			qweqweqwe  as (select asd.* ,ssss.servernames from asd left join ssss on ssss.servername = asd.servername),
+			asdasd as (select jsonb_array_elements(annex) ->> 'ID' as names, jsonb_array_elements(annex) ->> 'number' as numbers ,id  from  qweqweqwe ),
+			qweqwe as (select asdasd.id,string_to_array(string_agg(concat(gm_article.name,'  ',asdasd.numbers,'个'),','),',') as annexnames from asdasd left JOIN gm_article on gm_article.article_id = asdasd.names GROUP BY asdasd.id )
+			select asd.*,qweqwe.annexnames from asd left join qweqwe on qweqwe.id = asd.id
+[2020-09-04T12:03:20.555] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_smtp where  game_id= '1'
+[2020-09-04T12:03:20.788] [DEBUG] debugLogger - Executing (default): select MAX(id) from gm_smtp where game_id= 1
+[2020-09-04T12:03:21.095] [DEBUG] debugLogger - Executing (default): select name as label , article_id as value  , TRUE as leaf  from gm_article where gameid =1 and classification = 'undefined'
+[2020-09-04T12:03:21.148] [DEBUG] debugLogger - Executing (default): select classification as label , classification as value from gm_article where gameid =1 GROUP BY classification
+[2020-09-04T12:03:24.910] [DEBUG] debugLogger - Executing (default): with tableone as (select servername from gm_server GROUP BY servername having count(servername)>1),
+        tabletwo as (select min(id) from gm_server GROUP BY servername HAVING count(servername)>1),
+        tablethere as (select min(id) from gm_server GROUP BY servername HAVING count(servername)=1),
+        tablemain as (select * from gm_server)
+        select serverid as value ,servername as label from  tablemain where   tablemain.gameid = 1 and  tablemain.id in (select * from tablethere ) or  tablemain.servername in  (select * from  tableone) and tablemain.id in (select * from  tabletwo)
+[2020-09-04T12:05:09.818] [DEBUG] debugLogger - Executing (default): with asd as (			
+				select * from gm_smtp where  game_id= '1' limit 50 offset 0 
+			)	,
+			dsa as (select * from gm_server),
+			ssss as( 
+			select asd.servername, string_to_array(string_agg(dsa.servername, ','),',') as servernames from asd LEFT JOIN dsa on dsa.serverid::jsonb <@ (asd.servername)
+			GROUP BY  asd.servername),
+			qweqweqwe  as (select asd.* ,ssss.servernames from asd left join ssss on ssss.servername = asd.servername),
+			asdasd as (select jsonb_array_elements(annex) ->> 'ID' as names, jsonb_array_elements(annex) ->> 'number' as numbers ,id  from  qweqweqwe ),
+			qweqwe as (select asdasd.id,string_to_array(string_agg(concat(gm_article.name,'  ',asdasd.numbers,'个'),','),',') as annexnames from asdasd left JOIN gm_article on gm_article.article_id = asdasd.names GROUP BY asdasd.id )
+			select asd.*,qweqwe.annexnames from asd left join qweqwe on qweqwe.id = asd.id
+[2020-09-04T12:05:09.824] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_smtp where  game_id= '1'
+[2020-09-04T12:05:28.734] [DEBUG] debugLogger - Executing (default): with asd as (			
+				select * from gm_smtp where  game_id= '1' limit 50 offset 0 
+			)	,
+			dsa as (select * from gm_server),
+			ssss as( 
+			select asd.servername, string_to_array(string_agg(dsa.servername, ','),',') as servernames from asd LEFT JOIN dsa on dsa.serverid::jsonb <@ (asd.servername)
+			GROUP BY  asd.servername),
+			qweqweqwe  as (select asd.* ,ssss.servernames from asd left join ssss on ssss.servername = asd.servername),
+			asdasd as (select jsonb_array_elements(annex) ->> 'ID' as names, jsonb_array_elements(annex) ->> 'number' as numbers ,id  from  qweqweqwe ),
+			qweqwe as (select asdasd.id,string_to_array(string_agg(concat(gm_article.name,'  ',asdasd.numbers,'个'),','),',') as annexnames from asdasd left JOIN gm_article on gm_article.article_id = asdasd.names GROUP BY asdasd.id )
+			select asd.*,qweqwe.annexnames from asd left join qweqwe on qweqwe.id = asd.id
+[2020-09-04T12:05:28.740] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_smtp where  game_id= '1'
+[2020-09-04T12:05:30.323] [DEBUG] debugLogger - Executing (default): SELECT gm_game.game_name,gm_game.id from (gm_user LEFT JOIN gm_purview on gm_purview.uid=gm_user.id) LEFT JOIN gm_game on gm_game.id = gm_purview.gid where gm_user.id=1
+[2020-09-04T12:05:30.337] [DEBUG] debugLogger - Executing (default): select gm_url_purview.grede AS meta,gm_url.name,gm_url.url,gm_url.id AS urlid,gm_url.pid  from (((gm_user LEFT JOIN gm_purview ON gm_purview.uid=gm_user.id) LEFT JOIN gm_game on gm_game.id= gm_purview.gid)LEFT JOIN gm_url_purview on gm_url_purview.purview_id = gm_purview.id )left join gm_url on gm_url.id = gm_url_purview.url_id where gm_user.id=1 and gm_game.game_name = '空翼冒险团'
+[2020-09-04T12:05:30.354] [DEBUG] debugLogger - Executing (default): select id from gm_game where game_name='空翼冒险团'
+[2020-09-04T12:05:30.878] [DEBUG] debugLogger - Executing (default): select channel  as  values from gm_game_token where type='areaclothing'  and  gameid='1'
+[2020-09-04T12:05:31.057] [DEBUG] debugLogger - Executing (default): with tableone as (select servername from gm_server GROUP BY servername having count(servername)>1),
+        tabletwo as (select min(id) from gm_server GROUP BY servername HAVING count(servername)>1),
+        tablethere as (select min(id) from gm_server GROUP BY servername HAVING count(servername)=1),
+        tablemain as (select * from gm_server)
+        select serverid as value ,servername as label from  tablemain where   tablemain.gameid = 1 and  tablemain.id in (select * from tablethere ) or  tablemain.servername in  (select * from  tableone) and tablemain.id in (select * from  tabletwo)
+[2020-09-04T12:05:31.164] [DEBUG] debugLogger - Executing (default): select 
+        name as label ,
+        article_id as value  from gm_article where gameid=1
+[2020-09-04T12:05:31.979] [DEBUG] debugLogger - Executing (default): with asd as (			
+				select * from gm_smtp where  game_id= '1' limit 50 offset 0 
+			)	,
+			dsa as (select * from gm_server),
+			ssss as( 
+			select asd.servername, string_to_array(string_agg(dsa.servername, ','),',') as servernames from asd LEFT JOIN dsa on dsa.serverid::jsonb <@ (asd.servername)
+			GROUP BY  asd.servername),
+			qweqweqwe  as (select asd.* ,ssss.servernames from asd left join ssss on ssss.servername = asd.servername),
+			asdasd as (select jsonb_array_elements(annex) ->> 'ID' as names, jsonb_array_elements(annex) ->> 'number' as numbers ,id  from  qweqweqwe ),
+			qweqwe as (select asdasd.id,string_to_array(string_agg(concat(gm_article.name,'  ',asdasd.numbers,'个'),','),',') as annexnames from asdasd left JOIN gm_article on gm_article.article_id = asdasd.names GROUP BY asdasd.id )
+			select asd.*,qweqwe.annexnames from asd left join qweqwe on qweqwe.id = asd.id
+[2020-09-04T12:05:31.989] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_smtp where  game_id= '1'
+[2020-09-04T12:05:33.197] [DEBUG] debugLogger - Executing (default): with asd as (			
+				select * from gm_smtp where  game_id= '1' limit 50 offset 0 
+			)	,
+			dsa as (select * from gm_server),
+			ssss as( 
+			select asd.servername, string_to_array(string_agg(dsa.servername, ','),',') as servernames from asd LEFT JOIN dsa on dsa.serverid::jsonb <@ (asd.servername)
+			GROUP BY  asd.servername),
+			qweqweqwe  as (select asd.* ,ssss.servernames from asd left join ssss on ssss.servername = asd.servername),
+			asdasd as (select jsonb_array_elements(annex) ->> 'ID' as names, jsonb_array_elements(annex) ->> 'number' as numbers ,id  from  qweqweqwe ),
+			qweqwe as (select asdasd.id,string_to_array(string_agg(concat(gm_article.name,'  ',asdasd.numbers,'个'),','),',') as annexnames from asdasd left JOIN gm_article on gm_article.article_id = asdasd.names GROUP BY asdasd.id )
+			select asd.*,qweqwe.annexnames from asd left join qweqwe on qweqwe.id = asd.id
+[2020-09-04T12:05:33.205] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_smtp where  game_id= '1'
+[2020-09-04T12:06:03.398] [DEBUG] debugLogger - Executing (default): with asd as (			
+				select * from gm_smtp where  game_id= '1' limit 50 offset 0 
+			)	,
+			dsa as (select * from gm_server),
+			ssss as( 
+			select asd.servername, string_to_array(string_agg(dsa.servername, ','),',') as servernames from asd LEFT JOIN dsa on dsa.serverid::jsonb <@ (asd.servername)
+			GROUP BY  asd.servername),
+			qweqweqwe  as (select asd.* ,ssss.servernames from asd left join ssss on ssss.servername = asd.servername),
+			asdasd as (select jsonb_array_elements(annex) ->> 'ID' as names, jsonb_array_elements(annex) ->> 'number' as numbers ,id  from  qweqweqwe ),
+			qweqwe as (select asdasd.id,string_to_array(string_agg(concat(gm_article.name,'  ',asdasd.numbers,'个'),','),',') as annexnames from asdasd left JOIN gm_article on gm_article.article_id = asdasd.names GROUP BY asdasd.id )
+			select asd.*,qweqwe.annexnames from asd left join qweqwe on qweqwe.id = asd.id
+[2020-09-04T12:06:03.405] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_smtp where  game_id= '1'
+[2020-09-04T12:06:05.719] [DEBUG] debugLogger - Executing (default): select MAX(id) from gm_smtp where game_id= 1
+[2020-09-04T12:06:05.723] [DEBUG] debugLogger - Executing (default): select name as label , article_id as value  , TRUE as leaf  from gm_article where gameid =1 and classification = 'undefined'
+[2020-09-04T12:06:05.962] [DEBUG] debugLogger - Executing (default): select classification as label , classification as value from gm_article where gameid =1 GROUP BY classification
+[2020-09-04T12:17:32.034] [DEBUG] debugLogger - Executing (default): select channel  as  values from gm_game_token where type='areaclothing'  and  gameid='1'
+[2020-09-04T12:17:32.037] [DEBUG] debugLogger - Executing (default): select * from gm_server  where gameid='1' and (pid is null or  trim(pid) ='') order by id limit 20 offset (20*0)
+[2020-09-04T12:17:32.045] [DEBUG] debugLogger - Executing (default): select servername from gm_server where gameid='1'
+[2020-09-04T12:17:32.049] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_server where gameid='1' and (pid is null or  trim(pid) ='')
+[2020-09-04T12:17:32.053] [DEBUG] debugLogger - Executing (default): SELECT count(display) as num,display  from gm_server where id in ( SELECT id from gm_server where gameid='1' and (pid is null or  trim(pid) ='')  ORDER BY id limit 20 offset (20*0) ) GROUP BY display
+[2020-09-04T12:17:44.431] [DEBUG] debugLogger - Executing (default): select * from gm_server  where gameid='1' and (pid is null or  trim(pid) ='') order by id limit 20 offset (20*0)
+[2020-09-04T12:17:44.436] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_server where gameid='1' and (pid is null or  trim(pid) ='')
+[2020-09-04T12:17:44.438] [DEBUG] debugLogger - Executing (default): SELECT count(display) as num,display  from gm_server where id in ( SELECT id from gm_server where gameid='1' and (pid is null or  trim(pid) ='')  ORDER BY id limit 20 offset (20*0) ) GROUP BY display
+[2020-09-04T12:19:29.841] [DEBUG] debugLogger - Executing (default): update gm_server set display = '1' where  gameid='1' and serverid='2007161144245463'
+[2020-09-04T12:19:30.058] [DEBUG] debugLogger - Executing (default): select * from gm_server  where gameid='1' and (pid is null or  trim(pid) ='') order by id limit 20 offset (20*0)
+[2020-09-04T12:19:30.064] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_server where gameid='1' and (pid is null or  trim(pid) ='')
+[2020-09-04T12:19:30.066] [DEBUG] debugLogger - Executing (default): SELECT count(display) as num,display  from gm_server where id in ( SELECT id from gm_server where gameid='1' and (pid is null or  trim(pid) ='')  ORDER BY id limit 20 offset (20*0) ) GROUP BY display
+[2020-09-04T12:19:35.780] [DEBUG] debugLogger - Executing (default): select * from gm_server  where gameid='1' and (pid is null or  trim(pid) ='') order by id limit 20 offset (20*0)
+[2020-09-04T12:19:35.783] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_server where gameid='1' and (pid is null or  trim(pid) ='')
+[2020-09-04T12:19:35.784] [DEBUG] debugLogger - Executing (default): SELECT count(display) as num,display  from gm_server where id in ( SELECT id from gm_server where gameid='1' and (pid is null or  trim(pid) ='')  ORDER BY id limit 20 offset (20*0) ) GROUP BY display
+[2020-09-04T12:19:40.974] [DEBUG] debugLogger - Executing (default): update gm_server set display = '1' where  gameid='1' and serverid='2007161140259244'
+[2020-09-04T12:19:41.331] [DEBUG] debugLogger - Executing (default): select * from gm_server  where gameid='1' and (pid is null or  trim(pid) ='') order by id limit 20 offset (20*0)
+[2020-09-04T12:19:41.334] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_server where gameid='1' and (pid is null or  trim(pid) ='')
+[2020-09-04T12:19:41.335] [DEBUG] debugLogger - Executing (default): SELECT count(display) as num,display  from gm_server where id in ( SELECT id from gm_server where gameid='1' and (pid is null or  trim(pid) ='')  ORDER BY id limit 20 offset (20*0) ) GROUP BY display
+[2020-09-04T12:21:14.016] [DEBUG] debugLogger - Executing (default): select channel  as  values from gm_game_token where type='areaclothing'  and  gameid='1'
+[2020-09-04T12:21:14.105] [DEBUG] debugLogger - Executing (default): with tableone as (select servername from gm_server GROUP BY servername having count(servername)>1),
+        tabletwo as (select min(id) from gm_server GROUP BY servername HAVING count(servername)>1),
+        tablethere as (select min(id) from gm_server GROUP BY servername HAVING count(servername)=1),
+        tablemain as (select * from gm_server)
+        select serverid as value ,servername as label from  tablemain where   tablemain.gameid = 1 and  tablemain.id in (select * from tablethere ) or  tablemain.servername in  (select * from  tableone) and tablemain.id in (select * from  tabletwo)
+[2020-09-04T12:21:14.346] [DEBUG] debugLogger - Executing (default): select 
+        name as label ,
+        article_id as value  from gm_article where gameid=1
+[2020-09-04T12:21:14.685] [DEBUG] debugLogger - Executing (default): with asd as (			
+				select * from gm_smtp where  game_id= '1' limit 50 offset 0 
+			)	,
+			dsa as (select * from gm_server),
+			ssss as( 
+			select asd.servername, string_to_array(string_agg(dsa.servername, ','),',') as servernames from asd LEFT JOIN dsa on dsa.serverid::jsonb <@ (asd.servername)
+			GROUP BY  asd.servername),
+			qweqweqwe  as (select asd.* ,ssss.servernames from asd left join ssss on ssss.servername = asd.servername),
+			asdasd as (select jsonb_array_elements(annex) ->> 'ID' as names, jsonb_array_elements(annex) ->> 'number' as numbers ,id  from  qweqweqwe ),
+			qweqwe as (select asdasd.id,string_to_array(string_agg(concat(gm_article.name,'  ',asdasd.numbers,'个'),','),',') as annexnames from asdasd left JOIN gm_article on gm_article.article_id = asdasd.names GROUP BY asdasd.id )
+			select asd.*,qweqwe.annexnames from asd left join qweqwe on qweqwe.id = asd.id
+[2020-09-04T12:21:14.692] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_smtp where  game_id= '1'
+[2020-09-04T12:21:52.739] [DEBUG] debugLogger - Executing (default): select channel  as  values from gm_game_token where type='areaclothing'  and  gameid='1'
+[2020-09-04T12:21:52.763] [DEBUG] debugLogger - Executing (default): with tableone as (select servername from gm_server GROUP BY servername having count(servername)>1),
+        tabletwo as (select min(id) from gm_server GROUP BY servername HAVING count(servername)>1),
+        tablethere as (select min(id) from gm_server GROUP BY servername HAVING count(servername)=1),
+        tablemain as (select * from gm_server)
+        select serverid as value ,servername as label from  tablemain where   tablemain.gameid = 1 and  tablemain.id in (select * from tablethere ) or  tablemain.servername in  (select * from  tableone) and tablemain.id in (select * from  tabletwo)
+[2020-09-04T12:21:53.095] [DEBUG] debugLogger - Executing (default): select 
+        name as label ,
+        article_id as value  from gm_article where gameid=1
+[2020-09-04T12:21:53.932] [DEBUG] debugLogger - Executing (default): with asd as (			
+				select * from gm_smtp where  game_id= '1' limit 50 offset 0 
+			)	,
+			dsa as (select * from gm_server),
+			ssss as( 
+			select asd.servername, string_to_array(string_agg(dsa.servername, ','),',') as servernames from asd LEFT JOIN dsa on dsa.serverid::jsonb <@ (asd.servername)
+			GROUP BY  asd.servername),
+			qweqweqwe  as (select asd.* ,ssss.servernames from asd left join ssss on ssss.servername = asd.servername),
+			asdasd as (select jsonb_array_elements(annex) ->> 'ID' as names, jsonb_array_elements(annex) ->> 'number' as numbers ,id  from  qweqweqwe ),
+			qweqwe as (select asdasd.id,string_to_array(string_agg(concat(gm_article.name,'  ',asdasd.numbers,'个'),','),',') as annexnames from asdasd left JOIN gm_article on gm_article.article_id = asdasd.names GROUP BY asdasd.id )
+			select asd.*,qweqwe.annexnames from asd left join qweqwe on qweqwe.id = asd.id
+[2020-09-04T12:21:53.937] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_smtp where  game_id= '1'
+[2020-09-04T12:22:02.438] [DEBUG] debugLogger - Executing (default): with asd as (			
+				select * from gm_smtp where  game_id= '1' limit 50 offset 0 
+			)	,
+			dsa as (select * from gm_server),
+			ssss as( 
+			select asd.servername, string_to_array(string_agg(dsa.servername, ','),',') as servernames from asd LEFT JOIN dsa on dsa.serverid::jsonb <@ (asd.servername)
+			GROUP BY  asd.servername),
+			qweqweqwe  as (select asd.* ,ssss.servernames from asd left join ssss on ssss.servername = asd.servername),
+			asdasd as (select jsonb_array_elements(annex) ->> 'ID' as names, jsonb_array_elements(annex) ->> 'number' as numbers ,id  from  qweqweqwe ),
+			qweqwe as (select asdasd.id,string_to_array(string_agg(concat(gm_article.name,'  ',asdasd.numbers,'个'),','),',') as annexnames from asdasd left JOIN gm_article on gm_article.article_id = asdasd.names GROUP BY asdasd.id )
+			select asd.*,qweqwe.annexnames from asd left join qweqwe on qweqwe.id = asd.id
+[2020-09-04T12:22:02.442] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_smtp where  game_id= '1'
+[2020-09-04T12:22:03.816] [DEBUG] debugLogger - Executing (default): with asd as (			
+				select * from gm_smtp where  game_id= '1' limit 50 offset 0 
+			)	,
+			dsa as (select * from gm_server),
+			ssss as( 
+			select asd.servername, string_to_array(string_agg(dsa.servername, ','),',') as servernames from asd LEFT JOIN dsa on dsa.serverid::jsonb <@ (asd.servername)
+			GROUP BY  asd.servername),
+			qweqweqwe  as (select asd.* ,ssss.servernames from asd left join ssss on ssss.servername = asd.servername),
+			asdasd as (select jsonb_array_elements(annex) ->> 'ID' as names, jsonb_array_elements(annex) ->> 'number' as numbers ,id  from  qweqweqwe ),
+			qweqwe as (select asdasd.id,string_to_array(string_agg(concat(gm_article.name,'  ',asdasd.numbers,'个'),','),',') as annexnames from asdasd left JOIN gm_article on gm_article.article_id = asdasd.names GROUP BY asdasd.id )
+			select asd.*,qweqwe.annexnames from asd left join qweqwe on qweqwe.id = asd.id
+[2020-09-04T12:22:03.819] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_smtp where  game_id= '1'
+[2020-09-04T12:22:04.573] [DEBUG] debugLogger - Executing (default): with asd as (			
+				select * from gm_smtp where  game_id= '1' limit 50 offset 0 
+			)	,
+			dsa as (select * from gm_server),
+			ssss as( 
+			select asd.servername, string_to_array(string_agg(dsa.servername, ','),',') as servernames from asd LEFT JOIN dsa on dsa.serverid::jsonb <@ (asd.servername)
+			GROUP BY  asd.servername),
+			qweqweqwe  as (select asd.* ,ssss.servernames from asd left join ssss on ssss.servername = asd.servername),
+			asdasd as (select jsonb_array_elements(annex) ->> 'ID' as names, jsonb_array_elements(annex) ->> 'number' as numbers ,id  from  qweqweqwe ),
+			qweqwe as (select asdasd.id,string_to_array(string_agg(concat(gm_article.name,'  ',asdasd.numbers,'个'),','),',') as annexnames from asdasd left JOIN gm_article on gm_article.article_id = asdasd.names GROUP BY asdasd.id )
+			select asd.*,qweqwe.annexnames from asd left join qweqwe on qweqwe.id = asd.id
+[2020-09-04T12:22:04.580] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_smtp where  game_id= '1'
+[2020-09-04T12:22:04.987] [DEBUG] debugLogger - Executing (default): with asd as (			
+				select * from gm_smtp where  game_id= '1' limit 50 offset 0 
+			)	,
+			dsa as (select * from gm_server),
+			ssss as( 
+			select asd.servername, string_to_array(string_agg(dsa.servername, ','),',') as servernames from asd LEFT JOIN dsa on dsa.serverid::jsonb <@ (asd.servername)
+			GROUP BY  asd.servername),
+			qweqweqwe  as (select asd.* ,ssss.servernames from asd left join ssss on ssss.servername = asd.servername),
+			asdasd as (select jsonb_array_elements(annex) ->> 'ID' as names, jsonb_array_elements(annex) ->> 'number' as numbers ,id  from  qweqweqwe ),
+			qweqwe as (select asdasd.id,string_to_array(string_agg(concat(gm_article.name,'  ',asdasd.numbers,'个'),','),',') as annexnames from asdasd left JOIN gm_article on gm_article.article_id = asdasd.names GROUP BY asdasd.id )
+			select asd.*,qweqwe.annexnames from asd left join qweqwe on qweqwe.id = asd.id
+[2020-09-04T12:22:04.991] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_smtp where  game_id= '1'
+[2020-09-04T12:22:08.723] [DEBUG] debugLogger - Executing (default): select channel  as  values from gm_game_token where type='areaclothing'  and  gameid='1'
+[2020-09-04T12:22:08.975] [DEBUG] debugLogger - Executing (default): with tableone as (select servername from gm_server GROUP BY servername having count(servername)>1),
+        tabletwo as (select min(id) from gm_server GROUP BY servername HAVING count(servername)>1),
+        tablethere as (select min(id) from gm_server GROUP BY servername HAVING count(servername)=1),
+        tablemain as (select * from gm_server)
+        select serverid as value ,servername as label from  tablemain where   tablemain.gameid = 1 and  tablemain.id in (select * from tablethere ) or  tablemain.servername in  (select * from  tableone) and tablemain.id in (select * from  tabletwo)
+[2020-09-04T12:22:09.091] [DEBUG] debugLogger - Executing (default): select 
+        name as label ,
+        article_id as value  from gm_article where gameid=1
+[2020-09-04T12:22:09.743] [DEBUG] debugLogger - Executing (default): with asd as (			
+				select * from gm_smtp where  game_id= '1' limit 50 offset 0 
+			)	,
+			dsa as (select * from gm_server),
+			ssss as( 
+			select asd.servername, string_to_array(string_agg(dsa.servername, ','),',') as servernames from asd LEFT JOIN dsa on dsa.serverid::jsonb <@ (asd.servername)
+			GROUP BY  asd.servername),
+			qweqweqwe  as (select asd.* ,ssss.servernames from asd left join ssss on ssss.servername = asd.servername),
+			asdasd as (select jsonb_array_elements(annex) ->> 'ID' as names, jsonb_array_elements(annex) ->> 'number' as numbers ,id  from  qweqweqwe ),
+			qweqwe as (select asdasd.id,string_to_array(string_agg(concat(gm_article.name,'  ',asdasd.numbers,'个'),','),',') as annexnames from asdasd left JOIN gm_article on gm_article.article_id = asdasd.names GROUP BY asdasd.id )
+			select asd.*,qweqwe.annexnames from asd left join qweqwe on qweqwe.id = asd.id
+[2020-09-04T12:22:09.747] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_smtp where  game_id= '1'
+[2020-09-04T12:22:45.963] [DEBUG] debugLogger - Executing (default): SELECT gm_game.game_name,gm_game.id from (gm_user LEFT JOIN gm_purview on gm_purview.uid=gm_user.id) LEFT JOIN gm_game on gm_game.id = gm_purview.gid where gm_user.id=1
+[2020-09-04T12:22:45.970] [DEBUG] debugLogger - Executing (default): select gm_url_purview.grede AS meta,gm_url.name,gm_url.url,gm_url.id AS urlid,gm_url.pid  from (((gm_user LEFT JOIN gm_purview ON gm_purview.uid=gm_user.id) LEFT JOIN gm_game on gm_game.id= gm_purview.gid)LEFT JOIN gm_url_purview on gm_url_purview.purview_id = gm_purview.id )left join gm_url on gm_url.id = gm_url_purview.url_id where gm_user.id=1 and gm_game.game_name = '空翼冒险团'
+[2020-09-04T12:22:45.979] [DEBUG] debugLogger - Executing (default): select id from gm_game where game_name='空翼冒险团'
+[2020-09-04T12:22:46.353] [DEBUG] debugLogger - Executing (default): select channel  as  values from gm_game_token where type='areaclothing'  and  gameid='1'
+[2020-09-04T12:22:46.426] [DEBUG] debugLogger - Executing (default): with tableone as (select servername from gm_server GROUP BY servername having count(servername)>1),
+        tabletwo as (select min(id) from gm_server GROUP BY servername HAVING count(servername)>1),
+        tablethere as (select min(id) from gm_server GROUP BY servername HAVING count(servername)=1),
+        tablemain as (select * from gm_server)
+        select serverid as value ,servername as label from  tablemain where   tablemain.gameid = 1 and  tablemain.id in (select * from tablethere ) or  tablemain.servername in  (select * from  tableone) and tablemain.id in (select * from  tabletwo)
+[2020-09-04T12:22:46.810] [DEBUG] debugLogger - Executing (default): select 
+        name as label ,
+        article_id as value  from gm_article where gameid=1
+[2020-09-04T12:22:48.695] [DEBUG] debugLogger - Executing (default): with asd as (			
+				select * from gm_smtp where  game_id= '1' limit 50 offset 0 
+			)	,
+			dsa as (select * from gm_server),
+			ssss as( 
+			select asd.servername, string_to_array(string_agg(dsa.servername, ','),',') as servernames from asd LEFT JOIN dsa on dsa.serverid::jsonb <@ (asd.servername)
+			GROUP BY  asd.servername),
+			qweqweqwe  as (select asd.* ,ssss.servernames from asd left join ssss on ssss.servername = asd.servername),
+			asdasd as (select jsonb_array_elements(annex) ->> 'ID' as names, jsonb_array_elements(annex) ->> 'number' as numbers ,id  from  qweqweqwe ),
+			qweqwe as (select asdasd.id,string_to_array(string_agg(concat(gm_article.name,'  ',asdasd.numbers,'个'),','),',') as annexnames from asdasd left JOIN gm_article on gm_article.article_id = asdasd.names GROUP BY asdasd.id )
+			select asd.*,qweqwe.annexnames from asd left join qweqwe on qweqwe.id = asd.id
+[2020-09-04T12:22:48.701] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_smtp where  game_id= '1'
+[2020-09-04T12:22:52.052] [DEBUG] debugLogger - Executing (default): with asd as (			
+				select * from gm_smtp where  game_id= '1' limit 50 offset 0 
+			)	,
+			dsa as (select * from gm_server),
+			ssss as( 
+			select asd.servername, string_to_array(string_agg(dsa.servername, ','),',') as servernames from asd LEFT JOIN dsa on dsa.serverid::jsonb <@ (asd.servername)
+			GROUP BY  asd.servername),
+			qweqweqwe  as (select asd.* ,ssss.servernames from asd left join ssss on ssss.servername = asd.servername),
+			asdasd as (select jsonb_array_elements(annex) ->> 'ID' as names, jsonb_array_elements(annex) ->> 'number' as numbers ,id  from  qweqweqwe ),
+			qweqwe as (select asdasd.id,string_to_array(string_agg(concat(gm_article.name,'  ',asdasd.numbers,'个'),','),',') as annexnames from asdasd left JOIN gm_article on gm_article.article_id = asdasd.names GROUP BY asdasd.id )
+			select asd.*,qweqwe.annexnames from asd left join qweqwe on qweqwe.id = asd.id
+[2020-09-04T12:22:52.056] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_smtp where  game_id= '1'
+[2020-09-04T12:22:53.837] [DEBUG] debugLogger - Executing (default): select channel  as  values from gm_game_token where type='areaclothing'  and  gameid='1'
+[2020-09-04T12:22:54.175] [DEBUG] debugLogger - Executing (default): with tableone as (select servername from gm_server GROUP BY servername having count(servername)>1),
+        tabletwo as (select min(id) from gm_server GROUP BY servername HAVING count(servername)>1),
+        tablethere as (select min(id) from gm_server GROUP BY servername HAVING count(servername)=1),
+        tablemain as (select * from gm_server)
+        select serverid as value ,servername as label from  tablemain where   tablemain.gameid = 1 and  tablemain.id in (select * from tablethere ) or  tablemain.servername in  (select * from  tableone) and tablemain.id in (select * from  tabletwo)
+[2020-09-04T12:22:54.425] [DEBUG] debugLogger - Executing (default): select 
+        name as label ,
+        article_id as value  from gm_article where gameid=1
+[2020-09-04T12:22:54.775] [DEBUG] debugLogger - Executing (default): with asd as (			
+				select * from gm_smtp where  game_id= '1' limit 50 offset 0 
+			)	,
+			dsa as (select * from gm_server),
+			ssss as( 
+			select asd.servername, string_to_array(string_agg(dsa.servername, ','),',') as servernames from asd LEFT JOIN dsa on dsa.serverid::jsonb <@ (asd.servername)
+			GROUP BY  asd.servername),
+			qweqweqwe  as (select asd.* ,ssss.servernames from asd left join ssss on ssss.servername = asd.servername),
+			asdasd as (select jsonb_array_elements(annex) ->> 'ID' as names, jsonb_array_elements(annex) ->> 'number' as numbers ,id  from  qweqweqwe ),
+			qweqwe as (select asdasd.id,string_to_array(string_agg(concat(gm_article.name,'  ',asdasd.numbers,'个'),','),',') as annexnames from asdasd left JOIN gm_article on gm_article.article_id = asdasd.names GROUP BY asdasd.id )
+			select asd.*,qweqwe.annexnames from asd left join qweqwe on qweqwe.id = asd.id
+[2020-09-04T12:22:54.779] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_smtp where  game_id= '1'
+[2020-09-04T12:27:09.253] [DEBUG] debugLogger - Executing (default): SELECT gm_game.game_name,gm_game.id from (gm_user LEFT JOIN gm_purview on gm_purview.uid=gm_user.id) LEFT JOIN gm_game on gm_game.id = gm_purview.gid where gm_user.id=1
+[2020-09-04T12:27:09.259] [DEBUG] debugLogger - Executing (default): select gm_url_purview.grede AS meta,gm_url.name,gm_url.url,gm_url.id AS urlid,gm_url.pid  from (((gm_user LEFT JOIN gm_purview ON gm_purview.uid=gm_user.id) LEFT JOIN gm_game on gm_game.id= gm_purview.gid)LEFT JOIN gm_url_purview on gm_url_purview.purview_id = gm_purview.id )left join gm_url on gm_url.id = gm_url_purview.url_id where gm_user.id=1 and gm_game.game_name = '空翼冒险团'
+[2020-09-04T12:27:09.271] [DEBUG] debugLogger - Executing (default): select id from gm_game where game_name='空翼冒险团'
+[2020-09-04T12:27:09.647] [DEBUG] debugLogger - Executing (default): select channel  as  values from gm_game_token where type='areaclothing'  and  gameid='1'
+[2020-09-04T12:27:09.765] [DEBUG] debugLogger - Executing (default): with tableone as (select servername from gm_server GROUP BY servername having count(servername)>1),
+        tabletwo as (select min(id) from gm_server GROUP BY servername HAVING count(servername)>1),
+        tablethere as (select min(id) from gm_server GROUP BY servername HAVING count(servername)=1),
+        tablemain as (select * from gm_server)
+        select serverid as value ,servername as label from  tablemain where   tablemain.gameid = 1 and  tablemain.id in (select * from tablethere ) or  tablemain.servername in  (select * from  tableone) and tablemain.id in (select * from  tabletwo)
+[2020-09-04T12:27:09.840] [DEBUG] debugLogger - Executing (default): select 
+        name as label ,
+        article_id as value  from gm_article where gameid=1
+[2020-09-04T12:27:12.672] [DEBUG] debugLogger - Executing (default): with asd as (			
+				select * from gm_smtp where  game_id= '1' limit 50 offset 0 
+			)	,
+			dsa as (select * from gm_server),
+			ssss as( 
+			select asd.servername, string_to_array(string_agg(dsa.servername, ','),',') as servernames from asd LEFT JOIN dsa on dsa.serverid::jsonb <@ (asd.servername)
+			GROUP BY  asd.servername),
+			qweqweqwe  as (select asd.* ,ssss.servernames from asd left join ssss on ssss.servername = asd.servername),
+			asdasd as (select jsonb_array_elements(annex) ->> 'ID' as names, jsonb_array_elements(annex) ->> 'number' as numbers ,id  from  qweqweqwe ),
+			qweqwe as (select asdasd.id,string_to_array(string_agg(concat(gm_article.name,'  ',asdasd.numbers,'个'),','),',') as annexnames from asdasd left JOIN gm_article on gm_article.article_id = asdasd.names GROUP BY asdasd.id )
+			select asd.*,qweqwe.annexnames from asd left join qweqwe on qweqwe.id = asd.id
+[2020-09-04T12:27:12.677] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_smtp where  game_id= '1'
+[2020-09-04T12:28:23.465] [DEBUG] debugLogger - Executing (default): SELECT gm_game.game_name,gm_game.id from (gm_user LEFT JOIN gm_purview on gm_purview.uid=gm_user.id) LEFT JOIN gm_game on gm_game.id = gm_purview.gid where gm_user.id=1
+[2020-09-04T12:28:23.471] [DEBUG] debugLogger - Executing (default): select gm_url_purview.grede AS meta,gm_url.name,gm_url.url,gm_url.id AS urlid,gm_url.pid  from (((gm_user LEFT JOIN gm_purview ON gm_purview.uid=gm_user.id) LEFT JOIN gm_game on gm_game.id= gm_purview.gid)LEFT JOIN gm_url_purview on gm_url_purview.purview_id = gm_purview.id )left join gm_url on gm_url.id = gm_url_purview.url_id where gm_user.id=1 and gm_game.game_name = '空翼冒险团'
+[2020-09-04T12:28:23.486] [DEBUG] debugLogger - Executing (default): select id from gm_game where game_name='空翼冒险团'
+[2020-09-04T12:28:23.840] [DEBUG] debugLogger - Executing (default): select channel  as  values from gm_game_token where type='areaclothing'  and  gameid='1'
+[2020-09-04T12:28:23.936] [DEBUG] debugLogger - Executing (default): with tableone as (select servername from gm_server GROUP BY servername having count(servername)>1),
+        tabletwo as (select min(id) from gm_server GROUP BY servername HAVING count(servername)>1),
+        tablethere as (select min(id) from gm_server GROUP BY servername HAVING count(servername)=1),
+        tablemain as (select * from gm_server)
+        select serverid as value ,servername as label from  tablemain where   tablemain.gameid = 1 and  tablemain.id in (select * from tablethere ) or  tablemain.servername in  (select * from  tableone) and tablemain.id in (select * from  tabletwo)
+[2020-09-04T12:28:24.003] [DEBUG] debugLogger - Executing (default): select 
+        name as label ,
+        article_id as value  from gm_article where gameid=1
+[2020-09-04T12:28:25.583] [DEBUG] debugLogger - Executing (default): with asd as (			
+				select * from gm_smtp where  game_id= '1' limit 50 offset 0 
+			)	,
+			dsa as (select * from gm_server),
+			ssss as( 
+			select asd.servername, string_to_array(string_agg(dsa.servername, ','),',') as servernames from asd LEFT JOIN dsa on dsa.serverid::jsonb <@ (asd.servername)
+			GROUP BY  asd.servername),
+			qweqweqwe  as (select asd.* ,ssss.servernames from asd left join ssss on ssss.servername = asd.servername),
+			asdasd as (select jsonb_array_elements(annex) ->> 'ID' as names, jsonb_array_elements(annex) ->> 'number' as numbers ,id  from  qweqweqwe ),
+			qweqwe as (select asdasd.id,string_to_array(string_agg(concat(gm_article.name,'  ',asdasd.numbers,'个'),','),',') as annexnames from asdasd left JOIN gm_article on gm_article.article_id = asdasd.names GROUP BY asdasd.id )
+			select asd.*,qweqwe.annexnames from asd left join qweqwe on qweqwe.id = asd.id
+[2020-09-04T12:28:25.591] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_smtp where  game_id= '1'
+[2020-09-04T12:32:33.926] [DEBUG] debugLogger - Executing (default): SELECT gm_game.game_name,gm_game.id from (gm_user LEFT JOIN gm_purview on gm_purview.uid=gm_user.id) LEFT JOIN gm_game on gm_game.id = gm_purview.gid where gm_user.id=1
+[2020-09-04T12:32:33.935] [DEBUG] debugLogger - Executing (default): select gm_url_purview.grede AS meta,gm_url.name,gm_url.url,gm_url.id AS urlid,gm_url.pid  from (((gm_user LEFT JOIN gm_purview ON gm_purview.uid=gm_user.id) LEFT JOIN gm_game on gm_game.id= gm_purview.gid)LEFT JOIN gm_url_purview on gm_url_purview.purview_id = gm_purview.id )left join gm_url on gm_url.id = gm_url_purview.url_id where gm_user.id=1 and gm_game.game_name = '空翼冒险团'
+[2020-09-04T12:32:33.945] [DEBUG] debugLogger - Executing (default): select id from gm_game where game_name='空翼冒险团'
+[2020-09-04T12:32:34.290] [DEBUG] debugLogger - Executing (default): select channel  as  values from gm_game_token where type='areaclothing'  and  gameid='1'
+[2020-09-04T12:32:34.392] [DEBUG] debugLogger - Executing (default): with tableone as (select servername from gm_server GROUP BY servername having count(servername)>1),
+        tabletwo as (select min(id) from gm_server GROUP BY servername HAVING count(servername)>1),
+        tablethere as (select min(id) from gm_server GROUP BY servername HAVING count(servername)=1),
+        tablemain as (select * from gm_server)
+        select serverid as value ,servername as label from  tablemain where   tablemain.gameid = 1 and  tablemain.id in (select * from tablethere ) or  tablemain.servername in  (select * from  tableone) and tablemain.id in (select * from  tabletwo)
+[2020-09-04T12:32:34.741] [DEBUG] debugLogger - Executing (default): select 
+        name as label ,
+        article_id as value  from gm_article where gameid=1
+[2020-09-04T12:32:35.655] [DEBUG] debugLogger - Executing (default): with asd as (			
+				select * from gm_smtp where  game_id= '1' limit 50 offset 0 
+			)	,
+			dsa as (select * from gm_server),
+			ssss as( 
+			select asd.servername, string_to_array(string_agg(dsa.servername, ','),',') as servernames from asd LEFT JOIN dsa on dsa.serverid::jsonb <@ (asd.servername)
+			GROUP BY  asd.servername),
+			qweqweqwe  as (select asd.* ,ssss.servernames from asd left join ssss on ssss.servername = asd.servername),
+			asdasd as (select jsonb_array_elements(annex) ->> 'ID' as names, jsonb_array_elements(annex) ->> 'number' as numbers ,id  from  qweqweqwe ),
+			qweqwe as (select asdasd.id,string_to_array(string_agg(concat(gm_article.name,'  ',asdasd.numbers,'个'),','),',') as annexnames from asdasd left JOIN gm_article on gm_article.article_id = asdasd.names GROUP BY asdasd.id )
+			select asd.*,qweqwe.annexnames from asd left join qweqwe on qweqwe.id = asd.id
+[2020-09-04T12:32:35.660] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_smtp where  game_id= '1'
+[2020-09-04T12:34:06.411] [DEBUG] debugLogger - Executing (default): SELECT gm_game.game_name,gm_game.id from (gm_user LEFT JOIN gm_purview on gm_purview.uid=gm_user.id) LEFT JOIN gm_game on gm_game.id = gm_purview.gid where gm_user.id=1
+[2020-09-04T12:34:06.419] [DEBUG] debugLogger - Executing (default): select gm_url_purview.grede AS meta,gm_url.name,gm_url.url,gm_url.id AS urlid,gm_url.pid  from (((gm_user LEFT JOIN gm_purview ON gm_purview.uid=gm_user.id) LEFT JOIN gm_game on gm_game.id= gm_purview.gid)LEFT JOIN gm_url_purview on gm_url_purview.purview_id = gm_purview.id )left join gm_url on gm_url.id = gm_url_purview.url_id where gm_user.id=1 and gm_game.game_name = '空翼冒险团'
+[2020-09-04T12:34:06.430] [DEBUG] debugLogger - Executing (default): select id from gm_game where game_name='空翼冒险团'
+[2020-09-04T12:34:06.868] [DEBUG] debugLogger - Executing (default): select channel  as  values from gm_game_token where type='areaclothing'  and  gameid='1'
+[2020-09-04T12:34:06.979] [DEBUG] debugLogger - Executing (default): with tableone as (select servername from gm_server GROUP BY servername having count(servername)>1),
+        tabletwo as (select min(id) from gm_server GROUP BY servername HAVING count(servername)>1),
+        tablethere as (select min(id) from gm_server GROUP BY servername HAVING count(servername)=1),
+        tablemain as (select * from gm_server)
+        select serverid as value ,servername as label from  tablemain where   tablemain.gameid = 1 and  tablemain.id in (select * from tablethere ) or  tablemain.servername in  (select * from  tableone) and tablemain.id in (select * from  tabletwo)
+[2020-09-04T12:34:07.049] [DEBUG] debugLogger - Executing (default): select 
+        name as label ,
+        article_id as value  from gm_article where gameid=1
+[2020-09-04T12:34:10.966] [DEBUG] debugLogger - Executing (default): with asd as (			
+				select * from gm_smtp where  game_id= '1' limit 50 offset 0 
+			)	,
+			dsa as (select * from gm_server),
+			ssss as( 
+			select asd.servername, string_to_array(string_agg(dsa.servername, ','),',') as servernames from asd LEFT JOIN dsa on dsa.serverid::jsonb <@ (asd.servername)
+			GROUP BY  asd.servername),
+			qweqweqwe  as (select asd.* ,ssss.servernames from asd left join ssss on ssss.servername = asd.servername),
+			asdasd as (select jsonb_array_elements(annex) ->> 'ID' as names, jsonb_array_elements(annex) ->> 'number' as numbers ,id  from  qweqweqwe ),
+			qweqwe as (select asdasd.id,string_to_array(string_agg(concat(gm_article.name,'  ',asdasd.numbers,'个'),','),',') as annexnames from asdasd left JOIN gm_article on gm_article.article_id = asdasd.names GROUP BY asdasd.id )
+			select asd.*,qweqwe.annexnames from asd left join qweqwe on qweqwe.id = asd.id
+[2020-09-04T12:34:10.975] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_smtp where  game_id= '1'
+[2020-09-04T12:37:03.293] [DEBUG] debugLogger - Executing (default): SELECT gm_game.game_name,gm_game.id from (gm_user LEFT JOIN gm_purview on gm_purview.uid=gm_user.id) LEFT JOIN gm_game on gm_game.id = gm_purview.gid where gm_user.id=1
+[2020-09-04T12:37:03.300] [DEBUG] debugLogger - Executing (default): select gm_url_purview.grede AS meta,gm_url.name,gm_url.url,gm_url.id AS urlid,gm_url.pid  from (((gm_user LEFT JOIN gm_purview ON gm_purview.uid=gm_user.id) LEFT JOIN gm_game on gm_game.id= gm_purview.gid)LEFT JOIN gm_url_purview on gm_url_purview.purview_id = gm_purview.id )left join gm_url on gm_url.id = gm_url_purview.url_id where gm_user.id=1 and gm_game.game_name = '空翼冒险团'
+[2020-09-04T12:37:03.318] [DEBUG] debugLogger - Executing (default): select id from gm_game where game_name='空翼冒险团'
+[2020-09-04T12:37:03.669] [DEBUG] debugLogger - Executing (default): select channel  as  values from gm_game_token where type='areaclothing'  and  gameid='1'
+[2020-09-04T12:37:03.743] [DEBUG] debugLogger - Executing (default): with tableone as (select servername from gm_server GROUP BY servername having count(servername)>1),
+        tabletwo as (select min(id) from gm_server GROUP BY servername HAVING count(servername)>1),
+        tablethere as (select min(id) from gm_server GROUP BY servername HAVING count(servername)=1),
+        tablemain as (select * from gm_server)
+        select serverid as value ,servername as label from  tablemain where   tablemain.gameid = 1 and  tablemain.id in (select * from tablethere ) or  tablemain.servername in  (select * from  tableone) and tablemain.id in (select * from  tabletwo)
+[2020-09-04T12:37:04.096] [DEBUG] debugLogger - Executing (default): select 
+        name as label ,
+        article_id as value  from gm_article where gameid=1
+[2020-09-04T12:37:05.017] [DEBUG] debugLogger - Executing (default): SELECT gm_game.game_name,gm_game.id from (gm_user LEFT JOIN gm_purview on gm_purview.uid=gm_user.id) LEFT JOIN gm_game on gm_game.id = gm_purview.gid where gm_user.id=1
+[2020-09-04T12:37:05.020] [DEBUG] debugLogger - Executing (default): select gm_url_purview.grede AS meta,gm_url.name,gm_url.url,gm_url.id AS urlid,gm_url.pid  from (((gm_user LEFT JOIN gm_purview ON gm_purview.uid=gm_user.id) LEFT JOIN gm_game on gm_game.id= gm_purview.gid)LEFT JOIN gm_url_purview on gm_url_purview.purview_id = gm_purview.id )left join gm_url on gm_url.id = gm_url_purview.url_id where gm_user.id=1 and gm_game.game_name = '空翼冒险团'
+[2020-09-04T12:37:05.091] [DEBUG] debugLogger - Executing (default): select id from gm_game where game_name='空翼冒险团'
+[2020-09-04T12:37:05.534] [DEBUG] debugLogger - Executing (default): select channel  as  values from gm_game_token where type='areaclothing'  and  gameid='1'
+[2020-09-04T12:37:05.600] [DEBUG] debugLogger - Executing (default): with tableone as (select servername from gm_server GROUP BY servername having count(servername)>1),
+        tabletwo as (select min(id) from gm_server GROUP BY servername HAVING count(servername)>1),
+        tablethere as (select min(id) from gm_server GROUP BY servername HAVING count(servername)=1),
+        tablemain as (select * from gm_server)
+        select serverid as value ,servername as label from  tablemain where   tablemain.gameid = 1 and  tablemain.id in (select * from tablethere ) or  tablemain.servername in  (select * from  tableone) and tablemain.id in (select * from  tabletwo)
+[2020-09-04T12:37:05.983] [DEBUG] debugLogger - Executing (default): select 
+        name as label ,
+        article_id as value  from gm_article where gameid=1
+[2020-09-04T12:37:08.401] [DEBUG] debugLogger - Executing (default): with asd as (			
+				select * from gm_smtp where  game_id= '1' limit 50 offset 0 
+			)	,
+			dsa as (select * from gm_server),
+			ssss as( 
+			select asd.servername, string_to_array(string_agg(dsa.servername, ','),',') as servernames from asd LEFT JOIN dsa on dsa.serverid::jsonb <@ (asd.servername)
+			GROUP BY  asd.servername),
+			qweqweqwe  as (select asd.* ,ssss.servernames from asd left join ssss on ssss.servername = asd.servername),
+			asdasd as (select jsonb_array_elements(annex) ->> 'ID' as names, jsonb_array_elements(annex) ->> 'number' as numbers ,id  from  qweqweqwe ),
+			qweqwe as (select asdasd.id,string_to_array(string_agg(concat(gm_article.name,'  ',asdasd.numbers,'个'),','),',') as annexnames from asdasd left JOIN gm_article on gm_article.article_id = asdasd.names GROUP BY asdasd.id )
+			select asd.*,qweqwe.annexnames from asd left join qweqwe on qweqwe.id = asd.id
+[2020-09-04T12:37:08.406] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_smtp where  game_id= '1'
+[2020-09-04T12:37:23.605] [DEBUG] debugLogger - Executing (default): select MAX(id) from gm_smtp where game_id= 1
+[2020-09-04T12:37:23.608] [DEBUG] debugLogger - Executing (default): select name as label , article_id as value  , TRUE as leaf  from gm_article where gameid =1 and classification = 'undefined'
+[2020-09-04T12:37:23.701] [DEBUG] debugLogger - Executing (default): select classification as label , classification as value from gm_article where gameid =1 GROUP BY classification
+[2020-09-04T12:37:36.502] [DEBUG] debugLogger - Executing (default): with tableone as (select servername from gm_server GROUP BY servername having count(servername)>1),
+        tabletwo as (select min(id) from gm_server GROUP BY servername HAVING count(servername)>1),
+        tablethere as (select min(id) from gm_server GROUP BY servername HAVING count(servername)=1),
+        tablemain as (select * from gm_server)
+        select serverid as value ,servername as label from  tablemain where   tablemain.gameid = 1 and  tablemain.id in (select * from tablethere ) or  tablemain.servername in  (select * from  tableone) and tablemain.id in (select * from  tabletwo)
+[2020-09-04T12:37:43.027] [DEBUG] debugLogger - Executing (default): select name as label , article_id as value  , TRUE as leaf  from gm_article where gameid =1 and classification = '特殊道具'
+[2020-09-04T12:37:45.923] [DEBUG] debugLogger - Executing (default): select name as label , article_id as value  , TRUE as leaf  from gm_article where gameid =1 and classification = '礼包'
+[2020-09-04T12:37:49.639] [DEBUG] debugLogger - Executing (default): select name as label , article_id as value  , TRUE as leaf  from gm_article where gameid =1 and classification = '宠物碎片'
+[2020-09-04T12:37:53.141] [DEBUG] debugLogger - Executing (default): select name as label , article_id as value  , TRUE as leaf  from gm_article where gameid =1 and classification = '文物'
+[2020-09-04T12:37:56.152] [DEBUG] debugLogger - Executing (default): select name as label , article_id as value  , TRUE as leaf  from gm_article where gameid =1 and classification = '礼包'
+[2020-09-04T12:37:59.834] [DEBUG] debugLogger - Executing (default): select name as label , article_id as value  , TRUE as leaf  from gm_article where gameid =1 and classification = '怒翼魂卡'
+[2020-09-04T12:38:03.176] [DEBUG] debugLogger - Executing (default): select name as label , article_id as value  , TRUE as leaf  from gm_article where gameid =1 and classification = '宠物碎片'
+[2020-09-04T12:38:07.495] [DEBUG] debugLogger - Executing (default): insert into  gm_smtp  
+        (game_id,title,text,link,channel,plaform,annex,serverName,roleid,smtp_id,sendtime)
+        values
+        (1,'1','asdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasdasdadsasd','1',null,null,'[{"ID":"9001","name":"特殊道具","number":"2"},{"ID":"5002","name":"礼包","number":"2"},{"ID":"10004","name":"宠物碎片","number":"222"},{"ID":"17003","name":"文物","number":"11"},{"ID":"5003","name":"礼包","number":"11"},{"ID":"20004","name":"怒翼魂卡","number":"222"},{"ID":"10003","name":"宠物碎片","number":"11"}]','[20071516184210273,20071516184210273,20071516184210273,2007151627398421,2007161139537589,2007161142507735,20071611482987103,2007151624152378,2007161141571737,2007161415527655,2007251508532848,20071612031543710,2007161144245463,2007161140259244]','""','37234','2020-09-04 12:38:07') RETURNING id
+[2020-09-04T12:38:10.825] [DEBUG] debugLogger - Executing (default): with asd as (			
+				select * from gm_smtp where  game_id= '1' limit 50 offset 0 
+			)	,
+			dsa as (select * from gm_server),
+			ssss as( 
+			select asd.servername, string_to_array(string_agg(dsa.servername, ','),',') as servernames from asd LEFT JOIN dsa on dsa.serverid::jsonb <@ (asd.servername)
+			GROUP BY  asd.servername),
+			qweqweqwe  as (select asd.* ,ssss.servernames from asd left join ssss on ssss.servername = asd.servername),
+			asdasd as (select jsonb_array_elements(annex) ->> 'ID' as names, jsonb_array_elements(annex) ->> 'number' as numbers ,id  from  qweqweqwe ),
+			qweqwe as (select asdasd.id,string_to_array(string_agg(concat(gm_article.name,'  ',asdasd.numbers,'个'),','),',') as annexnames from asdasd left JOIN gm_article on gm_article.article_id = asdasd.names GROUP BY asdasd.id )
+			select asd.*,qweqwe.annexnames from asd left join qweqwe on qweqwe.id = asd.id
+[2020-09-04T12:38:10.832] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_smtp where  game_id= '1'
+[2020-09-04T14:05:14.830] [DEBUG] debugLogger - Executing (default): SELECT gm_game.game_name,gm_game.id from (gm_user LEFT JOIN gm_purview on gm_purview.uid=gm_user.id) LEFT JOIN gm_game on gm_game.id = gm_purview.gid where gm_user.id=1
+[2020-09-04T14:05:14.836] [DEBUG] debugLogger - Executing (default): select gm_url_purview.grede AS meta,gm_url.name,gm_url.url,gm_url.id AS urlid,gm_url.pid  from (((gm_user LEFT JOIN gm_purview ON gm_purview.uid=gm_user.id) LEFT JOIN gm_game on gm_game.id= gm_purview.gid)LEFT JOIN gm_url_purview on gm_url_purview.purview_id = gm_purview.id )left join gm_url on gm_url.id = gm_url_purview.url_id where gm_user.id=1 and gm_game.game_name = '空翼冒险团'
+[2020-09-04T14:05:14.845] [DEBUG] debugLogger - Executing (default): select id from gm_game where game_name='空翼冒险团'
+[2020-09-04T14:05:15.197] [DEBUG] debugLogger - Executing (default): select channel  as  values from gm_game_token where type='areaclothing'  and  gameid='1'
+[2020-09-04T14:05:15.281] [DEBUG] debugLogger - Executing (default): with tableone as (select servername from gm_server GROUP BY servername having count(servername)>1),
+        tabletwo as (select min(id) from gm_server GROUP BY servername HAVING count(servername)>1),
+        tablethere as (select min(id) from gm_server GROUP BY servername HAVING count(servername)=1),
+        tablemain as (select * from gm_server)
+        select serverid as value ,servername as label from  tablemain where   tablemain.gameid = 1 and  tablemain.id in (select * from tablethere ) or  tablemain.servername in  (select * from  tableone) and tablemain.id in (select * from  tabletwo)
+[2020-09-04T14:05:15.637] [DEBUG] debugLogger - Executing (default): select 
+        name as label ,
+        article_id as value  from gm_article where gameid=1
+[2020-09-04T14:05:17.059] [DEBUG] debugLogger - Executing (default): with asd as (			
+				select * from gm_smtp where  game_id= '1' limit 50 offset 0 
+			)	,
+			dsa as (select * from gm_server),
+			ssss as( 
+			select asd.servername, string_to_array(string_agg(dsa.servername, ','),',') as servernames from asd LEFT JOIN dsa on dsa.serverid::jsonb <@ (asd.servername)
+			GROUP BY  asd.servername),
+			qweqweqwe  as (select asd.* ,ssss.servernames from asd left join ssss on ssss.servername = asd.servername),
+			asdasd as (select jsonb_array_elements(annex) ->> 'ID' as names, jsonb_array_elements(annex) ->> 'number' as numbers ,id  from  qweqweqwe ),
+			qweqwe as (select asdasd.id,string_to_array(string_agg(concat(gm_article.name,'  ',asdasd.numbers,'个'),','),',') as annexnames from asdasd left JOIN gm_article on gm_article.article_id = asdasd.names GROUP BY asdasd.id )
+			select asd.*,qweqwe.annexnames from asd left join qweqwe on qweqwe.id = asd.id
+[2020-09-04T14:05:17.066] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_smtp where  game_id= '1'
+[2020-09-04T14:05:36.001] [DEBUG] debugLogger - Executing (default): SELECT gm_game.game_name,gm_game.id from (gm_user LEFT JOIN gm_purview on gm_purview.uid=gm_user.id) LEFT JOIN gm_game on gm_game.id = gm_purview.gid where gm_user.id=1
+[2020-09-04T14:05:36.007] [DEBUG] debugLogger - Executing (default): select gm_url_purview.grede AS meta,gm_url.name,gm_url.url,gm_url.id AS urlid,gm_url.pid  from (((gm_user LEFT JOIN gm_purview ON gm_purview.uid=gm_user.id) LEFT JOIN gm_game on gm_game.id= gm_purview.gid)LEFT JOIN gm_url_purview on gm_url_purview.purview_id = gm_purview.id )left join gm_url on gm_url.id = gm_url_purview.url_id where gm_user.id=1 and gm_game.game_name = '空翼冒险团'
+[2020-09-04T14:05:36.018] [DEBUG] debugLogger - Executing (default): select id from gm_game where game_name='空翼冒险团'
+[2020-09-04T14:05:36.405] [DEBUG] debugLogger - Executing (default): select channel  as  values from gm_game_token where type='areaclothing'  and  gameid='1'
+[2020-09-04T14:05:36.594] [DEBUG] debugLogger - Executing (default): with tableone as (select servername from gm_server GROUP BY servername having count(servername)>1),
+        tabletwo as (select min(id) from gm_server GROUP BY servername HAVING count(servername)>1),
+        tablethere as (select min(id) from gm_server GROUP BY servername HAVING count(servername)=1),
+        tablemain as (select * from gm_server)
+        select serverid as value ,servername as label from  tablemain where   tablemain.gameid = 1 and  tablemain.id in (select * from tablethere ) or  tablemain.servername in  (select * from  tableone) and tablemain.id in (select * from  tabletwo)
+[2020-09-04T14:05:36.645] [DEBUG] debugLogger - Executing (default): select 
+        name as label ,
+        article_id as value  from gm_article where gameid=1
+[2020-09-04T14:14:44.369] [DEBUG] debugLogger - Executing (default): SELECT gm_game.game_name,gm_game.id from (gm_user LEFT JOIN gm_purview on gm_purview.uid=gm_user.id) LEFT JOIN gm_game on gm_game.id = gm_purview.gid where gm_user.id=1
+[2020-09-04T14:14:44.377] [DEBUG] debugLogger - Executing (default): select gm_url_purview.grede AS meta,gm_url.name,gm_url.url,gm_url.id AS urlid,gm_url.pid  from (((gm_user LEFT JOIN gm_purview ON gm_purview.uid=gm_user.id) LEFT JOIN gm_game on gm_game.id= gm_purview.gid)LEFT JOIN gm_url_purview on gm_url_purview.purview_id = gm_purview.id )left join gm_url on gm_url.id = gm_url_purview.url_id where gm_user.id=1 and gm_game.game_name = '空翼冒险团'
+[2020-09-04T14:14:44.401] [DEBUG] debugLogger - Executing (default): select id from gm_game where game_name='空翼冒险团'
+[2020-09-04T14:14:44.798] [DEBUG] debugLogger - Executing (default): select channel  as  values from gm_game_token where type='areaclothing'  and  gameid='1'
+[2020-09-04T14:14:44.866] [DEBUG] debugLogger - Executing (default): with tableone as (select servername from gm_server GROUP BY servername having count(servername)>1),
+        tabletwo as (select min(id) from gm_server GROUP BY servername HAVING count(servername)>1),
+        tablethere as (select min(id) from gm_server GROUP BY servername HAVING count(servername)=1),
+        tablemain as (select * from gm_server)
+        select serverid as value ,servername as label from  tablemain where   tablemain.gameid = 1 and  tablemain.id in (select * from tablethere ) or  tablemain.servername in  (select * from  tableone) and tablemain.id in (select * from  tabletwo)
+[2020-09-04T14:14:45.239] [DEBUG] debugLogger - Executing (default): select 
+        name as label ,
+        article_id as value  from gm_article where gameid=1
+[2020-09-04T14:15:52.264] [DEBUG] debugLogger - Executing (default): with asd as (			
+				select * from gm_smtp where  game_id= '1' limit 50 offset 0 
+			)	,
+			dsa as (select * from gm_server),
+			ssss as( 
+			select asd.servername, string_to_array(string_agg(dsa.servername, ','),',') as servernames from asd LEFT JOIN dsa on dsa.serverid::jsonb <@ (asd.servername)
+			GROUP BY  asd.servername),
+			qweqweqwe  as (select asd.* ,ssss.servernames from asd left join ssss on ssss.servername = asd.servername),
+			asdasd as (select jsonb_array_elements(annex) ->> 'ID' as names, jsonb_array_elements(annex) ->> 'number' as numbers ,id  from  qweqweqwe ),
+			qweqwe as (select asdasd.id,string_to_array(string_agg(concat(gm_article.name,'  ',asdasd.numbers,'个'),','),',') as annexnames from asdasd left JOIN gm_article on gm_article.article_id = asdasd.names GROUP BY asdasd.id )
+			select asd.*,qweqwe.annexnames from asd left join qweqwe on qweqwe.id = asd.id
+[2020-09-04T14:15:52.272] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_smtp where  game_id= '1'
+[2020-09-04T14:17:20.307] [DEBUG] debugLogger - Executing (default): SELECT gm_game.game_name,gm_game.id from (gm_user LEFT JOIN gm_purview on gm_purview.uid=gm_user.id) LEFT JOIN gm_game on gm_game.id = gm_purview.gid where gm_user.id=1
+[2020-09-04T14:17:20.316] [DEBUG] debugLogger - Executing (default): select gm_url_purview.grede AS meta,gm_url.name,gm_url.url,gm_url.id AS urlid,gm_url.pid  from (((gm_user LEFT JOIN gm_purview ON gm_purview.uid=gm_user.id) LEFT JOIN gm_game on gm_game.id= gm_purview.gid)LEFT JOIN gm_url_purview on gm_url_purview.purview_id = gm_purview.id )left join gm_url on gm_url.id = gm_url_purview.url_id where gm_user.id=1 and gm_game.game_name = '空翼冒险团'
+[2020-09-04T14:17:20.332] [DEBUG] debugLogger - Executing (default): select id from gm_game where game_name='空翼冒险团'
+[2020-09-04T14:17:20.704] [DEBUG] debugLogger - Executing (default): select channel  as  values from gm_game_token where type='areaclothing'  and  gameid='1'
+[2020-09-04T14:17:20.790] [DEBUG] debugLogger - Executing (default): with tableone as (select servername from gm_server GROUP BY servername having count(servername)>1),
+        tabletwo as (select min(id) from gm_server GROUP BY servername HAVING count(servername)>1),
+        tablethere as (select min(id) from gm_server GROUP BY servername HAVING count(servername)=1),
+        tablemain as (select * from gm_server)
+        select serverid as value ,servername as label from  tablemain where   tablemain.gameid = 1 and  tablemain.id in (select * from tablethere ) or  tablemain.servername in  (select * from  tableone) and tablemain.id in (select * from  tabletwo)
+[2020-09-04T14:17:21.160] [DEBUG] debugLogger - Executing (default): select 
+        name as label ,
+        article_id as value  from gm_article where gameid=1
+[2020-09-04T14:17:22.098] [DEBUG] debugLogger - Executing (default): with asd as (			
+				select * from gm_smtp where  game_id= '1' limit 50 offset 0 
+			)	,
+			dsa as (select * from gm_server),
+			ssss as( 
+			select asd.servername, string_to_array(string_agg(dsa.servername, ','),',') as servernames from asd LEFT JOIN dsa on dsa.serverid::jsonb <@ (asd.servername)
+			GROUP BY  asd.servername),
+			qweqweqwe  as (select asd.* ,ssss.servernames from asd left join ssss on ssss.servername = asd.servername),
+			asdasd as (select jsonb_array_elements(annex) ->> 'ID' as names, jsonb_array_elements(annex) ->> 'number' as numbers ,id  from  qweqweqwe ),
+			qweqwe as (select asdasd.id,string_to_array(string_agg(concat(gm_article.name,'  ',asdasd.numbers,'个'),','),',') as annexnames from asdasd left JOIN gm_article on gm_article.article_id = asdasd.names GROUP BY asdasd.id )
+			select asd.*,qweqwe.annexnames from asd left join qweqwe on qweqwe.id = asd.id
+[2020-09-04T14:17:22.104] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_smtp where  game_id= '1'
+[2020-09-04T14:18:06.732] [DEBUG] debugLogger - Executing (default): SELECT gm_game.game_name,gm_game.id from (gm_user LEFT JOIN gm_purview on gm_purview.uid=gm_user.id) LEFT JOIN gm_game on gm_game.id = gm_purview.gid where gm_user.id=1
+[2020-09-04T14:18:06.739] [DEBUG] debugLogger - Executing (default): select gm_url_purview.grede AS meta,gm_url.name,gm_url.url,gm_url.id AS urlid,gm_url.pid  from (((gm_user LEFT JOIN gm_purview ON gm_purview.uid=gm_user.id) LEFT JOIN gm_game on gm_game.id= gm_purview.gid)LEFT JOIN gm_url_purview on gm_url_purview.purview_id = gm_purview.id )left join gm_url on gm_url.id = gm_url_purview.url_id where gm_user.id=1 and gm_game.game_name = '空翼冒险团'
+[2020-09-04T14:18:06.750] [DEBUG] debugLogger - Executing (default): select id from gm_game where game_name='空翼冒险团'
+[2020-09-04T14:18:07.106] [DEBUG] debugLogger - Executing (default): select channel  as  values from gm_game_token where type='areaclothing'  and  gameid='1'
+[2020-09-04T14:18:07.198] [DEBUG] debugLogger - Executing (default): with tableone as (select servername from gm_server GROUP BY servername having count(servername)>1),
+        tabletwo as (select min(id) from gm_server GROUP BY servername HAVING count(servername)>1),
+        tablethere as (select min(id) from gm_server GROUP BY servername HAVING count(servername)=1),
+        tablemain as (select * from gm_server)
+        select serverid as value ,servername as label from  tablemain where   tablemain.gameid = 1 and  tablemain.id in (select * from tablethere ) or  tablemain.servername in  (select * from  tableone) and tablemain.id in (select * from  tabletwo)
+[2020-09-04T14:18:07.562] [DEBUG] debugLogger - Executing (default): select 
+        name as label ,
+        article_id as value  from gm_article where gameid=1
+[2020-09-04T14:18:08.327] [DEBUG] debugLogger - Executing (default): with asd as (			
+				select * from gm_smtp where  game_id= '1' limit 50 offset 0 
+			)	,
+			dsa as (select * from gm_server),
+			ssss as( 
+			select asd.servername, string_to_array(string_agg(dsa.servername, ','),',') as servernames from asd LEFT JOIN dsa on dsa.serverid::jsonb <@ (asd.servername)
+			GROUP BY  asd.servername),
+			qweqweqwe  as (select asd.* ,ssss.servernames from asd left join ssss on ssss.servername = asd.servername),
+			asdasd as (select jsonb_array_elements(annex) ->> 'ID' as names, jsonb_array_elements(annex) ->> 'number' as numbers ,id  from  qweqweqwe ),
+			qweqwe as (select asdasd.id,string_to_array(string_agg(concat(gm_article.name,'  ',asdasd.numbers,'个'),','),',') as annexnames from asdasd left JOIN gm_article on gm_article.article_id = asdasd.names GROUP BY asdasd.id )
+			select asd.*,qweqwe.annexnames from asd left join qweqwe on qweqwe.id = asd.id
+[2020-09-04T14:18:08.336] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_smtp where  game_id= '1'
+[2020-09-04T16:26:53.620] [DEBUG] debugLogger - Executing (default): select channel  as  values from gm_game_token where type='areaclothing'  and  gameid='1'
+[2020-09-04T16:26:53.945] [DEBUG] debugLogger - Executing (default): with asd as (select (jsonb_array_elements(annex) ->> 'annexName')::jsonb ->> 1  as name, jsonb_array_elements(annex) ->> 'annexNumber' as numbers ,id  from  gm_cdk),
+		dsa as (select  asd.id, string_to_array(string_agg(concat(art.name,'  ',asd.numbers,'个'),','),',')  as annexs  from asd  left join gm_article art on art.article_id = asd.name GROUP BY asd.id ),
+	sda as (select cdk.*,dsa.annexs   from dsa left join  gm_cdk cdk on dsa.id = cdk.id where cdk.game_id='1'   limit 10 offset 0   ),
+	pla as (select  jsonb_array_elements(plaform) as plaform ,id from gm_cdk  where id in (select id from sda)),
+	pls as (select id,string_to_array(string_agg((case 
+	when pla.plaform = '"1"' then '安卓'
+	when pla.plaform = '"2"' then '苹果'
+	end),','),',') as plaforms  from pla  GROUP BY pla.id)
+	select  sda.*,pls.plaforms ,(case 
+		when sda.type = '1' then '唯一'
+		when sda.type = '2' then '互斥'
+		when sda.type = '3' then '通用'
+		end
+		) as types  from sda left JOIN pls on pls.id=sda.id
+[2020-09-04T16:26:53.955] [DEBUG] debugLogger - Executing (default): select count(id) as total  from gm_cdk cdk where cdk.game_id='1'
+[2020-09-04T16:26:54.922] [DEBUG] debugLogger - Executing (default): with asd as (select (jsonb_array_elements(annex) ->> 'annexName')::jsonb ->> 1  as name, jsonb_array_elements(annex) ->> 'annexNumber' as numbers ,id  from  gm_cdk),
+		dsa as (select  asd.id, string_to_array(string_agg(concat(art.name,'  ',asd.numbers,'个'),','),',')  as annexs  from asd  left join gm_article art on art.article_id = asd.name GROUP BY asd.id ),
+	sda as (select cdk.*,dsa.annexs   from dsa left join  gm_cdk cdk on dsa.id = cdk.id where cdk.game_id='1'   limit 10 offset 0   ),
+	pla as (select  jsonb_array_elements(plaform) as plaform ,id from gm_cdk  where id in (select id from sda)),
+	pls as (select id,string_to_array(string_agg((case 
+	when pla.plaform = '"1"' then '安卓'
+	when pla.plaform = '"2"' then '苹果'
+	end),','),',') as plaforms  from pla  GROUP BY pla.id)
+	select  sda.*,pls.plaforms ,(case 
+		when sda.type = '1' then '唯一'
+		when sda.type = '2' then '互斥'
+		when sda.type = '3' then '通用'
+		end
+		) as types  from sda left JOIN pls on pls.id=sda.id
+[2020-09-04T16:26:54.926] [DEBUG] debugLogger - Executing (default): select count(id) as total  from gm_cdk cdk where cdk.game_id='1'
+[2020-09-04T16:26:55.175] [DEBUG] debugLogger - Executing (default): with asd as (select (jsonb_array_elements(annex) ->> 'annexName')::jsonb ->> 1  as name, jsonb_array_elements(annex) ->> 'annexNumber' as numbers ,id  from  gm_cdk),
+		dsa as (select  asd.id, string_to_array(string_agg(concat(art.name,'  ',asd.numbers,'个'),','),',')  as annexs  from asd  left join gm_article art on art.article_id = asd.name GROUP BY asd.id ),
+	sda as (select cdk.*,dsa.annexs   from dsa left join  gm_cdk cdk on dsa.id = cdk.id where cdk.game_id='1'   limit 10 offset 0   ),
+	pla as (select  jsonb_array_elements(plaform) as plaform ,id from gm_cdk  where id in (select id from sda)),
+	pls as (select id,string_to_array(string_agg((case 
+	when pla.plaform = '"1"' then '安卓'
+	when pla.plaform = '"2"' then '苹果'
+	end),','),',') as plaforms  from pla  GROUP BY pla.id)
+	select  sda.*,pls.plaforms ,(case 
+		when sda.type = '1' then '唯一'
+		when sda.type = '2' then '互斥'
+		when sda.type = '3' then '通用'
+		end
+		) as types  from sda left JOIN pls on pls.id=sda.id
+[2020-09-04T16:26:55.179] [DEBUG] debugLogger - Executing (default): select count(id) as total  from gm_cdk cdk where cdk.game_id='1'
+[2020-09-04T16:26:55.238] [DEBUG] debugLogger - Executing (default): with asd as (select (jsonb_array_elements(annex) ->> 'annexName')::jsonb ->> 1  as name, jsonb_array_elements(annex) ->> 'annexNumber' as numbers ,id  from  gm_cdk),
+		dsa as (select  asd.id, string_to_array(string_agg(concat(art.name,'  ',asd.numbers,'个'),','),',')  as annexs  from asd  left join gm_article art on art.article_id = asd.name GROUP BY asd.id ),
+	sda as (select cdk.*,dsa.annexs   from dsa left join  gm_cdk cdk on dsa.id = cdk.id where cdk.game_id='1'   limit 10 offset 0   ),
+	pla as (select  jsonb_array_elements(plaform) as plaform ,id from gm_cdk  where id in (select id from sda)),
+	pls as (select id,string_to_array(string_agg((case 
+	when pla.plaform = '"1"' then '安卓'
+	when pla.plaform = '"2"' then '苹果'
+	end),','),',') as plaforms  from pla  GROUP BY pla.id)
+	select  sda.*,pls.plaforms ,(case 
+		when sda.type = '1' then '唯一'
+		when sda.type = '2' then '互斥'
+		when sda.type = '3' then '通用'
+		end
+		) as types  from sda left JOIN pls on pls.id=sda.id
+[2020-09-04T16:26:55.241] [DEBUG] debugLogger - Executing (default): select count(id) as total  from gm_cdk cdk where cdk.game_id='1'
+[2020-09-04T16:26:58.865] [DEBUG] debugLogger - Executing (default): select channel  as  values from gm_game_token where type='areaclothing'  and  gameid='1'
+[2020-09-04T16:26:59.207] [DEBUG] debugLogger - Executing (default): with asd as (select (jsonb_array_elements(annex) ->> 'annexName')::jsonb ->> 1  as name, jsonb_array_elements(annex) ->> 'annexNumber' as numbers ,id  from  gm_cdk),
+				dsa as (select  asd.id, string_to_array(string_agg(concat(art.name,'  ',asd.numbers,'个'),','),',')  as annexs  from asd  left join gm_article art on art.article_id = asd.name GROUP BY asd.id ),
+			sda as (select cdk.*,dsa.annexs   from dsa left join  gm_cdk cdk on dsa.id = cdk.id where cdk.game_id='1' and cdk.id=69 ),
+			pla as (select  jsonb_array_elements(plaform) as plaform ,id from gm_cdk  where id in (select id from sda)),
+			pls as (select id,string_to_array(string_agg((case 
+			when pla.plaform = '"1"' then '安卓'
+			when pla.plaform = '"2"' then '苹果'
+			end),','),',') as plaforms  from pla  GROUP BY pla.id)
+			select  sda.*,pls.plaforms ,(case 
+				when sda.type = '1' then '唯一'
+				when sda.type = '2' then '互斥'
+				when sda.type = '3' then '通用'
+				end
+				) as types from sda left JOIN pls on pls.id=sda.id
+[2020-09-04T16:27:03.134] [DEBUG] debugLogger - Executing (default): with asd as (select (jsonb_array_elements(annex) ->> 'annexName')::jsonb ->> 1  as name, jsonb_array_elements(annex) ->> 'annexNumber' as numbers ,id  from  gm_cdk),
+				dsa as (select  asd.id, string_to_array(string_agg(concat(art.name,'  ',asd.numbers,'个'),','),',')  as annexs  from asd  left join gm_article art on art.article_id = asd.name GROUP BY asd.id ),
+			sda as (select cdk.*,dsa.annexs   from dsa left join  gm_cdk cdk on dsa.id = cdk.id where cdk.game_id='1' and cdk.id=69 ),
+			pla as (select  jsonb_array_elements(plaform) as plaform ,id from gm_cdk  where id in (select id from sda)),
+			pls as (select id,string_to_array(string_agg((case 
+			when pla.plaform = '"1"' then '安卓'
+			when pla.plaform = '"2"' then '苹果'
+			end),','),',') as plaforms  from pla  GROUP BY pla.id)
+			select  sda.*,pls.plaforms ,(case 
+				when sda.type = '1' then '唯一'
+				when sda.type = '2' then '互斥'
+				when sda.type = '3' then '通用'
+				end
+				) as types from sda left JOIN pls on pls.id=sda.id
+[2020-09-04T16:27:05.247] [DEBUG] debugLogger - Executing (default): with asd as (select (jsonb_array_elements(annex) ->> 'annexName')::jsonb ->> 1  as name, jsonb_array_elements(annex) ->> 'annexNumber' as numbers ,id  from  gm_cdk),
+		dsa as (select  asd.id, string_to_array(string_agg(concat(art.name,'  ',asd.numbers,'个'),','),',')  as annexs  from asd  left join gm_article art on art.article_id = asd.name GROUP BY asd.id ),
+	sda as (select cdk.*,dsa.annexs   from dsa left join  gm_cdk cdk on dsa.id = cdk.id where cdk.game_id='1'   limit 100 offset 0   ),
+	pla as (select  jsonb_array_elements(plaform) as plaform ,id from gm_cdk  where id in (select id from sda)),
+	pls as (select id,string_to_array(string_agg((case 
+	when pla.plaform = '"1"' then '安卓'
+	when pla.plaform = '"2"' then '苹果'
+	end),','),',') as plaforms  from pla  GROUP BY pla.id)
+	select  sda.*,pls.plaforms ,(case 
+		when sda.type = '1' then '唯一'
+		when sda.type = '2' then '互斥'
+		when sda.type = '3' then '通用'
+		end
+		) as types  from sda left JOIN pls on pls.id=sda.id
+[2020-09-04T16:27:05.251] [DEBUG] debugLogger - Executing (default): select count(id) as total  from gm_cdk cdk where cdk.game_id='1'
+[2020-09-04T16:27:06.369] [DEBUG] debugLogger - Executing (default): with asd as (select (jsonb_array_elements(annex) ->> 'annexName')::jsonb ->> 1  as name, jsonb_array_elements(annex) ->> 'annexNumber' as numbers ,id  from  gm_cdk),
+		dsa as (select  asd.id, string_to_array(string_agg(concat(art.name,'  ',asd.numbers,'个'),','),',')  as annexs  from asd  left join gm_article art on art.article_id = asd.name GROUP BY asd.id ),
+	sda as (select cdk.*,dsa.annexs   from dsa left join  gm_cdk cdk on dsa.id = cdk.id where cdk.game_id='1'   limit 100 offset 0   ),
+	pla as (select  jsonb_array_elements(plaform) as plaform ,id from gm_cdk  where id in (select id from sda)),
+	pls as (select id,string_to_array(string_agg((case 
+	when pla.plaform = '"1"' then '安卓'
+	when pla.plaform = '"2"' then '苹果'
+	end),','),',') as plaforms  from pla  GROUP BY pla.id)
+	select  sda.*,pls.plaforms ,(case 
+		when sda.type = '1' then '唯一'
+		when sda.type = '2' then '互斥'
+		when sda.type = '3' then '通用'
+		end
+		) as types  from sda left JOIN pls on pls.id=sda.id
+[2020-09-04T16:27:06.373] [DEBUG] debugLogger - Executing (default): select count(id) as total  from gm_cdk cdk where cdk.game_id='1'
+[2020-09-04T16:27:06.973] [DEBUG] debugLogger - Executing (default): with asd as (select (jsonb_array_elements(annex) ->> 'annexName')::jsonb ->> 1  as name, jsonb_array_elements(annex) ->> 'annexNumber' as numbers ,id  from  gm_cdk),
+		dsa as (select  asd.id, string_to_array(string_agg(concat(art.name,'  ',asd.numbers,'个'),','),',')  as annexs  from asd  left join gm_article art on art.article_id = asd.name GROUP BY asd.id ),
+	sda as (select cdk.*,dsa.annexs   from dsa left join  gm_cdk cdk on dsa.id = cdk.id where cdk.game_id='1'   limit 100 offset 0   ),
+	pla as (select  jsonb_array_elements(plaform) as plaform ,id from gm_cdk  where id in (select id from sda)),
+	pls as (select id,string_to_array(string_agg((case 
+	when pla.plaform = '"1"' then '安卓'
+	when pla.plaform = '"2"' then '苹果'
+	end),','),',') as plaforms  from pla  GROUP BY pla.id)
+	select  sda.*,pls.plaforms ,(case 
+		when sda.type = '1' then '唯一'
+		when sda.type = '2' then '互斥'
+		when sda.type = '3' then '通用'
+		end
+		) as types  from sda left JOIN pls on pls.id=sda.id
+[2020-09-04T16:27:06.977] [DEBUG] debugLogger - Executing (default): select count(id) as total  from gm_cdk cdk where cdk.game_id='1'
+[2020-09-04T16:27:08.051] [DEBUG] debugLogger - Executing (default): with asd as (select (jsonb_array_elements(annex) ->> 'annexName')::jsonb ->> 1  as name, jsonb_array_elements(annex) ->> 'annexNumber' as numbers ,id  from  gm_cdk),
+		dsa as (select  asd.id, string_to_array(string_agg(concat(art.name,'  ',asd.numbers,'个'),','),',')  as annexs  from asd  left join gm_article art on art.article_id = asd.name GROUP BY asd.id ),
+	sda as (select cdk.*,dsa.annexs   from dsa left join  gm_cdk cdk on dsa.id = cdk.id where cdk.game_id='1'   limit 100 offset 0   ),
+	pla as (select  jsonb_array_elements(plaform) as plaform ,id from gm_cdk  where id in (select id from sda)),
+	pls as (select id,string_to_array(string_agg((case 
+	when pla.plaform = '"1"' then '安卓'
+	when pla.plaform = '"2"' then '苹果'
+	end),','),',') as plaforms  from pla  GROUP BY pla.id)
+	select  sda.*,pls.plaforms ,(case 
+		when sda.type = '1' then '唯一'
+		when sda.type = '2' then '互斥'
+		when sda.type = '3' then '通用'
+		end
+		) as types  from sda left JOIN pls on pls.id=sda.id
+[2020-09-04T16:27:08.057] [DEBUG] debugLogger - Executing (default): select count(id) as total  from gm_cdk cdk where cdk.game_id='1'
+[2020-09-04T16:27:08.594] [DEBUG] debugLogger - Executing (default): with asd as (select (jsonb_array_elements(annex) ->> 'annexName')::jsonb ->> 1  as name, jsonb_array_elements(annex) ->> 'annexNumber' as numbers ,id  from  gm_cdk),
+		dsa as (select  asd.id, string_to_array(string_agg(concat(art.name,'  ',asd.numbers,'个'),','),',')  as annexs  from asd  left join gm_article art on art.article_id = asd.name GROUP BY asd.id ),
+	sda as (select cdk.*,dsa.annexs   from dsa left join  gm_cdk cdk on dsa.id = cdk.id where cdk.game_id='1'   limit 100 offset 0   ),
+	pla as (select  jsonb_array_elements(plaform) as plaform ,id from gm_cdk  where id in (select id from sda)),
+	pls as (select id,string_to_array(string_agg((case 
+	when pla.plaform = '"1"' then '安卓'
+	when pla.plaform = '"2"' then '苹果'
+	end),','),',') as plaforms  from pla  GROUP BY pla.id)
+	select  sda.*,pls.plaforms ,(case 
+		when sda.type = '1' then '唯一'
+		when sda.type = '2' then '互斥'
+		when sda.type = '3' then '通用'
+		end
+		) as types  from sda left JOIN pls on pls.id=sda.id
+[2020-09-04T16:27:08.597] [DEBUG] debugLogger - Executing (default): select count(id) as total  from gm_cdk cdk where cdk.game_id='1'
+[2020-09-04T16:27:09.538] [DEBUG] debugLogger - Executing (default): with asd as (select (jsonb_array_elements(annex) ->> 'annexName')::jsonb ->> 1  as name, jsonb_array_elements(annex) ->> 'annexNumber' as numbers ,id  from  gm_cdk),
+		dsa as (select  asd.id, string_to_array(string_agg(concat(art.name,'  ',asd.numbers,'个'),','),',')  as annexs  from asd  left join gm_article art on art.article_id = asd.name GROUP BY asd.id ),
+	sda as (select cdk.*,dsa.annexs   from dsa left join  gm_cdk cdk on dsa.id = cdk.id where cdk.game_id='1'   limit 100 offset 0   ),
+	pla as (select  jsonb_array_elements(plaform) as plaform ,id from gm_cdk  where id in (select id from sda)),
+	pls as (select id,string_to_array(string_agg((case 
+	when pla.plaform = '"1"' then '安卓'
+	when pla.plaform = '"2"' then '苹果'
+	end),','),',') as plaforms  from pla  GROUP BY pla.id)
+	select  sda.*,pls.plaforms ,(case 
+		when sda.type = '1' then '唯一'
+		when sda.type = '2' then '互斥'
+		when sda.type = '3' then '通用'
+		end
+		) as types  from sda left JOIN pls on pls.id=sda.id
+[2020-09-04T16:27:09.542] [DEBUG] debugLogger - Executing (default): select count(id) as total  from gm_cdk cdk where cdk.game_id='1'
+[2020-09-04T16:27:13.638] [DEBUG] debugLogger - Executing (default): with asd as (select (jsonb_array_elements(annex) ->> 'annexName')::jsonb ->> 1  as name, jsonb_array_elements(annex) ->> 'annexNumber' as numbers ,id  from  gm_cdk),
+		dsa as (select  asd.id, string_to_array(string_agg(concat(art.name,'  ',asd.numbers,'个'),','),',')  as annexs  from asd  left join gm_article art on art.article_id = asd.name GROUP BY asd.id ),
+	sda as (select cdk.*,dsa.annexs   from dsa left join  gm_cdk cdk on dsa.id = cdk.id where cdk.game_id='1'   limit 100 offset 0   ),
+	pla as (select  jsonb_array_elements(plaform) as plaform ,id from gm_cdk  where id in (select id from sda)),
+	pls as (select id,string_to_array(string_agg((case 
+	when pla.plaform = '"1"' then '安卓'
+	when pla.plaform = '"2"' then '苹果'
+	end),','),',') as plaforms  from pla  GROUP BY pla.id)
+	select  sda.*,pls.plaforms ,(case 
+		when sda.type = '1' then '唯一'
+		when sda.type = '2' then '互斥'
+		when sda.type = '3' then '通用'
+		end
+		) as types  from sda left JOIN pls on pls.id=sda.id
+[2020-09-04T16:27:13.644] [DEBUG] debugLogger - Executing (default): select count(id) as total  from gm_cdk cdk where cdk.game_id='1'
+[2020-09-04T16:27:14.486] [DEBUG] debugLogger - Executing (default): with asd as (select (jsonb_array_elements(annex) ->> 'annexName')::jsonb ->> 1  as name, jsonb_array_elements(annex) ->> 'annexNumber' as numbers ,id  from  gm_cdk),
+		dsa as (select  asd.id, string_to_array(string_agg(concat(art.name,'  ',asd.numbers,'个'),','),',')  as annexs  from asd  left join gm_article art on art.article_id = asd.name GROUP BY asd.id ),
+	sda as (select cdk.*,dsa.annexs   from dsa left join  gm_cdk cdk on dsa.id = cdk.id where cdk.game_id='1'   limit 100 offset 0   ),
+	pla as (select  jsonb_array_elements(plaform) as plaform ,id from gm_cdk  where id in (select id from sda)),
+	pls as (select id,string_to_array(string_agg((case 
+	when pla.plaform = '"1"' then '安卓'
+	when pla.plaform = '"2"' then '苹果'
+	end),','),',') as plaforms  from pla  GROUP BY pla.id)
+	select  sda.*,pls.plaforms ,(case 
+		when sda.type = '1' then '唯一'
+		when sda.type = '2' then '互斥'
+		when sda.type = '3' then '通用'
+		end
+		) as types  from sda left JOIN pls on pls.id=sda.id
+[2020-09-04T16:27:14.492] [DEBUG] debugLogger - Executing (default): select count(id) as total  from gm_cdk cdk where cdk.game_id='1'
+[2020-09-04T16:28:11.797] [DEBUG] debugLogger - Executing (default): select channel  as  values from gm_game_token where type='areaclothing'  and  gameid='1'
+[2020-09-04T16:28:12.792] [DEBUG] debugLogger - Executing (default): select channel  as  values from gm_game_token where type='areaclothing'  and  gameid='1'
+[2020-09-04T16:28:13.808] [DEBUG] debugLogger - Executing (default): with asd as (select (jsonb_array_elements(annex) ->> 'annexName')::jsonb ->> 1  as name, jsonb_array_elements(annex) ->> 'annexNumber' as numbers ,id  from  gm_cdk),
+		dsa as (select  asd.id, string_to_array(string_agg(concat(art.name,'  ',asd.numbers,'个'),','),',')  as annexs  from asd  left join gm_article art on art.article_id = asd.name GROUP BY asd.id ),
+	sda as (select cdk.*,dsa.annexs   from dsa left join  gm_cdk cdk on dsa.id = cdk.id where cdk.game_id='1'   limit 100 offset 0   ),
+	pla as (select  jsonb_array_elements(plaform) as plaform ,id from gm_cdk  where id in (select id from sda)),
+	pls as (select id,string_to_array(string_agg((case 
+	when pla.plaform = '"1"' then '安卓'
+	when pla.plaform = '"2"' then '苹果'
+	end),','),',') as plaforms  from pla  GROUP BY pla.id)
+	select  sda.*,pls.plaforms ,(case 
+		when sda.type = '1' then '唯一'
+		when sda.type = '2' then '互斥'
+		when sda.type = '3' then '通用'
+		end
+		) as types  from sda left JOIN pls on pls.id=sda.id
+[2020-09-04T16:28:13.814] [DEBUG] debugLogger - Executing (default): select count(id) as total  from gm_cdk cdk where cdk.game_id='1'
+[2020-09-04T16:28:16.857] [DEBUG] debugLogger - Executing (default): select channel  as  values from gm_game_token where type='areaclothing'  and  gameid='1'
+[2020-09-04T16:28:17.604] [DEBUG] debugLogger - Executing (default): with asd as (select (jsonb_array_elements(annex) ->> 'annexName')::jsonb ->> 1  as name, jsonb_array_elements(annex) ->> 'annexNumber' as numbers ,id  from  gm_cdk),
+		dsa as (select  asd.id, string_to_array(string_agg(concat(art.name,'  ',asd.numbers,'个'),','),',')  as annexs  from asd  left join gm_article art on art.article_id = asd.name GROUP BY asd.id ),
+	sda as (select cdk.*,dsa.annexs   from dsa left join  gm_cdk cdk on dsa.id = cdk.id where cdk.game_id='1'   limit 10 offset 0   ),
+	pla as (select  jsonb_array_elements(plaform) as plaform ,id from gm_cdk  where id in (select id from sda)),
+	pls as (select id,string_to_array(string_agg((case 
+	when pla.plaform = '"1"' then '安卓'
+	when pla.plaform = '"2"' then '苹果'
+	end),','),',') as plaforms  from pla  GROUP BY pla.id)
+	select  sda.*,pls.plaforms ,(case 
+		when sda.type = '1' then '唯一'
+		when sda.type = '2' then '互斥'
+		when sda.type = '3' then '通用'
+		end
+		) as types  from sda left JOIN pls on pls.id=sda.id
+[2020-09-04T16:28:17.609] [DEBUG] debugLogger - Executing (default): select count(id) as total  from gm_cdk cdk where cdk.game_id='1'
+[2020-09-04T16:28:19.184] [DEBUG] debugLogger - Executing (default): select channel  as  values from gm_game_token where type='areaclothing'  and  gameid='1'
+[2020-09-04T16:28:19.438] [DEBUG] debugLogger - Executing (default): with asd as (select (jsonb_array_elements(annex) ->> 'annexName')::jsonb ->> 1  as name, jsonb_array_elements(annex) ->> 'annexNumber' as numbers ,id  from  gm_cdk),
+				dsa as (select  asd.id, string_to_array(string_agg(concat(art.name,'  ',asd.numbers,'个'),','),',')  as annexs  from asd  left join gm_article art on art.article_id = asd.name GROUP BY asd.id ),
+			sda as (select cdk.*,dsa.annexs   from dsa left join  gm_cdk cdk on dsa.id = cdk.id where cdk.game_id='1' and cdk.id=68 ),
+			pla as (select  jsonb_array_elements(plaform) as plaform ,id from gm_cdk  where id in (select id from sda)),
+			pls as (select id,string_to_array(string_agg((case 
+			when pla.plaform = '"1"' then '安卓'
+			when pla.plaform = '"2"' then '苹果'
+			end),','),',') as plaforms  from pla  GROUP BY pla.id)
+			select  sda.*,pls.plaforms ,(case 
+				when sda.type = '1' then '唯一'
+				when sda.type = '2' then '互斥'
+				when sda.type = '3' then '通用'
+				end
+				) as types from sda left JOIN pls on pls.id=sda.id
+[2020-09-04T16:28:26.151] [DEBUG] debugLogger - Executing (default): with asd as (select (jsonb_array_elements(annex) ->> 'annexName')::jsonb ->> 1  as name, jsonb_array_elements(annex) ->> 'annexNumber' as numbers ,id  from  gm_cdk),
+			dsa as (select  asd.id, string_to_array(string_agg(concat(art.name,'  ',asd.numbers,'个'),','),',')  as annexs  from asd  left join gm_article art on art.article_id = asd.name GROUP BY asd.id ),
+		sda as (select cdk.*,dsa.annexs   from dsa left join  gm_cdk cdk on dsa.id = cdk.id where cdk.game_id='1' and case 
+		when cdk.type = '1'
+		then cdk.cdkid = '9A9NxFxXpx'
+		else cdk.cdkid = '9A9N'
+		end
+		),
+		pla as (select  jsonb_array_elements(plaform) as plaform ,id from gm_cdk  where id in (select id from sda)),
+		pls as (select id,string_to_array(string_agg((case 
+		when pla.plaform = '"1"' then '安卓'
+		when pla.plaform = '"2"' then '苹果'
+		end),','),',') as plaforms  from pla  GROUP BY pla.id)
+		select  sda.*,pls.plaforms ,(case 
+			when sda.type = '1' then '唯一'
+			when sda.type = '2' then '互斥'
+			when sda.type = '3' then '通用'
+			end
+			) as types from sda left JOIN pls on pls.id=sda.id
+[2020-09-04T16:28:43.856] [DEBUG] debugLogger - Executing (default): with asd as (select (jsonb_array_elements(annex) ->> 'annexName')::jsonb ->> 1  as name, jsonb_array_elements(annex) ->> 'annexNumber' as numbers ,id  from  gm_cdk),
+		dsa as (select  asd.id, string_to_array(string_agg(concat(art.name,'  ',asd.numbers,'个'),','),',')  as annexs  from asd  left join gm_article art on art.article_id = asd.name GROUP BY asd.id ),
+	sda as (select cdk.*,dsa.annexs   from dsa left join  gm_cdk cdk on dsa.id = cdk.id where cdk.game_id='1'   limit 100 offset 0   ),
+	pla as (select  jsonb_array_elements(plaform) as plaform ,id from gm_cdk  where id in (select id from sda)),
+	pls as (select id,string_to_array(string_agg((case 
+	when pla.plaform = '"1"' then '安卓'
+	when pla.plaform = '"2"' then '苹果'
+	end),','),',') as plaforms  from pla  GROUP BY pla.id)
+	select  sda.*,pls.plaforms ,(case 
+		when sda.type = '1' then '唯一'
+		when sda.type = '2' then '互斥'
+		when sda.type = '3' then '通用'
+		end
+		) as types  from sda left JOIN pls on pls.id=sda.id
+[2020-09-04T16:28:43.863] [DEBUG] debugLogger - Executing (default): select count(id) as total  from gm_cdk cdk where cdk.game_id='1'
+[2020-09-04T16:29:18.983] [DEBUG] debugLogger - Executing (default): select channel  as  values from gm_game_token where type='areaclothing'  and  gameid='1'
+[2020-09-04T16:29:19.021] [DEBUG] debugLogger - Executing (default): with asd as (select (jsonb_array_elements(annex) ->> 'annexName')::jsonb ->> 1  as name, jsonb_array_elements(annex) ->> 'annexNumber' as numbers ,id  from  gm_cdk),
+				dsa as (select  asd.id, string_to_array(string_agg(concat(art.name,'  ',asd.numbers,'个'),','),',')  as annexs  from asd  left join gm_article art on art.article_id = asd.name GROUP BY asd.id ),
+			sda as (select cdk.*,dsa.annexs   from dsa left join  gm_cdk cdk on dsa.id = cdk.id where cdk.game_id='1' and cdk.id=68 ),
+			pla as (select  jsonb_array_elements(plaform) as plaform ,id from gm_cdk  where id in (select id from sda)),
+			pls as (select id,string_to_array(string_agg((case 
+			when pla.plaform = '"1"' then '安卓'
+			when pla.plaform = '"2"' then '苹果'
+			end),','),',') as plaforms  from pla  GROUP BY pla.id)
+			select  sda.*,pls.plaforms ,(case 
+				when sda.type = '1' then '唯一'
+				when sda.type = '2' then '互斥'
+				when sda.type = '3' then '通用'
+				end
+				) as types from sda left JOIN pls on pls.id=sda.id
+[2020-09-04T16:29:21.850] [DEBUG] debugLogger - Executing (default): with asd as (select (jsonb_array_elements(annex) ->> 'annexName')::jsonb ->> 1  as name, jsonb_array_elements(annex) ->> 'annexNumber' as numbers ,id  from  gm_cdk),
+				dsa as (select  asd.id, string_to_array(string_agg(concat(art.name,'  ',asd.numbers,'个'),','),',')  as annexs  from asd  left join gm_article art on art.article_id = asd.name GROUP BY asd.id ),
+			sda as (select cdk.*,dsa.annexs   from dsa left join  gm_cdk cdk on dsa.id = cdk.id where cdk.game_id='1' and cdk.id=68 ),
+			pla as (select  jsonb_array_elements(plaform) as plaform ,id from gm_cdk  where id in (select id from sda)),
+			pls as (select id,string_to_array(string_agg((case 
+			when pla.plaform = '"1"' then '安卓'
+			when pla.plaform = '"2"' then '苹果'
+			end),','),',') as plaforms  from pla  GROUP BY pla.id)
+			select  sda.*,pls.plaforms ,(case 
+				when sda.type = '1' then '唯一'
+				when sda.type = '2' then '互斥'
+				when sda.type = '3' then '通用'
+				end
+				) as types from sda left JOIN pls on pls.id=sda.id
+[2020-09-04T16:29:22.222] [DEBUG] debugLogger - Executing (default): select channel  as  values from gm_game_token where type='areaclothing'  and  gameid='1'
+[2020-09-04T16:29:22.422] [DEBUG] debugLogger - Executing (default): with asd as (select (jsonb_array_elements(annex) ->> 'annexName')::jsonb ->> 1  as name, jsonb_array_elements(annex) ->> 'annexNumber' as numbers ,id  from  gm_cdk),
+				dsa as (select  asd.id, string_to_array(string_agg(concat(art.name,'  ',asd.numbers,'个'),','),',')  as annexs  from asd  left join gm_article art on art.article_id = asd.name GROUP BY asd.id ),
+			sda as (select cdk.*,dsa.annexs   from dsa left join  gm_cdk cdk on dsa.id = cdk.id where cdk.game_id='1' and cdk.id=68 ),
+			pla as (select  jsonb_array_elements(plaform) as plaform ,id from gm_cdk  where id in (select id from sda)),
+			pls as (select id,string_to_array(string_agg((case 
+			when pla.plaform = '"1"' then '安卓'
+			when pla.plaform = '"2"' then '苹果'
+			end),','),',') as plaforms  from pla  GROUP BY pla.id)
+			select  sda.*,pls.plaforms ,(case 
+				when sda.type = '1' then '唯一'
+				when sda.type = '2' then '互斥'
+				when sda.type = '3' then '通用'
+				end
+				) as types from sda left JOIN pls on pls.id=sda.id
+[2020-09-04T16:29:25.231] [DEBUG] debugLogger - Executing (default): with asd as (select (jsonb_array_elements(annex) ->> 'annexName')::jsonb ->> 1  as name, jsonb_array_elements(annex) ->> 'annexNumber' as numbers ,id  from  gm_cdk),
+		dsa as (select  asd.id, string_to_array(string_agg(concat(art.name,'  ',asd.numbers,'个'),','),',')  as annexs  from asd  left join gm_article art on art.article_id = asd.name GROUP BY asd.id ),
+	sda as (select cdk.*,dsa.annexs   from dsa left join  gm_cdk cdk on dsa.id = cdk.id where cdk.game_id='1'   limit 100 offset 0   ),
+	pla as (select  jsonb_array_elements(plaform) as plaform ,id from gm_cdk  where id in (select id from sda)),
+	pls as (select id,string_to_array(string_agg((case 
+	when pla.plaform = '"1"' then '安卓'
+	when pla.plaform = '"2"' then '苹果'
+	end),','),',') as plaforms  from pla  GROUP BY pla.id)
+	select  sda.*,pls.plaforms ,(case 
+		when sda.type = '1' then '唯一'
+		when sda.type = '2' then '互斥'
+		when sda.type = '3' then '通用'
+		end
+		) as types  from sda left JOIN pls on pls.id=sda.id
+[2020-09-04T16:29:25.235] [DEBUG] debugLogger - Executing (default): select count(id) as total  from gm_cdk cdk where cdk.game_id='1'
+[2020-09-04T16:29:26.318] [DEBUG] debugLogger - Executing (default): with asd as (select (jsonb_array_elements(annex) ->> 'annexName')::jsonb ->> 1  as name, jsonb_array_elements(annex) ->> 'annexNumber' as numbers ,id  from  gm_cdk),
+		dsa as (select  asd.id, string_to_array(string_agg(concat(art.name,'  ',asd.numbers,'个'),','),',')  as annexs  from asd  left join gm_article art on art.article_id = asd.name GROUP BY asd.id ),
+	sda as (select cdk.*,dsa.annexs   from dsa left join  gm_cdk cdk on dsa.id = cdk.id where cdk.game_id='1'   limit 100 offset 0   ),
+	pla as (select  jsonb_array_elements(plaform) as plaform ,id from gm_cdk  where id in (select id from sda)),
+	pls as (select id,string_to_array(string_agg((case 
+	when pla.plaform = '"1"' then '安卓'
+	when pla.plaform = '"2"' then '苹果'
+	end),','),',') as plaforms  from pla  GROUP BY pla.id)
+	select  sda.*,pls.plaforms ,(case 
+		when sda.type = '1' then '唯一'
+		when sda.type = '2' then '互斥'
+		when sda.type = '3' then '通用'
+		end
+		) as types  from sda left JOIN pls on pls.id=sda.id
+[2020-09-04T16:29:26.321] [DEBUG] debugLogger - Executing (default): select count(id) as total  from gm_cdk cdk where cdk.game_id='1'
+[2020-09-04T16:29:27.020] [DEBUG] debugLogger - Executing (default): with asd as (select (jsonb_array_elements(annex) ->> 'annexName')::jsonb ->> 1  as name, jsonb_array_elements(annex) ->> 'annexNumber' as numbers ,id  from  gm_cdk),
+		dsa as (select  asd.id, string_to_array(string_agg(concat(art.name,'  ',asd.numbers,'个'),','),',')  as annexs  from asd  left join gm_article art on art.article_id = asd.name GROUP BY asd.id ),
+	sda as (select cdk.*,dsa.annexs   from dsa left join  gm_cdk cdk on dsa.id = cdk.id where cdk.game_id='1'   limit 100 offset 0   ),
+	pla as (select  jsonb_array_elements(plaform) as plaform ,id from gm_cdk  where id in (select id from sda)),
+	pls as (select id,string_to_array(string_agg((case 
+	when pla.plaform = '"1"' then '安卓'
+	when pla.plaform = '"2"' then '苹果'
+	end),','),',') as plaforms  from pla  GROUP BY pla.id)
+	select  sda.*,pls.plaforms ,(case 
+		when sda.type = '1' then '唯一'
+		when sda.type = '2' then '互斥'
+		when sda.type = '3' then '通用'
+		end
+		) as types  from sda left JOIN pls on pls.id=sda.id
+[2020-09-04T16:29:27.027] [DEBUG] debugLogger - Executing (default): select count(id) as total  from gm_cdk cdk where cdk.game_id='1'
+[2020-09-04T16:29:28.109] [DEBUG] debugLogger - Executing (default): with asd as (select (jsonb_array_elements(annex) ->> 'annexName')::jsonb ->> 1  as name, jsonb_array_elements(annex) ->> 'annexNumber' as numbers ,id  from  gm_cdk),
+		dsa as (select  asd.id, string_to_array(string_agg(concat(art.name,'  ',asd.numbers,'个'),','),',')  as annexs  from asd  left join gm_article art on art.article_id = asd.name GROUP BY asd.id ),
+	sda as (select cdk.*,dsa.annexs   from dsa left join  gm_cdk cdk on dsa.id = cdk.id where cdk.game_id='1'   limit 100 offset 0   ),
+	pla as (select  jsonb_array_elements(plaform) as plaform ,id from gm_cdk  where id in (select id from sda)),
+	pls as (select id,string_to_array(string_agg((case 
+	when pla.plaform = '"1"' then '安卓'
+	when pla.plaform = '"2"' then '苹果'
+	end),','),',') as plaforms  from pla  GROUP BY pla.id)
+	select  sda.*,pls.plaforms ,(case 
+		when sda.type = '1' then '唯一'
+		when sda.type = '2' then '互斥'
+		when sda.type = '3' then '通用'
+		end
+		) as types  from sda left JOIN pls on pls.id=sda.id
+[2020-09-04T16:29:28.115] [DEBUG] debugLogger - Executing (default): select count(id) as total  from gm_cdk cdk where cdk.game_id='1'
+[2020-09-04T16:29:42.430] [DEBUG] debugLogger - Executing (default): with asd as (select (jsonb_array_elements(annex) ->> 'annexName')::jsonb ->> 1  as name, jsonb_array_elements(annex) ->> 'annexNumber' as numbers ,id  from  gm_cdk),
+		dsa as (select  asd.id, string_to_array(string_agg(concat(art.name,'  ',asd.numbers,'个'),','),',')  as annexs  from asd  left join gm_article art on art.article_id = asd.name GROUP BY asd.id ),
+	sda as (select cdk.*,dsa.annexs   from dsa left join  gm_cdk cdk on dsa.id = cdk.id where cdk.game_id='1'   limit 100 offset 0   ),
+	pla as (select  jsonb_array_elements(plaform) as plaform ,id from gm_cdk  where id in (select id from sda)),
+	pls as (select id,string_to_array(string_agg((case 
+	when pla.plaform = '"1"' then '安卓'
+	when pla.plaform = '"2"' then '苹果'
+	end),','),',') as plaforms  from pla  GROUP BY pla.id)
+	select  sda.*,pls.plaforms ,(case 
+		when sda.type = '1' then '唯一'
+		when sda.type = '2' then '互斥'
+		when sda.type = '3' then '通用'
+		end
+		) as types  from sda left JOIN pls on pls.id=sda.id
+[2020-09-04T16:29:42.442] [DEBUG] debugLogger - Executing (default): select count(id) as total  from gm_cdk cdk where cdk.game_id='1'
+[2020-09-04T16:29:42.846] [DEBUG] debugLogger - Executing (default): select channel  as  values from gm_game_token where type='areaclothing'  and  gameid='1'
+[2020-09-04T16:29:42.922] [DEBUG] debugLogger - Executing (default): with asd as (select (jsonb_array_elements(annex) ->> 'annexName')::jsonb ->> 1  as name, jsonb_array_elements(annex) ->> 'annexNumber' as numbers ,id  from  gm_cdk),
+				dsa as (select  asd.id, string_to_array(string_agg(concat(art.name,'  ',asd.numbers,'个'),','),',')  as annexs  from asd  left join gm_article art on art.article_id = asd.name GROUP BY asd.id ),
+			sda as (select cdk.*,dsa.annexs   from dsa left join  gm_cdk cdk on dsa.id = cdk.id where cdk.game_id='1' and cdk.id=68 ),
+			pla as (select  jsonb_array_elements(plaform) as plaform ,id from gm_cdk  where id in (select id from sda)),
+			pls as (select id,string_to_array(string_agg((case 
+			when pla.plaform = '"1"' then '安卓'
+			when pla.plaform = '"2"' then '苹果'
+			end),','),',') as plaforms  from pla  GROUP BY pla.id)
+			select  sda.*,pls.plaforms ,(case 
+				when sda.type = '1' then '唯一'
+				when sda.type = '2' then '互斥'
+				when sda.type = '3' then '通用'
+				end
+				) as types from sda left JOIN pls on pls.id=sda.id
+[2020-09-04T16:29:45.696] [DEBUG] debugLogger - Executing (default): with asd as (select (jsonb_array_elements(annex) ->> 'annexName')::jsonb ->> 1  as name, jsonb_array_elements(annex) ->> 'annexNumber' as numbers ,id  from  gm_cdk),
+		dsa as (select  asd.id, string_to_array(string_agg(concat(art.name,'  ',asd.numbers,'个'),','),',')  as annexs  from asd  left join gm_article art on art.article_id = asd.name GROUP BY asd.id ),
+	sda as (select cdk.*,dsa.annexs   from dsa left join  gm_cdk cdk on dsa.id = cdk.id where cdk.game_id='1'   limit 100 offset 0   ),
+	pla as (select  jsonb_array_elements(plaform) as plaform ,id from gm_cdk  where id in (select id from sda)),
+	pls as (select id,string_to_array(string_agg((case 
+	when pla.plaform = '"1"' then '安卓'
+	when pla.plaform = '"2"' then '苹果'
+	end),','),',') as plaforms  from pla  GROUP BY pla.id)
+	select  sda.*,pls.plaforms ,(case 
+		when sda.type = '1' then '唯一'
+		when sda.type = '2' then '互斥'
+		when sda.type = '3' then '通用'
+		end
+		) as types  from sda left JOIN pls on pls.id=sda.id
+[2020-09-04T16:29:45.699] [DEBUG] debugLogger - Executing (default): select count(id) as total  from gm_cdk cdk where cdk.game_id='1'
+[2020-09-04T16:29:46.988] [DEBUG] debugLogger - Executing (default): with asd as (select (jsonb_array_elements(annex) ->> 'annexName')::jsonb ->> 1  as name, jsonb_array_elements(annex) ->> 'annexNumber' as numbers ,id  from  gm_cdk),
+		dsa as (select  asd.id, string_to_array(string_agg(concat(art.name,'  ',asd.numbers,'个'),','),',')  as annexs  from asd  left join gm_article art on art.article_id = asd.name GROUP BY asd.id ),
+	sda as (select cdk.*,dsa.annexs   from dsa left join  gm_cdk cdk on dsa.id = cdk.id where cdk.game_id='1'   limit 100 offset 0   ),
+	pla as (select  jsonb_array_elements(plaform) as plaform ,id from gm_cdk  where id in (select id from sda)),
+	pls as (select id,string_to_array(string_agg((case 
+	when pla.plaform = '"1"' then '安卓'
+	when pla.plaform = '"2"' then '苹果'
+	end),','),',') as plaforms  from pla  GROUP BY pla.id)
+	select  sda.*,pls.plaforms ,(case 
+		when sda.type = '1' then '唯一'
+		when sda.type = '2' then '互斥'
+		when sda.type = '3' then '通用'
+		end
+		) as types  from sda left JOIN pls on pls.id=sda.id
+[2020-09-04T16:29:46.991] [DEBUG] debugLogger - Executing (default): select count(id) as total  from gm_cdk cdk where cdk.game_id='1'
+[2020-09-04T16:32:06.119] [DEBUG] debugLogger - Executing (default): with asd as (select (jsonb_array_elements(annex) ->> 'annexName')::jsonb ->> 1  as name, jsonb_array_elements(annex) ->> 'annexNumber' as numbers ,id  from  gm_cdk),
+		dsa as (select  asd.id, string_to_array(string_agg(concat(art.name,'  ',asd.numbers,'个'),','),',')  as annexs  from asd  left join gm_article art on art.article_id = asd.name GROUP BY asd.id ),
+	sda as (select cdk.*,dsa.annexs   from dsa left join  gm_cdk cdk on dsa.id = cdk.id where cdk.game_id='1'   limit 100 offset 100   ),
+	pla as (select  jsonb_array_elements(plaform) as plaform ,id from gm_cdk  where id in (select id from sda)),
+	pls as (select id,string_to_array(string_agg((case 
+	when pla.plaform = '"1"' then '安卓'
+	when pla.plaform = '"2"' then '苹果'
+	end),','),',') as plaforms  from pla  GROUP BY pla.id)
+	select  sda.*,pls.plaforms ,(case 
+		when sda.type = '1' then '唯一'
+		when sda.type = '2' then '互斥'
+		when sda.type = '3' then '通用'
+		end
+		) as types  from sda left JOIN pls on pls.id=sda.id
+[2020-09-04T16:32:06.126] [DEBUG] debugLogger - Executing (default): select count(id) as total  from gm_cdk cdk where cdk.game_id='1'
+[2020-09-04T16:32:06.932] [DEBUG] debugLogger - Executing (default): with asd as (select (jsonb_array_elements(annex) ->> 'annexName')::jsonb ->> 1  as name, jsonb_array_elements(annex) ->> 'annexNumber' as numbers ,id  from  gm_cdk),
+		dsa as (select  asd.id, string_to_array(string_agg(concat(art.name,'  ',asd.numbers,'个'),','),',')  as annexs  from asd  left join gm_article art on art.article_id = asd.name GROUP BY asd.id ),
+	sda as (select cdk.*,dsa.annexs   from dsa left join  gm_cdk cdk on dsa.id = cdk.id where cdk.game_id='1'   limit 100 offset 200   ),
+	pla as (select  jsonb_array_elements(plaform) as plaform ,id from gm_cdk  where id in (select id from sda)),
+	pls as (select id,string_to_array(string_agg((case 
+	when pla.plaform = '"1"' then '安卓'
+	when pla.plaform = '"2"' then '苹果'
+	end),','),',') as plaforms  from pla  GROUP BY pla.id)
+	select  sda.*,pls.plaforms ,(case 
+		when sda.type = '1' then '唯一'
+		when sda.type = '2' then '互斥'
+		when sda.type = '3' then '通用'
+		end
+		) as types  from sda left JOIN pls on pls.id=sda.id
+[2020-09-04T16:32:06.938] [DEBUG] debugLogger - Executing (default): select count(id) as total  from gm_cdk cdk where cdk.game_id='1'
+[2020-09-04T16:32:08.148] [DEBUG] debugLogger - Executing (default): with asd as (select (jsonb_array_elements(annex) ->> 'annexName')::jsonb ->> 1  as name, jsonb_array_elements(annex) ->> 'annexNumber' as numbers ,id  from  gm_cdk),
+		dsa as (select  asd.id, string_to_array(string_agg(concat(art.name,'  ',asd.numbers,'个'),','),',')  as annexs  from asd  left join gm_article art on art.article_id = asd.name GROUP BY asd.id ),
+	sda as (select cdk.*,dsa.annexs   from dsa left join  gm_cdk cdk on dsa.id = cdk.id where cdk.game_id='1'   limit 100 offset 0   ),
+	pla as (select  jsonb_array_elements(plaform) as plaform ,id from gm_cdk  where id in (select id from sda)),
+	pls as (select id,string_to_array(string_agg((case 
+	when pla.plaform = '"1"' then '安卓'
+	when pla.plaform = '"2"' then '苹果'
+	end),','),',') as plaforms  from pla  GROUP BY pla.id)
+	select  sda.*,pls.plaforms ,(case 
+		when sda.type = '1' then '唯一'
+		when sda.type = '2' then '互斥'
+		when sda.type = '3' then '通用'
+		end
+		) as types  from sda left JOIN pls on pls.id=sda.id
+[2020-09-04T16:32:08.153] [DEBUG] debugLogger - Executing (default): select count(id) as total  from gm_cdk cdk where cdk.game_id='1'
+[2020-09-04T16:33:07.980] [DEBUG] debugLogger - Executing (default): select channel  as  values from gm_game_token where type='areaclothing'  and  gameid='1'
+[2020-09-04T16:33:08.341] [DEBUG] debugLogger - Executing (default): with asd as (select (jsonb_array_elements(annex) ->> 'annexName')::jsonb ->> 1  as name, jsonb_array_elements(annex) ->> 'annexNumber' as numbers ,id  from  gm_cdk),
+				dsa as (select  asd.id, string_to_array(string_agg(concat(art.name,'  ',asd.numbers,'个'),','),',')  as annexs  from asd  left join gm_article art on art.article_id = asd.name GROUP BY asd.id ),
+			sda as (select cdk.*,dsa.annexs   from dsa left join  gm_cdk cdk on dsa.id = cdk.id where cdk.game_id='1' and cdk.id=68 ),
+			pla as (select  jsonb_array_elements(plaform) as plaform ,id from gm_cdk  where id in (select id from sda)),
+			pls as (select id,string_to_array(string_agg((case 
+			when pla.plaform = '"1"' then '安卓'
+			when pla.plaform = '"2"' then '苹果'
+			end),','),',') as plaforms  from pla  GROUP BY pla.id)
+			select  sda.*,pls.plaforms ,(case 
+				when sda.type = '1' then '唯一'
+				when sda.type = '2' then '互斥'
+				when sda.type = '3' then '通用'
+				end
+				) as types from sda left JOIN pls on pls.id=sda.id
+[2020-09-04T16:33:31.975] [DEBUG] debugLogger - Executing (default): select channel  as  values from gm_game_token where type='areaclothing'  and  gameid='1'
+[2020-09-04T16:33:32.004] [DEBUG] debugLogger - Executing (default): with asd as (select (jsonb_array_elements(annex) ->> 'annexName')::jsonb ->> 1  as name, jsonb_array_elements(annex) ->> 'annexNumber' as numbers ,id  from  gm_cdk),
+				dsa as (select  asd.id, string_to_array(string_agg(concat(art.name,'  ',asd.numbers,'个'),','),',')  as annexs  from asd  left join gm_article art on art.article_id = asd.name GROUP BY asd.id ),
+			sda as (select cdk.*,dsa.annexs   from dsa left join  gm_cdk cdk on dsa.id = cdk.id where cdk.game_id='1' and cdk.id=68 ),
+			pla as (select  jsonb_array_elements(plaform) as plaform ,id from gm_cdk  where id in (select id from sda)),
+			pls as (select id,string_to_array(string_agg((case 
+			when pla.plaform = '"1"' then '安卓'
+			when pla.plaform = '"2"' then '苹果'
+			end),','),',') as plaforms  from pla  GROUP BY pla.id)
+			select  sda.*,pls.plaforms ,(case 
+				when sda.type = '1' then '唯一'
+				when sda.type = '2' then '互斥'
+				when sda.type = '3' then '通用'
+				end
+				) as types from sda left JOIN pls on pls.id=sda.id
+[2020-09-04T16:33:36.744] [DEBUG] debugLogger - Executing (default): with asd as (select (jsonb_array_elements(annex) ->> 'annexName')::jsonb ->> 1  as name, jsonb_array_elements(annex) ->> 'annexNumber' as numbers ,id  from  gm_cdk),
+		dsa as (select  asd.id, string_to_array(string_agg(concat(art.name,'  ',asd.numbers,'个'),','),',')  as annexs  from asd  left join gm_article art on art.article_id = asd.name GROUP BY asd.id ),
+	sda as (select cdk.*,dsa.annexs   from dsa left join  gm_cdk cdk on dsa.id = cdk.id where cdk.game_id='1'   limit undefined offset NaN   ),
+	pla as (select  jsonb_array_elements(plaform) as plaform ,id from gm_cdk  where id in (select id from sda)),
+	pls as (select id,string_to_array(string_agg((case 
+	when pla.plaform = '"1"' then '安卓'
+	when pla.plaform = '"2"' then '苹果'
+	end),','),',') as plaforms  from pla  GROUP BY pla.id)
+	select  sda.*,pls.plaforms ,(case 
+		when sda.type = '1' then '唯一'
+		when sda.type = '2' then '互斥'
+		when sda.type = '3' then '通用'
+		end
+		) as types  from sda left JOIN pls on pls.id=sda.id
+[2020-09-04T16:52:04.948] [DEBUG] debugLogger - Executing (default): with asd as (select (jsonb_array_elements(annex) ->> 'annexName')::jsonb ->> 1  as name, jsonb_array_elements(annex) ->> 'annexNumber' as numbers ,id  from  gm_cdk),
+		dsa as (select  asd.id, string_to_array(string_agg(concat(art.name,'  ',asd.numbers,'个'),','),',')  as annexs  from asd  left join gm_article art on art.article_id = asd.name GROUP BY asd.id ),
+	sda as (select cdk.*,dsa.annexs   from dsa left join  gm_cdk cdk on dsa.id = cdk.id where cdk.game_id='1'   limit undefined offset NaN   ),
+	pla as (select  jsonb_array_elements(plaform) as plaform ,id from gm_cdk  where id in (select id from sda)),
+	pls as (select id,string_to_array(string_agg((case 
+	when pla.plaform = '"1"' then '安卓'
+	when pla.plaform = '"2"' then '苹果'
+	end),','),',') as plaforms  from pla  GROUP BY pla.id)
+	select  sda.*,pls.plaforms ,(case 
+		when sda.type = '1' then '唯一'
+		when sda.type = '2' then '互斥'
+		when sda.type = '3' then '通用'
+		end
+		) as types  from sda left JOIN pls on pls.id=sda.id
+[2020-09-04T16:52:15.536] [DEBUG] debugLogger - Executing (default): with asd as (select (jsonb_array_elements(annex) ->> 'annexName')::jsonb ->> 1  as name, jsonb_array_elements(annex) ->> 'annexNumber' as numbers ,id  from  gm_cdk),
+		dsa as (select  asd.id, string_to_array(string_agg(concat(art.name,'  ',asd.numbers,'个'),','),',')  as annexs  from asd  left join gm_article art on art.article_id = asd.name GROUP BY asd.id ),
+	sda as (select cdk.*,dsa.annexs   from dsa left join  gm_cdk cdk on dsa.id = cdk.id where cdk.game_id='1'   limit undefined offset NaN   ),
+	pla as (select  jsonb_array_elements(plaform) as plaform ,id from gm_cdk  where id in (select id from sda)),
+	pls as (select id,string_to_array(string_agg((case 
+	when pla.plaform = '"1"' then '安卓'
+	when pla.plaform = '"2"' then '苹果'
+	end),','),',') as plaforms  from pla  GROUP BY pla.id)
+	select  sda.*,pls.plaforms ,(case 
+		when sda.type = '1' then '唯一'
+		when sda.type = '2' then '互斥'
+		when sda.type = '3' then '通用'
+		end
+		) as types  from sda left JOIN pls on pls.id=sda.id
+[2020-09-04T16:58:26.703] [DEBUG] debugLogger - Executing (default): with asd as (select (jsonb_array_elements(annex) ->> 'annexName')::jsonb ->> 1  as name, jsonb_array_elements(annex) ->> 'annexNumber' as numbers ,id  from  gm_cdk),
+		dsa as (select  asd.id, string_to_array(string_agg(concat(art.name,'  ',asd.numbers,'个'),','),',')  as annexs  from asd  left join gm_article art on art.article_id = asd.name GROUP BY asd.id ),
+	sda as (select cdk.*,dsa.annexs   from dsa left join  gm_cdk cdk on dsa.id = cdk.id where cdk.game_id='1'   limit undefined offset NaN   ),
+	pla as (select  jsonb_array_elements(plaform) as plaform ,id from gm_cdk  where id in (select id from sda)),
+	pls as (select id,string_to_array(string_agg((case 
+	when pla.plaform = '"1"' then '安卓'
+	when pla.plaform = '"2"' then '苹果'
+	end),','),',') as plaforms  from pla  GROUP BY pla.id)
+	select  sda.*,pls.plaforms ,(case 
+		when sda.type = '1' then '唯一'
+		when sda.type = '2' then '互斥'
+		when sda.type = '3' then '通用'
+		end
+		) as types  from sda left JOIN pls on pls.id=sda.id
+[2020-09-04T16:59:11.809] [DEBUG] debugLogger - Executing (default): select channel  as  values from gm_game_token where type='areaclothing'  and  gameid='1'
+[2020-09-04T16:59:11.837] [DEBUG] debugLogger - Executing (default): with asd as (select (jsonb_array_elements(annex) ->> 'annexName')::jsonb ->> 1  as name, jsonb_array_elements(annex) ->> 'annexNumber' as numbers ,id  from  gm_cdk),
+				dsa as (select  asd.id, string_to_array(string_agg(concat(art.name,'  ',asd.numbers,'个'),','),',')  as annexs  from asd  left join gm_article art on art.article_id = asd.name GROUP BY asd.id ),
+			sda as (select cdk.*,dsa.annexs   from dsa left join  gm_cdk cdk on dsa.id = cdk.id where cdk.game_id='1' and cdk.id=68 ),
+			pla as (select  jsonb_array_elements(plaform) as plaform ,id from gm_cdk  where id in (select id from sda)),
+			pls as (select id,string_to_array(string_agg((case 
+			when pla.plaform = '"1"' then '安卓'
+			when pla.plaform = '"2"' then '苹果'
+			end),','),',') as plaforms  from pla  GROUP BY pla.id)
+			select  sda.*,pls.plaforms ,(case 
+				when sda.type = '1' then '唯一'
+				when sda.type = '2' then '互斥'
+				when sda.type = '3' then '通用'
+				end
+				) as types from sda left JOIN pls on pls.id=sda.id
+[2020-09-04T16:59:39.576] [DEBUG] debugLogger - Executing (default): select channel  as  values from gm_game_token where type='areaclothing'  and  gameid='1'
+[2020-09-04T16:59:39.909] [DEBUG] debugLogger - Executing (default): with asd as (select (jsonb_array_elements(annex) ->> 'annexName')::jsonb ->> 1  as name, jsonb_array_elements(annex) ->> 'annexNumber' as numbers ,id  from  gm_cdk),
+				dsa as (select  asd.id, string_to_array(string_agg(concat(art.name,'  ',asd.numbers,'个'),','),',')  as annexs  from asd  left join gm_article art on art.article_id = asd.name GROUP BY asd.id ),
+			sda as (select cdk.*,dsa.annexs   from dsa left join  gm_cdk cdk on dsa.id = cdk.id where cdk.game_id='1' and cdk.id=68 ),
+			pla as (select  jsonb_array_elements(plaform) as plaform ,id from gm_cdk  where id in (select id from sda)),
+			pls as (select id,string_to_array(string_agg((case 
+			when pla.plaform = '"1"' then '安卓'
+			when pla.plaform = '"2"' then '苹果'
+			end),','),',') as plaforms  from pla  GROUP BY pla.id)
+			select  sda.*,pls.plaforms ,(case 
+				when sda.type = '1' then '唯一'
+				when sda.type = '2' then '互斥'
+				when sda.type = '3' then '通用'
+				end
+				) as types from sda left JOIN pls on pls.id=sda.id
+[2020-09-04T17:00:08.299] [DEBUG] debugLogger - Executing (default): select channel  as  values from gm_game_token where type='areaclothing'  and  gameid='1'
+[2020-09-04T17:00:08.431] [DEBUG] debugLogger - Executing (default): with asd as (select (jsonb_array_elements(annex) ->> 'annexName')::jsonb ->> 1  as name, jsonb_array_elements(annex) ->> 'annexNumber' as numbers ,id  from  gm_cdk),
+				dsa as (select  asd.id, string_to_array(string_agg(concat(art.name,'  ',asd.numbers,'个'),','),',')  as annexs  from asd  left join gm_article art on art.article_id = asd.name GROUP BY asd.id ),
+			sda as (select cdk.*,dsa.annexs   from dsa left join  gm_cdk cdk on dsa.id = cdk.id where cdk.game_id='1' and cdk.id=68 ),
+			pla as (select  jsonb_array_elements(plaform) as plaform ,id from gm_cdk  where id in (select id from sda)),
+			pls as (select id,string_to_array(string_agg((case 
+			when pla.plaform = '"1"' then '安卓'
+			when pla.plaform = '"2"' then '苹果'
+			end),','),',') as plaforms  from pla  GROUP BY pla.id)
+			select  sda.*,pls.plaforms ,(case 
+				when sda.type = '1' then '唯一'
+				when sda.type = '2' then '互斥'
+				when sda.type = '3' then '通用'
+				end
+				) as types from sda left JOIN pls on pls.id=sda.id
+[2020-09-04T18:33:07.137] [DEBUG] debugLogger - Executing (default): select channel  as  values from gm_game_token where type='areaclothing'  and  gameid='1'

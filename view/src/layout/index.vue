@@ -12,7 +12,7 @@
 
 <script>
 // 使用 mock 模拟数据
-import '@/utils/mock';
+// import '@/utils/mock';
 
 import AppProject from './project/app-project';
 import Navbar from './project/navbar';

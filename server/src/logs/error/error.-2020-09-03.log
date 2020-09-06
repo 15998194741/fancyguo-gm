@@ -1,0 +1,66 @@
+[2020-09-03T15:57:14.121] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/mail/postMailToCreate
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"title":"1","text":"1","allServerTrue":false,"roleId":[{"serverid":12312,"id":1231231},{"serverid":456456,"id":5456465},{"serverid":456457,"id":9681699},{"serverid":752553,"id":13906933},{"serverid":974625,"id":18132167},{"serverid":1196698,"id":22357401},{"serverid":1418770,"id":26582635},{"serverid":1640843,"id":30807869},{"serverid":1862915,"id":35033103},{"serverid":2084988,"id":39258337},{"serverid":230706,"id":43483571},{"serverid":2529133,"id":47708805},{"serverid":2751205,"id":51934039},{"serverid":2973278,"id":56159273},{"serverid":3195350,"id":60384507},{"serverid":3417423,"id":64609741},{"serverid":3639495,"id":68834975},{"serverid":3861568,"id":73060209},{"serverid":4083640,"id":77285443},{"serverid":4305713,"id":81510677},{"serverid":4527785,"id":85735911},{"serverid":4749858,"id":89961145},{"serverid":4971930,"id":94186379},{"serverid":5194003,"id":98411613},{"serverid":5416075,"id":102636847},{"serverid":5638148,"id":106862081},{"serverid":5860220,"id":111087315},{"serverid":6082293.33333333,"id":115312549}],"sendTime":true,"mailLink":"1","plaform":"","channel":"","serverName":"","carryAnnex":false,"sendDateTime":"","smtpId":"56582","gameid":"1"}
+response time: 1599119834120
+err name: SequelizeDatabaseError
+err message: invalid input syntax for type json
+err stack: SequelizeDatabaseError: invalid input syntax for type json
+    at Query.formatError (H:\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:366:16)
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:72:18
+From previous event:
+    at Query.run (H:\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:64:23)
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:29
+From previous event:
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:12
+    at processImmediate (internal/timers.js:456:21)
+From previous event:
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:651:10
+    at H:\fancyguo-gm\server\node_modules\retry-as-promised\index.js:70:21
+    at new Promise (<anonymous>)
+    at retryAsPromised (H:\fancyguo-gm\server\node_modules\retry-as-promised\index.js:60:10)
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:641:30
+From previous event:
+    at Sequelize.query (H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:590:23)
+    at _callee6$ (H:\fancyguo-gm\server\src\app\service\/mail.js:103:31)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at MailService.<anonymous> (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at MailService.postMailToCreate (H:\fancyguo-gm\server\src\app\service\mail.js:315:34)
+    at _callee6$ (H:\fancyguo-gm\server\src\app\controllers\/mail.js:45:37)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at postMailToCreate (H:\fancyguo-gm\server\src\app\controllers\mail.js:236:34)
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at next (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:45:18)
+    at H:\fancyguo-gm\server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at H:\fancyguo-gm\server\node_modules\koa-compose\index.js:36:12
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-router\lib\router.js:351:31)
+    at next (H:\fancyguo-gm\server\node_modules\koa\node_modules\koa-compose\index.js:42:32)
+    at _callee$ (H:\fancyguo-gm\server\src\middleware\/index.js:48:11)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at H:\fancyguo-gm\server\src\middleware\/index.js:43:2
+*************** error log end ***************
+

@@ -52,6 +52,12 @@
          <p v-else>{{scope['row']['cdkid']}}</p>
        </template>
     </el-table-column>
+       <el-table-column  label="紧急停用">
+       <template slot-scope="scope" > 
+         <el-button  v-if="+scope['row']['status'] === 1" type="danger" plain @click='cdkStop(scope)'>紧急停用</el-button>
+          <p v-else>已停用</p>
+       </template>
+    </el-table-column>
   </el-table>
   </div>
   <div class="role-container-bottom">
@@ -195,14 +201,18 @@ import { findComponents } from '@/api/components.js';
 import { getQueryAnnexOptionsLazy, getQueryAnnexOptions } from '@/api/mail.js';
 import { generateCodeFrame } from './cdkGenerate.js';
 import { CDKcreate, CDKFind, cdkDownload } from '@/api/cdk'; 
-import { cdkCreateSchedule } from '@/api/cdk'; 
+import { cdkCreateSchedule, CDKFindByTypeOne, CDKFindIdAndStop } from '@/api/cdk'; 
 
 let id = 0;
 export default {
   name: 'CDKmanagement',
   data() {
     let quantity, annexList;
- 
+    let TypeOneValue = new Promise((res, err)=>{
+      CDKFindByTypeOne().then(ress => {
+        res(ress);
+      });
+    });
     quantity = (rule, value, callback) =>{
       if (/^[0-9]*$/.test(value)) {
         return callback();
@@ -221,12 +231,15 @@ export default {
       return callback();
     };
     let failureTimeRules = (rule, value, callback) =>{
-      if (!this.$data.createForm['takeEffectTime']) {
-        let a = this.$data.createForm['takeEffectTime']; 
-        this.$data.createForm['takeEffectTime'] = 1;
-        this.$data.createForm['takeEffectTime'] = a;
-        return callback(new Error('请选择生效时间'));
+      // if (!this.$data.createForm['takeEffectTime']) {
+      //   let a = this.$data.createForm['takeEffectTime']; 
+      //   this.$data.createForm['takeEffectTime'] = 1;
+      //   this.$data.createForm['takeEffectTime'] = a;
+      //   return callback(new Error('请选择生效时间'));
 
+      // }
+      if (!this.$data.createForm['takeEffectTime']) {
+        return callback();
       }
       if (value <= this.$data.createForm['takeEffectTime']) {
         this.$data.createForm['takeEffectTime'] = this.$data.createForm['takeEffectTime'];
@@ -235,9 +248,12 @@ export default {
       return callback();
     };
     let takeEffectTime = (rule, value, callback) =>{
+      // if (!this.$data.createForm['failureTime']) {
+      //   this.$data.createForm['failureTime'] = this.$data.createForm['failureTime'];
+      //   return callback(new Error('请选择失效时间'));
+      // }
       if (!this.$data.createForm['failureTime']) {
-        this.$data.createForm['failureTime'] = this.$data.createForm['failureTime'];
-        return callback(new Error('请选择失效时间'));
+        return callback();
       }
       if (value >= this.$data.createForm['failureTime']) {
         this.$data.createForm['failureTime'] = this.$data.createForm['failureTime'];
@@ -245,11 +261,16 @@ export default {
       }
       return callback();
     };
-    let cdkkey = (rule, value, callback) =>{
+    let cdkkey = async(rule, value, callback) =>{
       if (this.$data.createForm['type'] === '1') {
         if (!value) {
           return callback(new Error('请输入CDKKEY,不想手输可以使用自动生成功能'));
-
+        }
+        let { data } = await TypeOneValue;
+        for (let i of data) {
+          if (i['cdkid'] === value) {
+            return callback(new Error('CDK重复!'));
+          }
         }
       }
       return callback();
@@ -295,7 +316,7 @@ export default {
       },
       selectForm: [{
         label: '平台',
-        multiple: false,
+        multiple: true,
         key: 'plaform',
         value: '',
         options: [
@@ -303,11 +324,11 @@ export default {
             label: '不限制',
             value: ''
           }, {
-            label: 'Android',
+            label: '安卓',
             value: '1'
 
           }, {
-            label: 'IOS',
+            label: '苹果',
             value: '2'
           }]
       }, {
@@ -332,7 +353,7 @@ export default {
         { label: '名称', prop: 'name', width: 50 },
         { label: '平台', prop: 'plaforms', width: 25 },
         { label: '客户端', prop: 'channel', width: -50 },
-        { label: 'CDKEY类型', prop: 'type', width: -50 },
+        { label: 'CDKEY类型', prop: 'types', width: -50 },
         { label: 'CDKEY数量', prop: 'num', width: -50 },
         { label: '生效日期', prop: 'start_time', width: -50 },
         { label: '失效日期', prop: 'end_time', width: -50 },
@@ -368,13 +389,24 @@ export default {
   },  
   methods: {
     async downloadCDK(val) {
+      const loading = this.$loading({
+        lock: true,
+        text: '拼命加载中',
+        spinner: 'el-icon-loading',
+        background: 'rgba(0, 0, 0, 0.8)'
+      });
       let tablename = val['row']['cdkid'];
-      // let activityname = val['row']['name'];
       let ScheduleQuery = await cdkCreateSchedule({ tablename });
-      if (!ScheduleQuery) {this.$message.warning('下载失败'); return;}
+      if (!ScheduleQuery) {
+        this.$message.warning('下载失败');
+        loading.close();
+        return;
+      }
       let { data: ScheduleData } = ScheduleQuery;
       if (+ScheduleData !== +1) {
         this.$message.info('cdk生成中');
+        loading.close();
+        return;
       }
       let res = await cdkDownload({ tablename });
       if (res) {
@@ -384,8 +416,9 @@ export default {
         link.style.display = 'none';
         link.href = url;
         document.body.appendChild(link);
-        link.download = `${tablename}.csv`;
+        link.download = `${val['row']['name']}.csv`;
         link.click();
+        loading.close();
       }
     // require.ensure([], () => {
       //   const { export_json_to_excel: exportJsonToExcel } = require('@/Excel/Export2Excel');//注意这个Export2Excel路径
@@ -404,7 +437,7 @@ export default {
       // let query = data['row'];
       this.$router.push({
         path: '/CDKManagement/cdkDetail',
-        query: { ...data['row'] }
+        query: { ...data['row'], ...this.filterForm }
       });
     },
     handleSelectionChange() {
@@ -413,8 +446,48 @@ export default {
     cdkKeyGenerate() {
       this.createForm['cdkkey'] = generateCodeFrame();  
     },
+    async cdkStop(val) {
+      let sendtrue = await this.$confirm(`是否确认紧急通用此CDK?`, '提示', {
+        confirmButtonText: '确定',
+        cancelButtonText: '取消',
+        type: 'warning' })
+        .catch(err => false);
+      if (!sendtrue) {return;}
+      const loading = this.$loading({
+        lock: true,
+        text: '拼命加载中',
+        spinner: 'el-icon-loading',
+        background: 'rgba(0, 0, 0, 0.8)'
+      });
+      let id = val['row']['id'];
+      let res = await CDKFindIdAndStop({ id });
+      let { code } = res;
+      if (+code === +200) {
+        this.$message.success('停用成功，数据刷新中...');
+        val['row']['status'] = 0;
+      } else {
+        this.$message.warning('停用失败，数据刷新中...');
+      }
+
+      loading.close();
+    },
     async createFormSubmit() {
       // this.creatinng = true;
+      let sendtrue = await this.$confirm(`是否确认创建CDK?`, '提示', {
+        confirmButtonText: '确定',
+        cancelButtonText: '取消',
+        type: 'warning' })
+        .catch(err => false);
+      if (!sendtrue) {return;}
+
+
+
+
+
+
+
+
+
       const loading = this.$loading({
         lock: true,
         text: '拼命加载中',
@@ -429,16 +502,17 @@ export default {
       let { code, data } = await CDKcreate(this.createForm);
       if (+code !== +200) {this.$message.info('创建失败'); loading.close(); return; }
       loading.close();
+      this.createFormMailCancel();
       this.$message.success(`创建成功,您创建的CDKID为   ${data}`);
       
     },
     createFormMailCancel() {
-      this.$refs['createFormRulesLeft'].resetFields();
-      this.$refs['createFormRulesRight'].resetFields();
       this.dialogFormchange = false;
       this.createForm['annexList'] = [
         { annexName: '', annexNumber: '', id }
       ];
+      this.$refs['createFormRulesLeft'].resetFields();
+      this.$refs['createFormRulesRight'].resetFields();
     },
     filterFormChange(val) {
       switch (val) {
@@ -502,6 +576,7 @@ export default {
       value: item
     }));
     this.selectForm[1].options = this.selectForm[1].options.concat(components);
+    
   }
 
 

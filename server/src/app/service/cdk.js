@@ -13,7 +13,7 @@ class CDKService{
 	}
 	async createcdk(data){
 		let { name, type, quantity, plaform, channel, takeEffectTime, failureTime, title, text, annexList, gameid, cdkkey} = data;
-		console.log(takeEffectTime, failureTime);
+		// console.log(takeEffectTime, failureTime);
 		let sql = `INSERT into gm_cdk  
 		 ( "name",type ,num,plaform,channel,start_time,end_time,content,title,game_id,annex)
 		 values
@@ -193,9 +193,9 @@ class CDKService{
 	//cdk转换成csv
 	async cdkToCsv(data){
 		const fs = require('fs');
-		const { Readable } = require('stream');
+		// const { Readable } = require('stream');
 		let { tablename, num, id}  = data;
-		  async function*  generate(nums) {
+		   async function*  generate(nums) {
 			let i = 100;
 			let j =  0;
 			let res;
@@ -210,14 +210,47 @@ class CDKService{
 				}
 			}
 		}
-		let readable = Readable.from(generate(num));
-		let writable = fs.createWriteStream(`./src/cdk/${tablename}.csv`);
-		readable.pipe(writable);
-		readable.on('end', ()=>{
-			dbSequelize.query(`update  gm_cdk set table_true = 1 where id =  ${id} `);
+		// let testbuffer =  Buffer.from('');
+		// // let testbuffer = Buffer.from(generate(num));
+		// for await (let a of  generate(num)){
+		// 	testbuffer = Buffer.concat([testbuffer, Buffer.from(a)]);
+		// }
+		// let readable = fs.createReadStream(testbuffer);
+		const  path = require('path');
+		let filePath = path.join(__dirname, `../../cdk/${tablename}.csv`);
+		// console.log(filePath);
+		// fs.writeFile(filePath, '', function(err) {
+		// 	if(err) {
+		// 		 console.log(err, 1111111111);
+		// 		 return;
+		// 	}
+		// });
+		// let writable = fs.createWriteStream(filePath);
+		fs.open(filePath, 'a', async(err, fd)=>{
+			if(!err){
+				for await (let a of  generate(num)){
+					// testbuffer = Buffer.concat([testbuffer, Buffer.from(a)]);
+					fs.write(fd, a, (err)=>{
+						if(err){
+							console.log(err);
+						}
+					});
+				}
+				// fs.write(fd, testbuffer.toString(), (err)=>{console.log(err);});
+				fs.close(fd, (err)=>{
+					if(!err){
+						dbSequelize.query(`update  gm_cdk set table_true = 1 where id =  ${id} `);
+					}
+				});
+			}
 		});
+		// testbuffer.pipe(writable);
+		// testbuffer.on('end', ()=>{
+		// 	dbSequelize.query(`update  gm_cdk set table_true = 1 where id =  ${id} `);
+		// });
 	}
 	
+
 	async find(data){
 		let where = {};
 		for(let [key, value] of Object.entries(data)){
@@ -234,13 +267,14 @@ class CDKService{
 	}
 	async findByKey(data){
 		let {key} = data;
-		console.log(key);
+	
 		switch (key){
 			case 'CDKID' :return byCdkId(data);
 			case 'CDKKEY': return byCdkKey(data);
 		}
 		async function byCdkId(data){
 			let {gameid, value} = data;
+			if(!(/^[0-9]*$/.test(value))){return {res:[], total:0};}
 			let sql = `
 				
 				with asd as (select (jsonb_array_elements(annex) ->> 'annexName')::jsonb ->> 1  as name, jsonb_array_elements(annex) ->> 'annexNumber' as numbers ,id  from  gm_cdk),
@@ -251,9 +285,12 @@ class CDKService{
 			when pla.plaform = '"1"' then '安卓'
 			when pla.plaform = '"2"' then '苹果'
 			end),','),',') as plaforms  from pla  GROUP BY pla.id)
-			select  sda.*,pls.plaforms  from sda left JOIN pls on pls.id=sda.id 
-				
-				
+			select  sda.*,pls.plaforms ,(case 
+				when sda.type = '1' then '唯一'
+				when sda.type = '2' then '互斥'
+				when sda.type = '3' then '通用'
+				end
+				) as types from sda left JOIN pls on pls.id=sda.id 
 				`;
 		
 			let res =   await dbSequelize.query(sql, {
@@ -286,7 +323,12 @@ class CDKService{
 		when pla.plaform = '"1"' then '安卓'
 		when pla.plaform = '"2"' then '苹果'
 		end),','),',') as plaforms  from pla  GROUP BY pla.id)
-		select  sda.*,pls.plaforms  from sda left JOIN pls on pls.id=sda.id 
+		select  sda.*,pls.plaforms ,(case 
+			when sda.type = '1' then '唯一'
+			when sda.type = '2' then '互斥'
+			when sda.type = '3' then '通用'
+			end
+			) as types from sda left JOIN pls on pls.id=sda.id 
 			`;
 			let res =   await dbSequelize.query(sql, {
 				replacements:['active'], type:Sequelize.QueryTypes.SELECT
@@ -308,12 +350,13 @@ class CDKService{
 	}
 	async findByFilter(data){
 		let { plaform, channel, page, pagesize, takeEffectTime, srtfailureTimetime, gameid} = data;
-		console.log(data);
 		let where = `where cdk.game_id='${gameid}' `;
-		where += !plaform?'':` and cdk.plaform = '["${plaform}"]'::jsonb  `;
+		if(typeof plaform === 'string' && plaform){plaform = [plaform];}
+		if(typeof channel === 'string' && channel){channel = [channel];}
+		where += !plaform?'':` and cdk.plaform = '[${plaform.map(item=> `"${item}"`)}]'::jsonb  `;
 		where += !takeEffectTime?'':` and cdk.start_time between  '${takeEffectTime[0]}' and '${takeEffectTime[1]}'  `;
 		where += !srtfailureTimetime?'':` and cdk.start_time between  '${srtfailureTimetime[0]}' and '${srtfailureTimetime[1]}'  `;
-		where += !channel?'':` and cdk.channel =  '[${typeof channel ==='string'?[channel].map(item => `"${item}"` ): [...channel].map(item => `"${item}"` ) }]'::jsonb `;
+		where += !channel?'':` and cdk.channel @>  '[${channel.map(item => `"${item}"`)}]'::jsonb `;
 		let sql = `
 		with asd as (select (jsonb_array_elements(annex) ->> 'annexName')::jsonb ->> 1  as name, jsonb_array_elements(annex) ->> 'annexNumber' as numbers ,id  from  gm_cdk),
 		dsa as (select  asd.id, string_to_array(string_agg(concat(art.name,'  ',asd.numbers,'个'),','),',')  as annexs  from asd  left join gm_article art on art.article_id = asd.name GROUP BY asd.id ),
@@ -323,7 +366,12 @@ class CDKService{
 	when pla.plaform = '"1"' then '安卓'
 	when pla.plaform = '"2"' then '苹果'
 	end),','),',') as plaforms  from pla  GROUP BY pla.id)
-	select  sda.*,pls.plaforms  from sda left JOIN pls on pls.id=sda.id 
+	select  sda.*,pls.plaforms ,(case 
+		when sda.type = '1' then '唯一'
+		when sda.type = '2' then '互斥'
+		when sda.type = '3' then '通用'
+		end
+		) as types  from sda left JOIN pls on pls.id=sda.id 
 	`;
 		
 		let res =   await dbSequelize.query(sql, {
@@ -358,6 +406,27 @@ class CDKService{
 		total = tablename === key ?total : 1;
 		let only = tablename === key;
 		return {res, total, only};
+	}
+
+	async CDKFindByTypeOne( {gameid} ){
+		let sql =` select cdkid from gm_cdk where game_id = ${gameid} and type = '1' `;
+		let res =   await dbSequelize.query(sql, {
+			replacements:['active'], type:Sequelize.QueryTypes.SELECT
+		});
+		return res;
+		
+
+	}
+	async CDKFindIdAndStop(data){
+		let { id, gameid} = data;
+		if( /^[0-9]*$/.test(id) && /^[0-9]*$/.test(gameid)  ){
+			let sql =` update gm_cdk set status = 0 where game_id = ${gameid} and id = '${id}' `;
+			let res =   await dbSequelize.query(sql, {
+				replacements:['active'], type:Sequelize.QueryTypes.SELECT
+			});
+			return res;
+		} 
+		throw new Error('什么玩意啊');
 	}
 
 

@@ -58,3 +58,22 @@ export function cdkCreateSchedule(params) {
     params
   });
 }
+
+
+
+export function CDKFindByTypeOne(params) { 
+  return request({
+    url: `cdk/CDKFindByTypeOne`,
+    method: 'get',
+    params
+  });
+}
+
+
+export function CDKFindIdAndStop(data) { 
+  return request({
+    url: `cdk/CDKFindIdAndStop`,
+    method: 'put',
+    data
+  });
+}

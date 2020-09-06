@@ -285,11 +285,11 @@ export default {
             label: '不限制',
             value: ''
           }, {
-            label: 'Android',
+            label: '安卓',
             value: '1'
 
           }, {
-            label: 'IOS',
+            label: '苹果',
             value: '2'
           }]
       }, {

@@ -9,6 +9,7 @@ class MailService{
 		let {createTime, channel, servername, annex, Id:id } = data;
 		let {gameid:game_id, plaform, pagesize, page} = data; 
 		let condition  = {game_id,  plaform, id };
+		
 		let where = 'where '; 
 		let whereObj =[];
 		for(let i in condition){
@@ -24,7 +25,6 @@ class MailService{
 		where += !channel ? '': ` and channel @> '[${channel.map(item => `"${item}"`)}]'::jsonb  `;
 		where += !annex ? '': ` and annex @> '[${annex.map(item => `{"ID":"${item}"}`).join(',')}]'::jsonb  `;
 		where += !servername ? '': ` and servername @> '[${servername.map(item => `${item}`).join(',')}]'::jsonb  `;
-		console.log(where);
 		let sql = `
 			with asd as (			
 				select * from gm_smtp ${where} limit ${pagesize} offset ${pagesize*(page-1)} 
@@ -36,7 +36,7 @@ class MailService{
 			qweqweqwe  as (select asd.* ,ssss.servernames from asd left join ssss on ssss.servername = asd.servername),
 			asdasd as (select jsonb_array_elements(annex) ->> 'ID' as names, jsonb_array_elements(annex) ->> 'number' as numbers ,id  from  qweqweqwe ),
 			qweqwe as (select asdasd.id,string_to_array(string_agg(concat(gm_article.name,'  ',asdasd.numbers,'个'),','),',') as annexnames from asdasd left JOIN gm_article on gm_article.article_id = asdasd.names GROUP BY asdasd.id )
-			select * from asd left join qweqwe on qweqwe.id = asd.id
+			select asd.*,qweqwe.annexnames from asd left join qweqwe on qweqwe.id = asd.id
 		`;
 		let res = await dbSequelize.query(sql, {
 			replacements:['active'], type:Sequelize.QueryTypes.SELECT
@@ -78,13 +78,11 @@ class MailService{
 	}
 	async postMailToCreate(data){
 		let {gameid, title, text, mailLink:link, channel, plaform, Annex, serverName, roleId, smtpId, sendTime, sendDateTime} =data;
-		console.log(data);
 		if(Annex){
 			for(let i in Annex){
 				Annex[i] = JSON.stringify(Annex[i]);
 			}
 		}
-		console.log(typeof serverName);
 		if(typeof serverName == 'string' || serverName.length === 0){
 			serverName = null;
 		}else if(serverName.length >1){
@@ -98,7 +96,7 @@ class MailService{
         insert into  gm_smtp  
         (game_id,title,text,link,channel,plaform,annex,serverName,roleid,smtp_id,sendtime)
         values
-        (${gameid},'${title}','${text}','${link}',${channel.length?`'${JSON.stringify(channel)}'`:null},${plaform?`'${plaform}'`:null},${Annex?Annex.length >1?`'[${Annex}]'` :`'[${Annex}]'`:null},${serverName},'${roleId}','${smtpId}','${sendTime}') RETURNING id
+        (${gameid},'${title}','${text}','${link}',${channel.length?`'${JSON.stringify(channel)}'`:null},${plaform?`'${plaform}'`:null},${Annex?Annex.length >1?`'[${Annex}]'` :`'[${Annex}]'`:null},${serverName},'${JSON.stringify(roleId)}','${smtpId}','${sendTime}') RETURNING id
 		`;
 		let res = await dbSequelize.query(sql);
 		return res[0][0];

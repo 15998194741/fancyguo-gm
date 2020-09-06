@@ -79,5 +79,19 @@ export class CDKController {
 		ctx.body = statusCode.SUCCESS_200('查找成功', result);
 	}
 
+
+	@get('/CDKFindByTypeOne')
+	async CDKFindByTypeOne(ctx) {
+    	ctx.log.resourceDesc = '唯一CDK查找';
+    	let result = await CDKService.CDKFindByTypeOne(ctx.data);
+    	ctx.body = statusCode.SUCCESS_200('查找成功', result);
+	}
+	
+	@put('/CDKFindIdAndStop')
+	async CDKFindIdAndStop(ctx) {
+    	ctx.log.resourceDesc = '通过cdk的id停用cdk';
+    	let result = await CDKService.CDKFindIdAndStop(ctx.data);
+    	ctx.body = statusCode.SUCCESS_200('查找成功', result);
+	}
 	
 }

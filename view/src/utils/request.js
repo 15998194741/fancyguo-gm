@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { MessageBox, Message } from 'element-ui';
 import store from '@/store';
-// import { getToken } from '@/utils/cookie-utils';
+import { getToken } from '@/utils/cookie-utils';
 
 // create an axios instance
 const service = axios.create({
@@ -15,10 +15,11 @@ service.interceptors.request.use(
   config => {
     // do something before request is sent
     // console.log(store);
+    if (store.getters.token) {
+      config.headers['fancy-guo-login-token'] = getToken();
+    }
     config.headers['fancy-guo-login-token'] = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwic3RhdHVzIjoxLCJjcmVhdGVVc2VySWQiOm51bGwsInVwZGF0ZVVzZXJJZCI6bnVsbCwiY3JlYXRlVGltZSI6IjIwMTktMDYtMjBUMTY6MDA6MDAuMDAwWiIsInVwZGF0ZVRpbWUiOiIyMDE5LTA2LTIwVDE2OjAwOjAwLjAwMFoiLCJ1c2VybmFtZSI6ImFkbWluIiwicGFzc3dvcmQiOiIiLCJuaWNrTmFtZSI6IueuoeeQhuWRmCIsImF2YXRhciI6Imh0dHA6Ly93ZXdvcmsucXBpYy5jbi9iaXptYWlsL3RCelNYWjdub2ljYVdOSU8xNVhLcDFwVTltMGliWnZQRmJUSHJqYWhZNlNwNWlhRUpkZ3E2aDZ3dy8xMDAiLCJlbWFpbCI6ImFkbWluQGZhbmN5Z3VvLmNuIiwic291cmNlIjoxLCJhbGlhcyI6bnVsbCwicGhvbmUiOm51bGwsImlhdCI6MTU5MzQ5NTgxMiwiZXhwIjoyMTk4Mjk1ODEyfQ.BtDlkV5MPKnTCUamUgH__GASdJn3_GIoY57lWbrdujE';
-    // if (store.getters.token) {
-    //   config.headers['fancy-guo-login-token'] = getToken();
-    // }
+   
     if (store.getters.permissionInfo && store.getters.team) {
       let perByOrg = store.getters.permissionInfo[store.getters.team.id];
       config.headers['permission-header'] = perByOrg ? perByOrg.permissionHeader : '';

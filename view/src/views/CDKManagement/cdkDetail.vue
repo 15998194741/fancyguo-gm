@@ -7,7 +7,7 @@ ref="CDKContainer" v-loading='cdkLoading'
    element-loading-background="rgba(0, 0, 0, 0.8)">
     <div class="role-container-header" >
     <ul style="margin-top: 5px;margin-bottom: -5px;margin-right: 10px;">
-      <li><el-button slot="reference" icon="el-icon-refresh" size='small' class="button-with-header"  @click="tableDataShwo = !tableDataShwo" >刷新</el-button></li>
+      <li><el-button slot="reference" icon="el-icon-refresh" size='small' class="button-with-header"  @click="flushTabelData" >刷新</el-button></li>
       <li><el-button slot="reference" icon="el-icon-refresh" size='small' class="button-with-header"  @click="tableDataShwo = !tableDataShwo" >查看CDK信息</el-button></li>
     </ul>
   </div>
@@ -331,11 +331,11 @@ export default {
             label: '不限制',
             value: ''
           }, {
-            label: 'Android',
+            label: '安卓',
             value: '1'
 
           }, {
-            label: 'IOS',
+            label: '苹果',
             value: '2'
           }]
       }, {
@@ -360,7 +360,7 @@ export default {
         { label: '名称', prop: 'name' },
         { label: '平台', prop: 'plaforms' },
         { label: '客户端', prop: 'channel' },
-        { label: 'CDKEY类型', prop: 'type' },
+        { label: 'CDKEY类型', prop: 'types' },
         { label: 'CDKEY数量', prop: 'num' },
         { label: '生效日期', prop: 'start_time' },
         { label: '失效日期', prop: 'end_time' },
@@ -490,9 +490,17 @@ export default {
         loading.close();
         return;
       }
+      let { pagesize, page, value, key } = this.filterForm;
+      if (!data) {
+        this.$message.warning(`查找${key},${value}不存在`);
+        this.tableDataTwo = [];
+        this.tableData = [];
+        loading.close();
+        loading.close();
+        return;
+      }
       let { res } = data;
       this.tableData = res;
-      let { pagesize, page, value, key } = this.filterForm;
       if (res.length === 0) {
         this.$message.warning(`查找${key},${value}不存在`);
         this.tableDataTwo = [];
@@ -500,6 +508,7 @@ export default {
         loading.close();
         return;
       } else if (res.length !== 1) {
+        this.tableDataTwo = [];
         loading.close();
         return;
       }
@@ -507,11 +516,12 @@ export default {
       let querys = { page, tablename, pagesize };
       let queryByKey = { page, tablename, pagesize, value };
       // let responseData;
+     
       switch (!!value) {
         case key === 'CDKKEY': await this.ByCdkKey(queryByKey); break;
         case key === 'CDKID':await this.ByCdkID(querys); break;
       }
-   
+      
       // let { data: detailsdata } = responseData;
       // let { res: detailsres, total } = detailsdata;
       // this.total = total;
@@ -531,6 +541,7 @@ export default {
     },
     async ByCdkKey(val) {
       let res = await cdkkeyfind(val);
+      if (!res) {return;}
       let { data } = res;
       let { res: responseData, total, only } = data;
       if (!responseData) {this.tableDataTwo = []; return;}
@@ -556,7 +567,22 @@ export default {
     },
 
 
-
+    async flushTabelData() {
+      this.tableData = [];
+      this.tableDataTwo = [];
+      this.total = 0;
+      this.filterForm = {
+        key: 'CDKID',
+        value: '',
+        plaform: '',
+        channel: '',
+        takeEffectTime: '',
+        failureTime: '',
+        page: 1,
+        pagesize: 100
+      };
+      console.log(this);
+    },
 
 
 
@@ -598,7 +624,7 @@ export default {
       value: item
     }));
     this.selectForm[1].options = this.selectForm[1].options.concat(components);
-    let { id: value, game_id: gameid } = { ...this.$route.query };
+    let { value, game_id: gameid, key } = { ...this.$route.query };
     let page = 1;
     let pagesize = 100;
     this.filterForm = {
@@ -606,13 +632,24 @@ export default {
       page,
       value,
       gameid,
-      key: 'CDKID'
+      key
     };
     if (value) {
       this.filterFormChangeClick();
+      return;
     }
-    
-    // console.log(this);
+    let { id } = { ...this.$route.query };
+    this.filterForm = {
+      pagesize,
+      page,
+      value: id,
+      gameid,
+      key: 'CDKID'      
+    };
+    if (id) {
+      this.filterFormChangeClick();
+    }
+
   } 
    
 

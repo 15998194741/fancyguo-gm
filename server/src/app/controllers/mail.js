@@ -6,7 +6,7 @@ export class CharacterController {
     @get('/query')
 	async querymail(ctx) {
 		ctx.log.resourceDesc = '邮件查询';
-		let data = ctx.query;
+		let data = ctx.data;
 		let result = await MailService.queryByParms(data);
 		ctx.body = statusCode.SUCCESS_200('查找成功', result);
 	}
@@ -41,7 +41,7 @@ export class CharacterController {
     @post('/postMailToCreate')
     async postMailToCreate(ctx) {
     	ctx.log.resourceDesc = '创建邮件';
-    	let data = ctx.request.body;
+    	let data = ctx.data;
     	let result = await MailService.postMailToCreate(data);
     	ctx.body = statusCode.SUCCESS_200('创建成功', result);
     }

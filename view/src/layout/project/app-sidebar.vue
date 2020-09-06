@@ -64,10 +64,7 @@ export default {
   data() {
     return {
       isCollapse: false,
-      pathName: sessionStorage['pathName'] || ''
-      //   styleobj: {
-      //     left: '180px'
-      //   }
+      pathName: sessionStorage['pathName'] || this.$route['path']
     };
   },
   computed: {
@@ -76,6 +73,7 @@ export default {
     },
     defaultActive() {
       let { pathName, routes } = this;
+      pathName = this.$route['path'];
       try {
         routes.forEach(({ children }, index) => {
           children.forEach(({ url }, _index) => {
@@ -248,9 +246,9 @@ export default {
   }
 }
 
-.el-icon-d-arrow-right {
-  /* transition: left 0.5s cubic-bezier(0.075, 1.1, 0.165, 1); */
-}
+// .el-icon-d-arrow-right {
+//   /* transition: left 0.5s cubic-bezier(0.075, 1.1, 0.165, 1); */
+// }
 /* .el-icon-d-arrow-right:active{
     left: 0;
 } */

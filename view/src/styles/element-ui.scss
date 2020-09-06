@@ -51,9 +51,10 @@ $globlColor: #2BBFBD;
 .el-input--small .el-input__icon {
   color: $globlColor;
 }
-.el-button:focus{
-  border-color: $globlColor;
-  box-sizing: border-box;
+.el-button:focus ,.el-button:active{
+  // color: $globlColor !important;
+  border-color: $globlColor !important;
+  box-sizing: border-box !important;
 }
 
 .el-date-table td.in-range div, .el-date-table td.in-range div:hover, .el-date-table.is-week-mode .el-date-table__row.current div, .el-date-table.is-week-mode .el-date-table__row:hover div {
@@ -75,7 +76,7 @@ $globlColor: #2BBFBD;
   outline: 0;
 }
 .el-button:active, .el-button:focus {
-  color: $globlColor !important; 
+  // color: $globlColor !important; 
   border-color: $globlColor !important;
 
 }

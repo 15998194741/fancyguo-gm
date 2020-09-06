@@ -1,9 +1,9 @@
 <template>
-  <div class="mail-container">
+  <div  class="mail-container">
     <div class="role-container-header" >
     <ul style="margin-top: 5px;margin-bottom: -5px;margin-right: 10px;">
-      <li><el-button slot="reference" icon="el-icon-refresh" size='small' class="button-with-header"  @click='filterFormChange'>刷新</el-button></li>
-      <li> <el-button  v-if='grade' slot="append" icon="el-icon-circle-plus-outline" size='small' class="button-with-header"  @click='dialogFormchangeShowTrue'>新建邮件</el-button></li>
+      <li><el-button slot="reference" icon="el-icon-refresh" size='small' class="button-with-header button-with-select"  @click='filterFormChange'>刷新</el-button></li>
+      <li> <el-button  v-if='grade' slot="append" icon="el-icon-circle-plus-outline" size='small' class="button-with-header button-with-select"  @click='dialogFormchangeShowTrue'>新建邮件</el-button></li>
     </ul>
   </div>
   <div class="role-container-search">
@@ -28,32 +28,37 @@
     <el-table
     ref="multipleTable"
     border
+    highlight-current-row
+    fit
     :data="tableData" 
+    class="tableCssHeightSet"
     >
-    <el-table-column v-for='(column,index) in tablecolumn' :key='index'  :label="column.label">
-      <template slot-scope="scope">
-        <div v-if="typeof scope.row[column.prop] === 'string' || typeof scope.row[column.prop] === 'number' ">
-        {{ scope.row[column.prop] }}
+    <el-table-column v-for='(column,index) in tablecolumn' :key='index'   :label="column.label">
+      <template slot-scope="scope" :title="scope.row[column.prop]">
+        <div v-if="typeof scope.row[column.prop] === 'string' || typeof scope.row[column.prop] === 'number' " :title="scope.row[column.prop]">
+    
+        <el-tooltip class="item"  effect='light'  placement="top" >
+          <div slot="content"><span>{{ scope.row[column.prop] }}</span></div>
+           <!-- <span>{{ scope.row[column.prop] }}</span> -->
+        </el-tooltip>
+        <span>{{ scope.row[column.prop] }}</span>
         </div>
         <div v-else>
-          <el-tag v-for='(i,index) in  scope.row[column.prop]' :key="index">{{ i }}</el-tag>
+          <el-tooltip effect='light'  placement="top" class="aasdhjkahskdhjk">
+  <div slot="content" :ref="'contentCssTableHover'+scope.$index" class="contentCssTableHover"> <el-tag v-for='(i,index) in  scope.row[column.prop]' :key="index" >{{ i }}</el-tag></div>
+ <div class="contentCssTableHidden"><el-tag v-for='(i,index) in  scope.row[column.prop]' :key="index">{{ i }}</el-tag></div> 
+</el-tooltip>
+          <!-- <el-tag v-for='(i,index) in  scope.row[column.prop]' :key="index">{{ i }}</el-tag> -->
+          <!-- <el-tag v-for='(i,index) in  scope.row[column.prop]' :key="index">{{ i }}</el-tag> -->
           </div>  
         </template>
     </el-table-column>
-    <!-- <el-table-column  prop='status' label="操作">
-      <template slot-scope="scope">
-        <div style=" display: flex;">
-        <el-button  @click="mailmessageChange(scope.$index,scope.row)">修改</el-button>
-        <el-dropdown>
-  <el-button  @click="mailmessageSend(scope.$index,scope.row,true)">发布</el-button>
-  <el-dropdown-menu slot="dropdown">
-     <el-button  class='intervalBUttonClass' @click="mailmessageSend(scope.$index,scope.row,false)">定时发布</el-button>
-  </el-dropdown-menu>
-</el-dropdown>
-        
-        </div>
-      </template>
-    </el-table-column> -->
+     <el-table-column   label="操作">
+           <template slot-scope="scope" >
+            <!-- <el-button  v-if='grade' slot="append" icon="el-icon-circle-plus-outline" size='small' class="button-with-header button-with-select"  @click='dialogFormchangeShowTrue'>新建邮件</el-button> -->
+            <el-button   slot="append" icon="el-icon-delete-solid" size='small' class="button-with-header button-with-select"  @click='dialogFormchangeShowTrue'>停用</el-button>
+           </template>
+     </el-table-column>
   </el-table>
   </div>
   <div class="role-container-bottom">
@@ -70,8 +75,8 @@
     @size-change="filterFormChange('pagechange')"
     @current-change="filterFormChange('pagechange')" ></el-pagination>
   </div>
-  <el-dialog title="新建邮件" :visible.sync="dialogFormchange" class="announceddialog"  :close-on-click-modal="false"  @close='createFormMailCancel'>
-    <div class="container">
+  <el-dialog  ref="newMailelDialog" title="新建邮件" :visible.sync="dialogFormchange" class="announceddialog"  :close-on-click-modal="false"  @close='createFormMailCancel'>
+    <div  class="container">
         <div>  
           <el-form ref="createFormRulesLeft" :model="createFormMail"  status-icon :rules="createFormRulesLeft" label-width="100px" class="demo-ruleForm">
             <el-form-item  label="邮件标题" prop="title">
@@ -88,37 +93,54 @@
               @change='createFormMailallServerTrueChange'>
             </el-switch>
               </el-form-item>
-            <el-form-item v-show='!createFormMail.allServerTrue' label="玩家ID" prop="roleId">
+            <!-- <el-form-item v-show='!createFormMail.allServerTrue' label="玩家ID" prop="roleId">
               <el-input  v-model='createFormMail["roleId"]' ></el-input>
-            </el-form-item>
+            </el-form-item> -->
           </el-form>
         </div>
               <div>
                 <el-form ref="createFormRulesRight" :model="createFormMail" status-icon :rules="createFormRulesRight" label-width="100px" class="demo-ruleForm">
-                <el-form-item  label="邮件链接" prop="mailLink">
+                <el-form-item  label="邮件链接" >
                   <el-input v-model='createFormMail.mailLink'  autocomplete="off"></el-input>
                 </el-form-item>
-                <el-form-item v-show='!createFormMail.allServerTrue' label="平台:">
+                <!-- <el-form-item v-show='!createFormMail.allServerTrue' label="平台:">
                   <el-select  v-model='createFormMail.plaform'  placeholder="请选择" size='small' style="border-radius: 10px;" @change='plaformChannelToservername' >
                     <el-option   label='不限制' value="" ></el-option>
                     <el-option   label='安卓' value="1" ></el-option>
                       <el-option   label='苹果' value="2" ></el-option>
                   </el-select>
-                 
                 </el-form-item>
                 <el-form-item v-show='!createFormMail.allServerTrue' label="客户端:">
                   <el-select v-model='createFormMail.channel' multiple  placeholder="请选择" size='small' style="border-radius: 10px;" @change='plaformChannelToservername' >
                     <el-option v-for="(item,index) in selectForm[1].options"   :key="index"  :label='item.label' :value="item.value" >
                     </el-option>
                   </el-select>
-                </el-form-item>
-                <el-form-item label="服务器:" prop="serverName">
-                  <el-select v-model='createFormMail.serverName' :value='""'   multiple placeholder="请选择" size='small' style="border-radius: 10px;"  >
+                </el-form-item>-->
+                <el-form-item v-if='createFormMail.allServerTrue' label="服务器:" prop="serverName">
+                  <el-select v-model='createFormMail.serverName' :value='""'  filterable    multiple placeholder="请选择" size='small' style="border-radius: 10px;"  >
                     <el-option v-for="(item,index) in servernamesselect"   :key="index"  :label='item.label' :value="item.value" >
                     </el-option></el-select>
-                </el-form-item>
+                     <el-button v-show='createFormMail.allServerTrue'  type="primary" class="allSelectButton" @click='allSelectAllServer'>全 选</el-button>
+                </el-form-item> 
+                 <el-form-item   v-else label="人员名单:" prop="serverName">
+                <el-upload
+                    ref='upload'
+                    class="upload-demo"
+                    drag
+                    action="#"
+                    accept='.xlsx,.xls'
+                    :auto-upload="true"
+                    :file-list='filelist'
+                    :limit='1'
+                    multiple
+                    :http-request="fileUpload" >
+                    <i class="el-icon-upload"></i>
+                    <div class="el-upload__text">将文件拖到此处，或<em>点击上传</em></div>
+                    <div slot="tip" class="el-upload__tip">只能上传xlsx/xls文件</div>
+                  </el-upload>
+                  </el-form-item>
                  <el-form-item label="发送方式 :" prop="serverName">
-                  <el-radio v-model="createFormMail['sendTime']" :label="true">及时发送</el-radio>
+                  <el-radio v-model="createFormMail['sendTime']" :label="true">即时发送</el-radio>
                   <el-radio v-model="createFormMail['sendTime']" :label="false">定时发送</el-radio>
                    <el-date-picker
                    v-show="!createFormMail['sendTime']"
@@ -166,7 +188,7 @@
    </div>
      <div slot="footer" class="dialog-footer">
        <el-button @click="createFormMailCancel">取 消</el-button>
-       <el-button type="primary" @click='createFormMailSubmit'>确 定</el-button>
+       <el-button type="primary" class="allSelectButton" @click='createFormMailSubmit'>确 定</el-button>
      </div>
    </el-dialog>
 
@@ -287,6 +309,7 @@ import { findComponents } from '@/api/components.js';
 import { getQueryAnnexOptions, getQueryMail, getQueryAnnexOptionsLazy, postMailToCreate, getPlaformChannelToservername } from '@/api/mail.js';
 import { annexAllQuery, mailSend, getQueryAnnexServernames, mailIdQuery } from '@/api/mail.js';
 import dayjs from 'dayjs';
+import xlsx from 'xlsx';
 
 export default {
   name: 'rolequery',
@@ -304,8 +327,10 @@ export default {
       updateFormMail: '',
       mailLink,
       title,
+      exceldata: '',
       text,
       age,
+      filelist: [],
       serverName,
       serverCreatedialogFormVisible: false,
       sendMailTimingdialog: false,
@@ -356,11 +381,11 @@ export default {
             label: '不限制',
             value: ''
           }, {
-            label: 'Android',
+            label: '安卓',
             value: '1'
 
           }, {
-            label: 'IOS',
+            label: '苹果',
             value: '2'
           }]
       }, {
@@ -405,7 +430,7 @@ export default {
         { label: '平台', prop: 'plaform' },
         { label: '客户端', prop: 'channel' },
         { label: '区服名', prop: 'servernames' },
-        { label: '玩家ID', prop: 'roleid' },
+        { label: '玩家ID', prop: 'roleid', list: 'roleidListToJson' },
         { label: '邮件内容', prop: 'text' },
         { label: '附件', prop: 'annexnames' },
         { label: '发送时间', prop: 'sendtime' }
@@ -440,6 +465,35 @@ export default {
     }
   },
   methods: {
+    async fileUpload(files) {
+      const file = files.file;
+      const fileReader = new FileReader();
+      fileReader.onload = (ev) =>{
+        try {
+          const data = ev.target.result;
+          const workbook = xlsx.read(data, {
+            type: 'binary'
+          });
+          let a;
+          for (let sheet in workbook.Sheets) {
+            a = xlsx.utils.sheet_to_json(workbook.Sheets[sheet]);
+            break;
+          }   
+          // a = a.map(item =>[item['serverid'], item['id']]);
+          readfiles(a, this);
+          // a = a.map(item =>`${item['serverid']}` + `${item['id']}`);
+        } catch (e) {
+          this.$message.warning('文件不正确！');
+        }
+      };
+      fileReader.readAsBinaryString(file);
+      function readfiles(data, _this) {
+        _this.createFormMail['roleId'] = data;
+      }
+    },
+    allSelectAllServer() {
+      this.createFormMail['serverName'] = this.servernamesselect.map(item => item['value']);
+    },
     async dialogFormUpdateCancel() {
       this.dialogFormUpdate = false;
     },
@@ -553,6 +607,10 @@ export default {
     annexListAdd() {
       let a = this.annexList[this.annexList.length - 1];
       a['annexName'] && a['annexNumber'] ? this.annexList.push({ annexName: '', annexNumber: '' }) : this.$message.warning('请填写完整');  
+      this.$refs['newMailelDialog'].$el.scrollTo({
+        top: this.$refs['newMailelDialog'].$el.scrollHeight + 100, 
+        behavior: 'smooth' 
+      });  
     },
     annexListCut(index) {
       if (this.annexList.length === 1) {
@@ -560,14 +618,14 @@ export default {
         return;
       }
       this.annexList.splice(index, 1);
-
     },
     async createFormMailSubmit() {
-      if (this.createLock) {
-        this.$message.warning('正在提交中。');
-        return;
-      }
-      this.createLock = true;
+      const loading = this.$loading({
+        lock: true,
+        text: '拼命加载中',
+        spinner: 'el-icon-loading',
+        background: 'rgba(0, 0, 0, 0.8)'
+      });
       let right = await this.$refs['createFormRulesRight'].validate().catch(err=>false);
       let left = await this.$refs['createFormRulesLeft'].validate().catch(err=>false);
       if (this.createFormMail.allServerTrue) {
@@ -575,30 +633,29 @@ export default {
         this.createFormMail.channel = '';
         this.createFormMail.plaform = '';
       }
-      if (!(right && left)) {this.createLock = false; return;}
+      if (!(right && left)) { loading.close(); return;}
       if (this.createFormMail.allServerTrue && this.createFormMail.serverName.length === 0) {
         this.$message.warning('请选择区服');
-        this.createLock = false;
+        loading.close();
         return;
       }
       if (!this.createFormMail['sendTime'] && !this.createFormMail['sendDateTime']) {
         
         this.$message.warning('请选择发送时间');
-        this.createLock = false;
+        loading.close();
         return;
       }
       let a = [];
       if (this.createFormMail.carryAnnex) {
-        console.log(this.annexList);
         for (let i of this.annexList) {
           if (!(i.annexName && i.annexNumber)) {
             this.$message.warning('附件不完整。');
-            this.createLock = false;
+            loading.close();
             return;
           }
           if (!(/^[0-9]*$/.test(i['annexNumber']))) {
             this.$message.warning('附件数据不合法,');
-            this.createLock = false;
+            loading.close();
             return;
           }
           
@@ -611,16 +668,16 @@ export default {
         cancelButtonText: '取消',
         type: 'warning' })
         .catch(err => false);
-      if (!sendtrue) {this.createLock = false; return;}
+      if (!sendtrue) { loading.close(); return;}
       let res = await postMailToCreate(this.createFormMail);
       let { code, message, data } = res;
       if (code === 200) {
-        this.$message.success(message + `,您创建公告得ID是   ${data.id}`);
+        this.$message.success(message + `,您创建邮件的ID是   ${data.id}`);
         for (let i in this.createFormMail) {
           this.createFormMail[i] = '';
         }
         this.dialogFormchange = false;
-        this.createLock = false;
+        loading.close();
         this.annexList = [
           { annexName: '', annexNumber: '' }
         ]; 
@@ -629,7 +686,7 @@ export default {
         this.createFormMail['allServerTrue'] = false;
         return;
       }
-      this.createLock = false;
+      loading.close();
       this.$message.info('创建失败!');
       
     },
@@ -675,6 +732,7 @@ export default {
       });
       this.tableData = datas;
       this.total = Number(total);
+
     }
   },
   async mounted() {
@@ -701,7 +759,62 @@ export default {
 </script>
 
 <style lang="scss" rel="stylesheet/scss">
+.contentCssTableHover{
+    span{
+      margin: 10px;
+      min-width: 18vw;
+      max-width: 18vw;
+      text-align: center;
+    }
+  }
 .mail-container{
+.tableCssHeightSet{
+   .table_1_column_6, .el-table_1_column_7{
+    & .cell{
+      max-height:100px  !important;
+      overflow: hidden;
+    }
+  }
+  .contentCssTableHidden{
+    height: 30px;
+    overflow: hidden;
+  }
+    // .el-table_1_column_6 {
+    //      & .cell{
+    //   max-height:100px  !important;
+    //   &:focus,&:hover{
+    //     overflow: auto !important;
+    //   }
+    // }
+    // }
+}
+//   .tableCssHeightSet{
+//   .el-table_1_column_6 , .el-table_1_column_7  {
+//  & .cell{
+//       max-height: 100px !important;
+//       overflow: hidden !important;
+//       text-overflow: ellipsis !important;
+//       word-break: keep-all !important;
+//       &:focus ,&:hover {
+//           word-break:normal;
+//           display:block;
+//           white-space:nowrap;
+//           word-wrap : break-word;
+//           overflow: auto !important; 
+//       }
+//     } 
+//     }
+   
+//   }
+
+  .allSelectButton{
+    &:focus{
+      color: white !important;
+    }
+  }
+  .el-upload__tip{
+    margin-top: -15px !important;
+  }
   .intervalBUttonClass{
     width: 100%;
     height: 100%;
@@ -730,6 +843,11 @@ export default {
   .selectID {
     span:first-child{
       display: none;
+    }
+  }
+  .button-with-select{
+    &:focus{
+      color:#2BBFBD !important ;
     }
   }
 
@@ -771,12 +889,11 @@ export default {
     border-radius: 5px;
     padding: 5px;
     min-height: 66vh;
-    
     /* -webkit-box-shadow: 1px 1px 4px 0px #828282; */
     box-shadow: 1px 1px 4px 0px #828282;
-    .el-table .cell{
-      word-break: keep-all;
-    } 
+    // .el-table .cell{
+    //   word-break: keep-all;
+    // } 
   }
   .role-container-header ul li{
     float: right;

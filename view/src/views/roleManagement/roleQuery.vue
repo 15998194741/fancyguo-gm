@@ -83,22 +83,23 @@
   <el-dialog title="文件上传" :visible.sync="serverCreatedialogFormVisible"  :close-on-click-modal="false">
     <el-upload
     ref='upload'
-  style="text-align: center;"
-  class="upload-demo"
-  drag
-  name='file'
-  :headers='headers'
-  limit=1
-  action="http://localhost/api/character/uploadFile"
-  accept='.xlsx,.xls'
-  :auto-upload="false"
-  :file-list='filelist'
-  :on-success='uploadSuccess'
-  :on-error='uploadError'
- >
+    style="text-align: center;"
+    class="upload-demo"
+    drag
+    name='file'
+    :headers='headers'
+    limit=1
+    action="http://localhost/api/character/uploadFile"
+    accept='.xlsx,.xls'
+    :auto-upload="false"
+    :file-list='filelist'
+    :on-success='uploadSuccess'
+    :on-error='uploadError'
+  >
   <i class="el-icon-upload"></i>
   <div class="el-upload__text">将文件拖到此处，或<em>点击上传</em></div>
   <div slot="tip" class="el-upload__tip">只能上传xlsx/xls文件</div>
+  <div slot="tip" class="el-upload__tip">{{exceldata}}</div>
 </el-upload>
    <div style="text-align: center;"><el-button @click="uploadFile">上传</el-button><el-button @click="serverCreatedialogFormVisible = false">取 消</el-button></div>
   </el-dialog>
@@ -242,11 +243,11 @@ export default {
             label: '不限制',
             value: ''
           }, {
-            label: 'Android',
+            label: '安卓',
             value: '1'
 
           }, {
-            label: 'IOS',
+            label: '苹果',
             value: '2'
           }]
       }, {
@@ -458,7 +459,6 @@ export default {
       this.serverCreatedialogFormVisible = false;
     },
     tableRowClassName({ row, rowIndex }) {
-  
       if (row.banned_type) {
         return row.banned_type === '1' ? 'success-feng' : 'success-jiny';
       } 
