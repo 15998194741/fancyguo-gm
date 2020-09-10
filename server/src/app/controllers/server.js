@@ -1,17 +1,17 @@
 import { controller, get, post, put, del, permission, login } from '../../lib/router-permission';
 import statusCode from '../../utils/status-code';
 import Ta from '../../utils/requests';
-
 import GmDictService from '../service/gm-dict';
-import gmServerService from '../service/gm-server';
+import gmServerService from '../service/server';
 import Components from '../service/Components';
+
 @controller('/server')
 export class UserController {
 	constructor() {}
 
 	@post('/create')
 	async createserver(ctx) {
-		ctx.log.resourceDesc = '区服创建';
+		// ctx.log.resourceDesc = '区服创建';
 		let form = ctx.request.body;
 		let result = await Components.createserver(form);
 		ctx.body = statusCode.SUCCESS_200('创建成功', result);
@@ -56,7 +56,7 @@ export class UserController {
 
     @get('/selectserver/if')
 	async findservers(ctx) {
-    	let result = await Components.selectserver(ctx.query);
+    	let result = await Components.selectserver(ctx.data);
     	ctx.body = statusCode.SUCCESS_200('查找成功', result);
 	}
 
@@ -91,10 +91,11 @@ export class UserController {
 	 * 区服创建
 	 */
 	@post('/serverCreate')
-	async createServer(ctx){
-		
+	async serverCreate(ctx){
+    	ctx.log.resourceDesc = '区服创建';
 		let user = ctx.user;
-		let result = await gmServerService.create({...ctx.request.body, createUserId:user.id});
+		let data = ctx.data;
+		let result = await gmServerService.serverCreate({data, user});
 		ctx.body = statusCode.SUCCESS_200('创建成功', result);
 	}
 	/**
@@ -103,7 +104,7 @@ export class UserController {
 	 */
 	@get('/findServer')
 	async findServer(ctx){
-		let findForm = ctx.query;
+		let findForm = ctx.data;
 		let result = await gmServerService.serverFindByParam(findForm);
 		ctx.body = statusCode.SUCCESS_200('查找', result);
 	}

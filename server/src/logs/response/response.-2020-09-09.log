@@ -1,0 +1,745 @@
+[2020-09-09T11:19:58.589] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"theway\":\"true\",\"gameid\":\"1\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"创建成功"},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 11:19:58 ├F10: AM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T11:20:02.508] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"theway\":\"true\",\"gameid\":\"1\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"创建成功"},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 11:20:02 ├F10: AM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T14:20:53.614] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"theway\":\"true\",\"gameid\":\"1\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"创建成功","data":{"code":500,"message":"SequelizeDatabaseError: 无效的整数类型输入语法: \"undefined\"\n    at Query.formatError (H:\\fancy-gm-cp\\node_modules\\sequelize\\lib\\dialects\\postgres\\query.js:366:16)\n    at H:\\fancy-gm-cp\\node_modules\\sequelize\\lib\\dialects\\postgres\\query.js:72:18\n    at tryCatcher (H:\\fancy-gm-cp\\node_modules\\bluebird\\js\\release\\util.js:16:23)\n    at Promise._settlePromiseFromHandler (H:\\fancy-gm-cp\\node_modules\\bluebird\\js\\release\\promise.js:547:31)\n    at Promise._settlePromise (H:\\fancy-gm-cp\\node_modules\\bluebird\\js\\release\\promise.js:604:18)\n    at Promise._settlePromise0 (H:\\fancy-gm-cp\\node_modules\\bluebird\\js\\release\\promise.js:649:10)\n    at Promise._settlePromises (H:\\fancy-gm-cp\\node_modules\\bluebird\\js\\release\\promise.js:725:18)\n    at _drainQueueStep (H:\\fancy-gm-cp\\node_modules\\bluebird\\js\\release\\async.js:93:12)\n    at _drainQueue (H:\\fancy-gm-cp\\node_modules\\bluebird\\js\\release\\async.js:86:9)\n    at Async._drainQueues (H:\\fancy-gm-cp\\node_modules\\bluebird\\js\\release\\async.js:102:5)\n    at Immediate.Async.drainQueues [as _onImmediate] (H:\\fancy-gm-cp\\node_modules\\bluebird\\js\\release\\async.js:15:14)\n    at processImmediate (internal/timers.js:456:21)"}},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 2:20:51 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T14:21:01.781] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"theway\":\"true\",\"gameid\":\"1\",\"id\":\"16\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"创建成功","data":{"code":500,"message":"SequelizeDatabaseError: 无效的整数类型输入语法: \"undefined\"\n    at Query.formatError (H:\\fancy-gm-cp\\node_modules\\sequelize\\lib\\dialects\\postgres\\query.js:366:16)\n    at H:\\fancy-gm-cp\\node_modules\\sequelize\\lib\\dialects\\postgres\\query.js:72:18\n    at tryCatcher (H:\\fancy-gm-cp\\node_modules\\bluebird\\js\\release\\util.js:16:23)\n    at Promise._settlePromiseFromHandler (H:\\fancy-gm-cp\\node_modules\\bluebird\\js\\release\\promise.js:547:31)\n    at Promise._settlePromise (H:\\fancy-gm-cp\\node_modules\\bluebird\\js\\release\\promise.js:604:18)\n    at Promise._settlePromise0 (H:\\fancy-gm-cp\\node_modules\\bluebird\\js\\release\\promise.js:649:10)\n    at Promise._settlePromises (H:\\fancy-gm-cp\\node_modules\\bluebird\\js\\release\\promise.js:725:18)\n    at _drainQueueStep (H:\\fancy-gm-cp\\node_modules\\bluebird\\js\\release\\async.js:93:12)\n    at _drainQueue (H:\\fancy-gm-cp\\node_modules\\bluebird\\js\\release\\async.js:86:9)\n    at Async._drainQueues (H:\\fancy-gm-cp\\node_modules\\bluebird\\js\\release\\async.js:102:5)\n    at Immediate.Async.drainQueues [as _onImmediate] (H:\\fancy-gm-cp\\node_modules\\bluebird\\js\\release\\async.js:15:14)\n    at processImmediate (internal/timers.js:456:21)"}},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 2:21:00 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T14:21:40.783] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"theway\":\"true\",\"gameid\":\"1\",\"id\":\"16\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"创建成功","data":{"code":200,"message":"发送成功","data":[{"roleid":["312"],"ip":"127.0.0.1"},{"roleid":["1212312313"],"ip":"123.57.86.38"},{"roleid":["1231231","23","23","40","340","2312"],"ip":"127.0.0.1"},{"roleid":["12"],"ip":"127.0.0.1"}]}},"serverIp":"当前服务器id","userIp":"::ffff:127.0.0.1","userId":null,"createTime":"2020-9-9 2:21:39 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T14:23:46.458] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"theway\":\"true\",\"gameid\":\"1\",\"id\":\"16\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"创建成功","data":[{"roleid":["312"],"ip":"127.0.0.1"},{"roleid":["1212312313"],"ip":"123.57.86.38"},{"roleid":["1231231","23","23","40","340","2312"],"ip":"127.0.0.1"},{"roleid":["12"],"ip":"127.0.0.1"}]},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 2:23:46 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T16:18:32.277] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"theway\":\"true\",\"gameid\":\"1\",\"id\":\"16\"}","responseCode":500,"responseMessage":"邮件及时发送 失败","responseDate":{"code":500,"message":"Error: 邮件及时发送 失败\n    at _callee9$ (H:\\fancyguo-gm\\server\\src\\app\\service\\/mail.js:219:9)\n    at tryCatch (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:45:40)\n    at Generator.invoke [as _invoke] (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:281:22)\n    at Generator.prototype.<computed> [as next] (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:106:21)\n    at asyncGeneratorStep (H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:3:24)\n    at _next (H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:25:9)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)"},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 4:18:30 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T16:19:01.625] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"theway\":\"true\",\"gameid\":\"1\",\"id\":\"16\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"创建成功","data":[{"roleid":["312"],"ip":"127.0.0.1"},{"roleid":["1212312313"],"ip":"123.57.86.38"},{"roleid":["1231231","23","23","40","340","2312"],"ip":"127.0.0.1"},{"roleid":["12"],"ip":"127.0.0.1"}]},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 4:18:59 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T16:19:18.189] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"theway\":\"true\",\"gameid\":\"1\",\"id\":\"16\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"创建成功","data":[{"roleid":["312"],"ip":"127.0.0.1"},{"roleid":["1212312313"],"ip":"123.57.86.38"},{"roleid":["1231231","23","23","40","340","2312"],"ip":"127.0.0.1"},{"roleid":["12"],"ip":"127.0.0.1"}]},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 4:19:17 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T16:19:24.132] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"theway\":\"true\",\"gameid\":\"1\",\"id\":\"21\"}","responseCode":500,"responseMessage":"邮件及时发送 失败","responseDate":{"code":500,"message":"Error: 邮件及时发送 失败\n    at _callee9$ (H:\\fancyguo-gm\\server\\src\\app\\service\\/mail.js:219:9)\n    at tryCatch (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:45:40)\n    at Generator.invoke [as _invoke] (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:281:22)\n    at Generator.prototype.<computed> [as next] (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:106:21)\n    at asyncGeneratorStep (H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:3:24)\n    at _next (H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:25:9)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)"},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 4:19:24 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T16:19:44.822] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"theway\":\"true\",\"gameid\":\"1\",\"id\":\"21\"}","responseCode":500,"responseMessage":"邮件及时发送 失败","responseDate":{"code":500,"message":"Error: 邮件及时发送 失败\n    at _callee9$ (H:\\fancyguo-gm\\server\\src\\app\\service\\/mail.js:219:9)\n    at tryCatch (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:45:40)\n    at Generator.invoke [as _invoke] (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:281:22)\n    at Generator.prototype.<computed> [as next] (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:106:21)\n    at asyncGeneratorStep (H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:3:24)\n    at _next (H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:25:9)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)"},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 4:19:42 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T16:20:03.924] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"theway\":\"true\",\"gameid\":\"1\",\"id\":\"21\"}","responseCode":500,"responseMessage":"邮件及时发送 失败","responseDate":{"code":500,"message":"Error: 邮件及时发送 失败\n    at _callee9$ (H:\\fancyguo-gm\\server\\src\\app\\service\\/mail.js:219:9)\n    at tryCatch (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:45:40)\n    at Generator.invoke [as _invoke] (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:281:22)\n    at Generator.prototype.<computed> [as next] (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:106:21)\n    at asyncGeneratorStep (H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:3:24)\n    at _next (H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:25:9)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)"},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 4:20:03 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T16:21:12.915] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"theway\":\"true\",\"gameid\":\"1\",\"id\":\"21\"}","responseCode":500,"responseMessage":"邮件及时发送 失败","responseDate":{"code":500,"message":"Error: 邮件及时发送 失败\n    at _callee9$ (H:\\fancyguo-gm\\server\\src\\app\\service\\/mail.js:219:9)\n    at tryCatch (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:45:40)\n    at Generator.invoke [as _invoke] (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:281:22)\n    at Generator.prototype.<computed> [as next] (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:106:21)\n    at asyncGeneratorStep (H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:3:24)\n    at _next (H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:25:9)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)"},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 4:21:11 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T16:21:18.143] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"theway\":\"true\",\"gameid\":\"1\",\"id\":\"16\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"创建成功","data":[{"ip":"127.0.0.1"},{"ip":"127.0.0.1"},{"ip":"127.0.0.1"}]},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 4:21:17 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T16:21:46.298] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"theway\":\"true\",\"gameid\":\"1\",\"id\":\"16\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"创建成功","data":[{"roleid":["312"],"ip":"127.0.0.1"},{"roleid":["1212312313"],"ip":"123.57.86.38"},{"roleid":["1231231","23","23","40","340","2312"],"ip":"127.0.0.1"},{"roleid":["12"],"ip":"127.0.0.1"}]},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 4:21:44 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T16:22:27.820] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"theway\":\"true\",\"gameid\":\"1\",\"id\":\"16\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"创建成功","data":[{"roleid":["312"],"ip":"127.0.0.1"},{"roleid":["1212312313"],"ip":"123.57.86.38"},{"roleid":["1231231","23","23","40","340","2312"],"ip":"127.0.0.1"},{"roleid":["12"],"ip":"127.0.0.1"}]},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 4:22:26 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T16:22:40.267] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"theway\":\"true\",\"gameid\":\"1\",\"id\":\"21\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"创建成功","data":[{"ip":"127.0.0.1"},{"ip":"127.0.0.1"},{"ip":"127.0.0.1"}]},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 4:22:39 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T16:22:46.600] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"theway\":\"true\",\"gameid\":\"1\",\"id\":\"16\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"创建成功","data":[{"roleid":["312"],"ip":"127.0.0.1"},{"roleid":["1212312313"],"ip":"123.57.86.38"},{"roleid":["1231231","23","23","40","340","2312"],"ip":"127.0.0.1"},{"roleid":["12"],"ip":"127.0.0.1"}]},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 4:22:46 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T17:10:29.581] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"theway\":\"true\",\"gameid\":\"1\",\"id\":\"16\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"创建成功","data":[{"roleid":["312"],"ip":"127.0.0.1"},{"roleid":["1212312313"],"ip":"123.57.86.38"},{"roleid":["1231231","23","23","40","340","2312"],"ip":"127.0.0.1"},{"roleid":["12"],"ip":"127.0.0.1"}]},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 5:10:28 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T17:10:45.950] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"theway\":\"true\",\"gameid\":\"1\",\"id\":\"16\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"创建成功","data":[{"roleid":["312"],"ip":"127.0.0.1"},{"roleid":["1212312313"],"ip":"123.57.86.38"},{"roleid":["1231231","23","23","40","340","2312"],"ip":"127.0.0.1"},{"roleid":["12"],"ip":"127.0.0.1"}]},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 5:10:45 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T17:20:06.663] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"theway\":\"true\",\"gameid\":\"1\",\"id\":\"16\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"创建成功","data":[{"string_to_array":["1212312313"],"ip":"123.57.86.38"},{"string_to_array":["312","1231231","23","23","40","340","2312","12"],"ip":"127.0.0.1"}]},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 5:20:05 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T17:20:36.010] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"theway\":\"true\",\"gameid\":\"1\",\"id\":\"16\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"创建成功","data":[{"roleid":["1212312313"],"ip":"123.57.86.38"},{"roleid":["312","1231231","23","23","40","340","2312","12"],"ip":"127.0.0.1"}]},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 5:20:34 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T17:21:26.831] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"theway\":\"true\",\"gameid\":\"1\",\"id\":\"16\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"创建成功","data":[{"roleid":["1212312313"],"ip":"123.57.86.38"},{"roleid":["312","1231231","23","23","40","340","2312","12"],"ip":"127.0.0.1"}]},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 5:21:26 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T17:21:28.140] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"theway\":\"true\",\"gameid\":\"1\",\"id\":\"16\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"创建成功","data":[{"roleid":["1212312313"],"ip":"123.57.86.38"},{"roleid":["312","1231231","23","23","40","340","2312","12"],"ip":"127.0.0.1"}]},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 5:21:28 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T17:21:28.990] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"theway\":\"true\",\"gameid\":\"1\",\"id\":\"16\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"创建成功","data":[{"roleid":["1212312313"],"ip":"123.57.86.38"},{"roleid":["312","1231231","23","23","40","340","2312","12"],"ip":"127.0.0.1"}]},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 5:21:28 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T17:21:29.978] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"theway\":\"true\",\"gameid\":\"1\",\"id\":\"16\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"创建成功","data":[{"roleid":["1212312313"],"ip":"123.57.86.38"},{"roleid":["312","1231231","23","23","40","340","2312","12"],"ip":"127.0.0.1"}]},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 5:21:29 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T17:21:33.272] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"theway\":\"true\",\"gameid\":\"1\",\"id\":\"21\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"创建成功","data":[{"ip":"127.0.0.1"},{"ip":"127.0.0.1"},{"ip":"127.0.0.1"}]},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 5:21:33 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T17:38:45.193] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"theway\":\"true\",\"gameid\":\"1\",\"id\":\"21\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"创建成功","data":[{"ip":"127.0.0.1"}]},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 5:38:44 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T17:39:15.810] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"theway\":\"true\",\"gameid\":\"1\",\"id\":\"21\"}","responseCode":500,"responseMessage":"邮件及时发送 失败","responseDate":{"code":500,"message":"Error: 邮件及时发送 失败\n    at _callee9$ (H:\\fancyguo-gm\\server\\src\\app\\service\\/mail.js:219:9)\n    at tryCatch (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:45:40)\n    at Generator.invoke [as _invoke] (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:281:22)\n    at Generator.prototype.<computed> [as next] (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:106:21)\n    at asyncGeneratorStep (H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:3:24)\n    at _next (H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:25:9)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)"},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 5:39:14 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T17:45:24.828] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"theway\":\"true\",\"gameid\":\"1\",\"id\":\"21\"}","responseCode":500,"responseMessage":"邮件及时发送 失败","responseDate":{"code":500,"message":"Error: 邮件及时发送 失败\n    at _callee9$ (H:\\fancyguo-gm\\server\\src\\app\\service\\/mail.js:219:9)\n    at tryCatch (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:45:40)\n    at Generator.invoke [as _invoke] (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:281:22)\n    at Generator.prototype.<computed> [as next] (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:106:21)\n    at asyncGeneratorStep (H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:3:24)\n    at _next (H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:25:9)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)"},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 5:45:24 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T17:46:22.844] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"theway\":\"true\",\"gameid\":\"1\",\"id\":\"21\"}","responseCode":500,"responseMessage":"邮件及时发送 失败","responseDate":{"code":500,"message":"Error: 邮件及时发送 失败\n    at _callee9$ (H:\\fancyguo-gm\\server\\src\\app\\service\\/mail.js:219:9)\n    at tryCatch (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:45:40)\n    at Generator.invoke [as _invoke] (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:281:22)\n    at Generator.prototype.<computed> [as next] (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:106:21)\n    at asyncGeneratorStep (H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:3:24)\n    at _next (H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:25:9)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)"},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 5:46:21 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T17:47:55.443] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"theway\":\"true\",\"gameid\":\"1\",\"id\":\"21\"}","responseCode":500,"responseMessage":"邮件及时发送 失败","responseDate":{"code":500,"message":"Error: 邮件及时发送 失败\n    at _callee9$ (H:\\fancyguo-gm\\server\\src\\app\\service\\/mail.js:219:9)\n    at tryCatch (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:45:40)\n    at Generator.invoke [as _invoke] (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:281:22)\n    at Generator.prototype.<computed> [as next] (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:106:21)\n    at asyncGeneratorStep (H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:3:24)\n    at _next (H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:25:9)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)"},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 5:47:54 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T17:48:26.775] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"theway\":\"true\",\"gameid\":\"1\",\"id\":\"21\"}","responseCode":500,"responseMessage":"邮件及时发送 失败","responseDate":{"code":500,"message":"Error: 邮件及时发送 失败\n    at _callee9$ (H:\\fancyguo-gm\\server\\src\\app\\service\\/mail.js:219:9)\n    at tryCatch (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:45:40)\n    at Generator.invoke [as _invoke] (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:281:22)\n    at Generator.prototype.<computed> [as next] (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:106:21)\n    at asyncGeneratorStep (H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:3:24)\n    at _next (H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:25:9)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)"},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 5:48:25 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T17:57:45.826] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"theway\":\"true\",\"gameid\":\"1\",\"id\":\"21\"}","responseCode":500,"responseMessage":"邮件及时发送 失败","responseDate":{"code":500,"message":"Error: 邮件及时发送 失败\n    at _callee9$ (H:\\fancyguo-gm\\server\\src\\app\\service\\/mail.js:219:9)\n    at tryCatch (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:45:40)\n    at Generator.invoke [as _invoke] (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:281:22)\n    at Generator.prototype.<computed> [as next] (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:106:21)\n    at asyncGeneratorStep (H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:3:24)\n    at _next (H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:25:9)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)"},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 5:57:43 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T17:59:02.370] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"theway\":\"true\",\"gameid\":\"1\",\"id\":\"21\"}","responseCode":500,"responseMessage":"邮件及时发送 失败","responseDate":{"code":500,"message":"Error: 邮件及时发送 失败\n    at _callee9$ (H:\\fancyguo-gm\\server\\src\\app\\service\\/mail.js:219:9)\n    at tryCatch (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:45:40)\n    at Generator.invoke [as _invoke] (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:281:22)\n    at Generator.prototype.<computed> [as next] (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:106:21)\n    at asyncGeneratorStep (H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:3:24)\n    at _next (H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:25:9)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)"},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 5:59:01 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T18:00:17.113] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"theway\":\"true\",\"gameid\":\"1\",\"id\":\"21\"}","responseCode":500,"responseMessage":"邮件及时发送 失败","responseDate":{"code":500,"message":"Error: 邮件及时发送 失败\n    at _callee9$ (H:\\fancyguo-gm\\server\\src\\app\\service\\/mail.js:219:9)\n    at tryCatch (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:45:40)\n    at Generator.invoke [as _invoke] (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:281:22)\n    at Generator.prototype.<computed> [as next] (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:106:21)\n    at asyncGeneratorStep (H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:3:24)\n    at _next (H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:25:9)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)"},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 6:00:14 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T18:01:47.384] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"theway\":\"true\",\"gameid\":\"1\",\"id\":\"21\"}","responseCode":500,"responseMessage":"邮件及时发送 失败","responseDate":{"code":500,"message":"Error: 邮件及时发送 失败\n    at _callee9$ (H:\\fancyguo-gm\\server\\src\\app\\service\\/mail.js:219:9)\n    at tryCatch (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:45:40)\n    at Generator.invoke [as _invoke] (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:281:22)\n    at Generator.prototype.<computed> [as next] (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:106:21)\n    at asyncGeneratorStep (H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:3:24)\n    at _next (H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:25:9)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)"},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 6:01:45 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T18:02:29.835] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"theway\":\"true\",\"gameid\":\"1\",\"id\":\"21\"}","responseCode":500,"responseMessage":"邮件及时发送 失败","responseDate":{"code":500,"message":"Error: 邮件及时发送 失败\n    at _callee9$ (H:\\fancyguo-gm\\server\\src\\app\\service\\/mail.js:219:9)\n    at tryCatch (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:45:40)\n    at Generator.invoke [as _invoke] (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:281:22)\n    at Generator.prototype.<computed> [as next] (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:106:21)\n    at asyncGeneratorStep (H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:3:24)\n    at _next (H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:25:9)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)"},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 6:02:28 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T18:02:47.511] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"theway\":\"true\",\"gameid\":\"1\",\"id\":\"21\"}","responseCode":500,"responseMessage":"邮件及时发送 失败","responseDate":{"code":500,"message":"Error: 邮件及时发送 失败\n    at _callee9$ (H:\\fancyguo-gm\\server\\src\\app\\service\\/mail.js:219:9)\n    at tryCatch (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:45:40)\n    at Generator.invoke [as _invoke] (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:281:22)\n    at Generator.prototype.<computed> [as next] (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:106:21)\n    at asyncGeneratorStep (H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:3:24)\n    at _next (H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:25:9)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)"},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 6:02:46 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T18:04:08.067] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"theway\":\"true\",\"gameid\":\"1\",\"id\":\"21\"}","responseCode":500,"responseMessage":"邮件及时发送 失败","responseDate":{"code":500,"message":"Error: 邮件及时发送 失败\n    at _callee9$ (H:\\fancyguo-gm\\server\\src\\app\\service\\/mail.js:219:9)\n    at tryCatch (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:45:40)\n    at Generator.invoke [as _invoke] (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:281:22)\n    at Generator.prototype.<computed> [as next] (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:106:21)\n    at asyncGeneratorStep (H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:3:24)\n    at _next (H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:25:9)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)"},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 6:04:05 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T18:05:02.699] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"theway\":\"true\",\"gameid\":\"1\",\"id\":\"21\"}","responseCode":500,"responseMessage":"邮件及时发送 失败","responseDate":{"code":500,"message":"Error: 邮件及时发送 失败\n    at _callee9$ (H:\\fancyguo-gm\\server\\src\\app\\service\\/mail.js:219:9)\n    at tryCatch (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:45:40)\n    at Generator.invoke [as _invoke] (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:281:22)\n    at Generator.prototype.<computed> [as next] (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:106:21)\n    at asyncGeneratorStep (H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:3:24)\n    at _next (H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:25:9)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)"},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 6:05:01 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T18:05:36.580] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"theway\":\"true\",\"gameid\":\"1\",\"id\":\"21\"}","responseCode":500,"responseMessage":"邮件及时发送 失败","responseDate":{"code":500,"message":"Error: 邮件及时发送 失败\n    at _callee9$ (H:\\fancyguo-gm\\server\\src\\app\\service\\/mail.js:219:9)\n    at tryCatch (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:45:40)\n    at Generator.invoke [as _invoke] (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:281:22)\n    at Generator.prototype.<computed> [as next] (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:106:21)\n    at asyncGeneratorStep (H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:3:24)\n    at _next (H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:25:9)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)"},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 6:05:34 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T18:07:50.917] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"theway\":\"true\",\"gameid\":\"1\",\"id\":\"21\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"创建成功","data":[{"ip":"127.0.0.1"}]},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 6:07:49 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T18:08:25.631] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"theway\":\"true\",\"gameid\":\"1\",\"id\":\"21\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"创建成功","data":[{"ip":"127.0.0.1"}]},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 6:08:24 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T18:09:53.061] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"theway\":\"true\",\"gameid\":\"1\",\"id\":\"21\"}","responseCode":500,"responseMessage":"邮件及时发送 失败","responseDate":{"code":500,"message":"Error: 邮件及时发送 失败\n    at _callee9$ (H:\\fancyguo-gm\\server\\src\\app\\service\\/mail.js:219:9)\n    at tryCatch (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:45:40)\n    at Generator.invoke [as _invoke] (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:281:22)\n    at Generator.prototype.<computed> [as next] (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:106:21)\n    at asyncGeneratorStep (H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:3:24)\n    at _next (H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:25:9)\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)"},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 6:09:51 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T18:10:11.723] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"theway\":\"true\",\"gameid\":\"1\",\"id\":\"21\"}","responseCode":500,"responseMessage":"邮件及时发送 失败","responseDate":{"code":500,"message":"Error: 邮件及时发送 失败\n    at _callee9$ (H:\\fancyguo-gm\\server\\src\\app\\service\\/mail.js:219:9)\n    at tryCatch (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:45:40)\n    at Generator.invoke [as _invoke] (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:281:22)\n    at Generator.prototype.<computed> [as next] (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:106:21)\n    at asyncGeneratorStep (H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:3:24)\n    at _next (H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:25:9)\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)"},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 6:10:10 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T18:10:45.846] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"theway\":\"true\",\"gameid\":\"1\",\"id\":\"21\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"创建成功","data":[{"ip":"127.0.0.1"}]},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 6:10:45 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T18:10:59.733] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"theway\":\"true\",\"gameid\":\"1\",\"id\":\"21\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"创建成功","data":[{"ip":"127.0.0.1"}]},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 6:10:59 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T18:11:02.646] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"theway\":\"true\",\"gameid\":\"1\",\"id\":\"21\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"创建成功","data":[{"ip":"127.0.0.1"}]},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 6:11:02 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T18:12:21.607] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"theway\":\"true\",\"gameid\":\"1\",\"id\":\"21\"}","responseCode":"ECONNRESET","responseMessage":"read ECONNRESET","responseDate":{"code":"ECONNRESET","message":"Error: read ECONNRESET\n    at TCP.onStreamRead (internal/stream_base_commons.js:205:27)"},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 6:12:20 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T18:12:50.194] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"theway\":\"true\",\"gameid\":\"1\",\"id\":\"21\"}","responseCode":"ECONNRESET","responseMessage":"read ECONNRESET","responseDate":{"code":"ECONNRESET","message":"Error: read ECONNRESET\n    at TCP.onStreamRead (internal/stream_base_commons.js:205:27)"},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 6:12:49 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T18:13:28.037] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"theway\":\"true\",\"gameid\":\"1\",\"id\":\"21\"}","responseCode":"ECONNREFUSED","responseMessage":"connect ECONNREFUSED 127.0.0.1:5000","responseDate":{"code":"ECONNREFUSED","message":"Error: connect ECONNREFUSED 127.0.0.1:5000\n    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1141:16)"},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 6:13:25 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T18:13:53.693] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"theway\":\"true\",\"gameid\":\"1\",\"id\":\"21\"}","responseCode":"ECONNRESET","responseMessage":"read ECONNRESET","responseDate":{"code":"ECONNRESET","message":"Error: read ECONNRESET\n    at TCP.onStreamRead (internal/stream_base_commons.js:205:27)"},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 6:13:52 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T18:14:42.080] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"theway\":\"true\",\"gameid\":\"1\",\"id\":\"21\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"创建成功","data":[{"ip":"127.0.0.1"}]},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 6:14:41 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T18:15:26.503] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"theway\":\"true\",\"gameid\":\"1\",\"id\":\"21\"}","responseCode":500,"responseMessage":"邮件及时发送 失败","responseDate":{"code":500,"message":"Error: 邮件及时发送 失败\n    at _callee9$ (H:\\fancyguo-gm\\server\\src\\app\\service\\/mail.js:219:9)\n    at tryCatch (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:45:40)\n    at Generator.invoke [as _invoke] (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:281:22)\n    at Generator.prototype.<computed> [as next] (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:106:21)\n    at asyncGeneratorStep (H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:3:24)\n    at _next (H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:25:9)\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)"},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 6:15:24 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T18:21:43.910] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"theway\":\"true\",\"gameid\":\"1\",\"id\":\"21\"}","responseCode":"ECONNRESET","responseMessage":"read ECONNRESET","responseDate":{"code":"ECONNRESET","message":"Error: read ECONNRESET\n    at TCP.onStreamRead (internal/stream_base_commons.js:205:27)"},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 6:21:43 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T18:22:17.834] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"theway\":\"true\",\"gameid\":\"1\",\"id\":\"21\"}","responseCode":"ECONNREFUSED","responseMessage":"connect ECONNREFUSED 127.0.0.1:5000","responseDate":{"code":"ECONNREFUSED","message":"Error: connect ECONNREFUSED 127.0.0.1:5000\n    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1141:16)"},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 6:22:15 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T18:23:16.244] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"theway\":\"true\",\"gameid\":\"1\",\"id\":\"21\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"创建成功","data":[{"ip":"127.0.0.1"}]},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 6:23:15 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T18:24:31.678] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"theway\":\"true\",\"gameid\":\"1\",\"id\":\"21\"}","responseCode":"ECONNRESET","responseMessage":"read ECONNRESET","responseDate":{"code":"ECONNRESET","message":"Error: read ECONNRESET\n    at TCP.onStreamRead (internal/stream_base_commons.js:205:27)"},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 6:24:30 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T18:24:59.482] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"theway\":\"true\",\"gameid\":\"1\",\"id\":\"21\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"创建成功","data":[{"ip":"127.0.0.1"}]},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 6:24:58 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T18:25:44.218] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"theway\":\"true\",\"gameid\":\"1\",\"id\":\"16\"}","responseCode":"ECONNRESET","responseMessage":"read ECONNRESET","responseDate":{"code":"ECONNRESET","message":"Error: read ECONNRESET\n    at TCP.onStreamRead (internal/stream_base_commons.js:205:27)"},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 6:25:26 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T19:29:27.352] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"theway\":\"true\",\"gameid\":\"1\",\"id\":\"16\"}","responseCode":500,"responseMessage":"邮件及时发送 失败","responseDate":{"code":500,"message":"Error: 邮件及时发送 失败\n    at _callee9$ (H:\\fancyguo-gm\\server\\src\\app\\service\\/mail.js:219:9)\n    at tryCatch (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:45:40)\n    at Generator.invoke [as _invoke] (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:281:22)\n    at Generator.prototype.<computed> [as next] (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:106:21)\n    at asyncGeneratorStep (H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:3:24)\n    at _next (H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:25:9)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)"},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 7:29:02 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T19:29:42.458] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"theway\":\"true\",\"gameid\":\"1\",\"id\":\"21\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"创建成功","data":[{"ip":"127.0.0.1"}]},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 7:29:41 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T19:32:09.468] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"theway\":\"true\",\"gameid\":\"1\",\"id\":\"21\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"创建成功","data":[{"ip":"127.0.0.1"}]},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 7:32:08 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T19:33:07.238] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"theway\":\"true\",\"gameid\":\"1\",\"id\":\"21\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"创建成功","data":[{"ip":"127.0.0.1"}]},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 7:33:06 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T19:33:53.647] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"theway\":\"true\",\"gameid\":\"1\",\"id\":\"21\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"创建成功","data":[{"ip":"127.0.0.1"}]},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 7:33:52 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T19:34:49.187] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"theway\":\"true\",\"gameid\":\"1\",\"id\":\"21\"}","responseCode":"ECONNRESET","responseMessage":"read ECONNRESET","responseDate":{"code":"ECONNRESET","message":"Error: read ECONNRESET\n    at TCP.onStreamRead (internal/stream_base_commons.js:205:27)"},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 7:34:48 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T19:35:01.546] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"theway\":\"true\",\"gameid\":\"1\",\"id\":\"21\"}","responseCode":"ECONNREFUSED","responseMessage":"connect ECONNREFUSED 127.0.0.1:5000","responseDate":{"code":"ECONNREFUSED","message":"Error: connect ECONNREFUSED 127.0.0.1:5000\n    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1141:16)"},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 7:34:59 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T19:37:03.800] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"theway\":\"true\",\"gameid\":\"1\",\"id\":\"21\"}","responseCode":"ECONNRESET","responseMessage":"read ECONNRESET","responseDate":{"code":"ECONNRESET","message":"Error: read ECONNRESET\n    at TCP.onStreamRead (internal/stream_base_commons.js:205:27)"},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 7:37:02 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T19:37:27.349] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"theway\":\"true\",\"gameid\":\"1\",\"id\":\"21\"}","responseCode":"ECONNRESET","responseMessage":"read ECONNRESET","responseDate":{"code":"ECONNRESET","message":"Error: read ECONNRESET\n    at TCP.onStreamRead (internal/stream_base_commons.js:205:27)"},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 7:37:25 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T19:37:59.079] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"theway\":\"true\",\"gameid\":\"1\",\"id\":\"21\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"创建成功","data":[{"ip":"127.0.0.1"}]},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 7:37:58 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T19:38:10.733] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"theway\":\"true\",\"gameid\":\"1\",\"id\":\"21\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"创建成功","data":[{"ip":"127.0.0.1"}]},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 7:38:10 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T19:38:43.734] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"theway\":\"true\",\"gameid\":\"1\",\"id\":\"21\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"创建成功","data":[{"ip":"127.0.0.1"}]},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 7:38:42 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T19:41:39.495] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"theway\":\"true\",\"gameid\":\"1\",\"id\":\"21\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"创建成功","data":[{"ip":"127.0.0.1"}]},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 7:41:38 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T19:41:58.295] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"theway\":\"true\",\"gameid\":\"1\",\"id\":\"21\"}","responseCode":"ECONNREFUSED","responseMessage":"connect ECONNREFUSED 127.0.0.1:5000","responseDate":{"code":"ECONNREFUSED","message":"Error: connect ECONNREFUSED 127.0.0.1:5000\n    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1141:16)"},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 7:41:56 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T19:42:03.021] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"theway\":\"true\",\"gameid\":\"1\",\"id\":\"21\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"创建成功"},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 7:42:02 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T19:42:17.600] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"theway\":\"true\",\"gameid\":\"1\",\"id\":\"13\"}","responseCode":500,"responseMessage":"邮件及时发送 失败","responseDate":{"code":500,"message":"Error: 邮件及时发送 失败\n    at _callee9$ (H:\\fancyguo-gm\\server\\src\\app\\service\\/mail.js:219:9)\n    at tryCatch (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:45:40)\n    at Generator.invoke [as _invoke] (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:281:22)\n    at Generator.prototype.<computed> [as next] (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:106:21)\n    at asyncGeneratorStep (H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:3:24)\n    at _next (H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:25:9)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)"},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 7:42:16 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T19:42:34.211] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"theway\":\"true\",\"gameid\":\"1\",\"id\":\"13\"}","responseCode":500,"responseMessage":"邮件及时发送 失败","responseDate":{"code":500,"message":"Error: 邮件及时发送 失败\n    at _callee9$ (H:\\fancyguo-gm\\server\\src\\app\\service\\/mail.js:219:9)\n    at tryCatch (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:45:40)\n    at Generator.invoke [as _invoke] (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:281:22)\n    at Generator.prototype.<computed> [as next] (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:106:21)\n    at asyncGeneratorStep (H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:3:24)\n    at _next (H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:25:9)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)"},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 7:42:33 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T19:42:58.658] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"theway\":\"true\",\"gameid\":\"1\",\"id\":\"16\"}","responseCode":500,"responseMessage":"邮件及时发送 失败","responseDate":{"code":500,"message":"Error: 邮件及时发送 失败\n    at _callee9$ (H:\\fancyguo-gm\\server\\src\\app\\service\\/mail.js:219:9)\n    at tryCatch (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:45:40)\n    at Generator.invoke [as _invoke] (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:281:22)\n    at Generator.prototype.<computed> [as next] (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:106:21)\n    at asyncGeneratorStep (H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:3:24)\n    at _next (H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:25:9)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)"},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 7:42:37 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T19:43:30.883] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"theway\":\"true\",\"gameid\":\"1\",\"id\":\"21\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"创建成功"},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 7:43:30 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T19:43:32.849] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"theway\":\"true\",\"gameid\":\"1\",\"id\":\"21\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"创建成功"},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 7:43:32 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T19:43:33.854] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"theway\":\"true\",\"gameid\":\"1\",\"id\":\"16\"}","responseCode":500,"responseMessage":"邮件及时发送 失败","responseDate":{"code":500,"message":"Error: 邮件及时发送 失败\n    at _callee9$ (H:\\fancyguo-gm\\server\\src\\app\\service\\/mail.js:219:9)\n    at tryCatch (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:45:40)\n    at Generator.invoke [as _invoke] (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:281:22)\n    at Generator.prototype.<computed> [as next] (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:106:21)\n    at asyncGeneratorStep (H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:3:24)\n    at _next (H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:25:9)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)"},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 7:43:12 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T19:47:02.840] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"theway\":\"true\",\"gameid\":\"1\",\"id\":\"21\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"创建成功"},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 7:47:02 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T19:47:06.934] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"theway\":\"true\",\"gameid\":\"1\",\"id\":\"16\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"创建成功"},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 7:47:06 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T19:47:11.950] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"theway\":\"true\",\"gameid\":\"1\",\"id\":\"16\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"创建成功"},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 7:47:11 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T19:48:57.815] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"gameid\":\"1\",\"id\":\"16\"}","responseCode":500,"responseMessage":"日期/时间值 \"undefined\" 不再被支持","responseDate":{"code":500,"message":"SequelizeDatabaseError: 日期/时间值 \"undefined\" 不再被支持\n    at Query.formatError (H:\\fancyguo-gm\\server\\node_modules\\sequelize\\lib\\dialects\\postgres\\query.js:366:16)\n    at H:\\fancyguo-gm\\server\\node_modules\\sequelize\\lib\\dialects\\postgres\\query.js:72:18\nFrom previous event:\n    at Query.run (H:\\fancyguo-gm\\server\\node_modules\\sequelize\\lib\\dialects\\postgres\\query.js:64:23)\n    at H:\\fancyguo-gm\\server\\node_modules\\sequelize\\lib\\sequelize.js:655:29\nFrom previous event:\n    at H:\\fancyguo-gm\\server\\node_modules\\sequelize\\lib\\sequelize.js:655:12\n    at processImmediate (internal/timers.js:456:21)\nFrom previous event:\n    at H:\\fancyguo-gm\\server\\node_modules\\sequelize\\lib\\sequelize.js:651:10\n    at H:\\fancyguo-gm\\server\\node_modules\\retry-as-promised\\index.js:70:21\n    at new Promise (<anonymous>)\n    at retryAsPromised (H:\\fancyguo-gm\\server\\node_modules\\retry-as-promised\\index.js:60:10)\n    at H:\\fancyguo-gm\\server\\node_modules\\sequelize\\lib\\sequelize.js:641:30\nFrom previous event:\n    at Sequelize.query (H:\\fancyguo-gm\\server\\node_modules\\sequelize\\lib\\sequelize.js:590:23)\n    at _callee10$ (H:\\fancyguo-gm\\server\\src\\app\\service\\/mail.js:226:31)\n    at tryCatch (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:45:40)\n    at Generator.invoke [as _invoke] (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:281:22)\n    at Generator.prototype.<computed> [as next] (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:106:21)\n    at asyncGeneratorStep (H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:3:24)\n    at _next (H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:25:9)\n    at H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:32:7\n    at new Promise (<anonymous>)\n    at MailService.<anonymous> (H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:21:12)\n    at MailService.mailSendTiming (H:\\fancyguo-gm\\server\\src\\app\\service\\mail.js:557:32)\n    at _callee9$ (H:\\fancyguo-gm\\server\\src\\app\\controllers\\/mail.js:71:31)\n    at tryCatch (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:45:40)\n    at Generator.invoke [as _invoke] (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:281:22)\n    at Generator.prototype.<computed> [as next] (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:106:21)\n    at asyncGeneratorStep (H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:3:24)\n    at _next (H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:25:9)\n    at H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:32:7\n    at new Promise (<anonymous>)\n    at H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:21:12\n    at mailSend (H:\\fancyguo-gm\\server\\src\\app\\controllers\\mail.js:350:26)\n    at dispatch (H:\\fancyguo-gm\\server\\node_modules\\koa-compose\\index.js:44:32)\n    at next (H:\\fancyguo-gm\\server\\node_modules\\koa-compose\\index.js:45:18)\n    at H:\\fancyguo-gm\\server\\node_modules\\koa-router\\lib\\router.js:346:16\n    at dispatch (H:\\fancyguo-gm\\server\\node_modules\\koa-compose\\index.js:44:32)\n    at H:\\fancyguo-gm\\server\\node_modules\\koa-compose\\index.js:36:12\n    at dispatch (H:\\fancyguo-gm\\server\\node_modules\\koa-router\\lib\\router.js:351:31)\n    at next (H:\\fancyguo-gm\\server\\node_modules\\koa\\node_modules\\koa-compose\\index.js:42:32)\n    at _callee$ (H:\\fancyguo-gm\\server\\src\\middleware\\/index.js:48:11)\n    at tryCatch (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:45:40)\n    at Generator.invoke [as _invoke] (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:281:22)\n    at Generator.prototype.<computed> [as next] (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:106:21)\n    at asyncGeneratorStep (H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:3:24)\n    at _next (H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:25:9)\n    at H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:32:7\n    at new Promise (<anonymous>)\n    at H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:21:12\n    at H:\\fancyguo-gm\\server\\src\\middleware\\/index.js:43:2"},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 7:48:57 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T19:49:02.083] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"gameid\":\"1\",\"id\":\"16\"}","responseCode":500,"responseMessage":"日期/时间值 \"undefined\" 不再被支持","responseDate":{"code":500,"message":"SequelizeDatabaseError: 日期/时间值 \"undefined\" 不再被支持\n    at Query.formatError (H:\\fancyguo-gm\\server\\node_modules\\sequelize\\lib\\dialects\\postgres\\query.js:366:16)\n    at H:\\fancyguo-gm\\server\\node_modules\\sequelize\\lib\\dialects\\postgres\\query.js:72:18\nFrom previous event:\n    at Query.run (H:\\fancyguo-gm\\server\\node_modules\\sequelize\\lib\\dialects\\postgres\\query.js:64:23)\n    at H:\\fancyguo-gm\\server\\node_modules\\sequelize\\lib\\sequelize.js:655:29\nFrom previous event:\n    at H:\\fancyguo-gm\\server\\node_modules\\sequelize\\lib\\sequelize.js:655:12\n    at processImmediate (internal/timers.js:456:21)\nFrom previous event:\n    at H:\\fancyguo-gm\\server\\node_modules\\sequelize\\lib\\sequelize.js:651:10\n    at H:\\fancyguo-gm\\server\\node_modules\\retry-as-promised\\index.js:70:21\n    at new Promise (<anonymous>)\n    at retryAsPromised (H:\\fancyguo-gm\\server\\node_modules\\retry-as-promised\\index.js:60:10)\n    at H:\\fancyguo-gm\\server\\node_modules\\sequelize\\lib\\sequelize.js:641:30\nFrom previous event:\n    at Sequelize.query (H:\\fancyguo-gm\\server\\node_modules\\sequelize\\lib\\sequelize.js:590:23)\n    at _callee10$ (H:\\fancyguo-gm\\server\\src\\app\\service\\/mail.js:226:31)\n    at tryCatch (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:45:40)\n    at Generator.invoke [as _invoke] (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:281:22)\n    at Generator.prototype.<computed> [as next] (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:106:21)\n    at asyncGeneratorStep (H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:3:24)\n    at _next (H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:25:9)\n    at H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:32:7\n    at new Promise (<anonymous>)\n    at MailService.<anonymous> (H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:21:12)\n    at MailService.mailSendTiming (H:\\fancyguo-gm\\server\\src\\app\\service\\mail.js:557:32)\n    at _callee9$ (H:\\fancyguo-gm\\server\\src\\app\\controllers\\/mail.js:71:31)\n    at tryCatch (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:45:40)\n    at Generator.invoke [as _invoke] (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:281:22)\n    at Generator.prototype.<computed> [as next] (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:106:21)\n    at asyncGeneratorStep (H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:3:24)\n    at _next (H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:25:9)\n    at H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:32:7\n    at new Promise (<anonymous>)\n    at H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:21:12\n    at mailSend (H:\\fancyguo-gm\\server\\src\\app\\controllers\\mail.js:350:26)\n    at dispatch (H:\\fancyguo-gm\\server\\node_modules\\koa-compose\\index.js:44:32)\n    at next (H:\\fancyguo-gm\\server\\node_modules\\koa-compose\\index.js:45:18)\n    at H:\\fancyguo-gm\\server\\node_modules\\koa-router\\lib\\router.js:346:16\n    at dispatch (H:\\fancyguo-gm\\server\\node_modules\\koa-compose\\index.js:44:32)\n    at H:\\fancyguo-gm\\server\\node_modules\\koa-compose\\index.js:36:12\n    at dispatch (H:\\fancyguo-gm\\server\\node_modules\\koa-router\\lib\\router.js:351:31)\n    at next (H:\\fancyguo-gm\\server\\node_modules\\koa\\node_modules\\koa-compose\\index.js:42:32)\n    at _callee$ (H:\\fancyguo-gm\\server\\src\\middleware\\/index.js:48:11)\n    at tryCatch (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:45:40)\n    at Generator.invoke [as _invoke] (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:281:22)\n    at Generator.prototype.<computed> [as next] (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:106:21)\n    at asyncGeneratorStep (H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:3:24)\n    at _next (H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:25:9)\n    at H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:32:7\n    at new Promise (<anonymous>)\n    at H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:21:12\n    at H:\\fancyguo-gm\\server\\src\\middleware\\/index.js:43:2"},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 7:49:02 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T19:49:02.870] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"gameid\":\"1\",\"id\":\"16\"}","responseCode":500,"responseMessage":"日期/时间值 \"undefined\" 不再被支持","responseDate":{"code":500,"message":"SequelizeDatabaseError: 日期/时间值 \"undefined\" 不再被支持\n    at Query.formatError (H:\\fancyguo-gm\\server\\node_modules\\sequelize\\lib\\dialects\\postgres\\query.js:366:16)\n    at H:\\fancyguo-gm\\server\\node_modules\\sequelize\\lib\\dialects\\postgres\\query.js:72:18\nFrom previous event:\n    at Query.run (H:\\fancyguo-gm\\server\\node_modules\\sequelize\\lib\\dialects\\postgres\\query.js:64:23)\n    at H:\\fancyguo-gm\\server\\node_modules\\sequelize\\lib\\sequelize.js:655:29\nFrom previous event:\n    at H:\\fancyguo-gm\\server\\node_modules\\sequelize\\lib\\sequelize.js:655:12\n    at processImmediate (internal/timers.js:456:21)\nFrom previous event:\n    at H:\\fancyguo-gm\\server\\node_modules\\sequelize\\lib\\sequelize.js:651:10\n    at H:\\fancyguo-gm\\server\\node_modules\\retry-as-promised\\index.js:70:21\n    at new Promise (<anonymous>)\n    at retryAsPromised (H:\\fancyguo-gm\\server\\node_modules\\retry-as-promised\\index.js:60:10)\n    at H:\\fancyguo-gm\\server\\node_modules\\sequelize\\lib\\sequelize.js:641:30\nFrom previous event:\n    at Sequelize.query (H:\\fancyguo-gm\\server\\node_modules\\sequelize\\lib\\sequelize.js:590:23)\n    at _callee10$ (H:\\fancyguo-gm\\server\\src\\app\\service\\/mail.js:226:31)\n    at tryCatch (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:45:40)\n    at Generator.invoke [as _invoke] (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:281:22)\n    at Generator.prototype.<computed> [as next] (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:106:21)\n    at asyncGeneratorStep (H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:3:24)\n    at _next (H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:25:9)\n    at H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:32:7\n    at new Promise (<anonymous>)\n    at MailService.<anonymous> (H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:21:12)\n    at MailService.mailSendTiming (H:\\fancyguo-gm\\server\\src\\app\\service\\mail.js:557:32)\n    at _callee9$ (H:\\fancyguo-gm\\server\\src\\app\\controllers\\/mail.js:71:31)\n    at tryCatch (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:45:40)\n    at Generator.invoke [as _invoke] (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:281:22)\n    at Generator.prototype.<computed> [as next] (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:106:21)\n    at asyncGeneratorStep (H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:3:24)\n    at _next (H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:25:9)\n    at H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:32:7\n    at new Promise (<anonymous>)\n    at H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:21:12\n    at mailSend (H:\\fancyguo-gm\\server\\src\\app\\controllers\\mail.js:350:26)\n    at dispatch (H:\\fancyguo-gm\\server\\node_modules\\koa-compose\\index.js:44:32)\n    at next (H:\\fancyguo-gm\\server\\node_modules\\koa-compose\\index.js:45:18)\n    at H:\\fancyguo-gm\\server\\node_modules\\koa-router\\lib\\router.js:346:16\n    at dispatch (H:\\fancyguo-gm\\server\\node_modules\\koa-compose\\index.js:44:32)\n    at H:\\fancyguo-gm\\server\\node_modules\\koa-compose\\index.js:36:12\n    at dispatch (H:\\fancyguo-gm\\server\\node_modules\\koa-router\\lib\\router.js:351:31)\n    at next (H:\\fancyguo-gm\\server\\node_modules\\koa\\node_modules\\koa-compose\\index.js:42:32)\n    at _callee$ (H:\\fancyguo-gm\\server\\src\\middleware\\/index.js:48:11)\n    at tryCatch (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:45:40)\n    at Generator.invoke [as _invoke] (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:281:22)\n    at Generator.prototype.<computed> [as next] (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:106:21)\n    at asyncGeneratorStep (H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:3:24)\n    at _next (H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:25:9)\n    at H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:32:7\n    at new Promise (<anonymous>)\n    at H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:21:12\n    at H:\\fancyguo-gm\\server\\src\\middleware\\/index.js:43:2"},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 7:49:02 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T19:49:03.478] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"gameid\":\"1\",\"id\":\"16\"}","responseCode":500,"responseMessage":"日期/时间值 \"undefined\" 不再被支持","responseDate":{"code":500,"message":"SequelizeDatabaseError: 日期/时间值 \"undefined\" 不再被支持\n    at Query.formatError (H:\\fancyguo-gm\\server\\node_modules\\sequelize\\lib\\dialects\\postgres\\query.js:366:16)\n    at H:\\fancyguo-gm\\server\\node_modules\\sequelize\\lib\\dialects\\postgres\\query.js:72:18\nFrom previous event:\n    at Query.run (H:\\fancyguo-gm\\server\\node_modules\\sequelize\\lib\\dialects\\postgres\\query.js:64:23)\n    at H:\\fancyguo-gm\\server\\node_modules\\sequelize\\lib\\sequelize.js:655:29\nFrom previous event:\n    at H:\\fancyguo-gm\\server\\node_modules\\sequelize\\lib\\sequelize.js:655:12\n    at processImmediate (internal/timers.js:456:21)\nFrom previous event:\n    at H:\\fancyguo-gm\\server\\node_modules\\sequelize\\lib\\sequelize.js:651:10\n    at H:\\fancyguo-gm\\server\\node_modules\\retry-as-promised\\index.js:70:21\n    at new Promise (<anonymous>)\n    at retryAsPromised (H:\\fancyguo-gm\\server\\node_modules\\retry-as-promised\\index.js:60:10)\n    at H:\\fancyguo-gm\\server\\node_modules\\sequelize\\lib\\sequelize.js:641:30\nFrom previous event:\n    at Sequelize.query (H:\\fancyguo-gm\\server\\node_modules\\sequelize\\lib\\sequelize.js:590:23)\n    at _callee10$ (H:\\fancyguo-gm\\server\\src\\app\\service\\/mail.js:226:31)\n    at tryCatch (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:45:40)\n    at Generator.invoke [as _invoke] (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:281:22)\n    at Generator.prototype.<computed> [as next] (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:106:21)\n    at asyncGeneratorStep (H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:3:24)\n    at _next (H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:25:9)\n    at H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:32:7\n    at new Promise (<anonymous>)\n    at MailService.<anonymous> (H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:21:12)\n    at MailService.mailSendTiming (H:\\fancyguo-gm\\server\\src\\app\\service\\mail.js:557:32)\n    at _callee9$ (H:\\fancyguo-gm\\server\\src\\app\\controllers\\/mail.js:71:31)\n    at tryCatch (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:45:40)\n    at Generator.invoke [as _invoke] (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:281:22)\n    at Generator.prototype.<computed> [as next] (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:106:21)\n    at asyncGeneratorStep (H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:3:24)\n    at _next (H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:25:9)\n    at H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:32:7\n    at new Promise (<anonymous>)\n    at H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:21:12\n    at mailSend (H:\\fancyguo-gm\\server\\src\\app\\controllers\\mail.js:350:26)\n    at dispatch (H:\\fancyguo-gm\\server\\node_modules\\koa-compose\\index.js:44:32)\n    at next (H:\\fancyguo-gm\\server\\node_modules\\koa-compose\\index.js:45:18)\n    at H:\\fancyguo-gm\\server\\node_modules\\koa-router\\lib\\router.js:346:16\n    at dispatch (H:\\fancyguo-gm\\server\\node_modules\\koa-compose\\index.js:44:32)\n    at H:\\fancyguo-gm\\server\\node_modules\\koa-compose\\index.js:36:12\n    at dispatch (H:\\fancyguo-gm\\server\\node_modules\\koa-router\\lib\\router.js:351:31)\n    at next (H:\\fancyguo-gm\\server\\node_modules\\koa\\node_modules\\koa-compose\\index.js:42:32)\n    at _callee$ (H:\\fancyguo-gm\\server\\src\\middleware\\/index.js:48:11)\n    at tryCatch (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:45:40)\n    at Generator.invoke [as _invoke] (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:281:22)\n    at Generator.prototype.<computed> [as next] (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:106:21)\n    at asyncGeneratorStep (H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:3:24)\n    at _next (H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:25:9)\n    at H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:32:7\n    at new Promise (<anonymous>)\n    at H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:21:12\n    at H:\\fancyguo-gm\\server\\src\\middleware\\/index.js:43:2"},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 7:49:03 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T19:49:04.228] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"gameid\":\"1\",\"id\":\"16\"}","responseCode":500,"responseMessage":"日期/时间值 \"undefined\" 不再被支持","responseDate":{"code":500,"message":"SequelizeDatabaseError: 日期/时间值 \"undefined\" 不再被支持\n    at Query.formatError (H:\\fancyguo-gm\\server\\node_modules\\sequelize\\lib\\dialects\\postgres\\query.js:366:16)\n    at H:\\fancyguo-gm\\server\\node_modules\\sequelize\\lib\\dialects\\postgres\\query.js:72:18\nFrom previous event:\n    at Query.run (H:\\fancyguo-gm\\server\\node_modules\\sequelize\\lib\\dialects\\postgres\\query.js:64:23)\n    at H:\\fancyguo-gm\\server\\node_modules\\sequelize\\lib\\sequelize.js:655:29\nFrom previous event:\n    at H:\\fancyguo-gm\\server\\node_modules\\sequelize\\lib\\sequelize.js:655:12\n    at processImmediate (internal/timers.js:456:21)\nFrom previous event:\n    at H:\\fancyguo-gm\\server\\node_modules\\sequelize\\lib\\sequelize.js:651:10\n    at H:\\fancyguo-gm\\server\\node_modules\\retry-as-promised\\index.js:70:21\n    at new Promise (<anonymous>)\n    at retryAsPromised (H:\\fancyguo-gm\\server\\node_modules\\retry-as-promised\\index.js:60:10)\n    at H:\\fancyguo-gm\\server\\node_modules\\sequelize\\lib\\sequelize.js:641:30\nFrom previous event:\n    at Sequelize.query (H:\\fancyguo-gm\\server\\node_modules\\sequelize\\lib\\sequelize.js:590:23)\n    at _callee10$ (H:\\fancyguo-gm\\server\\src\\app\\service\\/mail.js:226:31)\n    at tryCatch (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:45:40)\n    at Generator.invoke [as _invoke] (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:281:22)\n    at Generator.prototype.<computed> [as next] (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:106:21)\n    at asyncGeneratorStep (H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:3:24)\n    at _next (H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:25:9)\n    at H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:32:7\n    at new Promise (<anonymous>)\n    at MailService.<anonymous> (H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:21:12)\n    at MailService.mailSendTiming (H:\\fancyguo-gm\\server\\src\\app\\service\\mail.js:557:32)\n    at _callee9$ (H:\\fancyguo-gm\\server\\src\\app\\controllers\\/mail.js:71:31)\n    at tryCatch (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:45:40)\n    at Generator.invoke [as _invoke] (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:281:22)\n    at Generator.prototype.<computed> [as next] (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:106:21)\n    at asyncGeneratorStep (H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:3:24)\n    at _next (H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:25:9)\n    at H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:32:7\n    at new Promise (<anonymous>)\n    at H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:21:12\n    at mailSend (H:\\fancyguo-gm\\server\\src\\app\\controllers\\mail.js:350:26)\n    at dispatch (H:\\fancyguo-gm\\server\\node_modules\\koa-compose\\index.js:44:32)\n    at next (H:\\fancyguo-gm\\server\\node_modules\\koa-compose\\index.js:45:18)\n    at H:\\fancyguo-gm\\server\\node_modules\\koa-router\\lib\\router.js:346:16\n    at dispatch (H:\\fancyguo-gm\\server\\node_modules\\koa-compose\\index.js:44:32)\n    at H:\\fancyguo-gm\\server\\node_modules\\koa-compose\\index.js:36:12\n    at dispatch (H:\\fancyguo-gm\\server\\node_modules\\koa-router\\lib\\router.js:351:31)\n    at next (H:\\fancyguo-gm\\server\\node_modules\\koa\\node_modules\\koa-compose\\index.js:42:32)\n    at _callee$ (H:\\fancyguo-gm\\server\\src\\middleware\\/index.js:48:11)\n    at tryCatch (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:45:40)\n    at Generator.invoke [as _invoke] (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:281:22)\n    at Generator.prototype.<computed> [as next] (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:106:21)\n    at asyncGeneratorStep (H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:3:24)\n    at _next (H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:25:9)\n    at H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:32:7\n    at new Promise (<anonymous>)\n    at H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:21:12\n    at H:\\fancyguo-gm\\server\\src\\middleware\\/index.js:43:2"},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 7:49:04 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T19:49:05.727] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"gameid\":\"1\",\"id\":\"16\"}","responseCode":500,"responseMessage":"日期/时间值 \"undefined\" 不再被支持","responseDate":{"code":500,"message":"SequelizeDatabaseError: 日期/时间值 \"undefined\" 不再被支持\n    at Query.formatError (H:\\fancyguo-gm\\server\\node_modules\\sequelize\\lib\\dialects\\postgres\\query.js:366:16)\n    at H:\\fancyguo-gm\\server\\node_modules\\sequelize\\lib\\dialects\\postgres\\query.js:72:18\nFrom previous event:\n    at Query.run (H:\\fancyguo-gm\\server\\node_modules\\sequelize\\lib\\dialects\\postgres\\query.js:64:23)\n    at H:\\fancyguo-gm\\server\\node_modules\\sequelize\\lib\\sequelize.js:655:29\nFrom previous event:\n    at H:\\fancyguo-gm\\server\\node_modules\\sequelize\\lib\\sequelize.js:655:12\n    at processImmediate (internal/timers.js:456:21)\nFrom previous event:\n    at H:\\fancyguo-gm\\server\\node_modules\\sequelize\\lib\\sequelize.js:651:10\n    at H:\\fancyguo-gm\\server\\node_modules\\retry-as-promised\\index.js:70:21\n    at new Promise (<anonymous>)\n    at retryAsPromised (H:\\fancyguo-gm\\server\\node_modules\\retry-as-promised\\index.js:60:10)\n    at H:\\fancyguo-gm\\server\\node_modules\\sequelize\\lib\\sequelize.js:641:30\nFrom previous event:\n    at Sequelize.query (H:\\fancyguo-gm\\server\\node_modules\\sequelize\\lib\\sequelize.js:590:23)\n    at _callee10$ (H:\\fancyguo-gm\\server\\src\\app\\service\\/mail.js:226:31)\n    at tryCatch (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:45:40)\n    at Generator.invoke [as _invoke] (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:281:22)\n    at Generator.prototype.<computed> [as next] (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:106:21)\n    at asyncGeneratorStep (H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:3:24)\n    at _next (H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:25:9)\n    at H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:32:7\n    at new Promise (<anonymous>)\n    at MailService.<anonymous> (H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:21:12)\n    at MailService.mailSendTiming (H:\\fancyguo-gm\\server\\src\\app\\service\\mail.js:557:32)\n    at _callee9$ (H:\\fancyguo-gm\\server\\src\\app\\controllers\\/mail.js:71:31)\n    at tryCatch (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:45:40)\n    at Generator.invoke [as _invoke] (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:281:22)\n    at Generator.prototype.<computed> [as next] (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:106:21)\n    at asyncGeneratorStep (H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:3:24)\n    at _next (H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:25:9)\n    at H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:32:7\n    at new Promise (<anonymous>)\n    at H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:21:12\n    at mailSend (H:\\fancyguo-gm\\server\\src\\app\\controllers\\mail.js:350:26)\n    at dispatch (H:\\fancyguo-gm\\server\\node_modules\\koa-compose\\index.js:44:32)\n    at next (H:\\fancyguo-gm\\server\\node_modules\\koa-compose\\index.js:45:18)\n    at H:\\fancyguo-gm\\server\\node_modules\\koa-router\\lib\\router.js:346:16\n    at dispatch (H:\\fancyguo-gm\\server\\node_modules\\koa-compose\\index.js:44:32)\n    at H:\\fancyguo-gm\\server\\node_modules\\koa-compose\\index.js:36:12\n    at dispatch (H:\\fancyguo-gm\\server\\node_modules\\koa-router\\lib\\router.js:351:31)\n    at next (H:\\fancyguo-gm\\server\\node_modules\\koa\\node_modules\\koa-compose\\index.js:42:32)\n    at _callee$ (H:\\fancyguo-gm\\server\\src\\middleware\\/index.js:48:11)\n    at tryCatch (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:45:40)\n    at Generator.invoke [as _invoke] (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:281:22)\n    at Generator.prototype.<computed> [as next] (H:\\fancyguo-gm\\server\\node_modules\\regenerator-runtime\\runtime.js:106:21)\n    at asyncGeneratorStep (H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:3:24)\n    at _next (H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:25:9)\n    at H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:32:7\n    at new Promise (<anonymous>)\n    at H:\\fancyguo-gm\\server\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:21:12\n    at H:\\fancyguo-gm\\server\\src\\middleware\\/index.js:43:2"},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 7:49:05 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T19:49:37.848] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"gameid\":\"1\",\"id\":\"16\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"创建成功"},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 7:49:37 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T19:49:42.358] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"gameid\":\"1\",\"id\":\"16\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"创建成功"},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 7:49:42 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T19:51:24.822] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"gameid\":\"1\",\"id\":\"16\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"创建成功"},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 7:51:24 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T19:51:33.013] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"gameid\":\"1\",\"id\":\"21\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"创建成功"},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 7:51:32 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T19:54:31.616] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/maxID","resourceDesc":"最大ID","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查找成功","data":{"max":21}},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-9-9 7:54:31 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T19:54:31.618] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/getQueryAnnexOptionsLazy","resourceDesc":"物品详细查询","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查找成功","data":[]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-9-9 7:54:31 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T19:54:31.647] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/getQueryAnnexOptions","resourceDesc":"物品分类查询","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查找成功","data":[{"label":"特殊道具","value":"特殊道具"},{"label":"礼包","value":"礼包"},{"label":"文物","value":"文物"},{"label":"宠物碎片","value":"宠物碎片"},{"label":"怒翼魂卡","value":"怒翼魂卡"},{"label":"伙伴藏品碎片","value":"伙伴藏品碎片"},{"label":"怒翼碎片","value":"怒翼碎片"},{"label":"器灵碎片","value":"器灵碎片"},{"label":"装备","value":"装备"},{"label":"称号","value":"称号"},{"label":"精炼突破神石","value":"精炼突破神石"},{"label":"单独材料","value":"单独材料"},{"label":"伙伴碎片","value":"伙伴碎片"},{"label":"宝石","value":"宝石"},{"label":"货币","value":"货币"}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-9-9 7:54:31 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T20:24:03.280] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"gameid\":\"1\",\"id\":\"21\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"创建成功"},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 8:24:02 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T20:30:15.000] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"gameid\":\"1\",\"id\":\"21\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"创建成功"},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 8:30:14 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T20:31:16.790] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"gameid\":\"1\",\"id\":\"21\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"创建成功"},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 8:31:16 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T20:35:56.082] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"gameid\":\"1\",\"id\":\"21\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"创建成功"},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 8:35:55 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T20:36:31.953] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"gameid\":\"1\",\"id\":\"21\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"创建成功"},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 8:36:31 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T20:37:09.817] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"gameid\":\"1\",\"id\":\"21\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"创建成功"},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 8:37:09 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T20:37:36.677] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"gameid\":\"1\",\"id\":\"21\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"创建成功"},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 8:37:35 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T20:38:50.180] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"gameid\":\"1\",\"id\":\"21\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"创建成功"},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 8:38:49 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T20:41:58.404] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"gameid\":\"1\",\"id\":\"21\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"创建成功"},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 8:41:57 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T20:44:05.010] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"gameid\":\"1\",\"id\":\"21\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"创建成功"},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 8:44:04 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T20:46:08.804] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"gameid\":\"1\",\"id\":\"21\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"创建成功"},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 8:46:08 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T20:46:40.978] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"gameid\":\"1\",\"id\":\"21\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"创建成功"},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 8:46:40 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T20:47:43.319] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"gameid\":\"1\",\"id\":\"21\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"创建成功"},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 8:47:42 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T20:48:45.794] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"gameid\":\"1\",\"id\":\"21\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"创建成功"},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 8:48:44 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T20:49:06.241] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"gameid\":\"1\",\"id\":\"21\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"创建成功"},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 8:49:05 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T20:51:27.233] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"gameid\":\"1\",\"id\":\"21\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"创建成功"},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 8:51:26 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T20:53:03.618] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"gameid\":\"1\",\"id\":\"21\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"创建成功"},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 8:53:02 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T20:54:27.364] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"gameid\":\"1\",\"id\":\"21\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"创建成功"},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 8:54:26 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T20:54:53.779] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"gameid\":\"1\",\"id\":\"21\"}","responseCode":"ECONNREFUSED","responseMessage":"connect ECONNREFUSED 127.0.0.1:5000","responseDate":{"code":"ECONNREFUSED","message":"Error: connect ECONNREFUSED 127.0.0.1:5000\n    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1141:16)"},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 8:54:51 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T20:54:59.172] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"gameid\":\"1\",\"id\":\"21\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"创建成功"},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 8:54:58 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T20:55:12.939] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"gameid\":\"1\",\"id\":\"21\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"创建成功"},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 8:55:12 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T20:57:29.450] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"gameid\":\"1\",\"id\":\"21\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"创建成功"},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 8:57:28 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T21:00:15.819] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"gameid\":\"1\",\"id\":\"21\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"创建成功"},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 9:00:15 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T21:25:16.686] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"gameid\":\"1\",\"id\":\"21\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"创建成功"},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 9:25:15 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T21:29:24.106] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"gameid\":\"1\",\"id\":\"21\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"创建成功"},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 9:29:22 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T21:31:10.964] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"gameid\":\"1\",\"id\":\"21\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"创建成功"},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 9:31:10 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T21:33:15.234] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"gameid\":\"1\",\"id\":\"21\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"创建成功"},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 9:33:14 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T21:34:16.141] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"gameid\":\"1\",\"id\":\"21\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"创建成功"},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 9:34:15 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T21:35:43.552] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"gameid\":\"1\",\"id\":\"21\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"创建成功"},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 9:35:42 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T21:37:12.011] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"gameid\":\"1\",\"id\":\"21\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"创建成功"},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 9:37:10 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T21:38:47.999] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"gameid\":\"1\",\"id\":\"21\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"创建成功"},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 9:38:47 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T21:43:29.367] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"theway\":\"true\",\"gameid\":\"1\",\"id\":\"21\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"创建成功"},"serverIp":"当前服务器id","userIp":"::ffff:127.0.0.1","userId":null,"createTime":"2020-9-9 9:43:28 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T21:43:36.910] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"theway\":\"false\",\"gameid\":\"1\",\"id\":\"21\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"创建成功"},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 9:43:36 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T21:44:21.800] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"theway\":\"true\",\"gameid\":\"1\",\"id\":\"21\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"创建成功"},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 9:44:21 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T21:46:02.987] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"theway\":\"true\",\"gameid\":\"1\",\"id\":\"21\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"创建成功"},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 9:46:02 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T21:46:13.147] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"theway\":\"false\",\"gameid\":\"1\",\"id\":\"21\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"创建成功"},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 9:46:12 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T21:47:26.943] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"gameid\":\"1\",\"id\":\"21\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"创建成功"},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 9:47:26 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T21:47:34.524] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"gameid\":\"1\",\"id\":\"21\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"创建成功"},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 9:47:34 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T21:47:42.472] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"gameid\":\"1\",\"id\":\"21\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"创建成功"},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 9:47:42 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T21:47:53.183] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"theway\":\"1121\",\"gameid\":\"1\",\"id\":\"21\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"创建成功"},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 9:47:52 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T21:48:39.930] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"theway\":\"1121\",\"gameid\":\"1\",\"id\":\"21\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"创建成功","data":true},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 9:48:38 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T21:48:46.012] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"gameid\":\"1\",\"id\":\"21\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"创建成功"},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 9:48:45 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T21:49:43.373] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"theway\":\"1121\",\"gameid\":\"1\",\"id\":\"21\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"创建成功","data":true},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 9:49:42 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T21:49:51.407] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"gameid\":\"1\",\"id\":\"21\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"创建成功","data":false},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 9:49:51 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T21:50:28.647] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"theway\":\"1121\",\"gameid\":\"1\",\"id\":\"21\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"创建成功","data":true},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 9:50:26 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T21:50:32.470] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"gameid\":\"1\",\"id\":\"21\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"创建成功","data":false},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 9:50:32 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T21:51:02.974] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"gameid\":\"1\",\"id\":\"21\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"创建成功","data":false},"serverIp":"当前服务器id","userIp":"::ffff:127.0.0.1","userId":null,"createTime":"2020-9-9 9:51:02 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T21:51:30.187] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"theway\":\"1121\",\"gameid\":\"1\",\"id\":\"21\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"创建成功","data":true},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 9:51:28 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T21:51:39.823] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"gameid\":\"1\",\"id\":\"21\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"创建成功","data":false},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 9:51:39 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T21:52:12.850] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"theway\":\"1121\",\"gameid\":\"1\",\"id\":\"21\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"创建成功","data":true},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 9:52:11 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-09T21:52:16.395] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/mail/mailSend","resourceDesc":"附件查找","requestType":"POST","requestParams":"{\"gameid\":\"1\",\"id\":\"21\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"创建成功","data":true},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-9-9 9:52:16 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+

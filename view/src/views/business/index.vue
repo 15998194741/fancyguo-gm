@@ -26,6 +26,7 @@ export default {
     ])
   },
   mounted() {
+    sessionStorage.setItem('username', this.username);
   },
   methods: {
   },

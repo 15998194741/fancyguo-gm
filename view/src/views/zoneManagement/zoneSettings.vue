@@ -34,7 +34,7 @@
      
       <div class="comprehensive-container">
         <div v-for='(i,index) in selectForm' :key='index'  class="select-item"  > {{i.label}}:
-          <el-select v-model="filterForm[i.key]" :multiple="i['multiple']"   :filterable='i.filterable' placeholder="请选择" size='small' @change='filterFormChange'>
+          <el-select v-model="filterForm[i.key]" :multiple="i['multiple']" :collapse-tags="i['collapse']"  clearable  :filterable='i.filterable' placeholder="请选择" size='small' @change='filterFormChange'>
             <el-option v-for="(item,index) in i.options" :key="index"  :label='item.label' :value="item.value" >
             </el-option>
           </el-select>
@@ -43,14 +43,14 @@
       </div>
     </div>
     <div class="table-container" >
-
-
-
       <!-- :tree-props="{children: 'children', hasChildren: 'hasChildren'}"  -->
+
+      <div  class="table-body">
       <el-table
         ref="multipleTable"
         v-loading="loading"
-        style="min-height: 645px;" 
+       
+        style="min-height: 66vh;" 
         element-loading-text="拼命加载中" 
         element-loading-spinner="el-icon-loading"
         element-loading-background="rgba(0, 0, 0, 0.8)" 
@@ -60,27 +60,33 @@
         :tree-props="{ hasChildren: 'hasChildren'}"
         :data="tableData" 
         row-key="id"
-        :default-sort="{prop: 'display'}" 
+        :default-sort="{prop: 'create_time',order:'descending'}" 
         :row-class-name="tableRowClassName" 
         @selection-change="handleSelectionChange"
         @size-change="handleSizeChange">
         <el-table-column  type="selection" width="55"></el-table-column>
-     
         <el-table-column  label="合服ID" :width="widthtable">
-          <template slot-scope="scope">{{ scope.row.childrens?scope.row.serverid:'' }} </template>
+          <template slot-scope="scope">{{ scope.row.childrens?scope.row.id:'' }} </template>
         </el-table-column>
         <el-table-column label="区服ID" :width="widthtable">
-          <template slot-scope="scope">{{ scope.row.childrens?'':scope.row.serverid }} </template>
+          <template slot-scope="scope">{{ scope.row.childrens?'':scope.row.id }} </template>
         </el-table-column>
         <el-table-column label="名称" :width="widthtable">
           <template slot-scope="scope">{{ scope.row.servername }} </template>
         </el-table-column>
-        <el-table-column   label="平台"   :filters="tableFilter.plaform" name='plaform' :filter-method="plaformFilterTag" :width="widthtable">
-          <template slot-scope="scope">{{ scope.row.plaform|plaform }} </template>
+        <el-table-column   label="平台"   name='plaform' :width="widthtable">
+          <!-- <template slot-scope="scope">{{ scope.row.plaform|plaform }} </template> -->
+          <template slot-scope="scope"> 
+            <el-tag v-for='(i,index) in  scope.row["plaform"]' :key="index">{{ i |plaform}}</el-tag>
+            </template>
         </el-table-column>
-        <el-table-column label="客户端" :filters="channelOptionsFilter" :filter-method="channelFilterTag" :width="widthtable">
-          <template slot-scope="scope">
-            <span v-for='i of scope.row.channel' :key="i" >{{i}} </span>
+        <el-table-column label="客户端"  :width="widthtable">
+          <template slot-scope="scope" >
+            <el-tooltip effect='light'  placement="top" class="aasdhjkahskdhjk">
+              <div slot="content" :ref="'contentCssTableHover'+scope.$index" class="contentCssTableHover" > <el-tag v-for='(i,index) in  scope.row["channel"]' :key="index" >{{ i }}</el-tag></div>
+            <div class="contentCssTableHidden" style="max-height:30px"><el-tag v-for='(i,index) in  scope.row["channel"]' :key="index">{{ i }}</el-tag></div> 
+            </el-tooltip>
+            <!-- <el-tag v-for='(i,index) in  scope.row["channel"]' :key="index">{{ i }}</el-tag> -->
           </template>
         </el-table-column>
         <el-table-column  label="显示状态"  :filters="tableFilter.display" :filter-method="displatFilterTag" :width="widthtable">
@@ -89,7 +95,7 @@
         <el-table-column  :filters="tableFilter.load" :filter-method="loadFilterTag" label="负载状态" :width="widthtable">
           <template slot-scope="scope">{{ scope.row.load|display }} </template>
         </el-table-column>
-        <el-table-column label="开服时间" sortable :width="widthtable">
+        <el-table-column label="开服时间"  :width="widthtable">
           <template slot-scope="scope">{{scope.row.srttime?scope.row.srttime:scope.row.create_time | timeFormate }} </template>
         </el-table-column>
         <el-table-column v-if="grade" prop='status' label="操作">
@@ -107,6 +113,7 @@
 
         </el-table-column>
       </el-table>
+      </div>
       <div class="bottom-msg">
         <div class="botton-msg-left"> 当前查询共{{total}}个区服,<span>其中显示状态:<span v-for='(i,index) of displayNum' :key='index'>  {{i.display|display}}-{{i.num}}个 </span> </span></div>
 
@@ -166,21 +173,21 @@
     <!-- 区服创建表单弹窗 -->
     <el-dialog title="区服创建" :visible.sync="serverCreatedialogFormVisible"  :close-on-click-modal="false">
       <el-form ref="createForm" :rules="createFormRules" :model="createForm" label-width="100px"  class='createFormAlert'> 
-        <el-form-item label="区服ID:" class="createFormAlertBody" >
+        <!-- <el-form-item label="区服ID:" class="createFormAlertBody" >
           <el-input v-model="createForm.serverid" disabled class="alertcontant"></el-input>
-        </el-form-item>
+        </el-form-item> -->
         <el-form-item label="区服名称:" class="createFormAlertBody" prop='servername' hide-required-asterisk required>
           <el-input v-model="createForm.servername" class="alertcontant" placeholder="请输入区服名称"></el-input>
         </el-form-item>
         <el-form-item label="平台" class="createFormAlertBody"  prop='plaform' hide-required-asterisk required>
-          <el-select v-model="createForm.plaform" class="alertcontant"  placeholder="请选择平台">
+          <el-select v-model="createForm.plaform" class="alertcontant"  multiple placeholder="请选择平台">
             <el-option v-for="(item,index) in selectForm[0].options" :key="index"  :label='item.label' :value="item.value?item.value:0">
             </el-option>
           </el-select>
         </el-form-item>
         <el-form-item label="客户端" class="createFormAlertBody"  prop='channel' hide-required-asterisk required>
           <el-select v-model="createForm.channel"  class="alertcontant" multiple placeholder="请选择客户端">
-            <el-option v-for="(item,index) in selectForm[1].options" v-if="item.value===''?false:true" :key="index" :label='item.label' :value="item.value">
+            <el-option v-for="(item,index) in selectForm[1].options" v-show="item.value===''?false:true" :key="index" :label='item.label' :value="item.value">
             </el-option>
           </el-select>
         </el-form-item>
@@ -188,8 +195,8 @@
           <el-input v-model="createForm.ip" class="alertcontant"  placeholder="请输入IP地址和端口用:分开"></el-input>
         </el-form-item>
         <el-form-item label="显示状态" class="createFormAlertBody" prop='display' hide-required-asterisk required>
-          <el-select v-model="createForm.display" class="alertcontant"  placeholder="请选择显示状态">
-            <el-option  v-for="(item,index) in selectForm[2].options" v-if="item.value===''||item.value ==5 ?false:true"  :key="index" :label='item.label' :value="item.value"></el-option>
+          <el-select v-model="createForm.display"  class="alertcontant"  placeholder="请选择显示状态">
+            <el-option  v-for="(item,index) in selectForm[2].options" v-show="item.value===''||item.value ==5 ?false:true"  :key="index" :label='item.label' :value="item.value"></el-option>
           </el-select>
         </el-form-item>
         <el-form-item label="开服时间" class="createFormAlertBody" prop='srttime' hide-required-asterisk required >
@@ -214,15 +221,15 @@
 
     <el-dialog title="区服修改" :visible.sync="dialogFormVisiblechange"  :close-on-click-modal="false">
       <div class="alertname">
-        <div class="changeAlertBody">    <span class="alertspan">区服id</span>      <el-input v-model="formchange.serverid" disabled class="alertcontant"></el-input>     </div>
-        <div class="changeAlertBody">    <span class="alertspan">区服名称</span>     <el-input v-model="formchange.servername" disabled class="alertcontant"></el-input>    </div>
-        <div class="changeAlertBody">    <span class="alertspan">平台</span>        <el-select v-model="formchange.plaform" disabled class="alertcontant" placeholder="请选择活动区域"> </el-select>     </div>
-        <div class="changeAlertBody">    <span class="alertspan">客户端</span>       <el-select v-model="formchange.channel" disabled class="alertcontant"  placeholder="请选择活动区域">        </el-select>       </div>
-        <div class="changeAlertBody">    <span class="alertspan">IP/PORT</span>        <el-input v-model="formchange.ip" disabled class="alertcontant"></el-input>     </div>
+        <div class="changeAlertBody"><span class="alertspan">区服id</span><el-input v-model="formchange.serverid" disabled class="alertcontant"></el-input>     </div>
+        <div class="changeAlertBody"><span class="alertspan">区服名称</span><el-input v-model="formchange.servername" disabled class="alertcontant"></el-input>    </div>
+        <div class="changeAlertBody"><span class="alertspan">平台</span><el-select v-model="formchange.plaform" disabled class="alertcontant" placeholder="请选择活动区域"> </el-select>     </div>
+        <div class="changeAlertBody"><span class="alertspan">客户端</span><el-select v-model="formchange.channel" disabled class="alertcontant"  placeholder="请选择活动区域">        </el-select>       </div>
+        <div class="changeAlertBody"><span class="alertspan">IP/PORT</span><el-input v-model="formchange.ip" disabled class="alertcontant"></el-input>     </div>
         <div class="changeAlertBody">   
          <span class="alertspan">显示状态<b style="color: red;">*</b></span>
             <el-select v-model="formchange.display" class="alertcontant" :value='formchange.display' placeholder="请选择活动区域"   @change="changes">
-              <el-option  v-for="(item,index) in selectForm[2].options" v-if="item.value==''||item.value =='5' ?false:true"  :key="index" :label='item.label' :value="item.value"></el-option>
+              <el-option  v-for="(item,index) in selectForm[2].options" v-show="item.value==''||item.value =='5' ?false:true"  :key="index" :label='item.label' :value="item.value"></el-option>
             </el-select>
         </div>
         <div class="changeAlertBody">  <span class="alertspan">开服时间</span>  <el-date-picker  v-model="formchange.srttime" disabled type="datetime" placeholder="选择日期时间"   class="alertcontant">  </el-date-picker>      </div>
@@ -259,11 +266,13 @@ export default {
       }
       callback();
     };
-    var servernameRepeat = (rule, value, callback) =>{
+    var servernameRepeat = async(rule, value, callback) =>{
       if (!value) {
         return callback(new Error('区服名称不可为空'));
       }
-      if (this.servernames.find(item=>item === value)) {
+      let { data } = await findServername();
+      this.$data.servernames = data.map(item=> item['value']);
+      if (this.$data.servernames.find(item => item === value)) {
         return callback(new Error('区服名称不可重复'));
       }
       
@@ -275,16 +284,13 @@ export default {
       serverCreatedialogFormVisible: false, //区服创建弹窗变量
       selectForm: [{
         label: '平台',
-        multiple: false,
-        filterable: false,
-
+        multiple: true,
+        filterable: true,
+        collapse: false,
         key: 'plaform',
         value: '',
         options: [
           {
-            label: '不限制',
-            value: ''
-          }, {
             label: '安卓',
             value: '1'
 
@@ -296,7 +302,7 @@ export default {
         label: '客户端',
         key: 'channel',
         filterable: true,
-
+        collapse: true,
         multiple: true,
         value: '',
         options: []
@@ -305,7 +311,6 @@ export default {
         label: '显示状态',
         key: 'display',
         filterable: false,
-
         multiple: false,
         value: '',
         options: [{
@@ -332,6 +337,7 @@ export default {
         label: '负载状态',
         key: 'load',
         filterable: false,
+        collapse: true,
 
         multiple: false,
         value: '',
@@ -355,6 +361,7 @@ export default {
       }, {
         label: '合服',
         key: 'mergeserver',
+        collapse: true,
         multiple: false,
         filterable: false,
 
@@ -378,7 +385,7 @@ export default {
         plaform: '',
         channel: '',
         ip: '',
-        display: '',
+        display: '1',
         srttime: '',
         address: '',
         test: '0',
@@ -554,11 +561,14 @@ export default {
       }
     },
     allselectchangeopen() {
-      if (this.allselectchange.length === 0) {
-        return true;
-      } else {
-        return false;
-      }
+      if (this.allselectchange.length > 1) {return false;}
+      return true;
+      // if (this.allselectchange.length === 0) {
+      //   return true;
+      // } else if () {
+      //   return false;
+      // }
+      // ;
     },
     createbutton() {
       if (this.form.address.length > 0 && this.form.open_time && this.form.ip_port.length > 0 && this.form.name.length > 0) {
@@ -586,15 +596,15 @@ export default {
     //合服
     async mergeServer() {
       let [obj, ...arr] = this.allselectchange;
-      let dispalys = obj.display !== '3';
+      let { channel: _channel, plaform: _plaform } = obj;
+      let dispalys = this.allselectchange.find(item => +item['display'] !== 3);
       if (dispalys) {
         await this.$message.warning('请修改区服状态为维护状态，才可以合服哦~');
         return;
       }
-      obj = JSON.stringify({ plaform: obj.plaform, display: obj.display, channel: obj.channel });
+      
     
-      let mergeTrue = arr.every(({ plaform, display, channel }) => obj === JSON.stringify({ plaform, display, channel }));
-   
+      let mergeTrue = arr.every(({ plaform, channel }) => plaform.sort().toString() === _plaform.sort().toString() && channel.sort().toString() === _channel.sort().toString());
       if (!mergeTrue) {
         this.$message.warning('不同平台，不同客户端，不可以合服!');
         return;
@@ -655,17 +665,17 @@ export default {
             return;
           }
           this.filterFormChange('flush');
-          let { code, message } = await servercreate({ ...this.createForm, 'gamename': this.gamename, 'gameid': this.gameid });
+          let { code, data } = await servercreate({ ...this.createForm });
           this.$message({
             type: code === 200 ? 'success' : 'warning',
-            message: message
+            message: `区服创建成功,您创建的区服ID是  ${data['id']} `
           });
           if (code === 200) {
             this.newCreateServer();
             this.$refs[formName].resetFields();
             this.filterFormChange('flush');
           }
-          let continueCreate = await this.$confirm('是否确认创建区服?', '提示', {
+          let continueCreate = await this.$confirm('是否继续创建区服?', '提示', {
             confirmButtonText: '确定',
             cancelButtonText: '取消',
             type: 'warning' })
@@ -774,8 +784,8 @@ export default {
     //按钮新建区服
     newCreateServer() {
       this.serverCreatedialogFormVisible = true;
-      let serverid = dayjs(new Date()).format('YYMMDDHHmmss') + this.idRandom(4);
-      this.createForm['serverid'] = serverid;
+      // let serverid = dayjs(new Date()).format('YYMMDDHHmmss') + this.idRandom(4);
+      // this.createForm['serverid'] = serverid;
     },
     idRandom(lengths) {
       let randomString = '';
@@ -951,7 +961,6 @@ export default {
         this.loading = false;
         this.dialogFormVisiblechange = false;
       } catch (error) {
-        console.log(error);
         this.loading = false;
         this.$message({
           type: 'info',
@@ -983,10 +992,7 @@ export default {
     });
  
     findServer(this.filterForm).then(res=>{this.inserttable(res);});
-    let { data } = await findServername();
-    this.servernames = data.map(item=>{
-      return item.value; 
-    });
+  
   },
 
   created() {
@@ -996,9 +1002,12 @@ export default {
 </script>
 
 <style lang="scss" rel="stylesheet/scss">
+ .el-select-dropdown__item.selected{
+                 color: #2BBFBD !important;
+      }
   .change-header {
     display: flex;
-
+      
     .rightchange ul {
       width: 160px;
 
@@ -1028,6 +1037,39 @@ export default {
   }
 
   .distric-container {
+     .is-checked , .is_focus{
+        color: #2BBFBD !important;
+        .el-checkbox__inner{
+        color: #2BBFBD !important;
+        background-color: #2BBFBD !important;
+        border-color: #2BBFBD !important;
+        &:hover{
+          border-color: #2BBFBD !important;
+        }
+        }
+      }
+      .el-checkbox__inner:hover{
+        border-color: #2BBFBD !important;
+      }
+      .el-checkbox__input.is-checked+.el-checkbox__label{
+        color: #2BBFBD !important;
+      }
+      .el-select .el-input.is-focus .el-input__inner {
+         color: #2BBFBD !important;
+        border-color: #2BBFBD !important;
+      }
+      // .el-input__inner{
+      //     color: #2BBFBD !important;
+      //   border-color: #2BBFBD !important;
+      // }
+      .el-pagination.is-background .el-pager li:not(.disabled).active{
+        background-color: #2BBFBD !important;
+      }
+      .el-select-dropdown__item.selected{
+                 color: #2BBFBD !important;
+      }
+      
+      
     /* 区服创建表单样式 */
     .createFormAlert{
       display: flex;
@@ -1064,9 +1106,9 @@ export default {
       visibility: hidden;
     }
   
-    .el-table .pid-row  td:nth-child(2) div {
-      /* visibility: hidden; */
-    }
+    // .el-table .pid-row  td:nth-child(2) div {
+    //   /* visibility: hidden; */
+    // }
 
     .bottom-msg {
       display: flex;
@@ -1079,6 +1121,7 @@ export default {
 
     .server-container {
       padding: 10px;
+     
     }
 
     .alertname {
@@ -1152,6 +1195,7 @@ export default {
 
       .server-container {
         border-bottom: 1px #bdbdbd dashed;
+        
       }
 
       .comprehensive-container {
@@ -1163,7 +1207,15 @@ export default {
     }
 
     .table-container {
-      margin: 5px 10px;
+      .table-body{
+   margin: 10px;
+    background-color: white;
+    border-radius: 5px;
+    padding: 5px 5px -2px 5px;
+    min-height: 66vh;
+    box-shadow: 1px 1px 4px 0px #828282;
+      }
+ 
     }
 
     input[name='idselect'] {
@@ -1188,7 +1240,9 @@ export default {
       margin-left: -5px;
       margin-right: 10px;
       height: 32px;
-
+        &:focus,&:active{
+          color: #2BBFBD !important;
+        }
 
     }
     .el-checkbox:last-of-type{
@@ -1197,6 +1251,9 @@ export default {
 
     .button-with-header {
       border-radius: 30px 30px 30px 30px;
+      &:focus, &:active {
+       color: #2BBFBD !important
+      }
     }
 
     .comprehensive-container .select-item {

@@ -78,3 +78,13 @@ export function mailIdQuery(params) {
     params
   });
 }
+
+
+
+export function stopMailSend(params) { 
+  return request({
+    url: `mail/stopMailSend`,
+    method: 'get',
+    params
+  });
+}

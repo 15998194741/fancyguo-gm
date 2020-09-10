@@ -13,12 +13,12 @@
     </div>
     <div class="comprehensive-container">
       <div v-for='(i,index) in selectForm' :key='index'  class="select-item"  > {{i.label}}:
-        <el-select v-model="filterForm[i.key]" :multiple="i['multiple']" placeholder="请选择"  :filterable='i.filterable' size='small' style="border-radius: 10px;" @change="filterFormChange('change')" >
+        <el-select v-model="filterForm[i.key]" :multiple="i['multiple']" placeholder="请选择"  clearable :collapse-tags="i['collapse']" :filterable='i.filterable' size='small' style="border-radius: 10px;" @change="filterFormChange('change')" >
           <el-option v-for="(item,index) in i.options" :key="index"  :label='item.label' :value="item.value" >
           </el-option>
         </el-select>
       </div>
-      <span style="width: 3vw;">时间：</span>
+      <span style="width: 5vw;">发送时间：</span>
       <el-date-picker   v-model="filterForm['createTime']"  size='small' type="datetimerange" range-separator="至" start-placeholder="开始日期" end-placeholder="结束日期"   @change="filterFormChange('change')">
       </el-date-picker>
     </div>
@@ -31,23 +31,25 @@
     highlight-current-row
     fit
     :data="tableData" 
+    :default-sort = "{prop: 'id', order: 'descending'}"
     class="tableCssHeightSet"
     >
-    <el-table-column v-for='(column,index) in tablecolumn' :key='index'   :label="column.label">
+    <el-table-column v-for='(column,index) in tablecolumn' :key='index'    :label="column.label">
       <template slot-scope="scope" :title="scope.row[column.prop]">
-        <div v-if="typeof scope.row[column.prop] === 'string' || typeof scope.row[column.prop] === 'number' " :title="scope.row[column.prop]">
-    
-        <el-tooltip class="item"  effect='light'  placement="top" >
-          <div slot="content"><span>{{ scope.row[column.prop] }}</span></div>
+           <div v-if="!scope.row[column.prop]">
+        </div>
+        <div v-else-if="typeof scope.row[column.prop] === 'string' || typeof scope.row[column.prop] === 'number' " :title="scope.row[column.prop]"  class="tableHiddenBody">
+        <el-tooltip class="item"  effect='light'  placement="top"  >
+          <div slot="content" ><span>{{ scope.row[column.prop] }}</span></div>
            <!-- <span>{{ scope.row[column.prop] }}</span> -->
         </el-tooltip>
-        <span>{{ scope.row[column.prop] }}</span>
+        <span class="tableHidden">{{ scope.row[column.prop] }}</span>
         </div>
         <div v-else>
           <el-tooltip effect='light'  placement="top" class="aasdhjkahskdhjk">
-  <div slot="content" :ref="'contentCssTableHover'+scope.$index" class="contentCssTableHover"> <el-tag v-for='(i,index) in  scope.row[column.prop]' :key="index" >{{ i }}</el-tag></div>
- <div class="contentCssTableHidden"><el-tag v-for='(i,index) in  scope.row[column.prop]' :key="index">{{ i }}</el-tag></div> 
-</el-tooltip>
+              <div slot="content" :ref="'contentCssTableHover'+scope.$index" class="contentCssTableHover"> <el-tag v-for='(i,index) in  scope.row[column.prop]' :key="index" >{{ i }}</el-tag></div>
+            <div class="contentCssTableHidden"><el-tag v-for='(i,index) in  scope.row[column.prop]' :key="index">{{ i }}</el-tag></div> 
+            </el-tooltip>
           <!-- <el-tag v-for='(i,index) in  scope.row[column.prop]' :key="index">{{ i }}</el-tag> -->
           <!-- <el-tag v-for='(i,index) in  scope.row[column.prop]' :key="index">{{ i }}</el-tag> -->
           </div>  
@@ -56,7 +58,7 @@
      <el-table-column   label="操作">
            <template slot-scope="scope" >
             <!-- <el-button  v-if='grade' slot="append" icon="el-icon-circle-plus-outline" size='small' class="button-with-header button-with-select"  @click='dialogFormchangeShowTrue'>新建邮件</el-button> -->
-            <el-button   slot="append" icon="el-icon-delete-solid" size='small' class="button-with-header button-with-select"  @click='dialogFormchangeShowTrue'>停用</el-button>
+            <el-button  v-if="grade"  v-show="stopMailIsShow(scope)" slot="append" icon="el-icon-delete-solid" round size='small' class="button-with-header button-with-select"  @click='mailStopSend(scope)'>停用</el-button>
            </template>
      </el-table-column>
   </el-table>
@@ -164,7 +166,7 @@
                   </el-form-item>
                   <el-form-item v-show='createFormMail.carryAnnex'  prop="pass">
                 <el-form ref="createFormRulesRight" :model="createFormMail" status-icon :rules="createFormRulesRight"  >
-                  <el-form-item v-for='(item,index) in  annexList' :key='index' class="annexList"  prop="pass">
+                  <el-form-item v-for='(item,index) in  annexList' :key='item["id"]' class="annexList"  prop="pass">
                     <el-row style="margin-top: 1px;">
                     <el-col :span='10' >
                       <el-cascader
@@ -308,9 +310,10 @@
 import { findComponents } from '@/api/components.js';
 import { getQueryAnnexOptions, getQueryMail, getQueryAnnexOptionsLazy, postMailToCreate, getPlaformChannelToservername } from '@/api/mail.js';
 import { annexAllQuery, mailSend, getQueryAnnexServernames, mailIdQuery } from '@/api/mail.js';
+import { stopMailSend } from '@/api/mail.js';
 import dayjs from 'dayjs';
 import xlsx from 'xlsx';
-
+var id = 0;
 export default {
   name: 'rolequery',
   data() {
@@ -372,15 +375,13 @@ export default {
       },
       selectForm: [{
         label: '平台',
-        multiple: false,
-        filterable: false,
+        multiple: true,
+        filterable: true,
+        collapse: false,
         key: 'plaform',
         value: '',
         options: [
           {
-            label: '不限制',
-            value: ''
-          }, {
             label: '安卓',
             value: '1'
 
@@ -390,9 +391,10 @@ export default {
           }]
       }, {
         label: '客户端',
-        filterable: false,
-        key: 'channel',
+        filterable: true,
+        collapse: true,
         multiple: true,
+        key: 'channel',
         value: '',
         options: []
       },
@@ -400,22 +402,18 @@ export default {
         label: '服务器',
         key: 'servername',
         filterable: true,
+        collapse: true,
         multiple: true,
         value: '',
-        options: [{
-          label: '不限制',
-          value: ''
-        }]
+        options: []
       }, {
         label: '附件',
         key: 'annex',
         filterable: true,
+        collapse: true,
         multiple: true,
         value: '',
-        options: [{
-          label: '不限制',
-          value: ''
-        }]
+        options: []
       }
       ],
       tableData: [],
@@ -427,9 +425,9 @@ export default {
       tablecolumn: [
         { label: '邮件ID', prop: 'id' },
         { label: '邮件标题', prop: 'title' },
-        { label: '平台', prop: 'plaform' },
+        { label: '平台', prop: 'plaforms' },
         { label: '客户端', prop: 'channel' },
-        { label: '区服名', prop: 'servernames' },
+        { label: '区服名', prop: 'servername' },
         { label: '玩家ID', prop: 'roleid', list: 'roleidListToJson' },
         { label: '邮件内容', prop: 'text' },
         { label: '附件', prop: 'annexnames' },
@@ -465,6 +463,31 @@ export default {
     }
   },
   methods: {
+    stopMailIsShow(val) {
+      let isShow = val['row'];
+      let { is_use: isUse, sendtime } = isShow;
+      if (!isUse || new Date(sendtime) < new Date()) {
+        return false;
+      }
+      return true;
+    },
+    async mailStopSend(val) {
+      let sendtrue = await this.$confirm(`是否确认通用此邮件?`, '提示', {
+        confirmButtonText: '确定',
+        cancelButtonText: '取消',
+        type: 'warning' })
+        .catch(err => false);
+      if (!sendtrue) {return;}
+      let res = await stopMailSend({ id: val['row']['id'] });
+      let { code } = res;
+      if (+code === 200) {
+        this.$message.success('停用成功');
+        // this.tableData[this.val.$index]['is_use'] = false; 
+        this.filterFormChange();
+      } else {
+        this.$message.success('停用失败');
+      }
+    },
     async fileUpload(files) {
       const file = files.file;
       const fileReader = new FileReader();
@@ -524,7 +547,7 @@ export default {
       // this.createFormMail['carryAnnex'] = false;
       // this.createFormMail['sendTime'] = true;
       this.annexList = [
-        { annexName: '', annexNumber: '' }
+        { annexName: '', annexNumber: '', id: 0 }
       ]; 
       this.createFormMail = {
         title: '',
@@ -606,9 +629,9 @@ export default {
     },
     annexListAdd() {
       let a = this.annexList[this.annexList.length - 1];
-      a['annexName'] && a['annexNumber'] ? this.annexList.push({ annexName: '', annexNumber: '' }) : this.$message.warning('请填写完整');  
+      a['annexName'] && a['annexNumber'] ? this.annexList.push({ annexName: '', annexNumber: '', id: ++id }) : this.$message.warning('请填写完整');  
       this.$refs['newMailelDialog'].$el.scrollTo({
-        top: this.$refs['newMailelDialog'].$el.scrollHeight + 100, 
+        top: this.$refs['newMailelDialog'].$el.scrollHeight, 
         behavior: 'smooth' 
       });  
     },
@@ -673,6 +696,8 @@ export default {
       let { code, message, data } = res;
       if (code === 200) {
         this.$message.success(message + `,您创建邮件的ID是   ${data.id}`);
+        this.filelist = [];
+        this.filterFormChange();
         for (let i in this.createFormMail) {
           this.createFormMail[i] = '';
         }
@@ -706,6 +731,7 @@ export default {
       this.filterForm['page'] = 1;
       this.tableData = [];
       this.total = 0;
+      this.filterFormChangeClick();
     },
     filterFormChangeClick() {
       for (let i in this.filterForm) {
@@ -727,7 +753,6 @@ export default {
       }
       let { data: datas, total } = data;
       datas.map(item =>{
-        item.plaform = +item.plaform === +1 ? '安卓' : +item.plaform === +2 ? '苹果' : '不限制'; 
         item.sendtime = item.sendtime ? dayjs(item.sendtime).format('YYYY-MM-DD HH:mm:ss') : '未发送';    
       });
       this.tableData = datas;
@@ -747,7 +772,7 @@ export default {
     this.selectForm[2].options = this.selectForm[2].options.concat(data);
     let { data: annexdata } = await annexAllQuery();
     this.selectForm[3].options = this.selectForm[3].options.concat(annexdata);
-
+    this.filterFormChangeClick();
 
 
 
@@ -760,9 +785,10 @@ export default {
 
 <style lang="scss" rel="stylesheet/scss">
 .contentCssTableHover{
+  max-width: 50vw;
     span{
-      margin: 10px;
-      min-width: 18vw;
+      margin: 5px;
+      min-width: 1vw;
       max-width: 18vw;
       text-align: center;
     }
@@ -777,6 +803,14 @@ export default {
   }
   .contentCssTableHidden{
     height: 30px;
+    overflow: hidden;
+  }
+  .tableHidden{
+    max-height: 30px;
+    overflow: hidden;
+  }
+  .tableHiddenBody{
+    max-height: 60px;
     overflow: hidden;
   }
     // .el-table_1_column_6 {
@@ -806,7 +840,27 @@ export default {
 //     }
    
 //   }
-
+ .is-checked , .is_focus{
+        color: #2BBFBD !important;
+        .el-checkbox__inner{
+        color: #2BBFBD !important;
+        background-color: #2BBFBD !important;
+        border-color: #2BBFBD !important;
+        &:hover{
+          border-color: #2BBFBD !important;
+        }
+        }
+      }
+      .el-checkbox__inner:hover{
+        border-color: #2BBFBD !important;
+      }
+      .el-checkbox__input.is-checked+.el-checkbox__label{
+        color: #2BBFBD !important;
+      }
+      .el-select .el-input.is-focus .el-input__inner {
+         color: #2BBFBD !important;
+        border-color: #2BBFBD !important;
+      }
   .allSelectButton{
     &:focus{
       color: white !important;

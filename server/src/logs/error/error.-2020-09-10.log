@@ -1,0 +1,218 @@
+[2020-09-10T10:43:57.716] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/mail/mailSend
+request client ip:  ::1
+request body: 
+{"theway":"1121","gameid":"1","id":"16"}
+response time: 1599705837714
+err name: Error
+err message: 邮件定时发送 失败
+err stack: Error: 邮件定时发送 失败
+    at _callee10$ (H:\fancyguo-gm\server\src\app\service\/mail.js:231:9)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+*************** error log end ***************
+
+[2020-09-10T11:50:25.622] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/mail/stopMailSend?id=19
+request client ip:  ::ffff:127.0.0.1
+request query:  {"id":"19","gameid":"1"}
+response time: 1599709825621
+err name: TypeError
+err message: formData.hasOwnProperty is not a function
+err stack: TypeError: formData.hasOwnProperty is not a function
+    at Request.init (H:\fancyguo-gm\server\node_modules\request\request.js:330:20)
+    at new Request (H:\fancyguo-gm\server\node_modules\request\request.js:127:8)
+    at request (H:\fancyguo-gm\server\node_modules\request\index.js:53:10)
+    at H:\fancyguo-gm\server\src\utils\/Cp.js:17:4
+    at new Promise (<anonymous>)
+    at _callee$ (H:\fancyguo-gm\server\src\utils\/Cp.js:16:10)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+*************** error log end ***************
+
+[2020-09-10T12:04:12.737] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/mail/stopMailSend?id=19
+request client ip:  ::ffff:127.0.0.1
+request query:  {"id":"19","gameid":"1"}
+response time: 1599710652736
+err name: TypeError
+err message: formData.hasOwnProperty is not a function
+err stack: TypeError: formData.hasOwnProperty is not a function
+    at Request.init (H:\fancyguo-gm\server\node_modules\request\request.js:330:20)
+    at new Request (H:\fancyguo-gm\server\node_modules\request\request.js:127:8)
+    at request (H:\fancyguo-gm\server\node_modules\request\index.js:53:10)
+    at H:\fancyguo-gm\server\src\utils\/Cp.js:17:4
+    at new Promise (<anonymous>)
+    at _callee$ (H:\fancyguo-gm\server\src\utils\/Cp.js:16:10)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+*************** error log end ***************
+
+[2020-09-10T12:05:15.023] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/mail/stopMailSend?id=19
+request client ip:  ::ffff:127.0.0.1
+request query:  {"id":"19","gameid":"1"}
+response time: 1599710715023
+err name: Error
+err message: 取消邮件定时发送 失败
+err stack: Error: 取消邮件定时发送 失败
+    at _callee11$ (H:\fancyguo-gm\server\src\app\service\/mail.js:237:9)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+*************** error log end ***************
+
+[2020-09-10T12:05:30.904] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/mail/stopMailSend?id=20
+request client ip:  ::ffff:127.0.0.1
+request query:  {"id":"20","gameid":"1"}
+response time: 1599710730904
+err name: Error
+err message: 取消邮件定时发送 失败
+err stack: Error: 取消邮件定时发送 失败
+    at _callee11$ (H:\fancyguo-gm\server\src\app\service\/mail.js:237:9)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+*************** error log end ***************
+
+[2020-09-10T12:15:00.851] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/mail/stopMailSend?id=21
+request client ip:  ::ffff:127.0.0.1
+request query:  {"id":"21","gameid":"1"}
+response time: 1599711300851
+err name: Error
+err message: 取消邮件定时发送 失败
+err stack: Error: 取消邮件定时发送 失败
+    at _callee11$ (H:\fancyguo-gm\server\src\app\service\/mail.js:237:9)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+*************** error log end ***************
+
+[2020-09-10T12:16:18.802] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/mail/stopMailSend?id=21
+request client ip:  ::ffff:127.0.0.1
+request query:  {"id":"21","gameid":"1"}
+response time: 1599711378802
+err name: Error
+err message: 取消邮件定时发送 失败
+err stack: Error: 取消邮件定时发送 失败
+    at _callee11$ (H:\fancyguo-gm\server\src\app\service\/mail.js:237:9)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+*************** error log end ***************
+
+[2020-09-10T12:19:18.854] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/mail/stopMailSend?id=21
+request client ip:  ::ffff:127.0.0.1
+request query:  {"id":"21","gameid":"1"}
+response time: 1599711558854
+err name: Error
+err message: 取消邮件定时发送 失败
+err stack: Error: 取消邮件定时发送 失败
+    at _callee11$ (H:\fancyguo-gm\server\src\app\service\/mail.js:237:9)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+*************** error log end ***************
+
+[2020-09-10T12:20:41.185] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/mail/stopMailSend?id=21
+request client ip:  ::ffff:127.0.0.1
+request query:  {"id":"21","gameid":"1"}
+response time: 1599711641185
+err name: Error
+err message: 取消邮件定时发送 失败
+err stack: Error: 取消邮件定时发送 失败
+    at _callee11$ (H:\fancyguo-gm\server\src\app\service\/mail.js:237:9)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+*************** error log end ***************
+
+[2020-09-10T12:21:34.471] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/mail/stopMailSend?id=21
+request client ip:  ::ffff:127.0.0.1
+request query:  {"id":"21","gameid":"1"}
+response time: 1599711694471
+err name: Error
+err message: 取消邮件定时发送 失败
+err stack: Error: 取消邮件定时发送 失败
+    at _callee11$ (H:\fancyguo-gm\server\src\app\service\/mail.js:237:9)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+*************** error log end ***************
+
+[2020-09-10T12:22:48.337] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/mail/stopMailSend?id=21
+request client ip:  ::ffff:127.0.0.1
+request query:  {"id":"21","gameid":"1"}
+response time: 1599711768337
+err name: Error
+err message: 取消邮件定时发送 失败
+err stack: Error: 取消邮件定时发送 失败
+    at _callee11$ (H:\fancyguo-gm\server\src\app\service\/mail.js:237:9)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+*************** error log end ***************
+

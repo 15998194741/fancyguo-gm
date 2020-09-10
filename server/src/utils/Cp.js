@@ -1,37 +1,45 @@
 import { dbSequelize } from '../config';
-
 const request = require('request');
 
 class Cp{
 	constructor(){	
-		this.url= 'http://localhost:30000/api/';
 	}
-	async post(gameid, url, data){
+	async post(gameid, urla, formData){
 		let urls =await dbSequelize.query(`select url from gm_game_token where gameid=${gameid} and type = 'cp'`);
-		urls = urls[0][0].url;
+		urls = urls[0][0]['url'];
+		let url = urls+'/api/'+urla;
 		let res = {
-			url:urls+'/api/'+url,
-			method:'POST',
-			data
+			url,
+			method:'post',
+			body:{data:JSON.stringify(formData)},
+			form :formData
 		};
 		return new Promise((resolve, reject)=>{
 			request(res, (error, response, body)=>{
-				return resolve(JSON.parse(body));
+				if(!error){
+					return resolve(JSON.parse(body));
+				}
+				return reject(error);
+
 			});
 		}); 
 	}
 
-	async get(url, query){
+	async get(gameid, urla, query){
+		let urls =await dbSequelize.query(`select url from gm_game_token where gameid=${gameid} and type = 'cp'`);
+		urls = urls[0][0]['url'];
+		let url = urls+'/api/'+urla;
+		console.log(query);
 		let res = {
-			url:this.url+url,
-			method:'GET',
-			query
+			url,
+			method:'get',
+			query:query
 		};
 		return new Promise((resolve, reject)=>{
 			request(res, (error, response, body)=>{
-				// if(!error && response.statusCode == 200){
-				return resolve(JSON.parse(body));
-				
+				if(!error && response.statusCode == 200){
+					return resolve(JSON.parse(body));
+				}
 			});
 
 		}); 

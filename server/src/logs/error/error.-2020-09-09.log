@@ -1,0 +1,1156 @@
+[2020-09-09T16:18:32.277] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/mail/mailSend
+request client ip:  ::1
+request body: 
+{"theway":"true","gameid":"1","id":"16"}
+response time: 1599639512276
+err name: Error
+err message: 邮件及时发送 失败
+err stack: Error: 邮件及时发送 失败
+    at _callee9$ (H:\fancyguo-gm\server\src\app\service\/mail.js:219:9)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+*************** error log end ***************
+
+[2020-09-09T16:19:24.131] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/mail/mailSend
+request client ip:  ::1
+request body: 
+{"theway":"true","gameid":"1","id":"21"}
+response time: 1599639564131
+err name: Error
+err message: 邮件及时发送 失败
+err stack: Error: 邮件及时发送 失败
+    at _callee9$ (H:\fancyguo-gm\server\src\app\service\/mail.js:219:9)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+*************** error log end ***************
+
+[2020-09-09T16:19:44.821] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/mail/mailSend
+request client ip:  ::1
+request body: 
+{"theway":"true","gameid":"1","id":"21"}
+response time: 1599639584821
+err name: Error
+err message: 邮件及时发送 失败
+err stack: Error: 邮件及时发送 失败
+    at _callee9$ (H:\fancyguo-gm\server\src\app\service\/mail.js:219:9)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+*************** error log end ***************
+
+[2020-09-09T16:20:03.923] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/mail/mailSend
+request client ip:  ::1
+request body: 
+{"theway":"true","gameid":"1","id":"21"}
+response time: 1599639603923
+err name: Error
+err message: 邮件及时发送 失败
+err stack: Error: 邮件及时发送 失败
+    at _callee9$ (H:\fancyguo-gm\server\src\app\service\/mail.js:219:9)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+*************** error log end ***************
+
+[2020-09-09T16:21:12.914] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/mail/mailSend
+request client ip:  ::1
+request body: 
+{"theway":"true","gameid":"1","id":"21"}
+response time: 1599639672914
+err name: Error
+err message: 邮件及时发送 失败
+err stack: Error: 邮件及时发送 失败
+    at _callee9$ (H:\fancyguo-gm\server\src\app\service\/mail.js:219:9)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+*************** error log end ***************
+
+[2020-09-09T17:39:15.809] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/mail/mailSend
+request client ip:  ::1
+request body: 
+{"theway":"true","gameid":"1","id":"21"}
+response time: 1599644355809
+err name: Error
+err message: 邮件及时发送 失败
+err stack: Error: 邮件及时发送 失败
+    at _callee9$ (H:\fancyguo-gm\server\src\app\service\/mail.js:219:9)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+*************** error log end ***************
+
+[2020-09-09T17:45:24.827] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/mail/mailSend
+request client ip:  ::1
+request body: 
+{"theway":"true","gameid":"1","id":"21"}
+response time: 1599644724827
+err name: Error
+err message: 邮件及时发送 失败
+err stack: Error: 邮件及时发送 失败
+    at _callee9$ (H:\fancyguo-gm\server\src\app\service\/mail.js:219:9)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+*************** error log end ***************
+
+[2020-09-09T17:46:22.844] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/mail/mailSend
+request client ip:  ::1
+request body: 
+{"theway":"true","gameid":"1","id":"21"}
+response time: 1599644782844
+err name: Error
+err message: 邮件及时发送 失败
+err stack: Error: 邮件及时发送 失败
+    at _callee9$ (H:\fancyguo-gm\server\src\app\service\/mail.js:219:9)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+*************** error log end ***************
+
+[2020-09-09T17:47:55.443] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/mail/mailSend
+request client ip:  ::1
+request body: 
+{"theway":"true","gameid":"1","id":"21"}
+response time: 1599644875443
+err name: Error
+err message: 邮件及时发送 失败
+err stack: Error: 邮件及时发送 失败
+    at _callee9$ (H:\fancyguo-gm\server\src\app\service\/mail.js:219:9)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+*************** error log end ***************
+
+[2020-09-09T17:48:26.775] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/mail/mailSend
+request client ip:  ::1
+request body: 
+{"theway":"true","gameid":"1","id":"21"}
+response time: 1599644906775
+err name: Error
+err message: 邮件及时发送 失败
+err stack: Error: 邮件及时发送 失败
+    at _callee9$ (H:\fancyguo-gm\server\src\app\service\/mail.js:219:9)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+*************** error log end ***************
+
+[2020-09-09T17:57:45.825] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/mail/mailSend
+request client ip:  ::1
+request body: 
+{"theway":"true","gameid":"1","id":"21"}
+response time: 1599645465824
+err name: Error
+err message: 邮件及时发送 失败
+err stack: Error: 邮件及时发送 失败
+    at _callee9$ (H:\fancyguo-gm\server\src\app\service\/mail.js:219:9)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+*************** error log end ***************
+
+[2020-09-09T17:59:02.369] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/mail/mailSend
+request client ip:  ::1
+request body: 
+{"theway":"true","gameid":"1","id":"21"}
+response time: 1599645542369
+err name: Error
+err message: 邮件及时发送 失败
+err stack: Error: 邮件及时发送 失败
+    at _callee9$ (H:\fancyguo-gm\server\src\app\service\/mail.js:219:9)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+*************** error log end ***************
+
+[2020-09-09T18:00:17.113] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/mail/mailSend
+request client ip:  ::1
+request body: 
+{"theway":"true","gameid":"1","id":"21"}
+response time: 1599645617113
+err name: Error
+err message: 邮件及时发送 失败
+err stack: Error: 邮件及时发送 失败
+    at _callee9$ (H:\fancyguo-gm\server\src\app\service\/mail.js:219:9)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+*************** error log end ***************
+
+[2020-09-09T18:01:47.383] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/mail/mailSend
+request client ip:  ::1
+request body: 
+{"theway":"true","gameid":"1","id":"21"}
+response time: 1599645707383
+err name: Error
+err message: 邮件及时发送 失败
+err stack: Error: 邮件及时发送 失败
+    at _callee9$ (H:\fancyguo-gm\server\src\app\service\/mail.js:219:9)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+*************** error log end ***************
+
+[2020-09-09T18:02:29.835] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/mail/mailSend
+request client ip:  ::1
+request body: 
+{"theway":"true","gameid":"1","id":"21"}
+response time: 1599645749835
+err name: Error
+err message: 邮件及时发送 失败
+err stack: Error: 邮件及时发送 失败
+    at _callee9$ (H:\fancyguo-gm\server\src\app\service\/mail.js:219:9)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+*************** error log end ***************
+
+[2020-09-09T18:02:47.510] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/mail/mailSend
+request client ip:  ::1
+request body: 
+{"theway":"true","gameid":"1","id":"21"}
+response time: 1599645767510
+err name: Error
+err message: 邮件及时发送 失败
+err stack: Error: 邮件及时发送 失败
+    at _callee9$ (H:\fancyguo-gm\server\src\app\service\/mail.js:219:9)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+*************** error log end ***************
+
+[2020-09-09T18:04:08.066] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/mail/mailSend
+request client ip:  ::1
+request body: 
+{"theway":"true","gameid":"1","id":"21"}
+response time: 1599645848066
+err name: Error
+err message: 邮件及时发送 失败
+err stack: Error: 邮件及时发送 失败
+    at _callee9$ (H:\fancyguo-gm\server\src\app\service\/mail.js:219:9)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+*************** error log end ***************
+
+[2020-09-09T18:05:02.698] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/mail/mailSend
+request client ip:  ::1
+request body: 
+{"theway":"true","gameid":"1","id":"21"}
+response time: 1599645902698
+err name: Error
+err message: 邮件及时发送 失败
+err stack: Error: 邮件及时发送 失败
+    at _callee9$ (H:\fancyguo-gm\server\src\app\service\/mail.js:219:9)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+*************** error log end ***************
+
+[2020-09-09T18:05:36.580] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/mail/mailSend
+request client ip:  ::1
+request body: 
+{"theway":"true","gameid":"1","id":"21"}
+response time: 1599645936579
+err name: Error
+err message: 邮件及时发送 失败
+err stack: Error: 邮件及时发送 失败
+    at _callee9$ (H:\fancyguo-gm\server\src\app\service\/mail.js:219:9)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+*************** error log end ***************
+
+[2020-09-09T18:09:53.058] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/mail/mailSend
+request client ip:  ::1
+request body: 
+{"theway":"true","gameid":"1","id":"21"}
+response time: 1599646193058
+err name: Error
+err message: 邮件及时发送 失败
+err stack: Error: 邮件及时发送 失败
+    at _callee9$ (H:\fancyguo-gm\server\src\app\service\/mail.js:219:9)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+*************** error log end ***************
+
+[2020-09-09T18:10:11.722] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/mail/mailSend
+request client ip:  ::1
+request body: 
+{"theway":"true","gameid":"1","id":"21"}
+response time: 1599646211722
+err name: Error
+err message: 邮件及时发送 失败
+err stack: Error: 邮件及时发送 失败
+    at _callee9$ (H:\fancyguo-gm\server\src\app\service\/mail.js:219:9)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+*************** error log end ***************
+
+[2020-09-09T18:12:21.604] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/mail/mailSend
+request client ip:  ::1
+request body: 
+{"theway":"true","gameid":"1","id":"21"}
+response time: 1599646341604
+err name: Error
+err message: read ECONNRESET
+err stack: Error: read ECONNRESET
+    at TCP.onStreamRead (internal/stream_base_commons.js:205:27)
+*************** error log end ***************
+
+[2020-09-09T18:12:50.193] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/mail/mailSend
+request client ip:  ::1
+request body: 
+{"theway":"true","gameid":"1","id":"21"}
+response time: 1599646370193
+err name: Error
+err message: read ECONNRESET
+err stack: Error: read ECONNRESET
+    at TCP.onStreamRead (internal/stream_base_commons.js:205:27)
+*************** error log end ***************
+
+[2020-09-09T18:13:28.036] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/mail/mailSend
+request client ip:  ::1
+request body: 
+{"theway":"true","gameid":"1","id":"21"}
+response time: 1599646408036
+err name: Error
+err message: connect ECONNREFUSED 127.0.0.1:5000
+err stack: Error: connect ECONNREFUSED 127.0.0.1:5000
+    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1141:16)
+*************** error log end ***************
+
+[2020-09-09T18:13:53.691] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/mail/mailSend
+request client ip:  ::1
+request body: 
+{"theway":"true","gameid":"1","id":"21"}
+response time: 1599646433691
+err name: Error
+err message: read ECONNRESET
+err stack: Error: read ECONNRESET
+    at TCP.onStreamRead (internal/stream_base_commons.js:205:27)
+*************** error log end ***************
+
+[2020-09-09T18:15:26.503] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/mail/mailSend
+request client ip:  ::1
+request body: 
+{"theway":"true","gameid":"1","id":"21"}
+response time: 1599646526502
+err name: Error
+err message: 邮件及时发送 失败
+err stack: Error: 邮件及时发送 失败
+    at _callee9$ (H:\fancyguo-gm\server\src\app\service\/mail.js:219:9)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+*************** error log end ***************
+
+[2020-09-09T18:21:43.909] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/mail/mailSend
+request client ip:  ::1
+request body: 
+{"theway":"true","gameid":"1","id":"21"}
+response time: 1599646903909
+err name: Error
+err message: read ECONNRESET
+err stack: Error: read ECONNRESET
+    at TCP.onStreamRead (internal/stream_base_commons.js:205:27)
+*************** error log end ***************
+
+[2020-09-09T18:22:17.833] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/mail/mailSend
+request client ip:  ::1
+request body: 
+{"theway":"true","gameid":"1","id":"21"}
+response time: 1599646937833
+err name: Error
+err message: connect ECONNREFUSED 127.0.0.1:5000
+err stack: Error: connect ECONNREFUSED 127.0.0.1:5000
+    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1141:16)
+*************** error log end ***************
+
+[2020-09-09T18:24:31.677] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/mail/mailSend
+request client ip:  ::1
+request body: 
+{"theway":"true","gameid":"1","id":"21"}
+response time: 1599647071677
+err name: Error
+err message: read ECONNRESET
+err stack: Error: read ECONNRESET
+    at TCP.onStreamRead (internal/stream_base_commons.js:205:27)
+*************** error log end ***************
+
+[2020-09-09T18:25:44.218] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/mail/mailSend
+request client ip:  ::1
+request body: 
+{"theway":"true","gameid":"1","id":"16"}
+response time: 1599647144218
+err name: Error
+err message: read ECONNRESET
+err stack: Error: read ECONNRESET
+    at TCP.onStreamRead (internal/stream_base_commons.js:205:27)
+*************** error log end ***************
+
+[2020-09-09T19:29:27.351] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/mail/mailSend
+request client ip:  ::1
+request body: 
+{"theway":"true","gameid":"1","id":"16"}
+response time: 1599650967351
+err name: Error
+err message: 邮件及时发送 失败
+err stack: Error: 邮件及时发送 失败
+    at _callee9$ (H:\fancyguo-gm\server\src\app\service\/mail.js:219:9)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+*************** error log end ***************
+
+[2020-09-09T19:34:49.187] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/mail/mailSend
+request client ip:  ::1
+request body: 
+{"theway":"true","gameid":"1","id":"21"}
+response time: 1599651289187
+err name: Error
+err message: read ECONNRESET
+err stack: Error: read ECONNRESET
+    at TCP.onStreamRead (internal/stream_base_commons.js:205:27)
+*************** error log end ***************
+
+[2020-09-09T19:35:01.545] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/mail/mailSend
+request client ip:  ::1
+request body: 
+{"theway":"true","gameid":"1","id":"21"}
+response time: 1599651301545
+err name: Error
+err message: connect ECONNREFUSED 127.0.0.1:5000
+err stack: Error: connect ECONNREFUSED 127.0.0.1:5000
+    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1141:16)
+*************** error log end ***************
+
+[2020-09-09T19:37:03.799] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/mail/mailSend
+request client ip:  ::1
+request body: 
+{"theway":"true","gameid":"1","id":"21"}
+response time: 1599651423799
+err name: Error
+err message: read ECONNRESET
+err stack: Error: read ECONNRESET
+    at TCP.onStreamRead (internal/stream_base_commons.js:205:27)
+*************** error log end ***************
+
+[2020-09-09T19:37:27.349] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/mail/mailSend
+request client ip:  ::1
+request body: 
+{"theway":"true","gameid":"1","id":"21"}
+response time: 1599651447349
+err name: Error
+err message: read ECONNRESET
+err stack: Error: read ECONNRESET
+    at TCP.onStreamRead (internal/stream_base_commons.js:205:27)
+*************** error log end ***************
+
+[2020-09-09T19:41:58.294] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/mail/mailSend
+request client ip:  ::1
+request body: 
+{"theway":"true","gameid":"1","id":"21"}
+response time: 1599651718294
+err name: Error
+err message: connect ECONNREFUSED 127.0.0.1:5000
+err stack: Error: connect ECONNREFUSED 127.0.0.1:5000
+    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1141:16)
+*************** error log end ***************
+
+[2020-09-09T19:42:17.599] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/mail/mailSend
+request client ip:  ::1
+request body: 
+{"theway":"true","gameid":"1","id":"13"}
+response time: 1599651737599
+err name: Error
+err message: 邮件及时发送 失败
+err stack: Error: 邮件及时发送 失败
+    at _callee9$ (H:\fancyguo-gm\server\src\app\service\/mail.js:219:9)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+*************** error log end ***************
+
+[2020-09-09T19:42:34.210] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/mail/mailSend
+request client ip:  ::1
+request body: 
+{"theway":"true","gameid":"1","id":"13"}
+response time: 1599651754210
+err name: Error
+err message: 邮件及时发送 失败
+err stack: Error: 邮件及时发送 失败
+    at _callee9$ (H:\fancyguo-gm\server\src\app\service\/mail.js:219:9)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+*************** error log end ***************
+
+[2020-09-09T19:42:58.658] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/mail/mailSend
+request client ip:  ::1
+request body: 
+{"theway":"true","gameid":"1","id":"16"}
+response time: 1599651778658
+err name: Error
+err message: 邮件及时发送 失败
+err stack: Error: 邮件及时发送 失败
+    at _callee9$ (H:\fancyguo-gm\server\src\app\service\/mail.js:219:9)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+*************** error log end ***************
+
+[2020-09-09T19:43:33.854] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/mail/mailSend
+request client ip:  ::1
+request body: 
+{"theway":"true","gameid":"1","id":"16"}
+response time: 1599651813854
+err name: Error
+err message: 邮件及时发送 失败
+err stack: Error: 邮件及时发送 失败
+    at _callee9$ (H:\fancyguo-gm\server\src\app\service\/mail.js:219:9)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+*************** error log end ***************
+
+[2020-09-09T19:48:57.813] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/mail/mailSend
+request client ip:  ::1
+request body: 
+{"gameid":"1","id":"16"}
+response time: 1599652137812
+err name: SequelizeDatabaseError
+err message: 日期/时间值 "undefined" 不再被支持
+err stack: SequelizeDatabaseError: 日期/时间值 "undefined" 不再被支持
+    at Query.formatError (H:\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:366:16)
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:72:18
+From previous event:
+    at Query.run (H:\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:64:23)
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:29
+From previous event:
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:12
+    at processImmediate (internal/timers.js:456:21)
+From previous event:
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:651:10
+    at H:\fancyguo-gm\server\node_modules\retry-as-promised\index.js:70:21
+    at new Promise (<anonymous>)
+    at retryAsPromised (H:\fancyguo-gm\server\node_modules\retry-as-promised\index.js:60:10)
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:641:30
+From previous event:
+    at Sequelize.query (H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:590:23)
+    at _callee10$ (H:\fancyguo-gm\server\src\app\service\/mail.js:226:31)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at MailService.<anonymous> (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at MailService.mailSendTiming (H:\fancyguo-gm\server\src\app\service\mail.js:557:32)
+    at _callee9$ (H:\fancyguo-gm\server\src\app\controllers\/mail.js:71:31)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at mailSend (H:\fancyguo-gm\server\src\app\controllers\mail.js:350:26)
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at next (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:45:18)
+    at H:\fancyguo-gm\server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at H:\fancyguo-gm\server\node_modules\koa-compose\index.js:36:12
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-router\lib\router.js:351:31)
+    at next (H:\fancyguo-gm\server\node_modules\koa\node_modules\koa-compose\index.js:42:32)
+    at _callee$ (H:\fancyguo-gm\server\src\middleware\/index.js:48:11)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at H:\fancyguo-gm\server\src\middleware\/index.js:43:2
+*************** error log end ***************
+
+[2020-09-09T19:49:02.083] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/mail/mailSend
+request client ip:  ::1
+request body: 
+{"gameid":"1","id":"16"}
+response time: 1599652142082
+err name: SequelizeDatabaseError
+err message: 日期/时间值 "undefined" 不再被支持
+err stack: SequelizeDatabaseError: 日期/时间值 "undefined" 不再被支持
+    at Query.formatError (H:\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:366:16)
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:72:18
+From previous event:
+    at Query.run (H:\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:64:23)
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:29
+From previous event:
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:12
+    at processImmediate (internal/timers.js:456:21)
+From previous event:
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:651:10
+    at H:\fancyguo-gm\server\node_modules\retry-as-promised\index.js:70:21
+    at new Promise (<anonymous>)
+    at retryAsPromised (H:\fancyguo-gm\server\node_modules\retry-as-promised\index.js:60:10)
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:641:30
+From previous event:
+    at Sequelize.query (H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:590:23)
+    at _callee10$ (H:\fancyguo-gm\server\src\app\service\/mail.js:226:31)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at MailService.<anonymous> (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at MailService.mailSendTiming (H:\fancyguo-gm\server\src\app\service\mail.js:557:32)
+    at _callee9$ (H:\fancyguo-gm\server\src\app\controllers\/mail.js:71:31)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at mailSend (H:\fancyguo-gm\server\src\app\controllers\mail.js:350:26)
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at next (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:45:18)
+    at H:\fancyguo-gm\server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at H:\fancyguo-gm\server\node_modules\koa-compose\index.js:36:12
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-router\lib\router.js:351:31)
+    at next (H:\fancyguo-gm\server\node_modules\koa\node_modules\koa-compose\index.js:42:32)
+    at _callee$ (H:\fancyguo-gm\server\src\middleware\/index.js:48:11)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at H:\fancyguo-gm\server\src\middleware\/index.js:43:2
+*************** error log end ***************
+
+[2020-09-09T19:49:02.870] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/mail/mailSend
+request client ip:  ::1
+request body: 
+{"gameid":"1","id":"16"}
+response time: 1599652142870
+err name: SequelizeDatabaseError
+err message: 日期/时间值 "undefined" 不再被支持
+err stack: SequelizeDatabaseError: 日期/时间值 "undefined" 不再被支持
+    at Query.formatError (H:\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:366:16)
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:72:18
+From previous event:
+    at Query.run (H:\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:64:23)
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:29
+From previous event:
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:12
+    at processImmediate (internal/timers.js:456:21)
+From previous event:
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:651:10
+    at H:\fancyguo-gm\server\node_modules\retry-as-promised\index.js:70:21
+    at new Promise (<anonymous>)
+    at retryAsPromised (H:\fancyguo-gm\server\node_modules\retry-as-promised\index.js:60:10)
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:641:30
+From previous event:
+    at Sequelize.query (H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:590:23)
+    at _callee10$ (H:\fancyguo-gm\server\src\app\service\/mail.js:226:31)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at MailService.<anonymous> (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at MailService.mailSendTiming (H:\fancyguo-gm\server\src\app\service\mail.js:557:32)
+    at _callee9$ (H:\fancyguo-gm\server\src\app\controllers\/mail.js:71:31)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at mailSend (H:\fancyguo-gm\server\src\app\controllers\mail.js:350:26)
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at next (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:45:18)
+    at H:\fancyguo-gm\server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at H:\fancyguo-gm\server\node_modules\koa-compose\index.js:36:12
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-router\lib\router.js:351:31)
+    at next (H:\fancyguo-gm\server\node_modules\koa\node_modules\koa-compose\index.js:42:32)
+    at _callee$ (H:\fancyguo-gm\server\src\middleware\/index.js:48:11)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at H:\fancyguo-gm\server\src\middleware\/index.js:43:2
+*************** error log end ***************
+
+[2020-09-09T19:49:03.477] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/mail/mailSend
+request client ip:  ::1
+request body: 
+{"gameid":"1","id":"16"}
+response time: 1599652143477
+err name: SequelizeDatabaseError
+err message: 日期/时间值 "undefined" 不再被支持
+err stack: SequelizeDatabaseError: 日期/时间值 "undefined" 不再被支持
+    at Query.formatError (H:\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:366:16)
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:72:18
+From previous event:
+    at Query.run (H:\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:64:23)
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:29
+From previous event:
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:12
+    at processImmediate (internal/timers.js:456:21)
+From previous event:
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:651:10
+    at H:\fancyguo-gm\server\node_modules\retry-as-promised\index.js:70:21
+    at new Promise (<anonymous>)
+    at retryAsPromised (H:\fancyguo-gm\server\node_modules\retry-as-promised\index.js:60:10)
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:641:30
+From previous event:
+    at Sequelize.query (H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:590:23)
+    at _callee10$ (H:\fancyguo-gm\server\src\app\service\/mail.js:226:31)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at MailService.<anonymous> (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at MailService.mailSendTiming (H:\fancyguo-gm\server\src\app\service\mail.js:557:32)
+    at _callee9$ (H:\fancyguo-gm\server\src\app\controllers\/mail.js:71:31)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at mailSend (H:\fancyguo-gm\server\src\app\controllers\mail.js:350:26)
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at next (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:45:18)
+    at H:\fancyguo-gm\server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at H:\fancyguo-gm\server\node_modules\koa-compose\index.js:36:12
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-router\lib\router.js:351:31)
+    at next (H:\fancyguo-gm\server\node_modules\koa\node_modules\koa-compose\index.js:42:32)
+    at _callee$ (H:\fancyguo-gm\server\src\middleware\/index.js:48:11)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at H:\fancyguo-gm\server\src\middleware\/index.js:43:2
+*************** error log end ***************
+
+[2020-09-09T19:49:04.228] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/mail/mailSend
+request client ip:  ::1
+request body: 
+{"gameid":"1","id":"16"}
+response time: 1599652144228
+err name: SequelizeDatabaseError
+err message: 日期/时间值 "undefined" 不再被支持
+err stack: SequelizeDatabaseError: 日期/时间值 "undefined" 不再被支持
+    at Query.formatError (H:\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:366:16)
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:72:18
+From previous event:
+    at Query.run (H:\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:64:23)
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:29
+From previous event:
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:12
+    at processImmediate (internal/timers.js:456:21)
+From previous event:
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:651:10
+    at H:\fancyguo-gm\server\node_modules\retry-as-promised\index.js:70:21
+    at new Promise (<anonymous>)
+    at retryAsPromised (H:\fancyguo-gm\server\node_modules\retry-as-promised\index.js:60:10)
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:641:30
+From previous event:
+    at Sequelize.query (H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:590:23)
+    at _callee10$ (H:\fancyguo-gm\server\src\app\service\/mail.js:226:31)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at MailService.<anonymous> (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at MailService.mailSendTiming (H:\fancyguo-gm\server\src\app\service\mail.js:557:32)
+    at _callee9$ (H:\fancyguo-gm\server\src\app\controllers\/mail.js:71:31)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at mailSend (H:\fancyguo-gm\server\src\app\controllers\mail.js:350:26)
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at next (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:45:18)
+    at H:\fancyguo-gm\server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at H:\fancyguo-gm\server\node_modules\koa-compose\index.js:36:12
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-router\lib\router.js:351:31)
+    at next (H:\fancyguo-gm\server\node_modules\koa\node_modules\koa-compose\index.js:42:32)
+    at _callee$ (H:\fancyguo-gm\server\src\middleware\/index.js:48:11)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at H:\fancyguo-gm\server\src\middleware\/index.js:43:2
+*************** error log end ***************
+
+[2020-09-09T19:49:05.727] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/mail/mailSend
+request client ip:  ::1
+request body: 
+{"gameid":"1","id":"16"}
+response time: 1599652145726
+err name: SequelizeDatabaseError
+err message: 日期/时间值 "undefined" 不再被支持
+err stack: SequelizeDatabaseError: 日期/时间值 "undefined" 不再被支持
+    at Query.formatError (H:\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:366:16)
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:72:18
+From previous event:
+    at Query.run (H:\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:64:23)
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:29
+From previous event:
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:12
+    at processImmediate (internal/timers.js:456:21)
+From previous event:
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:651:10
+    at H:\fancyguo-gm\server\node_modules\retry-as-promised\index.js:70:21
+    at new Promise (<anonymous>)
+    at retryAsPromised (H:\fancyguo-gm\server\node_modules\retry-as-promised\index.js:60:10)
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:641:30
+From previous event:
+    at Sequelize.query (H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:590:23)
+    at _callee10$ (H:\fancyguo-gm\server\src\app\service\/mail.js:226:31)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at MailService.<anonymous> (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at MailService.mailSendTiming (H:\fancyguo-gm\server\src\app\service\mail.js:557:32)
+    at _callee9$ (H:\fancyguo-gm\server\src\app\controllers\/mail.js:71:31)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at mailSend (H:\fancyguo-gm\server\src\app\controllers\mail.js:350:26)
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at next (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:45:18)
+    at H:\fancyguo-gm\server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at H:\fancyguo-gm\server\node_modules\koa-compose\index.js:36:12
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-router\lib\router.js:351:31)
+    at next (H:\fancyguo-gm\server\node_modules\koa\node_modules\koa-compose\index.js:42:32)
+    at _callee$ (H:\fancyguo-gm\server\src\middleware\/index.js:48:11)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at H:\fancyguo-gm\server\src\middleware\/index.js:43:2
+*************** error log end ***************
+
+[2020-09-09T20:54:53.779] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/mail/mailSend
+request client ip:  ::1
+request body: 
+{"gameid":"1","id":"21"}
+response time: 1599656093778
+err name: Error
+err message: connect ECONNREFUSED 127.0.0.1:5000
+err stack: Error: connect ECONNREFUSED 127.0.0.1:5000
+    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1141:16)
+*************** error log end ***************
+

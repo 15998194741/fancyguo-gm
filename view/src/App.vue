@@ -13,7 +13,7 @@ export default {
     //在页面刷新时将vuex里的信息保存到sessionStorage里
     window.addEventListener('beforeunload', () => {
       sessionStorage.setItem('pathName', window.location.pathname); //重点：暂存页面刷新的地址
-    });
+    }, false);
     // 获取参数集合
     const params = new URLSearchParams(location.search);
     // 判断参数集合中是否存在 token 字段，存在则直接存到 cookie 里

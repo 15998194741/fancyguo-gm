@@ -59,19 +59,13 @@ export class CharacterController {
     	let result = await MailService.findServerName(data);
     	ctx.body = statusCode.SUCCESS_200('创建成功', result);
     }
-	@post('/mailSend')
-	async mailSend(ctx) {
-    	ctx.log.resourceDesc = '附件查找';
-		let data = ctx.request.body;
-		let { theway } = data;
-		let result;
-		if(theway){
-			result = await MailService.mailSendTimely(data);
-		}else {
-			result = await MailService.mailSendTiming(data);
-
-		}
-    	ctx.body = statusCode.SUCCESS_200('创建成功', result);
+	@get('/stopMailSend')
+	async stopMailSend(ctx) {
+    	ctx.log.resourceDesc = '邮件取消定时发送';
+		let data = ctx.query;
+		console.log(data);
+		let result = await MailService.mailSendCancel(data);
+    	ctx.body = statusCode.SUCCESS_200('停用成功', result);
 	}
 	@get('/maxID')
 	async maxID(ctx) {

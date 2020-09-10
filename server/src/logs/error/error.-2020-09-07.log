@@ -1,0 +1,1819 @@
+[2020-09-07T11:19:39.501] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/server/serverCreate
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"serverid":"2009071119049392","servername":"test","plaform":["1","2"],"channel":["久游","小米","腾讯"],"ip":"123.57.86.30:55","display":"1","srttime":"2020-09-23T16:00:00.000Z","address":"www.baidu.com","test":"0","page":1,"pagesize":20,"gamename":"空翼冒险团","gameid":"1"}
+response time: 1599448779500
+err name: SequelizeValidationError
+err message: string violation: plaform cannot be an array or an object
+err stack: SequelizeValidationError: string violation: plaform cannot be an array or an object
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\instance-validator.js:74:15
+From previous event:
+    at InstanceValidator._validate (H:\fancyguo-gm\server\node_modules\sequelize\lib\instance-validator.js:72:8)
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\instance-validator.js:107:14
+    at processImmediate (internal/timers.js:456:21)
+From previous event:
+    at InstanceValidator._validateAndRunHooks (H:\fancyguo-gm\server\node_modules\sequelize\lib\instance-validator.js:106:8)
+    at InstanceValidator.validate (H:\fancyguo-gm\server\node_modules\sequelize\lib\instance-validator.js:90:38)
+    at model.validate (H:\fancyguo-gm\server\node_modules\sequelize\lib\model.js:4140:49)
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\model.js:3905:21
+From previous event:
+    at model.save (H:\fancyguo-gm\server\node_modules\sequelize\lib\model.js:3902:23)
+    at Function.create (H:\fancyguo-gm\server\node_modules\sequelize\lib\model.js:2230:8)
+    at GmServerDao._callee8$ (H:\fancyguo-gm\server\src\lib\/base-dao.js:140:32)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at GmServerDao.<anonymous> (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at GmServerDao.create (H:\fancyguo-gm\server\src\lib\base-dao.js:368:24)
+    at GmServerService._callee5$ (H:\fancyguo-gm\server\src\lib\/base-service.js:34:29)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at GmServerService.<anonymous> (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at GmServerService.create (H:\fancyguo-gm\server\src\lib\base-service.js:186:24)
+    at _callee9$ (H:\fancyguo-gm\server\src\app\controllers\/server.js:97:38)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at createServer (H:\fancyguo-gm\server\src\app\controllers\server.js:370:30)
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at next (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:45:18)
+    at H:\fancyguo-gm\server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at H:\fancyguo-gm\server\node_modules\koa-compose\index.js:36:12
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-router\lib\router.js:351:31)
+*************** error log end ***************
+
+[2020-09-07T12:16:03.921] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/server/mergeServer
+request client ip:  ::ffff:127.0.0.1
+request body: 
+[{"id":4,"status":1,"create_user_id":1,"update_user_id":null,"create_time":"2020-09-06T16:00:00.000Z","update_time":"2020-09-06T16:00:00.000Z","servername":"1","ip_port":"123.57.86.38:8888","address":"111","plaform":["1"],"display":"3","srttime":"2020-09-29T16:00:00.000Z","gamename":"","pid":null,"serverid":"4","test":"0","load":null,"gameid":1,"childrens":null,"port":"8888","ip":"123.57.86.38","channel":["小米"]},{"id":6,"status":1,"create_user_id":1,"update_user_id":null,"create_time":"2020-09-06T16:00:00.000Z","update_time":"2020-09-06T16:00:00.000Z","servername":"122","ip_port":"123.57.86.38:1234","address":"11","plaform":["1"],"display":"3","srttime":"2020-09-01T16:00:00.000Z","gamename":"","pid":null,"serverid":"6","test":"0","load":null,"gameid":1,"childrens":null,"port":"1234","ip":"123.57.86.38","channel":["小米"]}]
+response time: 1599452163920
+err name: SequelizeDatabaseError
+err message: 字段 "channel" 的类型为 jsonb, 但表达式的类型为 text[]
+err stack: SequelizeDatabaseError: 字段 "channel" 的类型为 jsonb, 但表达式的类型为 text[]
+    at Query.formatError (H:\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:366:16)
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:72:18
+From previous event:
+    at Query.run (H:\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:64:23)
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:29
+From previous event:
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:12
+    at processImmediate (internal/timers.js:456:21)
+From previous event:
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:651:10
+    at H:\fancyguo-gm\server\node_modules\retry-as-promised\index.js:70:21
+    at new Promise (<anonymous>)
+    at retryAsPromised (H:\fancyguo-gm\server\node_modules\retry-as-promised\index.js:60:10)
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:641:30
+From previous event:
+    at Sequelize.query (H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:590:23)
+    at _callee3$ (H:\fancyguo-gm\server\src\app\service\/server.js:104:31)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at GmServerService.<anonymous> (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at GmServerService.mergeServer (H:\fancyguo-gm\server\src\app\service\server.js:281:29)
+    at _callee12$ (H:\fancyguo-gm\server\src\app\controllers\/server.js:124:38)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at mergeServer (H:\fancyguo-gm\server\src\app\controllers\server.js:465:29)
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at next (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:45:18)
+    at H:\fancyguo-gm\server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at H:\fancyguo-gm\server\node_modules\koa-compose\index.js:36:12
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-router\lib\router.js:351:31)
+    at next (H:\fancyguo-gm\server\node_modules\koa\node_modules\koa-compose\index.js:42:32)
+    at _callee$ (H:\fancyguo-gm\server\src\middleware\/index.js:48:11)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at H:\fancyguo-gm\server\src\middleware\/index.js:43:2
+*************** error log end ***************
+
+[2020-09-07T12:17:00.239] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/server/findServer?plaform[]=1&plaform[]=2&display=&load=&srttime=&key=serverid&value=&test=&mergeserver=&page=1&pagesize=20
+request client ip:  ::ffff:127.0.0.1
+request query:  {"plaform[]":["1","2"],"display":"","load":"","srttime":"","key":"serverid","value":"","test":"","mergeserver":"","page":"1","pagesize":"20","plaform":["1","2"],"gameid":"1"}
+response time: 1599452220239
+err name: SequelizeDatabaseError
+err message: invalid input syntax for type json
+err stack: SequelizeDatabaseError: invalid input syntax for type json
+    at Query.formatError (H:\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:366:16)
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:72:18
+From previous event:
+    at Query.run (H:\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:64:23)
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:29
+From previous event:
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:12
+    at processImmediate (internal/timers.js:456:21)
+From previous event:
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:651:10
+    at H:\fancyguo-gm\server\node_modules\retry-as-promised\index.js:70:21
+    at new Promise (<anonymous>)
+    at retryAsPromised (H:\fancyguo-gm\server\node_modules\retry-as-promised\index.js:60:10)
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:641:30
+From previous event:
+    at Sequelize.query (H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:590:23)
+    at GmServerService._callee$ (H:\fancyguo-gm\server\src\app\service\/server.js:58:32)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at GmServerService.<anonymous> (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at GmServerService.serverFindByParam (H:\fancyguo-gm\server\src\app\service\server.js:206:35)
+    at _callee10$ (H:\fancyguo-gm\server\src\app\controllers\/server.js:107:38)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at findServer (H:\fancyguo-gm\server\src\app\controllers\server.js:400:28)
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at next (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:45:18)
+    at H:\fancyguo-gm\server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at H:\fancyguo-gm\server\node_modules\koa-compose\index.js:36:12
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-router\lib\router.js:351:31)
+    at next (H:\fancyguo-gm\server\node_modules\koa\node_modules\koa-compose\index.js:42:32)
+    at _callee$ (H:\fancyguo-gm\server\src\middleware\/index.js:48:11)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at H:\fancyguo-gm\server\src\middleware\/index.js:43:2
+*************** error log end ***************
+
+[2020-09-07T12:17:12.273] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/server/findServer?display=&load=&channel[]=%E4%B9%85%E6%B8%B8&srttime=&key=serverid&value=&test=&mergeserver=&page=1&pagesize=20
+request client ip:  ::ffff:127.0.0.1
+request query:  {"display":"","load":"","channel[]":"久游","srttime":"","key":"serverid","value":"","test":"","mergeserver":"","page":"1","pagesize":"20","channel":"久游","gameid":"1"}
+response time: 1599452232273
+err name: SequelizeDatabaseError
+err message: 操作符ANY/ALL (array)要求数组在右边
+err stack: SequelizeDatabaseError: 操作符ANY/ALL (array)要求数组在右边
+    at Query.formatError (H:\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:366:16)
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:72:18
+From previous event:
+    at Query.run (H:\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:64:23)
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:29
+From previous event:
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:12
+    at processImmediate (internal/timers.js:456:21)
+From previous event:
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:651:10
+    at H:\fancyguo-gm\server\node_modules\retry-as-promised\index.js:70:21
+    at new Promise (<anonymous>)
+    at retryAsPromised (H:\fancyguo-gm\server\node_modules\retry-as-promised\index.js:60:10)
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:641:30
+From previous event:
+    at Sequelize.query (H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:590:23)
+    at GmServerService._callee$ (H:\fancyguo-gm\server\src\app\service\/server.js:58:32)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at GmServerService.<anonymous> (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at GmServerService.serverFindByParam (H:\fancyguo-gm\server\src\app\service\server.js:206:35)
+    at _callee10$ (H:\fancyguo-gm\server\src\app\controllers\/server.js:107:38)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at findServer (H:\fancyguo-gm\server\src\app\controllers\server.js:400:28)
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at next (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:45:18)
+    at H:\fancyguo-gm\server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at H:\fancyguo-gm\server\node_modules\koa-compose\index.js:36:12
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-router\lib\router.js:351:31)
+    at next (H:\fancyguo-gm\server\node_modules\koa\node_modules\koa-compose\index.js:42:32)
+    at _callee$ (H:\fancyguo-gm\server\src\middleware\/index.js:48:11)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at H:\fancyguo-gm\server\src\middleware\/index.js:43:2
+*************** error log end ***************
+
+[2020-09-07T12:17:23.290] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/server/findServer?display=&load=&channel[]=%E4%B9%85%E6%B8%B8&channel[]=%E5%B0%8F%E7%B1%B3&srttime=&key=serverid&value=&test=&mergeserver=&page=1&pagesize=20
+request client ip:  ::ffff:127.0.0.1
+request query:  {"display":"","load":"","channel[]":["久游","小米"],"srttime":"","key":"serverid","value":"","test":"","mergeserver":"","page":"1","pagesize":"20","channel":["久游","小米"],"gameid":"1"}
+response time: 1599452243290
+err name: SequelizeDatabaseError
+err message: 操作符不存在: character varying[] <@ jsonb
+err stack: SequelizeDatabaseError: 操作符不存在: character varying[] <@ jsonb
+    at Query.formatError (H:\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:366:16)
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:72:18
+From previous event:
+    at Query.run (H:\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:64:23)
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:29
+From previous event:
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:12
+    at processImmediate (internal/timers.js:456:21)
+From previous event:
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:651:10
+    at H:\fancyguo-gm\server\node_modules\retry-as-promised\index.js:70:21
+    at new Promise (<anonymous>)
+    at retryAsPromised (H:\fancyguo-gm\server\node_modules\retry-as-promised\index.js:60:10)
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:641:30
+From previous event:
+    at Sequelize.query (H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:590:23)
+    at GmServerService._callee$ (H:\fancyguo-gm\server\src\app\service\/server.js:58:32)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at GmServerService.<anonymous> (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at GmServerService.serverFindByParam (H:\fancyguo-gm\server\src\app\service\server.js:206:35)
+    at _callee10$ (H:\fancyguo-gm\server\src\app\controllers\/server.js:107:38)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at findServer (H:\fancyguo-gm\server\src\app\controllers\server.js:400:28)
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at next (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:45:18)
+    at H:\fancyguo-gm\server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at H:\fancyguo-gm\server\node_modules\koa-compose\index.js:36:12
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-router\lib\router.js:351:31)
+    at next (H:\fancyguo-gm\server\node_modules\koa\node_modules\koa-compose\index.js:42:32)
+    at _callee$ (H:\fancyguo-gm\server\src\middleware\/index.js:48:11)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at H:\fancyguo-gm\server\src\middleware\/index.js:43:2
+*************** error log end ***************
+
+[2020-09-07T12:17:36.276] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/server/findServer?display=&load=&channel[]=%E5%B0%8F%E7%B1%B3&srttime=&key=serverid&value=&test=&mergeserver=&page=1&pagesize=20
+request client ip:  ::ffff:127.0.0.1
+request query:  {"display":"","load":"","channel[]":"小米","srttime":"","key":"serverid","value":"","test":"","mergeserver":"","page":"1","pagesize":"20","channel":"小米","gameid":"1"}
+response time: 1599452256275
+err name: SequelizeDatabaseError
+err message: 操作符ANY/ALL (array)要求数组在右边
+err stack: SequelizeDatabaseError: 操作符ANY/ALL (array)要求数组在右边
+    at Query.formatError (H:\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:366:16)
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:72:18
+From previous event:
+    at Query.run (H:\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:64:23)
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:29
+From previous event:
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:12
+    at processImmediate (internal/timers.js:456:21)
+From previous event:
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:651:10
+    at H:\fancyguo-gm\server\node_modules\retry-as-promised\index.js:70:21
+    at new Promise (<anonymous>)
+    at retryAsPromised (H:\fancyguo-gm\server\node_modules\retry-as-promised\index.js:60:10)
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:641:30
+From previous event:
+    at Sequelize.query (H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:590:23)
+    at GmServerService._callee$ (H:\fancyguo-gm\server\src\app\service\/server.js:58:32)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at GmServerService.<anonymous> (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at GmServerService.serverFindByParam (H:\fancyguo-gm\server\src\app\service\server.js:206:35)
+    at _callee10$ (H:\fancyguo-gm\server\src\app\controllers\/server.js:107:38)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at findServer (H:\fancyguo-gm\server\src\app\controllers\server.js:400:28)
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at next (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:45:18)
+    at H:\fancyguo-gm\server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at H:\fancyguo-gm\server\node_modules\koa-compose\index.js:36:12
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-router\lib\router.js:351:31)
+    at next (H:\fancyguo-gm\server\node_modules\koa\node_modules\koa-compose\index.js:42:32)
+    at _callee$ (H:\fancyguo-gm\server\src\middleware\/index.js:48:11)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at H:\fancyguo-gm\server\src\middleware\/index.js:43:2
+*************** error log end ***************
+
+[2020-09-07T12:17:36.850] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/server/findServer?display=&load=&srttime=&key=serverid&value=&test=&mergeserver=&page=1&pagesize=20
+request client ip:  ::ffff:127.0.0.1
+request query:  {"display":"","load":"","srttime":"","key":"serverid","value":"","test":"","mergeserver":"","page":"1","pagesize":"20","gameid":"1"}
+response time: 1599452256850
+err name: SequelizeConnectionAcquireTimeoutError
+err message: Operation timeout
+err stack: SequelizeConnectionAcquireTimeoutError: Operation timeout
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\dialects\abstract\connection-manager.js:289:52
+    at runNextTicks (internal/process/task_queues.js:62:5)
+    at processTimers (internal/timers.js:489:9)
+From previous event:
+    at processImmediate (internal/timers.js:456:21)
+From previous event:
+    at ConnectionManager.getConnection (H:\fancyguo-gm\server\node_modules\sequelize\lib\dialects\abstract\connection-manager.js:286:20)
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:650:36
+From previous event:
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:641:53
+    at H:\fancyguo-gm\server\node_modules\retry-as-promised\index.js:70:21
+    at new Promise (<anonymous>)
+    at retryAsPromised (H:\fancyguo-gm\server\node_modules\retry-as-promised\index.js:60:10)
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:641:30
+From previous event:
+    at Sequelize.query (H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:590:23)
+    at GmServerService._callee$ (H:\fancyguo-gm\server\src\app\service\/server.js:61:34)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+*************** error log end ***************
+
+[2020-09-07T14:07:49.105] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/server/findServer?plaform[]=1&plaform[]=2&display=&load=&channel=&srttime=&key=serverid&value=&test=&mergeserver=&page=1&pagesize=20
+request client ip:  ::ffff:127.0.0.1
+request query:  {"plaform[]":["1","2"],"display":"","load":"","channel":"","srttime":"","key":"serverid","value":"","test":"","mergeserver":"","page":"1","pagesize":"20","plaform":["1","2"],"gameid":"1"}
+response time: 1599458869104
+err name: SequelizeDatabaseError
+err message: invalid input syntax for type json
+err stack: SequelizeDatabaseError: invalid input syntax for type json
+    at Query.formatError (H:\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:366:16)
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:72:18
+From previous event:
+    at Query.run (H:\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:64:23)
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:29
+From previous event:
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:12
+    at processImmediate (internal/timers.js:456:21)
+From previous event:
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:651:10
+    at H:\fancyguo-gm\server\node_modules\retry-as-promised\index.js:70:21
+    at new Promise (<anonymous>)
+    at retryAsPromised (H:\fancyguo-gm\server\node_modules\retry-as-promised\index.js:60:10)
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:641:30
+From previous event:
+    at Sequelize.query (H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:590:23)
+    at GmServerService._callee$ (H:\fancyguo-gm\server\src\app\service\/server.js:58:32)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at GmServerService.<anonymous> (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at GmServerService.serverFindByParam (H:\fancyguo-gm\server\src\app\service\server.js:206:35)
+    at _callee10$ (H:\fancyguo-gm\server\src\app\controllers\/server.js:107:38)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at findServer (H:\fancyguo-gm\server\src\app\controllers\server.js:400:28)
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at next (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:45:18)
+    at H:\fancyguo-gm\server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at H:\fancyguo-gm\server\node_modules\koa-compose\index.js:36:12
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-router\lib\router.js:351:31)
+    at next (H:\fancyguo-gm\server\node_modules\koa\node_modules\koa-compose\index.js:42:32)
+    at _callee$ (H:\fancyguo-gm\server\src\middleware\/index.js:48:11)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at H:\fancyguo-gm\server\src\middleware\/index.js:43:2
+*************** error log end ***************
+
+[2020-09-07T14:10:10.739] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/server/findServer?plaform[]=1&plaform[]=2&display=&load=&channel=&srttime=&key=serverid&value=&test=&mergeserver=&page=1&pagesize=20
+request client ip:  ::ffff:127.0.0.1
+request query:  {"plaform[]":["1","2"],"display":"","load":"","channel":"","srttime":"","key":"serverid","value":"","test":"","mergeserver":"","page":"1","pagesize":"20","plaform":["1","2"],"gameid":"1"}
+response time: 1599459010738
+err name: SequelizeDatabaseError
+err message: invalid input syntax for type json
+err stack: SequelizeDatabaseError: invalid input syntax for type json
+    at Query.formatError (H:\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:366:16)
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:72:18
+From previous event:
+    at Query.run (H:\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:64:23)
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:29
+From previous event:
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:12
+    at processImmediate (internal/timers.js:456:21)
+From previous event:
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:651:10
+    at H:\fancyguo-gm\server\node_modules\retry-as-promised\index.js:70:21
+    at new Promise (<anonymous>)
+    at retryAsPromised (H:\fancyguo-gm\server\node_modules\retry-as-promised\index.js:60:10)
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:641:30
+From previous event:
+    at Sequelize.query (H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:590:23)
+    at GmServerService._callee$ (H:\fancyguo-gm\server\src\app\service\/server.js:58:32)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at GmServerService.<anonymous> (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at GmServerService.serverFindByParam (H:\fancyguo-gm\server\src\app\service\server.js:206:35)
+    at _callee10$ (H:\fancyguo-gm\server\src\app\controllers\/server.js:107:38)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at findServer (H:\fancyguo-gm\server\src\app\controllers\server.js:400:28)
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at next (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:45:18)
+    at H:\fancyguo-gm\server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at H:\fancyguo-gm\server\node_modules\koa-compose\index.js:36:12
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-router\lib\router.js:351:31)
+    at next (H:\fancyguo-gm\server\node_modules\koa\node_modules\koa-compose\index.js:42:32)
+    at _callee$ (H:\fancyguo-gm\server\src\middleware\/index.js:48:11)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at H:\fancyguo-gm\server\src\middleware\/index.js:43:2
+*************** error log end ***************
+
+[2020-09-07T14:11:38.213] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/server/findServer?plaform[]=2&display=&load=&channel=&srttime=&key=serverid&value=&test=&mergeserver=&page=1&pagesize=20
+request client ip:  ::ffff:127.0.0.1
+request query:  {"plaform[]":"2","display":"","load":"","channel":"","srttime":"","key":"serverid","value":"","test":"","mergeserver":"","page":"1","pagesize":"20","plaform":"2","gameid":"1"}
+response time: 1599459098213
+err name: SequelizeDatabaseError
+err message: 无效的类型 boolean 输入语法: ""2""
+err stack: SequelizeDatabaseError: 无效的类型 boolean 输入语法: ""2""
+    at Query.formatError (H:\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:366:16)
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:72:18
+From previous event:
+    at Query.run (H:\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:64:23)
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:29
+From previous event:
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:12
+    at processImmediate (internal/timers.js:456:21)
+From previous event:
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:651:10
+    at H:\fancyguo-gm\server\node_modules\retry-as-promised\index.js:70:21
+    at new Promise (<anonymous>)
+    at retryAsPromised (H:\fancyguo-gm\server\node_modules\retry-as-promised\index.js:60:10)
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:641:30
+From previous event:
+    at Sequelize.query (H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:590:23)
+    at GmServerService._callee$ (H:\fancyguo-gm\server\src\app\service\/server.js:59:32)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at GmServerService.<anonymous> (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at GmServerService.serverFindByParam (H:\fancyguo-gm\server\src\app\service\server.js:208:35)
+    at _callee10$ (H:\fancyguo-gm\server\src\app\controllers\/server.js:107:38)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at findServer (H:\fancyguo-gm\server\src\app\controllers\server.js:400:28)
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at next (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:45:18)
+    at H:\fancyguo-gm\server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at H:\fancyguo-gm\server\node_modules\koa-compose\index.js:36:12
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-router\lib\router.js:351:31)
+    at next (H:\fancyguo-gm\server\node_modules\koa\node_modules\koa-compose\index.js:42:32)
+    at _callee$ (H:\fancyguo-gm\server\src\middleware\/index.js:48:11)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at H:\fancyguo-gm\server\src\middleware\/index.js:43:2
+*************** error log end ***************
+
+[2020-09-07T14:12:32.894] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/server/findServer?plaform[]=2&plaform[]=1&display=&load=&channel=&srttime=&key=serverid&value=&test=&mergeserver=&page=1&pagesize=20
+request client ip:  ::ffff:127.0.0.1
+request query:  {"plaform[]":["2","1"],"display":"","load":"","channel":"","srttime":"","key":"serverid","value":"","test":"","mergeserver":"","page":"1","pagesize":"20","plaform":["2","1"],"gameid":"1"}
+response time: 1599459152894
+err name: SequelizeDatabaseError
+err message: 无效的类型 boolean 输入语法: "["2","1"]"
+err stack: SequelizeDatabaseError: 无效的类型 boolean 输入语法: "["2","1"]"
+    at Query.formatError (H:\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:366:16)
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:72:18
+From previous event:
+    at Query.run (H:\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:64:23)
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:29
+From previous event:
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:12
+    at processImmediate (internal/timers.js:456:21)
+From previous event:
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:651:10
+    at H:\fancyguo-gm\server\node_modules\retry-as-promised\index.js:70:21
+    at new Promise (<anonymous>)
+    at retryAsPromised (H:\fancyguo-gm\server\node_modules\retry-as-promised\index.js:60:10)
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:641:30
+From previous event:
+    at Sequelize.query (H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:590:23)
+    at GmServerService._callee$ (H:\fancyguo-gm\server\src\app\service\/server.js:59:32)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at GmServerService.<anonymous> (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at GmServerService.serverFindByParam (H:\fancyguo-gm\server\src\app\service\server.js:206:35)
+    at _callee10$ (H:\fancyguo-gm\server\src\app\controllers\/server.js:107:38)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at findServer (H:\fancyguo-gm\server\src\app\controllers\server.js:400:28)
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at next (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:45:18)
+    at H:\fancyguo-gm\server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at H:\fancyguo-gm\server\node_modules\koa-compose\index.js:36:12
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-router\lib\router.js:351:31)
+    at next (H:\fancyguo-gm\server\node_modules\koa\node_modules\koa-compose\index.js:42:32)
+    at _callee$ (H:\fancyguo-gm\server\src\middleware\/index.js:48:11)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at H:\fancyguo-gm\server\src\middleware\/index.js:43:2
+*************** error log end ***************
+
+[2020-09-07T14:13:02.083] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/server/findServer?display=&load=&channel=&srttime=&key=serverid&value=&test=&mergeserver=&page=1&pagesize=20
+request client ip:  ::ffff:127.0.0.1
+request query:  {"display":"","load":"","channel":"","srttime":"","key":"serverid","value":"","test":"","mergeserver":"","page":"1","pagesize":"20","gameid":"1"}
+response time: 1599459182082
+err name: SequelizeDatabaseError
+err message: 语法错误 在 "null" 或附近的
+err stack: SequelizeDatabaseError: 语法错误 在 "null" 或附近的
+    at Query.formatError (H:\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:366:16)
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:72:18
+From previous event:
+    at Query.run (H:\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:64:23)
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:29
+From previous event:
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:12
+    at processImmediate (internal/timers.js:456:21)
+From previous event:
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:651:10
+    at H:\fancyguo-gm\server\node_modules\retry-as-promised\index.js:70:21
+    at new Promise (<anonymous>)
+    at retryAsPromised (H:\fancyguo-gm\server\node_modules\retry-as-promised\index.js:60:10)
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:641:30
+From previous event:
+    at Sequelize.query (H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:590:23)
+    at GmServerService._callee$ (H:\fancyguo-gm\server\src\app\service\/server.js:59:32)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at GmServerService.<anonymous> (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at GmServerService.serverFindByParam (H:\fancyguo-gm\server\src\app\service\server.js:206:35)
+    at _callee10$ (H:\fancyguo-gm\server\src\app\controllers\/server.js:107:38)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at findServer (H:\fancyguo-gm\server\src\app\controllers\server.js:400:28)
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at next (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:45:18)
+    at H:\fancyguo-gm\server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at H:\fancyguo-gm\server\node_modules\koa-compose\index.js:36:12
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-router\lib\router.js:351:31)
+    at next (H:\fancyguo-gm\server\node_modules\koa\node_modules\koa-compose\index.js:42:32)
+    at _callee$ (H:\fancyguo-gm\server\src\middleware\/index.js:48:11)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at H:\fancyguo-gm\server\src\middleware\/index.js:43:2
+*************** error log end ***************
+
+[2020-09-07T14:13:06.292] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/server/findServer?plaform[]=1&display=&load=&channel=&srttime=&key=serverid&value=&test=&mergeserver=&page=1&pagesize=20
+request client ip:  ::ffff:127.0.0.1
+request query:  {"plaform[]":"1","display":"","load":"","channel":"","srttime":"","key":"serverid","value":"","test":"","mergeserver":"","page":"1","pagesize":"20","plaform":"1","gameid":"1"}
+response time: 1599459186291
+err name: SequelizeDatabaseError
+err message: 无效的类型 boolean 输入语法: ""1""
+err stack: SequelizeDatabaseError: 无效的类型 boolean 输入语法: ""1""
+    at Query.formatError (H:\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:366:16)
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:72:18
+From previous event:
+    at Query.run (H:\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:64:23)
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:29
+From previous event:
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:12
+    at processImmediate (internal/timers.js:456:21)
+From previous event:
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:651:10
+    at H:\fancyguo-gm\server\node_modules\retry-as-promised\index.js:70:21
+    at new Promise (<anonymous>)
+    at retryAsPromised (H:\fancyguo-gm\server\node_modules\retry-as-promised\index.js:60:10)
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:641:30
+From previous event:
+    at Sequelize.query (H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:590:23)
+    at GmServerService._callee$ (H:\fancyguo-gm\server\src\app\service\/server.js:59:32)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at GmServerService.<anonymous> (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at GmServerService.serverFindByParam (H:\fancyguo-gm\server\src\app\service\server.js:206:35)
+    at _callee10$ (H:\fancyguo-gm\server\src\app\controllers\/server.js:107:38)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at findServer (H:\fancyguo-gm\server\src\app\controllers\server.js:400:28)
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at next (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:45:18)
+    at H:\fancyguo-gm\server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at H:\fancyguo-gm\server\node_modules\koa-compose\index.js:36:12
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-router\lib\router.js:351:31)
+    at next (H:\fancyguo-gm\server\node_modules\koa\node_modules\koa-compose\index.js:42:32)
+    at _callee$ (H:\fancyguo-gm\server\src\middleware\/index.js:48:11)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at H:\fancyguo-gm\server\src\middleware\/index.js:43:2
+*************** error log end ***************
+
+[2020-09-07T14:14:01.985] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/server/findServer?display=&load=&channel=&srttime=&key=serverid&value=&test=&mergeserver=&page=1&pagesize=20
+request client ip:  ::ffff:127.0.0.1
+request query:  {"display":"","load":"","channel":"","srttime":"","key":"serverid","value":"","test":"","mergeserver":"","page":"1","pagesize":"20","gameid":"1"}
+response time: 1599459241985
+err name: SequelizeDatabaseError
+err message: 操作符ANY/ALL (array)要求数组在右边
+err stack: SequelizeDatabaseError: 操作符ANY/ALL (array)要求数组在右边
+    at Query.formatError (H:\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:366:16)
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:72:18
+From previous event:
+    at Query.run (H:\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:64:23)
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:29
+From previous event:
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:12
+    at processImmediate (internal/timers.js:456:21)
+From previous event:
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:651:10
+    at H:\fancyguo-gm\server\node_modules\retry-as-promised\index.js:70:21
+    at new Promise (<anonymous>)
+    at retryAsPromised (H:\fancyguo-gm\server\node_modules\retry-as-promised\index.js:60:10)
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:641:30
+From previous event:
+    at Sequelize.query (H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:590:23)
+    at GmServerService._callee$ (H:\fancyguo-gm\server\src\app\service\/server.js:59:32)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at GmServerService.<anonymous> (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at GmServerService.serverFindByParam (H:\fancyguo-gm\server\src\app\service\server.js:206:35)
+    at _callee10$ (H:\fancyguo-gm\server\src\app\controllers\/server.js:107:38)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at findServer (H:\fancyguo-gm\server\src\app\controllers\server.js:400:28)
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at next (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:45:18)
+    at H:\fancyguo-gm\server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at H:\fancyguo-gm\server\node_modules\koa-compose\index.js:36:12
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-router\lib\router.js:351:31)
+    at next (H:\fancyguo-gm\server\node_modules\koa\node_modules\koa-compose\index.js:42:32)
+    at _callee$ (H:\fancyguo-gm\server\src\middleware\/index.js:48:11)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at H:\fancyguo-gm\server\src\middleware\/index.js:43:2
+*************** error log end ***************
+
+[2020-09-07T14:14:52.906] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/server/findServer?display=&load=&channel[]=%E4%B9%85%E6%B8%B8&srttime=&key=serverid&value=&test=&mergeserver=&page=1&pagesize=20
+request client ip:  ::ffff:127.0.0.1
+request query:  {"display":"","load":"","channel[]":"久游","srttime":"","key":"serverid","value":"","test":"","mergeserver":"","page":"1","pagesize":"20","channel":"久游","gameid":"1"}
+response time: 1599459292906
+err name: SequelizeDatabaseError
+err message: 操作符ANY/ALL (array)要求数组在右边
+err stack: SequelizeDatabaseError: 操作符ANY/ALL (array)要求数组在右边
+    at Query.formatError (H:\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:366:16)
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:72:18
+From previous event:
+    at Query.run (H:\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:64:23)
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:29
+From previous event:
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:12
+    at processImmediate (internal/timers.js:456:21)
+From previous event:
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:651:10
+    at H:\fancyguo-gm\server\node_modules\retry-as-promised\index.js:70:21
+    at new Promise (<anonymous>)
+    at retryAsPromised (H:\fancyguo-gm\server\node_modules\retry-as-promised\index.js:60:10)
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:641:30
+From previous event:
+    at Sequelize.query (H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:590:23)
+    at GmServerService._callee$ (H:\fancyguo-gm\server\src\app\service\/server.js:60:32)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at GmServerService.<anonymous> (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at GmServerService.serverFindByParam (H:\fancyguo-gm\server\src\app\service\server.js:207:35)
+    at _callee10$ (H:\fancyguo-gm\server\src\app\controllers\/server.js:107:38)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at findServer (H:\fancyguo-gm\server\src\app\controllers\server.js:400:28)
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at next (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:45:18)
+    at H:\fancyguo-gm\server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at H:\fancyguo-gm\server\node_modules\koa-compose\index.js:36:12
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-router\lib\router.js:351:31)
+    at next (H:\fancyguo-gm\server\node_modules\koa\node_modules\koa-compose\index.js:42:32)
+    at _callee$ (H:\fancyguo-gm\server\src\middleware\/index.js:48:11)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at H:\fancyguo-gm\server\src\middleware\/index.js:43:2
+*************** error log end ***************
+
+[2020-09-07T14:16:22.671] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/server/findServer?plaform[]=1&display=&load=&srttime=&key=serverid&value=&test=&mergeserver=&page=1&pagesize=20
+request client ip:  ::ffff:127.0.0.1
+request query:  {"plaform[]":"1","display":"","load":"","srttime":"","key":"serverid","value":"","test":"","mergeserver":"","page":"1","pagesize":"20","plaform":"1","gameid":"1"}
+response time: 1599459382670
+err name: SequelizeDatabaseError
+err message: 无效的类型 boolean 输入语法: ""1""
+err stack: SequelizeDatabaseError: 无效的类型 boolean 输入语法: ""1""
+    at Query.formatError (H:\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:366:16)
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:72:18
+From previous event:
+    at Query.run (H:\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:64:23)
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:29
+From previous event:
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:12
+    at processImmediate (internal/timers.js:456:21)
+From previous event:
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:651:10
+    at H:\fancyguo-gm\server\node_modules\retry-as-promised\index.js:70:21
+    at new Promise (<anonymous>)
+    at retryAsPromised (H:\fancyguo-gm\server\node_modules\retry-as-promised\index.js:60:10)
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:641:30
+From previous event:
+    at Sequelize.query (H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:590:23)
+    at GmServerService._callee$ (H:\fancyguo-gm\server\src\app\service\/server.js:60:32)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at GmServerService.<anonymous> (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at GmServerService.serverFindByParam (H:\fancyguo-gm\server\src\app\service\server.js:207:35)
+    at _callee10$ (H:\fancyguo-gm\server\src\app\controllers\/server.js:107:38)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at findServer (H:\fancyguo-gm\server\src\app\controllers\server.js:400:28)
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at next (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:45:18)
+    at H:\fancyguo-gm\server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at H:\fancyguo-gm\server\node_modules\koa-compose\index.js:36:12
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-router\lib\router.js:351:31)
+    at next (H:\fancyguo-gm\server\node_modules\koa\node_modules\koa-compose\index.js:42:32)
+    at _callee$ (H:\fancyguo-gm\server\src\middleware\/index.js:48:11)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at H:\fancyguo-gm\server\src\middleware\/index.js:43:2
+*************** error log end ***************
+
+[2020-09-07T14:19:05.553] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/server/findServer?plaform[]=1&display=&load=&srttime=&key=serverid&value=&test=&mergeserver=&page=1&pagesize=20
+request client ip:  ::ffff:127.0.0.1
+request query:  {"plaform[]":"1","display":"","load":"","srttime":"","key":"serverid","value":"","test":"","mergeserver":"","page":"1","pagesize":"20","plaform":"1","gameid":"1"}
+response time: 1599459545552
+err name: SequelizeDatabaseError
+err message: invalid input syntax for type json
+err stack: SequelizeDatabaseError: invalid input syntax for type json
+    at Query.formatError (H:\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:366:16)
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:72:18
+From previous event:
+    at Query.run (H:\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:64:23)
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:29
+From previous event:
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:12
+    at processImmediate (internal/timers.js:456:21)
+From previous event:
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:651:10
+    at H:\fancyguo-gm\server\node_modules\retry-as-promised\index.js:70:21
+    at new Promise (<anonymous>)
+    at retryAsPromised (H:\fancyguo-gm\server\node_modules\retry-as-promised\index.js:60:10)
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:641:30
+From previous event:
+    at Sequelize.query (H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:590:23)
+    at GmServerService._callee$ (H:\fancyguo-gm\server\src\app\service\/server.js:61:32)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at GmServerService.<anonymous> (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at GmServerService.serverFindByParam (H:\fancyguo-gm\server\src\app\service\server.js:207:35)
+    at _callee10$ (H:\fancyguo-gm\server\src\app\controllers\/server.js:107:38)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at findServer (H:\fancyguo-gm\server\src\app\controllers\server.js:400:28)
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at next (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:45:18)
+    at H:\fancyguo-gm\server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at H:\fancyguo-gm\server\node_modules\koa-compose\index.js:36:12
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-router\lib\router.js:351:31)
+    at next (H:\fancyguo-gm\server\node_modules\koa\node_modules\koa-compose\index.js:42:32)
+    at _callee$ (H:\fancyguo-gm\server\src\middleware\/index.js:48:11)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at H:\fancyguo-gm\server\src\middleware\/index.js:43:2
+*************** error log end ***************
+
+[2020-09-07T14:19:09.108] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/server/findServer?display=&load=&srttime=&key=serverid&value=&test=&mergeserver=&page=1&pagesize=20
+request client ip:  ::ffff:127.0.0.1
+request query:  {"display":"","load":"","srttime":"","key":"serverid","value":"","test":"","mergeserver":"","page":"1","pagesize":"20","gameid":"1"}
+response time: 1599459549108
+err name: SequelizeDatabaseError
+err message: invalid input syntax for type json
+err stack: SequelizeDatabaseError: invalid input syntax for type json
+    at Query.formatError (H:\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:366:16)
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:72:18
+From previous event:
+    at Query.run (H:\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:64:23)
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:29
+From previous event:
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:12
+    at processImmediate (internal/timers.js:456:21)
+From previous event:
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:651:10
+    at H:\fancyguo-gm\server\node_modules\retry-as-promised\index.js:70:21
+    at new Promise (<anonymous>)
+    at retryAsPromised (H:\fancyguo-gm\server\node_modules\retry-as-promised\index.js:60:10)
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:641:30
+From previous event:
+    at Sequelize.query (H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:590:23)
+    at GmServerService._callee$ (H:\fancyguo-gm\server\src\app\service\/server.js:61:32)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at GmServerService.<anonymous> (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at GmServerService.serverFindByParam (H:\fancyguo-gm\server\src\app\service\server.js:207:35)
+    at _callee10$ (H:\fancyguo-gm\server\src\app\controllers\/server.js:107:38)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at findServer (H:\fancyguo-gm\server\src\app\controllers\server.js:400:28)
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at next (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:45:18)
+    at H:\fancyguo-gm\server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at H:\fancyguo-gm\server\node_modules\koa-compose\index.js:36:12
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-router\lib\router.js:351:31)
+    at next (H:\fancyguo-gm\server\node_modules\koa\node_modules\koa-compose\index.js:42:32)
+    at _callee$ (H:\fancyguo-gm\server\src\middleware\/index.js:48:11)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at H:\fancyguo-gm\server\src\middleware\/index.js:43:2
+*************** error log end ***************
+
+[2020-09-07T14:20:12.418] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/server/findServer?display=&load=&srttime=&key=serverid&value=&test=&mergeserver=&page=1&pagesize=20
+request client ip:  ::ffff:127.0.0.1
+request query:  {"display":"","load":"","srttime":"","key":"serverid","value":"","test":"","mergeserver":"","page":"1","pagesize":"20","gameid":"1"}
+response time: 1599459612418
+err name: SequelizeDatabaseError
+err message: invalid input syntax for type json
+err stack: SequelizeDatabaseError: invalid input syntax for type json
+    at Query.formatError (H:\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:366:16)
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:72:18
+From previous event:
+    at Query.run (H:\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:64:23)
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:29
+From previous event:
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:12
+    at processImmediate (internal/timers.js:456:21)
+From previous event:
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:651:10
+    at H:\fancyguo-gm\server\node_modules\retry-as-promised\index.js:70:21
+    at new Promise (<anonymous>)
+    at retryAsPromised (H:\fancyguo-gm\server\node_modules\retry-as-promised\index.js:60:10)
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:641:30
+From previous event:
+    at Sequelize.query (H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:590:23)
+    at GmServerService._callee$ (H:\fancyguo-gm\server\src\app\service\/server.js:61:32)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at GmServerService.<anonymous> (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at GmServerService.serverFindByParam (H:\fancyguo-gm\server\src\app\service\server.js:207:35)
+    at _callee10$ (H:\fancyguo-gm\server\src\app\controllers\/server.js:107:38)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at findServer (H:\fancyguo-gm\server\src\app\controllers\server.js:400:28)
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at next (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:45:18)
+    at H:\fancyguo-gm\server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at H:\fancyguo-gm\server\node_modules\koa-compose\index.js:36:12
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-router\lib\router.js:351:31)
+    at next (H:\fancyguo-gm\server\node_modules\koa\node_modules\koa-compose\index.js:42:32)
+    at _callee$ (H:\fancyguo-gm\server\src\middleware\/index.js:48:11)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at H:\fancyguo-gm\server\src\middleware\/index.js:43:2
+*************** error log end ***************
+
+[2020-09-07T14:20:13.387] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/server/findServer?display=&load=&srttime=&key=serverid&value=&test=&mergeserver=&page=1&pagesize=20
+request client ip:  ::ffff:127.0.0.1
+request query:  {"display":"","load":"","srttime":"","key":"serverid","value":"","test":"","mergeserver":"","page":"1","pagesize":"20","gameid":"1"}
+response time: 1599459613387
+err name: SequelizeDatabaseError
+err message: invalid input syntax for type json
+err stack: SequelizeDatabaseError: invalid input syntax for type json
+    at Query.formatError (H:\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:366:16)
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:72:18
+From previous event:
+    at Query.run (H:\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:64:23)
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:29
+From previous event:
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:12
+    at processImmediate (internal/timers.js:456:21)
+From previous event:
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:651:10
+    at H:\fancyguo-gm\server\node_modules\retry-as-promised\index.js:70:21
+    at new Promise (<anonymous>)
+    at retryAsPromised (H:\fancyguo-gm\server\node_modules\retry-as-promised\index.js:60:10)
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:641:30
+From previous event:
+    at Sequelize.query (H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:590:23)
+    at GmServerService._callee$ (H:\fancyguo-gm\server\src\app\service\/server.js:61:32)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at GmServerService.<anonymous> (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at GmServerService.serverFindByParam (H:\fancyguo-gm\server\src\app\service\server.js:207:35)
+    at _callee10$ (H:\fancyguo-gm\server\src\app\controllers\/server.js:107:38)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at findServer (H:\fancyguo-gm\server\src\app\controllers\server.js:400:28)
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at next (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:45:18)
+    at H:\fancyguo-gm\server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at H:\fancyguo-gm\server\node_modules\koa-compose\index.js:36:12
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-router\lib\router.js:351:31)
+    at next (H:\fancyguo-gm\server\node_modules\koa\node_modules\koa-compose\index.js:42:32)
+    at _callee$ (H:\fancyguo-gm\server\src\middleware\/index.js:48:11)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at H:\fancyguo-gm\server\src\middleware\/index.js:43:2
+*************** error log end ***************
+
+[2020-09-07T14:24:37.688] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/server/findServer?plaform[]=2&plaform[]=1&display=&load=&channel[]=%E4%B9%85%E6%B8%B8&srttime=&key=serverid&value=&test=&mergeserver=&page=1&pagesize=20
+request client ip:  ::ffff:127.0.0.1
+request query:  {"plaform[]":["2","1"],"display":"","load":"","channel[]":"久游","srttime":"","key":"serverid","value":"","test":"","mergeserver":"","page":"1","pagesize":"20","plaform":["2","1"],"channel":"久游","gameid":"1"}
+response time: 1599459877687
+err name: SequelizeDatabaseError
+err message: 操作符ANY/ALL (array)要求数组在右边
+err stack: SequelizeDatabaseError: 操作符ANY/ALL (array)要求数组在右边
+    at Query.formatError (H:\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:366:16)
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:72:18
+From previous event:
+    at Query.run (H:\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:64:23)
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:29
+From previous event:
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:12
+    at processImmediate (internal/timers.js:456:21)
+From previous event:
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:651:10
+    at H:\fancyguo-gm\server\node_modules\retry-as-promised\index.js:70:21
+    at new Promise (<anonymous>)
+    at retryAsPromised (H:\fancyguo-gm\server\node_modules\retry-as-promised\index.js:60:10)
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:641:30
+From previous event:
+    at Sequelize.query (H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:590:23)
+    at GmServerService._callee$ (H:\fancyguo-gm\server\src\app\service\/server.js:63:32)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at GmServerService.<anonymous> (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at GmServerService.serverFindByParam (H:\fancyguo-gm\server\src\app\service\server.js:210:35)
+    at _callee10$ (H:\fancyguo-gm\server\src\app\controllers\/server.js:107:38)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at findServer (H:\fancyguo-gm\server\src\app\controllers\server.js:400:28)
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at next (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:45:18)
+    at H:\fancyguo-gm\server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at H:\fancyguo-gm\server\node_modules\koa-compose\index.js:36:12
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-router\lib\router.js:351:31)
+    at next (H:\fancyguo-gm\server\node_modules\koa\node_modules\koa-compose\index.js:42:32)
+    at _callee$ (H:\fancyguo-gm\server\src\middleware\/index.js:48:11)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at H:\fancyguo-gm\server\src\middleware\/index.js:43:2
+*************** error log end ***************
+
+[2020-09-07T14:24:50.742] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/server/findServer?display=&load=&channel[]=%E4%B9%85%E6%B8%B8&srttime=&key=serverid&value=&test=&mergeserver=&page=1&pagesize=20
+request client ip:  ::ffff:127.0.0.1
+request query:  {"display":"","load":"","channel[]":"久游","srttime":"","key":"serverid","value":"","test":"","mergeserver":"","page":"1","pagesize":"20","channel":"久游","gameid":"1"}
+response time: 1599459890742
+err name: SequelizeDatabaseError
+err message: 操作符ANY/ALL (array)要求数组在右边
+err stack: SequelizeDatabaseError: 操作符ANY/ALL (array)要求数组在右边
+    at Query.formatError (H:\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:366:16)
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:72:18
+From previous event:
+    at Query.run (H:\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:64:23)
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:29
+From previous event:
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:12
+    at processImmediate (internal/timers.js:456:21)
+From previous event:
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:651:10
+    at H:\fancyguo-gm\server\node_modules\retry-as-promised\index.js:70:21
+    at new Promise (<anonymous>)
+    at retryAsPromised (H:\fancyguo-gm\server\node_modules\retry-as-promised\index.js:60:10)
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:641:30
+From previous event:
+    at Sequelize.query (H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:590:23)
+    at GmServerService._callee$ (H:\fancyguo-gm\server\src\app\service\/server.js:63:32)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at GmServerService.<anonymous> (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at GmServerService.serverFindByParam (H:\fancyguo-gm\server\src\app\service\server.js:210:35)
+    at _callee10$ (H:\fancyguo-gm\server\src\app\controllers\/server.js:107:38)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at findServer (H:\fancyguo-gm\server\src\app\controllers\server.js:400:28)
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at next (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:45:18)
+    at H:\fancyguo-gm\server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at H:\fancyguo-gm\server\node_modules\koa-compose\index.js:36:12
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-router\lib\router.js:351:31)
+    at next (H:\fancyguo-gm\server\node_modules\koa\node_modules\koa-compose\index.js:42:32)
+    at _callee$ (H:\fancyguo-gm\server\src\middleware\/index.js:48:11)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at H:\fancyguo-gm\server\src\middleware\/index.js:43:2
+*************** error log end ***************
+
+[2020-09-07T15:16:36.266] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/server/mergeServer
+request client ip:  ::ffff:127.0.0.1
+request body: 
+[{"id":2,"status":1,"create_user_id":1,"update_user_id":null,"create_time":"2020-09-06T16:00:00.000Z","update_time":"2020-09-06T16:00:00.000Z","servername":"test","ip_port":null,"address":"www.baidu.com","plaform":["1","2"],"display":"3","srttime":"2020-09-23T08:00:00.000Z","gamename":"","pid":null,"serverid":"2","test":"0","load":null,"gameid":1,"childrens":null,"port":null,"ip":"123.57.86.30:55","channel":["久游","小米"]}]
+response time: 1599462996266
+err name: SequelizeDatabaseError
+err message: 字段 "channel" 的类型为 jsonb, 但表达式的类型为 text[]
+err stack: SequelizeDatabaseError: 字段 "channel" 的类型为 jsonb, 但表达式的类型为 text[]
+    at Query.formatError (H:\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:366:16)
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:72:18
+From previous event:
+    at Query.run (H:\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:64:23)
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:29
+From previous event:
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:12
+    at processImmediate (internal/timers.js:456:21)
+From previous event:
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:651:10
+    at H:\fancyguo-gm\server\node_modules\retry-as-promised\index.js:70:21
+    at new Promise (<anonymous>)
+    at retryAsPromised (H:\fancyguo-gm\server\node_modules\retry-as-promised\index.js:60:10)
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:641:30
+From previous event:
+    at Sequelize.query (H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:590:23)
+    at _callee3$ (H:\fancyguo-gm\server\src\app\service\/server.js:100:31)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at GmServerService.<anonymous> (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at GmServerService.mergeServer (H:\fancyguo-gm\server\src\app\service\server.js:278:29)
+    at _callee12$ (H:\fancyguo-gm\server\src\app\controllers\/server.js:124:38)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at mergeServer (H:\fancyguo-gm\server\src\app\controllers\server.js:465:29)
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at next (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:45:18)
+    at H:\fancyguo-gm\server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at H:\fancyguo-gm\server\node_modules\koa-compose\index.js:36:12
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-router\lib\router.js:351:31)
+    at next (H:\fancyguo-gm\server\node_modules\koa\node_modules\koa-compose\index.js:42:32)
+    at _callee$ (H:\fancyguo-gm\server\src\middleware\/index.js:48:11)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at H:\fancyguo-gm\server\src\middleware\/index.js:43:2
+*************** error log end ***************
+
+[2020-09-07T15:16:46.975] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/server/mergeServer
+request client ip:  ::ffff:127.0.0.1
+request body: 
+[{"id":2,"status":1,"create_user_id":1,"update_user_id":null,"create_time":"2020-09-06T16:00:00.000Z","update_time":"2020-09-06T16:00:00.000Z","servername":"test","ip_port":null,"address":"www.baidu.com","plaform":["1","2"],"display":"3","srttime":"2020-09-23T08:00:00.000Z","gamename":"","pid":null,"serverid":"2","test":"0","load":null,"gameid":1,"childrens":null,"port":null,"ip":"123.57.86.30:55","channel":["久游","小米"]}]
+response time: 1599463006974
+err name: SequelizeDatabaseError
+err message: 字段 "channel" 的类型为 jsonb, 但表达式的类型为 text[]
+err stack: SequelizeDatabaseError: 字段 "channel" 的类型为 jsonb, 但表达式的类型为 text[]
+    at Query.formatError (H:\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:366:16)
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:72:18
+From previous event:
+    at Query.run (H:\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:64:23)
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:29
+From previous event:
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:12
+    at processImmediate (internal/timers.js:456:21)
+From previous event:
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:651:10
+    at H:\fancyguo-gm\server\node_modules\retry-as-promised\index.js:70:21
+    at new Promise (<anonymous>)
+    at retryAsPromised (H:\fancyguo-gm\server\node_modules\retry-as-promised\index.js:60:10)
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:641:30
+From previous event:
+    at Sequelize.query (H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:590:23)
+    at _callee3$ (H:\fancyguo-gm\server\src\app\service\/server.js:100:31)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at GmServerService.<anonymous> (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at GmServerService.mergeServer (H:\fancyguo-gm\server\src\app\service\server.js:278:29)
+    at _callee12$ (H:\fancyguo-gm\server\src\app\controllers\/server.js:124:38)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at mergeServer (H:\fancyguo-gm\server\src\app\controllers\server.js:465:29)
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at next (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:45:18)
+    at H:\fancyguo-gm\server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at H:\fancyguo-gm\server\node_modules\koa-compose\index.js:36:12
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-router\lib\router.js:351:31)
+    at next (H:\fancyguo-gm\server\node_modules\koa\node_modules\koa-compose\index.js:42:32)
+    at _callee$ (H:\fancyguo-gm\server\src\middleware\/index.js:48:11)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at H:\fancyguo-gm\server\src\middleware\/index.js:43:2
+*************** error log end ***************
+
+[2020-09-07T15:18:49.094] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/server/mergeServer
+request client ip:  ::ffff:127.0.0.1
+request body: 
+[{"id":4,"status":1,"create_user_id":1,"update_user_id":null,"create_time":"2020-09-06T16:00:00.000Z","update_time":"2020-09-06T16:00:00.000Z","servername":"1","ip_port":"123.57.86.38:8888","address":"111","plaform":["1"],"display":"3","srttime":"2020-09-29T16:00:00.000Z","gamename":"","pid":null,"serverid":"4","test":"0","load":null,"gameid":1,"childrens":null,"port":"8888","ip":"123.57.86.38","channel":["小米"]},{"id":6,"status":1,"create_user_id":1,"update_user_id":null,"create_time":"2020-09-06T16:00:00.000Z","update_time":"2020-09-06T16:00:00.000Z","servername":"122","ip_port":"123.57.86.38:1234","address":"11","plaform":["1"],"display":"3","srttime":"2020-09-01T16:00:00.000Z","gamename":"","pid":null,"serverid":"6","test":"0","load":null,"gameid":1,"childrens":null,"port":"1234","ip":"123.57.86.38","channel":["小米"]}]
+response time: 1599463129094
+err name: SequelizeDatabaseError
+err message: 字段 "channel" 的类型为 jsonb, 但表达式的类型为 text[]
+err stack: SequelizeDatabaseError: 字段 "channel" 的类型为 jsonb, 但表达式的类型为 text[]
+    at Query.formatError (H:\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:366:16)
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:72:18
+From previous event:
+    at Query.run (H:\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:64:23)
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:29
+From previous event:
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:12
+    at processImmediate (internal/timers.js:456:21)
+From previous event:
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:651:10
+    at H:\fancyguo-gm\server\node_modules\retry-as-promised\index.js:70:21
+    at new Promise (<anonymous>)
+    at retryAsPromised (H:\fancyguo-gm\server\node_modules\retry-as-promised\index.js:60:10)
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:641:30
+From previous event:
+    at Sequelize.query (H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:590:23)
+    at _callee3$ (H:\fancyguo-gm\server\src\app\service\/server.js:100:31)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at GmServerService.<anonymous> (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at GmServerService.mergeServer (H:\fancyguo-gm\server\src\app\service\server.js:278:29)
+    at _callee12$ (H:\fancyguo-gm\server\src\app\controllers\/server.js:124:38)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at mergeServer (H:\fancyguo-gm\server\src\app\controllers\server.js:465:29)
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at next (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:45:18)
+    at H:\fancyguo-gm\server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at H:\fancyguo-gm\server\node_modules\koa-compose\index.js:36:12
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-router\lib\router.js:351:31)
+    at next (H:\fancyguo-gm\server\node_modules\koa\node_modules\koa-compose\index.js:42:32)
+    at _callee$ (H:\fancyguo-gm\server\src\middleware\/index.js:48:11)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at H:\fancyguo-gm\server\src\middleware\/index.js:43:2
+*************** error log end ***************
+
+[2020-09-07T17:36:30.638] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/server/mergeServer
+request client ip:  ::ffff:127.0.0.1
+request body: 
+[{"id":4,"status":1,"create_user_id":1,"update_user_id":null,"create_time":"2020-09-06T16:00:00.000Z","update_time":"2020-09-06T16:00:00.000Z","servername":"1","ip_port":"123.57.86.38:8888","address":"111","plaform":["1"],"display":"3","srttime":"2020-09-29T16:00:00.000Z","gamename":"","pid":null,"serverid":"4","test":"0","load":null,"gameid":1,"childrens":null,"port":"8888","ip":"123.57.86.38","channel":["小米"]},{"id":6,"status":1,"create_user_id":1,"update_user_id":null,"create_time":"2020-09-06T16:00:00.000Z","update_time":"2020-09-06T16:00:00.000Z","servername":"122","ip_port":"123.57.86.38:1234","address":"11","plaform":["1"],"display":"3","srttime":"2020-09-01T16:00:00.000Z","gamename":"","pid":null,"serverid":"6","test":"0","load":null,"gameid":1,"childrens":null,"port":"1234","ip":"123.57.86.38","channel":["小米"]}]
+response time: 1599471390637
+err name: TypeError
+err message: data.map is not a function
+err stack: TypeError: data.map is not a function
+    at _callee3$ (H:\fancyguo-gm\server\src\app\service\/server.js:94:23)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at GmServerService.<anonymous> (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at GmServerService.mergeServer (H:\fancyguo-gm\server\src\app\service\server.js:291:29)
+    at _callee12$ (H:\fancyguo-gm\server\src\app\controllers\/server.js:124:38)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at mergeServer (H:\fancyguo-gm\server\src\app\controllers\server.js:465:29)
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at next (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:45:18)
+    at H:\fancyguo-gm\server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at H:\fancyguo-gm\server\node_modules\koa-compose\index.js:36:12
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-router\lib\router.js:351:31)
+    at next (H:\fancyguo-gm\server\node_modules\koa\node_modules\koa-compose\index.js:42:32)
+    at _callee$ (H:\fancyguo-gm\server\src\middleware\/index.js:48:11)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+*************** error log end ***************
+
+[2020-09-07T17:37:22.040] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/server/mergeServer
+request client ip:  ::ffff:127.0.0.1
+request body: 
+[{"id":4,"status":1,"create_user_id":1,"update_user_id":null,"create_time":"2020-09-06T16:00:00.000Z","update_time":"2020-09-06T16:00:00.000Z","servername":"1","ip_port":"123.57.86.38:8888","address":"111","plaform":["1"],"display":"3","srttime":"2020-09-29T16:00:00.000Z","gamename":"","pid":null,"serverid":"4","test":"0","load":null,"gameid":1,"childrens":null,"port":"8888","ip":"123.57.86.38","channel":["小米"]},{"id":6,"status":1,"create_user_id":1,"update_user_id":null,"create_time":"2020-09-06T16:00:00.000Z","update_time":"2020-09-06T16:00:00.000Z","servername":"122","ip_port":"123.57.86.38:1234","address":"11","plaform":["1"],"display":"3","srttime":"2020-09-01T16:00:00.000Z","gamename":"","pid":null,"serverid":"6","test":"0","load":null,"gameid":1,"childrens":null,"port":"1234","ip":"123.57.86.38","channel":["小米"]}]
+response time: 1599471442039
+err name: TypeError
+err message: data.map is not a function
+err stack: TypeError: data.map is not a function
+    at _callee3$ (H:\fancyguo-gm\server\src\app\service\/server.js:95:23)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at GmServerService.<anonymous> (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at GmServerService.mergeServer (H:\fancyguo-gm\server\src\app\service\server.js:292:29)
+    at _callee12$ (H:\fancyguo-gm\server\src\app\controllers\/server.js:124:38)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at mergeServer (H:\fancyguo-gm\server\src\app\controllers\server.js:465:29)
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at next (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:45:18)
+    at H:\fancyguo-gm\server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at H:\fancyguo-gm\server\node_modules\koa-compose\index.js:36:12
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-router\lib\router.js:351:31)
+    at next (H:\fancyguo-gm\server\node_modules\koa\node_modules\koa-compose\index.js:42:32)
+    at _callee$ (H:\fancyguo-gm\server\src\middleware\/index.js:48:11)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+*************** error log end ***************
+
+[2020-09-07T17:37:56.149] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/server/mergeServer
+request client ip:  ::ffff:127.0.0.1
+request body: 
+[{"id":4,"status":1,"create_user_id":1,"update_user_id":null,"create_time":"2020-09-06T16:00:00.000Z","update_time":"2020-09-06T16:00:00.000Z","servername":"1","ip_port":"123.57.86.38:8888","address":"111","plaform":["1"],"display":"3","srttime":"2020-09-29T16:00:00.000Z","gamename":"","pid":null,"serverid":"4","test":"0","load":null,"gameid":1,"childrens":null,"port":"8888","ip":"123.57.86.38","channel":["小米"]},{"id":6,"status":1,"create_user_id":1,"update_user_id":null,"create_time":"2020-09-06T16:00:00.000Z","update_time":"2020-09-06T16:00:00.000Z","servername":"122","ip_port":"123.57.86.38:1234","address":"11","plaform":["1"],"display":"3","srttime":"2020-09-01T16:00:00.000Z","gamename":"","pid":null,"serverid":"6","test":"0","load":null,"gameid":1,"childrens":null,"port":"1234","ip":"123.57.86.38","channel":["小米"]}]
+response time: 1599471476148
+err name: SequelizeDatabaseError
+err message: 字段 "undefined" 不存在
+err stack: SequelizeDatabaseError: 字段 "undefined" 不存在
+    at Query.formatError (H:\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:366:16)
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:72:18
+From previous event:
+    at Query.run (H:\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:64:23)
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:29
+From previous event:
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:12
+    at processImmediate (internal/timers.js:456:21)
+From previous event:
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:651:10
+    at H:\fancyguo-gm\server\node_modules\retry-as-promised\index.js:70:21
+    at new Promise (<anonymous>)
+    at retryAsPromised (H:\fancyguo-gm\server\node_modules\retry-as-promised\index.js:60:10)
+    at H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:641:30
+From previous event:
+    at Sequelize.query (H:\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:590:23)
+    at _callee3$ (H:\fancyguo-gm\server\src\app\service\/server.js:117:22)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+*************** error log end ***************
+
+[2020-09-07T17:47:12.140] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/server/serverCreate
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"serverid":"","servername":"测试one","plaform":["2","1"],"channel":["久游","小米"],"ip":"123.57.86.38：8080","display":"2","srttime":"2020-09-15T16:00:00.000Z","address":"a","test":"0","page":1,"pagesize":20,"gameid":"1"}
+response time: 1599472032140
+err name: Error
+err message: 参数不合法
+err stack: Error: 参数不合法
+    at _callee4$ (H:\fancyguo-gm\server\src\app\service\/server.js:140:18)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at GmServerService.<anonymous> (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at GmServerService.serverCreate (H:\fancyguo-gm\server\src\app\service\server.js:371:30)
+    at _callee9$ (H:\fancyguo-gm\server\src\app\controllers\/server.js:97:38)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at serverCreate (H:\fancyguo-gm\server\src\app\controllers\server.js:364:30)
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at next (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:45:18)
+    at H:\fancyguo-gm\server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at H:\fancyguo-gm\server\node_modules\koa-compose\index.js:36:12
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-router\lib\router.js:351:31)
+    at next (H:\fancyguo-gm\server\node_modules\koa\node_modules\koa-compose\index.js:42:32)
+    at _callee$ (H:\fancyguo-gm\server\src\middleware\/index.js:48:11)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+*************** error log end ***************
+
+[2020-09-07T17:48:25.047] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/server/serverCreate
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"serverid":"","servername":"测试one","plaform":["2","1"],"channel":["久游","小米"],"ip":"123.57.86.38：8080","display":"2","srttime":"2020-09-15T16:00:00.000Z","address":"a","test":"0","page":1,"pagesize":20,"gameid":"1"}
+response time: 1599472105047
+err name: Error
+err message: 参数不合法
+err stack: Error: 参数不合法
+    at _callee4$ (H:\fancyguo-gm\server\src\app\service\/server.js:142:18)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at GmServerService.<anonymous> (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at GmServerService.serverCreate (H:\fancyguo-gm\server\src\app\service\server.js:373:30)
+    at _callee9$ (H:\fancyguo-gm\server\src\app\controllers\/server.js:97:38)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at serverCreate (H:\fancyguo-gm\server\src\app\controllers\server.js:364:30)
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at next (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:45:18)
+    at H:\fancyguo-gm\server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at H:\fancyguo-gm\server\node_modules\koa-compose\index.js:36:12
+    at dispatch (H:\fancyguo-gm\server\node_modules\koa-router\lib\router.js:351:31)
+    at next (H:\fancyguo-gm\server\node_modules\koa\node_modules\koa-compose\index.js:42:32)
+    at _callee$ (H:\fancyguo-gm\server\src\middleware\/index.js:48:11)
+    at tryCatch (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+*************** error log end ***************
+

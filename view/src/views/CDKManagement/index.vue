@@ -39,7 +39,8 @@
         </div>
         <div v-else>
           <el-tag v-for='(i,index) in  scope.row[column.prop]' :key="index">{{ i }}</el-tag>
-          </div>  </template>
+          </div>  
+      </template>
     </el-table-column>
     <el-table-column  label="查看详情">
        <template slot-scope="scope"> 

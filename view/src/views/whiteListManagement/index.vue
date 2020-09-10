@@ -1,10 +1,9 @@
 <template>
   <div class="white-container">
     <div class="role-container-header" >
-    <ul>
+    <ul style="margin: 5px 10px -5px 0px;">
  <li><el-button slot="reference" icon="el-icon-refresh" size='small' class="button-with-header"  @click='filterFormChange'>刷新</el-button></li>
- <li> <el-button  slot="append" icon="el-icon-delete-solid" size='small' class="button-with-header" :disabled='fenghaocaozuo' @click='dialogFormchange = true'>分组管理</el-button></li>
- <li> <el-button  slot="append" icon="el-icon-delete-solid" size='small' class="button-with-header" :disabled='fenghaocaozuo' @click='dialogFormchange = true'>添加福利</el-button></li>
+ <li> <el-button  slot="append" icon="el-icon-delete-solid" size='small' class="button-with-header"  @click='dialogFormchange = true'>添加白名单用户</el-button></li>
     </ul>
   </div>
   <div class="role-container-search">
@@ -30,9 +29,8 @@
     ref="multipleTable"
     border
     :data="tableData" 
-    :row-class-name="tableRowClassName" 
-    @selection-change="handleSelectionChange"
     >
+       <!-- :row-class-name="tableRowClassName"  -->
     <el-table-column  type="selection" width="40"></el-table-column>
     <el-table-column v-for='(column,index) in tablecolumn' :key='index'  :label="column.label">
  <template slot-scope="scope">{{ scope.row[column.prop] }}</template>
@@ -54,20 +52,20 @@
     @current-change="filterFormChange('change')" ></el-pagination>
   </div>
 
-  <!-- <el-dialog title="添加白名单用户" :visible.sync="serverCreatedialogFormVisible" class="announceddialog"  :close-on-click-modal="false"> -->
-    <el-drawer
+ <el-dialog title="添加白名单用户" :visible.sync="dialogFormchange" class="announceddialog"  :close-on-click-modal="false"> 
+    <!-- <el-drawer
   ref="drawer"
   title="添加白名单用户"
   :before-close="false" 
-  :visible.sync="serverCreatedialogFormVisible"
+  :visible.sync="dialogFormchange"
   direction="ltr"
-  >
+  > -->
     <div  >
     <el-form>
-  <el-form-item label-width="80px" label="角色ID:" prop="age">
+  <!-- <el-form-item label-width="80px" label="角色ID:" prop="age">
     <el-input size='small' style="width: 10.5vw;"></el-input>
-  </el-form-item>
-  <el-form-item label-width="80px" label="平台:">
+  </el-form-item> -->
+  <!-- <el-form-item label-width="80px" label="平台:">
    <el-select placeholder="请选择" size='small' style="border-radius: 10px;" >
      <el-option label='不限制' value="" ></el-option>
      <el-option label='安卓' value="1" ></el-option>
@@ -79,45 +77,81 @@
      <el-option v-for="(item,index) in selectForm[1].options"   :key="index"  :label='item.label' :value="item.value" >
      </el-option>
    </el-select>
- </el-form-item>
-  <el-form-item label-width="80px" label="服务器:">
+ </el-form-item> -->
+  <!-- <el-form-item label-width="80px" label="服务器:">
    <el-select  multiple placeholder="请选择" size='small' style="border-radius: 10px;" @change='queryMarqueeweights' >
      <el-option v-for="(item,index) in servernamesselect"   :key="index"  :label='item.label' :value="item.value" >
      </el-option></el-select>
- </el-form-item>
+ </el-form-item> -->
+    <el-form-item    label="人员名单:" prop="serverName">
+                <el-upload
+                    ref='upload'
+                    class="upload-demo"
+                    drag
+                    action="#"
+                    accept='.xlsx,.xls'
+                    :auto-upload="true"
+                    :file-list='filelist'
+                    :limit='1'
+                    multiple
+                    :http-request="fileUpload" 
+                    >
+                    <i class="el-icon-upload"></i>
+                    <div class="el-upload__text">将文件拖到此处，或<em>点击上传</em></div>
+                    <div slot="tip" class="el-upload__tip">只能上传xlsx/xls文件</div>
+                  </el-upload>
+                  </el-form-item>
   <el-form-item label-width="80px" label="福利类别:">
-  <el-select  multiple placeholder="请选择" size='small' style="border-radius: 10px;" @change='queryMarqueeweights' >
+  <el-select  v-model="createFormWhite['type']" multiple placeholder="请选择" size='small' style="border-radius: 10px;" >
     <el-option v-for="(item,index) in servernamesselect"   :key="index"  :label='item.label' :value="item.value" >
     </el-option></el-select>
 </el-form-item>
  <el-form-item label-width="80px" label="备注" prop="age">
-  <el-input size='small' style="width: 10.5vw;" ></el-input>
+  <el-input v-model="createFormWhite['notebook']"  size='small' style="width: 10.5vw;" ></el-input>
 </el-form-item>
     </el-form>
     <div slot="footer" class="dialog-footer">
       <el-button @click="dialogFormchange = false">取 消</el-button>
-      <el-button type="primary" @click='postannounced'>确 定</el-button>
+      <el-button type="primary" @click='dialogFormchange = false'>确 定</el-button>
          </div>
    </div>
      
-   <!-- </el-dialog> -->
-  </el-drawer>
+ </el-dialog> 
+
+ <el-dialog title="excel数据" :visible.sync="serverCreatedialogFormVisible" class="whitedialog"  :close-on-click-modal="false"> 
+     <el-table
+    ref="multipleTable"
+    border
+    :data="createFormWhite['roleId']" 
+    >
+      <el-table-column prop='id' label="角色id">
+    </el-table-column>
+     <el-table-column prop='serverid' label="区服id">
+    </el-table-column>
+  </el-table>
+  </el-dialog> 
+  <!-- </el-drawer> --> 
+   <!-- <el-dialog  ref="newMailelDialog" title="新建邮件" :visible.sync="dialogFormchange" class="announceddialog"  :close-on-click-modal="false"  @close='createFormMailCancel'>
+       </el-dialog> -->
   </div>
 </template>
 
 <script>
 import elementResizeDetectorMaker from 'element-resize-detector';
 import '@/assets/icon/iconfont.css';
+import xlsx from 'xlsx';
 
 export default {
 
   name: 'rolequery',
   data() {
     return {
-      serverCreatedialogFormVisible: true,
+      serverCreatedialogFormVisible: false,
+      createFormWhite: {},
       dialogFormchange: false,
       multipleTable: '',
       total: 0,
+      filelist: [],
       filterForm: {
         key: 'roleid',
         value: '',
@@ -247,8 +281,44 @@ export default {
       screenWidth: 145,
       screenHeight: '',
       tableTrue: []
-    };
-    
+    }; 
+  },
+  methods: {
+    async fileUpload(files) {
+      const file = files.file;
+      const fileReader = new FileReader();
+      fileReader.onload = (ev) =>{
+        try {
+          const data = ev.target.result;
+          const workbook = xlsx.read(data, {
+            type: 'binary'
+          });
+          let a;
+          for (let sheet in workbook.Sheets) {
+            a = xlsx.utils.sheet_to_json(workbook.Sheets[sheet]);
+            break;
+          }   
+          // a = a.map(item =>[item['serverid'], item['id']]);
+          readfiles(a, this);
+          // a = a.map(item =>`${item['serverid']}` + `${item['id']}`);
+        } catch (e) {
+          console.log(e);
+          this.$message.warning('文件不正确！');
+        }
+      };
+      fileReader.readAsBinaryString(file);
+      function readfiles(data, _this) {
+        _this.createFormWhite['roleId'] = data;
+        _this.$confirm(`数据读取完毕，是否展开预览?`, '提示', {
+          confirmButtonText: '确定',
+          cancelButtonText: '取消',
+          type: 'warning' })
+          .then(()=>{_this.serverCreatedialogFormVisible = true;})
+          .catch(err => false);
+      
+      
+      }
+    }
   },
   mounted() {
     
@@ -274,13 +344,30 @@ export default {
 
 <style lang="scss" rel="stylesheet/scss">
 .white-container{
-
-
-
-
+.el-dialog{
+width: 18vw;
+}
+//   .announceddialog{
+//   max-width: 35vw;
+// }
+.el-upload-dragger{
+  width: 16vw !important;
+}
+// .el-form-item__content{
+//   line-height: -100px !important;
+// }
+.el-upload__tip{
+  margin-top: -20px  !important;
+}
+.el-upload-list__item:first-child {
+    margin-top: -3px;
+}
+.whitedialog .el-dialog{
+width: 38vw;
+border-radius: 10px;
+}
 
   .selectID {
-  
     span:first-child{
  display: none;
  

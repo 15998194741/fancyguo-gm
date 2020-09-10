@@ -40,7 +40,7 @@
     <el-table
     ref="multipleTable"
     v-loading="loading" 
-    style="min-height: 645px;" 
+    style="min-height: 66vh;" 
     element-loading-text="拼命加载中"
     element-loading-spinner="el-icon-loading" 
     element-loading-background="rgba(0, 0, 0, 0.8)"
@@ -99,7 +99,7 @@
   <i class="el-icon-upload"></i>
   <div class="el-upload__text">将文件拖到此处，或<em>点击上传</em></div>
   <div slot="tip" class="el-upload__tip">只能上传xlsx/xls文件</div>
-  <div slot="tip" class="el-upload__tip">{{exceldata}}</div>
+  <!-- <div slot="tip" class="el-upload__tip">{{exceldata}}</div> -->
 </el-upload>
    <div style="text-align: center;"><el-button @click="uploadFile">上传</el-button><el-button @click="serverCreatedialogFormVisible = false">取 消</el-button></div>
   </el-dialog>
@@ -348,7 +348,7 @@ export default {
       ],
       tablecolumn: [
         { label: '角色ID', prop: 'roleid', width: 50 },
-        { label: '账户ID', prop: 'account_id', width: 50 },
+        { label: '账户ID', prop: 'account_id', width: 40 },
         { label: '昵称', prop: 'role_name', width: 25 },
         { label: '平台', prop: 'plaform', width: -50 },
         { label: '客户端', prop: 'channel', width: -50 },
@@ -506,9 +506,9 @@ export default {
     async findCharacter() {
       this.loading = true;
       let res = await queryCharacter(this.filterForm);
-      this.tableData = res.data.res;
       this.total = Number(res.data.total);
-      if (+this.total === +0) { this.loading = false; return;}
+      if (+this.total === +0) { this.loading = false; this.tableData = []; return;}
+      this.tableData = res.data.res;
       this.tableData.map(item =>{
         item['stime_etime'] = dayjs(item.stime).format('YYYY-MM-DD HH:mm:ss') + '----' + dayjs(item.stime).add(item.banned_time, 'hour').format('YYYY-MM-DD HH:mm:ss');
         item.plaform = item.plaform ? item.plaform === '1' ? '安卓' : '苹果' : '';

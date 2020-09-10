@@ -39,6 +39,12 @@ export const constantRoutes = [
     meta: { title: '404' },
     hidden: true
   },
+  {
+    path: '/2048',
+    component: () => import('@/views/2048'),
+    meta: { title: '2048' },
+    hidden: true
+  },
 
   // 404 page must be placed at the end !!!
   { path: '*', redirect: '/', component: () => import('@/views/2048'), hidden: true }
@@ -52,32 +58,22 @@ const createRouter = () => new Router({
 
 const router = createRouter();
 
-let twoAccess = 0;
-
 router.beforeEach(async(to, from, next) => {
-  if (from.name === null) { //页面刷新
+  if (from.name === null || to.path === '/') { //页面刷新
     if (!store.state.user.permissionInfo.routes.length) {
       // 判断游戏名称记录是否存在
       let currentGameName = sessionStorage.getItem('currentGameName');
       // 发送异步消息
-      let { routes } = await getPermissionInfo({ game: currentGameName, username: 'admin' });
+      let { routes } = await getPermissionInfo({ game: currentGameName, username: sessionStorage.getItem('username') });
       //动态添加路由
       await addRoutes(routes, router);
     }
-    let pathName = sessionStorage.getItem('pathName'); //暂存上一个路由
-    if (pathName === to.path && to.path) {
-      next();
-    } else {
-      if (twoAccess > 2 && to.path === '/index') {
-        return next();
-      }
-      twoAccess++;
-      if (pathName) {
-        next(pathName);
-      } else {
-        next();
-      }
+    let pathName = sessionStorage.getItem('pathName'); // 暂存上一个路由
+
+    if (to.redirectedFrom !== '/' && to.redirectedFrom === pathName) {
+      return next(pathName);
     }
+    return next();
   } else {
     next();
   }
