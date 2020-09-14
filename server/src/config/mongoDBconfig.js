@@ -232,10 +232,10 @@ class mongodb{
      * 
      * 
      */
-	async count(table_name){
+	async count(table_name, filter){
 		let nodeModel =await  this.getConnection(table_name);
 		let res = await new Promise((resolve, reject)=>{
-			nodeModel.count( (err, res) => {
+			nodeModel.count(filter, (err, res) => {
 				if (err) {
 					return reject(err);
 				} else {

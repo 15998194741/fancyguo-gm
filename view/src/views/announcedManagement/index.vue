@@ -117,7 +117,7 @@
           </el-select>
          
         </el-form-item>
-        <el-form-item label="客户端:">
+        <el-form-item label="渠道:">
           <el-select v-model="createForm['channel']" multiple placeholder="请选择" size='small' style="border-radius: 10px;" >
             <el-option v-for="(item,index) in selectForm[1].options"   :key="index"  :label='item.label' :value="item.value" >
             </el-option>
@@ -149,7 +149,7 @@
               <el-option   label='苹果' value="2" ></el-option>
           </el-select>
         </el-form-item>
-        <el-form-item label="客户端:">
+        <el-form-item label="渠道:">
           <el-select v-model="createForm['channel']" multiple placeholder="请选择" size='small' style="border-radius: 10px;" @change='queryMarqueeweights' >
             <el-option v-for="(item,index) in selectForm[1].options"   :key="index"  :label='item.label' :value="item.value" >
             </el-option></el-select>
@@ -259,7 +259,7 @@ style="min-height: 5vh;"
            </el-select>
           
          </el-form-item>
-         <el-form-item label="客户端:">
+         <el-form-item label="渠道:">
            <el-select v-model="changebulletindata['client']" disabled multiple placeholder="请选择" size='small' style="border-radius: 10px;" >
              <el-option v-for="(item,index) in selectForm[1].options"   :key="index"  :label='item.label' :value="item.value" >
              </el-option>
@@ -288,7 +288,7 @@ style="min-height: 5vh;"
            <el-select v-model="changebulletindata['plaform']" disabled placeholder="请选择" size='small' style="border-radius: 10px;" >
            </el-select>
          </el-form-item>
-         <el-form-item label="客户端:">
+         <el-form-item label="渠道:">
            <el-select v-model="changebulletindata['client']" multiple disabled placeholder="请选择" size='small' style="border-radius: 10px;" >
             </el-select>
          </el-form-item>
@@ -459,7 +459,7 @@ export default {
             value: '2'
           }]
       }, {
-        label: '客户端',
+        label: '渠道',
         key: 'channel',
         multiple: true,
         value: '',
@@ -501,7 +501,7 @@ export default {
         { label: '公告ID', prop: 'bulletinid' },
         { label: '公告类型', prop: 'type' },
         { label: '平台', prop: 'plaform' },
-        { label: '客户端', prop: 'client' },
+        { label: '渠道', prop: 'client' },
         { label: '区服名称', prop: 'servername' },
         { label: '公告标题', prop: 'title' },
         { label: '公告状态', prop: 'anno_status' },

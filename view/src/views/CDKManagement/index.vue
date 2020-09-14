@@ -18,7 +18,7 @@
    
     <div class="comprehensive-container">
       <div v-for='(i,index) in selectForm' :key='index'  class="select-item"  > {{i.label}}:
-        <el-select v-model="filterForm[i.key]" :multiple="i['multiple']" placeholder="请选择" size='small' style="border-radius: 10px;" @change="filterFormChange('change')" >
+        <el-select v-model="filterForm[i.key]" :multiple="i['multiple']" clearable :collapse-tags="i['collapse']" :filterable='i.filterable' placeholder="请选择" size='small' style="border-radius: 10px;" @change="filterFormChange('change')" >
           <el-option v-for="(item,index) in i.options" :key="index"  :label='item.label' :value="item.value" >
           </el-option>
         </el-select>
@@ -33,7 +33,7 @@
     border
     :data="tableData" 
     >
-    <el-table-column v-for='(column,index) in tablecolumn' :key='index' :label="column.label">
+    <el-table-column v-for='(column,index) in tablecolumn'  :key='index' :label="column.label">
       <template slot-scope="scope">  <div v-if="typeof scope.row[column.prop] === 'string' || typeof scope.row[column.prop] === 'number' ">
         {{ scope.row[column.prop] }}
         </div>
@@ -119,7 +119,7 @@ v-loading='creatinng'
                     <el-option   label='苹果' value="2" ></el-option>
                   </el-select>
                 </el-form-item>
-                <el-form-item label="客户端:" prop="channel">
+                <el-form-item label="渠道:" prop="channel">
                   <el-select  v-model="createForm['channel']"  class="create-form-select"  multiple  placeholder="请选择" size='small' style="border-radius: 10px;">
                     <el-option v-for="(item,index) in selectForm[1].options"   :key="index"  :label='item.label' :value="item.value" >
                     </el-option>
@@ -318,13 +318,12 @@ export default {
       selectForm: [{
         label: '平台',
         multiple: true,
+        filterable: true,
+        collapse: false,
         key: 'plaform',
         value: '',
         options: [
           {
-            label: '不限制',
-            value: ''
-          }, {
             label: '安卓',
             value: '1'
 
@@ -333,9 +332,11 @@ export default {
             value: '2'
           }]
       }, {
-        label: '客户端',
+        label: '渠道',
         key: 'channel',
         multiple: true,
+        filterable: true,
+        collapse: true,
         value: '',
         options: []
       }
@@ -353,7 +354,7 @@ export default {
         { label: 'CDKID', prop: 'id', width: 50 },
         { label: '名称', prop: 'name', width: 50 },
         { label: '平台', prop: 'plaforms', width: 25 },
-        { label: '客户端', prop: 'channel', width: -50 },
+        { label: '渠道', prop: 'channel', width: -50 },
         { label: 'CDKEY类型', prop: 'types', width: -50 },
         { label: 'CDKEY数量', prop: 'num', width: -50 },
         { label: '生效日期', prop: 'start_time', width: -50 },
@@ -366,7 +367,7 @@ export default {
         quantity: [{ required: true, message: '请输入cdk数量', type: 'integer', trigger: ['blur', 'change'] }, { validator: quantity, trigger: ['blur', 'change'] }],
         cdkkey: { validator: cdkkey, trigger: ['blur', 'change'] },
         plaform: { required: true, message: '请选择平台，如果不限制请两个同时选中。', trigger: ['blur', 'change'] },
-        channel: { required: true, message: '请选择至少一个客户端', trigger: ['blur', 'change'] },
+        channel: { required: true, message: '请选择至少一个渠道', trigger: ['blur', 'change'] },
         takeEffectTime: [{ required: true, message: '请选择生效时间' },
           { validator: takeEffectTime }],
         failureTime: [{ required: true, message: '请选择失效时间' }, { validator: failureTimeRules }]
@@ -480,15 +481,6 @@ export default {
         type: 'warning' })
         .catch(err => false);
       if (!sendtrue) {return;}
-
-
-
-
-
-
-
-
-
       const loading = this.$loading({
         lock: true,
         text: '拼命加载中',

@@ -103,7 +103,7 @@ export default {
             value: '2'
           }]
       }, {
-        label: '客户端',
+        label: '渠道',
         key: 'channel',
         multiple: true,
         value: '',
@@ -126,7 +126,7 @@ export default {
         { label: '账户ID', prop: 'uid' },
         { label: '昵称', prop: 'roleName' },
         { label: '平台', prop: 'type' },
-        { label: '客户端', prop: 'channel' },
+        { label: '渠道', prop: 'channel' },
         { label: '设备ID', prop: 'deviceid' },
         { label: '设备类型', prop: 'platform' },
         { label: '区服ID', prop: 'serverId' },

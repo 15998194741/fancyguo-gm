@@ -90,7 +90,9 @@ $globlColor: #2BBFBD;
 .el-range-editor--small.el-input__inner{
     border-radius: 10px;
   }
-
+  .el-textarea__inner:focus,.el-textarea__inner:hover,.el-textarea__inner:active{
+    border-color:$globlColor !important ;
+  }
 
   // .el-button:active, .el-button:focus{
   //   color: #2BBFBD !important;

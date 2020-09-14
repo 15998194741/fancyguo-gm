@@ -22,7 +22,7 @@ ref="CDKContainer" v-loading='cdkLoading'
    
     <div class="comprehensive-container">
       <div v-for='(i,index) in selectForm' :key='index'  class="select-item"  > {{i.label}}:
-        <el-select v-model="filterForm[i.key]" :multiple="i['multiple']" placeholder="请选择" size='small' style="border-radius: 10px;" @change="filterFormChange('change')" >
+        <el-select v-model="filterForm[i.key]"  :multiple="i['multiple']" clearable :collapse-tags="i['collapse']" :filterable='i.filterable' placeholder="请选择" size='small' style="border-radius: 10px;" @change="filterFormChange('change')" >
           <el-option v-for="(item,index) in i.options" :key="index"  :label='item.label' :value="item.value" >
           </el-option>
         </el-select>
@@ -65,6 +65,7 @@ ref="CDKContainer" v-loading='cdkLoading'
   </el-table>
   </div>
   <div class="role-container-bottom">
+   <span>当前cdk已兑换{{useTotal}}条</span> 
     <el-pagination
     style="text-align: right;"
     :page-size.sync="filterForm['pagesize']"
@@ -122,7 +123,7 @@ v-loading='creatinng'
                     <el-option   label='苹果' value="2" ></el-option>
                   </el-select>
                 </el-form-item>
-                <el-form-item label="客户端:" prop="channel">
+                <el-form-item label="渠道:" prop="channel">
                   <el-select  v-model="createForm['channel']"  class="create-form-select"  multiple  placeholder="请选择" size='small' style="border-radius: 10px;">
                     <el-option v-for="(item,index) in selectForm[1].options"   :key="index"  :label='item.label' :value="item.value" >
                     </el-option>
@@ -296,6 +297,7 @@ export default {
       annexOptions: [],
       dialogFormchange: false,
       tableDataTwo: [],
+      useTotal: '',
       filterForm: {
         key: 'CDKID',
         value: '',
@@ -321,16 +323,16 @@ export default {
           { annexName: '', annexNumber: '', id }
         ]
       },
+      filterFormShow: {},
       selectForm: [{
         label: '平台',
         multiple: false,
+        filterable: true,
+        collapse: false,
         key: 'plaform',
         value: '',
         options: [
           {
-            label: '不限制',
-            value: ''
-          }, {
             label: '安卓',
             value: '1'
 
@@ -339,9 +341,11 @@ export default {
             value: '2'
           }]
       }, {
-        label: '客户端',
+        label: '渠道',
         key: 'channel',
         multiple: true,
+        filterable: true,
+        collapse: true,
         value: '',
         options: []
       }
@@ -359,7 +363,7 @@ export default {
         { label: 'CDKID', prop: 'id' },
         { label: '名称', prop: 'name' },
         { label: '平台', prop: 'plaforms' },
-        { label: '客户端', prop: 'channel' },
+        { label: '渠道', prop: 'channel' },
         { label: 'CDKEY类型', prop: 'types' },
         { label: 'CDKEY数量', prop: 'num' },
         { label: '生效日期', prop: 'start_time' },
@@ -370,7 +374,7 @@ export default {
         { label: 'CDKKEYID', prop: '_id' },
         { label: '用户ID', prop: 'roleid' },
         { label: '平台', prop: 'plaform' },
-        { label: '客户端', prop: 'channel' },
+        { label: '渠道', prop: 'channel' },
         { label: 'CDKKEY', prop: 'key' },
         { label: '是否领取', prop: 'isUse' },
         { label: '领取时间', prop: 'receive' }
@@ -381,7 +385,7 @@ export default {
         quantity: [{ required: true, message: '请输入cdk数量', type: 'integer', trigger: ['blur', 'change'] }, { validator: quantity, trigger: ['blur', 'change'] }],
         cdkkey: { validator: cdkkey, trigger: ['blur', 'change'] },
         plaform: { required: true, message: '请选择平台，如果不限制请两个同时选中。', trigger: ['blur', 'change'] },
-        channel: { required: true, message: '请选择至少一个客户端', trigger: ['blur', 'change'] },
+        channel: { required: true, message: '请选择至少一个渠道', trigger: ['blur', 'change'] },
         takeEffectTime: [{ required: true, message: '请选择生效时间' },
           { validator: takeEffectTime }],
         failureTime: [{ required: true, message: '请选择失效时间' }, { validator: failureTimeRules }]
@@ -469,11 +473,12 @@ export default {
         this.filterForm[i] = '';
       }
       this.filterForm['page'] = 1;
-
+      this.filterFormShow['click'] = this.filterForm['value'] ? { [this.filterForm['key']]: this.filterForm['value'] } : false;
       this.filterFormChangeSubmit();
     },
     async filterFormChangeChange() {
-      if (this.tableDataTwo.length < 2) {return;}
+      let { click } = this.filterFormShow;
+      if (!click) {return;}
       this.filterFormChangeSubmit();
     },
     async filterFormChangeSubmit() {
@@ -490,7 +495,7 @@ export default {
         loading.close();
         return;
       }
-      let { pagesize, page, value, key } = this.filterForm;
+      let { pagesize, page, value, key, plaform, channel, takeEffectTime } = this.filterForm;
       if (!data) {
         this.$message.warning(`查找${key},${value}不存在`);
         this.tableDataTwo = [];
@@ -513,8 +518,8 @@ export default {
         return;
       }
       let { cdkid: tablename } = res[0];
-      let querys = { page, tablename, pagesize };
-      let queryByKey = { page, tablename, pagesize, value };
+      let querys = { page, tablename, pagesize, plaform, channel, takeEffectTime };
+      let queryByKey = { page, tablename, pagesize, value, plaform, channel, takeEffectTime };
       // let responseData;
      
       switch (!!value) {
@@ -556,12 +561,13 @@ export default {
     async ByCdkID(val) {
       let res = await detailsFind(val);
       let { data } = res;
-      let { res: responseData, total } = data;
+      let { res: responseData, total, useTotal } = data;
       if (!responseData) {this.tableDataTwo = []; return;}
       this.total = total;
+      this.useTotal = useTotal;
       this.tableDataTwo = responseData.map(item => {
         item['isUse'] = item['isUse'] ? '是' : '否';
-        item['receive'] = item['receive'] ? dayjs(item['receive']).format('YYYY-MM-DD HH:mm:ss') : '';
+        item['receive'] = item['receive'] ? dayjs(item['receive']).subtract(8, 'hour').format('YYYY-MM-DD HH:mm:ss') : '';
         return item;
       });
     },
@@ -581,7 +587,6 @@ export default {
         page: 1,
         pagesize: 100
       };
-      console.log(this);
     },
 
 

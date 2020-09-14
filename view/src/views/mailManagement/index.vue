@@ -112,7 +112,7 @@
                       <el-option   label='苹果' value="2" ></el-option>
                   </el-select>
                 </el-form-item>
-                <el-form-item v-show='!createFormMail.allServerTrue' label="客户端:">
+                <el-form-item v-show='!createFormMail.allServerTrue' label="渠道:">
                   <el-select v-model='createFormMail.channel' multiple  placeholder="请选择" size='small' style="border-radius: 10px;" @change='plaformChannelToservername' >
                     <el-option v-for="(item,index) in selectForm[1].options"   :key="index"  :label='item.label' :value="item.value" >
                     </el-option>
@@ -232,7 +232,7 @@
                   </el-select>
                  
                 </el-form-item>
-                <el-form-item v-show='!updateFormMail.allServerTrue' label="客户端:">
+                <el-form-item v-show='!updateFormMail.allServerTrue' label="渠道:">
                   <el-select v-model='updateFormMail.channel' multiple  placeholder="请选择" size='small' style="border-radius: 10px;" @change='plaformChannelToservername' >
                     <el-option v-for="(item,index) in selectForm[1].options"   :key="index"  :label='item.label' :value="item.value" >
                     </el-option>
@@ -390,7 +390,7 @@ export default {
             value: '2'
           }]
       }, {
-        label: '客户端',
+        label: '渠道',
         filterable: true,
         collapse: true,
         multiple: true,
@@ -426,7 +426,7 @@ export default {
         { label: '邮件ID', prop: 'id' },
         { label: '邮件标题', prop: 'title' },
         { label: '平台', prop: 'plaforms' },
-        { label: '客户端', prop: 'channel' },
+        { label: '渠道', prop: 'channel' },
         { label: '区服名', prop: 'servername' },
         { label: '玩家ID', prop: 'roleid', list: 'roleidListToJson' },
         { label: '邮件内容', prop: 'text' },

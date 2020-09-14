@@ -49,7 +49,6 @@
       <el-table
         ref="multipleTable"
         v-loading="loading"
-       
         style="min-height: 66vh;" 
         element-loading-text="拼命加载中" 
         element-loading-spinner="el-icon-loading"
@@ -80,7 +79,7 @@
             <el-tag v-for='(i,index) in  scope.row["plaform"]' :key="index">{{ i |plaform}}</el-tag>
             </template>
         </el-table-column>
-        <el-table-column label="客户端"  :width="widthtable">
+        <el-table-column label="渠道"  :width="widthtable">
           <template slot-scope="scope" >
             <el-tooltip effect='light'  placement="top" class="aasdhjkahskdhjk">
               <div slot="content" :ref="'contentCssTableHover'+scope.$index" class="contentCssTableHover" > <el-tag v-for='(i,index) in  scope.row["channel"]' :key="index" >{{ i }}</el-tag></div>
@@ -117,9 +116,10 @@
       <div class="bottom-msg">
         <div class="botton-msg-left"> 当前查询共{{total}}个区服,<span>其中显示状态:<span v-for='(i,index) of displayNum' :key='index'>  {{i.display|display}}-{{i.num}}个 </span> </span></div>
 
-        <div>
+        <div class="botton-msg-right">
           <!-- current-page='4' -->
           <el-pagination
+
               :page-size.sync="filterForm['pagesize']"
               :page-sizes="[20, 40,60,80]"
               background
@@ -145,7 +145,7 @@
           </el-table-column>
           <el-table-column prop="plaform" label="平台" :width="widthtable">
           </el-table-column>
-          <el-table-column prop="channel" label="客户端" :width="widthtable">
+          <el-table-column prop="channel" label="渠道" :width="widthtable">
           </el-table-column>
           <el-table-column prop="display" label="显示状态" :width="widthtable">
           </el-table-column>
@@ -185,8 +185,8 @@
             </el-option>
           </el-select>
         </el-form-item>
-        <el-form-item label="客户端" class="createFormAlertBody"  prop='channel' hide-required-asterisk required>
-          <el-select v-model="createForm.channel"  class="alertcontant" multiple placeholder="请选择客户端">
+        <el-form-item label="渠道" class="createFormAlertBody"  prop='channel' hide-required-asterisk required>
+          <el-select v-model="createForm.channel"  class="alertcontant" multiple placeholder="请选择渠道">
             <el-option v-for="(item,index) in selectForm[1].options" v-show="item.value===''?false:true" :key="index" :label='item.label' :value="item.value">
             </el-option>
           </el-select>
@@ -224,7 +224,7 @@
         <div class="changeAlertBody"><span class="alertspan">区服id</span><el-input v-model="formchange.serverid" disabled class="alertcontant"></el-input>     </div>
         <div class="changeAlertBody"><span class="alertspan">区服名称</span><el-input v-model="formchange.servername" disabled class="alertcontant"></el-input>    </div>
         <div class="changeAlertBody"><span class="alertspan">平台</span><el-select v-model="formchange.plaform" disabled class="alertcontant" placeholder="请选择活动区域"> </el-select>     </div>
-        <div class="changeAlertBody"><span class="alertspan">客户端</span><el-select v-model="formchange.channel" disabled class="alertcontant"  placeholder="请选择活动区域">        </el-select>       </div>
+        <div class="changeAlertBody"><span class="alertspan">渠道</span><el-select v-model="formchange.channel" disabled class="alertcontant"  placeholder="请选择活动区域">        </el-select>       </div>
         <div class="changeAlertBody"><span class="alertspan">IP/PORT</span><el-input v-model="formchange.ip" disabled class="alertcontant"></el-input>     </div>
         <div class="changeAlertBody">   
          <span class="alertspan">显示状态<b style="color: red;">*</b></span>
@@ -299,7 +299,7 @@ export default {
             value: '2'
           }]
       }, {
-        label: '客户端',
+        label: '渠道',
         key: 'channel',
         filterable: true,
         collapse: true,
@@ -402,7 +402,7 @@ export default {
           { required: true, message: '请选择一个平台', trigger: ['blur', 'change'] }
         ],
         channel: [
-          { required: true, message: '请选择一个客户端', trigger: ['blur', 'change'] }
+          { required: true, message: '请选择一个渠道', trigger: ['blur', 'change'] }
         ],
         ip: [
           { validator: ipcheck, trigger: ['blur', 'change'] }
@@ -606,7 +606,7 @@ export default {
     
       let mergeTrue = arr.every(({ plaform, channel }) => plaform.sort().toString() === _plaform.sort().toString() && channel.sort().toString() === _channel.sort().toString());
       if (!mergeTrue) {
-        this.$message.warning('不同平台，不同客户端，不可以合服!');
+        this.$message.warning('不同平台，不同渠道，不可以合服!');
         return;
       }
       let mergetrue = await this.$confirm('是否确认合并区服?', '提示', {
@@ -1007,7 +1007,6 @@ export default {
       }
   .change-header {
     display: flex;
-      
     .rightchange ul {
       width: 160px;
 
@@ -1115,7 +1114,11 @@ export default {
 
       .botton-msg-left {
         flex: 1;
-        margin:10px;
+        margin-left: 0.5vw;
+        // margin:10px;
+      }
+      .botton-msg-right{
+        margin-right: 0.5vw;
       }
     }
 
@@ -1125,7 +1128,6 @@ export default {
     }
 
     .alertname {
-
       width: 100%;
       display: flex;
       flex-wrap: wrap;
@@ -1208,10 +1210,10 @@ export default {
 
     .table-container {
       .table-body{
-   margin: 10px;
+     margin: 10px;
     background-color: white;
     border-radius: 5px;
-    padding: 5px 5px -2px 5px;
+    padding: 5px 5px 0px 5px !important;
     min-height: 66vh;
     box-shadow: 1px 1px 4px 0px #828282;
       }

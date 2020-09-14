@@ -350,13 +350,21 @@ class CDKService{
 	}
 	async findByFilter(data){
 		let { plaform, channel, page, pagesize, takeEffectTime, srtfailureTimetime, gameid} = data;
+		let getType = data => Object.prototype.toString.call(data).split(' ')[1].slice(0, -1);
 		let where = `where cdk.game_id='${gameid}' `;
-		if(typeof plaform === 'string' && plaform){plaform = [plaform];}
-		if(typeof channel === 'string' && channel){channel = [channel];}
-		where += !plaform?'':` and cdk.plaform = '[${plaform.map(item=> `"${item}"`)}]'::jsonb  `;
+		// if(typeof plaform === 'string' && plaform){plaform = [plaform];}
+		if(plaform){
+			where += getType(plaform)==='String'?` and plaform =  '[${JSON.stringify(plaform)}]' `:`  and plaform @> '${JSON.stringify(plaform)}' `;
+		}
+		// if(typeof channel === 'string' && channel){channel = [channel];}
+		if(channel){
+			where += getType(channel)==='String'?` and  channel = '[${JSON.stringify(channel)}]' `:` and channel @> '${JSON.stringify(channel)}'  and  jsonb_array_length(channel) = jsonb_array_length('${JSON.stringify(channel)}'::jsonb) `;
+		}
+		// where += !plaform?'':` and cdk.plaform = '[${plaform.map(item=> `"${item}"`)}]'::jsonb  `;
 		where += !takeEffectTime?'':` and cdk.start_time between  '${takeEffectTime[0]}' and '${takeEffectTime[1]}'  `;
+
 		where += !srtfailureTimetime?'':` and cdk.start_time between  '${srtfailureTimetime[0]}' and '${srtfailureTimetime[1]}'  `;
-		where += !channel?'':` and cdk.channel @>  '[${channel.map(item => `"${item}"`)}]'::jsonb `;
+		// where += !channel?'':` and cdk.channel @>  '[${channel.map(item => `"${item}"`)}]'::jsonb `;
 		let sql = `
 		with asd as (select (jsonb_array_elements(annex) ->> 'annexName')::jsonb ->> 1  as name, jsonb_array_elements(annex) ->> 'annexNumber' as numbers ,id  from  gm_cdk),
 		dsa as (select  asd.id, string_to_array(string_agg(concat(art.name,'  ',asd.numbers,'个'),','),',')  as annexs  from asd  left join gm_article art on art.article_id = asd.name GROUP BY asd.id ),
@@ -391,18 +399,40 @@ class CDKService{
 		return {res, total};
 	}
 	async detailsFind(data){
-		let { tablename, page, pagesize} = data;
+		let {plaform, channel, takeEffectTime:receive, tablename, page, pagesize} = data;
+		let filter = {};
+		if(plaform){
+			filter['plaform'] = +plaform===1?'安卓':'苹果';
+		}
+		if(channel){
+			filter['channel'] = channel;
+		}
+		if(receive){
+			filter['receive'] = {'$gte':new Date(dayjs(new Date(receive[0])).add(8, 'hour')), '$lte':new Date(dayjs(new Date(receive[1])).add(8, 'hour')) };
+		}
 		pagesize = Number(pagesize);
-		let res = await mongodb.findall(tablename, pagesize, pagesize*(page-1));
-		let total = await mongodb.count(tablename);
-		return {res, total};
+	
+		let res = await mongodb.findall(tablename, pagesize, pagesize*(page-1), filter);
+		let total = await mongodb.count(tablename, filter);
+		let useTotal = await mongodb.count(tablename, {isUse:true});
+		return {res, total, useTotal};
 	}
 
 	async cdkkeyfind(data){
-		let { tablename, value:key, page, pagesize} = data;
+		let { plaform, channel, takeEffectTime:receive, tablename, value:key, page, pagesize} = data;
+		let filter = {};
+		if(plaform){
+			filter['plaform'] = +plaform===1?'安卓':'苹果';
+		}
+		if(channel){
+			filter['channel'] = channel;
+		}
+		if(receive){
+			filter['receive'] = {'$gte':new Date(dayjs(new Date(receive[0])).add(8, 'hour')), '$lte':new Date(dayjs(new Date(receive[1])).add(8, 'hour')) };
+		}
 		pagesize = Number(pagesize);
 		let res = await mongodb.findbyCDKkey(tablename, pagesize, pagesize*(page-1), {key});
-		let total = await mongodb.count(tablename);
+		let total = await mongodb.count(tablename, filter);
 		total = tablename === key ?total : 1;
 		let only = tablename === key;
 		return {res, total, only};

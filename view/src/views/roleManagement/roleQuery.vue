@@ -251,7 +251,7 @@ export default {
             value: '2'
           }]
       }, {
-        label: '客户端',
+        label: '渠道',
         key: 'channel',
         filterable: true,
         multiple: true,
@@ -327,7 +327,7 @@ export default {
       //   roleid: '', //角色ID
       //   account_id: '', //用户id
       //   role_name: '', //角色昵称
-      //   channel: '', //渠道客户端
+      //   channel: '', //渠道渠道
       //   distinct_id: '', //设备iD
       //   machine: '', //设备类型
       //   plaform: '', //平台                     新增 Android  IOS
@@ -351,7 +351,7 @@ export default {
         { label: '账户ID', prop: 'account_id', width: 40 },
         { label: '昵称', prop: 'role_name', width: 25 },
         { label: '平台', prop: 'plaform', width: -50 },
-        { label: '客户端', prop: 'channel', width: -50 },
+        { label: '渠道', prop: 'channel', width: -50 },
         { label: '设备ID', prop: 'distinct_id', width: 53 },
         { label: '设备类型', prop: 'machine', width: -20 },
         { label: '区服名称', prop: 'vip_level', width: 15 },
@@ -397,7 +397,7 @@ export default {
     exportFile() {
       require.ensure([], () => {
         const { export_json_to_excel: exportJsonToExcel } = require('@/Excel/Export2Excel');//注意这个Export2Excel路径
-        const tHeader = ['角色ID', '账户ID', '昵称', '平台', '客户端', '设备ID', '设备类型', '区服名称', '区服ID', '等级', 'VIP等级', '付费总额', 'IP', '注册时间', '最后登录时间', '封禁类型', '封禁范围', '封禁原因', '封禁时长', '封禁时间-解封时间']; // 上面设置Excel的表格第一行的标题
+        const tHeader = ['角色ID', '账户ID', '昵称', '平台', '渠道', '设备ID', '设备类型', '区服名称', '区服ID', '等级', 'VIP等级', '付费总额', 'IP', '注册时间', '最后登录时间', '封禁类型', '封禁范围', '封禁原因', '封禁时长', '封禁时间-解封时间']; // 上面设置Excel的表格第一行的标题
         // const filterVal = ['index', 'nickName', 'name']; // 上面的index、nickName、name是tableData里对象的属性key值
         console.log(this.tableTrue);
         var list = []; //把要导出的数据tableData存到list

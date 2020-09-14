@@ -1,6 +1,4 @@
-import Ta from '../../utils/requests';
 import Cp from '../../utils/Cp';
-import { reject } from 'ramda';
 import { dbSequelize } from '../../config';
 
 var mysql  = require('mysql');  
