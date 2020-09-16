@@ -37,7 +37,7 @@ class whiteServer {
 		let where = value?` and w.id = '${value}'::int `:''; 
 		where += type?` and w.sendtype = ${!!(type === 'true')}`:'';
 		let sql = `
-		select w.*,(case when w."sendtype" then '周期' else '单次' end ) as type ,a.annexnames from (select 
+		select w.*,(case when w."sendtype" then '周期' else '单次' end ) as type,(case when w."sendtype" = false then '单次' when w."cycle" = 'month' then '每月' when w."cycle" = 'week' then '每周'  end) as cycles ,a.annexnames from (select 
 			string_to_array(string_agg(concat(name,'  ',number,'个'),','),',') as annexnames,id
 			from (select w.*,a.name from 
 			(select jsonb_array_elements(annex) ->> 'name' as nameid  ,
@@ -69,6 +69,16 @@ class whiteServer {
 	}
 	async whiteStopMail(data){
 		let {gameid, id } =data;
+		let querysql = `
+		select count(id) from gm_white_user where smtp_id = '${id}' and status = '1' 
+		`;
+		let count = await dbSequelize.query(querysql, {
+			replacements:['active'], type:Sequelize.QueryTypes.SELECT
+		});
+		
+		if(+count[0]['count'] !== 0 ){
+			throw new Error('此邮件有白名单用户存在！！！');
+		}
 		let sql = `
 		update  gm_white_smtp set  status = '0' where game_id = '${gameid}' and id ='${id}'
 		`;
@@ -110,10 +120,11 @@ class whiteServer {
 	}
 	async mailRelatedUser(data){
 		let {roleId, name, type, notebook, gameid} = data;
+		let {user} =data;
 
 		let sql = `
 		insert into gm_white_user (
-			game_id,notebook,roleid,smtp_id,plaform,channel,roleids,type,servername
+			game_id,notebook,roleid,smtp_id,plaform,channel,roleids,type,servername,create_user_id
 			)values(
 			'${gameid}','${notebook}','${JSON.stringify(roleId)}',(select id from  gm_white_smtp where title = '${name}'),
 			(select array_to_json(string_to_array(string_agg(plaform, ','), ',')) as plaform from (select * from (select jsonb_array_elements_text(plaform) as plaform  from (		select plaform ,1 as id  from gm_server where  '[${roleId.map(item => item['serverid'])}]'::jsonb @> serverid::varchar::jsonb 
@@ -124,7 +135,7 @@ class whiteServer {
 			(
 				select array_to_json(string_to_array(string_agg(servername, ','), ',')) as servername from (select * from (select servername  from (              select servername ,1 as id  from gm_server where  '[${roleId.map(item => item['serverid'])}]'::jsonb @> serverid::varchar::jsonb
                         ) a ) a GROUP BY servername)a 
-			)
+			),'${user['id']}'
 			) returning id 
 		`;
 		// console.log(sql);
@@ -187,7 +198,8 @@ class whiteServer {
 	async sendWhiteMail(data){
 		let { id, gameid}= data;
 		let  res = await Cp.post(gameid, 'white/create', {id});
-		console.log(res);
+		return res;
+		// console.log(res);
 	}
 	async stopWhiteMail(data){
 		let {gameid, id} = data;
@@ -198,6 +210,33 @@ class whiteServer {
 			replacements:['active'], type:Sequelize.QueryTypes.UPDATE
 		});
 		return res;
+	}
+	async recordLookup(data){
+		// console.log(data);
+		let {gameid, key, value, page, pagesize} =data;
+		let roleidWhere = '';
+		let mailWhere = '';
+		if(value){
+			roleidWhere = key === 'roleid'?` where roleid = '${value}'`:'';
+			mailWhere = key === 'mailid'?`and smtp_id= '${value}'`:'';
+		}
+		let sql =`
+		with qwe as (select roleid,serverid,white_user_id,sendtime from gm_white_recording  ${roleidWhere}),
+		asd as (select * from gm_white_user where id::varchar in (select white_user_id from qwe) and game_id = '${gameid}'  ${mailWhere} )
+		select qwe.roleid as recoreroleid,qwe.sendtime as sendtime,qwe.serverid,asd.* from asd join qwe on asd.id::varchar = qwe.white_user_id ORDER BY create_time desc limit ${pagesize} offset ${pagesize*(page-1)}
+`;
+		let tableData = await dbSequelize.query(sql, {
+			replacements:['active'], type:Sequelize.QueryTypes.SELECT
+		});
+		let totalSql = `
+		with qwe as (select roleid,serverid,white_user_id,sendtime from gm_white_recording  ${roleidWhere}),
+		asd as (select * from gm_white_user where id::varchar in (select white_user_id from qwe) and game_id = '${gameid}'  ${mailWhere} )
+		select count(*) from asd join qwe on asd.id::varchar = qwe.white_user_id `;
+		let total = await dbSequelize.query(totalSql, {
+			replacements:['active'], type:Sequelize.QueryTypes.SELECT
+		});
+		total = total[0]['count'];
+		return {tableData, total};
 	}
 }
 export default new whiteServer();

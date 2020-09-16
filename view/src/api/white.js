@@ -106,3 +106,13 @@ export function stopWhiteMail(params) {
     params
   });
 }
+
+
+
+export function recordLookup(params) {
+  return request({
+    url: '/white/recordLookup',
+    method: 'get',
+    params
+  });
+}

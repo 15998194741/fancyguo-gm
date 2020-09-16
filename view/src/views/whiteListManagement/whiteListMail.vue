@@ -52,10 +52,13 @@
           </div>  
         </template>
     </el-table-column>
-    <el-table-column label="操作">
-      <template slot-scope="scope">
-        <el-button  type="warning"  @click="changeWhiteMail(scope.$index,scope.row)">修改</el-button>
+    <el-table-column label="操作" class="tableTest-caozuo" >
+      <template slot-scope="scope" class="tableTest-caozuo">
+        <div class="tableTest-caozuo">
+             <el-button  type="warning"  @click="changeWhiteMail(scope.$index,scope.row)">修改</el-button>
         <el-button  type="danger"  @click="deleteWhiteMail(scope.$index,scope.row)">删除</el-button>
+        </div>
+      
       </template>
  </el-table-column>
   </el-table>
@@ -327,7 +330,8 @@ export default {
         { label: '邮件标题', prop: 'title' },
         { label: '邮件内容', prop: 'text' },
         { label: '附件', prop: 'annexnames' },
-        { label: '福利类别', prop: 'type' }
+        { label: '福利类别', prop: 'type' },
+        { label: '福利周期', prop: 'cycles' }
         // { label: '发送时间', prop: 'plaform' }
       ]
     };
@@ -390,9 +394,12 @@ export default {
       if (!sendtrue) {return;}
       let res = await whiteStopMail({ id });
       let { code } = res;
-      if (+code !== 200) {this.$message.warning('删除失败'); return;}
-      this.filterFormChangeClick();
-      this.$message.success('删除成功');
+      // if (+code !== 200) {this.$message.warning(message.split('\n')[0]); return;}
+      if (+code === 200) {
+        this.filterFormChangeClick();
+        this.$message.success('删除成功');
+      }
+     
       // if(+code === 200 ){this.$message.success('删除成功')}
     },
     async createFormSubmit() {
@@ -515,7 +522,13 @@ export default {
     }
   },
   mounted() {
-    
+    let data = { ...this.$route.query };
+    let { id } = data;
+    this.filterForm['value'] = id;
+    this.filterFormChangeClick();
+
+    // let page = 1;
+    // let pagesize = 100;
     // const _this = this;
     // const erd = elementResizeDetectorMaker();
     // erd.listenTo(document.getElementById('body'), element =>{
@@ -532,6 +545,11 @@ export default {
 .whitemail-container{
 .cell .el-button:active, .el-button:focus{
   color: #2BBFBD !important;
+}
+.tableTest-caozuo   {
+   .el-button:active, .el-button:focus{
+  color: white !important;
+  }
 }
 .cell{
   max-height: 40px;

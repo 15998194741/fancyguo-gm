@@ -31,9 +31,8 @@
     :data="tableData" 
     >
        <!-- :row-class-name="tableRowClassName"  -->
-    <el-table-column  type="selection" width="40"></el-table-column>
     <el-table-column v-for='(column,index) in tablecolumn' :key='index'  :label="column.label">
-<template slot-scope="scope" :title="scope.row[column.prop]">
+      <template slot-scope="scope" :title="scope.row[column.prop]">
            <div v-if="!scope.row[column.prop]">
         </div>
         <div v-else-if="typeof scope.row[column.prop] === 'string' || typeof scope.row[column.prop] === 'number' " :title="scope.row[column.prop]"  class="tableHiddenBody">
@@ -53,7 +52,12 @@
           </div>  
         </template>
     </el-table-column>
-     <el-table-column  v-if='grade' label="停用:">
+      <el-table-column  v-if='grade' label="查看">
+       <template slot-scope="scope" > 
+         <el-button type="primary" plain @click='whiteIndexToMail(scope)'>查看</el-button>
+       </template>
+    </el-table-column>
+     <el-table-column  v-if='grade' label="停用">
        <template slot-scope="scope" > 
          <el-button  v-show="scope['row']['type'] === '周期'"  type="danger" plain @click='whiteMailStop(scope)'>停用</el-button>
        </template>
@@ -310,6 +314,7 @@ export default {
         { label: '渠道', prop: 'channel', width: 25 },
         { label: '服务器名称', prop: 'servername', width: -50 },
         { label: '福利类别', prop: 'type', width: -50 },
+        { label: '福利ID', prop: 'smtp_id', width: -50 },
         // { label: '福利发放次数', prop: 'plaform', width: -50 },
         // { label: '角色分组', prop: 'plaform', width: -50 },
         { label: '备注', prop: 'notebook', width: -50 }
@@ -325,6 +330,13 @@ export default {
     }
   },
   methods: {
+    async whiteIndexToMail(scope) {
+      let data = scope;
+      this.$router.push({
+        path: '/whiteListManagement/whiteListMail',
+        query: { ...data['row'] }
+      });
+    },
     async whiteMailStop(scope) {
       let sendtrue = await this.$confirm(`是否确认停用白名单邮件?`, '提示', {
         confirmButtonText: '确定',

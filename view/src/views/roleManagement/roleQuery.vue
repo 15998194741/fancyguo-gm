@@ -51,7 +51,7 @@
     >
     <el-table-column  type="selection" width="40"></el-table-column>
   
-    <el-table-column v-for='(column,index) in tablecolumn' :key='index' :width="screenWidth+column.width" :label="column.label">
+    <el-table-column v-for='(column,index) in tablecolumn' :key='index' :label="column.label">
       <template slot-scope="scope">{{ scope.row[column.prop] }}</template>
     </el-table-column>
     <el-table-column type="expand">

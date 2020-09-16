@@ -65,11 +65,11 @@ service.interceptors.response.use(
           });
         });
       } else if (res.code === 500) {
-        // Message({
-        //   message: res.message,
-        //   type: 'error',
-        //   duration: 5 * 1000
-        // }        );
+        Message({
+          message: res.message.split('\n')[0],
+          type: 'error',
+          duration: 5 * 1000
+        });
       }
     }
     return res;

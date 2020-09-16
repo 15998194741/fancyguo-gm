@@ -90,7 +90,13 @@ async stopWhiteMail(ctx){
 	let result = await whiteServer.stopWhiteMail(data);
 	ctx.body = statusCode.SUCCESS_200('创建成功', result);
 }
-
+@get('/recordLookup')
+async recordLookup(ctx){
+	ctx.log.resourceDesc = '白名单记录查找';
+	let data = ctx.data;
+	let result = await whiteServer.recordLookup(data);
+	ctx.body = statusCode.SUCCESS_200('创建成功', result);
+}
 
 
 }

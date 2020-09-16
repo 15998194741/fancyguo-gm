@@ -74,11 +74,21 @@ const routeRules = {
     meta: { title: '白名单邮件' },
     component: () => import('@/views/whiteListManagement/whiteListMail')
   },
+  '/whiteListManagement/whiterecording': {
+    path: '/whiteListManagement/whiterecording',
+    meta: { title: '白名单记录' },
+    component: () => import('@/views/whiteListManagement/whiterecording')
+  },
   // GM管理
   '/GMManagement': {
     path: '/GMManagement',
     component: () => import('@/views/GMManagement'),
     meta: { title: 'GM管理' }
+  },
+  '/clientManagement': {
+    path: '/clientManagement',
+    component: () => import('@/views/clientManagement'),
+    meta: { title: '客户端管理' }
   }
 };
 

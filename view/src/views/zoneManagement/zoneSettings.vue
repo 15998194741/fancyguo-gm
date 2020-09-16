@@ -64,22 +64,22 @@
         @selection-change="handleSelectionChange"
         @size-change="handleSizeChange">
         <el-table-column  type="selection" width="55"></el-table-column>
-        <el-table-column  label="合服ID" :width="widthtable">
+        <el-table-column  label="合服ID" >
           <template slot-scope="scope">{{ scope.row.childrens?scope.row.id:'' }} </template>
         </el-table-column>
-        <el-table-column label="区服ID" :width="widthtable">
+        <el-table-column label="区服ID" >
           <template slot-scope="scope">{{ scope.row.childrens?'':scope.row.id }} </template>
         </el-table-column>
-        <el-table-column label="名称" :width="widthtable">
+        <el-table-column label="名称" >
           <template slot-scope="scope">{{ scope.row.servername }} </template>
         </el-table-column>
-        <el-table-column   label="平台"   name='plaform' :width="widthtable">
+        <el-table-column   label="平台"   name='plaform'>
           <!-- <template slot-scope="scope">{{ scope.row.plaform|plaform }} </template> -->
           <template slot-scope="scope"> 
             <el-tag v-for='(i,index) in  scope.row["plaform"]' :key="index">{{ i |plaform}}</el-tag>
             </template>
         </el-table-column>
-        <el-table-column label="渠道"  :width="widthtable">
+        <el-table-column label="渠道"  >
           <template slot-scope="scope" >
             <el-tooltip effect='light'  placement="top" class="aasdhjkahskdhjk">
               <div slot="content" :ref="'contentCssTableHover'+scope.$index" class="contentCssTableHover" > <el-tag v-for='(i,index) in  scope.row["channel"]' :key="index" >{{ i }}</el-tag></div>
@@ -88,13 +88,13 @@
             <!-- <el-tag v-for='(i,index) in  scope.row["channel"]' :key="index">{{ i }}</el-tag> -->
           </template>
         </el-table-column>
-        <el-table-column  label="显示状态"  :filters="tableFilter.display" :filter-method="displatFilterTag" :width="widthtable">
+        <el-table-column  label="显示状态"  :filters="tableFilter.display" :filter-method="displatFilterTag" >
           <template slot-scope="scope">{{ scope.row.display|display }} </template>
         </el-table-column>
-        <el-table-column  :filters="tableFilter.load" :filter-method="loadFilterTag" label="负载状态" :width="widthtable">
+        <el-table-column  :filters="tableFilter.load" :filter-method="loadFilterTag" label="负载状态">
           <template slot-scope="scope">{{ scope.row.load|display }} </template>
         </el-table-column>
-        <el-table-column label="开服时间"  :width="widthtable">
+        <el-table-column label="开服时间"  >
           <template slot-scope="scope">{{scope.row.srttime?scope.row.srttime:scope.row.create_time | timeFormate }} </template>
         </el-table-column>
         <el-table-column v-if="grade" prop='status' label="操作">
