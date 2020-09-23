@@ -46,12 +46,14 @@ export default {
     font-family: cursive;
   background-size: cover;
   /* margin: 0 0 5px 0; */
-     height: 89.3vh;
+    //  height: 89.3vh;
+      height: 100%;
   .welcome{
     font-size: 100px;
   }
 }
 #business-index{
-     height: 89.3vh;
+    //  height: 89.3vh;
+   height: 100%;
 }
 </style>

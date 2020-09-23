@@ -142,8 +142,8 @@ class whiteServer {
 		let res = await	dbSequelize.query(sql, {
 			replacements:['active'], type:Sequelize.QueryTypes.INSERT
 		});
-		let id = res[0][0]['id'];
-		await this.sendWhiteMail({id, gameid});
+		// let id = res[0][0]['id'];
+		// await this.sendWhiteMail({id, gameid});
 		return res;
 	}
 	async servernameComponents(data){
@@ -195,12 +195,12 @@ class whiteServer {
 		});
 		return res;
 	}
-	async sendWhiteMail(data){
-		let { id, gameid}= data;
-		let  res = await Cp.post(gameid, 'white/create', {id});
-		return res;
-		// console.log(res);
-	}
+	// async sendWhiteMail(data){
+	// 	let { id, gameid }= data;
+	// 	let  res = await Cp.post(gameid, 'white/create', {id});
+	// 	return res;
+	// 	// console.log(res);
+	// }
 	async stopWhiteMail(data){
 		let {gameid, id} = data;
 		let sql = `

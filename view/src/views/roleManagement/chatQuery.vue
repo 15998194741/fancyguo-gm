@@ -129,7 +129,7 @@ import elementResizeDetectorMaker from 'element-resize-detector';
 
 export default {
 
-  name: 'rolequery',
+  name: 'chatquery',
   data() {
     return {
       serverCreatedialogFormVisible: false,

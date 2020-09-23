@@ -57,9 +57,9 @@ const createRouter = () => new Router({
 });
 
 const router = createRouter();
-
 router.beforeEach(async(to, from, next) => {
   if (from.name === null || to.path === '/') { //页面刷新
+  
     if (!store.state.user.permissionInfo.routes.length) {
       // 判断游戏名称记录是否存在
       let currentGameName = sessionStorage.getItem('currentGameName');
@@ -68,15 +68,17 @@ router.beforeEach(async(to, from, next) => {
       //动态添加路由
       await addRoutes(routes, router);
     }
+   
     let pathName = sessionStorage.getItem('pathName'); // 暂存上一个路由
-
-    if (to.redirectedFrom !== '/' && to.redirectedFrom === pathName) {
+    
+    if (to.redirectedFrom !== '/' && to.redirectedFrom === pathName && to.redirectedFrom !== '/index') {
       return next(pathName);
     }
     return next();
   } else {
     next();
   }
+  
 });
 
 // Detail see: https://github.com/vuejs/vue-router/issues/1234#issuecomment-357941465

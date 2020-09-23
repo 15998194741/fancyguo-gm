@@ -36,9 +36,12 @@ export class UserController {
 	}
 	@post('/stop')
 	async stopserver(ctx){
-		ctx.log.resourceDesc = '区服批量操作';
+		ctx.log.resourceDesc = '区服停用';
 		let data = ctx.request.body;
+		
 		let result = await Components.stopserver(data);
+		let {serverid} = data;
+		ctx.logging( '区服停用', '区服管理', `停用了区服ID为 ${serverid} 的区服` );
 		ctx.body = statusCode.SUCCESS_200('查找成功', result);
 	}
 
@@ -96,6 +99,7 @@ export class UserController {
 		let user = ctx.user;
 		let data = ctx.data;
 		let result = await gmServerService.serverCreate({data, user});
+		ctx.logging( '创建区服', '区服管理', '区服创建考虑时间分厘卡看来就是快乐' );
 		ctx.body = statusCode.SUCCESS_200('创建成功', result);
 	}
 	/**

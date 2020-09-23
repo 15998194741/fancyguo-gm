@@ -14,7 +14,6 @@ class GmServerService extends BaseService{
   
 	//区服按需查找
 	async serverFindByParam(findForm) {
-	    
 		let getType = data => Object.prototype.toString.call(data).split(' ')[1].slice(0, -1);
 		let { plaform, display, load, gameid, test, srttime, channel, page, pagesize, mergeserver, key, value} = findForm;
 		findForm = {
@@ -50,16 +49,16 @@ class GmServerService extends BaseService{
 		if(value){
 			where += key ==='serverid'?` and serverid = '${value}'`: ` and serverid='${value}' and not(childrens is null)   `;
 		}
-		let selectSql = `select * from gm_server  ${where} and (pid is null or  trim(pid) ='') order by id limit ${pagesize} offset (${pagesize}*${page-1})`;
+		let selectSql = `select * from gm_server  ${where} and status = 1 and (pid is null or  trim(pid) ='') order by id limit ${pagesize} offset (${pagesize}*${page-1})`;
 		let arr =  await dbSequelize.query(selectSql);
-		let totalSql = `select count(*) as total from gm_server ${where} and (pid is null or  trim(pid) ='')  `;
+		let totalSql = `select count(*) as total from gm_server ${where} and status = 1 and (pid is null or  trim(pid) ='')  `;
 		let totals = await dbSequelize.query(totalSql);
 	
 		let {total} = totals[0][0];
 	
 		arr.map(value => value.dataValues);
 		// let  total = arr[0].length;
-		let displayNumSql = `SELECT count(display) as num,display  from gm_server where id in ( SELECT id from gm_server ${where} and (pid is null or  trim(pid) ='')  ORDER BY id limit ${pagesize} offset (${pagesize}*${page-1}) ) GROUP BY display `;
+		let displayNumSql = `SELECT count(display) as num,display  from gm_server where id in ( SELECT id from gm_server ${where} and status = 1 and (pid is null or  trim(pid) ='')  ORDER BY id limit ${pagesize} offset (${pagesize}*${page-1}) ) GROUP BY display `;
 		let displayNum = await dbSequelize.query(displayNumSql);
 	
 		let pidarr = [];
@@ -81,7 +80,7 @@ class GmServerService extends BaseService{
 
 	async findServerByID(query){
 
-		let where = `where pid='${query.id}' and gameid='${query.gameid}'`;
+		let where = `where pid='${query.id}' and gameid='${query.gameid}' and status = 1`;
 		// if(query.value === ''){	
 		// 	 where = `where gameid='${query.gameid}'`;
 		// }
@@ -90,7 +89,7 @@ class GmServerService extends BaseService{
 		return res[0]; 
 	}
 	async mergeServer(data){
-		console.log(data);
+		// console.log(data);
 		let children = data.map(item=> {return `'${item.serverid}'`;});
 		// let pid = dayjs(new Date()).add(8, 'hour').format('YY-MM-DD HH:mm:ss');
 		// let channel = data[0].channel.map(item => {return `'${item}'`;});
@@ -136,7 +135,7 @@ class GmServerService extends BaseService{
 		let english = ipPort.split(':');
 		let chinese = ipPort.split('：');
 		let  ipp = english.length === 2 ? english:chinese.length === 2 ?chinese :null;
-		if(!ipp){throw new Error('参数不合法');}
+		if(!ipp){throw {code:500, message:'参数不合法'};}
 		let {0:ip, 1:port}=ipp;
 		let sql = `
 		insert into gm_server (
@@ -156,10 +155,40 @@ class GmServerService extends BaseService{
 		 
 		
 		if(+res[1] === 1){
-			await Cp.post(gameid, 'server/createServer', res[0][0]);
+			// await Cp.post(gameid, 'server/createServer', res[0][0]);
+			const { SenecaClient } = require('../../xiaolu/senecaclient');
+			const SenClient = new SenecaClient('127.0.0.1', 10002, 'tcp');
+			let body = res[0][0];
+			let {code} = await SenClient.get('server', 'createServer', {body});
+			if(+code !== 200) {
+				let falseSql = ` update  gm_server set  status = '0' where id = ${body['id']}`;
+				dbSequelize.query(falseSql, {
+					replacements:['active'], type:Sequelize.QueryTypes.UPDATE
+				});
+				throw {code:500, message:'Cp交互失败'};
+			}
+			// console.log('-------------------------------------------');
+			// console.log(SenClientres);
+			// console.log('-------------------------------------------');
+			// const seneca = require('seneca')();
+			// const bluebird = require('bluebird');
+			// const act = bluebird.promisify(seneca.act, { context: seneca });
+			// seneca.client({
+			// 	host:'127.0.0.1',
+			// 	port:10002,
+			// 	type:'tcp'
+			// });
+			// let a = await act({
+			// 	server:'createServer',
+			// 	args:{
+			// 		query:{
+			// 			...res[0][0]
+			// 		}
+			// 	}
+			// });
 			return res[0][0];
 		}else {
-			throw new Error('创建失败，请连续管理员');
+			throw {code:500, message:'创建失败，请连续管理员。'};
 		}
 
 	  }

@@ -196,7 +196,7 @@ import { getQueryAnnexOptionsLazy, getQueryAnnexOptions } from '@/api/mail.js';
 import { mailCreate, whiteFindAll, whiteStopMail, findTitle } from '@/api/white.js';
 import { WhiteMailChange } from '@/api/white.js';
 export default {
-  name: 'rolequery',
+  name: 'whitelistMail',
   data() {
     let titleRules = async(rule, value, callback)=>{
       if (!value) {

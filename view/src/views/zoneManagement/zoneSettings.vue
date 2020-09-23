@@ -22,7 +22,7 @@
           <el-option v-for="(item, index) in idoptions" :key="index" :label="item.label" :value="item.value">
           </el-option>
         </el-select>
-        <el-input v-model="filterForm.value" placeholder="请输入内容" size='small' class="input-with-select" >
+        <el-input  v-model="filterForm.value" placeholder="请输入内容" size='small' class="input-with-select"   @keyup.enter.native="filterFormChange('click',$event)" >
         </el-input>
         <el-button slot="append" icon="el-icon-search" size='small' class="button-with-select" @click="filterFormChange('click')">
         </el-button>
@@ -89,7 +89,15 @@
           </template>
         </el-table-column>
         <el-table-column  label="显示状态"  :filters="tableFilter.display" :filter-method="displatFilterTag" >
-          <template slot-scope="scope">{{ scope.row.display|display }} </template>
+          <template slot-scope="scope">
+            <span v-if="showstatusIsShow"><el-select v-model="showstatusIsvalue" value='1' placeholder="请选择活动区域"  @change="showStatusChangeSubmit(scope.$index,scope.row)" @visible-change='showStatusChangeBlur'>
+          <el-option label="空闲" value="1"></el-option>
+          <el-option label="繁忙" value="2"></el-option>
+          <el-option label="爆满" value="4"></el-option>
+          <el-option label="维护" value="3"></el-option>
+        </el-select> </span>
+            <span v-else :key='123123' style="width:50px;" @click="showStatusChange(scope.$index,scope.row)"> {{ scope.row.display|display }} </span>
+             </template>
         </el-table-column>
         <el-table-column  :filters="tableFilter.load" :filter-method="loadFilterTag" label="负载状态">
           <template slot-scope="scope">{{ scope.row.load|display }} </template>
@@ -99,6 +107,7 @@
         </el-table-column>
         <el-table-column v-if="grade" prop='status' label="操作">
           <template slot-scope="scope">
+            <div class="tableFlex">
             <el-button
               v-if="scope.row.display==='5' ? false : true" v-show="scope.row.childertrue?false:true" size="mini"
               icon="el-icon-edit-outline"
@@ -107,7 +116,7 @@
               v-if="scope.row.display==='5' ?  false: true" v-show="scope.row.childertrue?false:true" size="mini" style="color: red;"
               icon="el-icon-video-pause" class="button-with-header" @click="handleStop(scope.$index,scope.row)">停用
             </el-button>
-
+</div>
           </template>
 
         </el-table-column>
@@ -239,7 +248,7 @@
       <div class="alterbuttom"> <span>资源地址</span> <el-input v-model="formchange.address" disabled class="changebuttominput" ></el-input> </div>
       <div slot="footer" class="dialog-footer">
         <el-button @click="dialogFormVisiblechange = false">取 消</el-button>
-        <el-button type="primary" @click="updateServerToOne">确 定</el-button>
+        <el-button type="primary" @click="updateServerToOne(false)">确 定</el-button>
       </div>
     </el-dialog>
   </div>
@@ -280,6 +289,8 @@ export default {
     };
     return {
       servernames: '',
+      showstatusIsShow: false,
+      showstatusIsvalue: '',
       clientOptions: [], //客户端组件
       serverCreatedialogFormVisible: false, //区服创建弹窗变量
       selectForm: [{
@@ -395,7 +406,7 @@ export default {
     
       createFormRules: {
         servername: [
-          { validator: servernameRepeat, trigger: ['blur', 'change'] }
+          { validator: servernameRepeat, trigger: 'blur' }
          
         ],
         plaform: [
@@ -581,8 +592,25 @@ export default {
   },
 
   methods: { 
+    async showStatusChange(a, b) {
+      if (!this.grade) {
+        return;
+      }
+      this.showstatusIsShow = true;
+      this.showstatusIsvalue = b.display;
+    },
+    async showStatusChangeBlur(a) {
+      // console.log(a);
+    },
+    async showStatusChangeSubmit(a, b) {
+      // console.log(a, b);
+      this.tableData[a].display = this.showstatusIsvalue;
+      this.showstatusIsShow = false;
+      b['index'] = a;
+      this.updateServerToOne(b);
+    },
     changes() {
-      console.log(this.formchange.display, this.formchange.index);
+      // console.log(this.formchange.display, this.formchange.index);
     },
     async loadpid(tree, treeNode, resolve) {
    
@@ -649,7 +677,7 @@ export default {
       this.$refs[formName].resetFields();
     },
     handleSizeChange(val) {
-      console.log(val);
+      // console.log(val);
     },
     //提交创建表单
     createFormSubmitForm(formName) {
@@ -664,17 +692,30 @@ export default {
           if (!doubleTrue) {
             return;
           }
+          const loading = this.$loading({
+            lock: true,
+            text: '拼命加载中',
+            spinner: 'el-icon-loading',
+            background: 'rgba(0, 0, 0, 0.8)'
+          });
           this.filterFormChange('flush');
           let { code, data } = await servercreate({ ...this.createForm });
-          this.$message({
-            type: code === 200 ? 'success' : 'warning',
-            message: `区服创建成功,您创建的区服ID是  ${data['id']} `
-          });
+          loading.close();
+         
           if (code === 200) {
+            this.$message({
+              type: code === 200 ? 'success' : 'warning',
+              message: `区服创建成功,您创建的区服ID是  ${data['id']} `
+            });
             this.newCreateServer();
             this.$refs[formName].resetFields();
             this.filterFormChange('flush');
           }
+          if (+code !== 200) {
+            loading.close();
+            return;
+          }
+          
           let continueCreate = await this.$confirm('是否继续创建区服?', '提示', {
             confirmButtonText: '确定',
             cancelButtonText: '取消',
@@ -685,8 +726,8 @@ export default {
       });
 
     },
-    async filterFormChange(val) {
-
+    async filterFormChange(val, key) {
+      console.log(val, key);
       switch (val) {
         case 'click':this.filterFormChangeClick(); break;
         case 'flush':this.filterFormChangeFlush(); break;
@@ -754,7 +795,7 @@ export default {
       let req = this.filterServerIdForm;
       // console.log(req.value);
       if (req.value === '') {
-        console.log(req.value);
+        // console.log(req.value);
         this.$message({
           message: '警告哦，不可以搜索空哦',
           type: 'warning'
@@ -826,11 +867,20 @@ export default {
         type: 'warning' })
         .catch(err => false);
       if (!mergetrue) {return;}
+      const loading = this.$loading({
+        lock: true,
+        text: '拼命加载中',
+        spinner: 'el-icon-loading',
+        background: 'rgba(0, 0, 0, 0.8)'
+      });
       let res = await stopserver({ ...row, gameid: this.gameid });
       if (res.code === 200) {
+        loading.close();
         this.filterFormChange('flush');
+        this.$message.success('停用成功。');
         findServer(this.filterForm).then(res=>{this.inserttable(res);});
       }
+      loading.close();
     },
 
     //区服创建
@@ -925,13 +975,17 @@ export default {
 
     },
     //区服修改
-    async updateServerToOne() {
+    async updateServerToOne(displaychanges) {
+   
       try {
         await this.$confirm('您正在修改数据，请谨慎处理！是否继续?', '提示', {
           confirmButtonText: '确定',
           cancelButtonText: '取消',
           type: 'warning'
         });
+        if (displaychanges) {
+          this.formchange = displaychanges;
+        }
         this.loading = true;
         let { code } = await serverUpdateToOne({ ...this.formchange });
         if (code !== 200) { return;}
@@ -960,7 +1014,8 @@ export default {
         this.filterFormChange('flush');
         this.loading = false;
         this.dialogFormVisiblechange = false;
-      } catch (error) {
+      } catch ({ message }) {
+        // console.log(message);
         this.loading = false;
         this.$message({
           type: 'info',
@@ -1036,6 +1091,9 @@ export default {
   }
 
   .distric-container {
+    .tableFlex {
+        display: flex;
+    }
      .is-checked , .is_focus{
         color: #2BBFBD !important;
         .el-checkbox__inner{

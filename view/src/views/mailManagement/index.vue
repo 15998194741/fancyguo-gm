@@ -315,7 +315,7 @@ import dayjs from 'dayjs';
 import xlsx from 'xlsx';
 var id = 0;
 export default {
-  name: 'rolequery',
+  name: 'mailindex',
   data() {
     let title, text, mailLink, age, serverName;
     title = text = mailLink = age = serverName = (rule, value, callback) =>{

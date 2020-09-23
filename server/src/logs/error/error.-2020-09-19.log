@@ -1,0 +1,134 @@
+[2020-09-19T14:10:20.155] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/server/serverCreate
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"serverid":"","servername":"123123123","plaform":["1"],"channel":["久游"],"ip":"127.0.0.1:1234","display":"1","srttime":"2020-09-26T06:08:18.412Z","address":"www.baidu.com","test":"0","page":1,"pagesize":20,"gameid":"1"}
+response time: 1600495820155
+err name: Error
+err message: seneca: No matching action pattern found for { module: 'client', client: 'findAll', args: { body: { test: 1 } } }, and no default result provided (using a default$ property).
+err stack: Error: seneca: No matching action pattern found for { module: 'client', client: 'findAll', args: { body: { test: 1 } } }, and no default result provided (using a default$ property).
+    at module.exports.internals.Utils.internals.Utils.handle_response (H:\致命代码\fancyguo-gm\server\node_modules\seneca-transport\lib\transport-utils.js:77:11)
+    at Duplex.messager._write (H:\致命代码\fancyguo-gm\server\node_modules\seneca-transport\lib\tcp.js:240:19)
+    at doWrite (_stream_writable.js:403:12)
+    at writeOrBuffer (_stream_writable.js:387:5)
+    at Duplex.Writable.write (_stream_writable.js:318:11)
+    at DestroyableTransform.ondata (H:\致命代码\fancyguo-gm\server\node_modules\readable-stream\lib\_stream_readable.js:619:20)
+    at DestroyableTransform.emit (events.js:315:20)
+    at addChunk (H:\致命代码\fancyguo-gm\server\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+    at readableAddChunk (H:\致命代码\fancyguo-gm\server\node_modules\readable-stream\lib\_stream_readable.js:278:11)
+    at DestroyableTransform.Readable.push (H:\致命代码\fancyguo-gm\server\node_modules\readable-stream\lib\_stream_readable.js:245:10)
+    at DestroyableTransform.Transform.push (H:\致命代码\fancyguo-gm\server\node_modules\readable-stream\lib\_stream_transform.js:148:32)
+    at push (H:\致命代码\fancyguo-gm\server\node_modules\split2\index.js:52:10)
+    at DestroyableTransform.transform [as _transform] (H:\致命代码\fancyguo-gm\server\node_modules\split2\index.js:33:5)
+    at DestroyableTransform.Transform._read (H:\致命代码\fancyguo-gm\server\node_modules\readable-stream\lib\_stream_transform.js:184:10)
+    at DestroyableTransform.Transform._write (H:\致命代码\fancyguo-gm\server\node_modules\readable-stream\lib\_stream_transform.js:172:83)
+    at doWrite (H:\致命代码\fancyguo-gm\server\node_modules\readable-stream\lib\_stream_writable.js:428:64)
+    at writeOrBuffer (H:\致命代码\fancyguo-gm\server\node_modules\readable-stream\lib\_stream_writable.js:417:5)
+    at DestroyableTransform.Writable.write (H:\致命代码\fancyguo-gm\server\node_modules\readable-stream\lib\_stream_writable.js:334:11)
+    at Socket.ondata (_stream_readable.js:717:22)
+    at Socket.emit (events.js:315:20)
+    at addChunk (_stream_readable.js:295:12)
+    at readableAddChunk (_stream_readable.js:271:9)
+    at Socket.Readable.push (_stream_readable.js:212:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:186:23)
+From previous event:
+    at SenecaClient._callee$ (H:\致命代码\fancyguo-gm\server\src\xiaolu\/senecaclient.js:17:21)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at SenecaClient.<anonymous> (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at SenecaClient.get (H:\致命代码\fancyguo-gm\server\src\xiaolu\/senecaclient.js:1:1)
+    at _callee4$ (H:\致命代码\fancyguo-gm\server\src\app\service\/server.js:165:39)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+*************** error log end ***************
+
+[2020-09-19T14:12:54.179] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/server/serverCreate
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"serverid":"","servername":"123123123","plaform":["1"],"channel":["久游"],"ip":"127.0.0.1:1234","display":"1","srttime":"2020-09-26T06:08:18.412Z","address":"www.baidu.com","test":"0","page":1,"pagesize":20,"gameid":"1"}
+response time: 1600495974178
+err name: Error
+err message: seneca: No matching action pattern found for {  module: 'client',  client: 'lixindongniubi',  args: { body: { test: 1 } }}, and no default result provided (using a default$ property).
+err stack: Error: seneca: No matching action pattern found for {  module: 'client',  client: 'lixindongniubi',  args: { body: { test: 1 } }}, and no default result provided (using a default$ property).
+    at module.exports.internals.Utils.internals.Utils.handle_response (H:\致命代码\fancyguo-gm\server\node_modules\seneca-transport\lib\transport-utils.js:77:11)
+    at Duplex.messager._write (H:\致命代码\fancyguo-gm\server\node_modules\seneca-transport\lib\tcp.js:240:19)
+    at doWrite (_stream_writable.js:403:12)
+    at writeOrBuffer (_stream_writable.js:387:5)
+    at Duplex.Writable.write (_stream_writable.js:318:11)
+    at DestroyableTransform.ondata (H:\致命代码\fancyguo-gm\server\node_modules\readable-stream\lib\_stream_readable.js:619:20)
+    at DestroyableTransform.emit (events.js:315:20)
+    at addChunk (H:\致命代码\fancyguo-gm\server\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+    at readableAddChunk (H:\致命代码\fancyguo-gm\server\node_modules\readable-stream\lib\_stream_readable.js:278:11)
+    at DestroyableTransform.Readable.push (H:\致命代码\fancyguo-gm\server\node_modules\readable-stream\lib\_stream_readable.js:245:10)
+    at DestroyableTransform.Transform.push (H:\致命代码\fancyguo-gm\server\node_modules\readable-stream\lib\_stream_transform.js:148:32)
+    at push (H:\致命代码\fancyguo-gm\server\node_modules\split2\index.js:52:10)
+    at DestroyableTransform.transform [as _transform] (H:\致命代码\fancyguo-gm\server\node_modules\split2\index.js:33:5)
+    at DestroyableTransform.Transform._read (H:\致命代码\fancyguo-gm\server\node_modules\readable-stream\lib\_stream_transform.js:184:10)
+    at DestroyableTransform.Transform._write (H:\致命代码\fancyguo-gm\server\node_modules\readable-stream\lib\_stream_transform.js:172:83)
+    at doWrite (H:\致命代码\fancyguo-gm\server\node_modules\readable-stream\lib\_stream_writable.js:428:64)
+    at writeOrBuffer (H:\致命代码\fancyguo-gm\server\node_modules\readable-stream\lib\_stream_writable.js:417:5)
+    at DestroyableTransform.Writable.write (H:\致命代码\fancyguo-gm\server\node_modules\readable-stream\lib\_stream_writable.js:334:11)
+    at Socket.ondata (_stream_readable.js:717:22)
+    at Socket.emit (events.js:315:20)
+    at addChunk (_stream_readable.js:295:12)
+    at readableAddChunk (_stream_readable.js:271:9)
+    at Socket.Readable.push (_stream_readable.js:212:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:186:23)
+From previous event:
+    at SenecaClient._callee$ (H:\致命代码\fancyguo-gm\server\src\xiaolu\/senecaclient.js:17:21)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at SenecaClient.<anonymous> (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at SenecaClient.get (H:\致命代码\fancyguo-gm\server\src\xiaolu\/senecaclient.js:1:1)
+    at _callee4$ (H:\致命代码\fancyguo-gm\server\src\app\service\/server.js:165:39)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+*************** error log end ***************
+
+[2020-09-19T14:42:54.284] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/server/serverCreate
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"serverid":"","servername":"asd","plaform":["1"],"channel":["小米"],"ip":"127.0.0.1:456","display":"1","srttime":"2020-09-17T16:00:00.000Z","address":"111","test":"0","page":1,"pagesize":20,"gameid":"1"}
+response time: 1600497774283
+err name: undefined
+err message: 创建失败
+err stack: undefined
+*************** error log end ***************
+
+[2020-09-19T14:43:39.032] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/server/serverCreate
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"serverid":"","servername":"1123123","plaform":["1"],"channel":["腾讯"],"ip":"127.0.0.1:1234","display":"1","srttime":"2020-09-12T06:39:24.514Z","address":"www.baidu.com","test":"0","page":1,"pagesize":20,"gameid":"1"}
+response time: 1600497819032
+err name: undefined
+err message: 创建失败
+err stack: undefined
+*************** error log end ***************
+

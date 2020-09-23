@@ -1,0 +1,108 @@
+[2020-09-17T19:35:56.582] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/server/serverCreate
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"serverid":"","servername":"1","plaform":["1"],"channel":["久游"],"ip":"127.0.0.1:12345","display":"1","srttime":"2020-09-24T11:35:42.661Z","address":"www.baidu.com","test":"0","page":1,"pagesize":20,"gameid":"1"}
+response time: 1600342556582
+err name: SequelizeUniqueConstraintError
+err message: 重复键违反唯一约束"gm_server_pkey"
+err stack: SequelizeUniqueConstraintError: 重复键违反唯一约束"gm_server_pkey"
+    at Query.formatError (H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:327:16)
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:72:18
+From previous event:
+    at Query.run (H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:64:23)
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:29
+From previous event:
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:12
+    at processImmediate (internal/timers.js:456:21)
+From previous event:
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:651:10
+    at H:\致命代码\fancyguo-gm\server\node_modules\retry-as-promised\index.js:70:21
+    at new Promise (<anonymous>)
+    at retryAsPromised (H:\致命代码\fancyguo-gm\server\node_modules\retry-as-promised\index.js:60:10)
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:641:30
+From previous event:
+    at Sequelize.query (H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:590:23)
+    at _callee4$ (H:\致命代码\fancyguo-gm\server\src\app\service\/server.js:149:31)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at GmServerService.<anonymous> (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at GmServerService.serverCreate (H:\致命代码\fancyguo-gm\server\src\app\service\server.js:376:30)
+    at _callee9$ (H:\致命代码\fancyguo-gm\server\src\app\controllers\/server.js:98:38)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at serverCreate (H:\致命代码\fancyguo-gm\server\src\app\controllers\server.js:365:30)
+    at dispatch (H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at next (H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:45:18)
+    at H:\致命代码\fancyguo-gm\server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:36:12
+    at dispatch (H:\致命代码\fancyguo-gm\server\node_modules\koa-router\lib\router.js:351:31)
+    at next (H:\致命代码\fancyguo-gm\server\node_modules\koa\node_modules\koa-compose\index.js:42:32)
+    at _callee$ (H:\致命代码\fancyguo-gm\server\src\middleware\/index.js:48:11)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at H:\致命代码\fancyguo-gm\server\src\middleware\/index.js:43:2
+*************** error log end ***************
+
+[2020-09-17T19:36:02.732] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/server/serverCreate
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"serverid":"","servername":"1","plaform":["1"],"channel":["久游"],"ip":"127.0.0.1:12345","display":"1","srttime":"2020-09-24T11:35:42.661Z","address":"www.baidu.com","test":"0","page":1,"pagesize":20,"gameid":"1"}
+response time: 1600342562732
+err name: Error
+err message: connect ECONNREFUSED 127.0.0.1:5000
+err stack: Error: connect ECONNREFUSED 127.0.0.1:5000
+    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1141:16)
+*************** error log end ***************
+
+[2020-09-17T19:36:08.616] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/server/serverCreate
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"serverid":"","servername":"12","plaform":["1"],"channel":["久游"],"ip":"127.0.0.1:12345","display":"1","srttime":"2020-09-24T11:35:42.661Z","address":"www.baidu.com","test":"0","page":1,"pagesize":20,"gameid":"1"}
+response time: 1600342568616
+err name: Error
+err message: connect ECONNREFUSED 127.0.0.1:5000
+err stack: Error: connect ECONNREFUSED 127.0.0.1:5000
+    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1141:16)
+*************** error log end ***************
+
+[2020-09-17T19:38:45.050] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/server/serverCreate
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"serverid":"","servername":"123","plaform":["1"],"channel":["久游"],"ip":"127.0.0.1:12345","display":"1","srttime":"2020-09-24T11:35:42.661Z","address":"www.baidu.com","test":"0","page":1,"pagesize":20,"gameid":"1"}
+response time: 1600342725050
+err name: Error
+err message: connect ECONNREFUSED 127.0.0.1:5000
+err stack: Error: connect ECONNREFUSED 127.0.0.1:5000
+    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1141:16)
+*************** error log end ***************
+

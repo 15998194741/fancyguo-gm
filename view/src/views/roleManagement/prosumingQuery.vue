@@ -68,7 +68,7 @@ import dayjs from 'dayjs';
 
 export default {
 
-  name: 'rolequery',
+  name: 'prosumingquery',
   data() {
     return {
       radio: '1',

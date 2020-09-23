@@ -330,7 +330,7 @@ import { findServername } from '@/api/character.js';
 import dayjs from 'dayjs';
 export default {
 
-  name: 'rolequery',
+  name: 'announcedmanage',
   data() {
     var textruleone = (rule, value, callback) =>{
       if (!value) {

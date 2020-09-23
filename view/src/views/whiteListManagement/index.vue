@@ -180,7 +180,7 @@ import { channelComponents, servernameComponents } from '@/api/white.js';
 import { find, stopWhiteMail } from '@/api/white.js';
 
 export default {
-  name: 'rolequery',
+  name: 'whiteindex',
   data() {
     let roleidrule = (rule, value, callback)=>{
       value = this.$data.createFormWhite['roleId'];

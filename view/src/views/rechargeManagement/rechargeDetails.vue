@@ -71,7 +71,7 @@ import dayjs from 'dayjs';
 
 export default {
 
-  name: 'rolequery',
+  name: 'rechargedetails',
   data() {
     return {
       multipleTable: '',

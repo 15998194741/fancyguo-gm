@@ -8,8 +8,8 @@ import locale from 'element-ui/lib/locale/lang/zh-CN'; // lang i18n
 // // set ElementUI lang to EN
 Vue.use(ElementUI, { locale });
 import '@/styles/index.scss'; // global css
-import Blob from '@/Excel/blob';
-import Export2Excel from '@/Excel/Export2Excel.js';
+// import Blob from '@/Excel/blob';
+// import Export2Excel from '@/Excel/Export2Excel.js';
 import App from './App';
 import store from './store';
 import router from './router';

@@ -100,11 +100,15 @@ export default {
   },
   methods: {
     peojectCommand: function(command) {
+     
       // 如果未发生改变则直接退出
       if (this.currentGameName === command) { return; }
       // 备份当前游戏名称
       sessionStorage.setItem('currentGameName', command);
       // 刷新页面
+      this.$router.push({
+        path: '/index'
+      });
       location.reload();
     },
     peopleCommand: function(command) {

@@ -1,0 +1,265 @@
+[2020-09-23T16:53:42.934] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/server/serverCreate
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"serverid":"","servername":"12","plaform":["1"],"channel":["久游"],"ip":"123.57.86.38:123","display":"1","srttime":"2020-09-30T08:52:57.987Z","address":"www.baidu.com","test":"0","page":1,"pagesize":20,"gameid":"1"}
+response time: 1600851222932
+err name: Error
+err message: seneca: [TIMEOUT] Action  timed out. Timeout was: 22222 (start: 1600851198625, end: 1600851220943. Message was: {
+  module: 'server',
+  server: 'createServer',
+  args: { query: undefined, body: { id: 2 } }
+}.
+err stack: Error: seneca: [TIMEOUT] Action  timed out. Timeout was: 22222 (start: 1600851198625, end: 1600851220943. Message was: {
+  module: 'server',
+  server: 'createServer',
+  args: { query: undefined, body: { id: 2 } }
+}.
+    at Object.errormaker (H:\致命代码\fancyguo-gm\server\node_modules\eraro\eraro.js:112:15)
+    at Object.act_tm [as ontm] (H:\致命代码\fancyguo-gm\server\node_modules\seneca\lib\act.js:86:32)
+    at Timeout.timeout_check [as _onTimeout] (H:\致命代码\fancyguo-gm\server\node_modules\gate-executor\gate-executor.js:207:16)
+    at listOnTimeout (internal/timers.js:549:17)
+    at processTimers (internal/timers.js:492:7)
+From previous event:
+    at SenecaClient._callee$ (H:\致命代码\fancyguo-gm\server\src\xiaolu\/senecaclient.js:17:21)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at SenecaClient.<anonymous> (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at SenecaClient.get (H:\致命代码\fancyguo-gm\server\src\xiaolu\/senecaclient.js:1:1)
+    at _callee4$ (H:\致命代码\fancyguo-gm\server\src\app\service\/server.js:162:33)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+*************** error log end ***************
+
+[2020-09-23T16:57:52.189] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/server/serverCreate
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"serverid":"","servername":"123","plaform":["1"],"channel":["久游"],"ip":"127.0.0.1:12","display":"1","srttime":"2020-09-30T08:57:20.672Z","address":"www.","test":"0","page":1,"pagesize":20,"gameid":"1"}
+response time: 1600851472188
+err name: Error
+err message: seneca: [TIMEOUT] Action  timed out. Timeout was: 22222 (start: 1600851446722, end: 1600851469001. Message was: {
+  module: 'server',
+  server: 'createServer',
+  args: { query: undefined, body: { id: 3 } }
+}.
+err stack: Error: seneca: [TIMEOUT] Action  timed out. Timeout was: 22222 (start: 1600851446722, end: 1600851469001. Message was: {
+  module: 'server',
+  server: 'createServer',
+  args: { query: undefined, body: { id: 3 } }
+}.
+    at Object.errormaker (H:\致命代码\fancyguo-gm\server\node_modules\eraro\eraro.js:112:15)
+    at Object.act_tm [as ontm] (H:\致命代码\fancyguo-gm\server\node_modules\seneca\lib\act.js:86:32)
+    at Timeout.timeout_check [as _onTimeout] (H:\致命代码\fancyguo-gm\server\node_modules\gate-executor\gate-executor.js:207:16)
+    at listOnTimeout (internal/timers.js:549:17)
+    at processTimers (internal/timers.js:492:7)
+From previous event:
+    at SenecaClient._callee$ (H:\致命代码\fancyguo-gm\server\src\xiaolu\/senecaclient.js:17:21)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at SenecaClient.<anonymous> (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at SenecaClient.get (H:\致命代码\fancyguo-gm\server\src\xiaolu\/senecaclient.js:1:1)
+    at _callee4$ (H:\致命代码\fancyguo-gm\server\src\app\service\/server.js:162:33)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+*************** error log end ***************
+
+[2020-09-23T16:59:25.997] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/server/serverCreate
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"serverid":"","servername":"222","plaform":["1"],"channel":["久游"],"ip":"127.0.0.1:12","display":"1","srttime":"2020-09-16T08:58:46.619Z","address":"www.baidu.com","test":"0","page":1,"pagesize":20,"gameid":"1"}
+response time: 1600851565997
+err name: Error
+err message: seneca: [TIMEOUT] Action  timed out. Timeout was: 22222 (start: 1600851537363, end: 1600851559693. Message was: {
+  module: 'server',
+  server: 'createServer',
+  args: { query: undefined, body: { id: 4 } }
+}.
+err stack: Error: seneca: [TIMEOUT] Action  timed out. Timeout was: 22222 (start: 1600851537363, end: 1600851559693. Message was: {
+  module: 'server',
+  server: 'createServer',
+  args: { query: undefined, body: { id: 4 } }
+}.
+    at Object.errormaker (H:\致命代码\fancyguo-gm\server\node_modules\eraro\eraro.js:112:15)
+    at Object.act_tm [as ontm] (H:\致命代码\fancyguo-gm\server\node_modules\seneca\lib\act.js:86:32)
+    at Timeout.timeout_check [as _onTimeout] (H:\致命代码\fancyguo-gm\server\node_modules\gate-executor\gate-executor.js:207:16)
+    at listOnTimeout (internal/timers.js:549:17)
+    at processTimers (internal/timers.js:492:7)
+From previous event:
+    at SenecaClient._callee$ (H:\致命代码\fancyguo-gm\server\src\xiaolu\/senecaclient.js:17:21)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at SenecaClient.<anonymous> (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at SenecaClient.get (H:\致命代码\fancyguo-gm\server\src\xiaolu\/senecaclient.js:1:1)
+    at _callee4$ (H:\致命代码\fancyguo-gm\server\src\app\service\/server.js:162:33)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+*************** error log end ***************
+
+[2020-09-23T17:05:06.832] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/server/serverCreate
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"serverid":"","servername":"1451","plaform":["1"],"channel":["久游"],"ip":"127.0.0.1:1234","display":"1","srttime":"2020-09-16T09:00:04.544Z","address":"q","test":"0","page":1,"pagesize":20,"gameid":"1"}
+response time: 1600851906831
+err name: Error
+err message: seneca: [TIMEOUT] Action  timed out. Timeout was: 22222 (start: 1600851882609, end: 1600851904884. Message was: {
+  module: 'server',
+  server: 'createServer',
+  args: { query: undefined, body: { id: 6 } }
+}.
+err stack: Error: seneca: [TIMEOUT] Action  timed out. Timeout was: 22222 (start: 1600851882609, end: 1600851904884. Message was: {
+  module: 'server',
+  server: 'createServer',
+  args: { query: undefined, body: { id: 6 } }
+}.
+    at Object.errormaker (H:\致命代码\fancyguo-gm\server\node_modules\eraro\eraro.js:112:15)
+    at Object.act_tm [as ontm] (H:\致命代码\fancyguo-gm\server\node_modules\seneca\lib\act.js:86:32)
+    at Timeout.timeout_check [as _onTimeout] (H:\致命代码\fancyguo-gm\server\node_modules\gate-executor\gate-executor.js:207:16)
+    at listOnTimeout (internal/timers.js:549:17)
+    at processTimers (internal/timers.js:492:7)
+From previous event:
+    at SenecaClient._callee$ (H:\致命代码\fancyguo-gm\server\src\xiaolu\/senecaclient.js:17:21)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at SenecaClient.<anonymous> (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at SenecaClient.get (H:\致命代码\fancyguo-gm\server\src\xiaolu\/senecaclient.js:1:1)
+    at _callee4$ (H:\致命代码\fancyguo-gm\server\src\app\service\/server.js:162:33)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+*************** error log end ***************
+
+[2020-09-23T17:19:41.375] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/server/serverCreate
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"serverid":"","servername":"1451","plaform":["1"],"channel":["久游"],"ip":"127.0.0.1:1234","display":"1","srttime":"2020-09-16T09:00:04.544Z","address":"q","test":"0","page":1,"pagesize":20,"gameid":"1"}
+response time: 1600852781374
+err name: undefined
+err message: Cp交互失败
+err stack: undefined
+*************** error log end ***************
+
+[2020-09-23T17:22:27.734] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/server/serverCreate
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"serverid":"","servername":"1451","plaform":["1"],"channel":["久游"],"ip":"127.0.0.1:1234","display":"1","srttime":"2020-09-16T09:00:04.544Z","address":"q","test":"0","page":1,"pagesize":20,"gameid":"1"}
+response time: 1600852947733
+err name: undefined
+err message: Cp交互失败
+err stack: undefined
+*************** error log end ***************
+
+[2020-09-23T17:22:59.892] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/server/serverCreate
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"serverid":"","servername":"1451","plaform":["1"],"channel":["久游"],"ip":"127.0.0.1:1234","display":"1","srttime":"2020-09-16T09:00:04.544Z","address":"q","test":"0","page":1,"pagesize":20,"gameid":"1"}
+response time: 1600852979892
+err name: undefined
+err message: Cp交互失败
+err stack: undefined
+*************** error log end ***************
+
+[2020-09-23T17:24:04.144] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/server/serverCreate
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"serverid":"","servername":"1451","plaform":["1"],"channel":["久游"],"ip":"127.0.0.1:1234","display":"1","srttime":"2020-09-16T09:00:04.544Z","address":"q","test":"0","page":1,"pagesize":20,"gameid":"1"}
+response time: 1600853044143
+err name: undefined
+err message: Cp交互失败
+err stack: undefined
+*************** error log end ***************
+
+[2020-09-23T17:24:43.488] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/server/serverCreate
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"serverid":"","servername":"1","plaform":["1"],"channel":["久游"],"ip":"127.0.0.1：5000","display":"1","srttime":"2020-09-16T09:24:33.877Z","address":"112222","test":"0","page":1,"pagesize":20,"gameid":"1"}
+response time: 1600853083486
+err name: undefined
+err message: Cp交互失败
+err stack: undefined
+*************** error log end ***************
+
+[2020-09-23T17:26:35.619] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/server/serverCreate
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"serverid":"","servername":"12","plaform":["1"],"channel":["久游"],"ip":"127.0.0.1：123","display":"1","srttime":"2020-09-09T09:26:25.002Z","address":"1","test":"0","page":1,"pagesize":20,"gameid":"1"}
+response time: 1600853195619
+err name: undefined
+err message: Cp交互失败
+err stack: undefined
+*************** error log end ***************
+
+[2020-09-23T17:28:18.571] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/server/serverCreate
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"serverid":"","servername":"1","plaform":["1"],"channel":["久游"],"ip":"127.0.0.1：12","display":"1","srttime":"2020-09-30T09:28:06.837Z","address":"wwwwe","test":"0","page":1,"pagesize":20,"gameid":"1"}
+response time: 1600853298571
+err name: undefined
+err message: Cp交互失败
+err stack: undefined
+*************** error log end ***************
+

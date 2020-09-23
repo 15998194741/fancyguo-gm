@@ -225,7 +225,7 @@ import { cdkkeyfind } from '@/api/cdk';
 import dayjs from 'dayjs';
 let id = 0;
 export default {
-  name: 'CDKmanagement',
+  name: 'cdkDetail',
   data() {
     let quantity, annexList;
  

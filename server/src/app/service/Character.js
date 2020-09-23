@@ -214,7 +214,7 @@ class CharacterService{
 	}
 
 	async findServername(gameid){
-		let res = await dbSequelize.query(`select servername from gm_server where gameid='${gameid}'` );
+		let res = await dbSequelize.query(`select servername from gm_server where gameid='${gameid}' and status = 1` );
 		let arr = res[0];
 		return arr.map(item=>{
 			return {label:item.servername, value:item.servername};

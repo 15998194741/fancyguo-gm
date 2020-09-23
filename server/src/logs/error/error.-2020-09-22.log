@@ -1,0 +1,40 @@
+[2020-09-22T16:14:16.145] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission?game=%E7%A9%BA%E7%BF%BC%E5%86%92%E9%99%A9%E5%9B%A2&username=admin
+request client ip:  ::ffff:127.0.0.1
+request query:  {"game":"空翼冒险团","username":"admin"}
+response time: 1600762456125
+err name: TypeError
+err message: Cannot read property 'children' of undefined
+err stack: TypeError: Cannot read property 'children' of undefined
+    at filter (H:\致命代码\fancyguo-gm\server\src\app\service\/user.js:60:15)
+    at Array.filter (<anonymous>)
+    at _callee$ (H:\致命代码\fancyguo-gm\server\src\app\service\/user.js:52:24)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+*************** error log end ***************
+
+[2020-09-22T16:14:17.501] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission?game=%E7%A9%BA%E7%BF%BC%E5%86%92%E9%99%A9%E5%9B%A2&username=admin
+request client ip:  ::ffff:127.0.0.1
+request query:  {"game":"空翼冒险团","username":"admin"}
+response time: 1600762457501
+err name: TypeError
+err message: Cannot read property 'children' of undefined
+err stack: TypeError: Cannot read property 'children' of undefined
+    at filter (H:\致命代码\fancyguo-gm\server\src\app\service\/user.js:60:15)
+    at Array.filter (<anonymous>)
+    at _callee$ (H:\致命代码\fancyguo-gm\server\src\app\service\/user.js:52:24)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+*************** error log end ***************
+

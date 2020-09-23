@@ -4,7 +4,12 @@
 
 <script>
 export default {
-
+  name: 'activityManagement',
+  computed: {
+    grade() {
+      return this.$route.meta.grade;       
+    }
+  }
 };
 </script>
 

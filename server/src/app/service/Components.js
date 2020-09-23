@@ -123,7 +123,7 @@ class components extends BaseService{
 	}
 	async stopserver(form){
 		let a = '5';
-		await UserDao.findSqlByParamsToOne('update gm_server set display = :a where  gameid=:gameid and serverid=:serverid', {...form, a});
+		await UserDao.findSqlByParamsToOne('update gm_server set display = :a ,status = 0 where  gameid=:gameid and serverid=:serverid', {...form, a});
 		return true;
 	}
 	async selectserver(parmas){

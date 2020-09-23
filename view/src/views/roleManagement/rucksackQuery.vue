@@ -89,7 +89,7 @@ import { backPackQuery, backPackRecycle } from '@/api/character.js';
 
 export default {
 
-  name: 'rolequery',
+  name: 'rucksackquery',
   data() {
     return {
       serverCreatedialogFormVisible: false,
