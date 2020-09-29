@@ -62,6 +62,9 @@ class whiteServer {
 		let res = await dbSequelize.query(sql, {
 			replacements:['active'], type:Sequelize.QueryTypes.SELECT
 		});
+		if(res.length === 0){
+			return;
+		}
 		let value = res[0];
 		value['1'] = value['1'].map(item=>({value:item, label:item})); 
 		value['2'] = value['2'].map(item=>({value:item, label:item})); 

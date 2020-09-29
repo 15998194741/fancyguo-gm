@@ -99,7 +99,7 @@ export class UserController {
 		let user = ctx.user;
 		let data = ctx.data;
 		let result = await gmServerService.serverCreate({data, user});
-		ctx.logging( '创建区服', '区服管理', '区服创建考虑时间分厘卡看来就是快乐' );
+		ctx.logging( '创建区服', '区服管理', `创建了区服ID为 ${result['id']} 的区服 ` );
 		ctx.body = statusCode.SUCCESS_200('创建成功', result);
 	}
 	/**

@@ -56,6 +56,9 @@ export default {
     shrink() {
       this.isCollapse = !this.isCollapse;
     }
+  },
+  mounted() {
+    this.$store.dispatch('user/setusers');
   }
 };
 </script>

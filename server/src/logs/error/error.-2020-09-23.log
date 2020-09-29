@@ -263,3 +263,42 @@ err message: Cp交互失败
 err stack: undefined
 *************** error log end ***************
 
+[2020-09-23T20:03:11.881] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/server/serverCreate
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"serverid":"","servername":"1","plaform":["1"],"channel":["久游"],"ip":"127.0.0.1：12","display":"1","srttime":"2020-09-30T12:02:59.134Z","address":"www.post","test":"0","page":1,"pagesize":20,"gameid":"1"}
+response time: 1600862591880
+err name: undefined
+err message: Cp交互失败
+err stack: undefined
+*************** error log end ***************
+
+[2020-09-23T20:04:39.322] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/server/serverCreate
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"serverid":"","servername":"1","plaform":["1"],"channel":["久游"],"ip":"127.0.0.1：12","display":"1","srttime":"2020-09-30T12:02:59.134Z","address":"www.post","test":"0","page":1,"pagesize":20,"gameid":"1"}
+response time: 1600862679322
+err name: undefined
+err message: Cp交互失败,请确认IP地址
+err stack: undefined
+*************** error log end ***************
+
+[2020-09-23T20:06:43.121] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/server/serverCreate
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"serverid":"","servername":"1","plaform":["1"],"channel":["久游"],"ip":"127.0.0.1：12","display":"1","srttime":"2020-09-30T12:02:59.134Z","address":"www.post","test":"0","page":1,"pagesize":20,"gameid":"1"}
+response time: 1600862803121
+err name: undefined
+err message: Cp交互失败,请确认IP地址
+err stack: undefined
+*************** error log end ***************
+

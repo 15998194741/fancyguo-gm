@@ -86,8 +86,9 @@ const actions = {
         // 判断当前是否是开发环境
         commit('SET_TOKEN', data.token);
         setToken(data.token);
-        dispatch('settings/changeSetting', { key: 'env', value: data.serverEnv }, { root: true });
-        dispatch('settings/changeSetting', { key: 'loginIp', value: data.loginIp }, { root: true });
+        sessionStorage.setItem('fancy-guo-login-token', data.token);
+        // dispatch('settings/changeSetting', { key: 'env', value: data.serverEnv }, { root: true });
+        // dispatch('settings/changeSetting', { key: 'loginIp', value: data.loginIp }, { root: true });
         resolve();
       }).catch(error => {
         reject(error);
@@ -124,9 +125,12 @@ const actions = {
       toeknsetuser().then(res=>{
         // console.log(res.data);
         let data = res.data;
+        // console.log(state);
         commit('SET_AVATAR', data.avatar);
         commit('SET_NAME', data.nickname);
         commit('SET_USERNAME', data.username);
+        commit('SET_ALIAS', data.alias);
+
       });
     });
   },

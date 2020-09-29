@@ -1,0 +1,239 @@
+[2020-09-25T14:38:12.484] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/user/login
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"username":"lixindong","password":"Ll789456"}
+response time: 1601015892483
+err name: TypeError
+err message: argument value is invalid
+err stack: TypeError: argument value is invalid
+    at new Cookie (H:\致命代码\fancyguo-gm\server\node_modules\cookies\index.js:126:11)
+    at Cookies.set (H:\致命代码\fancyguo-gm\server\node_modules\cookies\index.js:88:16)
+    at _callee5$ (H:\致命代码\fancyguo-gm\server\src\app\controllers\/user.js:54:15)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+*************** error log end ***************
+
+[2020-09-25T14:39:32.790] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/user/login
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"username":"lixindong","password":"Ll789456"}
+response time: 1601015972789
+err name: TypeError
+err message: argument value is invalid
+err stack: TypeError: argument value is invalid
+    at new Cookie (H:\致命代码\fancyguo-gm\server\node_modules\cookies\index.js:126:11)
+    at Cookies.set (H:\致命代码\fancyguo-gm\server\node_modules\cookies\index.js:88:16)
+    at _callee5$ (H:\致命代码\fancyguo-gm\server\src\app\controllers\/user.js:54:15)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+*************** error log end ***************
+
+[2020-09-25T14:40:04.459] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/user/login
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"username":"lixindong","password":"Ll789456"}
+response time: 1601016004458
+err name: TypeError
+err message: argument value is invalid
+err stack: TypeError: argument value is invalid
+    at new Cookie (H:\致命代码\fancyguo-gm\server\node_modules\cookies\index.js:126:11)
+    at Cookies.set (H:\致命代码\fancyguo-gm\server\node_modules\cookies\index.js:88:16)
+    at _callee5$ (H:\致命代码\fancyguo-gm\server\src\app\controllers\/user.js:54:15)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+*************** error log end ***************
+
+[2020-09-25T14:40:21.391] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/user/login
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"username":"lixindong","password":"Ll789456"}
+response time: 1601016021390
+err name: TypeError
+err message: argument value is invalid
+err stack: TypeError: argument value is invalid
+    at new Cookie (H:\致命代码\fancyguo-gm\server\node_modules\cookies\index.js:126:11)
+    at Cookies.set (H:\致命代码\fancyguo-gm\server\node_modules\cookies\index.js:88:16)
+    at _callee5$ (H:\致命代码\fancyguo-gm\server\src\app\controllers\/user.js:54:15)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+*************** error log end ***************
+
+[2020-09-25T14:51:34.193] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/user/login
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"username":"lixindong","password":"Ll789456"}
+response time: 1601016694192
+err name: TypeError
+err message: argument value is invalid
+err stack: TypeError: argument value is invalid
+    at new Cookie (H:\致命代码\fancyguo-gm\server\node_modules\cookies\index.js:126:11)
+    at Cookies.set (H:\致命代码\fancyguo-gm\server\node_modules\cookies\index.js:88:16)
+    at _callee5$ (H:\致命代码\fancyguo-gm\server\src\app\controllers\/user.js:54:15)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+*************** error log end ***************
+
+[2020-09-25T14:57:21.642] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/user/login
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"username":"lixindong","password":"Ll789456"}
+response time: 1601017041642
+err name: SyntaxError
+err message: Unexpected token u in JSON at position 0
+err stack: SyntaxError: Unexpected token u in JSON at position 0
+    at JSON.parse (<anonymous>)
+    at Request._callback (H:\致命代码\fancyguo-gm\server\src\app\service\/user.js:190:14)
+    at self.callback (H:\致命代码\fancyguo-gm\server\node_modules\request\request.js:185:22)
+    at Request.emit (events.js:315:20)
+    at setContentLength (H:\致命代码\fancyguo-gm\server\node_modules\request\request.js:437:14)
+    at Request.init (H:\致命代码\fancyguo-gm\server\node_modules\request\request.js:442:5)
+    at new Request (H:\致命代码\fancyguo-gm\server\node_modules\request\request.js:127:8)
+    at request (H:\致命代码\fancyguo-gm\server\node_modules\request\index.js:53:10)
+    at Function.post (H:\致命代码\fancyguo-gm\server\node_modules\request\index.js:61:12)
+    at res (H:\致命代码\fancyguo-gm\server\src\app\service\/user.js:183:12)
+    at new Promise (<anonymous>)
+    at _callee7$ (H:\致命代码\fancyguo-gm\server\src\app\service\/user.js:182:19)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at UserServer.<anonymous> (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at UserServer.fancyguoLogin (H:\致命代码\fancyguo-gm\server\src\app\service\user.js:592:31)
+    at UserServer._callee6$ (H:\致命代码\fancyguo-gm\server\src\app\service\/user.js:176:21)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+*************** error log end ***************
+
+[2020-09-25T15:01:20.067] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/user/login
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"username":"lixindong","password":"Ll789456"}
+response time: 1601017280067
+err name: TypeError
+err message: Cannot read property 'token' of undefined
+err stack: TypeError: Cannot read property 'token' of undefined
+    at _callee7$ (H:\致命代码\fancyguo-gm\server\src\app\service\/user.js:209:31)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+*************** error log end ***************
+
+[2020-09-25T15:18:11.992] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission?game=%E7%A9%BA%E7%BF%BC%E5%86%92%E9%99%A9%E5%9B%A2&username=xiaolu
+request client ip:  ::ffff:127.0.0.1
+request query:  {"game":"空翼冒险团","username":"xiaolu"}
+response time: 1601018291991
+err name: undefined
+err message: 权限异常
+err stack: undefined
+*************** error log end ***************
+
+[2020-09-25T15:48:57.548] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: PUT
+request originalUrl:  /api/white/whiteStopMail
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"id":12,"gameid":"1"}
+response time: 1601020137547
+err name: Error
+err message: 此邮件有白名单用户存在！！！
+err stack: Error: 此邮件有白名单用户存在！！！
+    at _callee4$ (H:\致命代码\fancyguo-gm\server\src\app\service\/white.js:80:10)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+*************** error log end ***************
+
+[2020-09-25T15:49:17.744] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: PUT
+request originalUrl:  /api/white/whiteStopMail
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"id":3,"gameid":"1"}
+response time: 1601020157744
+err name: Error
+err message: 此邮件有白名单用户存在！！！
+err stack: Error: 此邮件有白名单用户存在！！！
+    at _callee4$ (H:\致命代码\fancyguo-gm\server\src\app\service\/white.js:80:10)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+*************** error log end ***************
+
+[2020-09-25T15:49:34.955] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: PUT
+request originalUrl:  /api/white/whiteStopMail
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"id":3,"gameid":"1"}
+response time: 1601020174955
+err name: Error
+err message: 此邮件有白名单用户存在！！！
+err stack: Error: 此邮件有白名单用户存在！！！
+    at _callee4$ (H:\致命代码\fancyguo-gm\server\src\app\service\/white.js:80:10)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+*************** error log end ***************
+

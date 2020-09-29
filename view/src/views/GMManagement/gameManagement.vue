@@ -1,6 +1,6 @@
 <template>
   <div class="gamemanagement">
-    <div class="gamemanagement-body">
+    <div :class="{'gamemanagement-body':gradele9999,'gamemanagement-bodys':!gradele9999}">
       <!-- <el-row>
         <el-col :span="32" style="display:flex;">
         <div class="gamephoto" :style="'width: 20vw;height: 25vh;background-image: url(https://dss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2584239639,3280680022&fm=26&gp=0.jpg);'"></div> 
@@ -10,11 +10,11 @@
       
       
       
-      <el-row  v-for="(i,index) in valueList" :key="index">
+      <el-row  v-for="(i,index) in valueList" :key="index" :class="{'teststs':gradele9999}">
         <el-col :span="32" style="display:flex;">
-        <div class="gamephoto" :style="`background-image: url(${i.url});`"></div> 
+        <div class="gamephoto" :style="`background-image: url(${i.url});`" @dblclick="changeFormDialogShow(i)" @mouseover='i["movehover"] = true' @mouseout='i["movehover"] = false'><el-button  v-show='i["movehover"]' v-if="gradele9999" class="game-managet-button" type="danger" icon="el-icon-circle-close" circle size="mini" @click="removeGame(i)"></el-button></div> 
         </el-col>
-        <el-col class="gamename" >  <span >{{i.gamename}}</span> </el-col>
+        <el-col class="gamename" ><span >{{i.gamename}}</span> </el-col>
       </el-row>
 <!-- 
       <el-row>
@@ -24,39 +24,359 @@
         <el-col class="gamename" >  <span >{{testTwo}}</span> </el-col>
       </el-row> -->
 
-      <el-row v-if="+grade === 9999">
-        <el-col :span="32" style="display:flex;"><div class="gamephoto" :style="'background-image: url(https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2576271325,1961580115&fm=26&gp=0.jpg);'"></div> </el-col>
+      <el-row v-if="+grade === 9999" :class="{'teststs':gradele9999}">
+        <el-col :span="32" style="display:flex;"><div  class="gamephoto" :style="'background-image: url(https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2576271325,1961580115&fm=26&gp=0.jpg);'" @click="tesst"></div> </el-col>
         <el-col class="gamename" >    <span >添加游戏</span> </el-col>
       </el-row>
 
     </div>
-  
+  <el-dialog title="游戏创建" :visible.sync="gameCreatedialogFormVisible"  class="eldialog-gamemanement"  :close-on-click-modal="false" @close='createCancel'>
+      <el-form ref="createForm"  prop='file'  label-width="100px"   :model='createForm' :rules="createFormRules"  class='createFormAlert'> 
+        <el-form-item label="游戏封面上传" class="gameimgupload" prop="file">
+          <el-upload
+          class="avatar-uploader"
+          action="#"
+          :show-file-list="false"
+         :http-request="fileUpload" 
+         :accept="'.jpg,.jpeg,.png'">
+          <img v-if="imageUrl" ref="img" :src="imageUrl" class="avatar">
+          <i v-else class="el-icon-plus avatar-uploader-icon"></i>
+        </el-upload>
+      
+        <!-- <el-upload
+          class="upload-demo"
+          drag
+          action="#"
+          multiple>
+          <i class="el-icon-upload"></i>
+          <div class="el-upload__text">将文件拖到此处，或<em>点击上传</em></div>
+          <div slot="tip" class="uploadTest">只能上传jpg/png文件，且不超过500kb</div>
+        </el-upload> -->
+        </el-form-item>
+        <el-form-item label="游戏名称" prop="gameName">
+          <el-input v-model="createForm.gameName" placeholder="请输入游戏名称"></el-input>
+        </el-form-item>
+        <el-form-item label="设置管理员" prop="userId">
+           <el-select v-model="createForm.userId" filterable  clearable placeholder="请选择">
+            <el-option
+              v-for="item in userList"
+              :key="item.value"
+              :label="item.label"
+              :value="item.value">
+            </el-option>
+          </el-select>
+        </el-form-item>
+      </el-form>
+      <div style="display: flex;justify-content: flex-end;">
+        <el-button type="danger" plain @click="createCancel">取消</el-button>
+        <el-button type="primary" plain @click="createFormSubmit">确定</el-button>
+      </div>
+    </el-dialog>
+
+
+
+
+<el-dialog title="游戏修改" :visible.sync="gameChangedialogFormVisible"  class="eldialog-gamemanement"  :close-on-click-modal="false" @close='changeCancel'>
+      <el-form ref="changeForm"  prop='file'  label-width="100px"   :model='changeForm' :rules="changeFormRules"  class='createFormAlert'> 
+        <el-form-item label="游戏封面上传" class="gameimgupload" prop="file">
+          <el-upload
+          class="avatar-uploader"
+          action="#"
+          :show-file-list="false"
+         :http-request="changeFileUpload" 
+         :accept="'.jpg,.jpeg,.png'">
+          <img v-if="changeForm.imageUrl" ref="img" :src="changeForm.imageUrl" class="avatar">
+          <i v-else class="el-icon-plus avatar-uploader-icon"></i>
+        </el-upload>
+        </el-form-item>
+        <el-form-item label="游戏名称" prop="gameName">
+          <el-input v-model="changeForm.gameName" placeholder="请输入游戏名称" @change="changeForm.gameNameChange = true"></el-input>
+        </el-form-item>
+        <el-form-item   label="设置管理员" prop="userId">
+           <el-select v-model="changeForm.userId" filterable clearable  placeholder="请选择" @change="changeForm.userIdChange = true">
+            <el-option
+              v-for="item in userList"
+              :key="item.value"
+              :label="item.label"
+              :value="item.value">
+            </el-option>
+          </el-select>
+        </el-form-item>
+      </el-form>
+      <div style="display: flex;justify-content: flex-end;">
+        <el-button type="danger" plain @click="changeCancel">取消</el-button>
+        <el-button type="primary" plain @click="changeFormSubmit">确定</el-button>
+      </div>
+    </el-dialog>
   </div>
 </template>
 
 <script>
+import { getQueryGame, getQueryUserList, getPostCreateGame, deleteGame } from '@/api/gameGm';
+import { changeGame } from '@/api/gameGm';
 export default {
   name: 'GameTest',
   data() {
+    let userIdRule = (rule, value, callback) =>{
+      if (value) {
+        return callback();
+      }
+      return callback(new Error('请选择用户'));
+    };
+    let gameNameRule = (rule, value, callback) =>{
+      if (value) {
+        return callback();
+      }
+      return callback(new Error('请输入游戏名称'));
+    };
+    let fileRule = (rule, value, callback) =>{
+      
+      let { name } = value; 
+      if (name) {
+        name = name.split('.').pop();
+        switch (name) {
+          case 'jpeg':break;
+          case 'jpg':break;
+          case 'png':break;
+          default:
+            return callback(new Error('不支持的文件类型'));
+        }
+      }
+      if (!value) {
+        return callback(new Error('请选择文件'));
+      }
+      
+      return callback();
+    };
+    let changefileRule = (rule, value, callback) =>{
+      if (!this.$data.changeForm.iamgeChange) {
+        return callback();
+      }
+      let { name } = value; 
+      if (name) {
+        name = name.split('.').pop();
+        switch (name) {
+          case 'jpeg':break;
+          case 'jpg':break;
+          case 'png':break;
+          default:
+            return callback(new Error('不支持的文件类型'));
+        }
+      }
+      if (!value) {
+        return callback(new Error('请选择文件'));
+      }
+      
+      return callback();
+    };
     return {
-      valueList: [
-        { gamename: '空翼冒险团', url: 'https://dss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2584239639,3280680022&fm=26&gp=0.jpg' },
-        { gamename: '疯猴子砍猪', url: 'https://dss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2138141738,2676640392&fm=26&gp=0.jpg' },
-        { gamename: '镰刀割猴子', url: 'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3387564317,402104373&fm=26&gp=0.jpg' },
-        { gamename: '镰刀割猴子', url: 'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3387564317,402104373&fm=26&gp=0.jpg' },
-        { gamename: '镰刀割猴子', url: 'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3387564317,402104373&fm=26&gp=0.jpg' },
-        { gamename: '镰刀割猴子', url: 'http://106.75.7.83:12345/bulletin/images/11596455908720%2Bbackimage.png' }
-      ],
-      test: '空翼冒险团',
-      testOne: '疯猴子砍猪',
-      testTwo: '镰刀割猴子'
+      mousehover: false,
+      gameCreatedialogFormVisible: false,
+      gameChangedialogFormVisible: false,
+      valueList: [],
+      userList: [],
+      createForm: {
+        userId: '',
+        gameName: '',
+        file: ''
+      },
+      changeForm: {
+        imageUrl: '',
+        gameNameChange: '',
+        userIdChange: '',
+        userId: '',
+        gameName: '',
+        file: '',
+        id: '',
+        iamgeChange: ''
+      },
+      imageUrl: '',
+      createFormRules: {
+        userId: { validator: userIdRule, trigger: ['blur', 'change'] },
+        gameName: { validator: gameNameRule, trigger: ['change'] },
+        file: { validator: fileRule, trigger: ['blur', 'change'] }
+      },
+      changeFormRules: {
+        userId: { validator: userIdRule, trigger: ['blur', 'change'] },
+        gameName: { validator: gameNameRule, trigger: ['change'] },
+        file: { validator: changefileRule, trigger: ['blur', 'change'] }
+      }
     }
     ;
   },
   computed: {
     grade() {
       return this.$route.meta.grade;       
+    },
+    gradele9999() {
+      return +this.grade === 9999; 
     }
+  },
+  methods: {
+    async tesst() {
+      this.gameCreatedialogFormVisible = true;
+      let { code, data } = await getQueryUserList();
+      if (+code === 200) {
+        this.userList = data;
+      }
+    },
+    async changeFormDialogShow(datas) {
+      if (this.gradele9999) {
+        this.gameChangedialogFormVisible = true;
+        let { gamename, id, url, userid } = datas;
+        this.changeForm.gameName = gamename;
+        this.changeForm.imageUrl = url;
+        this.changeForm.id = id;
+        this.changeForm.userId = +userid;
+        let { code, data } = await getQueryUserList();
+        if (+code === 200) {
+          this.userList = data;
+        }
+      } else {
+        return;
+      }
+      
+    },
+    async removeGame(data) {
+      let { gamename } = data;
+      let sendtrue = await this.$confirm(`是否确认删除游戏->>${gamename}?`, '提示', {
+        confirmButtonText: '确定',
+        cancelButtonText: '取消',
+        type: 'warning' })
+        .catch(err => false);
+      if (!sendtrue) {return;}
+      const loading = this.$loading({
+        lock: true,
+        text: '拼命加载中',
+        spinner: 'el-icon-loading',
+        background: 'rgba(0, 0, 0, 0.8)'
+      });
+      let { code } = await deleteGame(data);
+      if (+code === 200) {
+        this.$message.success('游戏删除成功');
+      }
+      loading.close();
+      window.location.reload();
+    },
+    async changeFormSubmit() {
+      let { gameNameChange, userIdChange, iamgeChange } = this.changeForm;
+      let AlertMessage;
+      if (gameNameChange || userIdChange || iamgeChange) {
+        AlertMessage = `
+        您修改了 ${gameNameChange ? '游戏名 ' : ''}${userIdChange ? '管理员 ' : ''}${iamgeChange ? '游戏封面' : ''}`;
+      } else {return;}
+      let errTrou = await this.$refs['changeForm'].validate().catch(err=>false);
+      if (!errTrou) {return;}
+      
+      let sendtrue = await this.$confirm(`是否确认修改游戏? ${AlertMessage}`, '提示', {
+        confirmButtonText: '确定',
+        cancelButtonText: '取消',
+        type: 'warning' })
+        .catch(err => false);
+      if (!sendtrue) {return;}
+      const loading = this.$loading({
+        lock: true,
+        text: '拼命加载中',
+        spinner: 'el-icon-loading',
+        background: 'rgba(0, 0, 0, 0.8)'
+      });
+      let postData = this.changeForm;
+      let Form = new FormData();
+      for (let i in postData) {
+        Form.append(i, postData[i]);
+      }
+      let { code } = await changeGame(Form);
+      if (+code === 200) {
+        this.$message.success('修改成功。');
+        await this.createTableList();
+        window.location.reload();
+        this.changeCancel();
+      }
+      loading.close();
+
+    },
+    async changeCancel() {
+      this.gameChangedialogFormVisible = false;
+      this.changeForm = this.$options.data().changeForm;
+      this.$refs['changeForm'].resetFields();
+    },
+    async createFormSubmit() {
+      let errTrou = await this.$refs['createForm'].validate().catch(err=>false);
+      if (!errTrou) {return;}
+      let sendtrue = await this.$confirm(`是否确认添加游戏?`, '提示', {
+        confirmButtonText: '确定',
+        cancelButtonText: '取消',
+        type: 'warning' })
+        .catch(err => false);
+      if (!sendtrue) {return;}
+      const loading = this.$loading({
+        lock: true,
+        text: '拼命加载中',
+        spinner: 'el-icon-loading',
+        background: 'rgba(0, 0, 0, 0.8)'
+      });
+      let postData = this.createForm;
+      let Form = new FormData();
+      for (let i in postData) {
+        Form.append(i, postData[i]);
+      }
+      let { code } = await getPostCreateGame(Form);
+      loading.close();
+      if (+code === 200) {
+        this.$message.success('游戏添加成功');
+        window.location.reload();
+        this.createCancel();
+      }
+    },
+    async createCancel() {
+      this.gameCreatedialogFormVisible = false;
+      this.imageUrl = '';
+      this.createForm = this.$options.data().createForm;
+      this.$refs['createForm'].resetFields();
+    },
+    async changeFileUpload({ file }) {
+      this.changeForm.file = file;
+      this.changeForm.imageUrl = URL.createObjectURL(file);
+      this.changeForm.iamgeChange = true; 
+    },
+    async fileUpload({ file }) {
+      this.createForm.file = file;
+      this.imageUrl = URL.createObjectURL(file);
+      // let img = new Image();
+      // let canvas = document.createElement('canvas');
+      // Object.assign(canvas, {
+      //   width: 100,
+      //   height: 100
+      // });
+      // var ctx = canvas.getContext('2d');
+      // Object.assign(img, {
+      //   src: URL.createObjectURL(file)
+      // });
+      // img.addEventListener('load', res => {
+      //   URL.revokeObjectURL(file);
+      //   let { width, height } = img;
+      //   ctx.drawImage(img, 0, 0, width, height, 0, 0, 100, 100);
+      //   let src = canvas.toDataURL();
+      //   this.imageUrl = src;
+      //   URL.revokeObjectURL(src);
+      // });
+     
+    },
+    async createTableList() {
+      let { code, data } = await getQueryGame();
+      if (+code === 200) {
+        this.valueList = data;
+      }
+    }
+  },
+  async mounted() {
+    // let { code, data } = await getQueryGame();
+    // if (+code === 200) {
+    //   this.valueList = data;
+    // }
+  },
+  async created() {
+    await this.createTableList();
   }
 };
 </script>
@@ -68,20 +388,125 @@ export default {
     top: 0;
   width: 100%;
     height: 100%;
+    .game-managet-button{
+      position: absolute;
+      top: 0;
+      right: 0;
+      transform: translate(28%, -40%);
+    }
+    .gameimgupload{
+      .avatar-uploader .el-upload {
+    border: 1px dashed #d9d9d9;
+    border-radius: 6px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+  .avatar-uploader .el-upload:hover {
+    border-color: #409EFF;
+  }
+  .avatar-uploader-icon {
+    font-size: 28px;
+    color: #8c939d;
+        width: 20vw;
+        height: 10vw;
+    line-height: 10vw;
+    text-align: center;
+  }
+  .avatar {
+        width: 20vw;
+        height: 10vw;
+    min-width: 300px;
+    min-height: 150px;
+    display: block;
+  }
+    }
+    .eldialog-gamemanement > div:first-child{
+      min-width:500px;
+      .el-select{
+        width: 100%;
+      }
+    }
+    .uploadTest{
+          margin-top: -2vh;
+          margin-left: 3vw;
+    }
+    .teststs{
+      display: grid;
+    box-sizing: border-box;
+    justify-content: center;
+    justify-items: center;
+    justify-self: center;
+    align-content: center;
+    align-items: center;
+    align-self: center;
+    text-align: center;
+    }
+    .gamemanagement-bodys{
+      display: grid;
+    grid-template-columns: repeat(1,100%);
+   width: 100%;
+   height: 100%;
+        justify-items: center;
+        align-items: center;
+        text-align: center;
+        div:first-child{
+              display: grid;
+    text-align: center;
+    grid-template-rows: 90%,10%;
+    justify-items: center;
+        }
+        .gamephoto{
+              background-color: red;
+              background-repeat: round;
+              background-size: 100% 100%;
+              width: 52vw;
+              height: 67vh;
+              cursor: pointer;
+            }
+            .gamephotos{
+              background-color: red;
+              width: 20vw;
+                  height: 10vw;
+              background-repeat: round;
+              background-size: contain;
+            }
+            .gamemessage{
+              margin-left: 10vw ;
+              background-color: red;
+              width: 30vw;
+              height: 25vh;
+            }
+            .gamename{
+              font-size: 2vw;
+              padding-top:1vh;
+               position: relative;
+               width: 20vw;
+               text-align: center;
+               -webkit-user-select:none;
+
+   -moz-user-select:none;
+
+   -ms-user-select:none;
+
+   user-select:none;
+            }
+    }
   .gamemanagement-body{
         display: grid;
     grid-template-columns: repeat(3,33.3%);
     position: absolute;
-    left: 5%;
+    // left: 5%;
     top: 10%;
-   width: 89%;
+   width: 100%;
         justify-items: center;
       .gamephoto{
               background-color: red;
               background-repeat: round;
-              background-size: contain;
+              background-size: 100% 100%;
               width: 20vw;
-              height: 26vh;
+              height: 10vw;
+              cursor: pointer;
             }
             .gamephotos{
               background-color: red;
@@ -99,9 +524,17 @@ export default {
             .gamename{
               font-size: 2vw;
               padding-top:1vh;
+              padding-bottom: 1vh;
                position: relative;
                width: 20vw;
                text-align: center;
+               -webkit-user-select:none;
+
+   -moz-user-select:none;
+
+   -ms-user-select:none;
+
+   user-select:none;
             }
            
   

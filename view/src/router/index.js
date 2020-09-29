@@ -29,25 +29,55 @@ export const constantRoutes = [
         path: 'index',
         name: 'business-index',
         meta: { title: '首页' },
-        component: () => import('@/views/business')
+        component(resolve) {
+          require(['@/views/business'], resolve);
+        }
       }
     ]
   },
   {
     path: '/404',
-    component: () => import('@/views/404'),
+    component(resolve) {
+      require(['@/views/404'], resolve);
+    },
     meta: { title: '404' },
     hidden: true
   },
   {
     path: '/2048',
-    component: () => import('@/views/2048'),
+    component(resolve) {
+      require(['@/views/2048'], resolve);
+    },
     meta: { title: '2048' },
+    hidden: true
+  },
+  {
+    path: '/waterfall',
+    component(resolve) {
+      require(['@/views/waterfall'], resolve);
+    },
+    meta: { title: 'waterfall' },
+    hidden: true
+  },
+  {
+    path: '/saolei',
+    component(resolve) {
+      require(['@/views/saolei/saolei'], resolve);
+    },
+    meta: { title: 'saolei' },
+    hidden: true
+  },
+  {
+    path: '/pintu',
+    component(resolve) {
+      require(['@/views/saolei'], resolve);
+    },
+    meta: { title: 'pintu' },
     hidden: true
   },
 
   // 404 page must be placed at the end !!!
-  { path: '*', redirect: '/', component: () => import('@/views/2048'), hidden: true }
+  { path: '*', redirect: '/404', component: () => import('@/views/2048'), hidden: true }
 ];
 
 const createRouter = () => new Router({
@@ -58,8 +88,14 @@ const createRouter = () => new Router({
 
 const router = createRouter();
 router.beforeEach(async(to, from, next) => {
-  if (from.name === null || to.path === '/') { //页面刷新
-  
+  if (to.path === '/login') {
+    return next();
+  }
+  if (!sessionStorage.getItem('fancy-guo-login-token')) {
+    console.log(sessionStorage.getItem('fancy-guo-login-token'));
+    return next('/login');
+  }
+  if (from.name === null || from.path === '/login' || to.path === '/') { //页面刷新
     if (!store.state.user.permissionInfo.routes.length) {
       // 判断游戏名称记录是否存在
       let currentGameName = sessionStorage.getItem('currentGameName');
@@ -70,7 +106,6 @@ router.beforeEach(async(to, from, next) => {
     }
    
     let pathName = sessionStorage.getItem('pathName'); // 暂存上一个路由
-    
     if (to.redirectedFrom !== '/' && to.redirectedFrom === pathName && to.redirectedFrom !== '/index') {
       return next(pathName);
     }

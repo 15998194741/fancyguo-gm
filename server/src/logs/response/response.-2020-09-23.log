@@ -1068,3 +1068,83 @@
 日志记录：{"resourceUrl":"/api/user/permission?game=%E7%A9%BA%E7%BF%BC%E5%86%92%E9%99%A9%E5%9B%A2&username=","resourceDesc":"根据id查找数据","requestType":"GET","requestParams":"{\"game\":\"空翼冒险团\",\"username\":\"\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查找成功","data":{"routes":[{"name":"区服管理","urlid":1,"children":[{"meta":1,"name":"区服设置","url":"/zoneManagement/zoneSettings","urlid":2,"pid":1}]},{"name":"角色管理","urlid":3,"children":[{"meta":1,"name":"角色查询","url":"/roleManagement/roleQuery","urlid":4,"pid":3},{"meta":1,"name":"聊天查询","url":"/roleManagement/chatQuery","urlid":5,"pid":3},{"meta":1,"name":"背包查询","url":"/roleManagement/rucksackQuery","urlid":6,"pid":3},{"meta":1,"name":"产消查询","url":"/roleManagement/prosumingQuery","urlid":7,"pid":3}]},{"name":"充值管理","urlid":8,"children":[{"meta":1,"name":"充值明细","url":"/rechargeManagement/rechargeDetails","urlid":9,"pid":8}]},{"name":"公告管理","urlid":10,"children":[{"meta":1,"name":"公告管理","url":"/announcedManagement/index","urlid":11,"pid":10}]},{"name":"邮件管理","urlid":12,"children":[{"meta":1,"name":"邮件管理","url":"/mailManagement/index","urlid":13,"pid":12}]},{"name":"活动管理","urlid":14,"children":[{"meta":1,"name":"活动管理","url":"/activityManagement/index","urlid":15,"pid":14}]},{"name":"CDK管理","urlid":16,"children":[{"meta":1,"name":"CDK管理","url":"/CDKManagement/index","urlid":17,"pid":16},{"meta":1,"name":"CDK详情","url":"/CDKManagement/cdkDetail","urlid":23,"pid":16}]},{"name":"白名单管理","urlid":18,"children":[{"meta":1,"name":"白名单管理","url":"/whiteListManagement/index","urlid":19,"pid":18},{"meta":1,"name":"白名单邮件","url":"/whiteListManagement/whiteListMail","urlid":20,"pid":18},{"meta":1,"name":"白名单记录","url":"/whiteListManagement/whiterecording","urlid":27,"pid":18}]},{"name":"客户端管理","urlid":28,"children":[{"meta":1,"name":"客户端管理","url":"/clientManagement","urlid":29,"pid":28}]},{"name":"GM管理","urlid":9999,"children":[{"meta":1,"name":"游戏管理","url":"/GMManagement/gameManagement","urlid":30,"pid":9999},{"meta":1,"name":"用户管理","url":"/GMManagement/userManagement","urlid":31,"pid":9999},{"meta":1,"name":"渠道管理","url":"/GMManagement/channelManagement","urlid":32,"pid":9999},{"meta":1,"name":"操作日志","url":"/GMManagement/operationRecord","urlid":33,"pid":9999}]}],"games":["空翼冒险团","刺客契约","疯猴子砍猪",null,"上古纷争","GM后台"],"gamename":"空翼冒险团","gameid":1}},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-9-23 6:06:50 ├F10: PM┤","executionTime":0}
 *************** log end ***************
 
+[2020-09-23T20:02:27.291] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/server/selectComponent?code=areaclothing&gameid=1","resourceDesc":"根据游戏ID 组件名称搜索 区服组件","requestType":"GET","requestParams":"{\"code\":\"areaclothing\",\"gameid\":\"1\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查找成功","data":{"values":["久游","小米","腾讯","1","2","3","4","5","6","7"]}},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-9-23 8:02:26 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-23T20:02:27.330] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/server/findServer?display=&load=&srttime=&key=serverid&value=&test=&mergeserver=&page=1&pagesize=20","resourceDesc":"","requestType":"GET","requestParams":"{\"display\":\"\",\"load\":\"\",\"srttime\":\"\",\"key\":\"serverid\",\"value\":\"\",\"test\":\"\",\"mergeserver\":\"\",\"page\":\"1\",\"pagesize\":\"20\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查找","data":{"total":"0","table":[],"displayNum":[],"page":"1"}},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-9-23 8:02:27 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-23T20:02:39.338] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/server/findServer?plaform=&display=&load=&channel=&srttime=&key=serverid&value=&test=&mergeserver=&page=1&pagesize=20","resourceDesc":"","requestType":"GET","requestParams":"{\"plaform\":\"\",\"display\":\"\",\"load\":\"\",\"channel\":\"\",\"srttime\":\"\",\"key\":\"serverid\",\"value\":\"\",\"test\":\"\",\"mergeserver\":\"\",\"page\":\"1\",\"pagesize\":\"20\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查找","data":{"total":"0","table":[],"displayNum":[],"page":"1"}},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-9-23 8:02:39 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-23T20:02:52.629] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/character/findServername","resourceDesc":"区服名称获取","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查询成功","data":[]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-9-23 8:02:52 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-23T20:03:06.909] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/character/findServername","resourceDesc":"区服名称获取","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查询成功","data":[]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-9-23 8:03:06 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-23T20:03:07.583] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/server/findServer?plaform=&display=&load=&channel=&srttime=&key=serverid&value=&test=&mergeserver=&page=1&pagesize=20","resourceDesc":"","requestType":"GET","requestParams":"{\"plaform\":\"\",\"display\":\"\",\"load\":\"\",\"channel\":\"\",\"srttime\":\"\",\"key\":\"serverid\",\"value\":\"\",\"test\":\"\",\"mergeserver\":\"\",\"page\":\"1\",\"pagesize\":\"20\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查找","data":{"total":"0","table":[],"displayNum":[],"page":"1"}},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-9-23 8:03:07 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-23T20:03:11.881] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/server/serverCreate","resourceDesc":"区服创建","requestType":"POST","requestParams":"{\"serverid\":\"\",\"servername\":\"1\",\"plaform\":[\"1\"],\"channel\":[\"久游\"],\"ip\":\"127.0.0.1：12\",\"display\":\"1\",\"srttime\":\"2020-09-30T12:02:59.134Z\",\"address\":\"www.post\",\"test\":\"0\",\"page\":1,\"pagesize\":20}","responseCode":500,"responseMessage":"Cp交互失败","responseDate":{"code":500,"message":"Cp交互失败"},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-9-23 8:03:07 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-23T20:04:37.178] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/character/findServername","resourceDesc":"区服名称获取","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查询成功","data":[]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-9-23 8:04:37 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-23T20:04:38.262] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/server/findServer?plaform=&display=&load=&channel=&srttime=&key=serverid&value=&test=&mergeserver=&page=1&pagesize=20","resourceDesc":"","requestType":"GET","requestParams":"{\"plaform\":\"\",\"display\":\"\",\"load\":\"\",\"channel\":\"\",\"srttime\":\"\",\"key\":\"serverid\",\"value\":\"\",\"test\":\"\",\"mergeserver\":\"\",\"page\":\"1\",\"pagesize\":\"20\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查找","data":{"total":"0","table":[],"displayNum":[],"page":"1"}},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-9-23 8:04:38 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-23T20:04:39.323] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/server/serverCreate","resourceDesc":"区服创建","requestType":"POST","requestParams":"{\"serverid\":\"\",\"servername\":\"1\",\"plaform\":[\"1\"],\"channel\":[\"久游\"],\"ip\":\"127.0.0.1：12\",\"display\":\"1\",\"srttime\":\"2020-09-30T12:02:59.134Z\",\"address\":\"www.post\",\"test\":\"0\",\"page\":1,\"pagesize\":20}","responseCode":200,"responseMessage":"Cp交互失败,请确认IP地址","responseDate":{"code":200,"message":"Cp交互失败,请确认IP地址"},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-9-23 8:04:38 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-23T20:04:45.770] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/server/findServer?plaform=&display=&load=&channel=&srttime=&key=serverid&value=&test=&mergeserver=&page=1&pagesize=20","resourceDesc":"","requestType":"GET","requestParams":"{\"plaform\":\"\",\"display\":\"\",\"load\":\"\",\"channel\":\"\",\"srttime\":\"\",\"key\":\"serverid\",\"value\":\"\",\"test\":\"\",\"mergeserver\":\"\",\"page\":\"1\",\"pagesize\":\"20\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查找","data":{"total":"0","table":[],"displayNum":[],"page":"1"}},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-9-23 8:04:45 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-23T20:06:28.084] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/server/selectComponent?code=areaclothing&gameid=1","resourceDesc":"根据游戏ID 组件名称搜索 区服组件","requestType":"GET","requestParams":"{\"code\":\"areaclothing\",\"gameid\":\"1\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查找成功","data":{"values":["久游","小米","腾讯","1","2","3","4","5","6","7"]}},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-9-23 8:06:27 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-23T20:06:28.092] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/server/findServer?display=&load=&srttime=&key=serverid&value=&test=&mergeserver=&page=1&pagesize=20","resourceDesc":"","requestType":"GET","requestParams":"{\"display\":\"\",\"load\":\"\",\"srttime\":\"\",\"key\":\"serverid\",\"value\":\"\",\"test\":\"\",\"mergeserver\":\"\",\"page\":\"1\",\"pagesize\":\"20\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查找","data":{"total":"0","table":[],"displayNum":[],"page":"1"}},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-9-23 8:06:27 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-23T20:06:41.128] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/character/findServername","resourceDesc":"区服名称获取","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查询成功","data":[]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-9-23 8:06:40 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-23T20:06:41.895] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/server/findServer?plaform=&display=&load=&channel=&srttime=&key=serverid&value=&test=&mergeserver=&page=1&pagesize=20","resourceDesc":"","requestType":"GET","requestParams":"{\"plaform\":\"\",\"display\":\"\",\"load\":\"\",\"channel\":\"\",\"srttime\":\"\",\"key\":\"serverid\",\"value\":\"\",\"test\":\"\",\"mergeserver\":\"\",\"page\":\"1\",\"pagesize\":\"20\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查找","data":{"total":"0","table":[],"displayNum":[],"page":"1"}},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-9-23 8:06:41 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-09-23T20:06:43.121] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/server/serverCreate","resourceDesc":"区服创建","requestType":"POST","requestParams":"{\"serverid\":\"\",\"servername\":\"1\",\"plaform\":[\"1\"],\"channel\":[\"久游\"],\"ip\":\"127.0.0.1：12\",\"display\":\"1\",\"srttime\":\"2020-09-30T12:02:59.134Z\",\"address\":\"www.post\",\"test\":\"0\",\"page\":1,\"pagesize\":20}","responseCode":500,"responseMessage":"Cp交互失败,请确认IP地址","responseDate":{"code":500,"message":"Cp交互失败,请确认IP地址"},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-9-23 8:06:42 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+

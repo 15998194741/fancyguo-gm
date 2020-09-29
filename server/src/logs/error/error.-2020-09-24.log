@@ -1,0 +1,1092 @@
+[2020-09-24T10:55:04.994] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/server/serverCreate
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"serverid":"","servername":"12","plaform":["1"],"channel":["久游"],"ip":"127.0.0.1：1","display":"1","srttime":"2020-10-01T02:54:54.139Z","address":"1","test":"0","page":1,"pagesize":20,"gameid":"1"}
+response time: 1600916104993
+err name: undefined
+err message: Cp交互失败,请确认IP地址
+err stack: undefined
+*************** error log end ***************
+
+[2020-09-24T10:55:54.051] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/server/serverCreate
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"serverid":"","servername":"12","plaform":["1"],"channel":["久游"],"ip":"127.0.0.1：1","display":"1","srttime":"2020-10-01T02:54:54.139Z","address":"1","test":"0","page":1,"pagesize":20,"gameid":"1"}
+response time: 1600916154049
+err name: undefined
+err message: Cp交互失败,请确认IP地址
+err stack: undefined
+*************** error log end ***************
+
+[2020-09-24T14:04:49.392] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/server/serverCreate
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"serverid":"","servername":"223","plaform":["2"],"channel":["久游"],"ip":"127.0.0.1:1","display":"1","srttime":"2020-10-01T06:04:07.037Z","address":"1","test":"0","page":1,"pagesize":20,"gameid":"1"}
+response time: 1600927489392
+err name: TypeError
+err message: console.kog is not a function
+err stack: TypeError: console.kog is not a function
+    at _callee9$ (H:\致命代码\fancyguo-gm\server\src\app\controllers\/server.js:102:11)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+*************** error log end ***************
+
+[2020-09-24T20:07:50.844] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/user/createUser
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"username":"xiaolu","password":"test"}
+response time: 1600949270843
+err name: Error
+err message: Expected "payload" to be a plain object.
+err stack: Error: Expected "payload" to be a plain object.
+    at validate (H:\致命代码\fancyguo-gm\server\node_modules\jsonwebtoken\sign.js:40:11)
+    at validatePayload (H:\致命代码\fancyguo-gm\server\node_modules\jsonwebtoken\sign.js:62:10)
+    at Object.sign (H:\致命代码\fancyguo-gm\server\node_modules\jsonwebtoken\sign.js:114:7)
+    at _callee4$ (H:\致命代码\fancyguo-gm\server\src\app\controllers\/user.js:45:17)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+*************** error log end ***************
+
+[2020-09-24T20:11:03.172] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/user/createUser
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"username":"xiaolu","password":"test"}
+response time: 1600949463172
+err name: SequelizeUniqueConstraintError
+err message: 重复键违反唯一约束"auth_user_username_key"
+err stack: SequelizeUniqueConstraintError: 重复键违反唯一约束"auth_user_username_key"
+    at Query.formatError (H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:327:16)
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:72:18
+From previous event:
+    at Query.run (H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:64:23)
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:29
+From previous event:
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:12
+    at processImmediate (internal/timers.js:456:21)
+From previous event:
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:651:10
+    at H:\致命代码\fancyguo-gm\server\node_modules\retry-as-promised\index.js:70:21
+    at new Promise (<anonymous>)
+    at retryAsPromised (H:\致命代码\fancyguo-gm\server\node_modules\retry-as-promised\index.js:60:10)
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:641:30
+From previous event:
+    at Sequelize.query (H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:590:23)
+    at _callee5$ (H:\致命代码\fancyguo-gm\server\src\app\service\/user.js:147:31)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at UserServer.<anonymous> (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at UserServer.createUser (H:\致命代码\fancyguo-gm\server\src\app\service\user.js:459:28)
+    at _callee4$ (H:\致命代码\fancyguo-gm\server\src\app\controllers\/user.js:43:33)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at createUser (H:\致命代码\fancyguo-gm\server\src\app\controllers\user.js:194:28)
+    at dispatch (H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at next (H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:45:18)
+    at H:\致命代码\fancyguo-gm\server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:36:12
+    at dispatch (H:\致命代码\fancyguo-gm\server\node_modules\koa-router\lib\router.js:351:31)
+    at next (H:\致命代码\fancyguo-gm\server\node_modules\koa\node_modules\koa-compose\index.js:42:32)
+    at _callee$ (H:\致命代码\fancyguo-gm\server\src\middleware\/index.js:48:11)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at H:\致命代码\fancyguo-gm\server\src\middleware\/index.js:43:2
+*************** error log end ***************
+
+[2020-09-24T20:12:23.894] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/user/createUser
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"username":"xiaolu","password":"test"}
+response time: 1600949543893
+err name: undefined
+err message: 重复键违反唯一约束"auth_user_username_key"
+err stack: undefined
+*************** error log end ***************
+
+[2020-09-24T20:13:53.971] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/user/createUser
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"username":"xiaolu","password":"test"}
+response time: 1600949633971
+err name: undefined
+err message: 重复键违反唯一约束"auth_user_username_key"
+err stack: undefined
+*************** error log end ***************
+
+[2020-09-24T20:13:55.169] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/user/createUser
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"username":"xiaolu","password":"test"}
+response time: 1600949635169
+err name: undefined
+err message: 重复键违反唯一约束"auth_user_username_key"
+err stack: undefined
+*************** error log end ***************
+
+[2020-09-24T20:14:24.103] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/user/createUser
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"username":"xiaolu","password":"test"}
+response time: 1600949664103
+err name: undefined
+err message: 用户名重复
+err stack: undefined
+*************** error log end ***************
+
+[2020-09-24T20:14:26.484] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/user/createUser
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"username":"xiaolu","password":"test"}
+response time: 1600949666484
+err name: undefined
+err message: 用户名重复
+err stack: undefined
+*************** error log end ***************
+
+[2020-09-24T20:14:45.509] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/user/createUser
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"username":"xiaolu","password":"test"}
+response time: 1600949685509
+err name: undefined
+err message: 用户名重复
+err stack: undefined
+*************** error log end ***************
+
+[2020-09-24T20:14:47.244] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/user/createUser
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"username":"xiaolu","password":"test"}
+response time: 1600949687244
+err name: undefined
+err message: 用户名重复
+err stack: undefined
+*************** error log end ***************
+
+[2020-09-24T20:15:03.500] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/user/createUser
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"username":"xiaolu","password":"test"}
+response time: 1600949703500
+err name: undefined
+err message: 用户名重复
+err stack: undefined
+*************** error log end ***************
+
+[2020-09-24T20:15:23.846] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/user/createUser
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"username":"xiaolu","password":"test"}
+response time: 1600949723846
+err name: undefined
+err message: 用户名重复
+err stack: undefined
+*************** error log end ***************
+
+[2020-09-24T20:35:59.511] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/user/createUser
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"username":"xiaoluss","password":"123456"}
+response time: 1600950959510
+err name: undefined
+err message: 用户名重复
+err stack: undefined
+*************** error log end ***************
+
+[2020-09-24T20:36:34.090] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission?game=GM%E5%90%8E%E5%8F%B0&username=
+request client ip:  ::ffff:127.0.0.1
+request query:  {"game":"GM后台","username":""}
+response time: 1600950994090
+err name: undefined
+err message: 权限异常
+err stack: undefined
+*************** error log end ***************
+
+[2020-09-24T20:36:34.235] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/token
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1600950994235
+err name: undefined
+err message: 权限异常
+err stack: undefined
+*************** error log end ***************
+
+[2020-09-24T20:40:13.710] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission?username=admin
+request client ip:  ::ffff:127.0.0.1
+request query:  {"username":"admin"}
+response time: 1600951213709
+err name: undefined
+err message: 权限异常
+err stack: undefined
+*************** error log end ***************
+
+[2020-09-24T20:40:14.040] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/token
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1600951214040
+err name: undefined
+err message: 权限异常
+err stack: undefined
+*************** error log end ***************
+
+[2020-09-24T20:40:14.551] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission?game=GM%E5%90%8E%E5%8F%B0&username=admin
+request client ip:  ::ffff:127.0.0.1
+request query:  {"game":"GM后台","username":"admin"}
+response time: 1600951214551
+err name: undefined
+err message: 权限异常
+err stack: undefined
+*************** error log end ***************
+
+[2020-09-24T20:40:14.632] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/token
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1600951214632
+err name: undefined
+err message: 权限异常
+err stack: undefined
+*************** error log end ***************
+
+[2020-09-24T20:40:17.704] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission?username=admin
+request client ip:  ::ffff:127.0.0.1
+request query:  {"username":"admin"}
+response time: 1600951217704
+err name: undefined
+err message: 权限异常
+err stack: undefined
+*************** error log end ***************
+
+[2020-09-24T20:40:17.793] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/token
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1600951217793
+err name: undefined
+err message: 权限异常
+err stack: undefined
+*************** error log end ***************
+
+[2020-09-24T20:40:18.825] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission?username=admin
+request client ip:  ::ffff:127.0.0.1
+request query:  {"username":"admin"}
+response time: 1600951218825
+err name: undefined
+err message: 权限异常
+err stack: undefined
+*************** error log end ***************
+
+[2020-09-24T20:40:18.932] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/token
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1600951218932
+err name: undefined
+err message: 权限异常
+err stack: undefined
+*************** error log end ***************
+
+[2020-09-24T20:41:10.089] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/token
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1600951270089
+err name: undefined
+err message: 权限异常
+err stack: undefined
+*************** error log end ***************
+
+[2020-09-24T20:41:10.231] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/token
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1600951270231
+err name: undefined
+err message: 权限异常
+err stack: undefined
+*************** error log end ***************
+
+[2020-09-24T20:41:10.995] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission?username=admin
+request client ip:  ::ffff:127.0.0.1
+request query:  {"username":"admin"}
+response time: 1600951270995
+err name: undefined
+err message: 权限异常
+err stack: undefined
+*************** error log end ***************
+
+[2020-09-24T20:41:11.219] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/token
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1600951271218
+err name: undefined
+err message: 权限异常
+err stack: undefined
+*************** error log end ***************
+
+[2020-09-24T20:41:20.004] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission?game=GM%E5%90%8E%E5%8F%B0&username=admin
+request client ip:  ::ffff:127.0.0.1
+request query:  {"game":"GM后台","username":"admin"}
+response time: 1600951280004
+err name: undefined
+err message: 权限异常
+err stack: undefined
+*************** error log end ***************
+
+[2020-09-24T20:41:20.225] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/token
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1600951280225
+err name: undefined
+err message: 权限异常
+err stack: undefined
+*************** error log end ***************
+
+[2020-09-24T20:41:20.291] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/token
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1600951280291
+err name: undefined
+err message: 权限异常
+err stack: undefined
+*************** error log end ***************
+
+[2020-09-24T20:41:43.350] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/token
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1600951303350
+err name: undefined
+err message: 权限异常
+err stack: undefined
+*************** error log end ***************
+
+[2020-09-24T20:41:48.059] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/token
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1600951308059
+err name: undefined
+err message: 权限异常
+err stack: undefined
+*************** error log end ***************
+
+[2020-09-24T20:42:04.097] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission?username=
+request client ip:  ::ffff:127.0.0.1
+request query:  {"username":""}
+response time: 1600951324097
+err name: undefined
+err message: 权限异常
+err stack: undefined
+*************** error log end ***************
+
+[2020-09-24T20:42:04.165] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/token
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1600951324164
+err name: undefined
+err message: 权限异常
+err stack: undefined
+*************** error log end ***************
+
+[2020-09-24T20:42:06.783] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission?username=
+request client ip:  ::ffff:127.0.0.1
+request query:  {"username":""}
+response time: 1600951326783
+err name: undefined
+err message: 权限异常
+err stack: undefined
+*************** error log end ***************
+
+[2020-09-24T20:42:06.843] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/token
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1600951326843
+err name: undefined
+err message: 权限异常
+err stack: undefined
+*************** error log end ***************
+
+[2020-09-24T20:42:22.347] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/token
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1600951342347
+err name: undefined
+err message: 权限异常
+err stack: undefined
+*************** error log end ***************
+
+[2020-09-24T20:43:05.240] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission?username=
+request client ip:  ::ffff:127.0.0.1
+request query:  {"username":""}
+response time: 1600951385239
+err name: undefined
+err message: 权限异常
+err stack: undefined
+*************** error log end ***************
+
+[2020-09-24T20:43:05.308] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/token
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1600951385308
+err name: undefined
+err message: 权限异常
+err stack: undefined
+*************** error log end ***************
+
+[2020-09-24T20:43:09.970] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission?username=
+request client ip:  ::ffff:127.0.0.1
+request query:  {"username":""}
+response time: 1600951389970
+err name: undefined
+err message: 权限异常
+err stack: undefined
+*************** error log end ***************
+
+[2020-09-24T20:43:10.111] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/token
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1600951390111
+err name: undefined
+err message: 权限异常
+err stack: undefined
+*************** error log end ***************
+
+[2020-09-24T20:45:10.647] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission?game=GM%E5%90%8E%E5%8F%B0&username=admin
+request client ip:  ::ffff:127.0.0.1
+request query:  {"game":"GM后台","username":"admin"}
+response time: 1600951510647
+err name: undefined
+err message: 权限异常
+err stack: undefined
+*************** error log end ***************
+
+[2020-09-24T20:45:10.748] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/token
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1600951510747
+err name: undefined
+err message: 权限异常
+err stack: undefined
+*************** error log end ***************
+
+[2020-09-24T20:45:10.875] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission?username=
+request client ip:  ::ffff:127.0.0.1
+request query:  {"username":""}
+response time: 1600951510875
+err name: undefined
+err message: 权限异常
+err stack: undefined
+*************** error log end ***************
+
+[2020-09-24T20:45:11.200] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/token
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1600951511199
+err name: undefined
+err message: 权限异常
+err stack: undefined
+*************** error log end ***************
+
+[2020-09-24T20:45:14.281] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission?game=GM%E5%90%8E%E5%8F%B0&username=admin
+request client ip:  ::ffff:127.0.0.1
+request query:  {"game":"GM后台","username":"admin"}
+response time: 1600951514281
+err name: undefined
+err message: 权限异常
+err stack: undefined
+*************** error log end ***************
+
+[2020-09-24T20:45:14.487] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/token
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1600951514487
+err name: undefined
+err message: 权限异常
+err stack: undefined
+*************** error log end ***************
+
+[2020-09-24T20:45:14.576] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission?username=
+request client ip:  ::ffff:127.0.0.1
+request query:  {"username":""}
+response time: 1600951514576
+err name: undefined
+err message: 权限异常
+err stack: undefined
+*************** error log end ***************
+
+[2020-09-24T20:45:14.926] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/token
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1600951514926
+err name: undefined
+err message: 权限异常
+err stack: undefined
+*************** error log end ***************
+
+[2020-09-24T20:45:25.787] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission?username=
+request client ip:  ::ffff:127.0.0.1
+request query:  {"username":""}
+response time: 1600951525787
+err name: undefined
+err message: 权限异常
+err stack: undefined
+*************** error log end ***************
+
+[2020-09-24T20:45:25.862] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/token
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1600951525862
+err name: undefined
+err message: 权限异常
+err stack: undefined
+*************** error log end ***************
+
+[2020-09-24T20:45:30.887] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/token
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1600951530887
+err name: undefined
+err message: 权限异常
+err stack: undefined
+*************** error log end ***************
+
+[2020-09-24T20:45:50.954] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission?game=GM%E5%90%8E%E5%8F%B0&username=admin
+request client ip:  ::ffff:127.0.0.1
+request query:  {"game":"GM后台","username":"admin"}
+response time: 1600951550954
+err name: undefined
+err message: 权限异常
+err stack: undefined
+*************** error log end ***************
+
+[2020-09-24T20:45:51.198] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/token
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1600951551195
+err name: undefined
+err message: 权限异常
+err stack: undefined
+*************** error log end ***************
+
+[2020-09-24T20:45:51.371] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission?username=
+request client ip:  ::ffff:127.0.0.1
+request query:  {"username":""}
+response time: 1600951551370
+err name: undefined
+err message: 权限异常
+err stack: undefined
+*************** error log end ***************
+
+[2020-09-24T20:45:51.723] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/token
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1600951551710
+err name: undefined
+err message: 权限异常
+err stack: undefined
+*************** error log end ***************
+
+[2020-09-24T20:46:03.163] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission?game=GM%E5%90%8E%E5%8F%B0&username=admin
+request client ip:  ::ffff:127.0.0.1
+request query:  {"game":"GM后台","username":"admin"}
+response time: 1600951563163
+err name: undefined
+err message: 权限异常
+err stack: undefined
+*************** error log end ***************
+
+[2020-09-24T20:46:03.386] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/token
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1600951563386
+err name: undefined
+err message: 权限异常
+err stack: undefined
+*************** error log end ***************
+
+[2020-09-24T20:46:03.603] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission?username=
+request client ip:  ::ffff:127.0.0.1
+request query:  {"username":""}
+response time: 1600951563603
+err name: undefined
+err message: 权限异常
+err stack: undefined
+*************** error log end ***************
+
+[2020-09-24T20:46:03.670] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/token
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1600951563670
+err name: undefined
+err message: 权限异常
+err stack: undefined
+*************** error log end ***************
+
+[2020-09-24T20:46:30.602] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission?username=
+request client ip:  ::ffff:127.0.0.1
+request query:  {"username":""}
+response time: 1600951590602
+err name: undefined
+err message: 权限异常
+err stack: undefined
+*************** error log end ***************
+
+[2020-09-24T20:46:30.665] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/token
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1600951590665
+err name: undefined
+err message: 权限异常
+err stack: undefined
+*************** error log end ***************
+
+[2020-09-24T20:46:33.555] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/token
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1600951593555
+err name: undefined
+err message: 权限异常
+err stack: undefined
+*************** error log end ***************
+
+[2020-09-24T20:48:25.101] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission?game=GM%E5%90%8E%E5%8F%B0&username=admin
+request client ip:  ::ffff:127.0.0.1
+request query:  {"game":"GM后台","username":"admin"}
+response time: 1600951705101
+err name: undefined
+err message: 权限异常
+err stack: undefined
+*************** error log end ***************
+
+[2020-09-24T20:48:25.374] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/token
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1600951705373
+err name: undefined
+err message: 权限异常
+err stack: undefined
+*************** error log end ***************
+
+[2020-09-24T20:48:25.837] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission?username=
+request client ip:  ::ffff:127.0.0.1
+request query:  {"username":""}
+response time: 1600951705836
+err name: undefined
+err message: 权限异常
+err stack: undefined
+*************** error log end ***************
+
+[2020-09-24T20:48:26.050] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/token
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1600951706050
+err name: undefined
+err message: 权限异常
+err stack: undefined
+*************** error log end ***************
+
+[2020-09-24T20:48:34.625] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission?username=
+request client ip:  ::ffff:127.0.0.1
+request query:  {"username":""}
+response time: 1600951714625
+err name: undefined
+err message: 权限异常
+err stack: undefined
+*************** error log end ***************
+
+[2020-09-24T20:48:34.803] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/token
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1600951714803
+err name: undefined
+err message: 权限异常
+err stack: undefined
+*************** error log end ***************
+
+[2020-09-24T20:48:37.582] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/token
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1600951717582
+err name: undefined
+err message: 权限异常
+err stack: undefined
+*************** error log end ***************
+
+[2020-09-24T20:48:51.185] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission?username=
+request client ip:  ::ffff:127.0.0.1
+request query:  {"username":""}
+response time: 1600951731185
+err name: undefined
+err message: 权限异常
+err stack: undefined
+*************** error log end ***************
+
+[2020-09-24T20:48:51.345] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/token
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1600951731345
+err name: undefined
+err message: 权限异常
+err stack: undefined
+*************** error log end ***************
+
+[2020-09-24T20:50:14.501] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission?username=
+request client ip:  ::ffff:127.0.0.1
+request query:  {"username":""}
+response time: 1600951814501
+err name: undefined
+err message: 权限异常
+err stack: undefined
+*************** error log end ***************
+
+[2020-09-24T20:50:14.588] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/token
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1600951814588
+err name: undefined
+err message: 权限异常
+err stack: undefined
+*************** error log end ***************
+
+[2020-09-24T20:51:03.827] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission?username=
+request client ip:  ::ffff:127.0.0.1
+request query:  {"username":""}
+response time: 1600951863827
+err name: undefined
+err message: 权限异常
+err stack: undefined
+*************** error log end ***************
+
+[2020-09-24T20:51:03.908] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/token
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1600951863908
+err name: undefined
+err message: 权限异常
+err stack: undefined
+*************** error log end ***************
+
+[2020-09-24T20:51:20.807] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/token
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1600951880807
+err name: undefined
+err message: 权限异常
+err stack: undefined
+*************** error log end ***************
+
+[2020-09-24T20:51:40.181] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/token
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1600951900180
+err name: undefined
+err message: 权限异常
+err stack: undefined
+*************** error log end ***************
+
+[2020-09-24T20:53:44.888] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/token
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1600952024888
+err name: undefined
+err message: 权限异常
+err stack: undefined
+*************** error log end ***************
+
+[2020-09-24T20:54:24.702] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission?username=
+request client ip:  ::ffff:127.0.0.1
+request query:  {"username":""}
+response time: 1600952064702
+err name: undefined
+err message: 权限异常
+err stack: undefined
+*************** error log end ***************
+
+[2020-09-24T20:54:54.225] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission?username=
+request client ip:  ::ffff:127.0.0.1
+request query:  {"username":""}
+response time: 1600952094225
+err name: undefined
+err message: 权限异常
+err stack: undefined
+*************** error log end ***************
+
+[2020-09-24T20:56:48.178] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission?username=
+request client ip:  ::ffff:127.0.0.1
+request query:  {"username":""}
+response time: 1600952208178
+err name: undefined
+err message: 权限异常
+err stack: undefined
+*************** error log end ***************
+

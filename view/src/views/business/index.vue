@@ -2,37 +2,52 @@
   <div
 id='business-index' class="business-index"    >
     <div class="welcome">
-    欢迎{{username}}登录
+    欢迎{{user.alias}}登录
   </div>
     
   </div>
 </template>
 
 <script>
-
+// import { ParticlesBg } from 'particles-bg-vue';
 import { mapGetters } from 'vuex';
+
 export default {
-  name: 'business-index',
+  
+  name: 'business-index', 
+  // components: {
+  //   ParticlesBg
+  // },
   data() {
+
     return {
-      
+      bgshow: 'z-index:3',
+      aliasss: this.$store.getters.user.alias
     };
   },
   computed: {
     ...mapGetters([
       'avatar',
       'nickName',
-      'username'
+      'username',
+      'alias',
+      'user'
     ])
   },
   mounted() {
     sessionStorage.setItem('username', this.username);
   },
   methods: {
-  },
-  created() {
-  
+    
   }
+  // created() {
+  //   interval = setInterval(() =>{
+  //     this.bgshow = 'z-index:-3';
+  //   }, 3000);
+  // }, 
+  // beforeDestroy() {
+  //   clearInterval(interval);
+  // }
 };
 </script>
 

@@ -10,6 +10,8 @@ class GmServerService extends BaseService{
 		super(gmServerDao, gmServerDO);
 		this.gmServerDao=gmServerDao;
 		this.gmServerDO = gmServerDO;
+		const { SenecaClient } = require('../../xiaolu/senecaclient');
+		this.SenClient = new SenecaClient('127.0.0.1', 10002, 'tcp');
 	}
   
 	//区服按需查找
@@ -58,9 +60,27 @@ class GmServerService extends BaseService{
 	
 		arr.map(value => value.dataValues);
 		// let  total = arr[0].length;
-		let displayNumSql = `SELECT count(display) as num,display  from gm_server where id in ( SELECT id from gm_server ${where} and status = 1 and (pid is null or  trim(pid) ='')  ORDER BY id limit ${pagesize} offset (${pagesize}*${page-1}) ) GROUP BY display `;
-		let displayNum = await dbSequelize.query(displayNumSql);
-	
+		let displayNumSql =	`
+		select max(num), display from (SELECT count(display) as num,
+		case 
+		when display='1' then '空闲'
+		when display='2' then '繁忙'
+		when display='3' then '维护'
+		when display='4' then '爆满'
+		end
+		as display
+		from gm_server where id in ( SELECT id from gm_server  ${where} and  status = 1 and (pid is null or  trim(pid) ='')  ORDER BY id limit ${pagesize} offset (${pagesize}*${page-1})  ) GROUP BY display 
+		union 
+		select 0 as num ,'繁忙' as display
+		union 
+		select 0 as num ,'空闲' as display
+		union
+		select 0 as num ,'维护' as display
+		union
+		select 0 as num ,'爆满' as display
+		)a GROUP BY display`;
+		
+		 let displayNum = await dbSequelize.query(displayNumSql);
 		let pidarr = [];
 		if(arr[0].length > 0){
 			 pidarr = arr[0].map(item =>{
@@ -156,16 +176,15 @@ class GmServerService extends BaseService{
 		
 		if(+res[1] === 1){
 			// await Cp.post(gameid, 'server/createServer', res[0][0]);
-			const { SenecaClient } = require('../../xiaolu/senecaclient');
-			const SenClient = new SenecaClient('127.0.0.1', 10002, 'tcp');
+		
 			let body = res[0][0];
-			let {code} = await SenClient.get('server', 'createServer', {body});
+			let { code } = await this.SenClient.get('server', 'createServer', {body});
 			if(+code !== 200) {
 				let falseSql = ` update  gm_server set  status = '0' where id = ${body['id']}`;
 				dbSequelize.query(falseSql, {
 					replacements:['active'], type:Sequelize.QueryTypes.UPDATE
 				});
-				throw {code:500, message:'Cp交互失败'};
+				throw {code:500, message:'Cp交互失败,请确认IP地址'};
 			}
 			// console.log('-------------------------------------------');
 			// console.log(SenClientres);

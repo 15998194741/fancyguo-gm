@@ -16,10 +16,11 @@ export class UserController {
 	@get('/permission')
 	async findUser(ctx) {
 		ctx.log.resourceDesc = '根据id查找数据';
-		// console.log(ctx.request.headers['fancy-guo-login-token']);
 		let user = ctx.user;
-		let result = await UserServer.findUser(user.id, ctx.query.game);
-		// const result = await compon();
+		// console.log(ctx.data);
+		// console.log(ctx.query);
+	
+		let result = await UserServer.findUser(user.id, ctx.data.game, user.loginType);
 		ctx.body = statusCode.SUCCESS_200('查找成功', result);
 	}
 	@get('/qf')
@@ -30,12 +31,35 @@ export class UserController {
 	}
 	@get('/token')
 	async toekn(ctx) {
-		ctx.log.resourceDesc = '根据id查找数据';
+		ctx.log.resourceDesc = '返回用户姓名 头像 花名';
 		let token =ctx.request.headers['fancy-guo-login-token'];
 		let user =  await verify(token, secret.sign);
 		// let result = await Ta.tasql('select * from v_event_49  limit 0');
 		// console.log(user);
-		ctx.body = statusCode.SUCCESS_200('查找成功', {'username':user.username, 'avatar':user.avatar, 'nickname':user.nickName});
+		// ctx.body = statusCode.SUCCESS_200('查找成功', user);
+		ctx.body = statusCode.SUCCESS_200('查找成功', {'username':user.username, 'avatar':user.avatar || 'https://wp.fancyguo.com/image/wp/version/head_portrait3.png', 'nickname':user.nickName, alias:user.alias || '小可爱'});
+	}
+	@post('/createUser')
+	async createUser(ctx){
+		let data = ctx.request.body;
+		let resData =await UserServer.createUser(data);
+		let res = jwt.sign(resData[0][0], secret.sign, {expiresIn:'1y'});
+		ctx.body = statusCode.SUCCESS_200('登录成功', res);
+		ctx.cookies.set('fancy-guo-login-token', res);
+	}
+	@post('/login')
+	async login(ctx){
+		let data = ctx.request.body;
+		// let res = jwt.sign(data, secret.sign, {expiresIn:'1h'});
+		let res =await UserServer.login(data);
+		ctx.cookies.set('fancy-guo-login-token', res);
+		// ctx.body = statusCode.SUCCESS_200(res?'登录成功':'登录失败', res?{token:res}:undefined);
+		ctx.body ={
+			code : res ? 200 :202,
+			message:res?'登录成功':'登录失败',
+			data:res ? {token:res}:undefined
+		};
+		//  statusCode.SUCCESS_200(res?'登录成功':'登录失败', res?{token:res}:undefined);
 	}
 
 

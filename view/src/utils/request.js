@@ -1,8 +1,14 @@
 import axios from 'axios';
 import { MessageBox, Message } from 'element-ui';
 import store from '@/store';
-import { getToken } from '@/utils/cookie-utils';
-
+// import { getToken } from '@/utils/cookie-utils';
+import Cookies from 'js-cookie';
+import crypto from 'crypto';
+// 加密方法
+const encrypt = (data, key) => {
+  // 注意，第二个参数是Buffer类型
+  return crypto.publicEncrypt(key, Buffer.from(data));
+};
 // create an axios instance
 const service = axios.create({
   baseURL: process.env.VUE_APP_BASE_API, // url = base url + request url
@@ -15,17 +21,28 @@ service.interceptors.request.use(
   config => {
     // do something before request is sent
     // console.log(store);
-    if (store.getters.token) {
-      config.headers['fancy-guo-login-token'] = getToken();
-    }
-    config.headers['fancy-guo-login-token'] = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwic3RhdHVzIjoxLCJjcmVhdGVVc2VySWQiOm51bGwsInVwZGF0ZVVzZXJJZCI6bnVsbCwiY3JlYXRlVGltZSI6IjIwMTktMDYtMjBUMTY6MDA6MDAuMDAwWiIsInVwZGF0ZVRpbWUiOiIyMDE5LTA2LTIwVDE2OjAwOjAwLjAwMFoiLCJ1c2VybmFtZSI6ImFkbWluIiwicGFzc3dvcmQiOiIiLCJuaWNrTmFtZSI6IueuoeeQhuWRmCIsImF2YXRhciI6Imh0dHA6Ly93ZXdvcmsucXBpYy5jbi9iaXptYWlsL3RCelNYWjdub2ljYVdOSU8xNVhLcDFwVTltMGliWnZQRmJUSHJqYWhZNlNwNWlhRUpkZ3E2aDZ3dy8xMDAiLCJlbWFpbCI6ImFkbWluQGZhbmN5Z3VvLmNuIiwic291cmNlIjoxLCJhbGlhcyI6bnVsbCwicGhvbmUiOm51bGwsImlhdCI6MTU5MzQ5NTgxMiwiZXhwIjoyMTk4Mjk1ODEyfQ.BtDlkV5MPKnTCUamUgH__GASdJn3_GIoY57lWbrdujE';
+    config.headers['fancy-guo-login-token'] = Cookies.get('fancy-guo-login-token') || store.getters.token || sessionStorage.getItem('fancy-guo-login-token');
+
+    // config.headers['fancy-guo-login-token'] = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwic3RhdHVzIjoxLCJjcmVhdGVVc2VySWQiOm51bGwsInVwZGF0ZVVzZXJJZCI6bnVsbCwiY3JlYXRlVGltZSI6IjIwMTktMDYtMjBUMTY6MDA6MDAuMDAwWiIsInVwZGF0ZVRpbWUiOiIyMDE5LTA2LTIwVDE2OjAwOjAwLjAwMFoiLCJ1c2VybmFtZSI6ImFkbWluIiwicGFzc3dvcmQiOiIiLCJuaWNrTmFtZSI6IueuoeeQhuWRmCIsImF2YXRhciI6Imh0dHA6Ly93ZXdvcmsucXBpYy5jbi9iaXptYWlsL3RCelNYWjdub2ljYVdOSU8xNVhLcDFwVTltMGliWnZQRmJUSHJqYWhZNlNwNWlhRUpkZ3E2aDZ3dy8xMDAiLCJlbWFpbCI6ImFkbWluQGZhbmN5Z3VvLmNuIiwic291cmNlIjoxLCJhbGlhcyI6bnVsbCwicGhvbmUiOm51bGwsImlhdCI6MTU5MzQ5NTgxMiwiZXhwIjoyMTk4Mjk1ODEyfQ.BtDlkV5MPKnTCUamUgH__GASdJn3_GIoY57lWbrdujE';
    
     if (store.getters.permissionInfo && store.getters.team) {
       let perByOrg = store.getters.permissionInfo[store.getters.team.id];
       config.headers['permission-header'] = perByOrg ? perByOrg.permissionHeader : '';
     }
-    config.headers['gameid'] = store.getters.gameid;
-
+    let gameid;
+    try {
+      gameid = encrypt(String(store.getters.gameid), `-----BEGIN PUBLIC KEY-----
+MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDFWnl8fChyKI/Tgo1ILB+IlGr8
+ZECKnnO8XRDwttBbf5EmG0qV8gs0aGkh649rb75I+tMu2JSNuVj61CncL/7Ct2kA
+Z6CZZo1vYgtzhlFnxd4V7Ra+aIwLZaXT/h3eE+/cFsL4VAJI5wXh4Mq4Vtu7uEje
+ogAOgXACaIqiFyrk3wIDAQAB
+-----END PUBLIC KEY-----
+`);
+    } catch ({ message }) {
+      console.log(message);
+    }
+    config.headers['1f13d01052ccfae35744098fa9a71439'] = gameid.toString('base64');
+    
    
     return config;
   },

@@ -1,6 +1,6 @@
 import Cookies from 'js-cookie';
 
-const TokenKey = 'fancy-work-plan-token';
+const TokenKey = 'fancy-guo-login-token';
 const expires = 1024;
 
 

@@ -8,9 +8,8 @@ exports.SenecaClient = class SenecaClient{
 			port:10002,
 			type:'tcp'
 		});
-	}
-    
-
+	}    
+	
 	async get(claseNAme, url, data){
 		if(!url){url='lixindongniubi';}
 		let {query, body} = data;

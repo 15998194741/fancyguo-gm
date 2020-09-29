@@ -18,9 +18,7 @@
         </el-input>
         <el-button slot="append" icon="el-icon-search" size='small' class="button-with-select" name='truesearch' @click="filterFormChange('click')">
         </el-button>
-     
       </div>
-     
       <div class="comprehensive-container">
         <div v-for='(i,index) in selectForm' :key='index'  class="select-item"  > {{i.label}}:
           <el-select v-model="filterForm[i.key]" :multiple="i['multiple']" placeholder="请选择" size='small' style="border-radius: 10px;" @change="filterFormChange('change')" >
@@ -61,7 +59,7 @@
     </div>
   
     </div>
-  </template>
+</template>
   
 <script>
 import elementResizeDetectorMaker from 'element-resize-detector';

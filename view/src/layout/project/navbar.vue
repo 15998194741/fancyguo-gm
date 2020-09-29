@@ -25,7 +25,23 @@
     </div>
     </div>
     <div class="app-right">
-      <div class="app-photo-container"><el-avatar :size='50'   :src="avatar"></el-avatar></div>
+      <div class="app-photo-container">
+        
+        <el-popover
+            v-model="visible"
+            placement="bottom"
+            width="160"
+            title="退出"
+            trigger="hover">
+            <p>是否要登出</p>
+  <div style="text-align: right; margin: 0">
+    <el-button size="mini" type="text" @click="visible = false">取消</el-button>
+    <el-button type="primary" size="mini" @click="logOut">确定</el-button>
+  </div>
+ <el-avatar slot="reference"  :size='50'  :src="avatar"></el-avatar>
+</el-popover>
+
+      </div>
       <div class="app-time-container" style="color:white;"><span class="headertime">{{newTime}}</span><br><span  class="headerdate"  >{{newDate}}</span></div>
     </div>
   </div>
@@ -34,6 +50,7 @@
 <script>
 import { mapGetters } from 'vuex';
 import DFocus from '@/directive/d-focus';
+import Cookies from 'js-cookie';
 
 
 let icnow = new Date();
@@ -47,6 +64,7 @@ export default {
   },
   data() {
     return {
+      visible: false,
       selectpeople: '',
       peoplelist: [
         {
@@ -80,10 +98,7 @@ export default {
       'nickName'
     ]),
     newDate: function() {
-      return this.datedays.year + '年' + this.datedays.month + '月' + this.datedays.date + '日'
-      
-      
-      ;
+      return this.datedays.year + '年' + this.datedays.month + '月' + this.datedays.date + '日';
     },
     newTime: function() {
       return this.datedays.time;
@@ -99,6 +114,17 @@ export default {
     this.selectpeople = this.peoplelist[0].name;
   },
   methods: {
+    async logOut() {
+      this.visible = false;
+      this.$store = null;
+      Cookies.remove('fancy-guo-login-token');
+      localStorage.clear();
+      sessionStorage.clear();
+      this.$message.success('登出成功');
+      this.$router.push({
+        path: '/login'
+      });
+    },
     peojectCommand: function(command) {
      
       // 如果未发生改变则直接退出

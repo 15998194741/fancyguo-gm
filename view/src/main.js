@@ -6,20 +6,24 @@ import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 import locale from 'element-ui/lib/locale/lang/zh-CN'; // lang i18n
 // // set ElementUI lang to EN
-Vue.use(ElementUI, { locale });
+(async() => {
+  Vue.use(ElementUI, { locale });
+})();
 import '@/styles/index.scss'; // global css
 // import Blob from '@/Excel/blob';
 // import Export2Excel from '@/Excel/Export2Excel.js';
 import App from './App';
 import store from './store';
 import router from './router';
-
+// import particles from 'particles.js';
+// Vue.use(particles);
+// import VueParticles from 'vue-particles';
+// Vue.use(VueParticles);
 import '@/icons'; // icon
 import '@/permission'; // permission control
 // 注册全局指令
 import directivePer from './directive/wp-per';
 directivePer.install(Vue);
-
 Vue.config.productionTip = false;
 
 new Vue({

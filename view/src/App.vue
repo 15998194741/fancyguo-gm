@@ -17,9 +17,7 @@ export default {
     // 获取参数集合
     const params = new URLSearchParams(location.search);
     // 判断参数集合中是否存在 token 字段，存在则直接存到 cookie 里
-    if (params.has('token')) { Cookies.set('fancy-work-plan-token', params.get('token')); }
-    // console.log(this);
-    this.$store.dispatch('user/setusers');
+    if (params.has('token')) { Cookies.set('fancy-guo-login-token', params.get('token')); }
   }
 };
 </script>

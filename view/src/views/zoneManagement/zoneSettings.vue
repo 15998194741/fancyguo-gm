@@ -88,15 +88,17 @@
             <!-- <el-tag v-for='(i,index) in  scope.row["channel"]' :key="index">{{ i }}</el-tag> -->
           </template>
         </el-table-column>
-        <el-table-column  label="显示状态"  :filters="tableFilter.display" :filter-method="displatFilterTag" >
+        <el-table-column  label="显示状态"   >
           <template slot-scope="scope">
-            <span v-if="showstatusIsShow"><el-select v-model="showstatusIsvalue" value='1' placeholder="请选择活动区域"  @change="showStatusChangeSubmit(scope.$index,scope.row)" @visible-change='showStatusChangeBlur'>
-          <el-option label="空闲" value="1"></el-option>
-          <el-option label="繁忙" value="2"></el-option>
-          <el-option label="爆满" value="4"></el-option>
-          <el-option label="维护" value="3"></el-option>
-        </el-select> </span>
-            <span v-else :key='123123' style="width:50px;" @click="showStatusChange(scope.$index,scope.row)"> {{ scope.row.display|display }} </span>
+            <span v-if="scope.row.showstatusIsShow" :key="scope.row.id">
+            <el-select v-model="scope.row.display"  :focus='true'  placeholder="请选择活动区域" @blur='showStatusChangeCancel(scope.$index,scope.row)'  @change="showStatusChangeSubmit(scope.$index,scope.row)" @visible-change='showStatusChangeBlur'>
+              <el-option label="空闲" value="1"></el-option>
+              <el-option label="繁忙" value="2"></el-option>
+              <el-option label="爆满" value="4"></el-option>
+              <el-option label="维护" value="3"></el-option>
+            </el-select> 
+            </span>
+            <span v-else :key="scope.row.id" style="width:50px;" @dblclick="showStatusChange(scope.$index,scope.row)"> {{ scope.row.display|display }} </span>
              </template>
         </el-table-column>
         <el-table-column  :filters="tableFilter.load" :filter-method="loadFilterTag" label="负载状态">
@@ -123,8 +125,12 @@
       </el-table>
       </div>
       <div class="bottom-msg">
-        <div class="botton-msg-left"> 当前查询共{{total}}个区服,<span>其中显示状态:<span v-for='(i,index) of displayNum' :key='index'>  {{i.display|display}}-{{i.num}}个 </span> </span></div>
-
+        <div class="botton-msg-left"> 
+          当前查询共{{total}}个区服,
+          <span>其中显示状态:
+            <span v-for='(i,index) of displayNum' :key='index'>  {{i.display}}  {{i.max}}个 </span> 
+          </span>
+        </div>
         <div class="botton-msg-right">
           <!-- current-page='4' -->
           <el-pagination
@@ -209,7 +215,17 @@
           </el-select>
         </el-form-item>
         <el-form-item label="开服时间" class="createFormAlertBody" prop='srttime' hide-required-asterisk required >
-          <el-date-picker v-model="createForm.srttime" type="datetime" class="alertcontant" placeholder="选择日期时间" >
+          <el-date-picker
+            v-model="createForm.srttime" 
+            :picker-options="{
+                disabledDate: time => {
+                  return time.getTime() < Date.now() - 3600 * 1000 * 24
+                },
+              
+              }" 
+            type="datetime"
+            class="alertcontant"
+placeholder="选择日期时间" >
           </el-date-picker>
         </el-form-item>
         <el-form-item label="测试机">
@@ -596,15 +612,20 @@ export default {
       if (!this.grade) {
         return;
       }
-      this.showstatusIsShow = true;
-      this.showstatusIsvalue = b.display;
+
+      this.tableData[a]['showstatusIsShow'] = true;
     },
     async showStatusChangeBlur(a) {
       // console.log(a);
     },
+    async showStatusChangeCancel(a, b) {
+      console.log(a, b);
+      // this.tableData[a]['showstatusIsvalue'] = false;
+      // b['showstatusIsShow'] = false;
+    },
     async showStatusChangeSubmit(a, b) {
       // console.log(a, b);
-      this.tableData[a].display = this.showstatusIsvalue;
+      // this.tableData[a].display = this.showstatusIsvalue;
       this.showstatusIsShow = false;
       b['index'] = a;
       this.updateServerToOne(b);
@@ -704,7 +725,7 @@ export default {
          
           if (code === 200) {
             this.$message({
-              type: code === 200 ? 'success' : 'warning',
+              type: 'success',
               message: `区服创建成功,您创建的区服ID是  ${data['id']} `
             });
             this.newCreateServer();
@@ -727,7 +748,6 @@ export default {
 
     },
     async filterFormChange(val, key) {
-      console.log(val, key);
       switch (val) {
         case 'click':this.filterFormChangeClick(); break;
         case 'flush':this.filterFormChangeFlush(); break;
@@ -1017,14 +1037,20 @@ export default {
       } catch ({ message }) {
         // console.log(message);
         this.loading = false;
-        this.$message({
-          type: 'info',
-          message: '修改失败'
-        });
+        // this.$message({
+        //   type: 'info',
+        //   message: '修改失败'
+        // });
       }
     },
     inserttable(res) {
       let data = res.data;
+      try {
+        data.table.forEach(a => (a['showstatusIsShow'] = false));
+      } catch (e) {
+        console.log('没有数据啊 兄弟');
+      }
+      
       this.tableData = data.table;
       this.formchange.page = Number(data.page);
       this.displayNum = data.displayNum;
