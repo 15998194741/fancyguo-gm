@@ -73,7 +73,28 @@
       </div>
     </el-dialog>
 
-
+<el-dialog title="游戏配置" :visible.sync="gameChangedialogFormVisibleVip"  class="eldialog-gamemanement"  :close-on-click-modal="false" @close='GameConfigCancel'>
+      <el-form ref="GameConfig"  prop='file'  label-width="100px"   :model='gameConfig' :rules="gameConfigRules"  class='createFormAlert'> 
+      
+        <el-form-item label="user表名:" prop="userName">
+          <el-input v-model="gameConfig.userName" placeholder="请输入user表名" ></el-input>
+        </el-form-item>
+         <el-form-item label="userToken:" prop="userToken">
+          <el-input v-model="gameConfig.userToken" placeholder="请输入userToken" ></el-input>
+        </el-form-item>
+         <el-form-item label="event表名:" prop="eventName">
+          <el-input v-model="gameConfig.eventName" placeholder="请输入event表名" ></el-input>
+        </el-form-item>
+         <el-form-item label="eventToken:" prop="eventToken">
+          <el-input v-model="gameConfig.eventToken" placeholder="请输入eventToken" ></el-input>
+        </el-form-item>
+     
+      </el-form>
+      <div style="display: flex;justify-content: flex-end;">
+        <el-button type="danger" plain @click="GameConfigCancel">取消</el-button>
+        <el-button type="primary" plain  @click="GameConfigSubmit">确定</el-button>
+      </div>
+    </el-dialog>
 
 
 <el-dialog title="游戏修改" :visible.sync="gameChangedialogFormVisible"  class="eldialog-gamemanement"  :close-on-click-modal="false" @close='changeCancel'>
@@ -113,7 +134,7 @@
 
 <script>
 import { getQueryGame, getQueryUserList, getPostCreateGame, deleteGame } from '@/api/gameGm';
-import { changeGame } from '@/api/gameGm';
+import { changeGame, changeGameConfig } from '@/api/gameGm';
 export default {
   name: 'GameTest',
   data() {
@@ -173,12 +194,19 @@ export default {
       mousehover: false,
       gameCreatedialogFormVisible: false,
       gameChangedialogFormVisible: false,
+      gameChangedialogFormVisibleVip: false,
       valueList: [],
       userList: [],
       createForm: {
         userId: '',
         gameName: '',
         file: ''
+      },
+      gameConfig: {
+        userName: '',
+        userToken: '',
+        eventName: '',
+        eventToken: ''
       },
       changeForm: {
         imageUrl: '',
@@ -200,6 +228,32 @@ export default {
         userId: { validator: userIdRule, trigger: ['blur', 'change'] },
         gameName: { validator: gameNameRule, trigger: ['change'] },
         file: { validator: changefileRule, trigger: ['blur', 'change'] }
+      },
+      gameConfigRules: {
+        userName: { validator: (rule, value, callback) =>{
+          if (value) {
+            return callback();
+          }
+          return callback(new Error('请输入User表名'));
+        }, trigger: ['blur', 'change'] },
+        userToken: { validator: (rule, value, callback) =>{
+          if (value) {
+            return callback();
+          }
+          return callback(new Error('请输入UserToken'));
+        }, trigger: ['blur', 'change'] },
+        eventName: { validator: (rule, value, callback) =>{
+          if (value) {
+            return callback();
+          }
+          return callback(new Error('请输入Event表名'));
+        }, trigger: ['blur', 'change'] },
+        eventToken: { validator: (rule, value, callback) =>{
+          if (value) {
+            return callback();
+          }
+          return callback(new Error('请输入EventToken'));
+        }, trigger: ['blur', 'change'] }
       }
     }
     ;
@@ -233,6 +287,8 @@ export default {
           this.userList = data;
         }
       } else {
+        this.gameChangedialogFormVisibleVip = true;
+
         return;
       }
       
@@ -257,6 +313,34 @@ export default {
       }
       loading.close();
       window.location.reload();
+    },
+    async GameConfigCancel() {
+      this.gameChangedialogFormVisibleVip = false;
+      this.gameConfig = this.$options.data().gameConfig;
+      this.$refs['GameConfig'].resetFields();
+
+    },
+    async GameConfigSubmit() {
+      let errTrou = await this.$refs['GameConfig'].validate().catch(err=>false);
+      if (!errTrou) {return;}
+      let sendtrue = await this.$confirm(`是否确认修改游戏配置?`, '提示', {
+        confirmButtonText: '确定',
+        cancelButtonText: '取消',
+        type: 'warning' })
+        .catch(err => false);
+      if (!sendtrue) {return;}
+      const loading = this.$loading({
+        lock: true,
+        text: '拼命加载中',
+        spinner: 'el-icon-loading',
+        background: 'rgba(0, 0, 0, 0.8)'
+      });
+      let { code } = await changeGameConfig(this.gameConfig);
+      if (+code === 200) {
+        this.$message.success('修改成功');
+        this.GameConfigCancel();
+      }
+      loading.close();
     },
     async changeFormSubmit() {
       let { gameNameChange, userIdChange, iamgeChange } = this.changeForm;

@@ -51,4 +51,11 @@ export class gmGameController {
 		// ctx.logging( '创建游戏', '游戏管理', `创建了区服ID为 ${result['id']} 的区服 ` );
     	ctx.body = statusCode.SUCCESS_200('修改成功', result);
 	}
+	@put('/changeGameConfig')
+	async changeGameConfig(ctx) {
+		ctx.log.resourceDesc = '游戏更改配置';
+		let result = await gmGameService.changeGameConfig(ctx);
+		// ctx.logging( '创建游戏', '游戏管理', `创建了区服ID为 ${result['id']} 的区服 ` );
+    	ctx.body = statusCode.SUCCESS_200('修改成功', result);
+	}
 }

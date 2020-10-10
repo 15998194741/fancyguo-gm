@@ -14,7 +14,8 @@ const state = {
     routes: [],
     games: [],
     gamename: '',
-    gameid: ''
+    gameid: '',
+    imgUrl: ''
   }
 };
 
@@ -22,6 +23,7 @@ const mutations = {
   // SET_PERMISSION_INFO: (state, obj) => {
   //   state.permissionInfo = obj;
   // },
+  
   GET_PERMISSION_INFO: (state, obj) => {
     return state.permissionInfo;
   },

@@ -1,5 +1,6 @@
 <template>
-  <div class="distric-container">
+  <!-- <div class="distric-container"  :style=" `opacity: ${opacity};background-image: url('${this.$store.getters.permissionInfo.imgUrl}');` " @mouseover="opacity=1" @mouseout="opacity =0.3"> -->
+  <div class="distric-container"  >
     <div class="option-container">
       <ul>
         <li>
@@ -304,6 +305,7 @@ export default {
       callback();
     };
     return {
+      opacity: 0.5,
       servernames: '',
       showstatusIsShow: false,
       showstatusIsvalue: '',

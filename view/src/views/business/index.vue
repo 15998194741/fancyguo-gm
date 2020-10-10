@@ -1,7 +1,7 @@
 <template>
   <div
-id='business-index' class="business-index"    >
-    <div class="welcome">
+id='business-index' class="business-index"  :style="bgimage"  >
+    <div class="welcome" :data-text="`欢迎${user.alias}登录`">
     欢迎{{user.alias}}登录
   </div>
     
@@ -21,6 +21,7 @@ export default {
   data() {
 
     return {
+      bgimage: `background-image: url("${this.$store.getters.permissionInfo.imgUrl || 'http://106.75.7.83/images/game/1601380673143c1c45b2ff75acca5664a7984c503e63.jpg'}");`,
       bgshow: 'z-index:3',
       aliasss: this.$store.getters.user.alias
     };
@@ -53,7 +54,6 @@ export default {
 
 <style lang="scss"  rel="stylesheet/scss" >
 .business-index{
- background-image: url(../../styles/images/backimage.png);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -71,4 +71,9 @@ export default {
     //  height: 89.3vh;
    height: 100%;
 }
+</style>
+
+
+<style lang="scss" scoped>
+@import './index.css';
 </style>

@@ -118,7 +118,7 @@ class GmServerService extends BaseService{
 		let test =data[0].test;
 		let querySql = `insert into gm_server (childrens,gameid,channel,plaform,display,test)VALUES (array[${children.join(',')}],'${data.gameid}','${JSON.stringify(channel)}','${JSON.stringify(plaform)}','3','${test}')  returning id  `;
 		
-		console.log(querySql);
+		// console.log(querySql);
 		let res = await dbSequelize.query(querySql, {
 			replacements:['active'], type:Sequelize.QueryTypes.INSERT
 		});

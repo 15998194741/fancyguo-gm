@@ -13,6 +13,7 @@ export default {
     //在页面刷新时将vuex里的信息保存到sessionStorage里
     window.addEventListener('beforeunload', () => {
       sessionStorage.setItem('pathName', window.location.pathname); //重点：暂存页面刷新的地址
+      sessionStorage.setItem('gameName', this.$store.state.user.permissionInfo.gamename);
     }, false);
     // 获取参数集合
     const params = new URLSearchParams(location.search);

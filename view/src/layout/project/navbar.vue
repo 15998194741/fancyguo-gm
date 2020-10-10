@@ -124,6 +124,7 @@ export default {
       this.$router.push({
         path: '/login'
       });
+      window.location.reload();
     },
     peojectCommand: function(command) {
      
@@ -133,9 +134,9 @@ export default {
       sessionStorage.setItem('currentGameName', command);
       // 刷新页面
       this.$router.push({
-        path: '/index'
+        path: '/'
       });
-      location.reload();
+      window.location.reload();
     },
     peopleCommand: function(command) {
       this.selectpeople = command;

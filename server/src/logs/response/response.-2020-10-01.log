@@ -1,0 +1,10 @@
+[2020-10-01T16:23:09.056] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/user/login","resourceDesc":"","requestType":"POST","requestParams":"{\"username\":\"xiaolu\",\"password\":\"123456\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"登录成功","data":{"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJ4aWFvbHUiLCJwYXNzd29yZCI6Ijg3ZDliYjQwMGMwNjM0NjkxZjBlM2JhYWYxZTJmZDBkIiwic291cmNlIjpudWxsLCJuaWNrX25hbWUiOm51bGwsInN0YXR1cyI6bnVsbCwidmVyc2lvbiI6bnVsbCwiY3JlYXRlX3RpbWUiOiIyMDIwLTA5LTI0VDEyOjEwOjU1LjY0MloiLCJ1cGRhdGVfdGltZSI6IjIwMjAtMDktMjRUMTI6MTA6NTUuNjQyWiIsImF2YXRhciI6Imh0dHBzOi8vd3AuZmFuY3lndW8uY29tL2ltYWdlL3dwL3ZlcnNpb24vaGVhZF9wb3J0cmFpdDMucG5nIiwiYWxpYXMiOiJWVklQIiwibG9naW5UeXBlIjp0cnVlLCJpYXQiOjE2MDE1NDA1ODksImV4cCI6MTYzMzA5ODE4OX0.QxMAM3ruCQr65pnl-617QqaDHDPNwtrD52ozzMOHpG8"}},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-10-1 4:23:06 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-10-01T16:23:09.105] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"","resourceDesc":"","requestType":"GET","requestParams":"{}","responseCode":"","responseMessage":"","responseDate":"请求异常，请求接口不存在 或 响应返回！！！","serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-10-1 4:23:09 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+

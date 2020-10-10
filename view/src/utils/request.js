@@ -4,6 +4,7 @@ import store from '@/store';
 // import { getToken } from '@/utils/cookie-utils';
 import Cookies from 'js-cookie';
 import crypto from 'crypto';
+import router from '../router/index';
 // 加密方法
 const encrypt = (data, key) => {
   // 注意，第二个参数是Buffer类型
@@ -86,6 +87,15 @@ service.interceptors.response.use(
           message: res.message.split('\n')[0],
           type: 'error',
           duration: 5 * 1000
+        });
+      } else if (res.code === 2000) {
+        Message({
+          message: res.message || 'Error',
+          type: 'warning'
+        });
+        console.log(router);
+        router.push({
+          path: '/login'
         });
       }
     }

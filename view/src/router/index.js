@@ -77,7 +77,7 @@ export const constantRoutes = [
   },
 
   // 404 page must be placed at the end !!!
-  { path: '*', redirect: '/404', component: () => import('@/views/2048'), hidden: true }
+  { path: '*', redirect: '/index', component: () => import('@/views/2048'), hidden: true }
 ];
 
 const createRouter = () => new Router({
@@ -88,30 +88,50 @@ const createRouter = () => new Router({
 
 const router = createRouter();
 router.beforeEach(async(to, from, next) => {
+  
   if (to.path === '/login') {
     return next();
   }
   if (!sessionStorage.getItem('fancy-guo-login-token')) {
-    console.log(sessionStorage.getItem('fancy-guo-login-token'));
     return next('/login');
   }
-  if (from.name === null || from.path === '/login' || to.path === '/') { //页面刷新
+ 
+  if (from.name === null || from.path === '/login' || to.path === '/' || to.path === '/index') { //页面刷新
     if (!store.state.user.permissionInfo.routes.length) {
       // 判断游戏名称记录是否存在
       let currentGameName = sessionStorage.getItem('currentGameName');
       // 发送异步消息
       let { routes } = await getPermissionInfo({ game: currentGameName, username: sessionStorage.getItem('username') });
       //动态添加路由
-      await addRoutes(routes, router);
+      let routers = await addRoutes(routes, router);
+      let pathName = sessionStorage.getItem('pathName');
+      sessionStorage.removeItem('pathName'); // 暂存上一个路由
+      // console.log();
+      let gameName = sessionStorage.getItem('gameName');
+      if (store.state.user.permissionInfo.gamename !== gameName) {
+        return next('/index');
+      }
+      for (let i of routers) {
+        if (i['path'] === pathName) {
+          return next(pathName);
+        }
+      }
+      return next('/index');
+      // console.log(router);
+      // console.log(routes);
+      // console.log(pathName);
+      // return next(pathName);
+
     }
    
     let pathName = sessionStorage.getItem('pathName'); // 暂存上一个路由
+    sessionStorage.removeItem('pathName'); 
     if (to.redirectedFrom !== '/' && to.redirectedFrom === pathName && to.redirectedFrom !== '/index') {
       return next(pathName);
     }
     return next();
   } else {
-    next();
+    return next();
   }
   
 });

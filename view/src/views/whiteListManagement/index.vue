@@ -140,7 +140,7 @@
     <el-option v-for="(item,index) in name" :key="index" :label='item.label' :value="item.value" ></el-option>
     </el-select>
 </el-form-item>
- <el-form-item label-width="80px" label="备注" prop="notebook">
+ <el-form-item label-width="80px" label="备注:" prop="notebook">
   <el-input v-model="createFormWhite['notebook']"  size='small' style="width: 10.5vw;" ></el-input>
 </el-form-item>
     </el-form>
@@ -445,6 +445,10 @@ export default {
     },
     async createFormAlert() {
       this.dialogFormchange = true;
+      this.names = await (async()=>{
+        let { data } = await whiteFindName();
+        return data;
+      })();
     },
     async createFormACancel() {
       this.filelist = [];
@@ -490,10 +494,7 @@ export default {
     }
   },
   async mounted() {
-    this.names = await (async()=>{
-      let { data } = await whiteFindName();
-      return data;
-    })();
+    
     this.name = this.names['1'];
     let { data: channelData } = await channelComponents();
     this.selectForm[1].options = this.selectForm[1].options.concat(channelData);
@@ -521,6 +522,13 @@ export default {
 
 <style lang="scss" rel="stylesheet/scss">
 .white-container{
+  .el-dialog__body{
+    min-width: 500px;
+    .el-input--small .el-input__inner{
+          width: 10.5vw;
+          min-width: 200px;
+    }
+  }
   .cell{
   max-height: 40px;
   overflow: hidden;
@@ -530,6 +538,7 @@ export default {
 }
 .el-dialog{
 width: 18vw;
+min-width: 400px;
 }
 //   .announceddialog{
 //   max-width: 35vw;

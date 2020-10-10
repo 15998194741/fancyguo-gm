@@ -36,7 +36,6 @@ class rechargeService{
 		}); 
 		connection.connect();
 		let {roleid, stime, plaform, servername, page, pagesize, gameid} = data;
-		gameid =22222222;
 		let srttime = data['srttime[]'];
 		let channel = data['channel[]'];
 		let serverid ;

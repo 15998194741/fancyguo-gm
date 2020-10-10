@@ -57,7 +57,7 @@ class whiteServer {
 	async whiteFindName(data){
 		let {gameid} = data;
 		let sql = `
-		select string_to_array(string_agg(a,','),',') as "1", string_to_array(string_agg(b,','),',') as "2" from (select case when sendtype then string_agg(title ,',')  end  as a  ,1 as id , case when not  sendtype then string_agg(title ,',')  end  as b from gm_white_smtp where game_id = '${gameid}' GROUP BY sendtype) a GROUP BY id
+		select string_to_array(string_agg(a,','),',') as "1", string_to_array(string_agg(b,','),',') as "2" from (select case when sendtype then string_agg(title ,',')  end  as a  ,1 as id , case when not  sendtype then string_agg(title ,',')  end  as b from gm_white_smtp where game_id = '${gameid}'  and status = '1'  GROUP BY sendtype) a GROUP BY id
 		`;
 		let res = await dbSequelize.query(sql, {
 			replacements:['active'], type:Sequelize.QueryTypes.SELECT

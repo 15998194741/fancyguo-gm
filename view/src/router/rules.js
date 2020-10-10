@@ -198,4 +198,5 @@ export function addRoutes(routes, router) {
       children: _routes
     }
   ]);
+  return _routes;
 }

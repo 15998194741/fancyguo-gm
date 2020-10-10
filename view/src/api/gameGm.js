@@ -44,3 +44,15 @@ export function changeGame(data) {
     form: data
   });
 }
+
+
+
+
+export function changeGameConfig(data) { 
+  return request({
+    url: `gm/game/changeGameConfig`,
+    method: 'put',
+    data,
+    form: data
+  });
+}

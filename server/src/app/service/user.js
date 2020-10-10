@@ -45,23 +45,29 @@ class UserServer extends BaseService{
 	async findUser(id, game, loginType) {
 		game = game?`and a.game_name = '${game}'`:'';
 		let gamenameAndId= `
-		select a.id,a.game_name from gm_game a join gm_purview b on b.gid = a.id where b.uid = '${id}'::int and a.status = '1'   ${game} limit 1
+		select a.id,a.game_name ,a.image_url as img from gm_game a join gm_purview b on b.gid = a.id where b.uids @> '${id}' and a.status = '1'   ${game} limit 1
 		`;
-		 let {0:{id:gameid, game_name:gamename}} = await dbSequelize.query(gamenameAndId, {
+		
+		let gamenameData  = await dbSequelize.query(gamenameAndId, {
 			replacements:['active'], type:Sequelize.QueryTypes.SELECT
 		});
+		
+		if(gamenameData.length === 0 ){
+			throw {code:2000, message:'您没有这个权限。'};
+		}
+		let {0:{id:gameid, game_name:gamename, img:imgUrl}} = gamenameData;
 		
 		// ( case when  '${game}'::bool then '${game}'::int else (select a.id from gm_game a join gm_purview b on b.gid = a.id where b.uid = '${id}'::int  limit 1 ) end  )
 		let routeSQl = `
 				with 
-				qwe as (select a.url,a.pid,a.name,d.game_name,d.id as gameid, a.id,b.grede , b.purview_id,c.uid,c.gid from gm_url a join gm_url_purview  b on  a.id = b.url_id  join gm_purview c on c.id = b.purview_id join gm_game d on d.id = c.gid where  c.uid = '${id}'::int and d.id = '${gameid}' and d.status = 1  order by id ),
+				qwe as (select a.url,a.pid,a.name,d.game_name,d.id as gameid, a.id,b.grede , b.purview_id,c.uid,c.gid from gm_url a join gm_url_purview  b on  a.id = b.url_id  join gm_purview c on c.id = b.purview_id join gm_game d on d.id = c.gid where  c.uids @> '${id}' and d.id = '${gameid}' and d.status = 1  order by id ),
 				asd as (select name,(select json_agg(concat('{"url":"',url,'","name":"',name,'","meta":"',grede,'"}')::jsonb) from qwe  where qwe.pid = d.id) as children from qwe as d where pid = 0 ORDER BY d.id)
 				select * from asd `;
 		let routes = await dbSequelize.query(routeSQl, {
 			replacements:['active'], type:Sequelize.QueryTypes.SELECT
 		});
 		let gamesql = `
-		select string_to_array(string_agg(game_name, ','), ',')  as games from (select game_name  from gm_purview a join gm_game b on a.gid = b.id  where uid = '${id}'::int and b.status = '1' ORDER BY b.id
+		select string_to_array(string_agg(game_name, ','), ',')  as games from (select game_name  from gm_purview a join gm_game b on a.gid = b.id  where uids @> '${id}' and b.status = '1' ORDER BY b.id
 		) a 
 		`;
 		let {0:{games}} = await dbSequelize.query(gamesql, {
@@ -69,7 +75,7 @@ class UserServer extends BaseService{
 		});
 		
 		return {
-			routes, games, gamename, gameid
+			routes, games, gamename, gameid, imgUrl
 		};
 	}
 	// return {routes, games, gamename:game, gameid:gameid.id};
@@ -221,14 +227,17 @@ values
 		if(!fancyToken){return false;}
 		let user =  await verify(fancyToken['data']['token'], secret.sign);
 		let userSelectSql = `
-		select a.* from gm_user a join gm_purview b on a.id=b.uid  where a.username = '${user.username}' 
-		union 
-		select a.* from gm_user a join gm_purview b on a.id=b.uid  where a.username = '${user.username}' 
+		with qwe as (select   jsonb_array_elements_text(uids) as id  from gm_purview   ),
+asd as (select a.* from gm_user a  where a.username = '${user.username}')
+select * from asd where id::varchar in (select id from qwe GROUP BY id )
 		`;
+		// select a.* from gm_user a join gm_purview b on a.id=b.uid  where a.username = '${user.username}' 
+		// union 
+		// select a.* from gm_user a join gm_purview b on a.id=b.uid  where a.username = '${user.username}' 
 		res = await dbSequelize.query(userSelectSql, {
 			replacements:['active'], type:Sequelize.QueryTypes.SELECT
 		});
-		if(res.length===1){
+		if(res.length === 1){
 			res[0]['loginType'] = false;
 			return 	jwt.sign(res[0], secret.sign, {expiresIn:'1y'});
 		}

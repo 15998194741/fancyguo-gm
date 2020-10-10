@@ -48,14 +48,23 @@ class gmGameService {
 		let {gameName, userId} = data;
 		let sql = `
 		with qwe as (insert into gm_game ( game_name,image_url,super_user_id) values('${gameName}','http://106.75.7.83/images/game/${filePath}','${userId}') RETURNING id ),
-		asd as (insert into gm_purview (uid,gid)values('${userId}',(select * from qwe )) returning id),
+		asd as (insert into gm_purview (uid,gid)values('[${userId}]',(select * from qwe )) returning id),
 		ert as (select * from 
 								(select id as purview_id, 1 as  joinnum  from asd ) a join 
 								(select id as url_id,1 as  joinnum from gm_url ) b on a.joinnum = b.joinnum join 
 								(select 1 as grede ,1 as joinnum) c on c.joinnum = b.joinnum
 		),
-		zxc as (insert into gm_url_purview (purview_id ,grede,url_id) select    purview_id,grede,url_id  from ert)
+		zxc as (insert into gm_url_purview (purview_id ,grede,url_id) select    purview_id,grede,url_id  from ert),		
+		xcv as (insert into gm_game_token (type,gameid
+			)values('event',(select * from qwe)
+			),(
+			'user',(select * from qwe)))
 		select * from qwe `;
+		// let tests = `
+		// insert into gm_game_token (gameid,type)
+		// values
+		// (,'user') 
+		// `;
 		let res = await dbSequelize.query(sql, {
 			replacements:['active'], type:Sequelize.QueryTypes.INSERT
 		});
@@ -88,15 +97,19 @@ class gmGameService {
 		};
 		let c = ( id, userId) =>{
 			let sql = `
-			with asd as (select super_user_id ,id from gm_game  where id = '${id}'::int) ,
+with asd as (select super_user_id ,id from gm_game  where id = '${id}'::int) ,
 qwe as (update "gm_game" set super_user_id = '${userId}'::int where id = '${id}'::int RETURNING super_user_id),
-zxc as (update gm_purview set uid = (select * from qwe) where gid = (select id from asd) and uid = (select super_user_id from asd)  RETURNING id  )
+zxc as (update gm_purview set uids = '[${userId}]' where gid = (select id from asd) and uids = (select concat('[',super_user_id,']')::jsonb from asd)  RETURNING id  )
 select * from zxc;
-
 			
 			`;
+			// 			with asd as (select super_user_id ,id from gm_game  where id = '${id}'::int) ,
+			// qwe as (update "gm_game" set super_user_id = '${userId}'::int where id = '${id}'::int RETURNING super_user_id),
+			// zxc as (update gm_purview set uid = (select * from qwe) where gid = (select id from asd) and uid = (select super_user_id from asd)  RETURNING id  )
+			// select * from zxc;
 			return sql;
 		};
+
 		let sql =` 
 		begin;
 		${iamgeChange?await a( file, id):''}
@@ -151,6 +164,18 @@ select * from zxc;
 			});
 		});
 		return filePath;
+	}
+	async changeGameConfig({data:{userName,	userToken,	eventName,	eventToken,	gameid } }){
+		let  sql = `
+		update gm_game_token set token = '${userToken}' ,tablename = '${userName}' where gameid = '${gameid}' and "type" = 'event';
+		update gm_game_token set token = '${eventToken}' ,tablename = '${eventName}' where gameid = '${gameid}' and "type" = 'user';
+		`;
+		let res = await dbSequelize.query(sql, {
+			replacements:['active'], type:Sequelize.QueryTypes.UPDATE
+
+		});
+		return res;
+		
 	}
 }
 export default new gmGameService();
