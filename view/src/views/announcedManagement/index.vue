@@ -4,8 +4,8 @@
     <ul style="margin-top: 5px;margin-bottom: -5px;">
      
       <li><el-button slot="reference" icon="el-icon-refresh" size='small' class="button-with-header" >刷新</el-button></li>
-      <li><el-button slot="reference" icon="el-icon-circle-plus-outline" size='small' class="button-with-header"  @click='dialogFormVisiblechangealter' >新建公告</el-button></li>
-      <li><el-button slot="reference" icon="el-icon-mouse" :disabled='send' size='small' class="button-with-header"  @click='dialogFormVisiblesend = true' >发布</el-button></li>
+      <li><el-button v-if="grade" slot="reference" icon="el-icon-circle-plus-outline" size='small' class="button-with-header"  @click='dialogFormVisiblechangealter' >新建公告</el-button></li>
+      <li><el-button  v-if="grade" slot="reference" icon="el-icon-mouse" :disabled='send' size='small' class="button-with-header"  @click='dialogFormVisiblesend = true' >发布</el-button></li>
 
   
     </ul>
@@ -43,7 +43,7 @@
     <el-table-column v-for='(column,index) in tablecolumn' :key='index' :width="screenWidth" :label="column.label">
       <template slot-scope="scope">{{ scope.row[column.prop] }}</template>
     </el-table-column>
-    <el-table-column  prop='status' label="操作">
+    <el-table-column  v-if="grade" prop='status' label="操作">
       <template slot-scope="scope">
         <el-button  v-show='scope.row["changeshow"]' @click="placardmodify(scope.$index,scope.row)">修改</el-button>
         <el-popconfirm
@@ -518,6 +518,13 @@ export default {
   }, computed: {
     send() {
       return this.tableTrue.length > 0 ? false : true;
+    },
+    grade() {
+      if (+this.$route.meta.grade === 0) {
+        return false;
+      }
+      console.log(+this.$route.meta.grade);
+      return true;
     }
     // changeisshow() {
 

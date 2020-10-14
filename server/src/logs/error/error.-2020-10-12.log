@@ -1,0 +1,1925 @@
+[2020-10-12T11:55:05.534] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/gm/user/getFindGroupName?groupName=1
+request client ip:  ::ffff:127.0.0.1
+request query:  {"groupName":"1","gameid":"1"}
+response time: 1602474905533
+err name: ReferenceError
+err message: userName is not defined
+err stack: ReferenceError: userName is not defined
+    at _callee8$ (H:\致命代码\fancyguo-gm\server\src\app\service\/gm_user.js:107:57)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at gmUserService.<anonymous> (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at gmUserService.getFindGroupName (H:\致命代码\fancyguo-gm\server\src\app\service\gm_user.js:338:34)
+    at _callee9$ (H:\致命代码\fancyguo-gm\server\src\app\controllers\/gm_user.js:75:39)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at getFindGroupName (H:\致命代码\fancyguo-gm\server\src\app\controllers\gm_user.js:338:34)
+    at dispatch (H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at next (H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:45:18)
+    at H:\致命代码\fancyguo-gm\server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:36:12
+    at dispatch (H:\致命代码\fancyguo-gm\server\node_modules\koa-router\lib\router.js:351:31)
+    at next (H:\致命代码\fancyguo-gm\server\node_modules\koa\node_modules\koa-compose\index.js:42:32)
+    at _callee$ (H:\致命代码\fancyguo-gm\server\src\middleware\/index.js:47:11)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+*************** error log end ***************
+
+[2020-10-12T11:55:05.898] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/gm/user/getFindGroupName?groupName=1
+request client ip:  ::ffff:127.0.0.1
+request query:  {"groupName":"1","gameid":"1"}
+response time: 1602474905898
+err name: ReferenceError
+err message: userName is not defined
+err stack: ReferenceError: userName is not defined
+    at _callee8$ (H:\致命代码\fancyguo-gm\server\src\app\service\/gm_user.js:107:57)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at gmUserService.<anonymous> (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at gmUserService.getFindGroupName (H:\致命代码\fancyguo-gm\server\src\app\service\gm_user.js:338:34)
+    at _callee9$ (H:\致命代码\fancyguo-gm\server\src\app\controllers\/gm_user.js:75:39)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at getFindGroupName (H:\致命代码\fancyguo-gm\server\src\app\controllers\gm_user.js:338:34)
+    at dispatch (H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at next (H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:45:18)
+    at H:\致命代码\fancyguo-gm\server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:36:12
+    at dispatch (H:\致命代码\fancyguo-gm\server\node_modules\koa-router\lib\router.js:351:31)
+    at next (H:\致命代码\fancyguo-gm\server\node_modules\koa\node_modules\koa-compose\index.js:42:32)
+    at _callee$ (H:\致命代码\fancyguo-gm\server\src\middleware\/index.js:47:11)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+*************** error log end ***************
+
+[2020-10-12T14:44:19.542] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/gm/user/getFindGroup?value=&page=1&pagesize=10
+request client ip:  ::ffff:127.0.0.1
+request query:  {"value":"","page":"1","pagesize":"10","gameid":"1"}
+response time: 1602485059542
+err name: TypeError
+err message: _gm_user2.default.getFindGroup is not a function
+err stack: TypeError: _gm_user2.default.getFindGroup is not a function
+    at _callee10$ (H:\致命代码\fancyguo-gm\server\src\app\controllers\/gm_user.js:83:39)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at getFindGroup (H:\致命代码\fancyguo-gm\server\src\app\controllers\gm_user.js:371:30)
+    at dispatch (H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at next (H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:45:18)
+    at H:\致命代码\fancyguo-gm\server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:36:12
+    at dispatch (H:\致命代码\fancyguo-gm\server\node_modules\koa-router\lib\router.js:351:31)
+    at next (H:\致命代码\fancyguo-gm\server\node_modules\koa\node_modules\koa-compose\index.js:42:32)
+    at _callee$ (H:\致命代码\fancyguo-gm\server\src\middleware\/index.js:47:11)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at H:\致命代码\fancyguo-gm\server\src\middleware\/index.js:42:2
+    at dispatch (H:\致命代码\fancyguo-gm\server\node_modules\koa\node_modules\koa-compose\index.js:42:32)
+    at H:\致命代码\fancyguo-gm\server\node_modules\koa-mount\index.js:52:32
+    at next (H:\致命代码\fancyguo-gm\server\node_modules\koa\node_modules\koa-compose\index.js:42:32)
+    at _callee$ (H:\致命代码\fancyguo-gm\server\src\middleware\/auth.js:87:9)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+*************** error log end ***************
+
+[2020-10-12T14:44:20.013] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/gm/user/getFindGroup?value=&page=1&pagesize=10
+request client ip:  ::ffff:127.0.0.1
+request query:  {"value":"","page":"1","pagesize":"10","gameid":"1"}
+response time: 1602485060013
+err name: TypeError
+err message: _gm_user2.default.getFindGroup is not a function
+err stack: TypeError: _gm_user2.default.getFindGroup is not a function
+    at _callee10$ (H:\致命代码\fancyguo-gm\server\src\app\controllers\/gm_user.js:83:39)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at getFindGroup (H:\致命代码\fancyguo-gm\server\src\app\controllers\gm_user.js:371:30)
+    at dispatch (H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at next (H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:45:18)
+    at H:\致命代码\fancyguo-gm\server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:36:12
+    at dispatch (H:\致命代码\fancyguo-gm\server\node_modules\koa-router\lib\router.js:351:31)
+    at next (H:\致命代码\fancyguo-gm\server\node_modules\koa\node_modules\koa-compose\index.js:42:32)
+    at _callee$ (H:\致命代码\fancyguo-gm\server\src\middleware\/index.js:47:11)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at H:\致命代码\fancyguo-gm\server\src\middleware\/index.js:42:2
+    at dispatch (H:\致命代码\fancyguo-gm\server\node_modules\koa\node_modules\koa-compose\index.js:42:32)
+    at H:\致命代码\fancyguo-gm\server\node_modules\koa-mount\index.js:52:32
+    at next (H:\致命代码\fancyguo-gm\server\node_modules\koa\node_modules\koa-compose\index.js:42:32)
+    at _callee$ (H:\致命代码\fancyguo-gm\server\src\middleware\/auth.js:87:9)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+*************** error log end ***************
+
+[2020-10-12T15:13:25.809] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /json
+request client ip:  ::1
+request query:  {}
+response time: 1602486805808
+err name: undefined
+err message: 你没有改系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-12T15:13:26.223] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /json
+request client ip:  ::1
+request query:  {}
+response time: 1602486806223
+err name: undefined
+err message: 你没有改系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-12T15:13:26.779] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /json
+request client ip:  ::1
+request query:  {}
+response time: 1602486806779
+err name: undefined
+err message: 你没有改系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-12T15:13:27.293] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /json
+request client ip:  ::1
+request query:  {}
+response time: 1602486807293
+err name: undefined
+err message: 你没有改系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-12T15:13:27.775] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /json
+request client ip:  ::1
+request query:  {}
+response time: 1602486807775
+err name: undefined
+err message: 你没有改系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-12T15:13:29.224] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /json
+request client ip:  ::1
+request query:  {}
+response time: 1602486809224
+err name: undefined
+err message: 你没有改系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-12T15:13:29.768] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /json
+request client ip:  ::1
+request query:  {}
+response time: 1602486809768
+err name: undefined
+err message: 你没有改系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-12T15:13:30.264] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /json
+request client ip:  ::1
+request query:  {}
+response time: 1602486810264
+err name: undefined
+err message: 你没有改系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-12T15:13:30.761] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /json
+request client ip:  ::1
+request query:  {}
+response time: 1602486810760
+err name: undefined
+err message: 你没有改系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-12T15:13:31.224] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /json
+request client ip:  ::1
+request query:  {}
+response time: 1602486811224
+err name: undefined
+err message: 你没有改系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-12T15:13:31.762] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /json
+request client ip:  ::1
+request query:  {}
+response time: 1602486811762
+err name: undefined
+err message: 你没有改系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-12T15:13:32.223] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /json
+request client ip:  ::1
+request query:  {}
+response time: 1602486812223
+err name: undefined
+err message: 你没有改系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-12T15:13:32.723] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /json
+request client ip:  ::1
+request query:  {}
+response time: 1602486812723
+err name: undefined
+err message: 你没有改系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-12T15:13:33.225] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /json
+request client ip:  ::1
+request query:  {}
+response time: 1602486813225
+err name: undefined
+err message: 你没有改系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-12T15:13:33.723] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /json
+request client ip:  ::1
+request query:  {}
+response time: 1602486813723
+err name: undefined
+err message: 你没有改系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-12T15:13:34.264] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /json
+request client ip:  ::1
+request query:  {}
+response time: 1602486814264
+err name: undefined
+err message: 你没有改系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-12T15:13:34.724] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /json
+request client ip:  ::1
+request query:  {}
+response time: 1602486814724
+err name: undefined
+err message: 你没有改系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-12T15:13:35.223] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /json
+request client ip:  ::1
+request query:  {}
+response time: 1602486815223
+err name: undefined
+err message: 你没有改系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-12T15:13:35.724] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /json
+request client ip:  ::1
+request query:  {}
+response time: 1602486815724
+err name: undefined
+err message: 你没有改系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-12T15:13:36.261] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /json
+request client ip:  ::1
+request query:  {}
+response time: 1602486816261
+err name: undefined
+err message: 你没有改系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-12T15:13:36.990] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /json
+request client ip:  ::1
+request query:  {}
+response time: 1602486816990
+err name: undefined
+err message: 你没有改系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-12T15:13:37.444] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /json
+request client ip:  ::1
+request query:  {}
+response time: 1602486817444
+err name: undefined
+err message: 你没有改系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-12T15:13:37.977] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /json
+request client ip:  ::1
+request query:  {}
+response time: 1602486817976
+err name: undefined
+err message: 你没有改系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-12T15:13:38.474] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /json
+request client ip:  ::1
+request query:  {}
+response time: 1602486818474
+err name: undefined
+err message: 你没有改系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-12T15:13:38.972] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /json
+request client ip:  ::1
+request query:  {}
+response time: 1602486818972
+err name: undefined
+err message: 你没有改系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-12T15:13:39.475] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /json
+request client ip:  ::1
+request query:  {}
+response time: 1602486819475
+err name: undefined
+err message: 你没有改系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-12T15:13:39.942] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /json
+request client ip:  ::1
+request query:  {}
+response time: 1602486819942
+err name: undefined
+err message: 你没有改系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-12T15:13:40.475] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /json
+request client ip:  ::1
+request query:  {}
+response time: 1602486820475
+err name: undefined
+err message: 你没有改系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-12T15:13:40.975] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /json
+request client ip:  ::1
+request query:  {}
+response time: 1602486820975
+err name: undefined
+err message: 你没有改系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-12T15:13:41.444] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /json
+request client ip:  ::1
+request query:  {}
+response time: 1602486821444
+err name: undefined
+err message: 你没有改系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-12T15:13:41.944] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /json
+request client ip:  ::1
+request query:  {}
+response time: 1602486821944
+err name: undefined
+err message: 你没有改系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-12T15:13:42.785] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /json
+request client ip:  ::1
+request query:  {}
+response time: 1602486822785
+err name: undefined
+err message: 你没有改系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-12T15:13:43.252] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /json
+request client ip:  ::1
+request query:  {}
+response time: 1602486823252
+err name: undefined
+err message: 你没有改系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-12T15:13:43.788] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /json
+request client ip:  ::1
+request query:  {}
+response time: 1602486823788
+err name: undefined
+err message: 你没有改系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-12T15:13:44.293] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /json
+request client ip:  ::1
+request query:  {}
+response time: 1602486824293
+err name: undefined
+err message: 你没有改系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-12T15:13:44.751] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /json
+request client ip:  ::1
+request query:  {}
+response time: 1602486824751
+err name: undefined
+err message: 你没有改系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-12T15:13:45.251] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /json
+request client ip:  ::1
+request query:  {}
+response time: 1602486825251
+err name: undefined
+err message: 你没有改系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-12T15:13:45.783] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /json
+request client ip:  ::1
+request query:  {}
+response time: 1602486825783
+err name: undefined
+err message: 你没有改系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-12T15:13:46.250] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /json
+request client ip:  ::1
+request query:  {}
+response time: 1602486826250
+err name: undefined
+err message: 你没有改系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-12T15:13:46.781] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /json
+request client ip:  ::1
+request query:  {}
+response time: 1602486826781
+err name: undefined
+err message: 你没有改系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-12T15:13:47.282] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /json
+request client ip:  ::1
+request query:  {}
+response time: 1602486827282
+err name: undefined
+err message: 你没有改系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-12T15:13:47.751] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /json
+request client ip:  ::1
+request query:  {}
+response time: 1602486827751
+err name: undefined
+err message: 你没有改系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-12T15:13:48.253] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /json
+request client ip:  ::1
+request query:  {}
+response time: 1602486828253
+err name: undefined
+err message: 你没有改系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-12T15:13:48.781] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /json
+request client ip:  ::1
+request query:  {}
+response time: 1602486828781
+err name: undefined
+err message: 你没有改系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-12T15:13:49.251] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /json
+request client ip:  ::1
+request query:  {}
+response time: 1602486829251
+err name: undefined
+err message: 你没有改系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-12T15:13:49.750] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /json
+request client ip:  ::1
+request query:  {}
+response time: 1602486829750
+err name: undefined
+err message: 你没有改系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-12T15:13:50.251] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /json
+request client ip:  ::1
+request query:  {}
+response time: 1602486830251
+err name: undefined
+err message: 你没有改系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-12T15:13:50.788] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /json
+request client ip:  ::1
+request query:  {}
+response time: 1602486830788
+err name: undefined
+err message: 你没有改系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-12T15:13:51.321] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /json
+request client ip:  ::1
+request query:  {}
+response time: 1602486831321
+err name: undefined
+err message: 你没有改系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-12T15:13:51.751] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /json
+request client ip:  ::1
+request query:  {}
+response time: 1602486831751
+err name: undefined
+err message: 你没有改系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-12T15:13:52.294] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /json
+request client ip:  ::1
+request query:  {}
+response time: 1602486832294
+err name: undefined
+err message: 你没有改系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-12T15:13:52.753] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /json
+request client ip:  ::1
+request query:  {}
+response time: 1602486832753
+err name: undefined
+err message: 你没有改系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-12T15:13:53.254] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /json
+request client ip:  ::1
+request query:  {}
+response time: 1602486833254
+err name: undefined
+err message: 你没有改系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-12T15:13:53.750] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /json
+request client ip:  ::1
+request query:  {}
+response time: 1602486833750
+err name: undefined
+err message: 你没有改系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-12T15:13:54.250] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /json
+request client ip:  ::1
+request query:  {}
+response time: 1602486834250
+err name: undefined
+err message: 你没有改系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-12T15:13:54.813] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /json
+request client ip:  ::1
+request query:  {}
+response time: 1602486834813
+err name: undefined
+err message: 你没有改系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-12T15:13:55.252] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /json
+request client ip:  ::1
+request query:  {}
+response time: 1602486835252
+err name: undefined
+err message: 你没有改系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-12T15:13:55.750] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /json
+request client ip:  ::1
+request query:  {}
+response time: 1602486835750
+err name: undefined
+err message: 你没有改系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-12T15:13:56.287] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /json
+request client ip:  ::1
+request query:  {}
+response time: 1602486836287
+err name: undefined
+err message: 你没有改系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-12T15:13:56.751] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /json
+request client ip:  ::1
+request query:  {}
+response time: 1602486836751
+err name: undefined
+err message: 你没有改系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-12T15:13:57.250] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /json
+request client ip:  ::1
+request query:  {}
+response time: 1602486837250
+err name: undefined
+err message: 你没有改系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-12T15:13:57.783] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /json
+request client ip:  ::1
+request query:  {}
+response time: 1602486837782
+err name: undefined
+err message: 你没有改系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-12T15:13:58.253] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /json
+request client ip:  ::1
+request query:  {}
+response time: 1602486838253
+err name: undefined
+err message: 你没有改系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-12T15:13:58.753] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /json
+request client ip:  ::1
+request query:  {}
+response time: 1602486838753
+err name: undefined
+err message: 你没有改系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-12T15:13:59.286] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /json
+request client ip:  ::1
+request query:  {}
+response time: 1602486839286
+err name: undefined
+err message: 你没有改系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-12T15:13:59.751] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /json
+request client ip:  ::1
+request query:  {}
+response time: 1602486839751
+err name: undefined
+err message: 你没有改系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-12T15:14:00.250] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /json
+request client ip:  ::1
+request query:  {}
+response time: 1602486840250
+err name: undefined
+err message: 你没有改系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-12T15:14:00.785] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /json
+request client ip:  ::1
+request query:  {}
+response time: 1602486840785
+err name: undefined
+err message: 你没有改系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-12T15:14:01.284] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /json
+request client ip:  ::1
+request query:  {}
+response time: 1602486841283
+err name: undefined
+err message: 你没有改系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-12T15:14:01.752] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /json
+request client ip:  ::1
+request query:  {}
+response time: 1602486841751
+err name: undefined
+err message: 你没有改系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-12T15:14:02.286] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /json
+request client ip:  ::1
+request query:  {}
+response time: 1602486842286
+err name: undefined
+err message: 你没有改系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-12T15:14:02.784] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /json
+request client ip:  ::1
+request query:  {}
+response time: 1602486842784
+err name: undefined
+err message: 你没有改系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-12T15:14:03.250] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /json
+request client ip:  ::1
+request query:  {}
+response time: 1602486843250
+err name: undefined
+err message: 你没有改系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-12T15:14:03.751] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /json
+request client ip:  ::1
+request query:  {}
+response time: 1602486843751
+err name: undefined
+err message: 你没有改系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-12T15:14:04.256] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /json
+request client ip:  ::1
+request query:  {}
+response time: 1602486844256
+err name: undefined
+err message: 你没有改系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-12T15:14:04.801] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /json
+request client ip:  ::1
+request query:  {}
+response time: 1602486844801
+err name: undefined
+err message: 你没有改系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-12T15:14:05.253] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /json
+request client ip:  ::1
+request query:  {}
+response time: 1602486845253
+err name: undefined
+err message: 你没有改系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-12T15:14:05.783] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /json
+request client ip:  ::1
+request query:  {}
+response time: 1602486845783
+err name: undefined
+err message: 你没有改系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-12T15:14:06.251] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /json
+request client ip:  ::1
+request query:  {}
+response time: 1602486846251
+err name: undefined
+err message: 你没有改系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-12T15:14:06.751] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /json
+request client ip:  ::1
+request query:  {}
+response time: 1602486846751
+err name: undefined
+err message: 你没有改系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-12T15:14:07.251] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /json
+request client ip:  ::1
+request query:  {}
+response time: 1602486847251
+err name: undefined
+err message: 你没有改系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-12T15:14:07.752] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /json
+request client ip:  ::1
+request query:  {}
+response time: 1602486847752
+err name: undefined
+err message: 你没有改系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-12T15:14:08.251] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /json
+request client ip:  ::1
+request query:  {}
+response time: 1602486848251
+err name: undefined
+err message: 你没有改系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-12T15:14:08.753] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /json
+request client ip:  ::1
+request query:  {}
+response time: 1602486848752
+err name: undefined
+err message: 你没有改系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-12T15:14:09.279] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /json
+request client ip:  ::1
+request query:  {}
+response time: 1602486849279
+err name: undefined
+err message: 你没有改系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-12T15:14:09.755] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /json
+request client ip:  ::1
+request query:  {}
+response time: 1602486849755
+err name: undefined
+err message: 你没有改系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-12T15:14:10.419] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /json
+request client ip:  ::1
+request query:  {}
+response time: 1602486850419
+err name: undefined
+err message: 你没有改系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-12T15:14:10.757] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /json
+request client ip:  ::1
+request query:  {}
+response time: 1602486850757
+err name: undefined
+err message: 你没有改系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-12T15:14:11.251] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /json
+request client ip:  ::1
+request query:  {}
+response time: 1602486851251
+err name: undefined
+err message: 你没有改系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-12T15:14:16.250] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /json
+request client ip:  ::1
+request query:  {}
+response time: 1602486856250
+err name: undefined
+err message: 你没有改系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-12T15:14:16.751] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /json
+request client ip:  ::1
+request query:  {}
+response time: 1602486856751
+err name: undefined
+err message: 你没有改系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-12T15:14:17.988] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /json
+request client ip:  ::1
+request query:  {}
+response time: 1602486857988
+err name: undefined
+err message: 你没有改系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-12T15:14:20.431] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /json
+request client ip:  ::1
+request query:  {}
+response time: 1602486860431
+err name: undefined
+err message: 你没有改系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-12T15:48:20.495] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/gm/user/getFindGroup?value=&page=1&pagesize=10
+request client ip:  ::ffff:127.0.0.1
+request query:  {"value":"","page":"1","pagesize":"10","gameid":"1"}
+response time: 1602488900495
+err name: SequelizeDatabaseError
+err message: syntax error at or near ":"
+err stack: SequelizeDatabaseError: syntax error at or near ":"
+    at Query.formatError (H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:366:16)
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:72:18
+From previous event:
+    at Query.run (H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:64:23)
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:29
+From previous event:
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:12
+    at processImmediate (internal/timers.js:456:21)
+From previous event:
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:651:10
+    at H:\致命代码\fancyguo-gm\server\node_modules\retry-as-promised\index.js:70:21
+    at new Promise (<anonymous>)
+    at retryAsPromised (H:\致命代码\fancyguo-gm\server\node_modules\retry-as-promised\index.js:60:10)
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:641:30
+From previous event:
+    at Sequelize.query (H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:590:23)
+    at _callee9$ (H:\致命代码\fancyguo-gm\server\src\app\service\/gm_user.js:136:31)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at gmUserService.<anonymous> (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at gmUserService.getFindGroup (H:\致命代码\fancyguo-gm\server\src\app\service\gm_user.js:398:30)
+    at _callee10$ (H:\致命代码\fancyguo-gm\server\src\app\controllers\/gm_user.js:83:39)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at getFindGroup (H:\致命代码\fancyguo-gm\server\src\app\controllers\gm_user.js:371:30)
+    at dispatch (H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at next (H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:45:18)
+    at H:\致命代码\fancyguo-gm\server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:36:12
+    at dispatch (H:\致命代码\fancyguo-gm\server\node_modules\koa-router\lib\router.js:351:31)
+    at next (H:\致命代码\fancyguo-gm\server\node_modules\koa\node_modules\koa-compose\index.js:42:32)
+    at _callee$ (H:\致命代码\fancyguo-gm\server\src\middleware\/index.js:47:11)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at H:\致命代码\fancyguo-gm\server\src\middleware\/index.js:42:2
+*************** error log end ***************
+
+[2020-10-12T16:08:49.449] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission?game=%E7%A9%BA%E7%BF%BC%E5%86%92%E9%99%A9%E5%9B%A2&username=
+request client ip:  ::ffff:127.0.0.1
+request query:  {"game":"空翼冒险团","username":""}
+response time: 1602490129448
+err name: SequelizeDatabaseError
+err message: could not identify an equality operator for type json
+err stack: SequelizeDatabaseError: could not identify an equality operator for type json
+    at Query.formatError (H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:366:16)
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:72:18
+From previous event:
+    at Query.run (H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:64:23)
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:29
+From previous event:
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:12
+    at processImmediate (internal/timers.js:456:21)
+From previous event:
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:651:10
+    at H:\致命代码\fancyguo-gm\server\node_modules\retry-as-promised\index.js:70:21
+    at new Promise (<anonymous>)
+    at retryAsPromised (H:\致命代码\fancyguo-gm\server\node_modules\retry-as-promised\index.js:60:10)
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:641:30
+From previous event:
+    at Sequelize.query (H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:590:23)
+    at _callee$ (H:\致命代码\fancyguo-gm\server\src\app\service\/user.js:68:34)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+*************** error log end ***************
+
+[2020-10-12T16:09:25.518] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission?game=%E7%A9%BA%E7%BF%BC%E5%86%92%E9%99%A9%E5%9B%A2&username=
+request client ip:  ::ffff:127.0.0.1
+request query:  {"game":"空翼冒险团","username":""}
+response time: 1602490165518
+err name: SequelizeDatabaseError
+err message: could not identify an equality operator for type json
+err stack: SequelizeDatabaseError: could not identify an equality operator for type json
+    at Query.formatError (H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:366:16)
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:72:18
+From previous event:
+    at Query.run (H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:64:23)
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:29
+From previous event:
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:12
+    at processImmediate (internal/timers.js:456:21)
+From previous event:
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:651:10
+    at H:\致命代码\fancyguo-gm\server\node_modules\retry-as-promised\index.js:70:21
+    at new Promise (<anonymous>)
+    at retryAsPromised (H:\致命代码\fancyguo-gm\server\node_modules\retry-as-promised\index.js:60:10)
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:641:30
+From previous event:
+    at Sequelize.query (H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:590:23)
+    at _callee$ (H:\致命代码\fancyguo-gm\server\src\app\service\/user.js:69:34)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+*************** error log end ***************
+
+[2020-10-12T16:47:45.699] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission?game=%E7%A9%BA%E7%BF%BC%E5%86%92%E9%99%A9%E5%9B%A2&username=
+request client ip:  ::ffff:127.0.0.1
+request query:  {"game":"空翼冒险团","username":""}
+response time: 1602492465698
+err name: SequelizeDatabaseError
+err message: could not identify an equality operator for type json
+err stack: SequelizeDatabaseError: could not identify an equality operator for type json
+    at Query.formatError (H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:366:16)
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:72:18
+From previous event:
+    at Query.run (H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:64:23)
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:29
+From previous event:
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:12
+    at processImmediate (internal/timers.js:456:21)
+From previous event:
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:651:10
+    at H:\致命代码\fancyguo-gm\server\node_modules\retry-as-promised\index.js:70:21
+    at new Promise (<anonymous>)
+    at retryAsPromised (H:\致命代码\fancyguo-gm\server\node_modules\retry-as-promised\index.js:60:10)
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:641:30
+From previous event:
+    at Sequelize.query (H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:590:23)
+    at _callee$ (H:\致命代码\fancyguo-gm\server\src\app\service\/user.js:69:34)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+*************** error log end ***************
+
+[2020-10-12T16:47:50.188] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission?game=%E7%A9%BA%E7%BF%BC%E5%86%92%E9%99%A9%E5%9B%A2&username=
+request client ip:  ::ffff:127.0.0.1
+request query:  {"game":"空翼冒险团","username":""}
+response time: 1602492470188
+err name: SequelizeDatabaseError
+err message: could not identify an equality operator for type json
+err stack: SequelizeDatabaseError: could not identify an equality operator for type json
+    at Query.formatError (H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:366:16)
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:72:18
+From previous event:
+    at Query.run (H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:64:23)
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:29
+From previous event:
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:12
+    at processImmediate (internal/timers.js:456:21)
+From previous event:
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:651:10
+    at H:\致命代码\fancyguo-gm\server\node_modules\retry-as-promised\index.js:70:21
+    at new Promise (<anonymous>)
+    at retryAsPromised (H:\致命代码\fancyguo-gm\server\node_modules\retry-as-promised\index.js:60:10)
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:641:30
+From previous event:
+    at Sequelize.query (H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:590:23)
+    at _callee$ (H:\致命代码\fancyguo-gm\server\src\app\service\/user.js:69:34)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+*************** error log end ***************
+
+[2020-10-12T16:49:16.062] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission?game=%E7%A9%BA%E7%BF%BC%E5%86%92%E9%99%A9%E5%9B%A2&username=
+request client ip:  
+request query:  {"game":"空翼冒险团","username":""}
+response time: 1602492556062
+err name: SequelizeDatabaseError
+err message: could not identify an equality operator for type json
+err stack: SequelizeDatabaseError: could not identify an equality operator for type json
+    at Query.formatError (H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:366:16)
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:72:18
+From previous event:
+    at Query.run (H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:64:23)
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:29
+From previous event:
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:12
+    at processImmediate (internal/timers.js:456:21)
+From previous event:
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:651:10
+    at H:\致命代码\fancyguo-gm\server\node_modules\retry-as-promised\index.js:70:21
+    at new Promise (<anonymous>)
+    at retryAsPromised (H:\致命代码\fancyguo-gm\server\node_modules\retry-as-promised\index.js:60:10)
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:641:30
+From previous event:
+    at Sequelize.query (H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:590:23)
+    at _callee$ (H:\致命代码\fancyguo-gm\server\src\app\service\/user.js:69:34)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+*************** error log end ***************
+
+[2020-10-12T16:49:22.138] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission?game=%E7%A9%BA%E7%BF%BC%E5%86%92%E9%99%A9%E5%9B%A2&username=
+request client ip:  
+request query:  {"game":"空翼冒险团","username":""}
+response time: 1602492562138
+err name: SequelizeDatabaseError
+err message: could not identify an equality operator for type json
+err stack: SequelizeDatabaseError: could not identify an equality operator for type json
+    at Query.formatError (H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:366:16)
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:72:18
+From previous event:
+    at Query.run (H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:64:23)
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:29
+From previous event:
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:12
+    at processImmediate (internal/timers.js:456:21)
+From previous event:
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:651:10
+    at H:\致命代码\fancyguo-gm\server\node_modules\retry-as-promised\index.js:70:21
+    at new Promise (<anonymous>)
+    at retryAsPromised (H:\致命代码\fancyguo-gm\server\node_modules\retry-as-promised\index.js:60:10)
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:641:30
+From previous event:
+    at Sequelize.query (H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:590:23)
+    at _callee$ (H:\致命代码\fancyguo-gm\server\src\app\service\/user.js:69:34)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+*************** error log end ***************
+
+[2020-10-12T16:49:27.693] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission?game=%E7%A9%BA%E7%BF%BC%E5%86%92%E9%99%A9%E5%9B%A2&username=
+request client ip:  ::ffff:127.0.0.1
+request query:  {"game":"空翼冒险团","username":""}
+response time: 1602492567693
+err name: SequelizeDatabaseError
+err message: could not identify an equality operator for type json
+err stack: SequelizeDatabaseError: could not identify an equality operator for type json
+    at Query.formatError (H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:366:16)
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:72:18
+From previous event:
+    at Query.run (H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:64:23)
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:29
+From previous event:
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:12
+    at processImmediate (internal/timers.js:456:21)
+From previous event:
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:651:10
+    at H:\致命代码\fancyguo-gm\server\node_modules\retry-as-promised\index.js:70:21
+    at new Promise (<anonymous>)
+    at retryAsPromised (H:\致命代码\fancyguo-gm\server\node_modules\retry-as-promised\index.js:60:10)
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:641:30
+From previous event:
+    at Sequelize.query (H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:590:23)
+    at _callee$ (H:\致命代码\fancyguo-gm\server\src\app\service\/user.js:69:34)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+*************** error log end ***************
+
+[2020-10-12T16:49:33.708] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission?username=
+request client ip:  
+request query:  {"username":""}
+response time: 1602492573708
+err name: SequelizeDatabaseError
+err message: could not identify an equality operator for type json
+err stack: SequelizeDatabaseError: could not identify an equality operator for type json
+    at Query.formatError (H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:366:16)
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:72:18
+From previous event:
+    at Query.run (H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:64:23)
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:29
+From previous event:
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:12
+    at processImmediate (internal/timers.js:456:21)
+From previous event:
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:651:10
+    at H:\致命代码\fancyguo-gm\server\node_modules\retry-as-promised\index.js:70:21
+    at new Promise (<anonymous>)
+    at retryAsPromised (H:\致命代码\fancyguo-gm\server\node_modules\retry-as-promised\index.js:60:10)
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:641:30
+From previous event:
+    at Sequelize.query (H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:590:23)
+    at _callee$ (H:\致命代码\fancyguo-gm\server\src\app\service\/user.js:69:34)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+*************** error log end ***************
+
+[2020-10-12T16:49:37.775] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission?username=
+request client ip:  
+request query:  {"username":""}
+response time: 1602492577775
+err name: SequelizeDatabaseError
+err message: could not identify an equality operator for type json
+err stack: SequelizeDatabaseError: could not identify an equality operator for type json
+    at Query.formatError (H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:366:16)
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:72:18
+From previous event:
+    at Query.run (H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:64:23)
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:29
+From previous event:
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:12
+    at processImmediate (internal/timers.js:456:21)
+From previous event:
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:651:10
+    at H:\致命代码\fancyguo-gm\server\node_modules\retry-as-promised\index.js:70:21
+    at new Promise (<anonymous>)
+    at retryAsPromised (H:\致命代码\fancyguo-gm\server\node_modules\retry-as-promised\index.js:60:10)
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:641:30
+From previous event:
+    at Sequelize.query (H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:590:23)
+    at _callee$ (H:\致命代码\fancyguo-gm\server\src\app\service\/user.js:69:34)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+*************** error log end ***************
+
+[2020-10-12T16:49:42.139] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission?username=
+request client ip:  
+request query:  {"username":""}
+response time: 1602492582139
+err name: SequelizeDatabaseError
+err message: could not identify an equality operator for type json
+err stack: SequelizeDatabaseError: could not identify an equality operator for type json
+    at Query.formatError (H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:366:16)
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:72:18
+From previous event:
+    at Query.run (H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:64:23)
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:29
+From previous event:
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:12
+    at processImmediate (internal/timers.js:456:21)
+From previous event:
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:651:10
+    at H:\致命代码\fancyguo-gm\server\node_modules\retry-as-promised\index.js:70:21
+    at new Promise (<anonymous>)
+    at retryAsPromised (H:\致命代码\fancyguo-gm\server\node_modules\retry-as-promised\index.js:60:10)
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:641:30
+From previous event:
+    at Sequelize.query (H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:590:23)
+    at _callee$ (H:\致命代码\fancyguo-gm\server\src\app\service\/user.js:69:34)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+*************** error log end ***************
+
+[2020-10-12T16:49:49.983] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission?username=
+request client ip:  
+request query:  {"username":""}
+response time: 1602492589983
+err name: SequelizeDatabaseError
+err message: could not identify an equality operator for type json
+err stack: SequelizeDatabaseError: could not identify an equality operator for type json
+    at Query.formatError (H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:366:16)
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:72:18
+From previous event:
+    at Query.run (H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:64:23)
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:29
+From previous event:
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:12
+    at processImmediate (internal/timers.js:456:21)
+From previous event:
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:651:10
+    at H:\致命代码\fancyguo-gm\server\node_modules\retry-as-promised\index.js:70:21
+    at new Promise (<anonymous>)
+    at retryAsPromised (H:\致命代码\fancyguo-gm\server\node_modules\retry-as-promised\index.js:60:10)
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:641:30
+From previous event:
+    at Sequelize.query (H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:590:23)
+    at _callee$ (H:\致命代码\fancyguo-gm\server\src\app\service\/user.js:69:34)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+*************** error log end ***************
+
+[2020-10-12T16:49:54.004] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission?username=
+request client ip:  
+request query:  {"username":""}
+response time: 1602492594004
+err name: SequelizeDatabaseError
+err message: could not identify an equality operator for type json
+err stack: SequelizeDatabaseError: could not identify an equality operator for type json
+    at Query.formatError (H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:366:16)
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:72:18
+From previous event:
+    at Query.run (H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:64:23)
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:29
+From previous event:
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:12
+    at processImmediate (internal/timers.js:456:21)
+From previous event:
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:651:10
+    at H:\致命代码\fancyguo-gm\server\node_modules\retry-as-promised\index.js:70:21
+    at new Promise (<anonymous>)
+    at retryAsPromised (H:\致命代码\fancyguo-gm\server\node_modules\retry-as-promised\index.js:60:10)
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:641:30
+From previous event:
+    at Sequelize.query (H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:590:23)
+    at _callee$ (H:\致命代码\fancyguo-gm\server\src\app\service\/user.js:69:34)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+*************** error log end ***************
+
+[2020-10-12T16:49:55.740] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission?username=
+request client ip:  
+request query:  {"username":""}
+response time: 1602492595740
+err name: SequelizeDatabaseError
+err message: could not identify an equality operator for type json
+err stack: SequelizeDatabaseError: could not identify an equality operator for type json
+    at Query.formatError (H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:366:16)
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:72:18
+From previous event:
+    at Query.run (H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:64:23)
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:29
+From previous event:
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:12
+    at processImmediate (internal/timers.js:456:21)
+From previous event:
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:651:10
+    at H:\致命代码\fancyguo-gm\server\node_modules\retry-as-promised\index.js:70:21
+    at new Promise (<anonymous>)
+    at retryAsPromised (H:\致命代码\fancyguo-gm\server\node_modules\retry-as-promised\index.js:60:10)
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:641:30
+From previous event:
+    at Sequelize.query (H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:590:23)
+    at _callee$ (H:\致命代码\fancyguo-gm\server\src\app\service\/user.js:69:34)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+*************** error log end ***************
+
+[2020-10-12T16:49:57.906] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission?username=
+request client ip:  ::ffff:127.0.0.1
+request query:  {"username":""}
+response time: 1602492597906
+err name: SequelizeDatabaseError
+err message: could not identify an equality operator for type json
+err stack: SequelizeDatabaseError: could not identify an equality operator for type json
+    at Query.formatError (H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:366:16)
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:72:18
+From previous event:
+    at Query.run (H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:64:23)
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:29
+From previous event:
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:12
+    at processImmediate (internal/timers.js:456:21)
+From previous event:
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:651:10
+    at H:\致命代码\fancyguo-gm\server\node_modules\retry-as-promised\index.js:70:21
+    at new Promise (<anonymous>)
+    at retryAsPromised (H:\致命代码\fancyguo-gm\server\node_modules\retry-as-promised\index.js:60:10)
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:641:30
+From previous event:
+    at Sequelize.query (H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:590:23)
+    at _callee$ (H:\致命代码\fancyguo-gm\server\src\app\service\/user.js:69:34)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+*************** error log end ***************
+
+[2020-10-12T16:50:03.050] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission?username=
+request client ip:  ::ffff:127.0.0.1
+request query:  {"username":""}
+response time: 1602492603049
+err name: SequelizeDatabaseError
+err message: could not identify an equality operator for type json
+err stack: SequelizeDatabaseError: could not identify an equality operator for type json
+    at Query.formatError (H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:366:16)
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:72:18
+From previous event:
+    at Query.run (H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:64:23)
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:29
+From previous event:
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:12
+    at processImmediate (internal/timers.js:456:21)
+From previous event:
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:651:10
+    at H:\致命代码\fancyguo-gm\server\node_modules\retry-as-promised\index.js:70:21
+    at new Promise (<anonymous>)
+    at retryAsPromised (H:\致命代码\fancyguo-gm\server\node_modules\retry-as-promised\index.js:60:10)
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:641:30
+From previous event:
+    at Sequelize.query (H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:590:23)
+    at _callee$ (H:\致命代码\fancyguo-gm\server\src\app\service\/user.js:69:34)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+*************** error log end ***************
+
+[2020-10-12T16:50:06.763] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission?game=%E7%A9%BA%E7%BF%BC%E5%86%92%E9%99%A9%E5%9B%A2&username=
+request client ip:  ::ffff:127.0.0.1
+request query:  {"game":"空翼冒险团","username":""}
+response time: 1602492606763
+err name: SequelizeDatabaseError
+err message: could not identify an equality operator for type json
+err stack: SequelizeDatabaseError: could not identify an equality operator for type json
+    at Query.formatError (H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:366:16)
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:72:18
+From previous event:
+    at Query.run (H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:64:23)
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:29
+From previous event:
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:12
+    at processImmediate (internal/timers.js:456:21)
+From previous event:
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:651:10
+    at H:\致命代码\fancyguo-gm\server\node_modules\retry-as-promised\index.js:70:21
+    at new Promise (<anonymous>)
+    at retryAsPromised (H:\致命代码\fancyguo-gm\server\node_modules\retry-as-promised\index.js:60:10)
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:641:30
+From previous event:
+    at Sequelize.query (H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:590:23)
+    at _callee$ (H:\致命代码\fancyguo-gm\server\src\app\service\/user.js:69:34)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+*************** error log end ***************
+

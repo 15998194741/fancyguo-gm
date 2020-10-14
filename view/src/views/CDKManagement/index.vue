@@ -4,7 +4,7 @@
     <ul style="margin-top: 5px;margin-bottom: -5px;margin-right: 10px;">
       <li><el-button slot="reference" icon="el-icon-refresh" size='small' class="button-with-header" >刷新</el-button></li>
       <!-- <li><el-button slot="reference" icon="el-icon-download" size='small' class="button-with-header" >导出</el-button></li> -->
-      <li> <el-button  slot="append" icon="el-icon-plus" size='small' class="button-with-header"  @click='createCdkForm' >新建CDK</el-button></li>
+      <li> <el-button v-if="grade" slot="append" icon="el-icon-plus" size='small' class="button-with-header"  @click='createCdkForm' >新建CDK</el-button></li>
     </ul>
   </div>
   <div class="role-container-search">
@@ -42,18 +42,18 @@
           </div>  
       </template>
     </el-table-column>
-    <el-table-column  label="查看详情">
+    <el-table-column   label="查看详情">
        <template slot-scope="scope"> 
          <el-button type="primary" plain @click='viewDetails(scope)'>点击查看</el-button>
        </template>
     </el-table-column>
-   <el-table-column  label="CSV下载">
+   <el-table-column v-if="grade"  label="CSV下载">
        <template slot-scope="scope" > 
          <el-button v-if="+scope['row']['type'] !== 1" type="primary" plain @click='downloadCDK(scope)'>点击下载</el-button>
          <p v-else>{{scope['row']['cdkid']}}</p>
        </template>
     </el-table-column>
-       <el-table-column  label="紧急停用">
+       <el-table-column v-if="grade"  label="紧急停用">
        <template slot-scope="scope" > 
          <el-button  v-if="+scope['row']['status'] === 1" type="danger" plain @click='cdkStop(scope)'>紧急停用</el-button>
           <p v-else>已停用</p>
@@ -387,6 +387,13 @@ export default {
         return true;
       }
       return false;
+    },
+    grade() {
+      if (+this.$route.meta.grade === 0) {
+        return false;
+      }
+      console.log(+this.$route.meta.grade);
+      return true;
     }
   },  
   methods: {

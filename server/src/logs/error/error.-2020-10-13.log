@@ -1,0 +1,125 @@
+[2020-10-13T15:08:02.024] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: PUT
+request originalUrl:  /api/gm/user/deleteGroupUser
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"id":3,"username":"chensijian","alias":"SJ","type":"青果用户","createtime":"2020-10-13 15:07:58","vales":{"id":25,"username":["Huxiao","rongzijian","chensijian"],"status":1,"create_user_id":null,"update_user_id":null,"create_time":"2020-10-12T10:38:34.753Z","update_time":"2020-10-12T10:38:34.753Z","uid":null,"gid":1,"uids":[3,4,5],"group_name":"这是都可见","groupname":"这是都可见"},"gameid":"1"}
+response time: 1602572882023
+err name: TypeError
+err message: Cannot read property 'id' of undefined
+err stack: TypeError: Cannot read property 'id' of undefined
+    at _callee14$ (H:\致命代码\fancyguo-gm\server\src\app\service\/gm_user.js:237:16)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at gmUserService.<anonymous> (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at gmUserService.deleteGroupUser (H:\致命代码\fancyguo-gm\server\src\app\service\gm_user.js:634:33)
+    at _callee15$ (H:\致命代码\fancyguo-gm\server\src\app\controllers\/gm_user.js:124:39)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at deleteGroupUser (H:\致命代码\fancyguo-gm\server\src\app\controllers\gm_user.js:533:33)
+    at dispatch (H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at next (H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:45:18)
+    at H:\致命代码\fancyguo-gm\server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:36:12
+    at dispatch (H:\致命代码\fancyguo-gm\server\node_modules\koa-router\lib\router.js:351:31)
+    at next (H:\致命代码\fancyguo-gm\server\node_modules\koa\node_modules\koa-compose\index.js:42:32)
+    at _callee$ (H:\致命代码\fancyguo-gm\server\src\middleware\/index.js:47:11)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+*************** error log end ***************
+
+[2020-10-13T16:43:40.297] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/gm/user/postCreateGroupUser
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"userId":106,"vales":{"id":25,"username":["wanzhilin"],"status":1,"create_user_id":null,"update_user_id":null,"create_time":"2020-10-12T10:38:34.753Z","update_time":"2020-10-12T10:38:34.753Z","uid":null,"gid":1,"uids":[7],"group_name":"这是都可见","groupname":"这是都可见"},"gameid":"1"}
+response time: 1602578620297
+err name: SequelizeDatabaseError
+err message: syntax error at or near "1"
+err stack: SequelizeDatabaseError: syntax error at or near "1"
+    at Query.formatError (H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:366:16)
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:72:18
+From previous event:
+    at Query.run (H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:64:23)
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:29
+From previous event:
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:12
+    at processImmediate (internal/timers.js:456:21)
+From previous event:
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:651:10
+    at H:\致命代码\fancyguo-gm\server\node_modules\retry-as-promised\index.js:70:21
+    at new Promise (<anonymous>)
+    at retryAsPromised (H:\致命代码\fancyguo-gm\server\node_modules\retry-as-promised\index.js:60:10)
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:641:30
+From previous event:
+    at Sequelize.query (H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:590:23)
+    at _callee16$ (H:\致命代码\fancyguo-gm\server\src\app\service\/gm_user.js:265:32)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at gmUserService.<anonymous> (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at gmUserService.postCreateGroupUser (H:\致命代码\fancyguo-gm\server\src\app\service\gm_user.js:704:37)
+    at _callee17$ (H:\致命代码\fancyguo-gm\server\src\app\controllers\/gm_user.js:139:39)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at postCreateGroupUser (H:\致命代码\fancyguo-gm\server\src\app\controllers\gm_user.js:598:37)
+    at dispatch (H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at next (H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:45:18)
+    at H:\致命代码\fancyguo-gm\server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:36:12
+    at dispatch (H:\致命代码\fancyguo-gm\server\node_modules\koa-router\lib\router.js:351:31)
+    at next (H:\致命代码\fancyguo-gm\server\node_modules\koa\node_modules\koa-compose\index.js:42:32)
+    at _callee$ (H:\致命代码\fancyguo-gm\server\src\middleware\/index.js:47:11)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at H:\致命代码\fancyguo-gm\server\src\middleware\/index.js:42:2
+*************** error log end ***************
+
+[2020-10-13T16:51:17.302] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/gm/user/getFindGroup?page=1&pagesize=10
+request client ip:  ::ffff:127.0.0.1
+request query:  {"page":"1","pagesize":"10"}
+response time: 1602579077302
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+

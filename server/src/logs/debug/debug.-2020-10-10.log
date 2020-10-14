@@ -1816,3 +1816,97 @@ select * from asd where id::varchar in (select id from qwe GROUP BY id )
 [2020-10-10T16:18:33.928] [DEBUG] debugLogger - Executing (default): select count(id) as total from auth_user   where gameid = '1' and status = '1'
 [2020-10-10T16:18:34.391] [DEBUG] debugLogger - Executing (default): select id,username,alias,create_time as createTime from auth_user where gameid = '1' and status = '1'   order by id limit 40 offset 0
 [2020-10-10T16:18:34.398] [DEBUG] debugLogger - Executing (default): select count(id) as total from auth_user   where gameid = '1' and status = '1'
+[2020-10-10T16:45:22.705] [DEBUG] debugLogger - Executing (default): select * from auth_user where username = 'xiaolu' and password = md5(encode('123456', 'BASE64'))
+[2020-10-10T16:45:22.787] [DEBUG] debugLogger - Executing (default): select a.id,a.game_name ,a.image_url as img from gm_game a join gm_purview b on b.gid = a.id where b.uids @> '1' and a.status = '1'    limit 1
+[2020-10-10T16:45:22.798] [DEBUG] debugLogger - Executing (default): with 
+				qwe as (select a.url,a.pid,a.name,d.game_name,d.id as gameid, a.id,b.grede , b.purview_id,c.uid,c.gid from gm_url a join gm_url_purview  b on  a.id = b.url_id  join gm_purview c on c.id = b.purview_id join gm_game d on d.id = c.gid where  c.uids @> '1' and d.id = '5' and d.status = 1  order by id ),
+				asd as (select name,(select json_agg(concat('{"url":"',url,'","name":"',name,'","meta":"',grede,'"}')::jsonb) from qwe  where qwe.pid = d.id) as children from qwe as d where pid = 0 ORDER BY d.id)
+				select * from asd
+[2020-10-10T16:45:22.806] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(game_name, ','), ',')  as games from (select game_name  from gm_purview a join gm_game b on a.gid = b.id  where uids @> '1' and b.status = '1' ORDER BY b.id
+		) a
+[2020-10-10T16:45:29.339] [DEBUG] debugLogger - Executing (default): select * from auth_user where username = 'zhangzongchu' and password = md5(encode('281317', 'BASE64'))
+[2020-10-10T16:45:29.606] [DEBUG] debugLogger - Executing (default): with qwe as (select   jsonb_array_elements_text(uids) as id  from gm_purview   ),
+asd as (select a.* from gm_user a  where a.username = 'zhangzongchu')
+select * from asd where id::varchar in (select id from qwe GROUP BY id )
+[2020-10-10T16:45:29.953] [DEBUG] debugLogger - Executing (default): select a.id,a.game_name ,a.image_url as img from gm_game a join gm_purview b on b.gid = a.id where b.uids @> '79' and a.status = '1'    limit 1
+[2020-10-10T16:45:29.961] [DEBUG] debugLogger - Executing (default): with 
+				qwe as (select a.url,a.pid,a.name,d.game_name,d.id as gameid, a.id,b.grede , b.purview_id,c.uid,c.gid from gm_url a join gm_url_purview  b on  a.id = b.url_id  join gm_purview c on c.id = b.purview_id join gm_game d on d.id = c.gid where  c.uids @> '79' and d.id = '1' and d.status = 1  order by id ),
+				asd as (select name,(select json_agg(concat('{"url":"',url,'","name":"',name,'","meta":"',grede,'"}')::jsonb) from qwe  where qwe.pid = d.id) as children from qwe as d where pid = 0 ORDER BY d.id)
+				select * from asd
+[2020-10-10T16:45:29.968] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(game_name, ','), ',')  as games from (select game_name  from gm_purview a join gm_game b on a.gid = b.id  where uids @> '79' and b.status = '1' ORDER BY b.id
+		) a
+[2020-10-10T16:45:33.177] [DEBUG] debugLogger - Executing (default): SELECT id,super_user_id as userId,game_name as gamename ,image_url as url ,false as movehover FROM "gm_game"  where case when 5 = '1'::int then id != '5' else id = '1' end and status = '1'
+[2020-10-10T17:30:11.280] [DEBUG] debugLogger - Executing (default): select id,username,alias,create_time as createTime from auth_user where gameid = '1' and status = '1'   order by id limit 10 offset 0
+[2020-10-10T17:30:11.289] [DEBUG] debugLogger - Executing (default): select count(id) as total from auth_user   where gameid = '1' and status = '1'
+[2020-10-10T17:30:11.342] [DEBUG] debugLogger - Executing (default): select id,username,alias,create_time as createTime from auth_user where gameid = '1' and status = '1'   order by id limit 10 offset 0
+[2020-10-10T17:30:11.349] [DEBUG] debugLogger - Executing (default): select count(id) as total from auth_user   where gameid = '1' and status = '1'
+[2020-10-10T17:30:12.334] [DEBUG] debugLogger - Executing (default): SELECT id,super_user_id as userId,game_name as gamename ,image_url as url ,false as movehover FROM "gm_game"  where case when 5 = '1'::int then id != '5' else id = '1' end and status = '1'
+[2020-10-10T17:30:44.728] [DEBUG] debugLogger - Executing (default): select id,username,alias,create_time as createTime from auth_user where gameid = '1' and status = '1'   order by id limit 10 offset 0
+[2020-10-10T17:30:44.740] [DEBUG] debugLogger - Executing (default): select count(id) as total from auth_user   where gameid = '1' and status = '1'
+[2020-10-10T17:30:45.057] [DEBUG] debugLogger - Executing (default): select id,username,alias,create_time as createTime from auth_user where gameid = '1' and status = '1'   order by id limit 10 offset 0
+[2020-10-10T17:30:45.064] [DEBUG] debugLogger - Executing (default): select count(id) as total from auth_user   where gameid = '1' and status = '1'
+[2020-10-10T17:32:45.618] [DEBUG] debugLogger - Executing (default): select a.id,a.game_name ,a.image_url as img from gm_game a join gm_purview b on b.gid = a.id where b.uids @> '79' and a.status = '1'    limit 1
+[2020-10-10T17:32:45.630] [DEBUG] debugLogger - Executing (default): with 
+				qwe as (select a.url,a.pid,a.name,d.game_name,d.id as gameid, a.id,b.grede , b.purview_id,c.uid,c.gid from gm_url a join gm_url_purview  b on  a.id = b.url_id  join gm_purview c on c.id = b.purview_id join gm_game d on d.id = c.gid where  c.uids @> '79' and d.id = '1' and d.status = 1  order by id ),
+				asd as (select name,(select json_agg(concat('{"url":"',url,'","name":"',name,'","meta":"',grede,'"}')::jsonb) from qwe  where qwe.pid = d.id) as children from qwe as d where pid = 0 ORDER BY d.id)
+				select * from asd
+[2020-10-10T17:32:45.645] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(game_name, ','), ',')  as games from (select game_name  from gm_purview a join gm_game b on a.gid = b.id  where uids @> '79' and b.status = '1' ORDER BY b.id
+		) a
+[2020-10-10T17:32:46.114] [DEBUG] debugLogger - Executing (default): select id,username,alias,create_time as createTime from auth_user where gameid = '1' and status = '1'   order by id limit 10 offset 0
+[2020-10-10T17:32:46.124] [DEBUG] debugLogger - Executing (default): select count(id) as total from auth_user   where gameid = '1' and status = '1'
+[2020-10-10T17:32:46.473] [DEBUG] debugLogger - Executing (default): select id,username,alias,create_time as createTime from auth_user where gameid = '1' and status = '1'   order by id limit 10 offset 0
+[2020-10-10T17:32:46.482] [DEBUG] debugLogger - Executing (default): select count(id) as total from auth_user   where gameid = '1' and status = '1'
+[2020-10-10T17:35:55.164] [DEBUG] debugLogger - Executing (default): select a.id,a.game_name ,a.image_url as img from gm_game a join gm_purview b on b.gid = a.id where b.uids @> '79' and a.status = '1'    limit 1
+[2020-10-10T17:35:55.174] [DEBUG] debugLogger - Executing (default): with 
+				qwe as (select a.url,a.pid,a.name,d.game_name,d.id as gameid, a.id,b.grede , b.purview_id,c.uid,c.gid from gm_url a join gm_url_purview  b on  a.id = b.url_id  join gm_purview c on c.id = b.purview_id join gm_game d on d.id = c.gid where  c.uids @> '79' and d.id = '1' and d.status = 1  order by id ),
+				asd as (select name,(select json_agg(concat('{"url":"',url,'","name":"',name,'","meta":"',grede,'"}')::jsonb) from qwe  where qwe.pid = d.id) as children from qwe as d where pid = 0 ORDER BY d.id)
+				select * from asd
+[2020-10-10T17:35:55.186] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(game_name, ','), ',')  as games from (select game_name  from gm_purview a join gm_game b on a.gid = b.id  where uids @> '79' and b.status = '1' ORDER BY b.id
+		) a
+[2020-10-10T17:35:55.624] [DEBUG] debugLogger - Executing (default): select id,username,alias,create_time as createTime from auth_user where gameid = '1' and status = '1'   order by id limit 10 offset 0
+[2020-10-10T17:35:55.641] [DEBUG] debugLogger - Executing (default): select count(id) as total from auth_user   where gameid = '1' and status = '1'
+[2020-10-10T17:35:55.766] [DEBUG] debugLogger - Executing (default): select id,username,alias,create_time as createTime from auth_user where gameid = '1' and status = '1'   order by id limit 10 offset 0
+[2020-10-10T17:35:55.774] [DEBUG] debugLogger - Executing (default): select count(id) as total from auth_user   where gameid = '1' and status = '1'
+[2020-10-10T17:39:55.296] [DEBUG] debugLogger - Executing (default): select a.id,a.game_name ,a.image_url as img from gm_game a join gm_purview b on b.gid = a.id where b.uids @> '79' and a.status = '1'    limit 1
+[2020-10-10T17:39:55.303] [DEBUG] debugLogger - Executing (default): with 
+				qwe as (select a.url,a.pid,a.name,d.game_name,d.id as gameid, a.id,b.grede , b.purview_id,c.uid,c.gid from gm_url a join gm_url_purview  b on  a.id = b.url_id  join gm_purview c on c.id = b.purview_id join gm_game d on d.id = c.gid where  c.uids @> '79' and d.id = '1' and d.status = 1  order by id ),
+				asd as (select name,(select json_agg(concat('{"url":"',url,'","name":"',name,'","meta":"',grede,'"}')::jsonb) from qwe  where qwe.pid = d.id) as children from qwe as d where pid = 0 ORDER BY d.id)
+				select * from asd
+[2020-10-10T17:39:55.313] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(game_name, ','), ',')  as games from (select game_name  from gm_purview a join gm_game b on a.gid = b.id  where uids @> '79' and b.status = '1' ORDER BY b.id
+		) a
+[2020-10-10T17:39:55.852] [DEBUG] debugLogger - Executing (default): select id,username,alias,create_time as createTime from auth_user where gameid = '1' and status = '1'   order by id limit 10 offset 0
+[2020-10-10T17:39:55.865] [DEBUG] debugLogger - Executing (default): select count(id) as total from auth_user   where gameid = '1' and status = '1'
+[2020-10-10T17:39:55.998] [DEBUG] debugLogger - Executing (default): select id,username,alias,create_time as createTime from auth_user where gameid = '1' and status = '1'   order by id limit 10 offset 0
+[2020-10-10T17:39:56.010] [DEBUG] debugLogger - Executing (default): select count(id) as total from auth_user   where gameid = '1' and status = '1'
+[2020-10-10T17:40:01.748] [DEBUG] debugLogger - Executing (default): select a.id,a.game_name ,a.image_url as img from gm_game a join gm_purview b on b.gid = a.id where b.uids @> '79' and a.status = '1'    limit 1
+[2020-10-10T17:40:01.755] [DEBUG] debugLogger - Executing (default): with 
+				qwe as (select a.url,a.pid,a.name,d.game_name,d.id as gameid, a.id,b.grede , b.purview_id,c.uid,c.gid from gm_url a join gm_url_purview  b on  a.id = b.url_id  join gm_purview c on c.id = b.purview_id join gm_game d on d.id = c.gid where  c.uids @> '79' and d.id = '1' and d.status = 1  order by id ),
+				asd as (select name,(select json_agg(concat('{"url":"',url,'","name":"',name,'","meta":"',grede,'"}')::jsonb) from qwe  where qwe.pid = d.id) as children from qwe as d where pid = 0 ORDER BY d.id)
+				select * from asd
+[2020-10-10T17:40:01.766] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(game_name, ','), ',')  as games from (select game_name  from gm_purview a join gm_game b on a.gid = b.id  where uids @> '79' and b.status = '1' ORDER BY b.id
+		) a
+[2020-10-10T17:40:02.138] [DEBUG] debugLogger - Executing (default): select id,username,alias,create_time as createTime from auth_user where gameid = '1' and status = '1'   order by id limit 10 offset 0
+[2020-10-10T17:40:02.371] [DEBUG] debugLogger - Executing (default): select count(id) as total from auth_user   where gameid = '1' and status = '1'
+[2020-10-10T17:40:03.044] [DEBUG] debugLogger - Executing (default): select id,username,alias,create_time as createTime from auth_user where gameid = '1' and status = '1'   order by id limit 10 offset 0
+[2020-10-10T17:40:03.049] [DEBUG] debugLogger - Executing (default): select count(id) as total from auth_user   where gameid = '1' and status = '1'
+[2020-10-10T17:50:22.495] [DEBUG] debugLogger - Executing (default): select servername as label,servername as value  from (select jsonb_array_elements_text(channel) as servername   from gm_white_user  where game_id = '1')a  group BY servername
+[2020-10-10T17:50:22.572] [DEBUG] debugLogger - Executing (default): select servername as label,servername as value  from (select jsonb_array_elements_text(servername) as servername   from gm_white_user  where game_id = '1')a  group BY servername
+[2020-10-10T17:50:27.366] [DEBUG] debugLogger - Executing (default): select cdkid from gm_cdk where game_id = 1 and type = '1'
+[2020-10-10T17:50:27.695] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(channel, ','), ',')  as values  from gm_game_channel where gameid = '1' and status = '1'
+[2020-10-10T17:50:28.995] [DEBUG] debugLogger - Executing (default): select classification as label , classification as value from gm_article where gameid =1 GROUP BY classification
+[2020-10-10T17:50:29.005] [DEBUG] debugLogger - Executing (default): select name as label , article_id as value  , TRUE as leaf  from gm_article where gameid =1 and classification = 'undefined'
+[2020-10-10T17:59:08.857] [DEBUG] debugLogger - Executing (default): select id,username,alias,create_time as createTime from auth_user where gameid = '1' and status = '1'   order by id limit 10 offset 0
+[2020-10-10T17:59:08.869] [DEBUG] debugLogger - Executing (default): select count(id) as total from auth_user   where gameid = '1' and status = '1'
+[2020-10-10T17:59:09.084] [DEBUG] debugLogger - Executing (default): select id,username,alias,create_time as createTime from auth_user where gameid = '1' and status = '1'   order by id limit 10 offset 0
+[2020-10-10T17:59:09.092] [DEBUG] debugLogger - Executing (default): select count(id) as total from auth_user   where gameid = '1' and status = '1'
+[2020-10-10T18:08:09.676] [DEBUG] debugLogger - Executing (default): select a.id,a.game_name ,a.image_url as img from gm_game a join gm_purview b on b.gid = a.id where b.uids @> '79' and a.status = '1'    limit 1
+[2020-10-10T18:08:09.685] [DEBUG] debugLogger - Executing (default): with 
+				qwe as (select a.url,a.pid,a.name,d.game_name,d.id as gameid, a.id,b.grede , b.purview_id,c.uid,c.gid from gm_url a join gm_url_purview  b on  a.id = b.url_id  join gm_purview c on c.id = b.purview_id join gm_game d on d.id = c.gid where  c.uids @> '79' and d.id = '1' and d.status = 1  order by id ),
+				asd as (select name,(select json_agg(concat('{"url":"',url,'","name":"',name,'","meta":"',grede,'"}')::jsonb) from qwe  where qwe.pid = d.id) as children from qwe as d where pid = 0 ORDER BY d.id)
+				select * from asd
+[2020-10-10T18:08:09.694] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(game_name, ','), ',')  as games from (select game_name  from gm_purview a join gm_game b on a.gid = b.id  where uids @> '79' and b.status = '1' ORDER BY b.id
+		) a
+[2020-10-10T18:08:09.976] [DEBUG] debugLogger - Executing (default): select id,username,alias,create_time as createTime from auth_user where gameid = '1' and status = '1'   order by id limit 10 offset 0
+[2020-10-10T18:08:09.986] [DEBUG] debugLogger - Executing (default): select count(id) as total from auth_user   where gameid = '1' and status = '1'
+[2020-10-10T18:08:10.312] [DEBUG] debugLogger - Executing (default): select id,username,alias,create_time as createTime from auth_user where gameid = '1' and status = '1'   order by id limit 10 offset 0
+[2020-10-10T18:08:10.320] [DEBUG] debugLogger - Executing (default): select count(id) as total from auth_user   where gameid = '1' and status = '1'

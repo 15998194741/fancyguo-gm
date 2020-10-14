@@ -135,6 +135,8 @@
 import { postCreateUser, getFindUser } from '@/api/gameUser';
 import { findUserByParams, deleteuserbyone } from '@/api/gameUser';
 import { putChangeUser } from '@/api/gameUser';
+import eventUser from './eventUser';
+
 import dayjs from 'dayjs';
 
 export default {
@@ -272,9 +274,6 @@ export default {
         this.changeForm[i] = row[i];
       }
       
-
-    //   console.log('我是修改');
-    //   console.log(index, row);
     },
     async deleteHandleEdit(index, row) {
       let { username } = row;
@@ -293,11 +292,10 @@ export default {
       let { code } = await deleteuserbyone(row);
       if (+code === 200) {
         this.$message.success('删除成功');
+        eventUser.$emit('userGroup', true);
         this.findUserByParams();
       }
       loading.close();
-    //   console.log('我是删除');
-    //   console.log(index, row);
     },
     async filterFormChange(val) {
       switch (val) {
@@ -315,7 +313,7 @@ export default {
       this.total = total;
     },
     async clickFindUserByParams() {
-      let { data: { tableData, total }} = await findUserByParams({ value: this.value, page: this.page, pagesize: this.pagesize });
+      let { data: { tableData, total }} = await findUserByParams({ value: this.value, page: 1, pagesize: 10 });
       this.tableData = tableData;
       this.total = total;
     },
@@ -335,7 +333,6 @@ export default {
         spinner: 'el-icon-loading',
         background: 'rgba(0, 0, 0, 0.8)'
       });
-      console.log(this.changeForm);
       let { code } = await putChangeUser(this.changeForm);
       if (+code === 200) {
         this.$message.success('用户信息修改成功');

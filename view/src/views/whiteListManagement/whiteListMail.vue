@@ -3,7 +3,7 @@
     <div class="role-container-header" >
     <ul style="margin: 5px 10px -5px 0px;">
       <li><el-button slot="reference" icon="el-icon-refresh" size='small' class="button-with-header"  @click='filterFormChange'>刷新</el-button></li>
-      <li> <el-button  slot="append" icon="el-icon-circle-plus-outline" size='small' class="button-with-header"  @click='dialogFormchangeShowTrue'>添加</el-button></li>
+      <li> <el-button v-if="grade" slot="append" icon="el-icon-circle-plus-outline" size='small' class="button-with-header"  @click='dialogFormchangeShowTrue'>添加</el-button></li>
     </ul>
   </div>
   <div class="role-container-search">
@@ -52,7 +52,7 @@
           </div>  
         </template>
     </el-table-column>
-    <el-table-column label="操作" class="tableTest-caozuo" >
+    <el-table-column v-if="grade" label="操作" class="tableTest-caozuo" >
       <template slot-scope="scope" class="tableTest-caozuo">
         <div class="tableTest-caozuo">
              <el-button  type="warning"  @click="changeWhiteMail(scope.$index,scope.row)">修改</el-button>
@@ -340,6 +340,13 @@ export default {
   computed: {
     Description() {
       return this.createFormMail['cycle'] === 'month' ? '月度邮件为每月1日00:00准时发送' : '周度邮件为每周一00:00准时发送';
+    },
+    grade() {
+      if (+this.$route.meta.grade === 0) {
+        return false;
+      }
+      console.log(+this.$route.meta.grade);
+      return true;
     }
   },
   methods: {

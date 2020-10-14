@@ -55,7 +55,7 @@
           </div>  
         </template>
     </el-table-column>
-     <el-table-column   label="操作">
+     <el-table-column  v-if="grade"  label="操作">
            <template slot-scope="scope" >
             <!-- <el-button  v-if='grade' slot="append" icon="el-icon-circle-plus-outline" size='small' class="button-with-header button-with-select"  @click='dialogFormchangeShowTrue'>新建邮件</el-button> -->
             <el-button  v-if="grade"  v-show="stopMailIsShow(scope)" slot="append" icon="el-icon-delete-solid" round size='small' class="button-with-header button-with-select"  @click='mailStopSend(scope)'>停用</el-button>
@@ -440,7 +440,7 @@ export default {
   },
   computed: {
     grade() {
-      if (this.$route.meta.grade === 0) {
+      if (+this.$route.meta.grade === 0) {
         return false;
       }
       return true;

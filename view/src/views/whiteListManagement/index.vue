@@ -323,7 +323,7 @@ export default {
   },
   computed: {
     grade() {
-      if (this.$route.meta.grade === 0) {
+      if (+this.$route.meta.grade === 0) {
         return false;
       }
       return true;

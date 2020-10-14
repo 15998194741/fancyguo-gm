@@ -5,7 +5,7 @@
       <!-- <li><el-button  slot="reference" icon="el-icon-upload2" size='small' class="button-with-header"  @click="serverCreatedialogFormVisible = true" >导入</el-button></li>
       <li><el-button  slot="reference" icon="el-icon-download" size='small' class="button-with-header" @click='exportFile' >导出</el-button></li> -->
       <li><el-button slot="reference" icon="el-icon-refresh" size='small' class="button-with-header"  @click="filterFormChange('flush')">刷新</el-button></li>
-      <li> <el-button  slot="append" icon="el-icon-delete-solid" size='small' class="button-with-header"  @click='dialogFormchange = true'>道具回收</el-button></li>
+      <li> <el-button  v-if='grade' slot="append" icon="el-icon-delete-solid" size='small' class="button-with-header"  @click='dialogFormchange = true'>道具回收</el-button></li>
     </ul>
   </div>
   <div class="role-container-search">
@@ -176,7 +176,6 @@ export default {
           label: '不限制',
           value: ''
         }]
-      
       }
       ],
       idoptions: [{
@@ -192,24 +191,28 @@ export default {
         // articleClass: '', 
         // articleAmount: '' 
         // }
-     
-    
       ],
       tablecolumn: [
         { label: '物品ID', prop: 'articleId', width: 50 },
         { label: '物品名称', prop: 'articleName', width: 50 },
         { label: '物品类型', prop: 'articleClass', width: 25 },
         { label: '数量', prop: 'articleAmount', width: -50 }
-       
-
       ],
-
       screenWidth: 145,
       screenHeight: '',
       tableTrue: [],
       allselectchange: []
     };
     
+  }, 
+  computed: {
+    grade() {
+      if (+this.$route.meta.grade === 0) {
+        return false;
+      }
+      console.log(+this.$route.meta.grade);
+      return true;
+    }
   },
   methods: {
     recycleAmountInput(index, data) {

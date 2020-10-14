@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon ./start.js --config nodemon.json",
+    "debug": "nodemon --inspect ./start.js --config nodemon.json",
     "test": "node ./test/index",
     "gen-db": "node ./src/utils/auto-generate.js",
     "beta": "pm2 start pm2.json --env beta",

@@ -56,18 +56,36 @@ class UserServer extends BaseService{
 			throw {code:2000, message:'您没有这个权限。'};
 		}
 		let {0:{id:gameid, game_name:gamename, img:imgUrl}} = gamenameData;
-		
+		// with 
+		// qwe as (select a.url,a.pid,a.name,d.game_name,d.id as gameid, a.id,b.grede , b.purview_id,c.uid,c.gid from gm_url a join gm_url_purview  b on  a.id = b.url_id  join gm_purview c on c.id = b.purview_id join gm_game d on d.id = c.gid where  c.uids @> '${id}' and d.id = '${gameid}' and d.status = 1 and b.grede !=827  order by id ),
+		// asd as (select name,(select json_agg(concat('{"url":"',url,'","name":"',name,'","meta":"',grede,'"}')::jsonb) from qwe  where qwe.pid = d.id) as children from qwe as d where pid = 0 ORDER BY d.id)
+		// select * from asd
 		// ( case when  '${game}'::bool then '${game}'::int else (select a.id from gm_game a join gm_purview b on b.gid = a.id where b.uid = '${id}'::int  limit 1 ) end  )
 		let routeSQl = `
-				with 
-				qwe as (select a.url,a.pid,a.name,d.game_name,d.id as gameid, a.id,b.grede , b.purview_id,c.uid,c.gid from gm_url a join gm_url_purview  b on  a.id = b.url_id  join gm_purview c on c.id = b.purview_id join gm_game d on d.id = c.gid where  c.uids @> '${id}' and d.id = '${gameid}' and d.status = 1  order by id ),
-				asd as (select name,(select json_agg(concat('{"url":"',url,'","name":"',name,'","meta":"',grede,'"}')::jsonb) from qwe  where qwe.pid = d.id) as children from qwe as d where pid = 0 ORDER BY d.id)
-				select * from asd `;
+				with qwe as (select a.url,a.pid,a.name,d.game_name,d.id as gameid, a.id,b.grede , b.purview_id,c.uid,c.gid from gm_url a join gm_url_purview  b on  a.id = b.url_id  join gm_purview c on c.id = b.purview_id join gm_game d on d.id = c.gid where  c.uids @> '${id}' and d.id = '${gameid}' and d.status = 1 and b.grede != 827 and c.status = 1 order by id ),
+					qwer as (select * from qwe a where (select count(*) > 1 from qwe b where b.id = a.id )),
+					asd as (select * from qwe a where (select count(*) =  1 from qwe b where b.id = a.id )),
+					zxc as (select * from qwer where grede = '1'),
+					wer as (select * from qwer where id not in (select id from zxc )
+					union 
+					select * from qwer where id not in (select id from zxc )),
+					sdf as (select url,pid,name,gameid,grede,id from asd 
+					union 
+					select url,pid,name,gameid,grede,id from zxc 
+					union 
+					select url,pid,name,gameid,grede,id from wer ),
+					ewq as (select * from sdf ORDER BY id )
+					select name,(select json_agg(concat('{"url":"',url,'","name":"',name,'","meta":"',grede,'"}')::jsonb) from ewq  where ewq.pid = d.id) as children from ewq as d where pid = 0 ORDER BY d.id
+`;
+		// console.log(routeSQl);
 		let routes = await dbSequelize.query(routeSQl, {
 			replacements:['active'], type:Sequelize.QueryTypes.SELECT
 		});
 		let gamesql = `
-		select string_to_array(string_agg(game_name, ','), ',')  as games from (select game_name  from gm_purview a join gm_game b on a.gid = b.id  where uids @> '${id}' and b.status = '1' ORDER BY b.id
+		select string_to_array(string_agg(game_name, ','), ',')  as games from (
+			select game_name  from gm_purview a join gm_game b on a.gid = b.id  where uids @> '${id}' and b.status = '1' 
+			union 
+			select game_name  from gm_purview a join gm_game b on a.gid = b.id  where uids @> '${id}' and b.status = '1' 
 		) a 
 		`;
 		let {0:{games}} = await dbSequelize.query(gamesql, {

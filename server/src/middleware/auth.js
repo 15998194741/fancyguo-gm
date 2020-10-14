@@ -59,7 +59,7 @@ oHiLOo285vG5ZtmXiY58tAiPVQXa7eU8hPQHTHWa9qp6
 		};
 		gameid = decrypt(Buffer.from(gameid, 'base64'), privKey).toString();
 	}catch ({message}){
-		throw {code:500, message:'你没有改系统使用权限'};
+		throw {code:500, message:'你没有该系统使用权限'};
 	}
 	if ( token=== undefined ) {
 		throw {code:500, message:'权限异常'};

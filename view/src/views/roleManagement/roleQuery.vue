@@ -381,9 +381,10 @@ export default {
       return this.tableTrue.length > 0 ? false : true;
     },
     grade() {
-      if (this.$route.meta.grade === 0) {
+      if (+this.$route.meta.grade === 0) {
         return false;
       }
+      console.log(+this.$route.meta.grade);
       return true;
     }
   },

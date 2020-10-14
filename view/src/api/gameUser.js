@@ -50,4 +50,112 @@ export function putChangeUser(data) {
     data
   });
 }
-  
+
+
+export function findAllUrl(params) { 
+  return request({
+    url: `gm/user/findAllUrl`,
+    method: 'get',
+    params
+  });
+}
+
+export function postCreateUserGroup(data) { 
+  return request({
+    url: `gm/user/postCreateUserGroup`,
+    method: 'post',
+    data
+  });
+}
+
+
+export function getFindGroupName(params) { 
+  return request({
+    url: `gm/user/getFindGroupName`,
+    method: 'get',
+    params
+  });
+}
+
+
+
+
+export function getFindGroup(params) { 
+  return request({
+    url: `gm/user/getFindGroup`,
+    method: 'get',
+    params
+  });
+}
+
+
+
+
+export function deleteusergroupbyone(data) { 
+  return request({
+    url: `gm/user/deleteusergroupbyone`,
+    method: 'put',
+    data
+  });
+}
+
+
+export function putChangeUserGroup(data) { 
+  return request({
+    url: `gm/user/putChangeUserGroup`,
+    method: 'put',
+    data
+  });
+}
+
+
+
+export function changeFindValue(params) { 
+  return request({
+    url: `gm/user/changeFindValue`,
+    method: 'get',
+    params
+  });
+}
+
+
+
+
+export function getFindGroupUser(params) { 
+  return request({
+    url: `gm/user/getFindGroupUser`,
+    method: 'get',
+    params
+  });
+}
+
+
+
+
+export function deleteGroupUser(data) { 
+  return request({
+    url: `gm/user/deleteGroupUser`,
+    method: 'put',
+    data
+  });
+}
+
+
+
+export function getUserList(params) { 
+  return request({
+    url: `gm/user/getUserList`,
+    method: 'get',
+    params
+  });
+}
+
+
+
+export function postCreateGroupUser(data) { 
+  return request({
+    url: `gm/user/postCreateGroupUser`,
+    method: 'post',
+    data
+  });
+}

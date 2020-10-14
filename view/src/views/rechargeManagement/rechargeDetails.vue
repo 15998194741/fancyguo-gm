@@ -4,7 +4,7 @@
     <ul>
  
       <li><el-button slot="reference" style="margin: 5px 5px -3px 0 ;" icon="el-icon-refresh" size='small' class="button-with-header"  @click="filterFormChange('flush')">刷新</el-button></li>
-      <li> <el-button  slot="append" style="margin: 5px 5px -3px 0 ;" icon="el-icon-thumb" size='small' class="button-with-header"  :disabled='Replenishment' @click='Replenishmentclick'  >补单</el-button></li>
+      <li> <el-button v-if="grade"  slot="append" style="margin: 5px 5px -3px 0 ;" icon="el-icon-thumb" size='small' class="button-with-header"  :disabled='Replenishment' @click='Replenishmentclick'  >补单</el-button></li>
     </ul>
   </div>
   <div class="role-container-search">
@@ -148,7 +148,7 @@ export default {
       return this.tableTrue.length > 0 ? false : true;
     },
     grade() {
-      if (this.$route.meta.grade === 0) {
+      if (+this.$route.meta.grade === 0) {
         return false;
       }
       return true;

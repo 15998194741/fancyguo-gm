@@ -3,8 +3,8 @@
       <div class="role-container-header" >
       <ul style="margin: 5px 10px -5px 10px;">
         <li><el-button slot="reference" icon="el-icon-refresh" size='small' class="button-with-header"  >刷新</el-button></li>
-        <li> <el-button  slot="append" icon="el-icon-circle-plus-outline" size='small' class="button-with-header" @click="createFormAlert" >添加版本</el-button></li>
-        <li> <el-button  slot="append" icon="el-icon-edit" size='small' class="button-with-header"  @click="changeFormAlert" >修改</el-button></li>
+        <li> <el-button v-if="grade"  slot="append" icon="el-icon-circle-plus-outline" size='small' class="button-with-header" @click="createFormAlert" >添加版本</el-button></li>
+        <li> <el-button v-if="grade"  slot="append" icon="el-icon-edit" size='small' class="button-with-header"  @click="changeFormAlert" >修改</el-button></li>
       </ul>
     </div>
     <div class="role-container-search">
@@ -48,7 +48,7 @@
           </div>  
       </template>
       </el-table-column>
-       <el-table-column  label="停用">
+       <el-table-column  v-if="grade" label="停用">
        <template slot-scope="scope"> 
          <el-button type="danger" plain @click='clientStop(scope)'>停用</el-button>
        </template>
@@ -278,6 +278,15 @@ export default {
       tableTrue: []
     };
       
+  }, 
+  computed: {
+    grade() {
+      if (+this.$route.meta.grade === 0) {
+        return false;
+      }
+      console.log(+this.$route.meta.grade);
+      return true;
+    }
   },
   methods: {
     async handleSelectionChange(val) {

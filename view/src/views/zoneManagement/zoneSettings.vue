@@ -4,10 +4,10 @@
     <div class="option-container">
       <ul>
         <li>
-          <el-button v-if="grade" slot="reference" icon="el-icon-thumb" size='small' class="button-with-header"   :disabled='allselectchangeopen' @click="dialogFormchange = true">批量操作</el-button>
+          <el-button v-if="grade"  slot="reference" icon="el-icon-thumb" size='small'   class="button-with-header" :disabled='allselectchangeopen' @click="dialogFormchange = true">批量操作</el-button>
         </li>
         <li>
-          <el-button slot="reference" icon="el-icon-refresh" size='small' class="button-with-header"   :disabled='allselectchangeopen'  @click='mergeServer'>合服</el-button>
+          <el-button   v-if="grade" slot="reference" icon="el-icon-refresh" size='small' class="button-with-header"   :disabled='allselectchangeopen'  @click='mergeServer'>合服</el-button>
         </li>
         <li>
           <el-button slot="reference" icon="el-icon-refresh" size='small' class="button-with-header"   @click="filterFormChange('flush')">刷新</el-button>
@@ -559,8 +559,6 @@ export default {
   watch: {
   },
   computed: {
-
-
     gameid() {
       return this.$store.getters.permissionInfo.gameid;
     },
@@ -577,9 +575,10 @@ export default {
       return b;
     },
     grade() {
-      if (this.$route.meta.grade === 0) {
+      if (+this.$route.meta.grade === 0) {
         return false;
       }
+      console.log(+this.$route.meta.grade);
       return true;
     },
     changeheaders() {
@@ -962,8 +961,6 @@ export default {
     },
     updateserver() {
     //批量操作
-    // console.log(this.radio2, this.radio3);
-    // console.log(...this.allselectchange);
       let data = { 'server': this.allselectchange, 'merge': this.radio2, 'showstatus': this.radio3, 'gameid': this.gameid };
       this.$confirm('是否继续?', '提示', {
         confirmButtonText: '确定',
@@ -1065,6 +1062,7 @@ export default {
     }
   },  
   async mounted() {
+
     findComponents({ code: 'areaclothing', gameid: this.gameid }).then(res => {
       let components = res.data.values.map(item=>({
         label: item,
