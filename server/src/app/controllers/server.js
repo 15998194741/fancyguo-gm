@@ -23,6 +23,14 @@ export class UserController {
 		// console.log(ctx.request.body);
 		let form = ctx.request.body;
 		let result = await Components.updateserver(form);
+		let {id, display} = result;
+		switch (+display){
+			case 1:display = '空闲';break;
+			case 2:display = '繁忙';break;
+			case 3:display = '维护';break;
+			case 4:display = '爆满';break;
+		}
+		ctx.logging( '区服修改', '区服管理', `修改了区服id ${id} 状态为 ${display}` );
 		ctx.body = statusCode.SUCCESS_200('查找成功', result);
 	}
 	@put('/allupdate')
@@ -31,6 +39,15 @@ export class UserController {
 		let form = ctx.request.body;
 		// console.log(form);
 		let result = await Components.updateserversnomerge(form.server, form.gameid, form.showstatus, form.merge);
+
+		let {server, showstatus} = form;
+		switch (+showstatus){
+			case 1:showstatus = '空闲';break;
+			case 2:showstatus = '繁忙';break;
+			case 3:showstatus = '维护';break;
+			case 4:showstatus = '爆满';break;
+		}
+		ctx.logging( '批量修改', '区服管理', `修改了区服id ${JSON.stringify(server.map(a=>a.id))} 状态为 ${showstatus}` );
 		// let result = await  Ta.operating(form);
 		ctx.body = statusCode.SUCCESS_200('查找成功', result);
 	}
@@ -38,7 +55,6 @@ export class UserController {
 	async stopserver(ctx){
 		ctx.log.resourceDesc = '区服停用';
 		let data = ctx.request.body;
-		
 		let result = await Components.stopserver(data);
 		let {serverid} = data;
 		ctx.logging( '区服停用', '区服管理', `停用了区服ID为 ${serverid} 的区服` );
@@ -127,6 +143,7 @@ export class UserController {
 		let serverIDS = ctx.request.body;
 		// console.log(serverIDS);
 		let result = await gmServerService.mergeServer(serverIDS);
+		ctx.logging( '区服合并', '区服管理', `合并了区服id ${serverIDS.map(a=>a.serverid)}` );
 		ctx.body = statusCode.SUCCESS_200('成功', result);
 	}
 }

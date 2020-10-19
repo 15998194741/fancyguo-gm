@@ -32,6 +32,7 @@
     "stylus-loader": "^3.0.2",
     "vconsole": "^3.3.4",
     "vue": "2.6.10",
+    "vue-circle-menu": "^1.1.1",
     "vue-cli": "^2.9.6",
     "vue-loader": "^15.7.2",
     "vue-particles": "^1.0.9",

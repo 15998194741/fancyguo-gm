@@ -11,9 +11,10 @@ export class GmAnnouncementController {
 		  let file = ctx.request.files;
 		  let result;
 		  let {id} = ctx.user;
-		  switch (data.type){
-			  case '2': result = await gmAnnouncementService.createBulletin(data, file, id);break;
-			  case '1': result = await gmAnnouncementService.createMarquee(data, id);break;
+		  console.log(data.type);
+		  switch (+data.type){
+			  case 2: result = await gmAnnouncementService.createBulletin(data, file, id);break;
+			  case 1: result = await gmAnnouncementService.createMarquee(data, id);break;
 		  }
 		  let {CpMsg} = result;
 		if(!CpMsg){

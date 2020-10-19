@@ -7,7 +7,7 @@
     </ul>
   </div>
   <div class="role-container-search">
-    <div class="server-container">ID：
+    <div class="server-container"><span>角色ID：</span>
    
  <el-input v-model="filterForm.value" placeholder="请输入角色ID" size='small' class="input-with-select" >
  </el-input>
@@ -235,7 +235,7 @@ export default {
         ]
       },
       selectForm: [{
-        label: '平台',
+        label: '游戏平台',
         multiple: true,
         filterable: true,
         collapse: false,
@@ -251,7 +251,7 @@ export default {
             value: '2'
           }]
       }, {
-        label: '渠道',
+        label: '游戏渠道',
         key: 'channel',
         multiple: true,
         filterable: true,
@@ -260,7 +260,7 @@ export default {
         options: []
       },
       {
-        label: '服务器',
+        label: '服务器名',
         key: 'servername',
         multiple: true,
         filterable: true,
@@ -268,7 +268,7 @@ export default {
         value: '',
         options: []
       }, {
-        label: '类别',
+        label: '福利类别',
         key: 'type',
         multiple: false,
         value: '',
@@ -639,22 +639,8 @@ border-radius: 10px;
    border-radius: 30px 0 0 30px;
  }
     }
-    .comprehensive-container .select-item {
- margin-left: 10px;
- width: 20%;
-    }
+        .comprehensive-container { display: flex;padding: 10px; align-items: baseline;width: 100%;.select-item {width: 20%;&>.comprehensive-container-label{width: 30%;} &>div{ width: 70%; }}input {border-radius: 10px;}}
 
-    .comprehensive-container {
- .select-item:first-child {
-   margin-left: -5px;
-   width: 19%;
- }}
- .comprehensive-container {
-   display: flex;
-   padding: 10px;
-   align-items: baseline;
-
- }
  .role-container-search {
  margin: 10px;
  background-color: white;
@@ -675,12 +661,7 @@ border-radius: 10px;
    border-bottom: 1px #bdbdbd dashed;
  }
 
- .comprehensive-container {
-   display: flex;
-   padding: 10px;
-   align-items: baseline;
 
- }
     }
 
     .createFormAlertBodys div{

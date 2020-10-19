@@ -18,7 +18,6 @@ class MailService{
 			whereObj.push( ` ${i}= '${condition[i]}'`);
 		}
 		
-		
 		where += whereObj.join('  and  '); 
 		// channel = channel ?typeof channel === 'string'? [channel]:channel:false;
 		servername = servername ?typeof servername === 'string'? [servername]:servername:false;
@@ -40,7 +39,7 @@ class MailService{
 
 		let sql = `
 			with asd as (			
-				select * from gm_smtp ${where}  ORDER BY id desc limit ${pagesize} offset ${pagesize*(page-1)} 
+				select * from gm_smtp  ${where}  and status = 1 ORDER BY id desc limit ${pagesize} offset ${pagesize*(page-1)} 
 			),
 			dsa as (select * from gm_server),
 			ssss as( select asd.servername, string_to_array(string_agg(dsa.servername, ','),',') as servernames from asd LEFT JOIN dsa on dsa.serverid::jsonb <@ (asd.servername) GROUP BY  asd.servername),
@@ -48,15 +47,17 @@ class MailService{
 			asdasd as (select jsonb_array_elements(annex) ->> 'ID' as names, jsonb_array_elements(annex) ->> 'number' as numbers ,id  from  qweqweqwe ),
 			qweqwe as (select asdasd.id,string_to_array(string_agg(concat(gm_article.name,'  ',asdasd.numbers,'个'),','),',') as annexnames from asdasd left JOIN gm_article on gm_article.article_id = asdasd.names GROUP BY asdasd.id ),
 			qweasd as (select (case when plaform = '"1"' then '安卓' when plaform = '"2"' then '苹果'  end ) as plaform ,id from (select jsonb_array_elements(plaform) as plaform,id from asd )a )
-			select asd.*,qweqwe.annexnames,a.plaforms from asd left join qweqwe on qweqwe.id = asd.id
+			select asd.*,qweqwe.annexnames,a.plaforms from asd left join qweqwe on qweqwe.id = asd.id left
 			join (select string_to_array(string_agg(plaform,','),',')as plaforms ,id from qweasd GROUP BY id )a on a.id = asd.id order by asd.id desc
 		`;
+		console.log(sql);
 		let res = await dbSequelize.query(sql, {
 			replacements:['active'], type:Sequelize.QueryTypes.SELECT
 		});
 		let totalsql = `
-		select count(*) as total from gm_smtp ${where}
+		select count(*) as total from gm_smtp ${where} and status = 1 
 		`;
+		console.log(totalsql);
 		let ress = await dbSequelize.query(totalsql, {
 			replacements:['active'], type:Sequelize.QueryTypes.SELECT
 		});
@@ -74,11 +75,14 @@ class MailService{
 	}
 	async getQueryAnnexServernames(data){
 		let { gameid } = data;
-		let res = await dbSequelize.query(`with tableone as (select servername from gm_server GROUP BY servername having count(servername)>1),
-        tabletwo as (select min(id) from gm_server GROUP BY servername HAVING count(servername)>1),
-        tablethere as (select min(id) from gm_server GROUP BY servername HAVING count(servername)=1),
-        tablemain as (select * from gm_server)
-        select servername as value ,servername as label from  tablemain where   tablemain.gameid = ${gameid} and  tablemain.id in (select * from tablethere ) or  tablemain.servername in  (select * from  tableone) and tablemain.id in (select * from  tabletwo)  `);
+		// let res = await dbSequelize.query(`with tableone as (select servername from gm_server GROUP BY servername having count(servername)>1),
+		// tabletwo as (select min(id) from gm_server GROUP BY servername HAVING count(servername)>1),
+		// tablethere as (select min(id) from gm_server GROUP BY servername HAVING count(servername)=1),
+		// tablemain as (select * from gm_server)
+		// select servername as value ,servername as label from  tablemain where   tablemain.gameid = ${gameid} and  tablemain.id in (select * from tablethere ) or  tablemain.servername in  (select * from  tableone) and tablemain.id in (select * from  tabletwo)  `);
+		let res = await dbSequelize.query(
+			`	select a as value ,a as label from  (	 select DISTINCT servername  as a from gm_server  where gameid =${gameid} and status  = 1  ) a`
+		);
 		return res[0];
 	}
 	async getPlaformChannelToservername(data){
@@ -170,7 +174,7 @@ class MailService{
 		insert into  gm_smtp  
 		(game_id,title,text,link,channel,plaform,annex,serverName,roleid,roleids,smtp_id,sendtime,is_use)
 		values
-		(${gameid},'${title}','${text}','${link}',
+		(${gameid},'${title}',$text$ '${text}' $text$,'${link}',
 		${channel ?`'${JSON.stringify(channel)}'`:null},
 		${plaform ?`'${JSON.stringify(plaform)}'`:null},
 		${Annex?Annex.length >1?`'[${Annex}]'` :`'[${Annex}]'`:null},

@@ -8,7 +8,7 @@
       </ul>
     </div>
     <div class="role-container-search">
-      <div class="server-container">ID：
+      <div class="server-container"><span>版本号：</span>
         <!-- <el-select v-model="filterForm.key"  disabled   placeholder="请选择" name='idselect' size='small' class="selectID">
           <el-option v-for="(item, index) in idoptions" :key="index" :label="item.label" :value="item.value">
           </el-option>
@@ -227,7 +227,7 @@ export default {
         pagesize: 10
       },
       selectForm: [{
-        label: '平台',
+        label: '游戏平台',
         multiple: true,
         filterable: true,
         collapse: false,
@@ -243,7 +243,7 @@ export default {
             value: '2'
           }]
       }, {
-        label: '渠道',
+        label: '游戏渠道',
         key: 'channel',
         filterable: true,
         collapse: true,
@@ -252,7 +252,7 @@ export default {
         options: []
       },
       {
-        label: '展示',
+        label: '展示区服',
         key: 'isShowType',
         filterable: false,
         collapse: false,
@@ -271,8 +271,8 @@ export default {
       tableData: [],
       tablecolumn: [
         { label: '版本号', prop: 'version_id', width: 50 },
-        { label: '平台', prop: 'plaforms', width: 50 },
-        { label: '渠道', prop: 'channel', width: 25 },
+        { label: '游戏平台', prop: 'plaforms', width: 50 },
+        { label: '游戏渠道', prop: 'channel', width: 25 },
         { label: '展示区服', prop: 'is_show_type', width: -50 }
       ],
       tableTrue: []
@@ -530,22 +530,7 @@ export default {
           border-radius: 30px 0 0 30px;
         }
       }
-      .comprehensive-container .select-item {
-        margin-left: 10px;
-        width: 20%;
-      }
-  
-      .comprehensive-container {
-        .select-item:first-child {
-          margin-left: -5px;
-          width: 19%;
-        }}
-        .comprehensive-container {
-          display: flex;
-          padding: 10px;
-          align-items: baseline;
-  
-        }
+     .comprehensive-container { display: flex;padding: 10px; align-items: baseline;width: 100%;.select-item {width: 20%;&>.comprehensive-container-label{width: 30%;} &>div{ width: 70%; }}input {border-radius: 10px;}}
         .role-container-search {
         margin: 10px;
         background-color: white;
@@ -566,12 +551,7 @@ export default {
           border-bottom: 1px #bdbdbd dashed;
         }
   
-        .comprehensive-container {
-          display: flex;
-          padding: 10px;
-          align-items: baseline;
-  
-        }
+      
       }
   
       .createFormAlertBodys div{

@@ -1,7 +1,7 @@
 <template>
   <!-- <div class="distric-container"  :style=" `opacity: ${opacity};background-image: url('${this.$store.getters.permissionInfo.imgUrl}');` " @mouseover="opacity=1" @mouseout="opacity =0.3"> -->
   <div class="distric-container"  >
-    <div class="option-container">
+    <div class="option-container" style="margin-bottom: -2px;">
       <ul>
         <li>
           <el-button v-if="grade"  slot="reference" icon="el-icon-thumb" size='small'   class="button-with-header" :disabled='allselectchangeopen' @click="dialogFormchange = true">批量操作</el-button>
@@ -27,14 +27,15 @@
         </el-input>
         <el-button slot="append" icon="el-icon-search" size='small' class="button-with-select" @click="filterFormChange('click')">
         </el-button>
-        开服时间：
+        <span style="padding-left: 1%;">开服时间：</span>
           <el-date-picker   v-model="filterForm['srttime']"  size='small' type="datetimerange" range-separator="至" start-placeholder="开始日期" end-placeholder="结束日期"   @change='filterFormChange'>
           </el-date-picker>
           <el-checkbox v-model="filterForm['test']" true-label='1' false-label='0' @change='filterFormChange'>测试机</el-checkbox>
       </div>
      
       <div class="comprehensive-container">
-        <div v-for='(i,index) in selectForm' :key='index'  class="select-item"  > {{i.label}}:
+        <div v-for='(i,index) in selectForm' :key='index'  class="select-item"  >
+           <span class="comprehensive-container-label">{{i.label}}:</span>
           <el-select v-model="filterForm[i.key]" :multiple="i['multiple']" :collapse-tags="i['collapse']"  clearable  :filterable='i.filterable' placeholder="请选择" size='small' @change='filterFormChange'>
             <el-option v-for="(item,index) in i.options" :key="index"  :label='item.label' :value="item.value" >
             </el-option>
@@ -187,8 +188,8 @@
 
 
     <!-- 区服创建表单弹窗 -->
-    <el-dialog title="区服创建" :visible.sync="serverCreatedialogFormVisible"  :close-on-click-modal="false">
-      <el-form ref="createForm" :rules="createFormRules" :model="createForm" label-width="100px"  class='createFormAlert'> 
+    <el-dialog  title="区服创建" :visible.sync="serverCreatedialogFormVisible" :close-on-click-modal="false">
+      <el-form ref="createForm"  key="createForm" :rules="createFormRules" :model="createForm" label-width="100px"  class='createFormAlert'> 
         <!-- <el-form-item label="区服ID:" class="createFormAlertBody" >
           <el-input v-model="createForm.serverid" disabled class="alertcontant"></el-input>
         </el-form-item> -->
@@ -222,11 +223,8 @@
                 disabledDate: time => {
                   return time.getTime() < Date.now() - 3600 * 1000 * 24
                 },
-              
               }" 
-            type="datetime"
-            class="alertcontant"
-placeholder="选择日期时间" >
+            type="datetime"   class="alertcontant" placeholder="选择日期时间" >
           </el-date-picker>
         </el-form-item>
         <el-form-item label="测试机">
@@ -247,10 +245,10 @@ placeholder="选择日期时间" >
 
     <el-dialog title="区服修改" :visible.sync="dialogFormVisiblechange"  :close-on-click-modal="false">
       <div class="alertname">
-        <div class="changeAlertBody"><span class="alertspan">区服id</span><el-input v-model="formchange.serverid" disabled class="alertcontant"></el-input>     </div>
-        <div class="changeAlertBody"><span class="alertspan">区服名称</span><el-input v-model="formchange.servername" disabled class="alertcontant"></el-input>    </div>
-        <div class="changeAlertBody"><span class="alertspan">平台</span><el-select v-model="formchange.plaform" disabled class="alertcontant" placeholder="请选择活动区域"> </el-select>     </div>
-        <div class="changeAlertBody"><span class="alertspan">渠道</span><el-select v-model="formchange.channel" disabled class="alertcontant"  placeholder="请选择活动区域">        </el-select>       </div>
+        <div class="changeAlertBody"><span class="alertspan">区服id</span><el-input v-model="formchange.serverid" disabled class="alertcontant"></el-input></div>
+        <div class="changeAlertBody"><span class="alertspan">区服名称</span><el-input v-model="formchange.servername" disabled class="alertcontant"></el-input></div>
+        <div class="changeAlertBody"><span class="alertspan">平台</span><el-select v-model="formchange.plaform" disabled class="alertcontant" placeholder="请选择活动区域"></el-select></div>
+        <div class="changeAlertBody"><span class="alertspan">渠道</span><el-select v-model="formchange.channel" disabled class="alertcontant"  placeholder="请选择活动区域"></el-select></div>
         <div class="changeAlertBody"><span class="alertspan">IP/PORT</span><el-input v-model="formchange.ip" disabled class="alertcontant"></el-input>     </div>
         <div class="changeAlertBody">   
          <span class="alertspan">显示状态<b style="color: red;">*</b></span>
@@ -274,8 +272,10 @@ placeholder="选择日期时间" >
 <script>
 // import { deepCopy } from '@/utils/zoneSettings';
 import { findServername } from '@/api/character.js';
+import { loading, close, secondConfirmation } from '@/views/loading';
 import dayjs from 'dayjs';
-import { findComponents, findServer, stopserver, ServerMerge, serverselect, servercreate, serverUpdateToOne, serverallupdate, findServerByID, getpage } from '@/api/components.js';
+import { findComponents, findServer, stopserver, ServerMerge, serverselect } from '@/api/components.js';
+import { servercreate, serverUpdateToOne, serverallupdate, findServerByID, getpage } from '@/api/components.js';
 export default {
   name: 'zoneset',
   data() {
@@ -312,7 +312,7 @@ export default {
       clientOptions: [], //客户端组件
       serverCreatedialogFormVisible: false, //区服创建弹窗变量
       selectForm: [{
-        label: '平台',
+        label: '游戏平台',
         multiple: true,
         filterable: true,
         collapse: false,
@@ -328,7 +328,7 @@ export default {
             value: '2'
           }]
       }, {
-        label: '渠道',
+        label: '游戏渠道',
         key: 'channel',
         filterable: true,
         collapse: true,
@@ -358,9 +358,6 @@ export default {
         }, {
           label: '爆满',
           value: '4'
-        }, {
-          label: '停用',
-          value: '5'
         }]
       }, {
         label: '负载状态',
@@ -388,7 +385,7 @@ export default {
           value: '3'
         }]
       }, {
-        label: '合服',
+        label: '是否合服',
         key: 'mergeserver',
         collapse: true,
         multiple: false,
@@ -411,8 +408,8 @@ export default {
       createForm: { //区服创建表单值
         serverid: '',
         servername: '',
-        plaform: '',
-        channel: '',
+        plaform: [],
+        channel: [],
         ip: '',
         display: '1',
         srttime: '',
@@ -424,11 +421,12 @@ export default {
     
       createFormRules: {
         servername: [
+          { required: true, message: '请输入区服名称', trigger: 'blur' },
           { validator: servernameRepeat, trigger: 'blur' }
          
         ],
         plaform: [
-          { required: true, message: '请选择一个平台', trigger: ['blur', 'change'] }
+          { required: true, message: '请选择一个平台', trigger: 'blur' }
         ],
         channel: [
           { required: true, message: '请选择一个渠道', trigger: ['blur', 'change'] }
@@ -483,20 +481,7 @@ export default {
 
       },
       //表格
-      tableData: [{
-        plaform: '',
-        display: '',
-        load: '',
-        channel: '',
-        srttime: '',
-        key: '',
-        value: '',
-        test: '',
-        mergeserver: '',
-        page: '',
-        pagesize: '',
-        gameid: ''
-      }],
+      tableData: [],
       //左下角显示数量
       displayNum: '',
       //查找得条目总数
@@ -557,6 +542,9 @@ export default {
     }
   },
   watch: {
+    displayNum(n, o) {
+      console.log(n, o);
+    }
   },
   computed: {
     gameid() {
@@ -607,6 +595,7 @@ export default {
     }
 
   },
+ 
 
   methods: { 
     async showStatusChange(a, b) {
@@ -792,20 +781,7 @@ export default {
         page: 1,
         pagesize: 20
       };
-      this.tableData = [{
-        plaform: '',
-        display: '',
-        load: '',
-        channel: '',
-        srttime: '',
-        key: '',
-        value: '',
-        test: '',
-        mergeserver: '',
-        page: '',
-        pagesize: '',
-        gameid: ''
-      }];
+      this.tableData = [];
       findServer(this.filterForm).then(res=>{this.inserttable(res);});
     
     },
@@ -846,8 +822,6 @@ export default {
     //按钮新建区服
     newCreateServer() {
       this.serverCreatedialogFormVisible = true;
-      // let serverid = dayjs(new Date()).format('YYMMDDHHmmss') + this.idRandom(4);
-      // this.createForm['serverid'] = serverid;
     },
     idRandom(lengths) {
       let randomString = '';
@@ -943,9 +917,6 @@ export default {
           }
         }
       });
-
-
-
     },
     handleSelectionChange(val,) {
       let a = [];
@@ -959,88 +930,110 @@ export default {
 
       this.allselectchange = a;
     },
-    updateserver() {
+    async updateserver() {
     //批量操作
       let data = { 'server': this.allselectchange, 'merge': this.radio2, 'showstatus': this.radio3, 'gameid': this.gameid };
-      this.$confirm('是否继续?', '提示', {
-        confirmButtonText: '确定',
-        cancelButtonText: '取消',
-        type: 'warning'
-      }).then(() => {
-        serverallupdate(data).then(res => {
-          if (res.code === 200) {
-            this.tableData.map(item=>{
-              if (this.allselectchange.find(_item=> _item.id === item.id)) {
-                item.display = this.radio3;
-                return item;
-              } 
-              return item;
-            });
-  
-            this.dialogFormchange = false;
-            this.$message({
-              type: 'success',
-              message: '成功!'
-            });
-            return true;
-          }
-        });
-      }).catch(() => {
-        this.$message({
-          type: 'info',
-          message: '已取消'
+      let sendtrue = await secondConfirmation(this, `是否确认继续操作?`);
+      if (!sendtrue) {return;}
+    
+     
+
+      loading(this);
+      let { code } = await serverallupdate(data);
+      if (code !== 200) {return;}
+      this.allselectchange.forEach(a=>{
+        let q;
+        switch (+a.display) {
+          case 1:q = '空闲';            
+            break;
+          case 2:q = '繁忙';
+            break;
+          case 3:q = '维护';
+            break;
+          case 4:q = '爆满';
+            break;
+        }
+        this.displayNum.map(a=>{
+          a.max = a.display === q ? +a.max - 1 : a.max;
+          return a;
         });
       });
+      let radio3;
+      switch (+this.radio3) {
+        case 1:radio3 = '空闲';            
+          break;
+        case 2:radio3 = '繁忙';
+          break;
+        case 3:radio3 = '维护';
+          break;
+        case 4:radio3 = '爆满';
+          break;
+      }
+      this.displayNum.map(a=>{
+        a.max = a.display === radio3 ? +a.max + this.allselectchange.length : a.max;
+        return a;
+      });
+      this.dialogFormchange = false;
+      this.tableData.map(item=>{
+        if (this.allselectchange.find(_item=> _item.id === item.id)) {
+          item.display = this.radio3;
+          return item;
+        } 
+        return item;
+      });
+      this.$message.success('修改成功!');
+     
+      close(this);
+      // this.$confirm('是否继续?', '提示', {
+      //   confirmButtonText: '确定',
+      //   cancelButtonText: '取消',
+      //   type: 'warning'
+      // }).then(() => {
+      //   serverallupdate(data).then(res => {
+      //     if (res.code === 200) {
+      //       this.tableData.map(item=>{
+      //         if (this.allselectchange.find(_item=> _item.id === item.id)) {
+      //           item.display = this.radio3;
+      //           return item;
+      //         } 
+      //         return item;
+      //       });
+  
+      //       this.dialogFormchange = false;
+      //       this.$message({
+      //         type: 'success',
+      //         message: '成功!'
+      //       });
+      //       return true;
+      //     }
+      //   });
+      // }).catch(() => {
+      //   this.$message({
+      //     type: 'info',
+      //     message: '已取消'
+      //   });
+      // });
 
     },
     //区服修改
     async updateServerToOne(displaychanges) {
-   
-      try {
-        await this.$confirm('您正在修改数据，请谨慎处理！是否继续?', '提示', {
-          confirmButtonText: '确定',
-          cancelButtonText: '取消',
-          type: 'warning'
-        });
-        if (displaychanges) {
-          this.formchange = displaychanges;
-        }
-        this.loading = true;
-        let { code } = await serverUpdateToOne({ ...this.formchange });
-        if (code !== 200) { return;}
-        this.$message({
-          type: 'success',
-          message: '成功'
-        });
-        // 获取最新任务列表
-        let index = this.formchange.index;
-        // console.log(this.tableData[index]);
-        this.tableData[index].display = this.formchange.display;
-        this.tableData = [{
-          plaform: '',
-          display: '',
-          load: '',
-          channel: '',
-          srttime: '',
-          key: '',
-          value: '',
-          test: '',
-          mergeserver: '',
-          page: '',
-          pagesize: '',
-          gameid: ''
-        }];
-        this.filterFormChange('flush');
-        this.loading = false;
-        this.dialogFormVisiblechange = false;
-      } catch ({ message }) {
-        // console.log(message);
-        this.loading = false;
-        // this.$message({
-        //   type: 'info',
-        //   message: '修改失败'
-        // });
+      let sendtrue = await secondConfirmation(this, `您正在修改数据，请谨慎处理！是否继续?`);
+      if (!sendtrue) {return;}
+      if (displaychanges) {
+        this.formchange = displaychanges;
       }
+      this.loading = true;
+      let { code } = await serverUpdateToOne({ ...this.formchange });
+      if (code !== 200) {return;}
+      this.$message.success('修改成功。');
+      // 获取最新任务列表
+      let index = this.formchange.index;
+      this.tableData[index].display = this.formchange.display;
+      this.tableData = [];
+      this.filterFormChange('flush');
+      this.loading = false;
+      this.dialogFormVisiblechange = false;
+      
     },
     inserttable(res) {
       let data = res.data;
@@ -1288,7 +1281,6 @@ export default {
         display: flex;
         padding: 10px;
         align-items: baseline;
-
       }
     }
 
@@ -1341,17 +1333,19 @@ export default {
        color: #2BBFBD !important
       }
     }
-
-    .comprehensive-container .select-item {
-      margin-left: 10px;
-      width: 20%;
-    }
-
     .comprehensive-container {
-      .select-item:first-child {
-        margin-left: -5px;
-        width: 19%;
+      width: 100%;
+     
+      .select-item {
+        
+      width: 20%;
+      &>.comprehensive-container-label{
+          width: 30%;
+        }
+      &>div{
+        width: 70%;
       }
+    }
 
       input {
         border-radius: 10px;

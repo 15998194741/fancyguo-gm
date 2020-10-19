@@ -1,7 +1,4 @@
 
-
-
-
 const request = require('request');
 
 class Ta{

@@ -316,7 +316,7 @@ export default {
         ]
       },
       selectForm: [{
-        label: '平台',
+        label: '游戏平台',
         multiple: true,
         filterable: true,
         collapse: false,
@@ -332,7 +332,7 @@ export default {
             value: '2'
           }]
       }, {
-        label: '渠道',
+        label: '游戏渠道',
         key: 'channel',
         multiple: true,
         filterable: true,
@@ -723,16 +723,8 @@ export default {
         border-radius: 0;
       }
     }
-    .comprehensive-container .select-item {
-      margin-left: 10px;
-      width: 20%;
-    }
+      .comprehensive-container { width: 100%;.select-item {width: 20%;&>.comprehensive-container-label{width: 30%;} &>div{ width: 70%; }}input {border-radius: 10px;}}
 
-    .comprehensive-container {
-      .select-item:first-child {
-        margin-left: -5px;
-        width: 19%;
-      }}
       .comprehensive-container {
         display: flex;
         padding: 10px;

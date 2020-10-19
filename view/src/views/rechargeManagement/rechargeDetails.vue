@@ -1,14 +1,14 @@
 <template>
   <div class="recha-container">
     <div class="role-container-header" >
-    <ul>
+    <ul style="margin: 5px 10px;margin-bottom: -5px;">
  
-      <li><el-button slot="reference" style="margin: 5px 5px -3px 0 ;" icon="el-icon-refresh" size='small' class="button-with-header"  @click="filterFormChange('flush')">刷新</el-button></li>
-      <li> <el-button v-if="grade"  slot="append" style="margin: 5px 5px -3px 0 ;" icon="el-icon-thumb" size='small' class="button-with-header"  :disabled='Replenishment' @click='Replenishmentclick'  >补单</el-button></li>
+      <li><el-button slot="reference"  icon="el-icon-refresh" size='small' class="button-with-header"  @click="filterFormChange('flush')">刷新</el-button></li>
+      <li> <el-button v-if="grade"  slot="append"  icon="el-icon-thumb" size='small' class="button-with-header"  :disabled='Replenishment' @click='Replenishmentclick'  >补单</el-button></li>
     </ul>
   </div>
   <div class="role-container-search">
-    <div class="server-container">ID：
+    <div class="server-container"><span>角色ID：</span>
     
       <el-input v-model="filterForm.roleid" placeholder="请输入角色ID" size='small'  class="input-with-select" >
       </el-input>
@@ -63,14 +63,13 @@
 </template>
 
 <script>
-// import elementResizeDetectorMaker from 'element-resize-detector';
 import { findComponents } from '@/api/components.js';
 import { findServername } from '@/api/character.js';
 import { rechargeQuery, replenishmentpost } from '@/api/rechargeDetails.js';
+import { loading, close, secondConfirmation } from '@/views/loading';
+
 import dayjs from 'dayjs';
-
 export default {
-
   name: 'rechargedetails',
   data() {
     return {
@@ -86,7 +85,7 @@ export default {
         pagesize: 10
       },
       selectForm: [{
-        label: '平台',
+        label: '游戏平台',
         multiple: false,
         key: 'plaform',
         value: '',
@@ -103,7 +102,7 @@ export default {
             value: '2'
           }]
       }, {
-        label: '渠道',
+        label: '游戏渠道',
         key: 'channel',
         multiple: true,
         value: '',
@@ -156,23 +155,13 @@ export default {
   },
   methods: {
     async Replenishmentclick() {
-      let replentrue = await this.$confirm('您正在修改数据，请谨慎处理！是否继续?', '提示', {
-        confirmButtonText: '确定',
-        cancelButtonText: '取消',
-        type: 'warning'
-      }).catch((err)=>false);
+      let replentrue = await secondConfirmation(this, '您正在修改数据，请谨慎处理！是否继续?');
       if (!replentrue) {return;}
+      loading(this);
       let res = await replenishmentpost(this.tableTrue);
-      if (res.code === 200) {
-        this.$message({
-          type: 'success',
-          message: '补单成功'
-        }); return;
-      }
-      this.$message({
-        type: 'info',
-        message: res.msg
-      });
+      close(this);
+      if (res.code !== 200) {return;}
+      this.$message.success('补单成功'); 
     },
     async filterFormChange(methods) {
       switch (methods) {
@@ -252,20 +241,11 @@ export default {
 
 <style lang="scss" rel="stylesheet/scss">
 .recha-container{
-
-
-
-
-
   .selectID {
-  
     span:first-child{
       display: none;
-      
     }
   }
-
-
   .success-feng{
     background-color: rgba(255,0,0,0.4);
   }
@@ -337,16 +317,19 @@ export default {
         border-radius: 30px 0 0 30px;
       }
     }
-    .comprehensive-container .select-item {
-      margin-left: 10px;
+     .comprehensive-container {
+      width: 100%;
+     
+      .select-item {
+        
       width: 20%;
-    }
-
-    .comprehensive-container {
-      .select-item:first-child {
-        margin-left: -5px;
-        width: 19%;
-      }}
+      &>.comprehensive-container-label{
+          width: 30%;
+        }
+      &>div{
+        width: 70%;
+      }
+    }}
       .comprehensive-container {
         display: flex;
         padding: 10px;

@@ -7,7 +7,7 @@
     </ul>
   </div>
   <div class="role-container-search">
-    <div class="server-container">ID：
+    <div class="server-container"> <span>邮件ID：</span> 
       <el-input v-model="filterForm['Id']" placeholder="请输入邮件ID" size='small' class="input-with-select" > </el-input>
       <el-button slot="append" icon="el-icon-search" size='small' class="button-with-select" name='truesearch' @click="filterFormChange('click')"> </el-button>
     </div>
@@ -977,16 +977,8 @@ export default {
         border-radius: 30px 0 0 30px;
       }
     }
-    .comprehensive-container .select-item {
-      margin-left: 10px;
-      width: 20%;
-    }
+   .comprehensive-container { width: 100%;.select-item {width: 20%;&>.comprehensive-container-label{width: 30%;} &>div{ width: 70%; }}input {border-radius: 10px;}}
 
-    .comprehensive-container {
-      .select-item:first-child {
-        margin-left: -5px;
-        width: 19%;
-      }}
       .comprehensive-container {
         display: flex;
         padding: 10px;

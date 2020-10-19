@@ -10,9 +10,27 @@
       
       
       
-      <el-row  v-for="(i,index) in valueList" :key="index" :class="{'teststs':gradele9999}">
+      <el-row  v-for="(i,index) in valueList" :key="index" :class="{'teststs':gradele9999}" >
         <el-col :span="32" style="display:flex;">
-        <div class="gamephoto" :style="`background-image: url(${i.url});`" @dblclick="changeFormDialogShow(i)" @mouseover='i["movehover"] = true' @mouseout='i["movehover"] = false'><el-button  v-show='i["movehover"]' v-if="gradele9999" class="game-managet-button" type="danger" icon="el-icon-circle-close" circle size="mini" @click="removeGame(i)"></el-button></div> 
+      <div class="gamephoto" :style="`background-image: url(${i.url});`" @dblclick="changeFormDialogShow(i)" @click="tests = true" @mouseover='i["movehover"] = true' @mouseout='i["movehover"] = false'>
+                <el-button  v-show='i["movehover"]' v-if="gradele9999" class="game-managet-button" type="danger" icon="el-icon-circle-close" circle size="mini" @click="removeGame(i)">
+                </el-button> 
+         
+         <!-- <circle-menu ref="testststs"  type="middle-around" :number='2' :btn='false'  circle>
+                <button slot="item_btn" type="button" style="display:none;"></button>
+          <a slot="item_1" class="fa fa-twitter fa-lg">删除</a>
+          <a slot="item_2" class="fa fa-weixin fa-lg">修改</a>
+        </circle-menu> -->
+             </div> 
+         <!-- <circle-menu type="middle-around" :number='4' animate="animated jello" :btn='true'  circle>
+          <button slot="item_btn" type="button"></button>
+          <a slot="item_1" class="fa fa-twitter fa-lg"></a>
+          <a slot="item_2" class="fa fa-weixin fa-lg"></a>
+          <a slot="item_3" class="fa fa-weibo fa-lg"></a>
+          <a slot="item_4" class="fa fa-github fa-lg"></a>
+        </circle-menu> -->
+        
+    
         </el-col>
         <el-col class="gamename" ><span >{{i.gamename}}</span> </el-col>
       </el-row>
@@ -129,14 +147,19 @@
         <el-button type="primary" plain @click="changeFormSubmit">确定</el-button>
       </div>
     </el-dialog>
+   
   </div>
 </template>
 
 <script>
+
+
 import { getQueryGame, getQueryUserList, getPostCreateGame, deleteGame } from '@/api/gameGm';
 import { changeGame, changeGameConfig } from '@/api/gameGm';
 export default {
   name: 'GameTest',
+  components: {
+  },
   data() {
     let userIdRule = (rule, value, callback) =>{
       if (value) {
@@ -191,6 +214,7 @@ export default {
       return callback();
     };
     return {
+      tests: false,
       mousehover: false,
       gameCreatedialogFormVisible: false,
       gameChangedialogFormVisible: false,

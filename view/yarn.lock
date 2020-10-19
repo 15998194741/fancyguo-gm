@@ -9862,6 +9862,11 @@ vm-browserify@^1.0.1:
   resolved "https://registry.yarnpkg.com/vm-browserify/-/vm-browserify-1.1.2.tgz#78641c488b8e6ca91a75f511e7a3b32a86e5dda0"
   integrity sha512-2ham8XPWTONajOR0ohOKOHXkm3+gaBmGut3SRuu75xLd/RRaY6vqgh8NBYYk7+RW3u5AtzPQZG8F10LHkl0lAQ==
 
+vue-circle-menu@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/vue-circle-menu/-/vue-circle-menu-1.1.1.tgz#3347ea746b0457e0a1dec688c58eaf4326d32b57"
+  integrity sha1-M0fqdGsEV+Ch3saIxY6vQybTK1c=
+
 vue-cli@^2.9.6:
   version "2.9.6"
   resolved "https://registry.yarnpkg.com/vue-cli/-/vue-cli-2.9.6.tgz#afc3cc6ce6de350d89876fee2dc163d0b83e0136"

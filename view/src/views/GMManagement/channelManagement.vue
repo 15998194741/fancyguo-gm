@@ -66,7 +66,7 @@
       @current-change="filterFormChange('change')" ></el-pagination>
     </div>
   
-<!-- 用户创建表单弹窗 -->
+<!-- 渠道创建表单弹窗 -->
     <el-dialog title="渠道创建" :visible.sync="dialogFormchange"  :close-on-click-modal="false">
       <el-form ref="createForm" :rules="createFormRules" :model="createForm" label-width="150px"  class='createFormAlert'> 
         <el-form-item label="渠道ID:" class="createFormAlertBody" prop='channelId' hide-required-asterisk required>
@@ -76,24 +76,24 @@
           <el-input v-model="createForm.channelName" class="alertcontant" placeholder="请输入用户名"></el-input>
         </el-form-item>
         <el-form-item size="large" style="display: flex;justify-content: flex-end;">
-          <el-button @click="createFormCancel">取 消</el-button>
+          <el-button @click="FormEildalogCanCel('dialogFormchange','createForm','createForm')">取 消</el-button>
           <el-button type="primary"   @click="createFormSubmitForm('createForm')">确 定</el-button>
         </el-form-item>
       </el-form>
     </el-dialog>
 
-    <!-- 用户创建表单弹窗 -->
+    <!-- 渠道修改表单弹窗 -->
     <el-dialog title="用户分组修改" :visible.sync="dialogFormchangeUser"  :close-on-click-modal="false">
       <el-form ref="changeForm" :rules="changeFormRules" :model="changeForm" label-width="150px"  class='createFormAlert'> 
-        <el-form-item label="分组名:" class="createFormAlertBody" prop='groupname' hide-required-asterisk required>
-          <el-input v-model="changeForm.groupname" class="alertcontant" placeholder="请输入用户名" @change="changeForm.nameChange = true"></el-input>
+        <el-form-item label="渠道ID:" class="createFormAlertBody" prop='channelId' hide-required-asterisk required>
+          <el-input v-model="changeForm.channelId" class="alertcontant" placeholder="请输入用户名"></el-input>
         </el-form-item>
-         <el-form-item label="权限:" class="createFormAlertBody" prop='alias' hide-required-asterisk >
-          
+         <el-form-item label="渠道名称:" class="createFormAlertBody" prop='channelName' hide-required-asterisk required>
+          <el-input v-model="changeForm.channelName" class="alertcontant" placeholder="请输入用户名"></el-input>
         </el-form-item>
       
         <el-form-item size="large" style="display: flex;justify-content: flex-end;">
-          <el-button @click="changeFormCancel">取 消</el-button>
+          <el-button @click="FormEildalogCanCel('dialogFormchangeUser','changeForm','changeForm')">取 消</el-button>
           <el-button type="primary"   @click="changeFormSubmitForm('changeForm')">确 定</el-button>
         </el-form-item>
       </el-form>
@@ -107,13 +107,15 @@
 </template>
   
 <script>
-  
+import { createchannel, findChannel, findChannelById } from '@/api/gmChannel';
+import { deleteChannel, putChangeChannel, forceDelete } from '@/api/gmChannel';
 import dayjs from 'dayjs';
-
+import { loading, close, secondConfirmation } from '@/views/loading';
 export default {
   name: 'channelmanagement',
   data() {
     return {
+      loading: '',
       radio: '',
       dialogFormchange: false,
       dialogFormchangeUser: false,
@@ -122,23 +124,33 @@ export default {
       page: 1,
       pagesize: 10,
       createForm: {
+        id: '',
         channelId: '',
         channelName: ''
       },
       changeForm: {
+        id: '',
+        channelId: '',
+        channelName: ''
+      },
+      changeFormData: {
         channelId: '',
         channelName: ''
       },
       changeFormRules: {
         channelId: [
           { validator: async(rule, value, callback) =>{
+            
             if (!value) {
               return callback(new Error('请输入渠道ID'));
             }
             if (!/^[0-9]*$/.test(value)) {
               return callback(new Error('请输入数字'));
             }
-            return callback(); 
+            let { channelId } = this.$data.changeFormData;
+            if (+value === +channelId) {return callback();}
+            let { data: a } = await findChannel({ type: false, value });
+            return callback(a ? new Error('不可以重复') : undefined); 
           }, trigger: ['blur'] }
         ],
         channelName: [
@@ -146,7 +158,10 @@ export default {
             if (!value) {
               return callback(new Error('请输入渠道名称'));
             }
-            return callback(); 
+            let { channelName } = this.$data.changeFormData;
+            if (value === channelName) {return callback();}
+            let { data: a } = await findChannel({ type: true, value });
+            return callback(a ? new Error('不可以重复') : undefined); 
           }, trigger: ['blur'] }
         ]
       },
@@ -160,7 +175,8 @@ export default {
             if (!/^[0-9]*$/.test(value)) {
               return callback(new Error('请输入数字'));
             }
-            return callback(); 
+            let { data: a } = await findChannel({ type: false, value });
+            return callback(a ? new Error('不可以重复') : undefined); 
           }, trigger: ['blur'] }
         ],
         channelName: [
@@ -168,21 +184,20 @@ export default {
             if (!value) {
               return callback(new Error('请输入渠道名称'));
             }
-            return callback(); 
+            let { data: a } = await findChannel({ type: true, value });
+            return callback(a ? new Error('不可以重复') : undefined); 
           }, trigger: ['blur'] }
         ]
       },
       tableData: [],
       tablecolumn: [
-        { label: '渠道ID', prop: 'id' },
-        { label: '渠道名称', prop: 'groupname' },
-        { label: '创建时间', prop: 'groupname' }
+        { label: '渠道ID', prop: 'channel_id' },
+        { label: '渠道名称', prop: 'channel' },
+        { label: '创建时间', prop: 'createtime' }
       ]
     };
   },
-  watch: {
-
-  },
+  watch: {},
   computed: {
     tableDatas() {
       let a = this.tableData.map(a => {
@@ -193,7 +208,6 @@ export default {
     }
   },
   methods: {
-
     async createFormEldialog() {
       this.dialogFormchange = true;
     },
@@ -201,184 +215,90 @@ export default {
       this.dialogFormchangeUser = true;
       this.changeForm['nameChange'] = false;
       try {this.$refs['changeForm'].resetFields();} catch ({ message }) {console.log(message);}
-      for (let i in row) {
-        this.changeForm[i] = row[i];
+      let { channel: channelName, channel_id: channelId, id } = row;
+      this.changeForm = { channelName, channelId, id };
+      this.changeFormData = {};
+      for (let i in this.changeForm) {
+        this.changeFormData[i] = this.changeForm[i];
       }
-  
     },
     async deleteHandleEdit(index, row) {
-      let { groupname } = row;
-      let sendtrue = await this.$confirm(`是否确认删除 ${groupname} 用户分组?`, '提示', {
-        confirmButtonText: '确定',
-        cancelButtonText: '取消',
-        type: 'warning' })
-        .catch(err => false);
+      let { channel } = row;
+      let sendtrue = await secondConfirmation(this, `是否确认删除 ${channel} 渠道?`);
       if (!sendtrue) {return;}
-      const loading = this.$loading({
-        lock: true,
-        text: '拼命加载中',
-        spinner: 'el-icon-loading',
-        background: 'rgba(0, 0, 0, 0.8)'
-      });
-      // let { code } = await deleteusergroupbyone(row);
-      // if (+code === 200) {
-      //   this.$message.success('删除成功');
-      //   this.findUserByParams();
-      // }
-      loading.close();
+      loading(this);
+      let { code, data } = await deleteChannel(row);
+      if (+code === 200) {
+        if (data) {
+          let sendtrue = await secondConfirmation(this, `该数据存在级联关系，是否强制删除 ${channel} 渠道？注意： 相关数据都将删除。`);
+          if (!sendtrue) {close(this); return;}
+          await forceDelete(row);
+        }
+        this.$message.success('删除成功');
+        this.findUserByParams();
+      }
+      close(this);
+    },
+    async forceDelete(row) {
+
+      console.log('要求强制删除');
     },
     async filterFormChange(val) {
-      switch (val) {
-        case 'click':
-          this.clickFindUserByParams();
-          break;
-        default:
-          this.findUserByParams();
-          break;
-      }
+      if (val === 'click') {this.page = 1;}
+      this.findUserByParams();
+    },
+    async findUserByParams() {
+      let { value, page, pagesize } = this;
+      let { data: { tableData, total }} = await findChannelById({ value, page, pagesize });
+      this.tableData = tableData;
+      this.total = +total;
     },
     async changeFormSubmitForm(val) {
       let errTrou = await this.$refs[val].validate().catch(err=>false);
       if (!errTrou) {return;}
-      let sendtrue = await this.$confirm(`是否确认修改用户分组?`, '提示', {
-        confirmButtonText: '确定',
-        cancelButtonText: '取消',
-        type: 'warning' })
-        .catch(err => false);
+    
+      if (JSON.stringify(this.changeForm) === JSON.stringify(this.changeFormData)) {this.$message.warning('未作修改!'); return;}
+      let sendtrue = await secondConfirmation(this, `是否确认修改渠道? 注意：修改渠道后所有有关数据级联修改`);
       if (!sendtrue) {return;}
-      const loading = this.$loading({
-        lock: true,
-        text: '拼命加载中',
-        spinner: 'el-icon-loading',
-        background: 'rgba(0, 0, 0, 0.8)'
-      });
-      // let { code } = await putChangeUserGroup(this.changeForm);
-      // if (+code === 200) {
-      //   this.$message.success('用户分组修改成功。');
-      //   this.changeFormCancel();
-      //   this.findUserByParams();
-      // }
-      loading.close();
+      loading(this);
+      let { code } = await putChangeChannel(this.changeForm);
+      if (+code === 200) {
+        this.$message.success('用户分组修改成功。');
+        this.FormEildalogCanCel('dialogFormchangeUser', 'changeForm', 'changeForm');
+        this.findUserByParams();
+      }
+      close(this);
     },
     async createFormSubmitForm(value) {
       let errTrou = await this.$refs[value].validate().catch(err=>false);
       if (!errTrou) {return;}
-      let sendtrue = await this.$confirm(`是否确认创建用户分组?`, '提示', {
-        confirmButtonText: '确定',
-        cancelButtonText: '取消',
-        type: 'warning' })
-        .catch(err => false);
+      let sendtrue = await secondConfirmation(this, `是否确认创建渠道?`); 
       if (!sendtrue) {return;}
-      const loading = this.$loading({
-        lock: true,
-        text: '拼命加载中',
-        spinner: 'el-icon-loading',
-        background: 'rgba(0, 0, 0, 0.8)'
+      loading(this);
+      let { code } = await createchannel({
+        ...this.createForm
       });
-
-      // let { code } = await postCreateUserGroup({
-      //   urlData: this.urlData,
-      //   groupName: this.createForm.groupName
-      // });
-      // if (+code === 200) {
-      //   this.$message.success('用户分组创建成功。');
-      //   this.createFormCancel();
-      //   this.findUserByParams();
-      // }
-      loading.close();
+      if (+code === 200) {
+        this.$message.success('渠道创建成功。');
+        this.FormEildalogCanCel('dialogFormchange', 'createForm', 'createForm');
+        this.findUserByParams();
+      }
+      close(this);
     },
-    async createFormCancel() {
-      this.dialogFormchange = false;
-      this.createForm = this.$options.data().createForm;
-      this.$refs['createForm'].resetFields();
-    },
-    async changeFormCancel() {
-      this.dialogFormchange = false;
-      this.createForm = this.$options.data().createForm;
-      this.$refs['createForm'].resetFields();
+    async FormEildalogCanCel(f, s, t) {
+      this[f] = false;
+      this[s] = this.$options.data()[s];
+      this.$refs[t].resetFields();
     }
   },
-  async  mounted() {
-  
+  mounted() {
+    this.findUserByParams();
   }
 };
 </script>
   
 <style lang="scss" rel="stylesheet/scss">
-.channnel-group-container{.custom-tree-node{flex:1;display:flex;
-align-items:center;
-justify-content:space-between;
-font-size:14px;
-padding-right:8px;}.teststststs{
-float:right;
-SELECTOR{position:absolute;top:0;bottom:auto;margin-top:±VALUE;margin-bottom:auto;}}.selectID{
-span:first-child{
-display:none;}}.success-feng{
-background-color:rgba(255,0,0,0.4);}.success-jiny{
-background-color:rgba(255,155,0,0.3);}.el-tabletd,.el-tableth.is-leaf{
-text-align:center;}.demo-table-expand{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-width:100%;
-margin-left:3%;
-font-size:18px;
-label{
-width:140px;
-color:#99a9bf;}.el-form-item{
-margin-right:0;
-margin-bottom:0;
-width:100%;
-display:flex;
-label{
-float:left;}/*text-align:center;*/}}.role-container-body{
-margin:10px;
-background-color:white;
-border-radius:5px;
-padding:5px;
-min-height:72vh;/*-webkit-box-shadow:1px1px4px0px#828282;*/
-box-shadow: 1px 1px 4px 0px #828282;.el-table.cell{
-word-break:keep-all;}}.role-container-headerulli{
-float:right;
-margin-left:2px;
-button{
-border-radius:30px;}
-button:focus{
-box-sizing:content-box;}}.role-container-headerul{
-display:flex;
-justify-content:flex-end;}.server-container{//border-bottom:1px#bdbdbddashed;
-padding:10px;}.input-with-select{
-width:250px;
-margin-left:-4px;
-border-radius:0;
-input{
-border-radius: 30px 0 0 30px ;}}.comprehensive-container.select-item{
-margin-left:10px;
-width:20%;}.comprehensive-container{.select-item:first-child{
-margin-left:-5px;
-width:19%;}}.comprehensive-container{
-display:flex;
-padding:10px;
-align-items:baseline;}.role-container-search{
-margin:10px;
-background-color:white;
-border-radius:5px;
-padding:2px;
-box-shadow: 1px 1px 4px 0px #828282;
-button[name='truesearch']{
-border-radius: 0 30px 30px 0;
-margin-left:-5px;
-height:32px
-}
-input[name='idselect']{
-border-radius: 30px 0 0 30px;
-width: 100px;/* height: 30px; */} .comprehensive-container {
-display: flex;
-padding: 10px;
-align-items: baseline;}}.createFormAlertBodys div{display: flex;}.createFormAlert{
-display: grid;
-grid-template-columns: 1fr ;
-align-items: center;.el-select{
-display: block;}}}
+.channnel-group-container{.custom-tree-node{flex:1;display:flex;align-items:center;justify-content:space-between;font-size:14px;padding-right:8px;}.teststststs{float:right;SELECTOR{position:absolute;top:0;bottom:auto;margin-top:±VALUE;margin-bottom:auto;}}.selectID{span:first-child{display:none;}}.success-feng{background-color:rgba(255,0,0,0.4);}.success-jiny{background-color:rgba(255,155,0,0.3);}.el-tabletd,.el-tableth.is-leaf{text-align:center;}.demo-table-expand{display:grid;grid-template-columns:repeat(3,1fr);width:100%;margin-left:3%;font-size:18px;label{width:140px;color:#99a9bf;}.el-form-item{margin-right:0;margin-bottom:0;width:100%;display:flex;label{float:left;}}}.role-container-body{margin:10px;background-color:white;border-radius:5px;padding:5px;min-height:76vh;box-shadow: 1px 1px 4px 0px #828282;.el-table.cell{word-break:keep-all;}}.role-container-headerulli{float:right;margin-left:2px;button{border-radius:30px;}button:focus{box-sizing:content-box;}}.role-container-headerul{display:flex;justify-content:flex-end;}.server-container{padding:10px;}.input-with-select{width:250px;margin-left:-4px;border-radius:0;input{border-radius: 30px 0 0 30px ;}}.comprehensive-container.select-item{margin-left:10px;width:20%;}.comprehensive-container{.select-item:first-child{margin-left:-5px;width:19%;}}.comprehensive-container{display:flex;padding:10px;align-items:baseline;}.role-container-search{margin:10px;background-color:white;border-radius:5px;padding:2px;box-shadow: 1px 1px 4px 0px #828282;button[name='truesearch']{border-radius: 0 30px 30px 0;margin-left:-5px;height:32px}input[name='idselect']{border-radius: 30px 0 0 30px;width: 100px;} .comprehensive-container {display: flex;padding: 10px;align-items: baseline;}}.createFormAlertBodys div{display: flex;}.createFormAlert{display: grid;grid-template-columns: 1fr ;align-items: center;.el-select{display: block;}}}
 </style>
 
 

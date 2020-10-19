@@ -1,7 +1,7 @@
 <template>
     <div class="record-container">
       <div class="role-container-header" >
-      <ul style="margin: 5px 5px -5px 0;">
+      <ul style="margin: 5px 10px -5px 0;">
         <li><el-button slot="reference" icon="el-icon-refresh" size='small' class="button-with-header"  @click='filterFormChange'>刷新</el-button></li>
         <!-- <li> <el-button  slot="append" icon="el-icon-delete-solid" size='small' class="button-with-header" :disabled='fenghaocaozuo' @click='dialogFormchange = true'>道具回收</el-button></li> -->
       </ul>
@@ -145,7 +145,7 @@ export default {
     background-color: white;
     border-radius: 5px;
     padding: 5px;
-    min-height: 71vh;
+    min-height: 73.5vh;
     /* -webkit-box-shadow: 1px 1px 4px 0px #828282; */
     box-shadow: 1px 1px 4px 0px #828282;
     .el-table .cell{
@@ -168,7 +168,7 @@ export default {
     justify-content: flex-end;
   }
   .server-container {
-        border-bottom: 1px #bdbdbd dashed;
+        // border-bottom: 1px #bdbdbd dashed;
         padding: 10px;
       }
       .input-with-select {
@@ -199,7 +199,7 @@ export default {
       margin: 10px;
       background-color: white;
       border-radius: 5px;
-      padding: 5px;
+      // padding: 5px;
       box-shadow: 1px 1px 4px 0px #828282;
       button[name='truesearch']{
             border-radius: 0 30px 30px 0;
@@ -211,9 +211,9 @@ export default {
       width: 100px;
       /* height: 30px; */
     }
-      .server-container {
-        border-bottom: 1px #bdbdbd dashed;
-      }
+      // .server-container {
+      //   border-bottom: 1px #bdbdbd dashed;
+      // }
 
       .comprehensive-container {
         display: flex;

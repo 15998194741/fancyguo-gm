@@ -10,8 +10,10 @@ class GmServerService extends BaseService{
 		super(gmServerDao, gmServerDO);
 		this.gmServerDao=gmServerDao;
 		this.gmServerDO = gmServerDO;
-		const { SenecaClient } = require('../../xiaolu/senecaclient');
-		this.SenClient = new SenecaClient('127.0.0.1', 10002, 'tcp');
+		// const  SenecaClient= require('../../xiaolu/senecaclient');
+		// this.SenClient = new SenecaClient('127.0.0.1', 10002, 'tcp');
+		let { a } = require('../../xiaolu/senecaclient');
+		this.SenClient = a;
 	}
   
 	//区服按需查找
@@ -44,7 +46,7 @@ class GmServerService extends BaseService{
 		}
 		
 		// where += channel && channel.length > 0? ' and array[\''+channel.join(' ')+'\']::varchar[] <@  channel ':'';
-		where += srttime?` and srttime BETWEEN '${srttime[0]}' and '${srttime[1]}' `:'';
+		where += srttime?` and srttime BETWEEN '${srttime[0]}'::TIMESTAMP  + '8:00' and '${srttime[1]}'::TIMESTAMP  + '8:00' `:'';
 		where += test?`and test='${test}'`:'';
 		where += mergeserver?` and ${+mergeserver===1?'NOT':''}(childrens is null)`:'';
 		// where += plaform?` and plaform =  '${JSON.stringify(plaform)}' `:'';
@@ -122,7 +124,6 @@ class GmServerService extends BaseService{
 		let res = await dbSequelize.query(querySql, {
 			replacements:['active'], type:Sequelize.QueryTypes.INSERT
 		});
-		console.log(res);
 		let pid = res[0][0]['id'];
 		let mergreSql = `
 		with RECURSIVE le (id,childrens) as (

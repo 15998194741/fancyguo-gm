@@ -100,7 +100,7 @@ class components extends BaseService{
 		// return serverall;
 	}
 	async updateserver(form){
-		let gametable = await UserDao.findSqlByParamsToOne('update gm_server set display = :display where  gameid=:gameid and serverid=:serverid', form);
+		let gametable = await UserDao.findSqlByParamsToOne('update gm_server set display = :display where  gameid=:gameid and serverid=:serverid returning *', form);
 		return gametable;
 	}
 	async updateserversnomerge(forms, gameid, display, merge){

@@ -6,7 +6,7 @@ import { getPermission } from '@/api/user';
 Vue.use(Router);
 
 /* Layout */
-import Layout from '@/layout';
+// import Layout from '@/layout';
 
 /**
  * 路由
@@ -22,15 +22,17 @@ export const constantRoutes = [
   },
   {
     path: '/',
-    component: Layout,
+    component(resolve) {
+      require(['@/layout'], resolve);
+    },
     redirect: '/index',
     children: [
       {
         path: 'index',
         name: 'business-index',
         meta: { title: '首页' },
-        component(resolve) {
-          require(['@/views/business'], resolve);
+        component(r) {
+          require(['@/views/business'], r);
         }
       }
     ]

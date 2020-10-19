@@ -2,7 +2,7 @@ import { dbSequelize } from '../../config';
 import Ta from '../../utils/requests';
 import Cp from '../../utils/Cp';
 import fs from 'fs';
-
+import dayjs from 'dayjs';
 class CharacterService{
 	constructor() {
 		
@@ -38,9 +38,8 @@ class CharacterService{
 		let keyss= ['update_time', 'ip', 'distinct_id', 'account_id'];
 		if(whereObj){
 			for(let [key, value] of Object.entries(whereObj)){
-				keyss.includes(key)?wheres.push(` and  "#${key}" BETWEEN '${value[0]}' and '${value[1]}' `):wheres.push(`  and  "${key}" BETWEEN '${value[0]}' and '${value[1]}' `);
+				wheres.push(` and  "${keyss.includes(key)?'#':''}${key}" BETWEEN '${new Date(dayjs(value[0]).add(8, 'hour')).toJSON() }' and '${new Date(dayjs(value[1]).add(8, 'hour')).toJSON()}' `);
 			}
-			
 		}
 		wheres = wheres.join('  ');
 		return wheres;
@@ -135,11 +134,9 @@ class CharacterService{
 			page,
 			pagesize
 		  } = query;
-		
 		  let token = await CharacterService.byOne(`select token,tablename from gm_game_token where gameid = '${gameid}' and type='user'`);
 		  let tablename = token.tablename;
 		  token = token.token;
-
 		let many = true;
 		let between ={
 			regtime,
@@ -175,6 +172,7 @@ class CharacterService{
 			data,
 			many
 		});
+		
 		var total = 0;
 		if(key === 'role_name' && value){sqls += `or role_name like '%${value.split('').join('%')}%'`;}
 		let res;

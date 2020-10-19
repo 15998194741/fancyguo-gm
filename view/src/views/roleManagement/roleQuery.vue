@@ -1,7 +1,7 @@
 <template>
   <div class="role-container">
     <div class="role-container-header" >
-    <ul style="margin-top: 5px;margin-bottom: -5px;">
+    <ul style="margin-top: 5px;margin-bottom: -5px;margin-right: 0.8rem;">
       <li><el-button  v-if="grade" slot="reference" icon="el-icon-upload2" size='small' class="button-with-header"  @click="serverCreatedialogFormVisible = true" >导入</el-button></li>
       <li><el-button  v-if="grade" slot="reference" icon="el-icon-download" size='small' class="button-with-header" @click='exportFile' >导出</el-button></li>
       <li><el-button  slot="reference" icon="el-icon-refresh" size='small' class="button-with-header"  @click='filterFormChange'>刷新</el-button></li>
@@ -18,10 +18,10 @@
       </el-input>
       <el-button slot="append" icon="el-icon-search" size='small' class="button-with-select" name='truesearch' @click="filterFormChange('click')">
       </el-button>
-      注册时间：
+     <span class="server-container-label"> 注册时间：</span>
         <el-date-picker  v-model="filterForm.regtime"  size='small'  type="datetimerange" range-separator="至" start-placeholder="开始日期" end-placeholder="结束日期" @change="filterFormChange('change')" >
         </el-date-picker>
-        封禁时间：
+       <span class="server-container-label"> 封禁时间：</span>
         <el-date-picker  v-model="filterForm.stime"  size='small'  type="datetimerange" range-separator="至" start-placeholder="开始日期" end-placeholder="结束日期" @change="filterFormChange('change')"  >
         </el-date-picker>
     </div>
@@ -234,7 +234,7 @@ export default {
         
       },
       selectForm: [{
-        label: '平台',
+        label: '游戏平台',
         multiple: false,
         key: 'plaform',
         value: '',
@@ -251,7 +251,7 @@ export default {
             value: '2'
           }]
       }, {
-        label: '渠道',
+        label: '游戏渠道',
         key: 'channel',
         filterable: true,
         multiple: true,
@@ -579,6 +579,9 @@ export default {
 
 <style lang="scss" rel="stylesheet/scss">
 .role-container{
+  .server-container-label{
+    padding-left: 1%;
+  }
 
   .success-feng{
     background-color: rgba(255,0,0,0.4);
@@ -651,16 +654,21 @@ export default {
         border-radius: 0;
       }
     }
-    .comprehensive-container .select-item {
-      margin-left: 10px;
+   .comprehensive-container {
+      width: 100%;
+     
+      .select-item {
+        
       width: 20%;
-    }
+      &>.comprehensive-container-label{
+          width: 30%;
+        }
+      &>div{
+        width: 70%;
+      }
+    }}
 
-    .comprehensive-container {
-      .select-item:first-child {
-        margin-left: -5px;
-        width: 19%;
-      }}
+    
       .comprehensive-container {
         display: flex;
         padding: 10px;

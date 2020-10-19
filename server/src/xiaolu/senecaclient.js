@@ -1,12 +1,12 @@
-exports.SenecaClient = class SenecaClient{
+class SenecaClient{
 	constructor(host, port, type) {
 		const seneca = require('seneca')();
 		const bluebird = require('bluebird');	
 		this.act = bluebird.promisify(seneca.act, { context: seneca });	
 		seneca.client({
-			host:'127.0.0.1',
-			port:10002,
-			type:'tcp'
+			host:host,
+			port:port,
+			type:type
 		});
 	}    
 	
@@ -22,4 +22,7 @@ exports.SenecaClient = class SenecaClient{
 			}
 		});
 	}
-};
+}
+
+let a = new SenecaClient('127.0.0.1', 10002, 'tcp');
+export  {a};

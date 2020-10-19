@@ -1,3 +1,4 @@
+import { json } from 'sequelize';
 import { dbSequelize } from '../config';
 const Sequelize = require('sequelize');
 const jwt = require('jsonwebtoken');
@@ -71,9 +72,9 @@ oHiLOo285vG5ZtmXiY58tAiPVQXa7eU8hPQHTHWa9qp6
 			ctx.logging = (  instructions, classification, message )=>{
 				let sql  = `
 				INSERT into gm_logs 
-				(user_id,ip,nick_name,instructions,classification,"text",game_id,alias)
+				(user_id,ip,nick_name,instructions,classification,"text",game_id,alias,kwargs)
 				VALUES
-				('${user['id']}','${ip}','${user['nickName']}','${instructions}','${classification}','${message}','${gameid}','${user['alias']}')`; 
+				('${user['id']}','${ip}','${user['nickName']|| ''}','${instructions}','${classification}','${message}','${gameid}','${user['alias'] || ''}','${JSON.stringify(ctx.data)}')`; 
 				dbSequelize.query(sql, {
 					replacements:['active'], type:Sequelize.QueryTypes.INSERT
 				});

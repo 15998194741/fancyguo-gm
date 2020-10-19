@@ -1,0 +1,707 @@
+[2020-10-16T16:30:47.833] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/recharge/replenishment
+request client ip:  ::ffff:127.0.0.1
+request body: 
+[{"roleId":"testroleid","roleName":"testrolename","platform":"android","uid":"9a08aa6709834b38ace1d3989af865dc","pid":"1","channel":"fancyguo","deviceid":"2c9ef8cf43cd1857","isOK":"未支付","isSend":"","serverId":"testserver1","price":"10000","tid":"29903520200810164946000001","createdAt":"2020年08月10日16时49分46秒","updatedAt":"2020年08月10日16时49分46秒","type":"安卓"}]
+response time: 1602837047833
+err name: Error
+err message: connect ECONNREFUSED 127.0.0.1:5000
+err stack: Error: connect ECONNREFUSED 127.0.0.1:5000
+    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1141:16)
+*************** error log end ***************
+
+[2020-10-16T16:37:15.865] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/recharge/replenishment
+request client ip:  ::ffff:127.0.0.1
+request body: 
+[{"roleId":"testroleid","roleName":"testrolename","platform":"android","uid":"9a08aa6709834b38ace1d3989af865dc","pid":"1","channel":"fancyguo","deviceid":"2c9ef8cf43cd1857","isOK":"未支付","isSend":"","serverId":"testserver1","price":"10000","tid":"29903520200810164946000001","createdAt":"2020年08月10日16时49分46秒","updatedAt":"2020年08月10日16时49分46秒","type":"安卓"}]
+response time: 1602837435865
+err name: TypeError
+err message: Cannot read property 'get' of undefined
+err stack: TypeError: Cannot read property 'get' of undefined
+    at rechargeService._callee4$ (H:\致命代码\fancyguo-gm\server\src\app\service\/recharge.js:99:39)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at rechargeService.<anonymous> (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at rechargeService.replenishment (H:\致命代码\fancyguo-gm\server\src\app\service\recharge.js:230:31)
+    at _callee2$ (H:\致命代码\fancyguo-gm\server\src\app\controllers\/recharge.js:23:41)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at replenishment (H:\致命代码\fancyguo-gm\server\src\app\controllers\recharge.js:121:31)
+    at dispatch (H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at next (H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:45:18)
+    at H:\致命代码\fancyguo-gm\server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:36:12
+    at dispatch (H:\致命代码\fancyguo-gm\server\node_modules\koa-router\lib\router.js:351:31)
+    at next (H:\致命代码\fancyguo-gm\server\node_modules\koa\node_modules\koa-compose\index.js:42:32)
+    at _callee$ (H:\致命代码\fancyguo-gm\server\src\middleware\/index.js:47:11)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+*************** error log end ***************
+
+[2020-10-16T16:38:38.576] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/recharge/replenishment
+request client ip:  ::ffff:127.0.0.1
+request body: 
+[{"roleId":"testroleid","roleName":"testrolename","platform":"android","uid":"9a08aa6709834b38ace1d3989af865dc","pid":"1","channel":"fancyguo","deviceid":"2c9ef8cf43cd1857","isOK":"未支付","isSend":"","serverId":"testserver1","price":"10000","tid":"29903520200810164946000001","createdAt":"2020年08月10日16时49分46秒","updatedAt":"2020年08月10日16时49分46秒","type":"安卓"}]
+response time: 1602837518576
+err name: TypeError
+err message: Cannot read property 'get' of undefined
+err stack: TypeError: Cannot read property 'get' of undefined
+    at rechargeService._callee4$ (H:\致命代码\fancyguo-gm\server\src\app\service\/recharge.js:99:39)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at rechargeService.<anonymous> (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at rechargeService.replenishment (H:\致命代码\fancyguo-gm\server\src\app\service\recharge.js:230:31)
+    at _callee2$ (H:\致命代码\fancyguo-gm\server\src\app\controllers\/recharge.js:23:41)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at replenishment (H:\致命代码\fancyguo-gm\server\src\app\controllers\recharge.js:121:31)
+    at dispatch (H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at next (H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:45:18)
+    at H:\致命代码\fancyguo-gm\server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:36:12
+    at dispatch (H:\致命代码\fancyguo-gm\server\node_modules\koa-router\lib\router.js:351:31)
+    at next (H:\致命代码\fancyguo-gm\server\node_modules\koa\node_modules\koa-compose\index.js:42:32)
+    at _callee$ (H:\致命代码\fancyguo-gm\server\src\middleware\/index.js:47:11)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+*************** error log end ***************
+
+[2020-10-16T16:42:24.987] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/recharge/replenishment
+request client ip:  ::ffff:127.0.0.1
+request body: 
+[{"roleId":"testroleid","roleName":"testrolename","platform":"android","uid":"9a08aa6709834b38ace1d3989af865dc","pid":"1","channel":"fancyguo","deviceid":"2c9ef8cf43cd1857","isOK":"未支付","isSend":"","serverId":"testserver1","price":"10000","tid":"29903520200810164946000001","createdAt":"2020年08月10日16时49分46秒","updatedAt":"2020年08月10日16时49分46秒","type":"安卓"}]
+response time: 1602837744986
+err name: Error
+err message: seneca: No matching action pattern found for { module: 'order', order: 'Replenishment', args: {} }, and no default result provided (using a default$ property).
+err stack: Error: seneca: No matching action pattern found for { module: 'order', order: 'Replenishment', args: {} }, and no default result provided (using a default$ property).
+    at module.exports.internals.Utils.internals.Utils.handle_response (H:\致命代码\fancyguo-gm\server\node_modules\seneca-transport\lib\transport-utils.js:77:11)
+    at Duplex.messager._write (H:\致命代码\fancyguo-gm\server\node_modules\seneca-transport\lib\tcp.js:240:19)
+    at doWrite (_stream_writable.js:403:12)
+    at writeOrBuffer (_stream_writable.js:387:5)
+    at Duplex.Writable.write (_stream_writable.js:318:11)
+    at DestroyableTransform.ondata (H:\致命代码\fancyguo-gm\server\node_modules\readable-stream\lib\_stream_readable.js:619:20)
+    at DestroyableTransform.emit (events.js:315:20)
+    at addChunk (H:\致命代码\fancyguo-gm\server\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+    at readableAddChunk (H:\致命代码\fancyguo-gm\server\node_modules\readable-stream\lib\_stream_readable.js:278:11)
+    at DestroyableTransform.Readable.push (H:\致命代码\fancyguo-gm\server\node_modules\readable-stream\lib\_stream_readable.js:245:10)
+    at DestroyableTransform.Transform.push (H:\致命代码\fancyguo-gm\server\node_modules\readable-stream\lib\_stream_transform.js:148:32)
+    at push (H:\致命代码\fancyguo-gm\server\node_modules\split2\index.js:52:10)
+    at DestroyableTransform.transform [as _transform] (H:\致命代码\fancyguo-gm\server\node_modules\split2\index.js:33:5)
+    at DestroyableTransform.Transform._read (H:\致命代码\fancyguo-gm\server\node_modules\readable-stream\lib\_stream_transform.js:184:10)
+    at DestroyableTransform.Transform._write (H:\致命代码\fancyguo-gm\server\node_modules\readable-stream\lib\_stream_transform.js:172:83)
+    at doWrite (H:\致命代码\fancyguo-gm\server\node_modules\readable-stream\lib\_stream_writable.js:428:64)
+    at writeOrBuffer (H:\致命代码\fancyguo-gm\server\node_modules\readable-stream\lib\_stream_writable.js:417:5)
+    at DestroyableTransform.Writable.write (H:\致命代码\fancyguo-gm\server\node_modules\readable-stream\lib\_stream_writable.js:334:11)
+    at Socket.ondata (_stream_readable.js:717:22)
+    at Socket.emit (events.js:315:20)
+    at addChunk (_stream_readable.js:295:12)
+    at readableAddChunk (_stream_readable.js:271:9)
+    at Socket.Readable.push (_stream_readable.js:212:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:186:23)
+From previous event:
+    at SenecaClient._callee$ (H:\致命代码\fancyguo-gm\server\src\xiaolu\/senecaclient.js:16:21)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at SenecaClient.<anonymous> (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at SenecaClient.get (H:\致命代码\fancyguo-gm\server\src\xiaolu\/senecaclient.js:1:1)
+    at rechargeService._callee4$ (H:\致命代码\fancyguo-gm\server\src\app\service\/recharge.js:101:39)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at rechargeService.<anonymous> (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at rechargeService.replenishment (H:\致命代码\fancyguo-gm\server\src\app\service\recharge.js:236:31)
+    at _callee2$ (H:\致命代码\fancyguo-gm\server\src\app\controllers\/recharge.js:20:41)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at replenishment (H:\致命代码\fancyguo-gm\server\src\app\controllers\recharge.js:116:31)
+    at dispatch (H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at next (H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:45:18)
+    at H:\致命代码\fancyguo-gm\server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:36:12
+    at dispatch (H:\致命代码\fancyguo-gm\server\node_modules\koa-router\lib\router.js:351:31)
+    at next (H:\致命代码\fancyguo-gm\server\node_modules\koa\node_modules\koa-compose\index.js:42:32)
+    at _callee$ (H:\致命代码\fancyguo-gm\server\src\middleware\/index.js:47:11)
+*************** error log end ***************
+
+[2020-10-16T16:43:07.258] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/recharge/replenishment
+request client ip:  ::ffff:127.0.0.1
+request body: 
+[{"roleId":"testroleid","roleName":"testrolename","platform":"android","uid":"9a08aa6709834b38ace1d3989af865dc","pid":"1","channel":"fancyguo","deviceid":"2c9ef8cf43cd1857","isOK":"未支付","isSend":"","serverId":"testserver1","price":"10000","tid":"29903520200810164946000001","createdAt":"2020年08月10日16时49分46秒","updatedAt":"2020年08月10日16时49分46秒","type":"安卓"}]
+response time: 1602837787257
+err name: Error
+err message: seneca: No matching action pattern found for { module: 'Order', Order: 'Replenishment', args: {} }, and no default result provided (using a default$ property).
+err stack: Error: seneca: No matching action pattern found for { module: 'Order', Order: 'Replenishment', args: {} }, and no default result provided (using a default$ property).
+    at module.exports.internals.Utils.internals.Utils.handle_response (H:\致命代码\fancyguo-gm\server\node_modules\seneca-transport\lib\transport-utils.js:77:11)
+    at Duplex.messager._write (H:\致命代码\fancyguo-gm\server\node_modules\seneca-transport\lib\tcp.js:240:19)
+    at doWrite (_stream_writable.js:403:12)
+    at writeOrBuffer (_stream_writable.js:387:5)
+    at Duplex.Writable.write (_stream_writable.js:318:11)
+    at DestroyableTransform.ondata (H:\致命代码\fancyguo-gm\server\node_modules\readable-stream\lib\_stream_readable.js:619:20)
+    at DestroyableTransform.emit (events.js:315:20)
+    at addChunk (H:\致命代码\fancyguo-gm\server\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+    at readableAddChunk (H:\致命代码\fancyguo-gm\server\node_modules\readable-stream\lib\_stream_readable.js:278:11)
+    at DestroyableTransform.Readable.push (H:\致命代码\fancyguo-gm\server\node_modules\readable-stream\lib\_stream_readable.js:245:10)
+    at DestroyableTransform.Transform.push (H:\致命代码\fancyguo-gm\server\node_modules\readable-stream\lib\_stream_transform.js:148:32)
+    at push (H:\致命代码\fancyguo-gm\server\node_modules\split2\index.js:52:10)
+    at DestroyableTransform.transform [as _transform] (H:\致命代码\fancyguo-gm\server\node_modules\split2\index.js:33:5)
+    at DestroyableTransform.Transform._read (H:\致命代码\fancyguo-gm\server\node_modules\readable-stream\lib\_stream_transform.js:184:10)
+    at DestroyableTransform.Transform._write (H:\致命代码\fancyguo-gm\server\node_modules\readable-stream\lib\_stream_transform.js:172:83)
+    at doWrite (H:\致命代码\fancyguo-gm\server\node_modules\readable-stream\lib\_stream_writable.js:428:64)
+    at writeOrBuffer (H:\致命代码\fancyguo-gm\server\node_modules\readable-stream\lib\_stream_writable.js:417:5)
+    at DestroyableTransform.Writable.write (H:\致命代码\fancyguo-gm\server\node_modules\readable-stream\lib\_stream_writable.js:334:11)
+    at Socket.ondata (_stream_readable.js:717:22)
+    at Socket.emit (events.js:315:20)
+    at addChunk (_stream_readable.js:295:12)
+    at readableAddChunk (_stream_readable.js:271:9)
+    at Socket.Readable.push (_stream_readable.js:212:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:186:23)
+From previous event:
+    at SenecaClient._callee$ (H:\致命代码\fancyguo-gm\server\src\xiaolu\/senecaclient.js:16:21)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at SenecaClient.<anonymous> (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at SenecaClient.get (H:\致命代码\fancyguo-gm\server\src\xiaolu\/senecaclient.js:1:1)
+    at rechargeService._callee4$ (H:\致命代码\fancyguo-gm\server\src\app\service\/recharge.js:101:39)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at rechargeService.<anonymous> (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at rechargeService.replenishment (H:\致命代码\fancyguo-gm\server\src\app\service\recharge.js:236:31)
+    at _callee2$ (H:\致命代码\fancyguo-gm\server\src\app\controllers\/recharge.js:20:41)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at replenishment (H:\致命代码\fancyguo-gm\server\src\app\controllers\recharge.js:116:31)
+    at dispatch (H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at next (H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:45:18)
+    at H:\致命代码\fancyguo-gm\server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:36:12
+    at dispatch (H:\致命代码\fancyguo-gm\server\node_modules\koa-router\lib\router.js:351:31)
+    at next (H:\致命代码\fancyguo-gm\server\node_modules\koa\node_modules\koa-compose\index.js:42:32)
+    at _callee$ (H:\致命代码\fancyguo-gm\server\src\middleware\/index.js:47:11)
+*************** error log end ***************
+
+[2020-10-16T16:43:27.892] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/recharge/replenishment
+request client ip:  ::ffff:127.0.0.1
+request body: 
+[{"roleId":"testroleid","roleName":"testrolename","platform":"android","uid":"9a08aa6709834b38ace1d3989af865dc","pid":"1","channel":"fancyguo","deviceid":"2c9ef8cf43cd1857","isOK":"未支付","isSend":"","serverId":"testserver1","price":"10000","tid":"29903520200810164946000001","createdAt":"2020年08月10日16时49分46秒","updatedAt":"2020年08月10日16时49分46秒","type":"安卓"}]
+response time: 1602837807891
+err name: Error
+err message: seneca: No matching action pattern found for { module: 'Order', Order: 'Replenishment', args: {} }, and no default result provided (using a default$ property).
+err stack: Error: seneca: No matching action pattern found for { module: 'Order', Order: 'Replenishment', args: {} }, and no default result provided (using a default$ property).
+    at module.exports.internals.Utils.internals.Utils.handle_response (H:\致命代码\fancyguo-gm\server\node_modules\seneca-transport\lib\transport-utils.js:77:11)
+    at Duplex.messager._write (H:\致命代码\fancyguo-gm\server\node_modules\seneca-transport\lib\tcp.js:240:19)
+    at doWrite (_stream_writable.js:403:12)
+    at writeOrBuffer (_stream_writable.js:387:5)
+    at Duplex.Writable.write (_stream_writable.js:318:11)
+    at DestroyableTransform.ondata (H:\致命代码\fancyguo-gm\server\node_modules\readable-stream\lib\_stream_readable.js:619:20)
+    at DestroyableTransform.emit (events.js:315:20)
+    at addChunk (H:\致命代码\fancyguo-gm\server\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+    at readableAddChunk (H:\致命代码\fancyguo-gm\server\node_modules\readable-stream\lib\_stream_readable.js:278:11)
+    at DestroyableTransform.Readable.push (H:\致命代码\fancyguo-gm\server\node_modules\readable-stream\lib\_stream_readable.js:245:10)
+    at DestroyableTransform.Transform.push (H:\致命代码\fancyguo-gm\server\node_modules\readable-stream\lib\_stream_transform.js:148:32)
+    at push (H:\致命代码\fancyguo-gm\server\node_modules\split2\index.js:52:10)
+    at DestroyableTransform.transform [as _transform] (H:\致命代码\fancyguo-gm\server\node_modules\split2\index.js:33:5)
+    at DestroyableTransform.Transform._read (H:\致命代码\fancyguo-gm\server\node_modules\readable-stream\lib\_stream_transform.js:184:10)
+    at DestroyableTransform.Transform._write (H:\致命代码\fancyguo-gm\server\node_modules\readable-stream\lib\_stream_transform.js:172:83)
+    at doWrite (H:\致命代码\fancyguo-gm\server\node_modules\readable-stream\lib\_stream_writable.js:428:64)
+    at writeOrBuffer (H:\致命代码\fancyguo-gm\server\node_modules\readable-stream\lib\_stream_writable.js:417:5)
+    at DestroyableTransform.Writable.write (H:\致命代码\fancyguo-gm\server\node_modules\readable-stream\lib\_stream_writable.js:334:11)
+    at Socket.ondata (_stream_readable.js:717:22)
+    at Socket.emit (events.js:315:20)
+    at addChunk (_stream_readable.js:295:12)
+    at readableAddChunk (_stream_readable.js:271:9)
+    at Socket.Readable.push (_stream_readable.js:212:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:186:23)
+From previous event:
+    at SenecaClient._callee$ (H:\致命代码\fancyguo-gm\server\src\xiaolu\/senecaclient.js:16:21)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at SenecaClient.<anonymous> (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at SenecaClient.get (H:\致命代码\fancyguo-gm\server\src\xiaolu\/senecaclient.js:1:1)
+    at rechargeService._callee4$ (H:\致命代码\fancyguo-gm\server\src\app\service\/recharge.js:101:39)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at rechargeService.<anonymous> (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at rechargeService.replenishment (H:\致命代码\fancyguo-gm\server\src\app\service\recharge.js:236:31)
+    at _callee2$ (H:\致命代码\fancyguo-gm\server\src\app\controllers\/recharge.js:20:41)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at replenishment (H:\致命代码\fancyguo-gm\server\src\app\controllers\recharge.js:116:31)
+    at dispatch (H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at next (H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:45:18)
+    at H:\致命代码\fancyguo-gm\server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:36:12
+    at dispatch (H:\致命代码\fancyguo-gm\server\node_modules\koa-router\lib\router.js:351:31)
+    at next (H:\致命代码\fancyguo-gm\server\node_modules\koa\node_modules\koa-compose\index.js:42:32)
+    at _callee$ (H:\致命代码\fancyguo-gm\server\src\middleware\/index.js:47:11)
+*************** error log end ***************
+
+[2020-10-16T16:44:46.978] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/recharge/replenishment
+request client ip:  ::ffff:127.0.0.1
+request body: 
+[{"roleId":"testroleid","roleName":"testrolename","platform":"android","uid":"9a08aa6709834b38ace1d3989af865dc","pid":"1","channel":"fancyguo","deviceid":"2c9ef8cf43cd1857","isOK":"未支付","isSend":"","serverId":"testserver1","price":"10000","tid":"29903520200810164946000001","createdAt":"2020年08月10日16时49分46秒","updatedAt":"2020年08月10日16时49分46秒","type":"安卓"}]
+response time: 1602837886977
+err name: Error
+err message: seneca: No matching action pattern found for { module: 'Order', Order: 'Replenishment', args: {} }, and no default result provided (using a default$ property).
+err stack: Error: seneca: No matching action pattern found for { module: 'Order', Order: 'Replenishment', args: {} }, and no default result provided (using a default$ property).
+    at module.exports.internals.Utils.internals.Utils.handle_response (H:\致命代码\fancyguo-gm\server\node_modules\seneca-transport\lib\transport-utils.js:77:11)
+    at Duplex.messager._write (H:\致命代码\fancyguo-gm\server\node_modules\seneca-transport\lib\tcp.js:240:19)
+    at doWrite (_stream_writable.js:403:12)
+    at writeOrBuffer (_stream_writable.js:387:5)
+    at Duplex.Writable.write (_stream_writable.js:318:11)
+    at DestroyableTransform.ondata (H:\致命代码\fancyguo-gm\server\node_modules\readable-stream\lib\_stream_readable.js:619:20)
+    at DestroyableTransform.emit (events.js:315:20)
+    at addChunk (H:\致命代码\fancyguo-gm\server\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+    at readableAddChunk (H:\致命代码\fancyguo-gm\server\node_modules\readable-stream\lib\_stream_readable.js:278:11)
+    at DestroyableTransform.Readable.push (H:\致命代码\fancyguo-gm\server\node_modules\readable-stream\lib\_stream_readable.js:245:10)
+    at DestroyableTransform.Transform.push (H:\致命代码\fancyguo-gm\server\node_modules\readable-stream\lib\_stream_transform.js:148:32)
+    at push (H:\致命代码\fancyguo-gm\server\node_modules\split2\index.js:52:10)
+    at DestroyableTransform.transform [as _transform] (H:\致命代码\fancyguo-gm\server\node_modules\split2\index.js:33:5)
+    at DestroyableTransform.Transform._read (H:\致命代码\fancyguo-gm\server\node_modules\readable-stream\lib\_stream_transform.js:184:10)
+    at DestroyableTransform.Transform._write (H:\致命代码\fancyguo-gm\server\node_modules\readable-stream\lib\_stream_transform.js:172:83)
+    at doWrite (H:\致命代码\fancyguo-gm\server\node_modules\readable-stream\lib\_stream_writable.js:428:64)
+    at writeOrBuffer (H:\致命代码\fancyguo-gm\server\node_modules\readable-stream\lib\_stream_writable.js:417:5)
+    at DestroyableTransform.Writable.write (H:\致命代码\fancyguo-gm\server\node_modules\readable-stream\lib\_stream_writable.js:334:11)
+    at Socket.ondata (_stream_readable.js:717:22)
+    at Socket.emit (events.js:315:20)
+    at addChunk (_stream_readable.js:295:12)
+    at readableAddChunk (_stream_readable.js:271:9)
+    at Socket.Readable.push (_stream_readable.js:212:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:186:23)
+From previous event:
+    at SenecaClient._callee$ (H:\致命代码\fancyguo-gm\server\src\xiaolu\/senecaclient.js:16:21)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at SenecaClient.<anonymous> (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at SenecaClient.get (H:\致命代码\fancyguo-gm\server\src\xiaolu\/senecaclient.js:1:1)
+    at rechargeService._callee4$ (H:\致命代码\fancyguo-gm\server\src\app\service\/recharge.js:101:39)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at rechargeService.<anonymous> (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at rechargeService.replenishment (H:\致命代码\fancyguo-gm\server\src\app\service\recharge.js:236:31)
+    at _callee2$ (H:\致命代码\fancyguo-gm\server\src\app\controllers\/recharge.js:20:41)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at replenishment (H:\致命代码\fancyguo-gm\server\src\app\controllers\recharge.js:116:31)
+    at dispatch (H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at next (H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:45:18)
+    at H:\致命代码\fancyguo-gm\server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:36:12
+    at dispatch (H:\致命代码\fancyguo-gm\server\node_modules\koa-router\lib\router.js:351:31)
+    at next (H:\致命代码\fancyguo-gm\server\node_modules\koa\node_modules\koa-compose\index.js:42:32)
+    at _callee$ (H:\致命代码\fancyguo-gm\server\src\middleware\/index.js:47:11)
+*************** error log end ***************
+
+[2020-10-16T16:45:32.029] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/recharge/replenishment
+request client ip:  ::ffff:127.0.0.1
+request body: 
+[{"roleId":"testroleid","roleName":"testrolename","platform":"android","uid":"9a08aa6709834b38ace1d3989af865dc","pid":"1","channel":"fancyguo","deviceid":"2c9ef8cf43cd1857","isOK":"未支付","isSend":"","serverId":"testserver1","price":"10000","tid":"29903520200810164946000001","createdAt":"2020年08月10日16时49分46秒","updatedAt":"2020年08月10日16时49分46秒","type":"安卓"}]
+response time: 1602837932029
+err name: TypeError
+err message: Cannot read property 'code' of null
+err stack: TypeError: Cannot read property 'code' of null
+    at rechargeService._callee4$ (H:\致命代码\fancyguo-gm\server\src\app\service\/recharge.js:101:9)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+*************** error log end ***************
+
+[2020-10-16T17:05:22.330] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/recharge/replenishment
+request client ip:  ::ffff:127.0.0.1
+request body: 
+[{"roleId":"testroleid","roleName":"testrolename","platform":"android","uid":"9a08aa6709834b38ace1d3989af865dc","pid":"1","channel":"fancyguo","deviceid":"2c9ef8cf43cd1857","isOK":"未支付","isSend":"","serverId":"testserver1","price":"10000","tid":"29903520200810164946000001","createdAt":"2020年08月10日16时49分46秒","updatedAt":"2020年08月10日16时49分46秒","type":"安卓"}]
+response time: 1602839122329
+err name: undefined
+err message: 交互失败
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-16T17:05:45.230] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/recharge/replenishment
+request client ip:  ::ffff:127.0.0.1
+request body: 
+[{"roleId":"testroleid","roleName":"testrolename","platform":"android","uid":"9a08aa6709834b38ace1d3989af865dc","pid":"1","channel":"fancyguo","deviceid":"2c9ef8cf43cd1857","isOK":"未支付","isSend":"","serverId":"testserver1","price":"10000","tid":"29903520200810164946000001","createdAt":"2020年08月10日16时49分46秒","updatedAt":"2020年08月10日16时49分46秒","type":"安卓"}]
+response time: 1602839145230
+err name: undefined
+err message: 交互失败
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-16T17:06:03.905] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/recharge/replenishment
+request client ip:  ::ffff:127.0.0.1
+request body: 
+[{"roleId":"testroleid","roleName":"testrolename","platform":"android","uid":"9a08aa6709834b38ace1d3989af865dc","pid":"1","channel":"fancyguo","deviceid":"2c9ef8cf43cd1857","isOK":"未支付","isSend":"","serverId":"testserver1","price":"10000","tid":"29903520200810164946000001","createdAt":"2020年08月10日16时49分46秒","updatedAt":"2020年08月10日16时49分46秒","type":"安卓"},{"roleId":"testroleid","roleName":"testrolename","platform":"android","uid":"9a08aa6709834b38ace1d3989af865dc","pid":"1","channel":"fancyguo","deviceid":"2c9ef8cf43cd1857","isOK":"未支付","isSend":"","serverId":"testserver1","price":"10000","tid":"19539520200810164949000002","createdAt":"2020年08月10日16时49分49秒","updatedAt":"2020年08月10日16时49分49秒","type":"安卓"}]
+response time: 1602839163904
+err name: undefined
+err message: 交互失败
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-16T17:06:46.707] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/recharge/replenishment
+request client ip:  ::ffff:127.0.0.1
+request body: 
+[{"roleId":"testroleid","roleName":"testrolename","platform":"android","uid":"9a08aa6709834b38ace1d3989af865dc","pid":"1","channel":"fancyguo","deviceid":"2c9ef8cf43cd1857","isOK":"未支付","isSend":"","serverId":"testserver1","price":"10000","tid":"29903520200810164946000001","createdAt":"2020年08月10日16时49分46秒","updatedAt":"2020年08月10日16时49分46秒","type":"安卓"},{"roleId":"testroleid","roleName":"testrolename","platform":"android","uid":"9a08aa6709834b38ace1d3989af865dc","pid":"1","channel":"fancyguo","deviceid":"2c9ef8cf43cd1857","isOK":"未支付","isSend":"","serverId":"testserver1","price":"10000","tid":"19539520200810164949000002","createdAt":"2020年08月10日16时49分49秒","updatedAt":"2020年08月10日16时49分49秒","type":"安卓"}]
+response time: 1602839206706
+err name: undefined
+err message: 交互失败
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-16T17:09:23.268] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/recharge/replenishment
+request client ip:  ::ffff:127.0.0.1
+request body: 
+[{"roleId":"testroleid","roleName":"testrolename","platform":"android","uid":"9a08aa6709834b38ace1d3989af865dc","pid":"1","channel":"fancyguo","deviceid":"2c9ef8cf43cd1857","isOK":"未支付","isSend":"","serverId":"testserver1","price":"10000","tid":"29903520200810164946000001","createdAt":"2020年08月10日16时49分46秒","updatedAt":"2020年08月10日16时49分46秒","type":"安卓"},{"roleId":"testroleid","roleName":"testrolename","platform":"android","uid":"9a08aa6709834b38ace1d3989af865dc","pid":"1","channel":"fancyguo","deviceid":"2c9ef8cf43cd1857","isOK":"未支付","isSend":"","serverId":"testserver1","price":"10000","tid":"19539520200810164949000002","createdAt":"2020年08月10日16时49分49秒","updatedAt":"2020年08月10日16时49分49秒","type":"安卓"}]
+response time: 1602839363267
+err name: undefined
+err message: 交互失败
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-16T17:11:48.500] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/recharge/replenishment
+request client ip:  ::ffff:127.0.0.1
+request body: 
+[{"roleId":"testroleid","roleName":"testrolename","platform":"android","uid":"9a08aa6709834b38ace1d3989af865dc","pid":"1","channel":"fancyguo","deviceid":"2c9ef8cf43cd1857","isOK":"未支付","isSend":"","serverId":"testserver1","price":"10000","tid":"29903520200810164946000001","createdAt":"2020年08月10日16时49分46秒","updatedAt":"2020年08月10日16时49分46秒","type":"安卓"},{"roleId":"testroleid","roleName":"testrolename","platform":"android","uid":"9a08aa6709834b38ace1d3989af865dc","pid":"1","channel":"fancyguo","deviceid":"2c9ef8cf43cd1857","isOK":"未支付","isSend":"","serverId":"testserver1","price":"10000","tid":"19539520200810164949000002","createdAt":"2020年08月10日16时49分49秒","updatedAt":"2020年08月10日16时49分49秒","type":"安卓"}]
+response time: 1602839508498
+err name: undefined
+err message: 交互失败
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-16T17:12:06.011] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/recharge/replenishment
+request client ip:  ::ffff:127.0.0.1
+request body: 
+[{"roleId":"testroleid","roleName":"testrolename","platform":"android","uid":"9a08aa6709834b38ace1d3989af865dc","pid":"1","channel":"fancyguo","deviceid":"2c9ef8cf43cd1857","isOK":"未支付","isSend":"","serverId":"testserver1","price":"10000","tid":"29903520200810164946000001","createdAt":"2020年08月10日16时49分46秒","updatedAt":"2020年08月10日16时49分46秒","type":"安卓"},{"roleId":"testroleid","roleName":"testrolename","platform":"android","uid":"9a08aa6709834b38ace1d3989af865dc","pid":"1","channel":"fancyguo","deviceid":"2c9ef8cf43cd1857","isOK":"未支付","isSend":"","serverId":"testserver1","price":"10000","tid":"19539520200810164949000002","createdAt":"2020年08月10日16时49分49秒","updatedAt":"2020年08月10日16时49分49秒","type":"安卓"}]
+response time: 1602839526010
+err name: undefined
+err message: 交互失败
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-16T17:12:09.439] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/recharge/replenishment
+request client ip:  ::ffff:127.0.0.1
+request body: 
+[{"roleId":"testroleid","roleName":"testrolename","platform":"android","uid":"9a08aa6709834b38ace1d3989af865dc","pid":"1","channel":"fancyguo","deviceid":"2c9ef8cf43cd1857","isOK":"未支付","isSend":"","serverId":"testserver1","price":"10000","tid":"29903520200810164946000001","createdAt":"2020年08月10日16时49分46秒","updatedAt":"2020年08月10日16时49分46秒","type":"安卓"},{"roleId":"testroleid","roleName":"testrolename","platform":"android","uid":"9a08aa6709834b38ace1d3989af865dc","pid":"1","channel":"fancyguo","deviceid":"2c9ef8cf43cd1857","isOK":"未支付","isSend":"","serverId":"testserver1","price":"10000","tid":"19539520200810164949000002","createdAt":"2020年08月10日16时49分49秒","updatedAt":"2020年08月10日16时49分49秒","type":"安卓"}]
+response time: 1602839529439
+err name: undefined
+err message: 交互失败
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-16T17:12:28.131] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/recharge/replenishment
+request client ip:  ::ffff:127.0.0.1
+request body: 
+[{"roleId":"testroleid","roleName":"testrolename","platform":"android","uid":"9a08aa6709834b38ace1d3989af865dc","pid":"1","channel":"fancyguo","deviceid":"2c9ef8cf43cd1857","isOK":"未支付","isSend":"","serverId":"testserver1","price":"10000","tid":"29903520200810164946000001","createdAt":"2020年08月10日16时49分46秒","updatedAt":"2020年08月10日16时49分46秒","type":"安卓"},{"roleId":"testroleid","roleName":"testrolename","platform":"android","uid":"9a08aa6709834b38ace1d3989af865dc","pid":"1","channel":"fancyguo","deviceid":"2c9ef8cf43cd1857","isOK":"未支付","isSend":"","serverId":"testserver1","price":"10000","tid":"19539520200810164949000002","createdAt":"2020年08月10日16时49分49秒","updatedAt":"2020年08月10日16时49分49秒","type":"安卓"}]
+response time: 1602839548131
+err name: undefined
+err message: 交互失败
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-16T17:12:46.364] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/recharge/replenishment
+request client ip:  ::ffff:127.0.0.1
+request body: 
+[{"roleId":"testroleid","roleName":"testrolename","platform":"android","uid":"9a08aa6709834b38ace1d3989af865dc","pid":"1","channel":"fancyguo","deviceid":"2c9ef8cf43cd1857","isOK":"未支付","isSend":"","serverId":"testserver1","price":"10000","tid":"29903520200810164946000001","createdAt":"2020年08月10日16时49分46秒","updatedAt":"2020年08月10日16时49分46秒","type":"安卓"},{"roleId":"testroleid","roleName":"testrolename","platform":"android","uid":"9a08aa6709834b38ace1d3989af865dc","pid":"1","channel":"fancyguo","deviceid":"2c9ef8cf43cd1857","isOK":"未支付","isSend":"","serverId":"testserver1","price":"10000","tid":"19539520200810164949000002","createdAt":"2020年08月10日16时49分49秒","updatedAt":"2020年08月10日16时49分49秒","type":"安卓"}]
+response time: 1602839566363
+err name: undefined
+err message: 交互失败
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-16T17:14:04.961] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/recharge/replenishment
+request client ip:  ::ffff:127.0.0.1
+request body: 
+[{"roleId":"testroleid","roleName":"testrolename","platform":"android","uid":"9a08aa6709834b38ace1d3989af865dc","pid":"1","channel":"fancyguo","deviceid":"2c9ef8cf43cd1857","isOK":"未支付","isSend":"","serverId":"testserver1","price":"10000","tid":"29903520200810164946000001","createdAt":"2020年08月10日16时49分46秒","updatedAt":"2020年08月10日16时49分46秒","type":"安卓"},{"roleId":"testroleid","roleName":"testrolename","platform":"android","uid":"9a08aa6709834b38ace1d3989af865dc","pid":"1","channel":"fancyguo","deviceid":"2c9ef8cf43cd1857","isOK":"未支付","isSend":"","serverId":"testserver1","price":"10000","tid":"19539520200810164949000002","createdAt":"2020年08月10日16时49分49秒","updatedAt":"2020年08月10日16时49分49秒","type":"安卓"}]
+response time: 1602839644961
+err name: undefined
+err message: 交互失败
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-16T17:19:17.351] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/recharge/replenishment
+request client ip:  ::ffff:127.0.0.1
+request body: 
+[{"roleId":"testroleid","roleName":"testrolename","platform":"android","uid":"9a08aa6709834b38ace1d3989af865dc","pid":"1","channel":"fancyguo","deviceid":"2c9ef8cf43cd1857","isOK":"未支付","isSend":"","serverId":"testserver1","price":"10000","tid":"29903520200810164946000001","createdAt":"2020年08月10日16时49分46秒","updatedAt":"2020年08月10日16时49分46秒","type":"安卓"},{"roleId":"testroleid","roleName":"testrolename","platform":"android","uid":"9a08aa6709834b38ace1d3989af865dc","pid":"1","channel":"fancyguo","deviceid":"2c9ef8cf43cd1857","isOK":"未支付","isSend":"","serverId":"testserver1","price":"10000","tid":"19539520200810164949000002","createdAt":"2020年08月10日16时49分49秒","updatedAt":"2020年08月10日16时49分49秒","type":"安卓"},{"roleId":"testroleid","roleName":"testrolename","platform":"android","uid":"9a08aa6709834b38ace1d3989af865dc","pid":"1","channel":"fancyguo","deviceid":"2c9ef8cf43cd1857","isOK":"未支付","isSend":"","serverId":"testserver1","price":"10000","tid":"10687620200810165008000003","createdAt":"2020年08月10日16时50分08秒","updatedAt":"2020年08月10日16时50分08秒","type":"安卓"},{"roleId":"testroleid","roleName":"testrolename","platform":"android","uid":"9a08aa6709834b38ace1d3989af865dc","pid":"1","channel":"fancyguo","deviceid":"2c9ef8cf43cd1857","isOK":"未支付","isSend":"","serverId":"testserver1","price":"10000","tid":"39768920200810165114000004","createdAt":"2020年08月10日16时51分15秒","updatedAt":"2020年08月10日16时51分15秒","type":"安卓"},{"roleId":"testroleid","roleName":"testrolename","platform":"android","uid":"9a08aa6709834b38ace1d3989af865dc","pid":"1","channel":"fancyguo","deviceid":"2c9ef8cf43cd1857","isOK":"未支付","isSend":"","serverId":"testserver1","price":"10000","tid":"01240020200810165115000005","createdAt":"2020年08月10日16时51分16秒","updatedAt":"2020年08月10日16时51分16秒","type":"安卓"},{"roleId":"testroleid","roleName":"testrolename","platform":"android","uid":"a04de374e4524e2e9750021fd5ce229b","pid":"1","channel":"fancyguo","deviceid":"ad2b3e6b4f7b4ced","isOK":"未支付","isSend":"","serverId":"testserver1","price":"10000","tid":"42841220200810174622000001","createdAt":"2020年08月10日17时46分23秒","updatedAt":"2020年08月10日17时46分23秒","type":"安卓"},{"roleId":"testroleid","roleName":"testrolename","platform":"android","uid":"a04de374e4524e2e9750021fd5ce229b","pid":"1","channel":"fancyguo","deviceid":"ad2b3e6b4f7b4ced","isOK":"未支付","isSend":"","serverId":"testserver1","price":"10000","tid":"53717820200810174624000002","createdAt":"2020年08月10日17时46分24秒","updatedAt":"2020年08月10日17时46分24秒","type":"安卓"},{"roleId":"testroleid","roleName":"testrolename","platform":"android","uid":"9a08aa6709834b38ace1d3989af865dc","pid":"1","channel":"fancyguo","deviceid":"2c9ef8cf43cd1857","isOK":"未支付","isSend":"","serverId":"testserver1","price":"10000","tid":"71800820200811131148000001","createdAt":"2020年08月11日13时11分48秒","updatedAt":"2020年08月11日13时11分48秒","type":"安卓"},{"roleId":"testroleid","roleName":"testrolename","platform":"android","uid":"9a08aa6709834b38ace1d3989af865dc","pid":"1","channel":"fancyguo","deviceid":"2c9ef8cf43cd1857","isOK":"未支付","isSend":"","serverId":"testserver1","price":"10000","tid":"01935020200811131221000002","createdAt":"2020年08月11日13时12分21秒","updatedAt":"2020年08月11日13时12分21秒","type":"安卓"},{"roleId":"testroleid","roleName":"testrolename","platform":"android","uid":"5d2eaef27de343139c05adbbf99a7239","pid":"1","channel":"fancyguo","deviceid":"ee04c948ab0a3511","isOK":"未支付","isSend":"","serverId":"testserver1","price":"10000","tid":"61675720200811131747000001","createdAt":"2020年08月11日13时17分47秒","updatedAt":"2020年08月11日13时17分47秒","type":"安卓"}]
+response time: 1602839957350
+err name: undefined
+err message: 交互失败
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-16T17:19:33.031] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/recharge/replenishment
+request client ip:  ::ffff:127.0.0.1
+request body: 
+[{"roleId":"testroleid","roleName":"testrolename","platform":"android","uid":"9a08aa6709834b38ace1d3989af865dc","pid":"1","channel":"fancyguo","deviceid":"2c9ef8cf43cd1857","isOK":"未支付","isSend":"","serverId":"testserver1","price":"10000","tid":"29903520200810164946000001","createdAt":"2020年08月10日16时49分46秒","updatedAt":"2020年08月10日16时49分46秒","type":"安卓"},{"roleId":"testroleid","roleName":"testrolename","platform":"android","uid":"9a08aa6709834b38ace1d3989af865dc","pid":"1","channel":"fancyguo","deviceid":"2c9ef8cf43cd1857","isOK":"未支付","isSend":"","serverId":"testserver1","price":"10000","tid":"19539520200810164949000002","createdAt":"2020年08月10日16时49分49秒","updatedAt":"2020年08月10日16时49分49秒","type":"安卓"},{"roleId":"testroleid","roleName":"testrolename","platform":"android","uid":"9a08aa6709834b38ace1d3989af865dc","pid":"1","channel":"fancyguo","deviceid":"2c9ef8cf43cd1857","isOK":"未支付","isSend":"","serverId":"testserver1","price":"10000","tid":"10687620200810165008000003","createdAt":"2020年08月10日16时50分08秒","updatedAt":"2020年08月10日16时50分08秒","type":"安卓"},{"roleId":"testroleid","roleName":"testrolename","platform":"android","uid":"9a08aa6709834b38ace1d3989af865dc","pid":"1","channel":"fancyguo","deviceid":"2c9ef8cf43cd1857","isOK":"未支付","isSend":"","serverId":"testserver1","price":"10000","tid":"39768920200810165114000004","createdAt":"2020年08月10日16时51分15秒","updatedAt":"2020年08月10日16时51分15秒","type":"安卓"},{"roleId":"testroleid","roleName":"testrolename","platform":"android","uid":"9a08aa6709834b38ace1d3989af865dc","pid":"1","channel":"fancyguo","deviceid":"2c9ef8cf43cd1857","isOK":"未支付","isSend":"","serverId":"testserver1","price":"10000","tid":"01240020200810165115000005","createdAt":"2020年08月10日16时51分16秒","updatedAt":"2020年08月10日16时51分16秒","type":"安卓"},{"roleId":"testroleid","roleName":"testrolename","platform":"android","uid":"a04de374e4524e2e9750021fd5ce229b","pid":"1","channel":"fancyguo","deviceid":"ad2b3e6b4f7b4ced","isOK":"未支付","isSend":"","serverId":"testserver1","price":"10000","tid":"42841220200810174622000001","createdAt":"2020年08月10日17时46分23秒","updatedAt":"2020年08月10日17时46分23秒","type":"安卓"},{"roleId":"testroleid","roleName":"testrolename","platform":"android","uid":"a04de374e4524e2e9750021fd5ce229b","pid":"1","channel":"fancyguo","deviceid":"ad2b3e6b4f7b4ced","isOK":"未支付","isSend":"","serverId":"testserver1","price":"10000","tid":"53717820200810174624000002","createdAt":"2020年08月10日17时46分24秒","updatedAt":"2020年08月10日17时46分24秒","type":"安卓"},{"roleId":"testroleid","roleName":"testrolename","platform":"android","uid":"9a08aa6709834b38ace1d3989af865dc","pid":"1","channel":"fancyguo","deviceid":"2c9ef8cf43cd1857","isOK":"未支付","isSend":"","serverId":"testserver1","price":"10000","tid":"71800820200811131148000001","createdAt":"2020年08月11日13时11分48秒","updatedAt":"2020年08月11日13时11分48秒","type":"安卓"},{"roleId":"testroleid","roleName":"testrolename","platform":"android","uid":"9a08aa6709834b38ace1d3989af865dc","pid":"1","channel":"fancyguo","deviceid":"2c9ef8cf43cd1857","isOK":"未支付","isSend":"","serverId":"testserver1","price":"10000","tid":"01935020200811131221000002","createdAt":"2020年08月11日13时12分21秒","updatedAt":"2020年08月11日13时12分21秒","type":"安卓"},{"roleId":"testroleid","roleName":"testrolename","platform":"android","uid":"5d2eaef27de343139c05adbbf99a7239","pid":"1","channel":"fancyguo","deviceid":"ee04c948ab0a3511","isOK":"未支付","isSend":"","serverId":"testserver1","price":"10000","tid":"61675720200811131747000001","createdAt":"2020年08月11日13时17分47秒","updatedAt":"2020年08月11日13时17分47秒","type":"安卓"}]
+response time: 1602839973031
+err name: undefined
+err message: 交互失败
+err stack: undefined
+*************** error log end ***************
+
+[2020-10-16T17:34:54.042] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/announcement/create
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"bulletinid":"11602840273890","stime":"","etime":"","plaform":"1","channel":"久游","servername":"","interval":"","weights":"","title":"qqwrqwrq","a":"www.baidu.com","text":"qweqwqqwqwqw","type":"2","gameid":"1"}
+response time: 1602840894042
+err name: SequelizeUniqueConstraintError
+err message: Validation error
+err stack: SequelizeUniqueConstraintError: Validation error
+    at Query.formatError (H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:324:18)
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:72:18
+From previous event:
+    at Query.run (H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:64:23)
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:29
+From previous event:
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:12
+    at processImmediate (internal/timers.js:456:21)
+From previous event:
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:651:10
+    at H:\致命代码\fancyguo-gm\server\node_modules\retry-as-promised\index.js:70:21
+    at new Promise (<anonymous>)
+    at retryAsPromised (H:\致命代码\fancyguo-gm\server\node_modules\retry-as-promised\index.js:60:10)
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:641:30
+From previous event:
+    at Sequelize.query (H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:590:23)
+    at _callee3$ (H:\致命代码\fancyguo-gm\server\src\app\service\/gm-announcement.js:74:31)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+*************** error log end ***************
+
+[2020-10-16T18:38:32.614] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/mail/postMailToCreate
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"title":"asd啊实打实的","text":"a's'd","allServerTrue":true,"roleId":"","mailLink":"阿松大阿松大","plaform":"","channel":"","serverName":["测试一服"],"carryAnnex":false,"sendTime":false,"smtpId":"381628","sendDateTime":"2020-10-30T16:00:00.000Z","gameid":"1"}
+response time: 1602844712613
+err name: SequelizeDatabaseError
+err message: syntax error at or near "s"
+err stack: SequelizeDatabaseError: syntax error at or near "s"
+    at Query.formatError (H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:366:16)
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:72:18
+From previous event:
+    at Query.run (H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:64:23)
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:29
+From previous event:
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:12
+    at processImmediate (internal/timers.js:456:21)
+From previous event:
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:651:10
+    at H:\致命代码\fancyguo-gm\server\node_modules\retry-as-promised\index.js:70:21
+    at new Promise (<anonymous>)
+    at retryAsPromised (H:\致命代码\fancyguo-gm\server\node_modules\retry-as-promised\index.js:60:10)
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:641:30
+From previous event:
+    at Sequelize.query (H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:590:23)
+    at MailService._callee6$ (H:\致命代码\fancyguo-gm\server\src\app\service\/mail.js:186:31)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+*************** error log end ***************
+
+[2020-10-16T18:40:13.203] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/mail/postMailToCreate
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"title":"asd啊实打实的","text":"a's'd","allServerTrue":true,"roleId":"","mailLink":"阿松大阿松大","plaform":"","channel":"","serverName":["测试一服"],"carryAnnex":false,"sendTime":false,"smtpId":"381628","sendDateTime":"2020-10-30T16:00:00.000Z","gameid":"1"}
+response time: 1602844813202
+err name: SequelizeDatabaseError
+err message: syntax error at or near "s"
+err stack: SequelizeDatabaseError: syntax error at or near "s"
+    at Query.formatError (H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:366:16)
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:72:18
+From previous event:
+    at Query.run (H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:64:23)
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:29
+From previous event:
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:12
+    at processImmediate (internal/timers.js:456:21)
+From previous event:
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:651:10
+    at H:\致命代码\fancyguo-gm\server\node_modules\retry-as-promised\index.js:70:21
+    at new Promise (<anonymous>)
+    at retryAsPromised (H:\致命代码\fancyguo-gm\server\node_modules\retry-as-promised\index.js:60:10)
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:641:30
+From previous event:
+    at Sequelize.query (H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:590:23)
+    at MailService._callee6$ (H:\致命代码\fancyguo-gm\server\src\app\service\/mail.js:186:31)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+*************** error log end ***************
+

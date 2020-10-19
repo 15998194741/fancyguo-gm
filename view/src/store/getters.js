@@ -14,3 +14,4 @@ const getters = {
   gameid: state => state.user.permissionInfo.gameid
 };
 export default getters;
+
