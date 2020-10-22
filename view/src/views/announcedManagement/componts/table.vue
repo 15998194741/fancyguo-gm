@@ -66,7 +66,7 @@ export default {
       tablecolumn: [
         { label: '公告ID', prop: 'id' },
         { label: '公告类型', prop: 'type' },
-        { label: '平台', prop: 'plaform' },
+        { label: '平台', prop: 'plaforms' },
         { label: '渠道', prop: 'client' },
         { label: '区服名称', prop: 'servername' },
         { label: '公告标题', prop: 'title' },

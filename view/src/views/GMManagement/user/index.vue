@@ -136,9 +136,7 @@ import { postCreateUser, getFindUser } from '@/api/gameUser';
 import { findUserByParams, deleteuserbyone } from '@/api/gameUser';
 import { putChangeUser } from '@/api/gameUser';
 import eventUser from './eventUser';
-
 import dayjs from 'dayjs';
-
 export default {
   
   name: 'userindex',

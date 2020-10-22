@@ -16,7 +16,9 @@ export const constantRoutes = [
   
   {
     path: '/login',
-    component: () => import('@/views/login/index'),
+    component(r) {
+      require(['@/views/login/index'], r);
+    },
     meta: { title: '登录' },
     hidden: true
   },
@@ -79,7 +81,12 @@ export const constantRoutes = [
   },
 
   // 404 page must be placed at the end !!!
-  { path: '*', redirect: '/index', component: () => import('@/views/2048'), hidden: true }
+  { path: '*',
+    redirect: '/index',
+    component(r) {
+      require(['@/views/2048'], r);
+    },
+    hidden: true }
 ];
 
 const createRouter = () => new Router({

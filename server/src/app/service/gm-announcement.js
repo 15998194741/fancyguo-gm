@@ -15,9 +15,13 @@ class GmAnnouncementService extends BaseService{
 		let setime = data['setime[]']; 
 		let channel = data['channel[]'];
 		let where = `where  game_id=${gameid}  and status = 1 `;
-		 data = {id, plaform,  type};
+		 data = {id, type};
 		for(let [key, value] of  Object.entries(data)){
-			where += value?`and ${key} = '${value}'`:'';
+			where += value?`and ${key} = $${key}$${value}$${key}$`:'';
+		}
+		switch(typeof plaform){
+			case 'string':where +=  plaform?` and plaform @> '"${plaform}"' and  jsonb_array_length('["1"]'::jsonb) = jsonb_array_length(plaform) `:'';break;
+			case 'object':where += ` and plaform @> '${JSON.stringify(plaform)}' and  jsonb_array_length('${JSON.stringify(plaform)}'::jsonb) = jsonb_array_length(plaform) `;break;
 		}
 		where += servername? `and '${servername}' = any(servername)`:'';
 		where += setime?` and ( start_time  between '${dayjs(setime[0]).format('YYYY-MM-DD HH:mm:ss')}' and '${dayjs(setime[1]).format('YYYY-MM-DD HH:mm:ss')}'  or sendtime   between '${dayjs(setime[0]).format('YYYY-MM-DD HH:mm:ss')}' and '${dayjs(setime[1]).format('YYYY-MM-DD HH:mm:ss')}'  )   `:'';
@@ -25,13 +29,19 @@ class GmAnnouncementService extends BaseService{
 			case 'string':where += ` and '${channel}' = any(client)`;break;
 			case 'object':where += ` and array[${channel.map(item => `'${item}'`)}]::varchar[] <@ client`;break;
 		}
-		let sql = `select id,status,end_time,start_time,anno_status,title,client,game_id,text,time_interval,img_url,weights,link,job_id,servername,sendtime,end_time,
-		(case when type::int = 1 then start_time else sendtime end) as stime ,
-		(case when type::int = 1 then end_time else endtime end) as etime ,
-		(case when type::int = 1 then '跑马灯' when type::int = 2 then '公告板' end ) as type,
-		(case when plaform::int = 1 then '安卓' when plaform::int = 2 then '苹果' else '不限制' end ) as plaform
-		from gm_announcement  ${where} and (anno_status::int  not in (1,3)  or anno_status    is null )  
-		order by id  offset ${pagesize*(page-1)} limit ${pagesize}`;
+		let sql = `
+		with qwe as (	select id ,(case when plaforms = '1'::text then '安卓' when plaforms = '2'::text then '苹果' end ) as plaforms  from gm_announcement,jsonb_array_elements_text(plaform)  with  ordinality  arr(plaforms, index)),
+            asd as (select id,status,end_time,start_time,anno_status,title,game_id,text,time_interval,img_url,weights,link,job_id,sendtime,
+					(case when type::int = 1 then start_time else sendtime end) as stime ,
+					(case when type::int = 1 then end_time else endtime end) as etime ,
+					(case when type::int = 1 then '跑马灯' when type::int = 2 then '公告板' end ) as type,
+					( case when cardinality(	array_remove(client,'')) = 0 then null else client end ) as client ,
+					( case when cardinality(	array_remove(servername,'')) = 0 then null else servername end ) as servername 
+					from gm_announcement  ${where} and (anno_status::int  not in (1,3)  or anno_status    is null )  
+					order by id  offset ${pagesize*(page-1)} limit ${pagesize}),
+			zxc as (select id,string_to_array(string_agg(plaforms, ','), ',')as plaforms from qwe  GROUP BY id )
+			select asd.*,zxc.plaforms from  asd left join zxc  on asd.id=zxc.id
+		`;
 		let res = await dbSequelize.query(sql);
 		let total = await dbSequelize.query(`select count(*) as total  from gm_announcement  ${where} and (anno_status::int  not in (1,3)  or anno_status    is null ) `);
 		res = res[0];
@@ -40,23 +50,26 @@ class GmAnnouncementService extends BaseService{
 	}
 	async createBulletin(data, files, id){
 		let filePath = null;
+		
 		if(JSON.stringify(files) !== '{}'){ 
 			const path = require('path');
 			const file = files.images;
 			 filePath = await new Promise((resolve, reject)=>{
 		  const reader = fs.createReadStream(file.path);
-		  let filePath = path.join(__dirname, '../../images/anno/') + `${new Date().getTime()}+${file.name}`;
+		  let a = `${new Date().getTime()}+${file.name}`;
+		  let filePath = path.join(__dirname, '../../images/anno/') + a;
+		  let fileWebUrl = 'http://106.75.7.83/images/anno/' + a;
 		  const upStream = fs.createWriteStream(filePath);
 		  reader.pipe(upStream);
 		  reader.on('end', async(err)=>{
 			  if(err){
 				  reject(false);
 			  }
-			  resolve(filePath);
+			  resolve(fileWebUrl);
 		  });
 	  });
 		}
-		let { channel, servername, range} =data;
+		let { channel, servername, range, plaform} =data;
 		if(channel.indexOf(',') != -1){
 			channel = channel.split(',');
 		}
@@ -73,11 +86,20 @@ class GmAnnouncementService extends BaseService{
 			case 'object':servername = `array[${servername.map(item => `'${item}'`)}]`;break;
 			default :servername = null;
 		}
-		let sql = ` insert into gm_announcement 
+		if(plaform.indexOf(',') != -1){
+			plaform = plaform.split(',');
+		}
+		switch (typeof plaform){
+			case 'string':plaform = `["${plaform}"]`;break;
+			case 'object':plaform = `[${plaform.map(item => `"${item}"`)}]`;break;
+			default :plaform = false;
+		}
+		let sql = `insert into gm_announcement 
 		  (title,text,game_id,img_url,plaform,client,link,bulletinid,create_user_id,type,servername,range) 
 		  VALUES
-		  ('${data.title}','${data.text}','${data.gameid}','${filePath}',${data.plaform?`'${data.plaform}'` :null},${channel},'${data.a}','${data.bulletinid}','${id}',2,${servername},'${range}') returning id `;
-		let res = await dbSequelize.query(sql);
+		  ('${data.title}','${data.text}','${data.gameid}',${filePath?`'${filePath}'`:null},${plaform?`'${plaform}'::jsonb` :null},${channel},'${data.a}','${data.bulletinid}','${id}',2,${servername},'${range}') returning id `;
+		console.log(sql);
+		  let res = await dbSequelize.query(sql);
 		return res[0][0];
 	}
 	async createMarquee(data, id){
@@ -85,13 +107,21 @@ class GmAnnouncementService extends BaseService{
 		// let Res = await Cp.insertMarquee(cpdata);
 		// let {code :CpRes, msg:CpMsg} = JSON.parse(Res);
 		// if(+CpRes !== +200){return {CpMsg};}
-		let { channel, servername } =data;
+		let { channel, servername, plaform} =data;
 		for(let [key, value] of Object.entries(data)){
 			if(key === 'stime' || key === 'etime'){
 				data[key] =	`'${dayjs(data[key]).format('YYYY-MM-DD HH:mm:ss')}'`;continue;
 			}
 			data[key]= data[key]?`'${value}'`:null;
 
+		}
+		if(plaform.indexOf(',') != -1){
+			plaform = plaform.split(',');
+		}
+		switch (typeof plaform){
+			case 'string':plaform = `["${plaform}"]`;break;
+			case 'object':plaform = `[${plaform.map(item => `"${item}"`)}]`;break;
+			default :plaform = false;
 		}
 		if(channel.indexOf(',') != -1){
 			channel = channel.split(',');
@@ -110,22 +140,23 @@ class GmAnnouncementService extends BaseService{
 			default :servername = null;
 		}
 		let sql = ` insert into gm_announcement 
-		  (start_time,end_time,game_id, plaform,client,bulletinid,create_user_id,type,weights,time_interval,servername) 
+		  (start_time,end_time,game_id, plaform,client,bulletinid,create_user_id,type,weights,time_interval,servername,anno_status) 
 		  VALUES
-		  (${data.stime},${data.etime},${data.gameid},${data.plaform?`${data.plaform}` :null},${channel},${data.bulletinid},${id},1,${data.weights} ,${data.interval},${servername}  ) returning id `;
+		  (${data.stime},${data.etime},${data.gameid},${plaform?`'${plaform}'::jsonb` :null},${channel},${data.bulletinid},${id},1,${data.weights} ,${data.interval},${servername} ,2 ) returning id `;
 		let res = await dbSequelize.query(sql);
 		await this.SenClient.get('anno', 'marquee', {body:res[0][0]});
 		return res[0][0];
 	}
 	async updateBulletin(data){
-		
-		let res = await dbSequelize.query(`update gm_announcement set anno_status=1 where id='${data.id}'`);
+		let res = await dbSequelize.query(`update gm_announcement set anno_status=1,status = 0 where id='${data.id}' returning id`);
+		await this.SenClient.get('anno', 'stop', {body:res[0][0]});
 		return res[0][0];
 	}
 	async sendBulletin(datas){
-		let { data, sendtime } = datas;
-		let res = await dbSequelize.query(`update gm_announcement set sendtime='${sendtime}', anno_status =2 where id in (${data.map(item => item.id)}) `);
-		this.SenClient.get('anno', 'send', {body:datas});
+		let { data, sendtime, endtime } = datas;
+		let res = await dbSequelize.query(`update gm_announcement set sendtime='${sendtime}' ,endtime ='${endtime}', anno_status =2 where id in (${data.map(item => item.id)}) `);
+		let a = await this.SenClient.get('anno', 'send', {body:datas});
+		console.log(a);
 		return res;
 	}
 	async queryweights(parmas){
@@ -175,9 +206,6 @@ class GmAnnouncementService extends BaseService{
 	}
 	async putchangeoneannounced(data){
 		let  Marquee = async (data)=>{
-			let CpRes = await Cp.updateMarquee(data);
-			let {code, msg} = JSON.parse(CpRes);
-			if(code !== 200){return {msg};}
 			let {id, text, start_time, end_time, weights} = data;
 			let res = await dbSequelize.query(`update gm_announcement 
 			set text = '${text}',
@@ -188,9 +216,7 @@ class GmAnnouncementService extends BaseService{
 			return res[0];
 		};
 		let  bulletin = async (data)=>{
-			let CpRes = await Cp.updateBulletin(data);
-			let {code, msg} = JSON.parse(CpRes);
-			if(code !== 200){return {msg};}
+		
 			let {id, text, title, link} = data;
 			let res = await dbSequelize.query(`update gm_announcement 
 			set text = '${text}',

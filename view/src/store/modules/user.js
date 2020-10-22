@@ -1,5 +1,5 @@
-import { login, getInfo, loginOther } from '@/api/user';
-
+import { login, getInfo } from '@/api/user';
+// import {loginOther}from '@/api/user';
 import { getToken, setToken, removeToken } from '@/utils/cookie-utils';
 import { toeknsetuser } from '@/api/components.js';
 import { resetRouter } from '@/router';
@@ -57,23 +57,23 @@ const mutations = {
 
 const actions = {
   // 第三方登录
-  otherLogin({ commit }, token) {
-    return new Promise((resolve, reject) => {
-      loginOther({ token }).then(response => {
-        if (response.code !== 200) {
-          console.error(response.data);
-          resolve(response);
-        } else {
-          const { data } = response;
-          setToken(data.token);
-          commit('SET_TOKEN', data.token);
-          resolve(response);
-        }
-      }).catch(error => {
-        reject(error);
-      });
-    });
-  },
+  // otherLogin({ commit }, token) {
+  //   return new Promise((resolve, reject) => {
+  //     loginOther({ token }).then(response => {
+  //       if (response.code !== 200) {
+  //         console.error(response.data);
+  //         resolve(response);
+  //       } else {
+  //         const { data } = response;
+  //         setToken(data.token);
+  //         commit('SET_TOKEN', data.token);
+  //         resolve(response);
+  //       }
+  //     }).catch(error => {
+  //       reject(error);
+  //     });
+  //   });
+  // },
   // user login
   login({ commit, dispatch, rootGetters }, userInfo) {
     const { username, password } = userInfo;

@@ -1,14 +1,13 @@
 import Vue from 'vue';
 
-import 'normalize.css/normalize.css'; // A modern alternative to CSS resets
-
+// import 'normalize.css/normalize.css'; // A modern alternative to CSS resets
+// import 'element-ui/lib/theme-chalk/index.css';
 import ElementUI from 'element-ui';
-import 'element-ui/lib/theme-chalk/index.css';
 import locale from 'element-ui/lib/locale/lang/zh-CN'; // lang i18n
 // // set ElementUI lang to EN
-(async() => {
-  Vue.use(ElementUI, { locale });
-})();
+
+Vue.use(ElementUI, { locale });
+
 import '@/styles/index.scss'; // global css
 // import Blob from '@/Excel/blob';
 // import Export2Excel from '@/Excel/Export2Excel.js';

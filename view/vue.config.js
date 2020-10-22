@@ -44,17 +44,25 @@ module.exports = {
     proxy: {
       '/api': {
         target: 'http://127.0.0.1:8080',
-        // target: 'http://10.1.35.78:10010',
-        // target: 'http://123.57.86.38:30000',
-        // target: 'http://127.0.0.1:10010',
-        // target: 'http:106.75.7.83:8080',
         changeOrigin: true
       }
     }
   },
+
   configureWebpack: {
     //在webpack的name字段中提供应用程序的标题，以便
     //可以在index.html中访问它来注入正确的标题。
+    externals: {
+      'vue': 'Vue',
+      //包名 ： 全局变量
+      // 'element-ui': 'ElementUI',
+      // 'element-ui/lib/locale/lang/zh-CN': 'locale',
+      // 'axios': 'axios',
+      // 'js-cookie': 'Cookies',
+      'vuex': 'Vuex',
+      'Router': 'vue-router'
+      // 'xlsx': 'xlsx'
+    }, 
     name: name,
     resolve: {
       alias: {

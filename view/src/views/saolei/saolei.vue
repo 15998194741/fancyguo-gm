@@ -157,7 +157,7 @@ export default {
             return;
           }
           this.$set(this.cellArray[cIndex], 'isClear', true);
-          if (cell.data == 0) {
+          if (+cell.data === 0) {
             this.clearBoom(cIndex);
           }
         }
@@ -165,7 +165,7 @@ export default {
 
       //清理
       let cell = this.cellArray[index];
-      if (cell.data != 0) {
+      if (+cell.data !== 0) {
         this.$set(cell, 'isClear', true);
         //console.log('!!!!!')
         return;

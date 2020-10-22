@@ -1,0 +1,20 @@
+[2020-10-22T11:16:15.907] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/announcement/create
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"bulletinid":"","stime":"","etime":"","plaform":"1","channel":"","servername":"","interval":"","weights":"","title":"1","a":"1","text":"1","range":"1","type":"2","gameid":"1"}
+response time: 1603336575906
+err name: ReferenceError
+err message: fileWebUrl is not defined
+err stack: ReferenceError: fileWebUrl is not defined
+    at _callee3$ (H:\致命代码\fancyguo-gm\server\src\app\service\/gm-announcement.js:99:69)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+*************** error log end ***************
+

@@ -2,12 +2,9 @@
   <div class="anno-container">
     <div class="role-container-header" >
     <ul style="margin-top: 5px;margin-bottom: -5px;margin-right: 10px;">
-     
       <li><el-button slot="reference" icon="el-icon-refresh" size='small' class="button-with-header" @click='filterFormChangeFlush' >刷新</el-button></li>
       <li><el-button v-if="grade" slot="reference" icon="el-icon-circle-plus-outline" size='small' class="button-with-header"  @click='dialogFormVisiblechangealter' >新建公告</el-button></li>
       <li><el-button  v-if="grade" slot="reference" icon="el-icon-mouse" :disabled='send' size='small' class="button-with-header"  @click='dialogFormVisiblesend = true' >发布</el-button></li>
-
-  
     </ul>
   </div>
   <div class="role-container-search">
@@ -49,121 +46,14 @@
     @current-change="filterFormChange('change')" ></el-pagination>
   </div>
 
-  <el-dialog title="新建公告" :visible.sync="dialogFormVisiblechange" class="announceddialog"  :close-on-click-modal="false">
-   <div class="headradio"> <el-radio v-model="radio"  :label="true">跑马灯</el-radio>
-    <el-radio v-model="radio" :label="false">公告板</el-radio></div>
-   <div class="container">
-      <div >  
-        <el-form ref="createForm"  :model="createForm" :rules="textrule" label-width="80px">
-          <!-- <el-form-item label="公告ID:">
-            <el-input v-model="createForm['bulletinid']" disabled style="width: 80%;" placeholder="请输入内容"></el-input>
-          </el-form-item> -->
-          <el-form-item label="公告正文:" prop='text' >
-            <el-input
-            v-model="createForm['text']"
-            type="textarea"
-            style="width: 80%;"
-            :rows="8"
-            placeholder="请输入内容">
-</el-input>
-          </el-form-item>
-          </el-form>
-      </div>
-      <div>
-        <!-- //公告板 -->
-        <el-form v-show='!radio' ref="createFormbulletin" :model="createForm" :rules="announcementrule" label-width="80px" >
-          <el-form-item label="公告标题:"  prop='title'>
-            <el-input v-model="createForm.title" placeholder="请输入内容"  ></el-input>
-          </el-form-item>
-        <el-form-item label="公告图片:" hide-required-asterisk>
-          <a href="javascript:;" class="a-upload">
-          <input  id='uploadimage'    type='file'  @change='fileupload'> 点击上传文件
-        </a>{{fileName}}
-        </el-form-item>
-        <el-form-item label="公告链接:" prop='a' >
-          <el-input v-model="createForm['a']" placeholder="请输入内容"></el-input>
-        </el-form-item>
-         <el-form-item label="公告类型:"  >
-          <el-select v-model="createForm.range"   placeholder="请选择" size='small' style="border-radius: 10px;" >
-            <el-option   label='游戏外公告（登录界面展示的公告）' value="1" ></el-option>
-            <el-option   label='游戏内公告（进入游戏后展示的公告）' value="2" ></el-option>
-          </el-select>
-        </el-form-item>
-        <el-form-item label="平台:" prop='plaform'>
-          <el-select v-model="createForm.plaform" clearable multiple placeholder="请选择" size='small' style="border-radius: 10px;" >
-            <el-option   label='安卓' value="1" ></el-option>
-            <el-option   label='苹果' value="2" ></el-option>
-          </el-select>
-        </el-form-item>
-        <el-form-item  v-show="createChannelShow" label="渠道:" prop='channel'>
-          <el-select v-model="createForm.channel" multiple clearable placeholder="请选择" size='small' style="border-radius: 10px;"   @change='queryMarqueeweights'>
-            <el-option v-for="(item,index) in selectForm[1].options"   :key="index"  :label='item.label' :value="item.value" >
-            </el-option>
-          </el-select>
-        </el-form-item>
-          <el-form-item v-show="createServerShow" label="服务器:" >
-          <el-select v-model="createForm.servername" multiple placeholder="请选择" size='small' style="border-radius: 10px;" >
-            <el-option v-for="(item,index) in servernamesselect"   :key="index"  :label='item.label' :value="item.value" >
-            </el-option>
-          </el-select>
-        </el-form-item>
-        </el-form>
 
 
-        <!-- //跑马灯 -->
-        <el-form v-show='radio' ref="createFormMarqueeRule" :rules='createFormMarqueeRules' :model="createForm"  label-width="80px" >
-          <el-form-item label="开始时间:" prop='stime'>
-            <el-date-picker
-            v-model="createForm['stime']"
-            type="datetime"
-            placeholder="选择日期时间"
-            @change='queryMarqueeweights'>
-          </el-date-picker>
-          </el-form-item>
-        <el-form-item label="结束时间:" prop='etime'>
-          <el-date-picker
-          v-model="createForm['etime']"
-          type="datetime"
-          placeholder="选择日期时间"
-          @change='queryMarqueeweights'>
-        </el-date-picker>
-        </el-form-item>
-        <el-form-item label="平台:" prop='plaform'>
-          <el-select v-model="createForm.plaform"  clearable multiple placeholder="请选择" size='small' style="border-radius: 10px;" @change='queryMarqueeweights' >
-            <el-option   label='安卓' value="1" ></el-option>
-             <el-option   label='苹果' value="2" ></el-option>
-          </el-select>
-        </el-form-item>
-        <el-form-item v-show="createChannelShow" label="渠道:">
-          <el-select v-model="createForm.channel" multiple placeholder="请选择" size='small' style="border-radius: 10px;" @change='queryMarqueeweights' >
-            <el-option v-for="(item,index) in selectForm[1].options"   :key="index"  :label='item.label' :value="item.value" >
-            </el-option></el-select>
-        </el-form-item>
-        <el-form-item  v-show="createServerShow" label="服务器:">
-          <el-select v-model="createForm['servername']" multiple placeholder="请选择" size='small' style="border-radius: 10px;" @change='queryMarqueeweights' >
-            <el-option v-for="(item,index) in servernamesselect"   :key="index"  :label='item.label' :value="item.value" >
-            </el-option></el-select>
-        </el-form-item>
-        <el-form-item label="时间间隔:" prop='interval'>
-          <el-input
-          v-model.number="createForm['interval']"
-          placeholder="请输入内容">
-</el-input>
-        </el-form-item>
-        <el-form-item label="权重:"  prop='weights'>
-          <el-select  v-model="createForm['weights']"  placeholder="请选择" size='small' style="border-radius: 10px;" >
-            <el-option v-for="(item,index) in Marqueeweights"   :key="index"  :label='item.label' :value="item.value" >
-            </el-option></el-select>
-        </el-form-item>
-        </el-form>
-      </div>
+     <createForm v-bind="{selectForm}"></createForm>
+  
 
-  </div>
-    <div slot="footer" class="dialog-footer">
-      <el-button @click="createFormCancel">取 消</el-button>
-      <el-button type="primary" @click='postannounced'>确 定</el-button>
-    </div>
-  </el-dialog>
+
+
+
   <el-dialog title="公告发布" :visible.sync="dialogFormVisiblesend" class="announceddialog"  :close-on-click-modal="false">
   <div class='tablesendheader' style="min-height: 5vh;">
     <el-form :inline="true"  class="demo-form-inline">
@@ -235,28 +125,13 @@
            <el-form-item label="公告标题:" hide-required-asterisk>
              <el-input v-model="changebulletindata['title']" placeholder="请输入内容"></el-input>
            </el-form-item>
-         <el-form-item label="公告图片:" hide-required-asterisk>
+         <!-- <el-form-item label="公告图片:" hide-required-asterisk>
            <a href="javascript:;" class="a-upload">
            <input  id='uploadimage'    type='file'  @change='fileupload'> 点击上传文件
          </a>{{fileName}}
-         </el-form-item>
+         </el-form-item> -->
          <el-form-item label="公告链接:">
            <el-input v-model="changebulletindata['link']" placeholder="请输入内容"></el-input>
-         </el-form-item>
-         <el-form-item label="平台:" >
-           <el-select v-model="changebulletindata['plaform']" disabled placeholder="请选择" size='small' style="border-radius: 10px;" >
-             <el-option   label='不限制' value="" ></el-option>
-             <el-option   label='安卓' value="1" ></el-option>
-               <el-option   label='苹果' value="2" ></el-option>
-           </el-select>
-          
-         </el-form-item>
-         <el-form-item v-show="changebulletindata['plaform']" label="渠道:">
-           <el-select v-model="changebulletindata['client']" disabled multiple placeholder="请选择" size='small' style="border-radius: 10px;" >
-             <el-option v-for="(item,index) in selectForm[1].options"   :key="index"  :label='item.label' :value="item.value" >
-             </el-option>
-           </el-select>
-     
          </el-form-item>
          </el-form>
          <el-form v-if="changebulletindata['type'] === '跑马灯'" ref="form" label-width="80px" >
@@ -311,77 +186,30 @@
 <script>
 import { deepCopy } from '@/utils/zoneSettings';
 import { findComponents } from '@/api/components.js';
-import { postcreateAnnouncement, putchangeoneannouncedreq, getqueryservernames, getqueryMarqueeweights } from '@/api/announcedManagement';
+import { putchangeoneannouncedreq, getqueryMarqueeweights } from '@/api/announcedManagement';
 import { postsendAnnouncement, getqueryAnnouncement } from '@/api/announcedManagement';
 import { findServername } from '@/api/character.js';
 import dayjs from 'dayjs';
 import ANNO from './componts/anno';
 import annotable from './componts/table';
+import createForm from './componts/create';
+import { loading, close, secondConfirmation } from '@/views/loading';
 
 export default {
   name: 'announcedmanage',
   components: {
-    annotable
+    annotable,
+    createForm
   },
   data() {
-    var textruleone = (rule, value, callback) =>{
-      if (!value) {
-        return callback(new Error('请至少输入一个字符'));
-      }
-      callback();
-    };
-    var titleruleone = (rule, value, callback) =>{
-      if (!value) {
-        return callback(new Error('请至少输入一个字符'));
-      }
-      callback();
-    };
-    var linkruleone = (rule, value, callback) =>{
-      if (!value) {
-        return callback(new Error('请至少输入一个字符'));
-      }
-      callback();
-    };
-    var dateruleone = (rule, value, callback) =>{
-      if (!value) {
-        return callback(new Error('请选择一个时间'));
-      }
-      if (new Date() > value) {
-        return callback(new Error('不可以选择超过现在时间得时间'));
-      }
-      callback();
-    };
-    var dateruletwo = (rule, value, callback) =>{
-      if (!value) {
-        return callback(new Error('请选择一个时间'));
-      }
-      if (new Date(value) <= this.createForm['stime']) {
-        return callback(new Error('结束时间不可等于或小于开始时间'));
-      }
-      callback();
-    };
-    var intervalFormRule = (rule, value, callback) =>{
-      if (!value) {
-        return callback(new Error('请输入时间间隔'));
-      }
-      if (!/^[0-9]*$/.test(value)) {
-        return callback(new Error('请输入纯数字'));
-      }
-      callback();
-    };
     return {
-      radio: true,
       changebulletindata: '',
       dialogBulletinFormchange: false,
       sendtime: false,
       sendtimes: '',
       endtime: '',
       dialogFormVisiblesend: false,
-      serverCreatedialogFormVisible: false,
-      dialogFormVisiblechange: false,
       file: [],
-      multipleTable: '',
-      servernamesselect: [],
       total: 0,
       filterForm: {
         bulletinid: '',
@@ -408,31 +236,13 @@ export default {
         text: '',
         range: '1'
       },
-      textrule: {
-        text: [
-          { validator: textruleone, trigger: ['blur', 'change'] }
-        ]      
-      },
-      announcementrule: { 
-        title: [{ validator: titleruleone, trigger: ['blur', 'change'] }],
-        a: [{ validator: linkruleone, trigger: ['blur', 'change'] }] 
-      },
-      createFormMarqueeRules: { 
-        stime: [{ validator: dateruleone, trigger: ['blur', 'change'] }],
-        etime: [{ validator: dateruletwo, trigger: ['blur', 'change'] }],
-        interval: [{ validator: intervalFormRule, trigger: ['blur', 'change'] }],
-        weights: [{ validator: linkruleone, trigger: ['blur', 'change'] }]
-      },
       selectForm: [{
         label: '游戏平台',
-        multiple: false,
+        multiple: true,
         key: 'plaform',
         value: '',
         options: [
           {
-            label: '不限制',
-            value: ''
-          }, {
             label: '安卓',
             value: '1'
 
@@ -473,11 +283,6 @@ export default {
           value: '2'
         }]
       }],
-      idoptions: [{
-        label: '角色ID',
-        value: 'roleid'
-      }
-      ],
       tableData: [],
       tablecolumn: [
         { label: '公告ID', prop: 'id' },
@@ -496,17 +301,6 @@ export default {
     };
   }, 
   computed: {
-    createChannelShow() {
-      let { createForm: { plaform }} = this;
-      if (!plaform || plaform.length === 0) {this.createForm.channel = []; return false;}
-      return true;
-    },
-    createServerShow() {
-      let { createForm: { plaform, channel }} = this;
-      if (!plaform || plaform.length === 0) {this.createForm.channel = []; return false;}
-      if (!channel || channel.length === 0) {this.createForm.servername = []; return false;}
-      return true;
-    },
     send() {
       return this.tableTrue.length > 0 ? false : true;
     },
@@ -517,15 +311,7 @@ export default {
       return true;
     }
   },
-
-
   methods: {
-    async createFormCancel() {
-      this.dialogFormVisiblechange = false;
-      this.$refs['createFormbulletin'].resetFields();
-      this.$refs['createForm'].resetFields();
-      this.createForm = this.$options.data().createForm;
-    },
     async changeQueryMarqueeweights(val) {
       if (val !== 'index') {
         this.changebulletindata['weights'] = '';
@@ -556,63 +342,33 @@ export default {
         return !this.Marqueeweights.some(ele => +ele.label === +item.label);
       });
     },
-    arrayUnique(arr, name) {
-      let hash = {};
-      return arr.reduce(function(item, next) {
-        hash[next[name]] ? '' : hash[next[name]] = true && item.push(next);
-        return item;
-      }, []);
-    },
-    async queryMarqueeweights() {
-      this.createForm['weights'] = '';
-      let { stime, etime, plaform, channel, servername } = this.createForm;
-      if (plaform && channel) {
-        let servername = await getqueryservernames({ channel, plaform });
-        let { data } = servername;
-        this.servernamesselect = this.arrayUnique(data, 'value');
-      } else {
-        this.createForm['servername'] = '';
-        this.servernamesselect = [];
-      }
-      let res = await getqueryMarqueeweights({ stime, etime, plaform, channel, servername });
-      let { data } = res;
-      this.Marqueeweights = data.filter(a => a.value);
-      let arr1 = [
-        { label: 1, value: 1 },
-        { label: 2, value: 2 },
-        { label: 3, value: 3 },
-        { label: 4, value: 4 },
-        { label: 5, value: 5 },
-        { label: 6, value: 6 },
-        { label: 7, value: 7 },
-        { label: 8, value: 8 },
-        { label: 9, value: 9 },
-        { label: 10, value: 10 }
-      ];
-      this.Marqueeweights = arr1.filter(item => {
-        return !this.Marqueeweights.some(ele => +ele.label === +item.label);
-      });
-    },
+    
+
     async putchangeoneannounced() {
       let { code } = await putchangeoneannouncedreq(this.changebulletindata);
       if (+code === +200) {this.dialogBulletinFormchange = false; this.filterFormChangeget(); this.$message.success('修改成功'); return;}
       this.$message.warning('修改失败');
     },
     async postsendannounced() {
+      loading(this);
+      
       let sendtime = this.sendtimes ? dayjs(this.sendtimes).format('YYYY-MM-DD HH:mm:ss') : '';
       if (!this.sendtime) {sendtime = dayjs(new Date()).format('YYYY-MM-DD HH:mm:ss');}
-      if (!sendtime) {this.$message.info('请选择开始时间'); return;}
-      if (new Date().getTime() > new Date(sendtime).getTime() && this.sendtimes) {this.$message.info('开始时间错误'); return;}
-      if (!this.endtime) {this.$message.info('请选择结束时间'); return;}
-      if (new Date().getTime() > new Date(this.endtime).getTime() || new Date(this.endtime).getTime() <= new Date(sendtime).getTime()) {this.$message.info('结束时间错误'); return;}
-      let res = await postsendAnnouncement({ data: this.tableTrue, sendtime, sendtimes: this.sendtimes });
-      if (res.code !== 200) {return;}
+      if (!sendtime) {this.$message.info('请选择开始时间'); close(this); return;}
+      if (new Date().getTime() > new Date(sendtime).getTime() && this.sendtimes) {this.$message.info('开始时间错误'); close(this); return;}
+      if (!this.endtime) {this.$message.info('请选择结束时间'); close(this); return;}
+      if (new Date().getTime() > new Date(this.endtime).getTime() || new Date(this.endtime).getTime() <= new Date(sendtime).getTime()) {this.$message.info('结束时间错误'); close(this); return;}
+      let sendtrue = await secondConfirmation(this, '是否确认发布。');
+      if (!sendtrue) {close(this); return;}
+      let res = await postsendAnnouncement({ data: this.tableTrue, sendtime, sendtimes: this.sendtimes, endtime: dayjs(this.endtime).format('YYYY-MM-DD HH:mm:ss') });
+      if (res.code !== 200) {close(this); return;}
       this.$message.success('发布成功');
       this.dialogFormVisiblesend = false; 
       this.sendtimes = '';
-      this.sendtime = ''; 
+      this.sendtime = false; 
       this.endtime = '';
       this.filterFormChangeget();
+      close(this);
     },
    
     placardmodify(index, row) {
@@ -621,39 +377,12 @@ export default {
       this.changeQueryMarqueeweights('index');
     },
     dialogFormVisiblechangealter() {
-      this.dialogFormVisiblechange = true;
-      // this.createForm['bulletinid'] = this.$store.getters.gameid + '' + new Date().getTime();
+      ANNO.$emit('eialog', true);
     },
     fileupload(e) {
       this.createForm['images'] = e.target.files[0];
       this.fileName = this.createForm['images'].name;
     },
-    async postannounced() {
-      let maintext = await this.$refs['createForm'].validate().catch(err=>false);
-      let allRules = this.radio ? await this.$refs['createFormMarqueeRule'].validate().catch(err=>false) : await this.$refs['createFormbulletin'].validate().catch(err=>false);
-      if (!allRules || !maintext) {return;}
-      let a = new FormData();
-      for (let [key, value] of Object.entries(this.createForm)) {
-        a.append(key, value);
-      }
-      if (this.radio) {a.append('type', 1);} else {a.append('type', 2);}
-      let res = await postcreateAnnouncement(a);
-      if (res.code !== 200) {return; }
-      for (let key in this.createForm) {
-        this.createForm[key] = '';
-      }
-      this.file = '';
-      this.fileName = '';
-      this.dialogFormVisiblechange = false;
-      this.filterFormChangeget();
-      let { data: { id }} = res;
-      this.$message.success(`创建成功id为${id}!`); 
-      this.$refs['createForm'].resetFields();
-    },
-    uploadimages(file) {
-      console.log(file);
-    },
-   
     filterFormChange(val) {
       switch (val) {
         case 'click':this.filterFormChangeClick(); break;
@@ -679,20 +408,13 @@ export default {
       this.filterForm['bulletinid'] = '';
       this.filterFormGET(this.filterForm);
     },
- 
     async filterFormGET(value) {
       let res = await getqueryAnnouncement(this.filterForm);
       if (+res.code !== +200) {this.tableData = []; return;} 
       this.tableData = res.data.res;
       this.total = +res.data.total;
       this.tableData.map(item =>{
-        // item.type = +item.type === 1 ? '跑马灯' : '公告板'; 
-        // item.plaform = item.plaform === 1 ? '安卓' : item.plaform === 2 ? '苹果' : '不限制';
-        // item.client = JSON.stringify(item.client) === JSON.stringify(['']) ? '' : item.client;
-        // item.servername = JSON.stringify(item.servername) === JSON.stringify(['']) ? '' : item.servername;
         try {
-          // item['start_time'] = item.start_time ? dayjs(item.start_time).format('YYYY-MM-DD HH:mm:ss') : '';   
-          // item['end_time'] = item.end_time ? dayjs(item.end_time).format('YYYY-MM-DD HH:mm:ss') : '';    
           item['stime'] = item.stime ? dayjs(item.stime).format('YYYY-MM-DD HH:mm:ss') : '';   
           item['etime'] = item.etime ? dayjs(item.etime).format('YYYY-MM-DD HH:mm:ss') : '';    
         } catch (err) {
@@ -702,22 +424,23 @@ export default {
           case 1: item['anno_status'] = '停用'; item.changeshow = false; item.stopshow = false; break;
           case 2: item['anno_status'] = '发布中'; item.changeshow = false; item.stopshow = true; break;
           case 3: item['anno_status'] = '发布失败'; item.changeshow = false; item.stopshow = false; break;
-          case 4: item['anno_status'] = '发布完成'; item.changeshow = false; item.stopshow = false; break;
+          case 4: item['anno_status'] = '发布完成'; item.changeshow = false; item.stopshow = true; break;
+          case 5: item['anno_status'] = '发布结束'; item.changeshow = false; item.stopshow = false; break;
           default:item['anno_status'] = '待用'; item.changeshow = true; item.stopshow = true;
         }
         return item;
       });
     }
   },
-
   async mounted() {
     ANNO.$on('tableChange', ({ index, row }) => {this.placardmodify(index, row);});
     ANNO.$on('tableTrue', data => {this.tableTrue = data;});
-    let res = await findComponents({ code: 'areaclothing', gameid: this.gameid });
-    let components = res.data.values.map(item=>({
+    let { data: { values }} = await findComponents({ code: 'areaclothing', gameid: this.gameid });
+    let components = values.map(item=>({
       label: item,
       value: item
     }));
+    ANNO.$on('flush', data => {this.filterFormChangeget();});
     this.selectForm[1].options = this.selectForm[1].options.concat(components);
     this.clientOptions = components;
  
