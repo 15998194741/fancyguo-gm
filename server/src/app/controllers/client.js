@@ -11,6 +11,7 @@ export class CharacterController {
 		let data = ctx.data;
 		data['user'] = ctx.user;
 		let result = await clientService.create(data);
+		ctx.logging( '创建客户端', '客户端管理', `创建了区服版本号为${data.versionId} 的客户端 ` );
 		ctx.body = statusCode.SUCCESS_200('创建成功', result);
 	}
     @get('/find')
@@ -40,6 +41,8 @@ export class CharacterController {
     	let data = ctx.data;
     	data['user']=ctx.user;
     	let result = await clientService.stopClient(data);
+    	console.log(result);
+    	ctx.logging( '停用客户端', '客户端管理', `停用了区服版本号为${result[0]['version_id']} 的客户端 ` );
     	ctx.body = statusCode.SUCCESS_200('查找成功', result);
     }
     @put('/changeClient')
@@ -48,8 +51,8 @@ export class CharacterController {
     	let data = ctx.data;
     	data['user']=ctx.user;
     	let result = await clientService.changeClient(data);
+    	ctx.logging( '修改客户端', '客户端管理', `修改了区服版本号为 ${result.map(a=>a.version_id)} 的客户端. ` );
     	ctx.body = statusCode.SUCCESS_200('查找成功', result);
     }
-
 
 }

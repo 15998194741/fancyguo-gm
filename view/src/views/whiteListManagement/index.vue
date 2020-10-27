@@ -370,7 +370,7 @@ export default {
       });
       let res = await mailRelatedUser(this.createFormWhite);
       let { code } = res;
-      if (+code !== 200) { loading.close(); this.$message.warning('创建失败.'); return;} 
+      if (+code !== 200) { loading.close(); return;} 
       loading.close();
       this.$message.warning('创建成功');
       this.createFormACancel();
@@ -544,7 +544,8 @@ min-width: 400px;
 //   max-width: 35vw;
 // }
 .el-upload-dragger{
-  width: 16vw !important;
+  width: 10.5vw !important;
+  min-width: 200px;
 }
 // .el-form-item__content{
 //   line-height: -100px !important;

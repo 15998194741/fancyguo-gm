@@ -50,7 +50,6 @@ class GmAnnouncementService extends BaseService{
 	}
 	async createBulletin(data, files, id){
 		let filePath = null;
-		
 		if(JSON.stringify(files) !== '{}'){ 
 			const path = require('path');
 			const file = files.images;
@@ -98,7 +97,6 @@ class GmAnnouncementService extends BaseService{
 		  (title,text,game_id,img_url,plaform,client,link,bulletinid,create_user_id,type,servername,range) 
 		  VALUES
 		  ('${data.title}','${data.text}','${data.gameid}',${filePath?`'${filePath}'`:null},${plaform?`'${plaform}'::jsonb` :null},${channel},'${data.a}','${data.bulletinid}','${id}',2,${servername},'${range}') returning id `;
-		console.log(sql);
 		  let res = await dbSequelize.query(sql);
 		return res[0][0];
 	}
@@ -148,8 +146,11 @@ class GmAnnouncementService extends BaseService{
 		return res[0][0];
 	}
 	async updateBulletin(data){
-		let res = await dbSequelize.query(`update gm_announcement set anno_status=1,status = 0 where id='${data.id}' returning id`);
-		await this.SenClient.get('anno', 'stop', {body:res[0][0]});
+		let {anno_status:annoStatus} =data;
+		let res = await dbSequelize.query(`update gm_announcement set anno_status=1,status = 0 where id = '${data.id}' returning id`);
+		if( annoStatus !== '待用'){
+			await this.SenClient.get('anno', 'stop', {body:res[0][0]});
+		}
 		return res[0][0];
 	}
 	async sendBulletin(datas){

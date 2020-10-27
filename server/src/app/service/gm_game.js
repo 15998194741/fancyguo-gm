@@ -48,7 +48,7 @@ class gmGameService {
 		let {gameName, userId} = data;
 		let sql = `
 		with qwe as (insert into gm_game ( game_name,image_url,super_user_id) values('${gameName}','http://106.75.7.83/images/game/${filePath}','${userId}') RETURNING id ),
-		asd as (insert into gm_purview (uid,gid)values('[${userId}]',(select * from qwe )) returning id),
+		asd as (insert into gm_purview (uids,gid)values('[${userId}]',(select * from qwe )) returning id),
 		ert as (select * from 
 								(select id as purview_id, 1 as  joinnum  from asd ) a join 
 								(select id as url_id,1 as  joinnum from gm_url ) b on a.joinnum = b.joinnum join 
@@ -65,6 +65,7 @@ class gmGameService {
 		// values
 		// (,'user') 
 		// `;
+		console.log(sql);
 		let res = await dbSequelize.query(sql, {
 			replacements:['active'], type:Sequelize.QueryTypes.INSERT
 		});

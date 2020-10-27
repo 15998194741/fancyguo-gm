@@ -86,10 +86,10 @@
     <el-dialog title="用户分组修改" :visible.sync="dialogFormchangeUser"  :close-on-click-modal="false">
       <el-form ref="changeForm" :rules="changeFormRules" :model="changeForm" label-width="150px"  class='createFormAlert'> 
         <el-form-item label="渠道ID:" class="createFormAlertBody" prop='channelId' hide-required-asterisk required>
-          <el-input v-model="changeForm.channelId" class="alertcontant" placeholder="请输入用户名"></el-input>
+          <el-input v-model="changeForm.channelId" class="alertcontant" placeholder="请输入渠道ID"></el-input>
         </el-form-item>
          <el-form-item label="渠道名称:" class="createFormAlertBody" prop='channelName' hide-required-asterisk required>
-          <el-input v-model="changeForm.channelName" class="alertcontant" placeholder="请输入用户名"></el-input>
+          <el-input v-model="changeForm.channelName" class="alertcontant" placeholder="请输入渠道名称"></el-input>
         </el-form-item>
       
         <el-form-item size="large" style="display: flex;justify-content: flex-end;">

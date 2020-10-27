@@ -5,7 +5,8 @@ import fs from 'fs';
 import dayjs from 'dayjs';
 class CharacterService{
 	constructor() {
-		
+		let { a } = require('../../xiaolu/senecaclient');
+		this.SenClient = a;
 	}
 
 	static byData(data){
@@ -297,9 +298,8 @@ class CharacterService{
 			var columns = {banned_area, banned_type, gameid, account_id, distinct_id,  roleid, role_name, plaform, channel, machine, serverid, level, vip_level, sum_recharge, ip, regtime, update_time, servername, banned_time, banned_reason};
 			dbSequelize.query(`insert into  gm_character 
 			(${Object.keys(columns).map(item=>`"${item}"`)})values(${Object.values(columns).map(item=>`'${item}'`)})`);
-				   
 		}
-		let res = await Cp.put(gameid, 'BannedAsk', data);
+		let res = await this.SenClient.get('char', 'BannedAsk', {body:data});
 		return res ;
 	}
 	async outputConsume(data){
@@ -320,9 +320,7 @@ class CharacterService{
 		let sql = `select roleid,object_id,object_method,object_name,object_type,object_number,timestamp from ${tablename} where roleid='${roleid}'  order by roleid   offset ${pagesize*(page-1)} limit ${pagesize}`;
 		let res =   await Ta.tasql(sql, token);
 		let sqls = `select count(object_id) from ${tablename} where roleid='${roleid}'    `;
-
 		let total = await Ta.sqltoTotal(sqls, token);
-
 		return {res, total};
 	}
 

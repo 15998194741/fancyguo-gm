@@ -182,7 +182,7 @@ class GmServerService extends BaseService{
 			let { code } = await this.SenClient.get('server', 'createServer', {body});
 			if(+code !== 200) {
 				let falseSql = ` update  gm_server set  status = '0' where id = ${body['id']}`;
-				dbSequelize.query(falseSql, {
+				await dbSequelize.query(falseSql, {
 					replacements:['active'], type:Sequelize.QueryTypes.UPDATE
 				});
 				throw {code:500, message:'Cp交互失败,请确认IP地址'};

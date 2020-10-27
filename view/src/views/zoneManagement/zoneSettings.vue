@@ -103,7 +103,7 @@
             <span v-else :key="scope.row.id" style="width:50px;" @dblclick="showStatusChange(scope.$index,scope.row)"> {{ scope.row.display|display }} </span>
              </template>
         </el-table-column>
-        <el-table-column  :filters="tableFilter.load" :filter-method="loadFilterTag" label="负载状态">
+        <el-table-column   label="负载状态">
           <template slot-scope="scope">{{ scope.row.load|display }} </template>
         </el-table-column>
         <el-table-column label="开服时间"  >
@@ -180,7 +180,7 @@
           <el-option label="爆满" value="4"></el-option>
           <el-option label="维护" value="3"></el-option>
         </el-select>
-        <el-button @click="dialogFormchange = false">取 消</el-button>
+        <el-button style="margin-left: 10px;" @click="dialogFormchange = false">取 消</el-button>
         <el-button type="primary" @click="updateserver">确 定</el-button>
       </div>
     </el-dialog>
@@ -364,7 +364,6 @@ export default {
         key: 'load',
         filterable: false,
         collapse: true,
-
         multiple: false,
         value: '',
         options: [{

@@ -1,3 +1,4 @@
+import { type } from 'os';
 import { controller, get, post, put, del, permission, login } from '../../lib/router-permission';
 import statusCode from '../../utils/status-code';
 import CDKService from '../service/cdk';
@@ -11,7 +12,11 @@ export class CDKController {
 	async createcdk(ctx) {
 		ctx.log.resourceDesc = 'CDK创建';
 		let data = ctx.request.body;
+		console.log(data);
+		let { quantity, type } = data;
+
 		let result = await CDKService.createcdk(data);
+    	ctx.logging( 'CDK生成', 'CDK管理', `生成了${quantity}个${+type===1 ?'唯一': +type === 2 ?'通用给':'互斥'}CDK。` );
 		ctx.body = statusCode.SUCCESS_200('创建成功', result);
 	}
 	@get('/test')
@@ -90,7 +95,9 @@ export class CDKController {
 	@put('/CDKFindIdAndStop')
 	async CDKFindIdAndStop(ctx) {
     	ctx.log.resourceDesc = '通过cdk的id停用cdk';
-    	let result = await CDKService.CDKFindIdAndStop(ctx.data);
+		let result = await CDKService.CDKFindIdAndStop(ctx.data);
+		let { data:{id} } = ctx;
+    	ctx.logging( 'CDK停用', 'CDK管理', `停用了id为${id}CDK。` );
     	ctx.body = statusCode.SUCCESS_200('查找成功', result);
 	}
 	

@@ -72,7 +72,7 @@ class clientService{
 		let {id, gameid } =data;
 		let { user } =data;
 		let sql = `
-        update gm_client set status = '0' ,update_user_id = '${user['id']}' where id ='${id}' and game_id ='${gameid}'
+        update gm_client set status = '0' ,update_user_id = '${user['id']}' where id ='${id}' and game_id ='${gameid}' returning * 
         `;
 		let res = await dbSequelize.query(sql, {
 			replacements:['active'], type:Sequelize.QueryTypes.UPDATE
@@ -82,7 +82,7 @@ class clientService{
 	async changeClient(data){
 		let {type, id, user, gameid} = data;
 		let sql = `
-        update gm_client set is_show_type = '${JSON.stringify(type)}' , update_user_id  =  '${user['id']}' where game_id = '${gameid}' and id in(${id.map(item => `'${item}'`)})   
+        update gm_client set is_show_type = '${JSON.stringify(type)}' , update_user_id  =  '${user['id']}' where game_id = '${gameid}' and id in(${id.map(item => `'${item}'`)})    returning *
         `;
 		let res = await dbSequelize.query(sql, {
 			replacements:['active'], type:Sequelize.QueryTypes.UPDATE

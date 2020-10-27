@@ -89,10 +89,11 @@
     name='file'
     :headers='headers'
     limit=1
-    action="http://localhost/api/character/uploadFile"
+    action="#"
     accept='.xlsx,.xls'
     :auto-upload="false"
     :file-list='filelist'
+    :http-request="fileUpload" 
     :on-success='uploadSuccess'
     :on-error='uploadError'
   >
@@ -176,6 +177,7 @@ import { findComponents } from '@/api/components.js';
 import dayjs from 'dayjs';
 import elementResizeDetectorMaker from 'element-resize-detector';
 import { queryCharacter, findServername, prohibitedMute } from '@/api/character.js';
+import { uploadFile } from '@/api/character.js';
 export default {
 
   name: 'rolequery',
@@ -392,6 +394,12 @@ export default {
     handleSelectionChange(val) {
       this.tableTrue = val;
     },
+    async fileUpload(files) {
+      let a = new FormData();
+      a.append('file', files.file);
+      let res = await uploadFile(a);
+      return res;
+    },
     uploadError() {
       this.$message('上传失败');
     },
@@ -413,7 +421,6 @@ export default {
     },
     formatJson(filterVal, jsonData) {
       let data = jsonData.map(v => filterVal.map(j => v[j]));
-      console.log(data);
       return data;
     },
     async uploadFile() {
@@ -451,13 +458,14 @@ export default {
 
     },
     uploadSuccess(response, file, fileList) {
-      if (response.code !== 200) {
+      if (+response.code !== 200) {
         this. tableData = [];
         return;
       } else {
         this. tableData = response.message;
       }
       this.serverCreatedialogFormVisible = false;
+      this.filelist = [];
     },
     tableRowClassName({ row, rowIndex }) {
       if (row.banned_type) {
@@ -473,7 +481,6 @@ export default {
         case 'change':this.changeFilterFormChange(); break;
         case 'click':this.clickFilterFormChange(); break;
         case 'page':this.clickFilterFormPage(); break;
-
         default:this.flushFilterFormChange(); 
       }
     },
@@ -531,7 +538,7 @@ export default {
       }));
       this.selectForm[1].options = this.selectForm[1].options.concat(components);
       this.clientOptions = components;
-    });
+    }).catch(a=>{console.log(a);});
     let { data } = await findServername();
     data.map(item =>{
       this.selectForm[2].options.find(ele => ele.label === item.label) || !item.label
@@ -553,7 +560,6 @@ export default {
     // const _this = this;
     const erd = elementResizeDetectorMaker();
     erd.listenTo(document.getElementById('body'), element =>{
-
       switch (element.offsetWidth) {
         case 1840: this.screenWidth = 158; break;
         case 1700: this.screenWidth = 145; break;
@@ -568,8 +574,6 @@ export default {
       // });
 
     });
-  
-
   },
   created() {
   

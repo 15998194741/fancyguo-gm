@@ -1,53 +1,35 @@
 <template>
-  <div class="gamemanagement">
-    <div :class="{'gamemanagement-body':gradele9999,'gamemanagement-bodys':!gradele9999}">
-      <!-- <el-row>
-        <el-col :span="32" style="display:flex;">
-        <div class="gamephoto" :style="'width: 20vw;height: 25vh;background-image: url(https://dss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2584239639,3280680022&fm=26&gp=0.jpg);'"></div> 
-        </el-col>
-        <el-col class="gamename" >  <span >{{test}}</span> </el-col>
-      </el-row> -->
-      
-      
-      
-      <el-row  v-for="(i,index) in valueList" :key="index" :class="{'teststs':gradele9999}" >
-        <el-col :span="32" style="display:flex;">
-      <div class="gamephoto" :style="`background-image: url(${i.url});`" @dblclick="changeFormDialogShow(i)" @click="tests = true" @mouseover='i["movehover"] = true' @mouseout='i["movehover"] = false'>
-                <el-button  v-show='i["movehover"]' v-if="gradele9999" class="game-managet-button" type="danger" icon="el-icon-circle-close" circle size="mini" @click="removeGame(i)">
-                </el-button> 
-         
-         <!-- <circle-menu ref="testststs"  type="middle-around" :number='2' :btn='false'  circle>
-                <button slot="item_btn" type="button" style="display:none;"></button>
-          <a slot="item_1" class="fa fa-twitter fa-lg">删除</a>
-          <a slot="item_2" class="fa fa-weixin fa-lg">修改</a>
-        </circle-menu> -->
-             </div> 
-         <!-- <circle-menu type="middle-around" :number='4' animate="animated jello" :btn='true'  circle>
-          <button slot="item_btn" type="button"></button>
-          <a slot="item_1" class="fa fa-twitter fa-lg"></a>
-          <a slot="item_2" class="fa fa-weixin fa-lg"></a>
-          <a slot="item_3" class="fa fa-weibo fa-lg"></a>
-          <a slot="item_4" class="fa fa-github fa-lg"></a>
-        </circle-menu> -->
-        
-    
-        </el-col>
-        <el-col class="gamename" ><span >{{i.gamename}}</span> </el-col>
-      </el-row>
-<!-- 
-      <el-row>
-        <el-col :span="32" style="display:flex;">
-        <div class="gamephoto" :style="'background-image: url(https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3387564317,402104373&fm=26&gp=0.jpg);'"></div> 
-        </el-col>
-        <el-col class="gamename" >  <span >{{testTwo}}</span> </el-col>
-      </el-row> -->
-
-      <el-row v-if="+grade === 9999" :class="{'teststs':gradele9999}">
-        <el-col :span="32" style="display:flex;"><div  class="gamephoto" :style="'background-image: url(https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2576271325,1961580115&fm=26&gp=0.jpg);'" @click="tesst"></div> </el-col>
-        <el-col class="gamename" >    <span >添加游戏</span> </el-col>
-      </el-row>
-
+  <div v-if="gradele9999" class="gamemanagement" :style="backgroundColor">
+     <div v-if="gradele9999" class="game-header">
+      <div class="game-header-create">
+          <i class="el-icon-plus game-header-icon" @click="createFormAlertTrue"></i>
+          <i class="el-icon-refresh-right game-header-icon" @click="createTableList"></i>
+      </div>
+       
+      <div class="game-header-list">
+          <div  @click="chechouk=true">
+            <svg-icon v-if="chechouk" icon-class="game-grid-true"></svg-icon>
+             <i v-else class="el-icon-s-grid"></i>
+          </div>
+        <!-- <div :class="{'game-header-list-chechouk':!chechouk}" @click="chechouk=false"> -->
+        <div  @click="chechouk=false">
+            <svg-icon v-if="chechouk" icon-class="list-game"></svg-icon>
+            <svg-icon v-else icon-class="list-game-true"></svg-icon>
+        </div>
+      </div>
+     <div class="game-header-back">
+        <span></span>
+        <el-color-picker
+          v-model="color"
+          size="mini"
+          show-alpha
+          :predefine="predefineColors"
+        ></el-color-picker>
+      </div>
     </div>
+     <gameIndex v-if="chechouk" ></gameIndex>
+    <gameList v-else :backgroundColor="backgroundColor"></gameList>
+             
   <el-dialog title="游戏创建" :visible.sync="gameCreatedialogFormVisible"  class="eldialog-gamemanement"  :close-on-click-modal="false" @close='createCancel'>
       <el-form ref="createForm"  prop='file'  label-width="100px"   :model='createForm' :rules="createFormRules"  class='createFormAlert'> 
         <el-form-item label="游戏封面上传" class="gameimgupload" prop="file">
@@ -147,8 +129,8 @@
         <el-button type="primary" plain @click="changeFormSubmit">确定</el-button>
       </div>
     </el-dialog>
-   
   </div>
+  <gameUser v-else :valueList='valueList'></gameUser>
 </template>
 
 <script>
@@ -156,9 +138,20 @@
 
 import { getQueryGame, getQueryUserList, getPostCreateGame, deleteGame } from '@/api/gameGm';
 import { changeGame, changeGameConfig } from '@/api/gameGm';
+import gameIndex from './game/index';
+import gameUser from './game/gameuser';
+import gameList from './game/gamelist';
 export default {
   name: 'GameTest',
   components: {
+    gameIndex,
+    gameUser,
+    gameList
+  },
+  watch: {
+    color(n) {
+      if (!n) {this.color = this.$options.data().color;}
+    }
   },
   data() {
     let userIdRule = (rule, value, callback) =>{
@@ -213,7 +206,28 @@ export default {
       
       return callback();
     };
+    let color = '';
+    let predefineColors = [
+      '#ededed',
+      '#ff4500',
+      '#ff8c00',
+      '#ffd700',
+      '#90ee90',
+      '#00ced1',
+      '#1e90ff',
+      '#c71585',
+      'rgba(255, 69, 0, 0.68)',
+      'rgb(255, 120, 0)',
+      'hsv(51, 100, 98)',
+      'hsva(120, 40, 94, 0.5)',
+      'hsl(181, 100%, 37%)',
+      'hsla(209, 100%, 56%, 0.73)',
+      '#c7158577'
+    ];
     return {
+      color,
+      predefineColors,
+      chechouk: true,
       tests: false,
       mousehover: false,
       gameCreatedialogFormVisible: false,
@@ -279,8 +293,7 @@ export default {
           return callback(new Error('请输入EventToken'));
         }, trigger: ['blur', 'change'] }
       }
-    }
-    ;
+    };
   },
   computed: {
     grade() {
@@ -288,10 +301,13 @@ export default {
     },
     gradele9999() {
       return +this.grade === 9999; 
+    },
+    backgroundColor() {
+      return `background-color: ${this.color};`;
     }
   },
   methods: {
-    async tesst() {
+    async createFormAlertTrue() {
       this.gameCreatedialogFormVisible = true;
       let { code, data } = await getQueryUserList();
       if (+code === 200) {
@@ -342,7 +358,6 @@ export default {
       this.gameChangedialogFormVisibleVip = false;
       this.gameConfig = this.$options.data().gameConfig;
       this.$refs['GameConfig'].resetFields();
-
     },
     async GameConfigSubmit() {
       let errTrou = await this.$refs['GameConfig'].validate().catch(err=>false);
@@ -478,6 +493,7 @@ export default {
     }
   },
   async mounted() {
+
     // let { code, data } = await getQueryGame();
     // if (+code === 200) {
     //   this.valueList = data;
@@ -490,162 +506,103 @@ export default {
 </script>
 
 <style lang="scss" rel="stylesheet/scss">
+
 .gamemanagement{
-    position: relative;
-    left: 0;
-    top: 0;
+  height: 100%;
   width: 100%;
-    height: 100%;
-    .game-managet-button{
-      position: absolute;
-      top: 0;
-      right: 0;
-      transform: translate(28%, -40%);
+  .gameimgupload {
+    .avatar-uploader .el-upload {
+      border: 1px dashed #d9d9d9;
+      border-radius: 6px;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
     }
-    .gameimgupload{
-      .avatar-uploader .el-upload {
-    border: 1px dashed #d9d9d9;
-    border-radius: 6px;
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
+    .avatar-uploader .el-upload:hover {
+      border-color: #409eff;
+    }
+    .avatar-uploader-icon {
+      font-size: 28px;
+      color: #8c939d;
+      width: 20vw;
+      height: 10vw;
+      line-height: 10vw;
+      text-align: center;
+    }
+    .avatar {
+      width: 20vw;
+      height: 10vw;
+      min-width: 300px;
+      min-height: 150px;
+      display: block;
+    }
   }
-  .avatar-uploader .el-upload:hover {
-    border-color: #409EFF;
+   .eldialog-gamemanement > div:first-child {
+    min-width: 500px;
+    .el-select {
+      width: 100%;
+    }
   }
-  .avatar-uploader-icon {
-    font-size: 28px;
-    color: #8c939d;
-        width: 20vw;
-        height: 10vw;
-    line-height: 10vw;
-    text-align: center;
+   .uploadTest {
+    margin-top: -2vh;
+    margin-left: 3vw;
   }
-  .avatar {
-        width: 20vw;
-        height: 10vw;
-    min-width: 300px;
-    min-height: 150px;
-    display: block;
-  }
+  .game-header {
+    height: 5%;
+    width: 100%;
+    // background-color: #888888;
+        background-color: rgba(0,0,0,.7);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    .game-header-icon {
+      font-size: 130%;
+      text-align: center;
+      padding: 0%;
+      margin: 0%;
+      margin-left: 10px;
+      cursor: pointer;
     }
-    .eldialog-gamemanement > div:first-child{
-      min-width:500px;
-      .el-select{
-        width: 100%;
-      }
+    .game-header-back {
+      display: flex;
+      float: right;
+      align-self: center;
+      align-items: center;
     }
-    .uploadTest{
-          margin-top: -2vh;
-          margin-left: 3vw;
-    }
-    .teststs{
-      display: grid;
-    box-sizing: border-box;
-    justify-content: center;
-    justify-items: center;
-    justify-self: center;
-    align-content: center;
-    align-items: center;
-    align-self: center;
-    text-align: center;
-    }
-    .gamemanagement-bodys{
-      display: grid;
-    grid-template-columns: repeat(1,100%);
-   width: 100%;
-   height: 100%;
-        justify-items: center;
-        align-items: center;
+    .game-header-list{
+        display:flex;
+        height: 100%;
+        font-size: 130%;
         text-align: center;
-        div:first-child{
-              display: grid;
-    text-align: center;
-    grid-template-rows: 90%,10%;
-    justify-items: center;
+        align-self: center;
+        align-items: center;
+        align-content: center;
+        margin-inline-start: auto;
+        margin-right: 1%;
+        &>div:first-child{
+          padding-right: 20%;
         }
-        .gamephoto{
-              background-color: red;
-              background-repeat: round;
-              background-size: 100% 100%;
-              width: 52vw;
-              height: 67vh;
-              cursor: pointer;
-            }
-            .gamephotos{
-              background-color: red;
-              width: 20vw;
-                  height: 10vw;
-              background-repeat: round;
-              background-size: contain;
-            }
-            .gamemessage{
-              margin-left: 10vw ;
-              background-color: red;
-              width: 30vw;
-              height: 25vh;
-            }
-            .gamename{
-              font-size: 2vw;
-              padding-top:1vh;
-               position: relative;
-               width: 20vw;
-               text-align: center;
-               -webkit-user-select:none;
-
-   -moz-user-select:none;
-
-   -ms-user-select:none;
-
-   user-select:none;
-            }
+        .game-header-list-chechouk{
+            height: 100%;
+            text-align: center;
+            align-self: center;
+            align-items: center;
+            align-content: center;
+            justify-content: center;
+            justify-items: center;
+            justify-self: center;
+            display: flex;
+            background-color: black;
+            width: 100%;
+        }
     }
-  .gamemanagement-body{
-        display: grid;
-    grid-template-columns: repeat(3,33.3%);
-    position: absolute;
-    // left: 5%;
-    top: 10%;
-   width: 100%;
-        justify-items: center;
-      .gamephoto{
-              background-color: red;
-              background-repeat: round;
-              background-size: 100% 100%;
-              width: 20vw;
-              height: 10vw;
-              cursor: pointer;
-            }
-            .gamephotos{
-              background-color: red;
-              width: 20vw;
-              height: 25vh;
-              background-repeat: round;
-              background-size: contain;
-            }
-            .gamemessage{
-              margin-left: 10vw ;
-              background-color: red;
-              width: 30vw;
-              height: 25vh;
-            }
-            .gamename{
-              font-size: 2vw;
-              padding-top:1vh;
-              padding-bottom: 1vh;
-               position: relative;
-               width: 20vw;
-               text-align: center;
-               -webkit-user-select:none;
+    .game-header-create{
+        height: 100%;
+        width: 30%;
+        display: flex;
+        align-items: center;
+    }
+  }
 
-   -moz-user-select:none;
-
-   -ms-user-select:none;
-
-   user-select:none;
-            }
-           
-  
-  }    
 }
 </style>

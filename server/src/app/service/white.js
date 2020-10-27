@@ -66,8 +66,11 @@ class whiteServer {
 			return;
 		}
 		let value = res[0];
-		value['1'] = value['1'].map(item=>({value:item, label:item})); 
-		value['2'] = value['2'].map(item=>({value:item, label:item})); 
+		console.log(value);
+		try{
+			value['1'] = value['1'].map(item=>({value:item, label:item})); 
+			value['2'] = value['2'].map(item=>({value:item, label:item})); 
+		}catch (e){}
 		return value;
 	}
 	async whiteStopMail(data){
@@ -207,7 +210,7 @@ class whiteServer {
 	async stopWhiteMail(data){
 		let {gameid, id} = data;
 		let sql = `
-		update gm_white_user set status = '0' where id = '${id}'::int and game_id = '${gameid}'
+		update gm_white_user set status = '0' where id = '${id}'::int and game_id = '${gameid}' returning *
 		`;
 		let res = await	dbSequelize.query(sql, {
 			replacements:['active'], type:Sequelize.QueryTypes.UPDATE

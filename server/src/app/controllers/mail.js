@@ -42,7 +42,10 @@ export class CharacterController {
     async postMailToCreate(ctx) {
     	ctx.log.resourceDesc = '创建邮件';
     	let data = ctx.data;
+    	let { sendTime } = data;
     	let result = await MailService.postMailToCreate(data);
+    	let { id } = result;
+    	ctx.logging( '邮件创建', '邮件管理', `创建了ID为 ${id} ,${sendTime?'及时':'定时'}发送的邮件 ` );
     	ctx.body = statusCode.SUCCESS_200('创建成功', result);
     }
     @get('/annexAllQuery')
@@ -63,8 +66,9 @@ export class CharacterController {
 	async stopMailSend(ctx) {
     	ctx.log.resourceDesc = '邮件取消定时发送';
 		let data = ctx.query;
-		console.log(data);
+		let {id} = data;
 		let result = await MailService.mailSendCancel(data);
+    	ctx.logging( '邮件创建', '邮件管理', `创建了ID为 ${id} ,定时发送的邮件` );
     	ctx.body = statusCode.SUCCESS_200('停用成功', result);
 	}
 	@get('/maxID')

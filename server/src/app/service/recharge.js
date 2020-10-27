@@ -3,14 +3,14 @@ import { dbSequelize } from '../../config';
 import dayjs from 'dayjs';
 var mysql  = require('mysql');  
  
-var connection = mysql.createConnection({     
-	host     : '117.50.10.34',       
-	user     : 'gmfancyguo',              
-	password : 'gmfancyguo!',       
-	port: '3306',                   
-	database: 'sdk' 
-}); 
-connection.connect();
+// var connection = mysql.createConnection({     
+// 	host     : '117.50.10.34',       
+// 	user     : 'gmfancyguo',              
+// 	password : 'gmfancyguo!',       
+// 	port: '3306',                   
+// 	database: 'sdk' 
+// }); 
+// connection.connect();
 
 class rechargeService{
 	constructor() {
@@ -19,15 +19,15 @@ class rechargeService{
 		let { a } = require('../../xiaolu/senecaclient');
 		this.SenClient = a;
 
-		var mysql  = require('mysql');  
-		var connection = mysql.createConnection({     
-			host     : '117.50.10.34',       
-			user     : 'gmfancyguo',              
-			password : 'gmfancyguo!',       
-			port: '3306',                   
-			database: 'sdk' 
-		}); 
-		connection.connect();
+		// var mysql  = require('mysql');  
+		// var connection = mysql.createConnection({     
+		// 	host     : '117.50.10.34',       
+		// 	user     : 'gmfancyguo',              
+		// 	password : 'gmfancyguo!',       
+		// 	port: '3306',                   
+		// 	database: 'sdk' 
+		// }); 
+		// connection.connect();
 	}
 
 	async query(data){

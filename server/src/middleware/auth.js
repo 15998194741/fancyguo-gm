@@ -59,10 +59,13 @@ oHiLOo285vG5ZtmXiY58tAiPVQXa7eU8hPQHTHWa9qp6
 			return crypto.privateDecrypt(key, encrypted);
 		};
 		gameid = decrypt(Buffer.from(gameid, 'base64'), privKey).toString();
-	}catch ({message}){
+	}catch (e){
+		console.log(e);
+		let {message} =e;
+		console.log(message);
 		throw {code:500, message:'你没有该系统使用权限'};
 	}
-	if ( token=== undefined ) {
+	if ( token === undefined ) {
 		throw {code:500, message:'权限异常'};
 	}else{
 		try{

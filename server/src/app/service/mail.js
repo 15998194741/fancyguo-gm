@@ -5,6 +5,8 @@ import Cp from '../../utils/Cp';
 
 class MailService{
 	constructor() {
+		let { a } = require('../../xiaolu/senecaclient');
+		this.SenClient = a;
 	}
 	async queryByParms(data){
 		let {createTime, channel, servername, annex, Id:id } = data;
@@ -213,27 +215,30 @@ class MailService{
 		});
 	}
 	async mailSendTimely(data){
-		let {gameid} = data;
-		let res = await Cp.post(gameid, 'mail/immediate', data);
+		// let res = await Cp.post(gameid, 'mail/immediate', data);
+		let res = await this.SenClient.get('mail', 'immediate', {body:data});
 		let {code, data:CpData} = res;
 		if(code === 200){
 			return CpData;	
 		}
+		console.log(res);
 		throw new Error('邮件及时发送 失败');
 		
 	}
 	async mailSendTiming(data){
 		let {gameid} = data;
-		let res = await Cp.post(gameid, 'mail/timedMail', data);
+		let res = await  this.SenClient.get('mail', 'timedMail', {body:data});
+		
 		let {code, data:CpData} = res;
 		if(code === 200 && CpData){
 			return ;	
 		}
+		console.log(res);
 		throw new Error('邮件定时发送 失败');
 	}
 	async mailSendCancel(data){
 		let {gameid} = data;
-		let res = await Cp.post(gameid, 'mail/timedMailCancel', data);
+		let res = await  this.SenClient.get('mail', 'timedMailCancel', {body:data});
 		let {code, data:CpData} = res;
 		if(code === 200 && CpData){
 			return;	

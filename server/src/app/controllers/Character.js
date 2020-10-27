@@ -12,9 +12,6 @@ export class CharacterController {
 		let result = await CharacterService.queryByParms(data);
 		ctx.body = statusCode.SUCCESS_200('修改成功', result);
 	}
-
-
-
 	@get('/findServername')
 	async findServername(ctx) {
 		ctx.log.resourceDesc = '区服名称获取';
@@ -30,6 +27,7 @@ export class CharacterController {
 		var gameid = ctx.request.body.gameid;
 		let result = await CharacterService.uploadFile(data, gameid);
 		// ctx.redirect('/api/character/findServername');
+		console.log(result);
 		ctx.body = statusCode.SUCCESS_200(result);
 	}
 	@post('/readfile')
@@ -57,9 +55,13 @@ export class CharacterController {
 
 	@put('/prohibitedMute')
 	async prohibitedMute(ctx){
-		// console.log(ctx.request.body);
+		console.log(ctx.data);
+		let {data}  = ctx;
+		let {area, type, role_name:roleName, ip} = data;
+		ctx.logging( '封号禁言', '角色管理', `${+type ===1 ?'封号':'禁言'}了${+area===1?'角色 '+roleName :+area === 2 ?'账户':'ip '+ip}  ` );
 		let result = await CharacterService.prohibitedMute(ctx.request.body);
-		ctx.body = JSON.parse(result);
+
+		ctx.body = result;
 	}
 
 	@get('/outputConsume')
@@ -67,26 +69,16 @@ export class CharacterController {
 		let result = await CharacterService.outputConsume(ctx.query);
 		ctx.body = statusCode.SUCCESS_200('查询成功', result);
 	}
-
-
-
-
 	@get('/backPackQuery')
 	async backPackQuery(ctx){
 		ctx.log.resourceDesc = '背包查询';
-
-		// console.log(ctx.query);
-		// console.log(ctx.parms);
 		let result = await CharacterService.backPackQuery(ctx.query);
 		ctx.body = statusCode.SUCCESS_200('查询成功', result);
 	}
 	@put('/backPackRecycle')
 	async backPackRecycle(ctx){
 		ctx.log.resourceDesc = '背包回收';
-		// console.log(ctx.request.body);
 		let result = await CharacterService.backPackRecycle(ctx.request.body);
-		// console.log(result);
-		// ctx.body = statusCode.SUCCESS_200('回收成功', result);
 		ctx.body = result;
 	}
 

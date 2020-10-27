@@ -66,3 +66,18 @@ export function backPackRecycle(data) {
     data
   });
 }
+
+
+
+
+
+
+export function uploadFile(data) { 
+
+  return request({
+    url: `character/uploadFile`,
+    method: 'post',
+    data,
+    form: data
+  });
+}
