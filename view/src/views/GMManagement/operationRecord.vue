@@ -122,7 +122,7 @@ export default {
   async mounted() {
     let { data: selectData } = await classification();
     this.selectData = selectData;
-    this.value = this.selectData[0]['label'];
+    this.value = this.selectData[0]?.label;
   }
 };
 </script>

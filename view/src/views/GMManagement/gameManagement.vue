@@ -11,7 +11,6 @@
             <svg-icon v-if="chechouk" icon-class="game-grid-true"></svg-icon>
              <i v-else class="el-icon-s-grid"></i>
           </div>
-        <!-- <div :class="{'game-header-list-chechouk':!chechouk}" @click="chechouk=false"> -->
         <div  @click="chechouk=false">
             <svg-icon v-if="chechouk" icon-class="list-game"></svg-icon>
             <svg-icon v-else icon-class="list-game-true"></svg-icon>
@@ -42,16 +41,6 @@
           <img v-if="imageUrl" ref="img" :src="imageUrl" class="avatar">
           <i v-else class="el-icon-plus avatar-uploader-icon"></i>
         </el-upload>
-      
-        <!-- <el-upload
-          class="upload-demo"
-          drag
-          action="#"
-          multiple>
-          <i class="el-icon-upload"></i>
-          <div class="el-upload__text">将文件拖到此处，或<em>点击上传</em></div>
-          <div slot="tip" class="uploadTest">只能上传jpg/png文件，且不超过500kb</div>
-        </el-upload> -->
         </el-form-item>
         <el-form-item label="游戏名称" prop="gameName">
           <el-input v-model="createForm.gameName" placeholder="请输入游戏名称"></el-input>
@@ -465,24 +454,7 @@ export default {
     async fileUpload({ file }) {
       this.createForm.file = file;
       this.imageUrl = URL.createObjectURL(file);
-      // let img = new Image();
-      // let canvas = document.createElement('canvas');
-      // Object.assign(canvas, {
-      //   width: 100,
-      //   height: 100
-      // });
-      // var ctx = canvas.getContext('2d');
-      // Object.assign(img, {
-      //   src: URL.createObjectURL(file)
-      // });
-      // img.addEventListener('load', res => {
-      //   URL.revokeObjectURL(file);
-      //   let { width, height } = img;
-      //   ctx.drawImage(img, 0, 0, width, height, 0, 0, 100, 100);
-      //   let src = canvas.toDataURL();
-      //   this.imageUrl = src;
-      //   URL.revokeObjectURL(src);
-      // });
+
      
     },
     async createTableList() {

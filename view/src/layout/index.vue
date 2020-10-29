@@ -1,5 +1,5 @@
 <template>
-  <div class="layout-box">
+  <div class="layout-box" >
     <el-container class="app-container">
       <el-aside class="shrinkTransition" :width="isCollapse ? '200px' : '60px'" style="background-color: rgb(9, 27, 47);">        <appSidebar style="height: 100%;" @shrink="shrink"> </appSidebar>      </el-aside>
       <el-container class="app-body-container">
@@ -7,8 +7,12 @@
         <el-main>          <AppProject></AppProject>        </el-main>
       </el-container>
     </el-container>
+  
   </div>
 </template>
+
+
+
 
 <script>
 // 使用 mock 模拟数据
@@ -26,6 +30,7 @@ export default {
     Navbar
   },
   data() {
+    // let rec;
     return {
       isCollapse: true
     };
@@ -56,9 +61,45 @@ export default {
     shrink() {
       this.isCollapse = !this.isCollapse;
     }
+    // async volume() {
+    //   this.rec.start();
+    // }
   },
   mounted() {
     this.$store.dispatch('user/setusers');
+    // var SpeechRecognition = SpeechRecognition || window.webkitSpeechRecognition;
+    // var SpeechGrammarList = SpeechGrammarList || window.webkitSpeechGrammarList;
+    // // var SpeechRecognitionEvent = SpeechRecognitionEvent || window.webkitSpeechRecognitionEvent;
+    // var rec = new SpeechRecognition();
+    // var recList = new SpeechGrammarList();
+    // var langeage = ['你好', '再见', '牛啊', '兄弟', '小鹿'];
+    // var grammar = '#JSGF V1.0; grammar loageage; public <langeage> = ' + langeage.join(' | ') + ' ;';
+    // recList.addFromString(grammar, 1);
+    // rec.grammars = recList;
+    // rec.continuous = false;
+    // rec.lang = 'zh-CN';
+    // rec.interimResults = false;
+    // rec.maxAlternatives = 1;
+    // rec.onresult = (e)=>{
+    //   console.log(e);
+    //   rec.stop();
+    // }; //结束后执行
+    // rec.onspeechend = (e) => {
+    //   console.log(e);
+    //   console.log(233);
+    //   rec.stop();
+    // }; //太久没监听到
+    // rec.onnomatch = (event) => {
+    //   console.log(event);
+    //   console.log(111);
+    //   rec.stop();
+    // };	//监听到的信息没有返回
+    // rec.onerror = (event) => {
+    //   console.log(event);
+    //   console.log(2222);
+    //   rec.stop();
+    // }; //错误
+    // this.rec = rec;
   }
 };
 </script>

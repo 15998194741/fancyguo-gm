@@ -772,6 +772,7 @@ export default {
        &:hover{
         //    box-shadow: 0.8vw 1vh 10px 0px #828287;
            box-shadow: 0 2px 12px 5px rgba(0,0,0,.5);
+           width: 28vw;
           .gamename{
               display: block !important;
           }

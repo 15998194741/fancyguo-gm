@@ -5,7 +5,6 @@ import Cp from '../../utils/Cp';
 class gmLogsService {
 	constructor(){}
 	async classification(data){
-		console.log(data);
 		let { gameid } = data;
 		let sql = `select classification as label , classification as value  from gm_logs   where  game_id = $gameid$${gameid}$gameid$ GROUP BY classification `;
 		let res = await dbSequelize.query(sql, {

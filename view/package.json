@@ -11,6 +11,7 @@
     "svgo": "svgo -f src/icons/svg --config=src/icons/svgo.yml"
   },
   "dependencies": {
+    "@babel/plugin-proposal-optional-chaining": "^7.12.1",
     "animate.css": "^4.1.0",
     "axios": "0.18.0",
     "browser-script-loader": "^3.0.4",

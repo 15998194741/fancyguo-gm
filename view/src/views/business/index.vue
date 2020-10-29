@@ -35,8 +35,30 @@ export default {
       'user'
     ])
   },
-  mounted() {
+  watch: {
+   
+  },
+  async mounted() {
     sessionStorage.setItem('username', this.username);
+    var _this = this;
+    async function c() {
+      let { alias, permissionInfo: { gamename }} = _this['user'];
+      if (alias) {
+        // let a = window.speechSynthesis;
+        // let b = new SpeechSynthesisUtterance();
+        // b.text = `欢迎${alias}登录 ${gamename}`;
+        // b.lang = 'zh-CN';
+        // b.volume = 10;
+        // b.rate = 1;
+        // b.pitch = 2;
+        // a.speak(b);
+        let url = "https://tts.baidu.com/text2audio?cuid=baike&lan=ZH&ctp=1&pdt=301&vol=10&rate=32&per=4&tex='" + encodeURI(`欢迎${alias}登录 ${gamename}`);
+        let n = new Audio(url);
+        await n.play().catch(e=>console.log(e));
+        window.clearInterval(_this.a);
+      }
+    }
+    _this.a = window.setInterval(await c, 1000);
   },
   methods: {
     

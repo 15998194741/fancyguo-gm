@@ -1,9 +1,12 @@
 <template>
-  <div class="gamemanagement-user" :style="userStyle" >
+  <div id="gamemanagement-user" class="gamemanagement-user" :style="userStyle" >
     
     <div  class="gamemanagement-user-click" @click="gameChangedialogFormVisibleVip = true">
-<span>{{valueList[0]['gamename']}}</span>
-
+<!-- <span>{{valueList[0]['gamename']}}</span> -->
+ <div class="glows"></div> 
+ <div v-if="!!dealGamename" :class="{'glitch':!!dealGamename}" :style="{'--deal-gamename': `'${dealGamename}'`}" :data-word="dealGamename">{{dealGamename}}</div>
+ <div v-else class="text-magic" :data-word="dealGamename" :style="{'--deal-gamename': `'${dealGamename}'`}"></div>
+ <div class="glows"></div> 
     </div>
 
 
@@ -38,7 +41,6 @@ import { changeGameConfig } from '@/api/gameGm';
 export default {
   name: 'GameUser',
   components: {
-    
   },
   props: {
     valueList: {
@@ -84,7 +86,8 @@ export default {
     return {
       gameChangedialogFormVisibleVip,
       gameConfig,
-      gameConfigRules
+      gameConfigRules,
+      dealGamename: ''
     };
   },
   computed: {
@@ -95,6 +98,12 @@ export default {
       } catch (e) {
         return '';
       }
+    }
+  },
+  watch: {
+    async valueList() {
+      console.log(this.valueList);
+      this.dealGamename = this.valueList?.[0]?.['gamename'];
     }
   },
   methods: {
@@ -128,7 +137,15 @@ export default {
     
   },
   async mounted() {
-    console.log(this.valueList);
+  
+   
+    // let a = require('./style.css');
+    
+    // let link = document.createElement('link');
+    // link.setAttribute('rel', 'stylesheet');
+    // link.setAttribute('href', './style.css');
+    // document.getElementById('gamemanagement-user').appendChild(link);
+    // console.log(this.valueList);
   },
   async created() {
 
@@ -138,7 +155,6 @@ export default {
 
 <style lang="scss" rel="stylesheet/scss">
 .gamemanagement-user{
-    
     /* backface-visibility: hidden; */
     background-repeat: round;
     width: 100%;
@@ -148,6 +164,18 @@ export default {
     .gamemanagement-user-click{
         width: 100%;
         height: 100%;
+        display: grid;
+      grid-template-columns: 20% 60% 20%;
+    justify-content: center;
+    justify-items: center;
+    justify-self: center;
+    align-self: center;
+    align-items: center;
+    flex-direction: row;
     }
+   
 }
 </style>
+
+<style  src='./tests.css' scoped></style>
+<style  src='./style.css' scoped></style>
