@@ -52,14 +52,14 @@ class MailService{
 			select asd.*,qweqwe.annexnames,a.plaforms from asd left join qweqwe on qweqwe.id = asd.id left
 			join (select string_to_array(string_agg(plaform,','),',')as plaforms ,id from qweasd GROUP BY id )a on a.id = asd.id order by asd.id desc
 		`;
-		console.log(sql);
+		// console.log(sql);
 		let res = await dbSequelize.query(sql, {
 			replacements:['active'], type:Sequelize.QueryTypes.SELECT
 		});
 		let totalsql = `
 		select count(*) as total from gm_smtp ${where} and status = 1 
 		`;
-		console.log(totalsql);
+		// console.log(totalsql);
 		let ress = await dbSequelize.query(totalsql, {
 			replacements:['active'], type:Sequelize.QueryTypes.SELECT
 		});
@@ -176,7 +176,7 @@ class MailService{
 		insert into  gm_smtp  
 		(game_id,title,text,link,channel,plaform,annex,serverName,roleid,roleids,smtp_id,sendtime,is_use)
 		values
-		(${gameid},'${title}',$text$ '${text}' $text$,'${link}',
+		(${gameid},$title$${title}$title$,$text$${text}$text$,$link$${link}$link$,
 		${channel ?`'${JSON.stringify(channel)}'`:null},
 		${plaform ?`'${JSON.stringify(plaform)}'`:null},
 		${Annex?Annex.length >1?`'[${Annex}]'` :`'[${Annex}]'`:null},
@@ -221,7 +221,7 @@ class MailService{
 		if(code === 200){
 			return CpData;	
 		}
-		console.log(res);
+		// console.log(res);
 		throw new Error('邮件及时发送 失败');
 		
 	}
@@ -230,10 +230,10 @@ class MailService{
 		let res = await  this.SenClient.get('mail', 'timedMail', {body:data});
 		
 		let {code, data:CpData} = res;
-		if(code === 200 && CpData){
+		if(code === 200 ){
 			return ;	
 		}
-		console.log(res);
+		// console.log(res);
 		throw new Error('邮件定时发送 失败');
 	}
 	async mailSendCancel(data){

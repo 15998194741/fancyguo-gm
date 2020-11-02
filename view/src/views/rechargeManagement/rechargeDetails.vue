@@ -1,5 +1,5 @@
 <template>
-  <div class="recha-container">
+  <div ref="rechaContainer"  class="recha-container">
     <div class="role-container-header" >
     <ul style="margin: 5px 10px;margin-bottom: -5px;">
  
@@ -48,7 +48,7 @@
     <el-pagination
     style="text-align: right;"
     :page-size.sync="filterForm['pagesize']"
-    :page-sizes="[10, 20, 30, 40]"
+    :page-sizes="[20, 40, 60, 80]"
     background
     layout="total, sizes, prev, pager, next, jumper"
     :pager-count='9'  
@@ -73,7 +73,6 @@ export default {
   name: 'rechargedetails',
   data() {
     return {
-      multipleTable: '',
       total: 0,
       filterForm: {
         roleid: '',  
@@ -82,7 +81,7 @@ export default {
         channel: '',
         servername: '',
         page: 1,
-        pagesize: 10
+        pagesize: 20
       },
       selectForm: [{
         label: '游戏平台',
@@ -197,7 +196,6 @@ export default {
     async rechargeDetails() {
      
       let res = await rechargeQuery(this.filterForm);
-      console.log(this.filterForm);
       this.tableData = res.data.res;
       this.total = res.data.total;
       this.tableData.map(item =>{
@@ -208,7 +206,10 @@ export default {
         item.type = item.type === 'apple' ? '苹果' : '安卓';
         return { ...item };
       });
-     
+      this.$refs['rechaContainer'].parentElement.scrollTo({
+        top: 0, 
+        behavior: 'smooth' 
+      });
     },
     handleSelectionChange(val) {
       this.tableTrue = val;
@@ -229,7 +230,7 @@ export default {
         ? item : this.selectForm[2].options.push(item);
     });
 
-
+    this.filterFormChange('click');
 
 
   }

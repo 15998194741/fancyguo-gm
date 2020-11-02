@@ -1,5 +1,5 @@
 <template>
-  <div  class="mail-container">
+  <div  ref="rechaContainer" class="mail-container">
     <div class="role-container-header" >
     <ul style="margin-top: 5px;margin-bottom: -5px;margin-right: 10px;">
       <li><el-button slot="reference" icon="el-icon-refresh" size='small' class="button-with-header button-with-select"  @click='filterFormChange'>刷新</el-button></li>
@@ -716,6 +716,10 @@ export default {
       
     },
     filterFormChange(val) {
+      this.$refs['rechaContainer'].parentElement.scrollTo({
+        top: 0, 
+        behavior: 'smooth' 
+      });
       switch (val) {
         case 'click':this.filterFormChangeClick(); break;
         case 'change':this.filterFormChangeChange(); break;
@@ -1032,7 +1036,11 @@ export default {
 
 
 }
+.mail-container{
 
+
+  
+}
 
 </style>
 

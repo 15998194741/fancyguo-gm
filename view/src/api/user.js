@@ -8,13 +8,13 @@ export function login(data) {
   });
 }
 
-export function getInfo(token) {
-  return request({
-    url: '/auth/user/parseToken',
-    method: 'get',
-    params: { token }
-  });
-}
+// export function getInfo(token) {
+//   return request({
+//     url: '/auth/user/parseToken',
+//     method: 'get',
+//     params: { token }
+//   });
+// }
 
 export function getEnvInfo() {
   return request({

@@ -1,4 +1,5 @@
 <template>
+<div class="announceddialog-create">
    <el-dialog title="新建公告" :visible.sync="eialog" class="announceddialog"  :close-on-click-modal="false">
    <div class="headradio"> 
      <el-radio v-model="radio"  :label="true">跑马灯</el-radio>
@@ -98,20 +99,17 @@
           </el-select>
         </el-form-item>
         <el-form-item v-show="createChannelShow" label="渠道:">
-          <el-select v-model="createForm.channel" multiple placeholder="请选择" size='small' style="border-radius: 10px;" @change='queryMarqueeweights' >
+          <el-select v-model="createForm.channel" multiple  clearable placeholder="请选择" size='small' style="border-radius: 10px;" @change='queryMarqueeweights' >
             <el-option v-for="(item,index) in selectForm[1].options"   :key="index"  :label='item.label' :value="item.value" >
             </el-option></el-select>
         </el-form-item>
         <el-form-item  v-show="createServerShow" label="服务器:">
-          <el-select v-model="createForm['servername']" multiple placeholder="请选择" size='small' style="border-radius: 10px;" @change='queryMarqueeweights' >
+          <el-select v-model="createForm['servername']" multiple  clearable placeholder="请选择" size='small' style="border-radius: 10px;" @change='queryMarqueeweights' >
             <el-option v-for="(item,index) in servernamesselect"   :key="index"  :label='item.label' :value="item.value" >
             </el-option></el-select>
         </el-form-item>
         <el-form-item label="时间间隔:" prop='interval'>
-          <el-input
-          v-model.number="createForm['interval']"
-          placeholder="请输入内容">
-</el-input>
+          <el-input v-model.number="createForm['interval']" placeholder="请输入内容"></el-input>
         </el-form-item>
         <el-form-item label="权重:"  prop='weights'>
           <el-select  v-model="createForm['weights']"  placeholder="请选择" size='small' style="border-radius: 10px;" >
@@ -127,6 +125,7 @@
       <el-button type="primary" @click='postannounced'>确 定</el-button>
     </div>
   </el-dialog>
+  </div>
 </template>
   
 <script>
@@ -228,7 +227,7 @@ export default {
     };
   },
   watch: {
-   
+  
   },
   computed: {
     grade() {
@@ -241,6 +240,7 @@ export default {
       let { createForm: { plaform, channel }} = this;
       if (!plaform || plaform.length === 0) {this.createForm.channel = []; return false;}
       if (!channel || channel.length === 0) {this.createForm.servername = []; return false;}
+      this.createForm.servername = [];
       return true;
     },
     createChannelShow() {
@@ -300,7 +300,6 @@ export default {
       if (plaform && channel) {
         let servername = await getqueryservernames({ channel, plaform });
         let { data } = servername;
-        console.log(data);
         this.servernamesselect = this.arrayUnique(data, 'value');
       } else {
         this.createForm['servername'] = '';
@@ -335,6 +334,7 @@ export default {
 </script>
   
 <style lang="scss" rel="stylesheet/scss">
+.announceddialog-create{
 .announceddialog{
     input {
       width: 15vw;
@@ -422,5 +422,9 @@ export default {
         
       /* } */
 }
+
+}
+
+
 </style>
   

@@ -16,8 +16,9 @@ class gmChannelService {
 	async findChannel(data){
 		let { gameid, value, type} =data;
 		let sql = `
-        select channel,channel_id  as id from gm_game_channel where gameid =  '${gameid}' and case when ${type==='true'} then  channel ='${value}'  else channel_id::varchar = '${value}' end
-        `;
+        select channel,channel_id  as id from gm_game_channel where gameid =  '${gameid}' and case when ${type==='true'} then  channel ='${value}'  else channel_id::varchar = '${value}' end  and status = 1
+		`;
+		console.log(sql);
 		let res = await dbSequelize.query(sql, {
 			replacements:['active'], type:Sequelize.QueryTypes.SELECT
 		});

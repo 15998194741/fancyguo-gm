@@ -97,8 +97,12 @@ const createRouter = () => new Router({
 
 const router = createRouter();
 router.beforeEach(async(to, from, next) => {
-  
+  console.log('to:', to);
+  console.log('from:', from);
   if (to.path === '/login') {
+    if (sessionStorage.getItem('fancy-guo-login-token')) {
+      return next('/');
+    }
     return next();
   }
   if (!sessionStorage.getItem('fancy-guo-login-token')) {

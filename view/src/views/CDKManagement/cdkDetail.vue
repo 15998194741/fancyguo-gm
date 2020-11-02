@@ -460,6 +460,10 @@ export default {
       ];
     },
     filterFormChange(val) {
+      this.$refs['CDKContainer'].parentElement.scrollTo({
+        top: 0, 
+        behavior: 'smooth' 
+      });
       switch (val) {
         case 'click':this.filterFormChangeClick(); break;
         case 'change':this.filterFormChangeChange(); break;
@@ -542,7 +546,6 @@ export default {
         behavior: 'smooth' 
       });
       loading.close();
-      
     },
     async ByCdkKey(val) {
       let res = await cdkkeyfind(val);

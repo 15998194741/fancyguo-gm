@@ -1,5 +1,5 @@
 <template>
-  <div class="white-container">
+  <div ref="whiteContainer" class="white-container">
     <div class="role-container-header" >
     <ul style="margin: 5px 10px -5px 0px;">
  <li><el-button slot="reference" icon="el-icon-refresh" size='small' class="button-with-header"  @click='filterFormChange'>刷新</el-button></li>
@@ -388,6 +388,10 @@ export default {
       }
     },
     filterFormChange(val) {
+      this.$refs['whiteContainer'].parentElement.scrollTo({
+        top: 0, 
+        behavior: 'smooth' 
+      });
       switch (val) {
         case 'click':this.filterFormChangeClick(); break;
         case 'change':this.filterFormChangeChange(); break;

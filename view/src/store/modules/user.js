@@ -102,24 +102,24 @@ const actions = {
   // get user info
   getInfo({ commit, dispatch }) {
     return new Promise((resolve, reject) => {
-      getInfo().then(res => {
-        const { data } = res;
-        if (!data) {
-          reject('验证失败，请重新登录。');
-        }
-        const { nickName, avatar, id, alias, permissionInfo, source } = data;
-        commit('SET_ID', id);
-        commit('SET_NAME', nickName);
-        commit('SET_AVATAR', avatar);
-        commit('SET_ALIAS', alias);
-        commit('SET_IS_NATIVE_USER', source);
-        commit('SET_PERMISSION_INFO', permissionInfo);
-        dispatch('settings/changeSetting', { key: 'env', value: data.serverEnv }, { root: true });
-        dispatch('settings/changeSetting', { key: 'loginIp', value: data.loginIp }, { root: true });
-        resolve(data);
-      }).catch(error => {
-        reject(error);
-      });
+      // getInfo().then(res => {
+      //   const { data } = res;
+      //   // if (!data) {
+      //   //   reject('验证失败，请重新登录。');
+      //   // }
+      //   const { nickName, avatar, id, alias, permissionInfo, source } = data;
+      //   commit('SET_ID', id);
+      //   commit('SET_NAME', nickName);
+      //   commit('SET_AVATAR', avatar);
+      //   commit('SET_ALIAS', alias);
+      //   commit('SET_IS_NATIVE_USER', source);
+      //   commit('SET_PERMISSION_INFO', permissionInfo);
+      //   dispatch('settings/changeSetting', { key: 'env', value: data.serverEnv }, { root: true });
+      //   dispatch('settings/changeSetting', { key: 'loginIp', value: data.loginIp }, { root: true });
+      //   resolve(data);
+      // }).catch(error => {
+      //   reject(error);
+      // });
     });
   },
   //setuser

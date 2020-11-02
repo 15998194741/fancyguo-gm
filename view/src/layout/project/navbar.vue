@@ -70,19 +70,19 @@ export default {
         {
           id: 1,
           name: 'GM'
-        },
-        {
-          id: 2,
-          name: '客服'
-        },
-        {
-          id: 3,
-          name: 'BP'
-        },
-        {
-          id: 4,
-          name: '上古纷争'
         }
+        // {
+        //   id: 2,
+        //   name: '客服'
+        // },
+        // {
+        //   id: 3,
+        //   name: 'BP'
+        // },
+        // {
+        //   id: 4,
+        //   name: '上古纷争'
+        // }
       ],
       datedays: {
         year: icnow.getFullYear(),

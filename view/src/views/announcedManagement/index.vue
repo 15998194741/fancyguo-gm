@@ -1,5 +1,5 @@
 <template>
-  <div class="anno-container">
+  <div ref="rechaContainer" class="anno-container">
     <div class="role-container-header" >
     <ul style="margin-top: 5px;margin-bottom: -5px;margin-right: 10px;">
       <li><el-button slot="reference" icon="el-icon-refresh" size='small' class="button-with-header" @click='filterFormChangeFlush' >刷新</el-button></li>
@@ -20,7 +20,7 @@
    
     <div class="comprehensive-container">
       <div v-for='(i,index) in selectForm' :key='index'  class="select-item"  > {{i.label}}:
-        <el-select v-model="filterForm[i.key]" :multiple="i['multiple']" placeholder="请选择" size='small' style="border-radius: 10px;" @change="filterFormChange('change')" >
+        <el-select v-model="filterForm[i.key]" :multiple="i['multiple']"  clearable :collapse-tags="i['collapse']"  placeholder="请选择" size='small' style="border-radius: 10px;" @change="filterFormChange('change')" >
           <el-option v-for="(item,index) in i.options" :key="index"  :label='item.label' :value="item.value" >
           </el-option>
         </el-select>
@@ -239,6 +239,7 @@ export default {
       selectForm: [{
         label: '游戏平台',
         multiple: true,
+        collapse: false,
         key: 'plaform',
         value: '',
         options: [
@@ -254,22 +255,22 @@ export default {
         label: '游戏渠道',
         key: 'channel',
         multiple: true,
+        collapse: true,
         value: '',
         options: []
       },
       {
         label: '服务器名称',
         key: 'servername',
-        multiple: false,
+        multiple: true,
+        collapse: true,
         value: '',
-        options: [{
-          label: '不限制',
-          value: ''
-        }]
+        options: []
       }, {
         label: '公告类型',
         key: 'type',
         multiple: false,
+        collapse: true,
         value: '',
         options: [{
           label: '不限制',
@@ -384,6 +385,10 @@ export default {
       this.fileName = this.createForm['images'].name;
     },
     filterFormChange(val) {
+      this.$refs['rechaContainer'].parentElement.scrollTo({
+        top: 0, 
+        behavior: 'smooth' 
+      });
       switch (val) {
         case 'click':this.filterFormChangeClick(); break;
         case 'change':this.filterFormChangeget(); break;
@@ -435,12 +440,12 @@ export default {
   async mounted() {
     ANNO.$on('tableChange', ({ index, row }) => {this.placardmodify(index, row);});
     ANNO.$on('tableTrue', data => {this.tableTrue = data;});
+    ANNO.$on('flush', data => {this.filterFormChangeget();});
     let { data: { values }} = await findComponents({ code: 'areaclothing', gameid: this.gameid });
     let components = values.map(item=>({
       label: item,
       value: item
     }));
-    ANNO.$on('flush', data => {this.filterFormChangeget();});
     this.selectForm[1].options = this.selectForm[1].options.concat(components);
     this.clientOptions = components;
  
@@ -448,7 +453,7 @@ export default {
     data.map(item =>{
       this.selectForm[2].options.find(ele => ele.label === item.label) || !item.label ? item : this.selectForm[2].options.push(item);
     });
-
+    this.filterFormChange('click');
   }
 
 
@@ -466,7 +471,7 @@ export default {
   }
 .announceddialog{
     input {
-      width: 15vw;
+      // width: 15vw;
     }
     textarea{
       width: 15vw;

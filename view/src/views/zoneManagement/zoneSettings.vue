@@ -1,6 +1,6 @@
 <template>
   <!-- <div class="distric-container"  :style=" `opacity: ${opacity};background-image: url('${this.$store.getters.permissionInfo.imgUrl}');` " @mouseover="opacity=1" @mouseout="opacity =0.3"> -->
-  <div class="distric-container"  >
+  <div ref="rechaContainer" class="distric-container"  >
     <div class="option-container" style="margin-bottom: -2px;">
       <ul>
         <li>
@@ -170,6 +170,18 @@
           </el-table-column>
           <el-table-column prop="srttime" label="开服时间" :width="widthtable">
           </el-table-column>
+ <el-table-column v-if="grade" prop='status' label="操作">
+          <template slot-scope="scope">
+            <div class="tableFlex">
+            <el-button
+              size="mini" style="color: red;"
+              icon="el-icon-video-pause" class="button-with-header" @click="piliangcaozuoCancel(scope.$index,scope.row)">取消
+            </el-button>
+            </div>
+          </template>
+
+        </el-table-column>
+
         </el-table>
       </div>
       <div slot="footer" class="dialog-footer">
@@ -247,9 +259,9 @@
       <div class="alertname">
         <div class="changeAlertBody"><span class="alertspan">区服id</span><el-input v-model="formchange.serverid" disabled class="alertcontant"></el-input></div>
         <div class="changeAlertBody"><span class="alertspan">区服名称</span><el-input v-model="formchange.servername" disabled class="alertcontant"></el-input></div>
-        <div class="changeAlertBody"><span class="alertspan">平台</span><el-select v-model="formchange.plaform" disabled class="alertcontant" placeholder="请选择活动区域"></el-select></div>
-        <div class="changeAlertBody"><span class="alertspan">渠道</span><el-select v-model="formchange.channel" disabled class="alertcontant"  placeholder="请选择活动区域"></el-select></div>
-        <div class="changeAlertBody"><span class="alertspan">IP/PORT</span><el-input v-model="formchange.ip" disabled class="alertcontant"></el-input>     </div>
+        <div class="changeAlertBody"><span class="alertspan">平台</span><el-select v-model="formchange.plaform" disabled class="alertcontant" multiple placeholder="请选择活动区域"></el-select></div>
+        <div class="changeAlertBody"><span class="alertspan">渠道</span><el-select v-model="formchange.channel" disabled class="alertcontant" multiple placeholder="请选择活动区域"></el-select></div>
+        <div class="changeAlertBody"><span class="alertspan">IP/PORT</span><el-input v-model="formchange.ip_port" disabled class="alertcontant"></el-input>     </div>
         <div class="changeAlertBody">   
          <span class="alertspan">显示状态<b style="color: red;">*</b></span>
             <el-select v-model="formchange.display" class="alertcontant" :value='formchange.display' placeholder="请选择活动区域"   @change="changes">
@@ -420,9 +432,8 @@ export default {
     
       createFormRules: {
         servername: [
-          { required: true, message: '请输入区服名称', trigger: 'blur' },
+          { required: true, message: '请输入区服名称', trigger: ['blur', 'change'] },
           { validator: servernameRepeat, trigger: 'blur' }
-         
         ],
         plaform: [
           { required: true, message: '请选择一个平台', trigger: 'blur' }
@@ -453,7 +464,7 @@ export default {
         srttime: '',
         key: 'serverid',
         value: '',
-        test: '',
+        test: '0',
         mergeserver: '',
         page: 1,
         pagesize: 20
@@ -597,6 +608,15 @@ export default {
  
 
   methods: { 
+    async piliangcaozuoCancel(a, b) {
+      let mergetrue = await this.$confirm('是否确认取消此记录?', '提示', {
+        confirmButtonText: '确定',
+        cancelButtonText: '取消',
+        type: 'warning' })
+        .catch(err => false);
+      if (!mergetrue) {return;}
+      this.allselectchange.splice(a, 1);
+    },
     async showStatusChange(a, b) {
       if (!this.grade) {
         return;
@@ -737,6 +757,10 @@ export default {
 
     },
     async filterFormChange(val, key) {
+      this.$refs['rechaContainer'].parentElement.scrollTo({
+        top: 0, 
+        behavior: 'smooth' 
+      });
       switch (val) {
         case 'click':this.filterFormChangeClick(); break;
         case 'flush':this.filterFormChangeFlush(); break;
@@ -758,7 +782,7 @@ export default {
     },
     async filterFormChangeClick() {
       for (let key in this.filterForm) {
-        if (key === 'key' || key === 'value' || key === 'page' || key === 'pagesize') {
+        if (key === 'key' || key === 'test' || key === 'value' || key === 'page' || key === 'pagesize') {
           continue;
         }
         this.filterForm[key] = '';
@@ -775,7 +799,7 @@ export default {
         srttime: '',
         key: 'serverid',
         value: '',
-        test: '',
+        test: '0',
         mergeserver: '',
         page: 1,
         pagesize: 20
@@ -1109,6 +1133,7 @@ export default {
   }
 
   .distric-container {
+    height: calc(100vh - 200px);
     .tableFlex {
         display: flex;
     }

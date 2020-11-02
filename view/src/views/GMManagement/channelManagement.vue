@@ -70,10 +70,10 @@
     <el-dialog title="渠道创建" :visible.sync="dialogFormchange"  :close-on-click-modal="false">
       <el-form ref="createForm" :rules="createFormRules" :model="createForm" label-width="150px"  class='createFormAlert'> 
         <el-form-item label="渠道ID:" class="createFormAlertBody" prop='channelId' hide-required-asterisk required>
-          <el-input v-model="createForm.channelId" class="alertcontant" placeholder="请输入用户名"></el-input>
+          <el-input v-model="createForm.channelId" class="alertcontant" placeholder="请输入渠道ID"></el-input>
         </el-form-item>
          <el-form-item label="渠道名称:" class="createFormAlertBody" prop='channelName' hide-required-asterisk required>
-          <el-input v-model="createForm.channelName" class="alertcontant" placeholder="请输入用户名"></el-input>
+          <el-input v-model="createForm.channelName" class="alertcontant" placeholder="请输入渠道名称"></el-input>
         </el-form-item>
         <el-form-item size="large" style="display: flex;justify-content: flex-end;">
           <el-button @click="FormEildalogCanCel('dialogFormchange','createForm','createForm')">取 消</el-button>
@@ -83,7 +83,7 @@
     </el-dialog>
 
     <!-- 渠道修改表单弹窗 -->
-    <el-dialog title="用户分组修改" :visible.sync="dialogFormchangeUser"  :close-on-click-modal="false">
+    <el-dialog title="渠道修改" :visible.sync="dialogFormchangeUser"  :close-on-click-modal="false">
       <el-form ref="changeForm" :rules="changeFormRules" :model="changeForm" label-width="150px"  class='createFormAlert'> 
         <el-form-item label="渠道ID:" class="createFormAlertBody" prop='channelId' hide-required-asterisk required>
           <el-input v-model="changeForm.channelId" class="alertcontant" placeholder="请输入渠道ID"></el-input>
@@ -139,6 +139,7 @@ export default {
       },
       changeFormRules: {
         channelId: [
+          { required: true, message: '请输入渠道ID', trigger: ['blur', 'change'] },
           { validator: async(rule, value, callback) =>{
             
             if (!value) {
@@ -154,6 +155,8 @@ export default {
           }, trigger: ['blur'] }
         ],
         channelName: [
+          { required: true, message: '请输入渠道名称', trigger: ['blur', 'change'] },   
+
           { validator: async(rule, value, callback) =>{
             if (!value) {
               return callback(new Error('请输入渠道名称'));
@@ -168,6 +171,7 @@ export default {
       urlData: [],
       createFormRules: {
         channelId: [
+          { required: true, message: '请输入渠道ID', trigger: ['blur', 'change'] },   
           { validator: async(rule, value, callback) =>{
             if (!value) {
               return callback(new Error('请输入渠道ID'));
@@ -179,7 +183,8 @@ export default {
             return callback(a ? new Error('不可以重复') : undefined); 
           }, trigger: ['blur'] }
         ],
-        channelName: [
+        channelName: [  
+          { required: true, message: '请输入渠道名称', trigger: ['blur', 'change'] },   
           { validator: async(rule, value, callback) =>{
             if (!value) {
               return callback(new Error('请输入渠道名称'));

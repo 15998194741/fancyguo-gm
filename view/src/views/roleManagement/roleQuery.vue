@@ -1,9 +1,9 @@
 <template>
-  <div class="role-container">
+  <div ref="rechaContainer" class="role-container">
     <div class="role-container-header" >
     <ul style="margin-top: 5px;margin-bottom: -5px;margin-right: 0.8rem;">
       <li><el-button  v-if="grade" slot="reference" icon="el-icon-upload2" size='small' class="button-with-header"  @click="serverCreatedialogFormVisible = true" >导入</el-button></li>
-      <li><el-button  v-if="grade" slot="reference" icon="el-icon-download" size='small' class="button-with-header" @click='exportFile' >导出</el-button></li>
+      <li><el-button  v-if="grade" slot="reference" icon="el-icon-download" size='small' class="button-with-header" :disabled='this.tableTrue.length === 0' @click='exportFile' >导出</el-button></li>
       <li><el-button  slot="reference" icon="el-icon-refresh" size='small' class="button-with-header"  @click='filterFormChange'>刷新</el-button></li>
       <li> <el-button v-if="grade" slot="append" icon="el-icon-circle-plus-outline" size='small' class="button-with-header" :disabled='fenghaocaozuo' @click='dialogFormchange = true'>封号禁言</el-button></li>
     </ul>
@@ -124,7 +124,7 @@
           </el-form>
         </template>
       </el-table-column>
-      <el-table-column v-for='(column,index) in tablecolumn' :key='index' :width="screenWidth+column.width" :label="column.label">
+      <el-table-column v-for='(column,index) in tablecolumn' :key='index'  :label="column.label">
         <template slot-scope="scope">{{ scope.row[column.prop] }}</template>
       </el-table-column>
      
@@ -175,7 +175,7 @@
 <script>
 import { findComponents } from '@/api/components.js';
 import dayjs from 'dayjs';
-import elementResizeDetectorMaker from 'element-resize-detector';
+// import elementResizeDetectorMaker from 'element-resize-detector';
 import { queryCharacter, findServername, prohibitedMute } from '@/api/character.js';
 import { uploadFile } from '@/api/character.js';
 export default {
@@ -193,7 +193,6 @@ export default {
       
       },
       filelist: [],
-      multipleTable: '',
       total: 0,
       filterForm: {
         key: 'roleid',
@@ -324,30 +323,7 @@ export default {
       }
 
       ],
-      tableData: [
-      //   {
-      //   roleid: '', //角色ID
-      //   account_id: '', //用户id
-      //   role_name: '', //角色昵称
-      //   channel: '', //渠道渠道
-      //   distinct_id: '', //设备iD
-      //   machine: '', //设备类型
-      //   plaform: '', //平台                     新增 Android  IOS
-      //   serverid: '', //区服ID                   新增
-      //   update_time: '', //最后登录时间           新增 
-      //   level: '', //等级
-      //   vip_level: '', //vip等级
-      //   sum_recharge: '', //付费总额
-      //   ip: '', //用户Ip地址
-      //   regtime: '', //注册时间
-      //   banned_type: '', //封禁类型   pgsql
-      //   banned_area: '', //封禁范围    pgsql
-      //   banned_reason: '', //封禁原因   pgsql
-      //   banned_time: '', //封禁时长
-      //   stime_etime: ''
-
-      // }
-      ],
+      tableData: [],
       tablecolumn: [
         { label: '角色ID', prop: 'roleid', width: 50 },
         { label: '账户ID', prop: 'account_id', width: 40 },
@@ -373,7 +349,7 @@ export default {
         { label: '封禁时长', prop: 'banned_time' },
         { label: '封禁时间-解封时间', prop: 'stime_etime' }
       ],
-      screenWidth: 145,
+      
       screenHeight: '',
       tableTrue: []
     };
@@ -404,6 +380,7 @@ export default {
       this.$message('上传失败');
     },
     exportFile() {
+      if (this.tableTrue.length === 0) { this.$message.warning('请选择数据'); return;}
       require.ensure([], () => {
         const { export_json_to_excel: exportJsonToExcel } = require('@/Excel/Export2Excel');//注意这个Export2Excel路径
         const tHeader = ['角色ID', '账户ID', '昵称', '平台', '渠道', '设备ID', '设备类型', '区服名称', '区服ID', '等级', 'VIP等级', '付费总额', 'IP', '注册时间', '最后登录时间', '封禁类型', '封禁范围', '封禁原因', '封禁时长', '封禁时间-解封时间']; // 上面设置Excel的表格第一行的标题
@@ -477,6 +454,10 @@ export default {
 
 
     filterFormChange(methods) {
+      this.$refs['rechaContainer'].parentElement.scrollTo({
+        top: 0, 
+        behavior: 'smooth' 
+      });
       switch (methods) {
         case 'change':this.changeFilterFormChange(); break;
         case 'click':this.clickFilterFormChange(); break;
@@ -558,22 +539,22 @@ export default {
     //   })();
     // };
     // const _this = this;
-    const erd = elementResizeDetectorMaker();
-    erd.listenTo(document.getElementById('body'), element =>{
-      switch (element.offsetWidth) {
-        case 1840: this.screenWidth = 158; break;
-        case 1700: this.screenWidth = 145; break;
-      }
-      // if (element.offsetWidth === 1840) {
-      //   this.screenWidth = 174;
-      // } else if (element.offsetWidth === 1700) {
-      //   this.screenWidth = 160;
-      // }
-      // _this.$nextTick(()=>{
-      //   this.screenHeight = '11123123';
-      // });
+    // const erd = elementResizeDetectorMaker();
+    // erd.listenTo(document.getElementById('body'), element =>{
+    //   switch (element.offsetWidth) {
+    //     case 1840: this.screenWidth = 158; break;
+    //     case 1700: this.screenWidth = 145; break;
+    //   }
+    // if (element.offsetWidth === 1840) {
+    //   this.screenWidth = 174;
+    // } else if (element.offsetWidth === 1700) {
+    //   this.screenWidth = 160;
+    // }
+    // _this.$nextTick(()=>{
+    //   this.screenHeight = '11123123';
+    // });
 
-    });
+    // });
   },
   created() {
   

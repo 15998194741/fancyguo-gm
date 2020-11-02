@@ -119,6 +119,10 @@ export default {
   
 <style lang="scss" rel="stylesheet/scss">
 .anno-table-container{
+  .aasdhjkahskdhjk{
+    max-height: 5vh;
+  }
+
 .success-row td:first-child div{
   visibility: hidden;
 }
