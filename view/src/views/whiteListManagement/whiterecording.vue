@@ -2,7 +2,7 @@
     <div class="record-container">
       <div class="role-container-header" >
       <ul style="margin: 5px 10px -5px 0;">
-        <li><el-button slot="reference" icon="el-icon-refresh" size='small' class="button-with-header"  @click='filterFormChange'>刷新</el-button></li>
+        <li><el-button slot="reference" icon="el-icon-refresh-right" size='small' class="button-with-header"  @click='filterFormChange'>刷新</el-button></li>
         <!-- <li> <el-button  slot="append" icon="el-icon-delete-solid" size='small' class="button-with-header" :disabled='fenghaocaozuo' @click='dialogFormchange = true'>道具回收</el-button></li> -->
       </ul>
     </div>
@@ -88,13 +88,15 @@ export default {
   },
   methods: {
     async filterFormChange(val) {
+      this.tableData = [];
       let { data } = await recordLookup(this.filterForm);
       let { tableData, total } = data;
       this.tableData = tableData;
       this.total = +total;
     }
   },
-  mounted() {
+  async mounted() {
+    await this.filterFormChange();
   }
     
 };

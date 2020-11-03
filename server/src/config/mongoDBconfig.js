@@ -2,12 +2,58 @@
 const path = require('path');
 const fs = require('fs');
 let MongoDbAction = {};
-let filename = path.join(path.dirname(__dirname).replace('app', ''), 'config/table.json');
-let tabConf = JSON.parse(fs.readFileSync(path.normalize(filename)));
+// let filename = path.join(path.dirname(__dirname).replace('app', ''), 'config/table.json');
+// let tabConf = JSON.parse(fs.readFileSync(path.normalize(filename)));
+var tabConf;
 const mongoose = require('./mongo-config.js');
 import cache from './redis-config.js';
 // const cache = require('../utils/cache-utils');
+var conStr = 'postgres://postgres:Ll789456@123.57.86.38:5432/xiaolu';
+var pgOpt = require('pg');
+var client = new pgOpt.Client(conStr);
+// console.log(tabConf);
+function connectPgWithoutPool() {
+	client.connect(function (isErr) {
+		if (isErr) {
+			console.log('connect error:' + isErr.message);
+			client.end();
+			return;
+		}
+		client.query('select  * from gm_dict where id = 25 ;', [], function (isErr, rst) {
+			if (isErr) {
+				console.log('query error:' + isErr.message);
+			} else {
+				// console.log('query success, data is: ', rst.rows[0]?.table);
+				tabConf = rst.rows[0].table;
+			}
+			client.end();
+		});
+	});
+}
 
+function addJsons(name, datas) {
+	var conStr = 'postgres://postgres:Ll789456@123.57.86.38:5432/xiaolu';
+	var pgOpt = require('pg');
+	var client = new pgOpt.Client(conStr);
+	client.connect(function (isErr) {
+		if (isErr) {
+			console.log('connect error:' + isErr.message);
+			client.end();
+			return;
+		}
+		console.log(`update gm_dict set table = table::jsonb || '{"${name}":${JSON.stringify(datas)}}'::jsonb  where id = 25 `);
+		client.query(`update gm_dict set table = table::jsonb || '{"${name}":${JSON.stringify(datas)}}'::jsonb  where id = 25 `, [], function (isErr, rst) {
+			if (isErr) {
+				console.log('query error:' + isErr.message);
+			} else {
+				// console.log('query success, data is: ', JSON.stringify(rst.rows[0]?.table));
+				tabConf = rst.rows.table;
+			}
+			client.end();
+		});
+	});
+}
+connectPgWithoutPool();
 class mongodb{
 	constructor() {
 	}
@@ -19,7 +65,14 @@ class mongodb{
 		let tableExist = MongoDbAction[table_name];
 		if(tableExist){ return tableExist; }
     	//定义表数据结构
-    	let userModel = new mongoose.Schema(tabConf[table_name], {
+    	let userModel = new mongoose.Schema({
+			key: 'String',
+			isUse: 'Boolean',
+			roleid: 'String',
+			plaform: 'String',
+			channel: 'String',
+			receive: 'Date'
+		}, {
     		versionKey: false //去除： - -v
 		});
 		
@@ -171,16 +224,23 @@ class mongodb{
      * 
      */
 	async addJson(name){
-		let datas = JSON.parse(fs.readFileSync(path.normalize(filename)));
-		datas[name] = {
+		// let datas = JSON.parse(fs.readFileSync(path.normalize(filename)));
+		// datas[name] = {
+		// 	key: 'String',
+		// 	isUse: 'Boolean',
+		// 	roleid: 'String',
+		// 	plaform: 'String',
+		// 	channel: 'String'
+		// };
+		// datas = JSON.stringify(datas);
+		// fs.writeFileSync(filename, datas);
+		addJsons(name, {
 			key: 'String',
 			isUse: 'Boolean',
 			roleid: 'String',
 			plaform: 'String',
 			channel: 'String'
-		};
-		datas = JSON.stringify(datas);
-		fs.writeFileSync(filename, datas);
+		});
 	}
 	/**
      * 对json模型文件添加新建得集合模型 

@@ -2,7 +2,7 @@
   <div ref="rechaContainer" class="CDK-container">
     <div class="role-container-header" >
     <ul style="margin-top: 5px;margin-bottom: -5px;margin-right: 10px;">
-      <li><el-button slot="reference" icon="el-icon-refresh" size='small' class="button-with-header" >刷新</el-button></li>
+      <li><el-button slot="reference" icon="el-icon-refresh-right" size='small' class="button-with-header"  @click='filterFormChangeFlush'>刷新</el-button></li>
       <!-- <li><el-button slot="reference" icon="el-icon-download" size='small' class="button-with-header" >导出</el-button></li> -->
       <li> <el-button v-if="grade" slot="append" icon="el-icon-plus" size='small' class="button-with-header"  @click='createCdkForm' >新建CDK</el-button></li>
     </ul>
@@ -504,7 +504,7 @@ export default {
       loading.close();
       this.createFormMailCancel();
       this.$message.success(`创建成功,您创建的CDKID为   ${data}`);
-      
+      this.filterFormChangeClick();
     },
     createFormMailCancel() {
       this.dialogFormchange = false;
@@ -525,6 +525,13 @@ export default {
         case 'pagechange':this.filterFormChangeChange(); break;
         default:this.filterFormChangeFlush();
       }
+    },
+    async filterFormChangeFlush() {
+      for (let i in this.filterForm) {
+        if (i === 'key' || i === 'pagesize' || i === 'page') {continue;}
+        this.filterForm[i] = '';
+      }
+      this.filterFormChangeSubmit();
     },
     async filterFormChangeClick() {
       for (let i in this.filterForm) {
@@ -580,8 +587,9 @@ export default {
       value: item
     }));
     this.selectForm[1].options = this.selectForm[1].options.concat(components);
-    
-  }
+    this.filterFormChangeClick();
+
+  } 
 
 
   

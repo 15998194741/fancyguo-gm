@@ -2,7 +2,7 @@
   <div ref="whitemailContainer" class="whitemail-container">
     <div class="role-container-header" >
     <ul style="margin: 5px 10px -5px 0px;">
-      <li><el-button slot="reference" icon="el-icon-refresh" size='small' class="button-with-header"  @click='filterFormChange'>刷新</el-button></li>
+      <li><el-button slot="reference" icon="el-icon-refresh-right" size='small' class="button-with-header"  @click='filterFormChangeFlush'>刷新</el-button></li>
       <li> <el-button v-if="grade" slot="append" icon="el-icon-circle-plus-outline" size='small' class="button-with-header"  @click='dialogFormchangeShowTrue'>添加</el-button></li>
     </ul>
   </div>
@@ -438,6 +438,7 @@ export default {
       this.$message.success(`创建成功，您创建的id是 ${id}`);
       loading.close(); 
       this.createFormMailCancel();
+      this.filterFormChangeFlush();
     },
     async dialogFormchangeShowTrue() {
       let { code, data } = await getQueryAnnexOptions();
@@ -472,6 +473,19 @@ export default {
         case 'pagechange':this.filterFormPageChange(); break;
         default:this.filterFormChangeFlush();
       }
+    },
+    async filterFormChangeFlush() {
+      this.tableData = [];
+      for (let i in this.filterForm) {
+        if (i === 'pagesize') {continue;}
+        this.filterForm[i] = null;
+      }
+      this.filterForm['page'] = 1;
+      this.filterFormChangeClick();
+
+
+
+
     },
     async filterFormPageChange() {
       let res = await whiteFindAll(this.filterForm);
@@ -534,7 +548,7 @@ export default {
   },
   mounted() {
     let data = { ...this.$route.query };
-    let { id } = data;
+    let { smtp_id: id } = data;
     this.filterForm['value'] = id;
     this.filterFormChangeClick();
 

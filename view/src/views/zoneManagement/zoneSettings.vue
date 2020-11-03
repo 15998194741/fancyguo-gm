@@ -10,7 +10,7 @@
           <el-button   v-if="grade" slot="reference" icon="el-icon-refresh" size='small' class="button-with-header"   :disabled='allselectchangeopen'  @click='mergeServer'>合服</el-button>
         </li>
         <li>
-          <el-button slot="reference" icon="el-icon-refresh" size='small' class="button-with-header"   @click="filterFormChange('flush')">刷新</el-button>
+          <el-button slot="reference" icon="el-icon-refresh-right" size='small' class="button-with-header"   @click="filterFormChange('flush')">刷新</el-button>
         </li>
         <li>
           <el-button  v-if="grade" slot="append" icon="el-icon-circle-plus-outline" size='small'  class="button-with-header" @click="newCreateServer">创建</el-button>

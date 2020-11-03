@@ -4,7 +4,7 @@
     <ul style="margin-top: 5px;margin-bottom: -5px;margin-right: 0.8rem;">
       <li><el-button  v-if="grade" slot="reference" icon="el-icon-upload2" size='small' class="button-with-header"  @click="serverCreatedialogFormVisible = true" >导入</el-button></li>
       <li><el-button  v-if="grade" slot="reference" icon="el-icon-download" size='small' class="button-with-header" :disabled='this.tableTrue.length === 0' @click='exportFile' >导出</el-button></li>
-      <li><el-button  slot="reference" icon="el-icon-refresh" size='small' class="button-with-header"  @click='filterFormChange'>刷新</el-button></li>
+      <li><el-button  slot="reference" icon="el-icon-refresh-right" size='small' class="button-with-header"  @click='filterFormChange'>刷新</el-button></li>
       <li> <el-button v-if="grade" slot="append" icon="el-icon-circle-plus-outline" size='small' class="button-with-header" :disabled='fenghaocaozuo' @click='dialogFormchange = true'>封号禁言</el-button></li>
     </ul>
   </div>

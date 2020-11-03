@@ -7,8 +7,8 @@ ref="CDKContainer" v-loading='cdkLoading'
    element-loading-background="rgba(0, 0, 0, 0.8)">
     <div class="role-container-header" >
     <ul style="margin-top: 5px;margin-bottom: -5px;margin-right: 10px;">
-      <li><el-button slot="reference" icon="el-icon-refresh" size='small' class="button-with-header"  @click="flushTabelData" >刷新</el-button></li>
-      <li><el-button slot="reference" icon="el-icon-refresh" size='small' class="button-with-header"  @click="tableDataShwo = !tableDataShwo" >查看CDK信息</el-button></li>
+      <li><el-button slot="reference" icon="el-icon-refresh-right" size='small' class="button-with-header"  @click="filterFormChange('click')" >刷新</el-button></li>
+      <li><el-button slot="reference" icon="el-icon-refresh-right" size='small' class="button-with-header"  @click="tableDataShwo = !tableDataShwo" >查看CDK信息</el-button></li>
     </ul>
   </div>
   <div class="role-container-search">
@@ -486,7 +486,7 @@ export default {
       this.filterFormChangeSubmit();
     },
     async filterFormChangeSubmit() {
-      this.tableDataShwo = true;
+      this.tableDataShwo = false;
       const loading = this.$loading({
         lock: true,
         text: '拼命加载中',
@@ -504,7 +504,6 @@ export default {
         this.$message.warning(`查找${key},${value}不存在`);
         this.tableDataTwo = [];
         this.tableData = [];
-        loading.close();
         loading.close();
         return;
       }

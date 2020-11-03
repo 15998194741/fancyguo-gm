@@ -3,7 +3,7 @@
      <div v-if="gradele9999" class="game-header">
       <div class="game-header-create">
           <i class="el-icon-plus game-header-icon" @click="createFormAlertTrue"></i>
-          <i class="el-icon-refresh-right game-header-icon" @click="createTableList"></i>
+          <i class="el-icon-refresh-right-right game-header-icon" @click="createTableList"></i>
       </div>
        
       <div class="game-header-list">

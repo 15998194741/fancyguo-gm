@@ -4,7 +4,10 @@ import dayjs from 'dayjs';
 import Cp from '../../utils/Cp';
 import send from 'koa-send';
 class whiteServer {
-	constructor(){}
+	constructor(){
+		let { a } = require('../../xiaolu/senecaclient');
+		this.SenClient = a;
+	}
 
 
 	async mailCreate(data){
@@ -66,10 +69,9 @@ class whiteServer {
 			return;
 		}
 		let value = res[0];
-		console.log(value);
 		try{
-			value['1'] = value['1'].map(item=>({value:item, label:item})); 
-			value['2'] = value['2'].map(item=>({value:item, label:item})); 
+			value['1'] = value['1'] ? value['1'].map(item=>({value:item, label:item})): null; 
+			value['2'] = value['2']? value['2'].map(item=>({value:item, label:item})):null; 
 		}catch (e){}
 		return value;
 	}
@@ -125,14 +127,14 @@ class whiteServer {
 		// return res;
 	}
 	async mailRelatedUser(data){
-		let {roleId, name, type, notebook, gameid} = data;
-		let {user} =data;
+		let { roleId, name, type, notebook, gameid } = data;
+		let { user } =data;
 
 		let sql = `
 		insert into gm_white_user (
 			game_id,notebook,roleid,smtp_id,plaform,channel,roleids,type,servername,create_user_id
 			)values(
-			'${gameid}','${notebook}','${JSON.stringify(roleId)}',(select id from  gm_white_smtp where title = '${name}'),
+			'${gameid}','${notebook}','${JSON.stringify(roleId)}',(select id from  gm_white_smtp where title = '${name}'  and status = 1 and game_id = '${gameid}'),
 			(select array_to_json(string_to_array(string_agg(plaform, ','), ',')) as plaform from (select * from (select jsonb_array_elements_text(plaform) as plaform  from (		select plaform ,1 as id  from gm_server where  '[${roleId.map(item => item['serverid'])}]'::jsonb @> serverid::varchar::jsonb 
 			) a ) a GROUP BY plaform)a ),
 			(select array_to_json(string_to_array(string_agg(channel, ','), ',')) as channel from (select * from (select jsonb_array_elements_text(channel) as channel  from (		select channel ,1 as id  from gm_server where  '[${roleId.map(item => item['serverid'])}]'::jsonb @> serverid::varchar::jsonb 
@@ -144,12 +146,11 @@ class whiteServer {
 			),'${user['id']}'
 			) returning id 
 		`;
-		// console.log(sql);
 		let res = await	dbSequelize.query(sql, {
 			replacements:['active'], type:Sequelize.QueryTypes.INSERT
 		});
-		// let id = res[0][0]['id'];
-		// await this.sendWhiteMail({id, gameid});
+		let id = res[0][0]['id'];
+		type ? '':await this.sendWhiteMail({...data, id}) ;
 		return res;
 	}
 	async servernameComponents(data){
@@ -201,12 +202,14 @@ class whiteServer {
 		});
 		return res;
 	}
-	// async sendWhiteMail(data){
-	// 	let { id, gameid }= data;
-	// 	let  res = await Cp.post(gameid, 'white/create', {id});
-	// 	return res;
-	// 	// console.log(res);
-	// }
+	async sendWhiteMail(data){
+		// console.log(data);
+		// await Cp.post(gameid, 'white/create', {id});
+		let body = data;
+		let  res =   await this.SenClient.get('white', 'create', {body});
+		console.log(res);
+		return res;
+	}
 	async stopWhiteMail(data){
 		let {gameid, id} = data;
 		let sql = `

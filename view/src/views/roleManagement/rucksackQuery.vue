@@ -4,7 +4,7 @@
     <ul style="margin: 5px 5px -5px 0;">
       <!-- <li><el-button  slot="reference" icon="el-icon-upload2" size='small' class="button-with-header"  @click="serverCreatedialogFormVisible = true" >导入</el-button></li>
       <li><el-button  slot="reference" icon="el-icon-download" size='small' class="button-with-header" @click='exportFile' >导出</el-button></li> -->
-      <li><el-button slot="reference" icon="el-icon-refresh" size='small' class="button-with-header"  @click="filterFormChange('flush')">刷新</el-button></li>
+      <li><el-button slot="reference" icon="el-icon-refresh-right" size='small' class="button-with-header"  @click="filterFormChange('flush')">刷新</el-button></li>
       <li> <el-button  v-if='grade' slot="append" icon="el-icon-delete-solid" size='small' class="button-with-header"  @click='dialogFormchange = true'>道具回收</el-button></li>
     </ul>
   </div>

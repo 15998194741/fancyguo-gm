@@ -2,7 +2,7 @@
   <div ref="whiteContainer" class="white-container">
     <div class="role-container-header" >
     <ul style="margin: 5px 10px -5px 0px;">
- <li><el-button slot="reference" icon="el-icon-refresh" size='small' class="button-with-header"  @click='filterFormChange'>刷新</el-button></li>
+ <li><el-button slot="reference" icon="el-icon-refresh-right" size='small' class="button-with-header"  @click='filterFormChange'>刷新</el-button></li>
  <li> <el-button  v-if='grade' slot="append" icon="el-icon-delete-solid" size='small'  class="button-with-header"  @click='createFormAlert'>添加白名单用户</el-button></li>
     </ul>
   </div>
@@ -379,7 +379,8 @@ export default {
     },
     async typeChange() {
       // console.log(this.createFormWhite['type']);
-      let type = this.createFormWhite['type'];
+      let { type } = this.createFormWhite;
+      console.log(this.names);
       this.createFormWhite['name'] = '';
       if (type) {
         this.name = this.names['1'];
@@ -453,6 +454,8 @@ export default {
         let { data } = await whiteFindName();
         return data;
       })();
+      this.typeChange();
+      console.log(this.names);
     },
     async createFormACancel() {
       this.filelist = [];
@@ -504,6 +507,7 @@ export default {
     this.selectForm[1].options = this.selectForm[1].options.concat(channelData);
     let { data: serverData } = await servernameComponents();
     this.selectForm[2].options = this.selectForm[2].options.concat(serverData);
+    this.filterFormChangeClick();
     // const erd = elementResizeDetectorMaker();
     // erd.listenTo(document.getElementById('body'), element =>{
     //   this.screenWidth = element.offsetWidth * 0.2429;
@@ -531,6 +535,11 @@ export default {
     .el-input--small .el-input__inner{
           width: 10.5vw;
           min-width: 200px;
+    }
+  }
+  .upload-demo{
+    &>ul>li{
+      width: 15vw;
     }
   }
   .cell{

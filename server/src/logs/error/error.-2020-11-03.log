@@ -1,0 +1,145 @@
+[2020-11-03T11:40:25.956] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/white/mailRelatedUser
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"roleId":[{"serverid":1,"id":1231231},{"serverid":2,"id":5456465},{"serverid":3,"id":9681699},{"serverid":4,"id":13906933},{"serverid":5,"id":18132167},{"serverid":6,"id":22357401},{"serverid":7,"id":26582635},{"serverid":8,"id":30807869},{"serverid":9,"id":35033103},{"serverid":10,"id":39258337},{"serverid":11,"id":43483571},{"serverid":12,"id":47708805},{"serverid":13,"id":51934039},{"serverid":14,"id":56159273},{"serverid":15,"id":60384507},{"serverid":16,"id":64609741},{"serverid":17,"id":68834975},{"serverid":18,"id":73060209},{"serverid":19,"id":77285443},{"serverid":20,"id":81510677},{"serverid":21,"id":85735911},{"serverid":22,"id":89961145},{"serverid":23,"id":94186379},{"serverid":24,"id":98411613},{"serverid":25,"id":102636847},{"serverid":26,"id":106862081},{"serverid":27,"id":111087315},{"serverid":28,"id":115312549},{"serverid":29,"id":23},{"serverid":30,"id":31},{"serverid":31,"id":2312},{"serverid":32,"id":123},{"serverid":33,"id":1},{"serverid":34,"id":12313},{"serverid":35,"id":23},{"serverid":36,"id":2321},{"serverid":37,"id":31231},{"serverid":38,"id":123},{"serverid":39,"id":312},{"serverid":40,"id":23},{"serverid":41,"id":12},{"serverid":42,"id":1212312313},{"serverid":43,"id":23},{"serverid":44,"id":23},{"serverid":45,"id":23},{"serverid":46,"id":12},{"serverid":47,"id":31231},{"serverid":48,"id":123},{"serverid":49,"id":12312},{"serverid":50,"id":12},{"serverid":51,"id":31},{"serverid":52,"id":123},{"serverid":53,"id":31231},{"serverid":54,"id":231},{"serverid":55,"id":23},{"serverid":56,"id":12},{"serverid":57,"id":312},{"serverid":58,"id":2312}],"name":"123","type":true,"notebook":"","gameid":"1"}
+response time: 1604374825955
+err name: SequelizeDatabaseError
+err message: more than one row returned by a subquery used as an expression
+err stack: SequelizeDatabaseError: more than one row returned by a subquery used as an expression
+    at Query.formatError (H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:366:16)
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:72:18
+From previous event:
+    at Query.run (H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:64:23)
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:29
+From previous event:
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:12
+    at processImmediate (internal/timers.js:456:21)
+From previous event:
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:651:10
+    at H:\致命代码\fancyguo-gm\server\node_modules\retry-as-promised\index.js:70:21
+    at new Promise (<anonymous>)
+    at retryAsPromised (H:\致命代码\fancyguo-gm\server\node_modules\retry-as-promised\index.js:60:10)
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:641:30
+From previous event:
+    at Sequelize.query (H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:590:23)
+    at whiteServer._callee7$ (H:\致命代码\fancyguo-gm\server\src\app\service\/white.js:150:31)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at whiteServer.<anonymous> (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at whiteServer.mailRelatedUser (H:\致命代码\fancyguo-gm\server\src\app\service\white.js:426:33)
+    at _callee4$ (H:\致命代码\fancyguo-gm\server\src\app\controllers\/white.js:47:33)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at mailRelatedUser (H:\致命代码\fancyguo-gm\server\src\app\controllers\white.js:190:33)
+    at dispatch (H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at next (H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:45:18)
+    at H:\致命代码\fancyguo-gm\server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:36:12
+    at dispatch (H:\致命代码\fancyguo-gm\server\node_modules\koa-router\lib\router.js:351:31)
+    at next (H:\致命代码\fancyguo-gm\server\node_modules\koa\node_modules\koa-compose\index.js:42:32)
+    at _callee$ (H:\致命代码\fancyguo-gm\server\src\middleware\/index.js:47:11)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at H:\致命代码\fancyguo-gm\server\src\middleware\/index.js:42:2
+*************** error log end ***************
+
+[2020-11-03T11:41:18.063] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/white/mailRelatedUser
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"roleId":[{"serverid":1,"id":1231231},{"serverid":2,"id":5456465},{"serverid":3,"id":9681699},{"serverid":4,"id":13906933},{"serverid":5,"id":18132167},{"serverid":6,"id":22357401},{"serverid":7,"id":26582635},{"serverid":8,"id":30807869},{"serverid":9,"id":35033103},{"serverid":10,"id":39258337},{"serverid":11,"id":43483571},{"serverid":12,"id":47708805},{"serverid":13,"id":51934039},{"serverid":14,"id":56159273},{"serverid":15,"id":60384507},{"serverid":16,"id":64609741},{"serverid":17,"id":68834975},{"serverid":18,"id":73060209},{"serverid":19,"id":77285443},{"serverid":20,"id":81510677},{"serverid":21,"id":85735911},{"serverid":22,"id":89961145},{"serverid":23,"id":94186379},{"serverid":24,"id":98411613},{"serverid":25,"id":102636847},{"serverid":26,"id":106862081},{"serverid":27,"id":111087315},{"serverid":28,"id":115312549},{"serverid":29,"id":23},{"serverid":30,"id":31},{"serverid":31,"id":2312},{"serverid":32,"id":123},{"serverid":33,"id":1},{"serverid":34,"id":12313},{"serverid":35,"id":23},{"serverid":36,"id":2321},{"serverid":37,"id":31231},{"serverid":38,"id":123},{"serverid":39,"id":312},{"serverid":40,"id":23},{"serverid":41,"id":12},{"serverid":42,"id":1212312313},{"serverid":43,"id":23},{"serverid":44,"id":23},{"serverid":45,"id":23},{"serverid":46,"id":12},{"serverid":47,"id":31231},{"serverid":48,"id":123},{"serverid":49,"id":12312},{"serverid":50,"id":12},{"serverid":51,"id":31},{"serverid":52,"id":123},{"serverid":53,"id":31231},{"serverid":54,"id":231},{"serverid":55,"id":23},{"serverid":56,"id":12},{"serverid":57,"id":312},{"serverid":58,"id":2312}],"name":"123","type":true,"notebook":"","gameid":"1"}
+response time: 1604374878063
+err name: SequelizeDatabaseError
+err message: more than one row returned by a subquery used as an expression
+err stack: SequelizeDatabaseError: more than one row returned by a subquery used as an expression
+    at Query.formatError (H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:366:16)
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:72:18
+From previous event:
+    at Query.run (H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:64:23)
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:29
+From previous event:
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:12
+    at processImmediate (internal/timers.js:456:21)
+From previous event:
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:651:10
+    at H:\致命代码\fancyguo-gm\server\node_modules\retry-as-promised\index.js:70:21
+    at new Promise (<anonymous>)
+    at retryAsPromised (H:\致命代码\fancyguo-gm\server\node_modules\retry-as-promised\index.js:60:10)
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:641:30
+From previous event:
+    at Sequelize.query (H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:590:23)
+    at whiteServer._callee7$ (H:\致命代码\fancyguo-gm\server\src\app\service\/white.js:150:31)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at whiteServer.<anonymous> (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at whiteServer.mailRelatedUser (H:\致命代码\fancyguo-gm\server\src\app\service\white.js:426:33)
+    at _callee4$ (H:\致命代码\fancyguo-gm\server\src\app\controllers\/white.js:47:33)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at mailRelatedUser (H:\致命代码\fancyguo-gm\server\src\app\controllers\white.js:190:33)
+    at dispatch (H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at next (H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:45:18)
+    at H:\致命代码\fancyguo-gm\server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:36:12
+    at dispatch (H:\致命代码\fancyguo-gm\server\node_modules\koa-router\lib\router.js:351:31)
+    at next (H:\致命代码\fancyguo-gm\server\node_modules\koa\node_modules\koa-compose\index.js:42:32)
+    at _callee$ (H:\致命代码\fancyguo-gm\server\src\middleware\/index.js:47:11)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at H:\致命代码\fancyguo-gm\server\src\middleware\/index.js:42:2
+*************** error log end ***************
+
+[2020-11-03T12:34:11.863] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/recharge/replenishment
+request client ip:  ::ffff:127.0.0.1
+request body: 
+[{"roleId":"testroleid","roleName":"testrolename","platform":"android","uid":"9a08aa6709834b38ace1d3989af865dc","pid":"1","channel":"fancyguo","deviceid":"2c9ef8cf43cd1857","isOK":"未支付","isSend":"","serverId":"testserver1","price":"10000","tid":"29903520200810164946000001","createdAt":"2020年08月10日16时49分46秒","updatedAt":"2020年08月10日16时49分46秒","type":"安卓"},{"roleId":"testroleid","roleName":"testrolename","platform":"android","uid":"9a08aa6709834b38ace1d3989af865dc","pid":"1","channel":"fancyguo","deviceid":"2c9ef8cf43cd1857","isOK":"未支付","isSend":"","serverId":"testserver1","price":"10000","tid":"19539520200810164949000002","createdAt":"2020年08月10日16时49分49秒","updatedAt":"2020年08月10日16时49分49秒","type":"安卓"},{"roleId":"testroleid","roleName":"testrolename","platform":"android","uid":"9a08aa6709834b38ace1d3989af865dc","pid":"1","channel":"fancyguo","deviceid":"2c9ef8cf43cd1857","isOK":"未支付","isSend":"","serverId":"testserver1","price":"10000","tid":"10687620200810165008000003","createdAt":"2020年08月10日16时50分08秒","updatedAt":"2020年08月10日16时50分08秒","type":"安卓"},{"roleId":"testroleid","roleName":"testrolename","platform":"android","uid":"9a08aa6709834b38ace1d3989af865dc","pid":"1","channel":"fancyguo","deviceid":"2c9ef8cf43cd1857","isOK":"未支付","isSend":"","serverId":"testserver1","price":"10000","tid":"39768920200810165114000004","createdAt":"2020年08月10日16时51分15秒","updatedAt":"2020年08月10日16时51分15秒","type":"安卓"},{"roleId":"testroleid","roleName":"testrolename","platform":"android","uid":"9a08aa6709834b38ace1d3989af865dc","pid":"1","channel":"fancyguo","deviceid":"2c9ef8cf43cd1857","isOK":"未支付","isSend":"","serverId":"testserver1","price":"10000","tid":"01240020200810165115000005","createdAt":"2020年08月10日16时51分16秒","updatedAt":"2020年08月10日16时51分16秒","type":"安卓"},{"roleId":"testroleid","roleName":"testrolename","platform":"android","uid":"a04de374e4524e2e9750021fd5ce229b","pid":"1","channel":"fancyguo","deviceid":"ad2b3e6b4f7b4ced","isOK":"未支付","isSend":"","serverId":"testserver1","price":"10000","tid":"42841220200810174622000001","createdAt":"2020年08月10日17时46分23秒","updatedAt":"2020年08月10日17时46分23秒","type":"安卓"},{"roleId":"testroleid","roleName":"testrolename","platform":"android","uid":"a04de374e4524e2e9750021fd5ce229b","pid":"1","channel":"fancyguo","deviceid":"ad2b3e6b4f7b4ced","isOK":"未支付","isSend":"","serverId":"testserver1","price":"10000","tid":"53717820200810174624000002","createdAt":"2020年08月10日17时46分24秒","updatedAt":"2020年08月10日17时46分24秒","type":"安卓"},{"roleId":"testroleid","roleName":"testrolename","platform":"android","uid":"9a08aa6709834b38ace1d3989af865dc","pid":"1","channel":"fancyguo","deviceid":"2c9ef8cf43cd1857","isOK":"未支付","isSend":"","serverId":"testserver1","price":"10000","tid":"71800820200811131148000001","createdAt":"2020年08月11日13时11分48秒","updatedAt":"2020年08月11日13时11分48秒","type":"安卓"},{"roleId":"testroleid","roleName":"testrolename","platform":"android","uid":"9a08aa6709834b38ace1d3989af865dc","pid":"1","channel":"fancyguo","deviceid":"2c9ef8cf43cd1857","isOK":"未支付","isSend":"","serverId":"testserver1","price":"10000","tid":"01935020200811131221000002","createdAt":"2020年08月11日13时12分21秒","updatedAt":"2020年08月11日13时12分21秒","type":"安卓"},{"roleId":"testroleid","roleName":"testrolename","platform":"android","uid":"5d2eaef27de343139c05adbbf99a7239","pid":"1","channel":"fancyguo","deviceid":"ee04c948ab0a3511","isOK":"未支付","isSend":"","serverId":"testserver1","price":"10000","tid":"61675720200811131747000001","createdAt":"2020年08月11日13时17分47秒","updatedAt":"2020年08月11日13时17分47秒","type":"安卓"},{"roleId":"testroleid","roleName":"testrolename","platform":"android","uid":"9a08aa6709834b38ace1d3989af865dc","pid":"1","channel":"fancyguo","deviceid":"2c9ef8cf43cd1857","isOK":"未支付","isSend":"","serverId":"testserver1","price":"10000","tid":"82312720200811131847000003","createdAt":"2020年08月11日13时18分47秒","updatedAt":"2020年08月11日13时18分47秒","type":"安卓"},{"roleId":"testroleid","roleName":"testrolename","platform":"android","uid":"5d2eaef27de343139c05adbbf99a7239","pid":"1","channel":"fancyguo","deviceid":"ee04c948ab0a3511","isOK":"未支付","isSend":"","serverId":"testserver1","price":"10000","tid":"64483220200811132654000002","createdAt":"2020年08月11日13时26分54秒","updatedAt":"2020年08月11日13时26分54秒","type":"安卓"},{"roleId":"testroleid","roleName":"testrolename","platform":"android","uid":"9a08aa6709834b38ace1d3989af865dc","pid":"1","channel":"fancyguo","deviceid":"2c9ef8cf43cd1857","isOK":"未支付","isSend":"","serverId":"testserver1","price":"1","tid":"22621420200811132846000004","createdAt":"2020年08月11日13时28分47秒","updatedAt":"2020年08月11日13时28分47秒","type":"安卓"},{"roleId":"testroleid","roleName":"testrolename","platform":"android","uid":"9a08aa6709834b38ace1d3989af865dc","pid":"1","channel":"fancyguo","deviceid":"2c9ef8cf43cd1857","isOK":"未支付","isSend":"","serverId":"testserver1","price":"1","tid":"23141820200811132847000005","createdAt":"2020年08月11日13时28分47秒","updatedAt":"2020年08月11日13时28分47秒","type":"安卓"},{"roleId":"testroleid","roleName":"testrolename","platform":"android","uid":"da3581fce63c40e4a53cfbc4b7f1f3cb","pid":"1","channel":"fancyguo","deviceid":"18f69628574312f6","isOK":"未支付","isSend":"","serverId":"testserver1","price":"1","tid":"26437720200824100954000001","createdAt":"2020年08月24日10时09分54秒","updatedAt":"2020年08月24日10时09分54秒","type":"安卓"},{"roleId":"testroleid","roleName":"testrolename","platform":"android","uid":"da3581fce63c40e4a53cfbc4b7f1f3cb","pid":"1","channel":"fancyguo","deviceid":"18f69628574312f6","isOK":"未支付","isSend":"","serverId":"testserver1","price":"1","tid":"56985020200824101134000002","createdAt":"2020年08月24日10时11分34秒","updatedAt":"2020年08月24日10时11分34秒","type":"安卓"},{"roleId":"testroleid","roleName":"testrolename","platform":"android","uid":"6155ca7b26264f909fb2508da4fd2f60","pid":"1","channel":"fancyguo","deviceid":"1280c42b32c354fd","isOK":"未支付","isSend":"","serverId":"testserver1","price":"1","tid":"88266020200824104315000001","createdAt":"2020年08月24日10时43分15秒","updatedAt":"2020年08月24日10时43分15秒","type":"安卓"},{"roleId":"testroleid","roleName":"testrolename","platform":"android","uid":"967acdc8cdb440a0a90e738ef8cbaf7b","pid":"1","channel":"fancyguo","deviceid":"ec96f2f155ee1dfa","isOK":"未支付","isSend":"","serverId":"testserver1","price":"1","tid":"25196020200824114224000001","createdAt":"2020年08月24日11时42分25秒","updatedAt":"2020年08月24日11时42分25秒","type":"安卓"},{"roleId":"testroleid","roleName":"testrolename","platform":"android","uid":"22aad6ed301b483a834d1f566a1a24c2","pid":"1","channel":"fancyguo","deviceid":"8143eee411ff6db1","isOK":"未支付","isSend":"","serverId":"testserver1","price":"1","tid":"95547520200826045430000001","createdAt":"2020年08月26日04时54分31秒","updatedAt":"2020年08月26日04时54分31秒","type":"安卓"},{"roleId":"testroleid","roleName":"testrolename","platform":"android","uid":"22aad6ed301b483a834d1f566a1a24c2","pid":"1","channel":"fancyguo","deviceid":"8143eee411ff6db1","isOK":"未支付","isSend":"","serverId":"testserver1","price":"1","tid":"13668920200826045442000002","createdAt":"2020年08月26日04时54分42秒","updatedAt":"2020年08月26日04时54分42秒","type":"安卓"}]
+response time: 1604378051862
+err name: undefined
+err message: 交互失败
+err stack: undefined
+*************** error log end ***************
+

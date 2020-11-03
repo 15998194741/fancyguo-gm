@@ -2,7 +2,7 @@
     <div class="client-container">
       <div class="role-container-header" >
       <ul style="margin: 5px 10px -5px 10px;">
-        <li><el-button slot="reference" icon="el-icon-refresh" size='small' class="button-with-header"  >刷新</el-button></li>
+        <li><el-button slot="reference" icon="el-icon-refresh-right" size='small' class="button-with-header"  >刷新</el-button></li>
         <li> <el-button v-if="grade"  slot="append" icon="el-icon-circle-plus-outline" size='small' class="button-with-header" @click="createFormAlert" >添加版本</el-button></li>
         <li> <el-button v-if="grade"  slot="append" icon="el-icon-edit" size='small' class="button-with-header"  @click="changeFormAlert" >修改</el-button></li>
       </ul>
@@ -170,7 +170,11 @@ export default {
         return callback(new Error('不可以为空'));
       }
       let { data: versiondata } = await versionidall();
+      if (!versiondata) {
+        return callback();
+      }
       let { versionid } = versiondata;
+
       if (versionid.indexOf(value) >= 0) {
         return callback(new Error('版本号不可以重复'));
       }
@@ -209,7 +213,9 @@ export default {
         showType: []
       },
       rules: {
-        versionId: { validator: versionId, trigger: ['blur', 'change'] },
+        versionId: [
+          { validator: versionId, trigger: ['blur'] }
+        ],
         plaform: { validator: plaform, trigger: ['blur', 'change'] },
         channel: { validator: channel, trigger: ['blur', 'change'] },
         showType: { validator: showType, trigger: ['blur', 'change'] }
@@ -320,6 +326,8 @@ export default {
       this.selectForm[1].options = data;
       loading.close();
       this.whiteCreateCancel();
+
+      this.whiteFilterFormflush();
     },
     async whiteChangeSubmit() {
       let sendtrue = await this.$confirm(`是否确认修改此版本?`, '提示', {
@@ -417,7 +425,7 @@ export default {
     this.channelComponents = res['values'].map(item=>({ value: item, label: item }));
     let { data } = await channelfind();
     this.selectForm[1].options = data;
-  
+    await this.whiteFilterFormflush();
     // const _this = this;
     // const erd = elementResizeDetectorMaker();
     // erd.listenTo(document.getElementById('body'), element =>{
