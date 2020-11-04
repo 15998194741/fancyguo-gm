@@ -808,6 +808,8 @@ export default {
   .contentCssTableHidden{
     height: 30px;
     overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
   .tableHidden{
     max-height: 30px;

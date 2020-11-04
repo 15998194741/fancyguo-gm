@@ -13,7 +13,7 @@
           <el-button slot="reference" icon="el-icon-refresh-right" size='small' class="button-with-header"   @click="filterFormChange('flush')">刷新</el-button>
         </li>
         <li>
-          <el-button  v-if="grade" slot="append" icon="el-icon-circle-plus-outline" size='small'  class="button-with-header" @click="newCreateServer">创建</el-button>
+          <el-button  v-if="grade" slot="append" icon="el-icon-circle-plus-outline" size='small'  class="button-with-header" @click="newCreateServer">新建</el-button>
         </li>
       </ul>
     </div>
@@ -200,7 +200,7 @@
 
 
     <!-- 区服创建表单弹窗 -->
-    <el-dialog  title="区服创建" :visible.sync="serverCreatedialogFormVisible" :close-on-click-modal="false">
+    <el-dialog  title="新建区服" :visible.sync="serverCreatedialogFormVisible" :close-on-click-modal="false">
       <el-form ref="createForm"  key="createForm" :rules="createFormRules" :model="createForm" label-width="100px"  class='createFormAlert'> 
         <!-- <el-form-item label="区服ID:" class="createFormAlertBody" >
           <el-input v-model="createForm.serverid" disabled class="alertcontant"></el-input>
@@ -1099,6 +1099,13 @@ export default {
 </script>
 
 <style lang="scss" rel="stylesheet/scss">
+.aasdhjkahskdhjk{
+ max-height: 5vh;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+}
  .el-select-dropdown__item.selected{
                  color: #2BBFBD !important;
       }

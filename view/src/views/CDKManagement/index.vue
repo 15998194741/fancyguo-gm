@@ -34,14 +34,34 @@
     :data="tableData" 
     >
     <el-table-column v-for='(column,index) in tablecolumn'  :key='index' :label="column.label">
-      <template slot-scope="scope">  <div v-if="typeof scope.row[column.prop] === 'string' || typeof scope.row[column.prop] === 'number' ">
+      <!-- <template slot-scope="scope">  <div v-if="typeof scope.row[column.prop] === 'string' || typeof scope.row[column.prop] === 'number' ">
         {{ scope.row[column.prop] }}
         </div>
         <div v-else>
           <el-tag v-for='(i,index) in  scope.row[column.prop]' :key="index">{{ i }}</el-tag>
           </div>  
-      </template>
+      </template> -->
+       <template slot-scope="scope" :title="scope.row[column.prop]">
+           <div v-if="!scope.row[column.prop]">
+        </div>
+        <div v-else-if="typeof scope.row[column.prop] === 'string' || typeof scope.row[column.prop] === 'number' " :title="scope.row[column.prop]"  class="tableHiddenBody">
+        <el-tooltip class="item"  effect='light'  placement="top"  >
+          <div slot="content" ><span>{{ scope.row[column.prop] }}</span></div>
+           <!-- <span>{{ scope.row[column.prop] }}</span> -->
+        </el-tooltip>
+        <span class="tableHidden">{{ scope.row[column.prop] }}</span>
+        </div>
+        <div v-else>
+          <el-tooltip effect='light'  placement="top" class="aasdhjkahskdhjk">
+              <div slot="content" :ref="'contentCssTableHover'+scope.$index" class="contentCssTableHover"> <el-tag v-for='(i,index) in  scope.row[column.prop]' :key="index" >{{ i }}</el-tag></div>
+            <div class="contentCssTableHidden"><el-tag v-for='(i,index) in  scope.row[column.prop]' :key="index">{{ i }}</el-tag></div> 
+            </el-tooltip>
+          <!-- <el-tag v-for='(i,index) in  scope.row[column.prop]' :key="index">{{ i }}</el-tag> -->
+          <!-- <el-tag v-for='(i,index) in  scope.row[column.prop]' :key="index">{{ i }}</el-tag> -->
+          </div>  
+        </template>
     </el-table-column>
+    
     <el-table-column   label="查看详情">
        <template slot-scope="scope"> 
          <el-button type="primary" plain @click='viewDetails(scope)'>点击查看</el-button>
@@ -598,6 +618,25 @@ export default {
 
 <style lang="scss" rel="stylesheet/scss">
 .CDK-container{
+  .contentCssTableHover{
+  max-width: 50vw;
+    span{
+      margin: 5px;
+      min-width: 1vw;
+      max-width: 18vw;
+      text-align: center;
+    }
+  }
+  .tableHiddenBody{
+    max-height: 60px;
+    overflow: hidden;
+  }
+  .contentCssTableHidden{
+    height: 30px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
   .create-form-input-CDKKEY input:first-child{
     width: 100%;
     border-radius:  10px 0   0   10px ;

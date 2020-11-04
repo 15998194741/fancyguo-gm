@@ -143,3 +143,104 @@ err message: 交互失败
 err stack: undefined
 *************** error log end ***************
 
+[2020-11-03T16:42:35.349] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/server/serverCreate
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"serverid":"","servername":"测试","plaform":["1"],"channel":["测试渠道"],"ip":"127.0.0.1:24024","display":"1","srttime":"2020-11-10T08:41:44.615Z","address":"s2.mrhx.38ejed.com","test":"0","page":1,"pagesize":20,"gameid":"13"}
+response time: 1604392955349
+err name: Error
+err message: seneca: [TIMEOUT] Action  timed out. Timeout was: 22222 (start: 1604392929983, end: 1604392952292. Message was: {
+  module: 'server',
+  server: 'createServer',
+  args: { query: undefined, body: { id: 61 } }
+}.
+err stack: Error: seneca: [TIMEOUT] Action  timed out. Timeout was: 22222 (start: 1604392929983, end: 1604392952292. Message was: {
+  module: 'server',
+  server: 'createServer',
+  args: { query: undefined, body: { id: 61 } }
+}.
+    at Object.errormaker (H:\致命代码\fancyguo-gm\server\node_modules\eraro\eraro.js:112:15)
+    at Object.act_tm [as ontm] (H:\致命代码\fancyguo-gm\server\node_modules\seneca\lib\act.js:86:32)
+    at Timeout.timeout_check [as _onTimeout] (H:\致命代码\fancyguo-gm\server\node_modules\gate-executor\gate-executor.js:207:16)
+    at listOnTimeout (internal/timers.js:549:17)
+    at processTimers (internal/timers.js:492:7)
+From previous event:
+    at SenecaClient._callee$ (H:\致命代码\fancyguo-gm\server\src\xiaolu\/senecaclient.js:16:21)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at SenecaClient.<anonymous> (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at SenecaClient.get (H:\致命代码\fancyguo-gm\server\src\xiaolu\senecaclient.js:86:21)
+    at GmServerService._callee4$ (H:\致命代码\fancyguo-gm\server\src\app\service\/server.js:182:40)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+*************** error log end ***************
+
+[2020-11-03T16:43:42.496] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/server/serverCreate
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"serverid":"","servername":"测试a","plaform":["1"],"channel":["测试渠道"],"ip":"127.0.0.1:24024","display":"1","srttime":"2020-11-10T08:41:44.615Z","address":"s2.mrhx.38ejed.com","test":"0","page":1,"pagesize":20,"gameid":"13"}
+response time: 1604393022496
+err name: Error
+err message: seneca: [TIMEOUT] Action  timed out. Timeout was: 22222 (start: 1604392996396, end: 1604393018726. Message was: {
+  module: 'server',
+  server: 'createServer',
+  args: { query: undefined, body: { id: 62 } }
+}.
+err stack: Error: seneca: [TIMEOUT] Action  timed out. Timeout was: 22222 (start: 1604392996396, end: 1604393018726. Message was: {
+  module: 'server',
+  server: 'createServer',
+  args: { query: undefined, body: { id: 62 } }
+}.
+    at Object.errormaker (H:\致命代码\fancyguo-gm\server\node_modules\eraro\eraro.js:112:15)
+    at Object.act_tm [as ontm] (H:\致命代码\fancyguo-gm\server\node_modules\seneca\lib\act.js:86:32)
+    at Timeout.timeout_check [as _onTimeout] (H:\致命代码\fancyguo-gm\server\node_modules\gate-executor\gate-executor.js:207:16)
+    at listOnTimeout (internal/timers.js:549:17)
+    at processTimers (internal/timers.js:492:7)
+From previous event:
+    at SenecaClient._callee$ (H:\致命代码\fancyguo-gm\server\src\xiaolu\/senecaclient.js:16:21)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at SenecaClient.<anonymous> (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at SenecaClient.get (H:\致命代码\fancyguo-gm\server\src\xiaolu\senecaclient.js:86:21)
+    at GmServerService._callee4$ (H:\致命代码\fancyguo-gm\server\src\app\service\/server.js:182:40)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+*************** error log end ***************
+
+[2020-11-03T17:49:40.976] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/recharge/replenishment
+request client ip:  ::ffff:127.0.0.1
+request body: 
+[{"roleId":"testroleid","roleName":"testrolename","platform":"android","uid":"9a08aa6709834b38ace1d3989af865dc","pid":"1","channel":"fancyguo","deviceid":"2c9ef8cf43cd1857","isOK":"未支付","isSend":"","serverId":"testserver1","price":"10000","tid":"29903520200810164946000001","createdAt":"2020年08月10日16时49分46秒","updatedAt":"2020年08月10日16时49分46秒","type":"安卓"},{"roleId":"testroleid","roleName":"testrolename","platform":"android","uid":"9a08aa6709834b38ace1d3989af865dc","pid":"1","channel":"fancyguo","deviceid":"2c9ef8cf43cd1857","isOK":"未支付","isSend":"","serverId":"testserver1","price":"10000","tid":"19539520200810164949000002","createdAt":"2020年08月10日16时49分49秒","updatedAt":"2020年08月10日16时49分49秒","type":"安卓"},{"roleId":"testroleid","roleName":"testrolename","platform":"android","uid":"9a08aa6709834b38ace1d3989af865dc","pid":"1","channel":"fancyguo","deviceid":"2c9ef8cf43cd1857","isOK":"未支付","isSend":"","serverId":"testserver1","price":"10000","tid":"10687620200810165008000003","createdAt":"2020年08月10日16时50分08秒","updatedAt":"2020年08月10日16时50分08秒","type":"安卓"},{"roleId":"testroleid","roleName":"testrolename","platform":"android","uid":"9a08aa6709834b38ace1d3989af865dc","pid":"1","channel":"fancyguo","deviceid":"2c9ef8cf43cd1857","isOK":"未支付","isSend":"","serverId":"testserver1","price":"10000","tid":"39768920200810165114000004","createdAt":"2020年08月10日16时51分15秒","updatedAt":"2020年08月10日16时51分15秒","type":"安卓"},{"roleId":"testroleid","roleName":"testrolename","platform":"android","uid":"9a08aa6709834b38ace1d3989af865dc","pid":"1","channel":"fancyguo","deviceid":"2c9ef8cf43cd1857","isOK":"未支付","isSend":"","serverId":"testserver1","price":"10000","tid":"01240020200810165115000005","createdAt":"2020年08月10日16时51分16秒","updatedAt":"2020年08月10日16时51分16秒","type":"安卓"},{"roleId":"testroleid","roleName":"testrolename","platform":"android","uid":"a04de374e4524e2e9750021fd5ce229b","pid":"1","channel":"fancyguo","deviceid":"ad2b3e6b4f7b4ced","isOK":"未支付","isSend":"","serverId":"testserver1","price":"10000","tid":"42841220200810174622000001","createdAt":"2020年08月10日17时46分23秒","updatedAt":"2020年08月10日17时46分23秒","type":"安卓"},{"roleId":"testroleid","roleName":"testrolename","platform":"android","uid":"a04de374e4524e2e9750021fd5ce229b","pid":"1","channel":"fancyguo","deviceid":"ad2b3e6b4f7b4ced","isOK":"未支付","isSend":"","serverId":"testserver1","price":"10000","tid":"53717820200810174624000002","createdAt":"2020年08月10日17时46分24秒","updatedAt":"2020年08月10日17时46分24秒","type":"安卓"},{"roleId":"testroleid","roleName":"testrolename","platform":"android","uid":"9a08aa6709834b38ace1d3989af865dc","pid":"1","channel":"fancyguo","deviceid":"2c9ef8cf43cd1857","isOK":"未支付","isSend":"","serverId":"testserver1","price":"10000","tid":"71800820200811131148000001","createdAt":"2020年08月11日13时11分48秒","updatedAt":"2020年08月11日13时11分48秒","type":"安卓"},{"roleId":"testroleid","roleName":"testrolename","platform":"android","uid":"9a08aa6709834b38ace1d3989af865dc","pid":"1","channel":"fancyguo","deviceid":"2c9ef8cf43cd1857","isOK":"未支付","isSend":"","serverId":"testserver1","price":"10000","tid":"01935020200811131221000002","createdAt":"2020年08月11日13时12分21秒","updatedAt":"2020年08月11日13时12分21秒","type":"安卓"},{"roleId":"testroleid","roleName":"testrolename","platform":"android","uid":"5d2eaef27de343139c05adbbf99a7239","pid":"1","channel":"fancyguo","deviceid":"ee04c948ab0a3511","isOK":"未支付","isSend":"","serverId":"testserver1","price":"10000","tid":"61675720200811131747000001","createdAt":"2020年08月11日13时17分47秒","updatedAt":"2020年08月11日13时17分47秒","type":"安卓"},{"roleId":"testroleid","roleName":"testrolename","platform":"android","uid":"9a08aa6709834b38ace1d3989af865dc","pid":"1","channel":"fancyguo","deviceid":"2c9ef8cf43cd1857","isOK":"未支付","isSend":"","serverId":"testserver1","price":"10000","tid":"82312720200811131847000003","createdAt":"2020年08月11日13时18分47秒","updatedAt":"2020年08月11日13时18分47秒","type":"安卓"},{"roleId":"testroleid","roleName":"testrolename","platform":"android","uid":"5d2eaef27de343139c05adbbf99a7239","pid":"1","channel":"fancyguo","deviceid":"ee04c948ab0a3511","isOK":"未支付","isSend":"","serverId":"testserver1","price":"10000","tid":"64483220200811132654000002","createdAt":"2020年08月11日13时26分54秒","updatedAt":"2020年08月11日13时26分54秒","type":"安卓"},{"roleId":"testroleid","roleName":"testrolename","platform":"android","uid":"9a08aa6709834b38ace1d3989af865dc","pid":"1","channel":"fancyguo","deviceid":"2c9ef8cf43cd1857","isOK":"未支付","isSend":"","serverId":"testserver1","price":"1","tid":"22621420200811132846000004","createdAt":"2020年08月11日13时28分47秒","updatedAt":"2020年08月11日13时28分47秒","type":"安卓"},{"roleId":"testroleid","roleName":"testrolename","platform":"android","uid":"9a08aa6709834b38ace1d3989af865dc","pid":"1","channel":"fancyguo","deviceid":"2c9ef8cf43cd1857","isOK":"未支付","isSend":"","serverId":"testserver1","price":"1","tid":"23141820200811132847000005","createdAt":"2020年08月11日13时28分47秒","updatedAt":"2020年08月11日13时28分47秒","type":"安卓"},{"roleId":"testroleid","roleName":"testrolename","platform":"android","uid":"da3581fce63c40e4a53cfbc4b7f1f3cb","pid":"1","channel":"fancyguo","deviceid":"18f69628574312f6","isOK":"未支付","isSend":"","serverId":"testserver1","price":"1","tid":"26437720200824100954000001","createdAt":"2020年08月24日10时09分54秒","updatedAt":"2020年08月24日10时09分54秒","type":"安卓"},{"roleId":"testroleid","roleName":"testrolename","platform":"android","uid":"da3581fce63c40e4a53cfbc4b7f1f3cb","pid":"1","channel":"fancyguo","deviceid":"18f69628574312f6","isOK":"未支付","isSend":"","serverId":"testserver1","price":"1","tid":"56985020200824101134000002","createdAt":"2020年08月24日10时11分34秒","updatedAt":"2020年08月24日10时11分34秒","type":"安卓"},{"roleId":"testroleid","roleName":"testrolename","platform":"android","uid":"6155ca7b26264f909fb2508da4fd2f60","pid":"1","channel":"fancyguo","deviceid":"1280c42b32c354fd","isOK":"未支付","isSend":"","serverId":"testserver1","price":"1","tid":"88266020200824104315000001","createdAt":"2020年08月24日10时43分15秒","updatedAt":"2020年08月24日10时43分15秒","type":"安卓"},{"roleId":"testroleid","roleName":"testrolename","platform":"android","uid":"967acdc8cdb440a0a90e738ef8cbaf7b","pid":"1","channel":"fancyguo","deviceid":"ec96f2f155ee1dfa","isOK":"未支付","isSend":"","serverId":"testserver1","price":"1","tid":"25196020200824114224000001","createdAt":"2020年08月24日11时42分25秒","updatedAt":"2020年08月24日11时42分25秒","type":"安卓"},{"roleId":"testroleid","roleName":"testrolename","platform":"android","uid":"22aad6ed301b483a834d1f566a1a24c2","pid":"1","channel":"fancyguo","deviceid":"8143eee411ff6db1","isOK":"未支付","isSend":"","serverId":"testserver1","price":"1","tid":"95547520200826045430000001","createdAt":"2020年08月26日04时54分31秒","updatedAt":"2020年08月26日04时54分31秒","type":"安卓"},{"roleId":"testroleid","roleName":"testrolename","platform":"android","uid":"22aad6ed301b483a834d1f566a1a24c2","pid":"1","channel":"fancyguo","deviceid":"8143eee411ff6db1","isOK":"未支付","isSend":"","serverId":"testserver1","price":"1","tid":"13668920200826045442000002","createdAt":"2020年08月26日04时54分42秒","updatedAt":"2020年08月26日04时54分42秒","type":"安卓"}]
+response time: 1604396980975
+err name: undefined
+err message: 交互失败
+err stack: undefined
+*************** error log end ***************
+

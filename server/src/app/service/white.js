@@ -57,6 +57,13 @@ class whiteServer {
 		 total = total[0]['total'];
 		return {res, total};
 	}
+	/**
+  * 描述
+  * @date 2020-11-04
+  * @param {any} data
+  * @param {string} gameid 为游戏id
+  * @returns {any}
+  */
 	async whiteFindName(data){
 		let {gameid} = data;
 		let sql = `

@@ -31,7 +31,7 @@
     <el-table-column  v-if="grade" prop='status' label="操作">
       <template slot-scope="scope" >
         <div style="display: flex;justify-content: center;">
-          <el-button  v-show='scope.row["changeshow"]' v-if="scope.row.type !== '跑马灯'"  @click="placardmodify(scope.$index,scope.row)">修改</el-button>
+          <el-button v-show='scope.row["changeshow"]'  v-if="scope.row.type !== '跑马灯'" class="anno-table-button" type="warning"  @click="placardmodify(scope.$index,scope.row)">修改</el-button>
         <el-popconfirm
           v-show='scope.row["stopshow"]'
           confirmButtonText='好的'
@@ -40,7 +40,7 @@
           iconColor="red"
           title="确定停用此公告吗？"
           @onConfirm="placarddeactivate(scope.$index,scope.row)">
-          <el-button slot="reference"  >停用</el-button>
+          <el-button slot="reference" type="danger"  >停用</el-button>
         </el-popconfirm>
         </div>
       </template>
@@ -119,8 +119,14 @@ export default {
   
 <style lang="scss" rel="stylesheet/scss">
 .anno-table-container{
+  .anno-table-button{
+margin-right: 2px;
+  }
   .aasdhjkahskdhjk{
     max-height: 5vh;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
 .success-row td:first-child div{

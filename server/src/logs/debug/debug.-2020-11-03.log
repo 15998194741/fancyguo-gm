@@ -2220,3 +2220,986 @@ select * from asd where id::varchar in (select id from qwe GROUP BY id )
 			zxc as (select id,string_to_array(string_agg(plaforms, ','), ',')as plaforms from qwe  GROUP BY id )
 			select asd.*,zxc.plaforms from  asd left join zxc  on asd.id=zxc.id
 [2020-11-03T12:45:08.483] [DEBUG] debugLogger - Executing (default): select count(*) as total  from gm_announcement  where  game_id=1  and status = 1  and (anno_status::int  not in (1,3)  or anno_status    is null )
+[2020-11-03T14:36:08.820] [DEBUG] debugLogger - Executing (default): select  * from   gm_game_channel    where  gameid =  '1' and status = '1'   order by id limit 10 offset 0
+[2020-11-03T14:36:08.832] [DEBUG] debugLogger - Executing (default): select  count(*) from   gm_game_channel    where  gameid =  '1' and status = '1'
+[2020-11-03T14:52:47.303] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(channel, ','), ',')  as values  from gm_game_channel where gameid = '1' and status = '1'
+[2020-11-03T14:52:47.309] [DEBUG] debugLogger - Executing (default): select * from gm_server  where gameid='1'and test='0' and status = 1 and (pid is null or  trim(pid) ='') order by id limit 20 offset (20*0)
+[2020-11-03T14:52:47.320] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_server where gameid='1'and test='0' and status = 1 and (pid is null or  trim(pid) ='')
+[2020-11-03T14:52:47.327] [DEBUG] debugLogger - Executing (default): select max(num), display from (SELECT count(display) as num,
+		case 
+		when display='1' then '空闲'
+		when display='2' then '繁忙'
+		when display='3' then '维护'
+		when display='4' then '爆满'
+		end
+		as display
+		from gm_server where id in ( SELECT id from gm_server  where gameid='1'and test='0' and  status = 1 and (pid is null or  trim(pid) ='')  ORDER BY id limit 20 offset (20*0)  ) GROUP BY display 
+		union 
+		select 0 as num ,'繁忙' as display
+		union 
+		select 0 as num ,'空闲' as display
+		union
+		select 0 as num ,'维护' as display
+		union
+		select 0 as num ,'爆满' as display
+		)a GROUP BY display
+[2020-11-03T14:52:49.941] [DEBUG] debugLogger - Executing (default): select * from gm_server  where test='1' and gameid='1'and test='1' and status = 1 and (pid is null or  trim(pid) ='') order by id limit 20 offset (20*0)
+[2020-11-03T14:52:49.949] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_server where test='1' and gameid='1'and test='1' and status = 1 and (pid is null or  trim(pid) ='')
+[2020-11-03T14:52:49.956] [DEBUG] debugLogger - Executing (default): select max(num), display from (SELECT count(display) as num,
+		case 
+		when display='1' then '空闲'
+		when display='2' then '繁忙'
+		when display='3' then '维护'
+		when display='4' then '爆满'
+		end
+		as display
+		from gm_server where id in ( SELECT id from gm_server  where test='1' and gameid='1'and test='1' and  status = 1 and (pid is null or  trim(pid) ='')  ORDER BY id limit 20 offset (20*0)  ) GROUP BY display 
+		union 
+		select 0 as num ,'繁忙' as display
+		union 
+		select 0 as num ,'空闲' as display
+		union
+		select 0 as num ,'维护' as display
+		union
+		select 0 as num ,'爆满' as display
+		)a GROUP BY display
+[2020-11-03T14:52:50.782] [DEBUG] debugLogger - Executing (default): select * from gm_server  where gameid='1'and test='0' and status = 1 and (pid is null or  trim(pid) ='') order by id limit 20 offset (20*0)
+[2020-11-03T14:52:50.789] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_server where gameid='1'and test='0' and status = 1 and (pid is null or  trim(pid) ='')
+[2020-11-03T14:52:50.796] [DEBUG] debugLogger - Executing (default): select max(num), display from (SELECT count(display) as num,
+		case 
+		when display='1' then '空闲'
+		when display='2' then '繁忙'
+		when display='3' then '维护'
+		when display='4' then '爆满'
+		end
+		as display
+		from gm_server where id in ( SELECT id from gm_server  where gameid='1'and test='0' and  status = 1 and (pid is null or  trim(pid) ='')  ORDER BY id limit 20 offset (20*0)  ) GROUP BY display 
+		union 
+		select 0 as num ,'繁忙' as display
+		union 
+		select 0 as num ,'空闲' as display
+		union
+		select 0 as num ,'维护' as display
+		union
+		select 0 as num ,'爆满' as display
+		)a GROUP BY display
+[2020-11-03T14:52:51.681] [DEBUG] debugLogger - Executing (default): select * from gm_server  where test='1' and gameid='1'and test='1' and status = 1 and (pid is null or  trim(pid) ='') order by id limit 20 offset (20*0)
+[2020-11-03T14:52:51.688] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_server where test='1' and gameid='1'and test='1' and status = 1 and (pid is null or  trim(pid) ='')
+[2020-11-03T14:52:51.693] [DEBUG] debugLogger - Executing (default): select max(num), display from (SELECT count(display) as num,
+		case 
+		when display='1' then '空闲'
+		when display='2' then '繁忙'
+		when display='3' then '维护'
+		when display='4' then '爆满'
+		end
+		as display
+		from gm_server where id in ( SELECT id from gm_server  where test='1' and gameid='1'and test='1' and  status = 1 and (pid is null or  trim(pid) ='')  ORDER BY id limit 20 offset (20*0)  ) GROUP BY display 
+		union 
+		select 0 as num ,'繁忙' as display
+		union 
+		select 0 as num ,'空闲' as display
+		union
+		select 0 as num ,'维护' as display
+		union
+		select 0 as num ,'爆满' as display
+		)a GROUP BY display
+[2020-11-03T15:15:56.584] [DEBUG] debugLogger - Executing (default): select  * from   gm_game_channel    where  gameid =  '1' and status = '1'   order by id limit 10 offset 0
+[2020-11-03T15:15:56.593] [DEBUG] debugLogger - Executing (default): select  count(*) from   gm_game_channel    where  gameid =  '1' and status = '1'
+[2020-11-03T15:15:57.214] [DEBUG] debugLogger - Executing (default): select  * from   gm_game_channel    where  gameid =  '1' and status = '1'   order by id limit 10 offset 0
+[2020-11-03T15:15:57.224] [DEBUG] debugLogger - Executing (default): select  count(*) from   gm_game_channel    where  gameid =  '1' and status = '1'
+[2020-11-03T15:41:23.994] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(channel, ','), ',')  as values  from gm_game_channel where gameid = '1' and status = '1'
+[2020-11-03T15:41:23.997] [DEBUG] debugLogger - Executing (default): select * from gm_server  where gameid='1'and test='0' and status = 1 and (pid is null or  trim(pid) ='') order by id limit 20 offset (20*0)
+[2020-11-03T15:41:24.011] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_server where gameid='1'and test='0' and status = 1 and (pid is null or  trim(pid) ='')
+[2020-11-03T15:41:24.018] [DEBUG] debugLogger - Executing (default): select max(num), display from (SELECT count(display) as num,
+		case 
+		when display='1' then '空闲'
+		when display='2' then '繁忙'
+		when display='3' then '维护'
+		when display='4' then '爆满'
+		end
+		as display
+		from gm_server where id in ( SELECT id from gm_server  where gameid='1'and test='0' and  status = 1 and (pid is null or  trim(pid) ='')  ORDER BY id limit 20 offset (20*0)  ) GROUP BY display 
+		union 
+		select 0 as num ,'繁忙' as display
+		union 
+		select 0 as num ,'空闲' as display
+		union
+		select 0 as num ,'维护' as display
+		union
+		select 0 as num ,'爆满' as display
+		)a GROUP BY display
+[2020-11-03T15:41:24.881] [DEBUG] debugLogger - Executing (default): select * from gm_server  where test='1' and gameid='1'and test='1' and status = 1 and (pid is null or  trim(pid) ='') order by id limit 20 offset (20*0)
+[2020-11-03T15:41:24.888] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_server where test='1' and gameid='1'and test='1' and status = 1 and (pid is null or  trim(pid) ='')
+[2020-11-03T15:41:24.894] [DEBUG] debugLogger - Executing (default): select max(num), display from (SELECT count(display) as num,
+		case 
+		when display='1' then '空闲'
+		when display='2' then '繁忙'
+		when display='3' then '维护'
+		when display='4' then '爆满'
+		end
+		as display
+		from gm_server where id in ( SELECT id from gm_server  where test='1' and gameid='1'and test='1' and  status = 1 and (pid is null or  trim(pid) ='')  ORDER BY id limit 20 offset (20*0)  ) GROUP BY display 
+		union 
+		select 0 as num ,'繁忙' as display
+		union 
+		select 0 as num ,'空闲' as display
+		union
+		select 0 as num ,'维护' as display
+		union
+		select 0 as num ,'爆满' as display
+		)a GROUP BY display
+[2020-11-03T15:59:25.686] [DEBUG] debugLogger - Executing (default): select a.id,a.game_name ,a.image_url as img from gm_game a join gm_purview b on b.gid = a.id where b.uids @> '79' and a.status = '1'    limit 1
+[2020-11-03T15:59:25.694] [DEBUG] debugLogger - Executing (default): with qwe as (select a.url,a.pid,a.name,d.game_name,d.id as gameid, a.id,b.grede , b.purview_id,c.uid,c.gid from gm_url a join gm_url_purview  b on  a.id = b.url_id  join gm_purview c on c.id = b.purview_id join gm_game d on d.id = c.gid where  c.uids @> '79' and d.id = '1' and d.status = 1 and b.grede != 827 and c.status = 1  and a.status = 1 order by id ),
+					qwer as (select * from qwe a where (select count(*) > 1 from qwe b where b.id = a.id )),
+					asd as (select * from qwe a where (select count(*) =  1 from qwe b where b.id = a.id )),
+					zxc as (select * from qwer where grede = '1'),
+					wer as (select * from qwer where id not in (select id from zxc )
+					union 
+					select * from qwer where id not in (select id from zxc )),
+					sdf as (select url,pid,name,gameid,grede,id from asd 
+					union 
+					select url,pid,name,gameid,grede,id from zxc 
+					union 
+					select url,pid,name,gameid,grede,id from wer ),
+					ewq as (select * from sdf ORDER BY id )
+					select name,(select json_agg(concat('{"url":"',url,'","name":"',name,'","meta":"',grede,'"}')::jsonb) from ewq  where ewq.pid = d.id) as children from ewq as d where pid = 0 ORDER BY d.id
+[2020-11-03T15:59:25.705] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(game_name, ','), ',')  as games from (
+			select  DISTINCT game_name,b.id from gm_purview a join gm_game b on a.gid = b.id  where uids @> '79' and b.status = '1'  ORDER BY id 
+		) a
+[2020-11-03T15:59:25.989] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(channel, ','), ',')  as values  from gm_game_channel where gameid = '1' and status = '1'
+[2020-11-03T15:59:25.996] [DEBUG] debugLogger - Executing (default): select * from gm_server  where gameid='1'and test='0' and status = 1 and (pid is null or  trim(pid) ='') order by id limit 20 offset (20*0)
+[2020-11-03T15:59:26.005] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_server where gameid='1'and test='0' and status = 1 and (pid is null or  trim(pid) ='')
+[2020-11-03T15:59:26.013] [DEBUG] debugLogger - Executing (default): select max(num), display from (SELECT count(display) as num,
+		case 
+		when display='1' then '空闲'
+		when display='2' then '繁忙'
+		when display='3' then '维护'
+		when display='4' then '爆满'
+		end
+		as display
+		from gm_server where id in ( SELECT id from gm_server  where gameid='1'and test='0' and  status = 1 and (pid is null or  trim(pid) ='')  ORDER BY id limit 20 offset (20*0)  ) GROUP BY display 
+		union 
+		select 0 as num ,'繁忙' as display
+		union 
+		select 0 as num ,'空闲' as display
+		union
+		select 0 as num ,'维护' as display
+		union
+		select 0 as num ,'爆满' as display
+		)a GROUP BY display
+[2020-11-03T16:32:18.833] [DEBUG] debugLogger - Executing (default): select a.id,a.game_name ,a.image_url as img from gm_game a join gm_purview b on b.gid = a.id where b.uids @> '79' and a.status = '1'    limit 1
+[2020-11-03T16:32:18.842] [DEBUG] debugLogger - Executing (default): with qwe as (select a.url,a.pid,a.name,d.game_name,d.id as gameid, a.id,b.grede , b.purview_id,c.uid,c.gid from gm_url a join gm_url_purview  b on  a.id = b.url_id  join gm_purview c on c.id = b.purview_id join gm_game d on d.id = c.gid where  c.uids @> '79' and d.id = '1' and d.status = 1 and b.grede != 827 and c.status = 1  and a.status = 1 order by id ),
+					qwer as (select * from qwe a where (select count(*) > 1 from qwe b where b.id = a.id )),
+					asd as (select * from qwe a where (select count(*) =  1 from qwe b where b.id = a.id )),
+					zxc as (select * from qwer where grede = '1'),
+					wer as (select * from qwer where id not in (select id from zxc )
+					union 
+					select * from qwer where id not in (select id from zxc )),
+					sdf as (select url,pid,name,gameid,grede,id from asd 
+					union 
+					select url,pid,name,gameid,grede,id from zxc 
+					union 
+					select url,pid,name,gameid,grede,id from wer ),
+					ewq as (select * from sdf ORDER BY id )
+					select name,(select json_agg(concat('{"url":"',url,'","name":"',name,'","meta":"',grede,'"}')::jsonb) from ewq  where ewq.pid = d.id) as children from ewq as d where pid = 0 ORDER BY d.id
+[2020-11-03T16:32:18.854] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(game_name, ','), ',')  as games from (
+			select  DISTINCT game_name,b.id from gm_purview a join gm_game b on a.gid = b.id  where uids @> '79' and b.status = '1'  ORDER BY id 
+		) a
+[2020-11-03T16:32:19.159] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(channel, ','), ',')  as values  from gm_game_channel where gameid = '1' and status = '1'
+[2020-11-03T16:32:19.295] [DEBUG] debugLogger - Executing (default): select * from gm_server  where gameid='1'and test='0' and status = 1 and (pid is null or  trim(pid) ='') order by id limit 20 offset (20*0)
+[2020-11-03T16:32:19.337] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_server where gameid='1'and test='0' and status = 1 and (pid is null or  trim(pid) ='')
+[2020-11-03T16:32:19.346] [DEBUG] debugLogger - Executing (default): select max(num), display from (SELECT count(display) as num,
+		case 
+		when display='1' then '空闲'
+		when display='2' then '繁忙'
+		when display='3' then '维护'
+		when display='4' then '爆满'
+		end
+		as display
+		from gm_server where id in ( SELECT id from gm_server  where gameid='1'and test='0' and  status = 1 and (pid is null or  trim(pid) ='')  ORDER BY id limit 20 offset (20*0)  ) GROUP BY display 
+		union 
+		select 0 as num ,'繁忙' as display
+		union 
+		select 0 as num ,'空闲' as display
+		union
+		select 0 as num ,'维护' as display
+		union
+		select 0 as num ,'爆满' as display
+		)a GROUP BY display
+[2020-11-03T16:41:27.233] [DEBUG] debugLogger - Executing (default): select a.id,a.game_name ,a.image_url as img from gm_game a join gm_purview b on b.gid = a.id where b.uids @> '79' and a.status = '1'   and a.game_name = 'KOG测试' limit 1
+[2020-11-03T16:41:27.242] [DEBUG] debugLogger - Executing (default): with qwe as (select a.url,a.pid,a.name,d.game_name,d.id as gameid, a.id,b.grede , b.purview_id,c.uid,c.gid from gm_url a join gm_url_purview  b on  a.id = b.url_id  join gm_purview c on c.id = b.purview_id join gm_game d on d.id = c.gid where  c.uids @> '79' and d.id = '13' and d.status = 1 and b.grede != 827 and c.status = 1  and a.status = 1 order by id ),
+					qwer as (select * from qwe a where (select count(*) > 1 from qwe b where b.id = a.id )),
+					asd as (select * from qwe a where (select count(*) =  1 from qwe b where b.id = a.id )),
+					zxc as (select * from qwer where grede = '1'),
+					wer as (select * from qwer where id not in (select id from zxc )
+					union 
+					select * from qwer where id not in (select id from zxc )),
+					sdf as (select url,pid,name,gameid,grede,id from asd 
+					union 
+					select url,pid,name,gameid,grede,id from zxc 
+					union 
+					select url,pid,name,gameid,grede,id from wer ),
+					ewq as (select * from sdf ORDER BY id )
+					select name,(select json_agg(concat('{"url":"',url,'","name":"',name,'","meta":"',grede,'"}')::jsonb) from ewq  where ewq.pid = d.id) as children from ewq as d where pid = 0 ORDER BY d.id
+[2020-11-03T16:41:27.260] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(game_name, ','), ',')  as games from (
+			select  DISTINCT game_name,b.id from gm_purview a join gm_game b on a.gid = b.id  where uids @> '79' and b.status = '1'  ORDER BY id 
+		) a
+[2020-11-03T16:41:29.239] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(channel, ','), ',')  as values  from gm_game_channel where gameid = '13' and status = '1'
+[2020-11-03T16:41:29.540] [DEBUG] debugLogger - Executing (default): select * from gm_server  where gameid='13'and test='0' and status = 1 and (pid is null or  trim(pid) ='') order by id limit 20 offset (20*0)
+[2020-11-03T16:41:29.547] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_server where gameid='13'and test='0' and status = 1 and (pid is null or  trim(pid) ='')
+[2020-11-03T16:41:29.552] [DEBUG] debugLogger - Executing (default): select max(num), display from (SELECT count(display) as num,
+		case 
+		when display='1' then '空闲'
+		when display='2' then '繁忙'
+		when display='3' then '维护'
+		when display='4' then '爆满'
+		end
+		as display
+		from gm_server where id in ( SELECT id from gm_server  where gameid='13'and test='0' and  status = 1 and (pid is null or  trim(pid) ='')  ORDER BY id limit 20 offset (20*0)  ) GROUP BY display 
+		union 
+		select 0 as num ,'繁忙' as display
+		union 
+		select 0 as num ,'空闲' as display
+		union
+		select 0 as num ,'维护' as display
+		union
+		select 0 as num ,'爆满' as display
+		)a GROUP BY display
+[2020-11-03T16:41:36.058] [DEBUG] debugLogger - Executing (default): select servername from gm_server where gameid='13' and status = 1
+[2020-11-03T16:42:07.516] [DEBUG] debugLogger - Executing (default): select servername from gm_server where gameid='13' and status = 1
+[2020-11-03T16:42:09.963] [DEBUG] debugLogger - Executing (default): insert into gm_server (
+			create_user_id,servername,gameid,address,test,ip_port,display,srttime,channel,plaform,ip,port
+		)values(
+			'79','测试','13','s2.mrhx.38ejed.com','0','127.0.0.1:24024','1','Tue, 10 Nov 2020 16:41:44 GMT','["测试渠道"]','["1"]','127.0.0.1','24024'
+		) RETURNING id
+[2020-11-03T16:42:09.970] [DEBUG] debugLogger - Executing (default): select * from gm_server  where gameid='13'and test='0' and status = 1 and (pid is null or  trim(pid) ='') order by id limit 20 offset (20*0)
+[2020-11-03T16:42:09.977] [DEBUG] debugLogger - Executing (default): update gm_server set serverid = id
+[2020-11-03T16:42:09.983] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_server where gameid='13'and test='0' and status = 1 and (pid is null or  trim(pid) ='')
+[2020-11-03T16:42:09.989] [DEBUG] debugLogger - Executing (default): select max(num), display from (SELECT count(display) as num,
+		case 
+		when display='1' then '空闲'
+		when display='2' then '繁忙'
+		when display='3' then '维护'
+		when display='4' then '爆满'
+		end
+		as display
+		from gm_server where id in ( SELECT id from gm_server  where gameid='13'and test='0' and  status = 1 and (pid is null or  trim(pid) ='')  ORDER BY id limit 20 offset (20*0)  ) GROUP BY display 
+		union 
+		select 0 as num ,'繁忙' as display
+		union 
+		select 0 as num ,'空闲' as display
+		union
+		select 0 as num ,'维护' as display
+		union
+		select 0 as num ,'爆满' as display
+		)a GROUP BY display
+[2020-11-03T16:43:11.766] [DEBUG] debugLogger - Executing (default): select servername from gm_server where gameid='13' and status = 1
+[2020-11-03T16:43:14.396] [DEBUG] debugLogger - Executing (default): select servername from gm_server where gameid='13' and status = 1
+[2020-11-03T16:43:14.797] [DEBUG] debugLogger - Executing (default): select servername from gm_server where gameid='13' and status = 1
+[2020-11-03T16:43:16.080] [DEBUG] debugLogger - Executing (default): select * from gm_server  where gameid='13'and test='0' and status = 1 and (pid is null or  trim(pid) ='') order by id limit 20 offset (20*0)
+[2020-11-03T16:43:16.089] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_server where gameid='13'and test='0' and status = 1 and (pid is null or  trim(pid) ='')
+[2020-11-03T16:43:16.094] [DEBUG] debugLogger - Executing (default): select max(num), display from (SELECT count(display) as num,
+		case 
+		when display='1' then '空闲'
+		when display='2' then '繁忙'
+		when display='3' then '维护'
+		when display='4' then '爆满'
+		end
+		as display
+		from gm_server where id in ( SELECT id from gm_server  where gameid='13'and test='0' and  status = 1 and (pid is null or  trim(pid) ='')  ORDER BY id limit 20 offset (20*0)  ) GROUP BY display 
+		union 
+		select 0 as num ,'繁忙' as display
+		union 
+		select 0 as num ,'空闲' as display
+		union
+		select 0 as num ,'维护' as display
+		union
+		select 0 as num ,'爆满' as display
+		)a GROUP BY display
+[2020-11-03T16:43:16.383] [DEBUG] debugLogger - Executing (default): insert into gm_server (
+			create_user_id,servername,gameid,address,test,ip_port,display,srttime,channel,plaform,ip,port
+		)values(
+			'79','测试a','13','s2.mrhx.38ejed.com','0','127.0.0.1:24024','1','Tue, 10 Nov 2020 16:41:44 GMT','["测试渠道"]','["1"]','127.0.0.1','24024'
+		) RETURNING id
+[2020-11-03T16:43:16.390] [DEBUG] debugLogger - Executing (default): update gm_server set serverid = id
+[2020-11-03T16:43:48.303] [DEBUG] debugLogger - Executing (default): select servername from gm_server where gameid='13' and status = 1
+[2020-11-03T16:43:48.531] [DEBUG] debugLogger - Executing (default): select servername from gm_server where gameid='13' and status = 1
+[2020-11-03T16:43:49.619] [DEBUG] debugLogger - Executing (default): select * from gm_server  where gameid='13'and test='0' and status = 1 and (pid is null or  trim(pid) ='') order by id limit 20 offset (20*0)
+[2020-11-03T16:43:49.627] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_server where gameid='13'and test='0' and status = 1 and (pid is null or  trim(pid) ='')
+[2020-11-03T16:43:49.633] [DEBUG] debugLogger - Executing (default): select max(num), display from (SELECT count(display) as num,
+		case 
+		when display='1' then '空闲'
+		when display='2' then '繁忙'
+		when display='3' then '维护'
+		when display='4' then '爆满'
+		end
+		as display
+		from gm_server where id in ( SELECT id from gm_server  where gameid='13'and test='0' and  status = 1 and (pid is null or  trim(pid) ='')  ORDER BY id limit 20 offset (20*0)  ) GROUP BY display 
+		union 
+		select 0 as num ,'繁忙' as display
+		union 
+		select 0 as num ,'空闲' as display
+		union
+		select 0 as num ,'维护' as display
+		union
+		select 0 as num ,'爆满' as display
+		)a GROUP BY display
+[2020-11-03T16:43:49.924] [DEBUG] debugLogger - Executing (default): insert into gm_server (
+			create_user_id,servername,gameid,address,test,ip_port,display,srttime,channel,plaform,ip,port
+		)values(
+			'79','测试b','13','s2.mrhx.38ejed.com','0','127.0.0.1:24024','1','Tue, 10 Nov 2020 16:41:44 GMT','["测试渠道"]','["1"]','127.0.0.1','24024'
+		) RETURNING id
+[2020-11-03T16:43:49.932] [DEBUG] debugLogger - Executing (default): update gm_server set serverid = id
+[2020-11-03T16:43:49.972] [DEBUG] debugLogger - Executing (default): INSERT into gm_logs 
+				(user_id,ip,nick_name,instructions,classification,"text",game_id,alias,kwargs)
+				VALUES
+				('79','127.0.0.1','','创建区服','区服管理','创建了区服ID为 63 的区服 ','13','长澜月','{"serverid":"","servername":"测试b","plaform":["1"],"channel":["测试渠道"],"ip":"127.0.0.1:24024","display":"1","srttime":"2020-11-10T08:41:44.615Z","address":"s2.mrhx.38ejed.com","test":"0","page":1,"pagesize":20,"gameid":"13"}')
+[2020-11-03T16:43:50.363] [DEBUG] debugLogger - Executing (default): select * from gm_server  where gameid='13'and test='0' and status = 1 and (pid is null or  trim(pid) ='') order by id limit 20 offset (20*0)
+[2020-11-03T16:43:50.369] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_server where gameid='13'and test='0' and status = 1 and (pid is null or  trim(pid) ='')
+[2020-11-03T16:43:50.375] [DEBUG] debugLogger - Executing (default): select max(num), display from (SELECT count(display) as num,
+		case 
+		when display='1' then '空闲'
+		when display='2' then '繁忙'
+		when display='3' then '维护'
+		when display='4' then '爆满'
+		end
+		as display
+		from gm_server where id in ( SELECT id from gm_server  where gameid='13'and test='0' and  status = 1 and (pid is null or  trim(pid) ='')  ORDER BY id limit 20 offset (20*0)  ) GROUP BY display 
+		union 
+		select 0 as num ,'繁忙' as display
+		union 
+		select 0 as num ,'空闲' as display
+		union
+		select 0 as num ,'维护' as display
+		union
+		select 0 as num ,'爆满' as display
+		)a GROUP BY display
+[2020-11-03T17:48:21.569] [DEBUG] debugLogger - Executing (default): update gm_server set display = '2' where  gameid='13' and serverid='61' returning *
+[2020-11-03T17:48:21.585] [DEBUG] debugLogger - Executing (default): INSERT into gm_logs 
+				(user_id,ip,nick_name,instructions,classification,"text",game_id,alias,kwargs)
+				VALUES
+				('79','127.0.0.1','','区服修改','区服管理','修改了区服id 61 状态为 繁忙','13','长澜月','{"id":61,"status":1,"create_user_id":79,"update_user_id":null,"create_time":"2020-11-03T08:42:07.861Z","update_time":"2020-11-03T08:42:07.861Z","servername":"测试","ip_port":"127.0.0.1:24024","address":"s2.mrhx.38ejed.com","plaform":["1"],"display":"2","srttime":"2020-11-10T08:41:44.000Z","gamename":"","pid":null,"serverid":"61","test":"0","load":null,"gameid":"13","childrens":null,"port":"24024","ip":"127.0.0.1","channel":["测试渠道"],"showstatusIsShow":false,"index":0}')
+[2020-11-03T17:48:21.794] [DEBUG] debugLogger - Executing (default): select * from gm_server  where gameid='13'and test='0' and status = 1 and (pid is null or  trim(pid) ='') order by id limit 20 offset (20*0)
+[2020-11-03T17:48:21.803] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_server where gameid='13'and test='0' and status = 1 and (pid is null or  trim(pid) ='')
+[2020-11-03T17:48:21.810] [DEBUG] debugLogger - Executing (default): select max(num), display from (SELECT count(display) as num,
+		case 
+		when display='1' then '空闲'
+		when display='2' then '繁忙'
+		when display='3' then '维护'
+		when display='4' then '爆满'
+		end
+		as display
+		from gm_server where id in ( SELECT id from gm_server  where gameid='13'and test='0' and  status = 1 and (pid is null or  trim(pid) ='')  ORDER BY id limit 20 offset (20*0)  ) GROUP BY display 
+		union 
+		select 0 as num ,'繁忙' as display
+		union 
+		select 0 as num ,'空闲' as display
+		union
+		select 0 as num ,'维护' as display
+		union
+		select 0 as num ,'爆满' as display
+		)a GROUP BY display
+[2020-11-03T17:48:25.773] [DEBUG] debugLogger - Executing (default): select a.id,a.game_name ,a.image_url as img from gm_game a join gm_purview b on b.gid = a.id where b.uids @> '79' and a.status = '1'   and a.game_name = '空翼冒险团' limit 1
+[2020-11-03T17:48:25.784] [DEBUG] debugLogger - Executing (default): with qwe as (select a.url,a.pid,a.name,d.game_name,d.id as gameid, a.id,b.grede , b.purview_id,c.uid,c.gid from gm_url a join gm_url_purview  b on  a.id = b.url_id  join gm_purview c on c.id = b.purview_id join gm_game d on d.id = c.gid where  c.uids @> '79' and d.id = '1' and d.status = 1 and b.grede != 827 and c.status = 1  and a.status = 1 order by id ),
+					qwer as (select * from qwe a where (select count(*) > 1 from qwe b where b.id = a.id )),
+					asd as (select * from qwe a where (select count(*) =  1 from qwe b where b.id = a.id )),
+					zxc as (select * from qwer where grede = '1'),
+					wer as (select * from qwer where id not in (select id from zxc )
+					union 
+					select * from qwer where id not in (select id from zxc )),
+					sdf as (select url,pid,name,gameid,grede,id from asd 
+					union 
+					select url,pid,name,gameid,grede,id from zxc 
+					union 
+					select url,pid,name,gameid,grede,id from wer ),
+					ewq as (select * from sdf ORDER BY id )
+					select name,(select json_agg(concat('{"url":"',url,'","name":"',name,'","meta":"',grede,'"}')::jsonb) from ewq  where ewq.pid = d.id) as children from ewq as d where pid = 0 ORDER BY d.id
+[2020-11-03T17:48:25.797] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(game_name, ','), ',')  as games from (
+			select  DISTINCT game_name,b.id from gm_purview a join gm_game b on a.gid = b.id  where uids @> '79' and b.status = '1'  ORDER BY id 
+		) a
+[2020-11-03T17:48:27.635] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(channel, ','), ',')  as values  from gm_game_channel where gameid = '1' and status = '1'
+[2020-11-03T17:48:27.641] [DEBUG] debugLogger - Executing (default): select * from gm_server  where gameid='1'and test='0' and status = 1 and (pid is null or  trim(pid) ='') order by id limit 20 offset (20*0)
+[2020-11-03T17:48:27.659] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_server where gameid='1'and test='0' and status = 1 and (pid is null or  trim(pid) ='')
+[2020-11-03T17:48:27.666] [DEBUG] debugLogger - Executing (default): select max(num), display from (SELECT count(display) as num,
+		case 
+		when display='1' then '空闲'
+		when display='2' then '繁忙'
+		when display='3' then '维护'
+		when display='4' then '爆满'
+		end
+		as display
+		from gm_server where id in ( SELECT id from gm_server  where gameid='1'and test='0' and  status = 1 and (pid is null or  trim(pid) ='')  ORDER BY id limit 20 offset (20*0)  ) GROUP BY display 
+		union 
+		select 0 as num ,'繁忙' as display
+		union 
+		select 0 as num ,'空闲' as display
+		union
+		select 0 as num ,'维护' as display
+		union
+		select 0 as num ,'爆满' as display
+		)a GROUP BY display
+[2020-11-03T17:48:33.413] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(channel, ','), ',')  as values  from gm_game_channel where gameid = '1' and status = '1'
+[2020-11-03T17:48:33.481] [DEBUG] debugLogger - Executing (default): select servername from gm_server where gameid='1' and status = 1
+[2020-11-03T17:48:48.870] [DEBUG] debugLogger - Executing (default): select * from gm_character where gameid='1' and "serverid" in ('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58')
+[2020-11-03T17:48:48.878] [DEBUG] debugLogger - Executing (default): select * from gm_character where gameid='1' and "serverid" in ('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58')
+[2020-11-03T17:49:05.921] [DEBUG] debugLogger - Executing (default): select * from gm_character where gameid='1' and "serverid" in ('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58')
+[2020-11-03T17:49:26.973] [DEBUG] debugLogger - Executing (default): select * from gm_character where gameid='1' and "serverid" in ('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58')
+[2020-11-03T17:49:32.700] [DEBUG] debugLogger - Executing (default): select token,tablename from gm_game_token where gameid = '1' and type='user'
+[2020-11-03T17:49:33.267] [DEBUG] debugLogger - Executing (default): select * from gm_character  where gameid='1' and roleid in ('1') offset 0 limit 10
+[2020-11-03T17:49:35.271] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(channel, ','), ',')  as values  from gm_game_channel where gameid = '1' and status = '1'
+[2020-11-03T17:49:35.338] [DEBUG] debugLogger - Executing (default): select servername from gm_server where gameid='1' and status = 1
+[2020-11-03T17:49:49.512] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(channel, ','), ',')  as values  from gm_game_channel where gameid = '1' and status = '1'
+[2020-11-03T17:49:49.559] [DEBUG] debugLogger - Executing (default): select servername from gm_server where gameid='1' and status = 1
+[2020-11-03T17:49:49.908] [DEBUG] debugLogger - Executing (default): with qwe as (	select id ,(case when plaforms = '1'::text then '安卓' when plaforms = '2'::text then '苹果' end ) as plaforms  from gm_announcement,jsonb_array_elements_text(plaform)  with  ordinality  arr(plaforms, index)),
+            asd as (select id,status,end_time,start_time,anno_status,title,game_id,text,time_interval,img_url,weights,link,job_id,sendtime,
+					(case when type::int = 1 then start_time else sendtime end) as stime ,
+					(case when type::int = 1 then end_time else endtime end) as etime ,
+					(case when type::int = 1 then '跑马灯' when type::int = 2 then '公告板' end ) as type,
+					( case when cardinality(	array_remove(client,'')) = 0 then null else client end ) as client ,
+					( case when cardinality(	array_remove(servername,'')) = 0 then null else servername end ) as servername 
+					from gm_announcement  where  game_id=1  and status = 1  and (anno_status::int  not in (1,3)  or anno_status    is null )  
+					order by id  offset 0 limit 10),
+			zxc as (select id,string_to_array(string_agg(plaforms, ','), ',')as plaforms from qwe  GROUP BY id )
+			select asd.*,zxc.plaforms from  asd left join zxc  on asd.id=zxc.id
+[2020-11-03T17:49:49.918] [DEBUG] debugLogger - Executing (default): select count(*) as total  from gm_announcement  where  game_id=1  and status = 1  and (anno_status::int  not in (1,3)  or anno_status    is null )
+[2020-11-03T17:49:50.158] [DEBUG] debugLogger - Executing (default): with qwe as (	select id ,(case when plaforms = '1'::text then '安卓' when plaforms = '2'::text then '苹果' end ) as plaforms  from gm_announcement,jsonb_array_elements_text(plaform)  with  ordinality  arr(plaforms, index)),
+            asd as (select id,status,end_time,start_time,anno_status,title,game_id,text,time_interval,img_url,weights,link,job_id,sendtime,
+					(case when type::int = 1 then start_time else sendtime end) as stime ,
+					(case when type::int = 1 then end_time else endtime end) as etime ,
+					(case when type::int = 1 then '跑马灯' when type::int = 2 then '公告板' end ) as type,
+					( case when cardinality(	array_remove(client,'')) = 0 then null else client end ) as client ,
+					( case when cardinality(	array_remove(servername,'')) = 0 then null else servername end ) as servername 
+					from gm_announcement  where  game_id=1  and status = 1  and (anno_status::int  not in (1,3)  or anno_status    is null )  
+					order by id  offset 0 limit 10),
+			zxc as (select id,string_to_array(string_agg(plaforms, ','), ',')as plaforms from qwe  GROUP BY id )
+			select asd.*,zxc.plaforms from  asd left join zxc  on asd.id=zxc.id
+[2020-11-03T17:49:50.168] [DEBUG] debugLogger - Executing (default): select count(*) as total  from gm_announcement  where  game_id=1  and status = 1  and (anno_status::int  not in (1,3)  or anno_status    is null )
+[2020-11-03T17:49:50.243] [DEBUG] debugLogger - Executing (default): with qwe as (	select id ,(case when plaforms = '1'::text then '安卓' when plaforms = '2'::text then '苹果' end ) as plaforms  from gm_announcement,jsonb_array_elements_text(plaform)  with  ordinality  arr(plaforms, index)),
+            asd as (select id,status,end_time,start_time,anno_status,title,game_id,text,time_interval,img_url,weights,link,job_id,sendtime,
+					(case when type::int = 1 then start_time else sendtime end) as stime ,
+					(case when type::int = 1 then end_time else endtime end) as etime ,
+					(case when type::int = 1 then '跑马灯' when type::int = 2 then '公告板' end ) as type,
+					( case when cardinality(	array_remove(client,'')) = 0 then null else client end ) as client ,
+					( case when cardinality(	array_remove(servername,'')) = 0 then null else servername end ) as servername 
+					from gm_announcement  where  game_id=1  and status = 1  and (anno_status::int  not in (1,3)  or anno_status    is null )  
+					order by id  offset 0 limit 10),
+			zxc as (select id,string_to_array(string_agg(plaforms, ','), ',')as plaforms from qwe  GROUP BY id )
+			select asd.*,zxc.plaforms from  asd left join zxc  on asd.id=zxc.id
+[2020-11-03T17:49:50.251] [DEBUG] debugLogger - Executing (default): select count(*) as total  from gm_announcement  where  game_id=1  and status = 1  and (anno_status::int  not in (1,3)  or anno_status    is null )
+[2020-11-03T17:53:57.936] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(channel, ','), ',')  as values  from gm_game_channel where gameid = '1' and status = '1'
+[2020-11-03T17:53:57.992] [DEBUG] debugLogger - Executing (default): select a as value ,a as label from  (	 select DISTINCT servername  as a from gm_server  where gameid =1 and status  = 1  ) a
+[2020-11-03T17:53:58.044] [DEBUG] debugLogger - Executing (default): select 
+        name as label ,
+        article_id as value  from gm_article where gameid=1
+[2020-11-03T17:53:58.534] [DEBUG] debugLogger - Executing (default): with asd as (			
+				select * from gm_smtp  where  game_id= '1'  and status = 1 ORDER BY id desc limit 50 offset 0 
+			),
+			dsa as (select * from gm_server),
+			ssss as( select asd.servername, string_to_array(string_agg(dsa.servername, ','),',') as servernames from asd LEFT JOIN dsa on dsa.serverid::jsonb <@ (asd.servername) GROUP BY  asd.servername),
+			qweqweqwe  as (select asd.* ,ssss.servernames from asd left join ssss on ssss.servername = asd.servername),
+			asdasd as (select jsonb_array_elements(annex) ->> 'ID' as names, jsonb_array_elements(annex) ->> 'number' as numbers ,id  from  qweqweqwe ),
+			qweqwe as (select asdasd.id,string_to_array(string_agg(concat(gm_article.name,'  ',asdasd.numbers,'个'),','),',') as annexnames from asdasd left JOIN gm_article on gm_article.article_id = asdasd.names GROUP BY asdasd.id ),
+			qweasd as (select (case when plaform = '"1"' then '安卓' when plaform = '"2"' then '苹果'  end ) as plaform ,id from (select jsonb_array_elements(plaform) as plaform,id from asd )a )
+			select asd.*,qweqwe.annexnames,a.plaforms from asd left join qweqwe on qweqwe.id = asd.id left
+			join (select string_to_array(string_agg(plaform,','),',')as plaforms ,id from qweasd GROUP BY id )a on a.id = asd.id order by asd.id desc
+[2020-11-03T17:53:58.551] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_smtp where  game_id= '1' and status = 1
+[2020-11-03T17:53:58.981] [DEBUG] debugLogger - Executing (default): with asd as (			
+				select * from gm_smtp  where  game_id= '1'  and status = 1 ORDER BY id desc limit 50 offset 0 
+			),
+			dsa as (select * from gm_server),
+			ssss as( select asd.servername, string_to_array(string_agg(dsa.servername, ','),',') as servernames from asd LEFT JOIN dsa on dsa.serverid::jsonb <@ (asd.servername) GROUP BY  asd.servername),
+			qweqweqwe  as (select asd.* ,ssss.servernames from asd left join ssss on ssss.servername = asd.servername),
+			asdasd as (select jsonb_array_elements(annex) ->> 'ID' as names, jsonb_array_elements(annex) ->> 'number' as numbers ,id  from  qweqweqwe ),
+			qweqwe as (select asdasd.id,string_to_array(string_agg(concat(gm_article.name,'  ',asdasd.numbers,'个'),','),',') as annexnames from asdasd left JOIN gm_article on gm_article.article_id = asdasd.names GROUP BY asdasd.id ),
+			qweasd as (select (case when plaform = '"1"' then '安卓' when plaform = '"2"' then '苹果'  end ) as plaform ,id from (select jsonb_array_elements(plaform) as plaform,id from asd )a )
+			select asd.*,qweqwe.annexnames,a.plaforms from asd left join qweqwe on qweqwe.id = asd.id left
+			join (select string_to_array(string_agg(plaform,','),',')as plaforms ,id from qweasd GROUP BY id )a on a.id = asd.id order by asd.id desc
+[2020-11-03T17:53:58.997] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_smtp where  game_id= '1' and status = 1
+[2020-11-03T17:53:59.477] [DEBUG] debugLogger - Executing (default): with asd as (			
+				select * from gm_smtp  where  game_id= '1'  and status = 1 ORDER BY id desc limit 50 offset 0 
+			),
+			dsa as (select * from gm_server),
+			ssss as( select asd.servername, string_to_array(string_agg(dsa.servername, ','),',') as servernames from asd LEFT JOIN dsa on dsa.serverid::jsonb <@ (asd.servername) GROUP BY  asd.servername),
+			qweqweqwe  as (select asd.* ,ssss.servernames from asd left join ssss on ssss.servername = asd.servername),
+			asdasd as (select jsonb_array_elements(annex) ->> 'ID' as names, jsonb_array_elements(annex) ->> 'number' as numbers ,id  from  qweqweqwe ),
+			qweqwe as (select asdasd.id,string_to_array(string_agg(concat(gm_article.name,'  ',asdasd.numbers,'个'),','),',') as annexnames from asdasd left JOIN gm_article on gm_article.article_id = asdasd.names GROUP BY asdasd.id ),
+			qweasd as (select (case when plaform = '"1"' then '安卓' when plaform = '"2"' then '苹果'  end ) as plaform ,id from (select jsonb_array_elements(plaform) as plaform,id from asd )a )
+			select asd.*,qweqwe.annexnames,a.plaforms from asd left join qweqwe on qweqwe.id = asd.id left
+			join (select string_to_array(string_agg(plaform,','),',')as plaforms ,id from qweasd GROUP BY id )a on a.id = asd.id order by asd.id desc
+[2020-11-03T17:53:59.497] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_smtp where  game_id= '1' and status = 1
+[2020-11-03T17:54:04.871] [DEBUG] debugLogger - Executing (default): with asd as (			
+				select * from gm_smtp  where  game_id= '1'  and   id= '67'  and status = 1 ORDER BY id desc limit 50 offset 0 
+			),
+			dsa as (select * from gm_server),
+			ssss as( select asd.servername, string_to_array(string_agg(dsa.servername, ','),',') as servernames from asd LEFT JOIN dsa on dsa.serverid::jsonb <@ (asd.servername) GROUP BY  asd.servername),
+			qweqweqwe  as (select asd.* ,ssss.servernames from asd left join ssss on ssss.servername = asd.servername),
+			asdasd as (select jsonb_array_elements(annex) ->> 'ID' as names, jsonb_array_elements(annex) ->> 'number' as numbers ,id  from  qweqweqwe ),
+			qweqwe as (select asdasd.id,string_to_array(string_agg(concat(gm_article.name,'  ',asdasd.numbers,'个'),','),',') as annexnames from asdasd left JOIN gm_article on gm_article.article_id = asdasd.names GROUP BY asdasd.id ),
+			qweasd as (select (case when plaform = '"1"' then '安卓' when plaform = '"2"' then '苹果'  end ) as plaform ,id from (select jsonb_array_elements(plaform) as plaform,id from asd )a )
+			select asd.*,qweqwe.annexnames,a.plaforms from asd left join qweqwe on qweqwe.id = asd.id left
+			join (select string_to_array(string_agg(plaform,','),',')as plaforms ,id from qweasd GROUP BY id )a on a.id = asd.id order by asd.id desc
+[2020-11-03T17:54:04.882] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_smtp where  game_id= '1'  and   id= '67' and status = 1
+[2020-11-03T17:54:07.090] [DEBUG] debugLogger - Executing (default): with asd as (			
+				select * from gm_smtp  where  game_id= '1' and  channel = '["测试渠道四渠道"]'   and status = 1 ORDER BY id desc limit 50 offset 0 
+			),
+			dsa as (select * from gm_server),
+			ssss as( select asd.servername, string_to_array(string_agg(dsa.servername, ','),',') as servernames from asd LEFT JOIN dsa on dsa.serverid::jsonb <@ (asd.servername) GROUP BY  asd.servername),
+			qweqweqwe  as (select asd.* ,ssss.servernames from asd left join ssss on ssss.servername = asd.servername),
+			asdasd as (select jsonb_array_elements(annex) ->> 'ID' as names, jsonb_array_elements(annex) ->> 'number' as numbers ,id  from  qweqweqwe ),
+			qweqwe as (select asdasd.id,string_to_array(string_agg(concat(gm_article.name,'  ',asdasd.numbers,'个'),','),',') as annexnames from asdasd left JOIN gm_article on gm_article.article_id = asdasd.names GROUP BY asdasd.id ),
+			qweasd as (select (case when plaform = '"1"' then '安卓' when plaform = '"2"' then '苹果'  end ) as plaform ,id from (select jsonb_array_elements(plaform) as plaform,id from asd )a )
+			select asd.*,qweqwe.annexnames,a.plaforms from asd left join qweqwe on qweqwe.id = asd.id left
+			join (select string_to_array(string_agg(plaform,','),',')as plaforms ,id from qweasd GROUP BY id )a on a.id = asd.id order by asd.id desc
+[2020-11-03T17:54:07.100] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_smtp where  game_id= '1' and  channel = '["测试渠道四渠道"]'  and status = 1
+[2020-11-03T17:54:08.208] [DEBUG] debugLogger - Executing (default): with asd as (			
+				select * from gm_smtp  where  game_id= '1' and channel @> '["测试渠道四渠道","测试渠道三渠道"]'  and  jsonb_array_length(channel) = jsonb_array_length('["测试渠道四渠道","测试渠道三渠道"]'::jsonb)   and status = 1 ORDER BY id desc limit 50 offset 0 
+			),
+			dsa as (select * from gm_server),
+			ssss as( select asd.servername, string_to_array(string_agg(dsa.servername, ','),',') as servernames from asd LEFT JOIN dsa on dsa.serverid::jsonb <@ (asd.servername) GROUP BY  asd.servername),
+			qweqweqwe  as (select asd.* ,ssss.servernames from asd left join ssss on ssss.servername = asd.servername),
+			asdasd as (select jsonb_array_elements(annex) ->> 'ID' as names, jsonb_array_elements(annex) ->> 'number' as numbers ,id  from  qweqweqwe ),
+			qweqwe as (select asdasd.id,string_to_array(string_agg(concat(gm_article.name,'  ',asdasd.numbers,'个'),','),',') as annexnames from asdasd left JOIN gm_article on gm_article.article_id = asdasd.names GROUP BY asdasd.id ),
+			qweasd as (select (case when plaform = '"1"' then '安卓' when plaform = '"2"' then '苹果'  end ) as plaform ,id from (select jsonb_array_elements(plaform) as plaform,id from asd )a )
+			select asd.*,qweqwe.annexnames,a.plaforms from asd left join qweqwe on qweqwe.id = asd.id left
+			join (select string_to_array(string_agg(plaform,','),',')as plaforms ,id from qweasd GROUP BY id )a on a.id = asd.id order by asd.id desc
+[2020-11-03T17:54:08.218] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_smtp where  game_id= '1' and channel @> '["测试渠道四渠道","测试渠道三渠道"]'  and  jsonb_array_length(channel) = jsonb_array_length('["测试渠道四渠道","测试渠道三渠道"]'::jsonb)  and status = 1
+[2020-11-03T17:54:08.462] [DEBUG] debugLogger - Executing (default): with asd as (			
+				select * from gm_smtp  where  game_id= '1' and channel @> '["测试渠道四渠道","测试渠道三渠道","测试渠道二渠道"]'  and  jsonb_array_length(channel) = jsonb_array_length('["测试渠道四渠道","测试渠道三渠道","测试渠道二渠道"]'::jsonb)   and status = 1 ORDER BY id desc limit 50 offset 0 
+			),
+			dsa as (select * from gm_server),
+			ssss as( select asd.servername, string_to_array(string_agg(dsa.servername, ','),',') as servernames from asd LEFT JOIN dsa on dsa.serverid::jsonb <@ (asd.servername) GROUP BY  asd.servername),
+			qweqweqwe  as (select asd.* ,ssss.servernames from asd left join ssss on ssss.servername = asd.servername),
+			asdasd as (select jsonb_array_elements(annex) ->> 'ID' as names, jsonb_array_elements(annex) ->> 'number' as numbers ,id  from  qweqweqwe ),
+			qweqwe as (select asdasd.id,string_to_array(string_agg(concat(gm_article.name,'  ',asdasd.numbers,'个'),','),',') as annexnames from asdasd left JOIN gm_article on gm_article.article_id = asdasd.names GROUP BY asdasd.id ),
+			qweasd as (select (case when plaform = '"1"' then '安卓' when plaform = '"2"' then '苹果'  end ) as plaform ,id from (select jsonb_array_elements(plaform) as plaform,id from asd )a )
+			select asd.*,qweqwe.annexnames,a.plaforms from asd left join qweqwe on qweqwe.id = asd.id left
+			join (select string_to_array(string_agg(plaform,','),',')as plaforms ,id from qweasd GROUP BY id )a on a.id = asd.id order by asd.id desc
+[2020-11-03T17:54:08.470] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_smtp where  game_id= '1' and channel @> '["测试渠道四渠道","测试渠道三渠道","测试渠道二渠道"]'  and  jsonb_array_length(channel) = jsonb_array_length('["测试渠道四渠道","测试渠道三渠道","测试渠道二渠道"]'::jsonb)  and status = 1
+[2020-11-03T17:54:08.919] [DEBUG] debugLogger - Executing (default): with asd as (			
+				select * from gm_smtp  where  game_id= '1' and channel @> '["测试渠道四渠道","测试渠道二渠道"]'  and  jsonb_array_length(channel) = jsonb_array_length('["测试渠道四渠道","测试渠道二渠道"]'::jsonb)   and status = 1 ORDER BY id desc limit 50 offset 0 
+			),
+			dsa as (select * from gm_server),
+			ssss as( select asd.servername, string_to_array(string_agg(dsa.servername, ','),',') as servernames from asd LEFT JOIN dsa on dsa.serverid::jsonb <@ (asd.servername) GROUP BY  asd.servername),
+			qweqweqwe  as (select asd.* ,ssss.servernames from asd left join ssss on ssss.servername = asd.servername),
+			asdasd as (select jsonb_array_elements(annex) ->> 'ID' as names, jsonb_array_elements(annex) ->> 'number' as numbers ,id  from  qweqweqwe ),
+			qweqwe as (select asdasd.id,string_to_array(string_agg(concat(gm_article.name,'  ',asdasd.numbers,'个'),','),',') as annexnames from asdasd left JOIN gm_article on gm_article.article_id = asdasd.names GROUP BY asdasd.id ),
+			qweasd as (select (case when plaform = '"1"' then '安卓' when plaform = '"2"' then '苹果'  end ) as plaform ,id from (select jsonb_array_elements(plaform) as plaform,id from asd )a )
+			select asd.*,qweqwe.annexnames,a.plaforms from asd left join qweqwe on qweqwe.id = asd.id left
+			join (select string_to_array(string_agg(plaform,','),',')as plaforms ,id from qweasd GROUP BY id )a on a.id = asd.id order by asd.id desc
+[2020-11-03T17:54:08.928] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_smtp where  game_id= '1' and channel @> '["测试渠道四渠道","测试渠道二渠道"]'  and  jsonb_array_length(channel) = jsonb_array_length('["测试渠道四渠道","测试渠道二渠道"]'::jsonb)  and status = 1
+[2020-11-03T17:54:09.647] [DEBUG] debugLogger - Executing (default): with asd as (			
+				select * from gm_smtp  where  game_id= '1' and  channel = '["测试渠道二渠道"]'   and status = 1 ORDER BY id desc limit 50 offset 0 
+			),
+			dsa as (select * from gm_server),
+			ssss as( select asd.servername, string_to_array(string_agg(dsa.servername, ','),',') as servernames from asd LEFT JOIN dsa on dsa.serverid::jsonb <@ (asd.servername) GROUP BY  asd.servername),
+			qweqweqwe  as (select asd.* ,ssss.servernames from asd left join ssss on ssss.servername = asd.servername),
+			asdasd as (select jsonb_array_elements(annex) ->> 'ID' as names, jsonb_array_elements(annex) ->> 'number' as numbers ,id  from  qweqweqwe ),
+			qweqwe as (select asdasd.id,string_to_array(string_agg(concat(gm_article.name,'  ',asdasd.numbers,'个'),','),',') as annexnames from asdasd left JOIN gm_article on gm_article.article_id = asdasd.names GROUP BY asdasd.id ),
+			qweasd as (select (case when plaform = '"1"' then '安卓' when plaform = '"2"' then '苹果'  end ) as plaform ,id from (select jsonb_array_elements(plaform) as plaform,id from asd )a )
+			select asd.*,qweqwe.annexnames,a.plaforms from asd left join qweqwe on qweqwe.id = asd.id left
+			join (select string_to_array(string_agg(plaform,','),',')as plaforms ,id from qweasd GROUP BY id )a on a.id = asd.id order by asd.id desc
+[2020-11-03T17:54:09.656] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_smtp where  game_id= '1' and  channel = '["测试渠道二渠道"]'  and status = 1
+[2020-11-03T17:54:10.450] [DEBUG] debugLogger - Executing (default): with asd as (			
+				select * from gm_smtp  where  game_id= '1'  and status = 1 ORDER BY id desc limit 50 offset 0 
+			),
+			dsa as (select * from gm_server),
+			ssss as( select asd.servername, string_to_array(string_agg(dsa.servername, ','),',') as servernames from asd LEFT JOIN dsa on dsa.serverid::jsonb <@ (asd.servername) GROUP BY  asd.servername),
+			qweqweqwe  as (select asd.* ,ssss.servernames from asd left join ssss on ssss.servername = asd.servername),
+			asdasd as (select jsonb_array_elements(annex) ->> 'ID' as names, jsonb_array_elements(annex) ->> 'number' as numbers ,id  from  qweqweqwe ),
+			qweqwe as (select asdasd.id,string_to_array(string_agg(concat(gm_article.name,'  ',asdasd.numbers,'个'),','),',') as annexnames from asdasd left JOIN gm_article on gm_article.article_id = asdasd.names GROUP BY asdasd.id ),
+			qweasd as (select (case when plaform = '"1"' then '安卓' when plaform = '"2"' then '苹果'  end ) as plaform ,id from (select jsonb_array_elements(plaform) as plaform,id from asd )a )
+			select asd.*,qweqwe.annexnames,a.plaforms from asd left join qweqwe on qweqwe.id = asd.id left
+			join (select string_to_array(string_agg(plaform,','),',')as plaforms ,id from qweasd GROUP BY id )a on a.id = asd.id order by asd.id desc
+[2020-11-03T17:54:10.464] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_smtp where  game_id= '1' and status = 1
+[2020-11-03T17:54:13.780] [DEBUG] debugLogger - Executing (default): with asd as (			
+				select * from gm_smtp  where  game_id= '1' and  channel = '["测试渠道二渠道"]'   and status = 1 ORDER BY id desc limit 50 offset 0 
+			),
+			dsa as (select * from gm_server),
+			ssss as( select asd.servername, string_to_array(string_agg(dsa.servername, ','),',') as servernames from asd LEFT JOIN dsa on dsa.serverid::jsonb <@ (asd.servername) GROUP BY  asd.servername),
+			qweqweqwe  as (select asd.* ,ssss.servernames from asd left join ssss on ssss.servername = asd.servername),
+			asdasd as (select jsonb_array_elements(annex) ->> 'ID' as names, jsonb_array_elements(annex) ->> 'number' as numbers ,id  from  qweqweqwe ),
+			qweqwe as (select asdasd.id,string_to_array(string_agg(concat(gm_article.name,'  ',asdasd.numbers,'个'),','),',') as annexnames from asdasd left JOIN gm_article on gm_article.article_id = asdasd.names GROUP BY asdasd.id ),
+			qweasd as (select (case when plaform = '"1"' then '安卓' when plaform = '"2"' then '苹果'  end ) as plaform ,id from (select jsonb_array_elements(plaform) as plaform,id from asd )a )
+			select asd.*,qweqwe.annexnames,a.plaforms from asd left join qweqwe on qweqwe.id = asd.id left
+			join (select string_to_array(string_agg(plaform,','),',')as plaforms ,id from qweasd GROUP BY id )a on a.id = asd.id order by asd.id desc
+[2020-11-03T17:54:13.788] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_smtp where  game_id= '1' and  channel = '["测试渠道二渠道"]'  and status = 1
+[2020-11-03T17:54:14.871] [DEBUG] debugLogger - Executing (default): with asd as (			
+				select * from gm_smtp  where  game_id= '1'  and status = 1 ORDER BY id desc limit 50 offset 0 
+			),
+			dsa as (select * from gm_server),
+			ssss as( select asd.servername, string_to_array(string_agg(dsa.servername, ','),',') as servernames from asd LEFT JOIN dsa on dsa.serverid::jsonb <@ (asd.servername) GROUP BY  asd.servername),
+			qweqweqwe  as (select asd.* ,ssss.servernames from asd left join ssss on ssss.servername = asd.servername),
+			asdasd as (select jsonb_array_elements(annex) ->> 'ID' as names, jsonb_array_elements(annex) ->> 'number' as numbers ,id  from  qweqweqwe ),
+			qweqwe as (select asdasd.id,string_to_array(string_agg(concat(gm_article.name,'  ',asdasd.numbers,'个'),','),',') as annexnames from asdasd left JOIN gm_article on gm_article.article_id = asdasd.names GROUP BY asdasd.id ),
+			qweasd as (select (case when plaform = '"1"' then '安卓' when plaform = '"2"' then '苹果'  end ) as plaform ,id from (select jsonb_array_elements(plaform) as plaform,id from asd )a )
+			select asd.*,qweqwe.annexnames,a.plaforms from asd left join qweqwe on qweqwe.id = asd.id left
+			join (select string_to_array(string_agg(plaform,','),',')as plaforms ,id from qweasd GROUP BY id )a on a.id = asd.id order by asd.id desc
+[2020-11-03T17:54:14.887] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_smtp where  game_id= '1' and status = 1
+[2020-11-03T17:54:18.942] [DEBUG] debugLogger - Executing (default): with asd as (			
+				select * from gm_smtp  where  game_id= '1' and  channel = '["测试渠道二渠道"]'   and status = 1 ORDER BY id desc limit 50 offset 0 
+			),
+			dsa as (select * from gm_server),
+			ssss as( select asd.servername, string_to_array(string_agg(dsa.servername, ','),',') as servernames from asd LEFT JOIN dsa on dsa.serverid::jsonb <@ (asd.servername) GROUP BY  asd.servername),
+			qweqweqwe  as (select asd.* ,ssss.servernames from asd left join ssss on ssss.servername = asd.servername),
+			asdasd as (select jsonb_array_elements(annex) ->> 'ID' as names, jsonb_array_elements(annex) ->> 'number' as numbers ,id  from  qweqweqwe ),
+			qweqwe as (select asdasd.id,string_to_array(string_agg(concat(gm_article.name,'  ',asdasd.numbers,'个'),','),',') as annexnames from asdasd left JOIN gm_article on gm_article.article_id = asdasd.names GROUP BY asdasd.id ),
+			qweasd as (select (case when plaform = '"1"' then '安卓' when plaform = '"2"' then '苹果'  end ) as plaform ,id from (select jsonb_array_elements(plaform) as plaform,id from asd )a )
+			select asd.*,qweqwe.annexnames,a.plaforms from asd left join qweqwe on qweqwe.id = asd.id left
+			join (select string_to_array(string_agg(plaform,','),',')as plaforms ,id from qweasd GROUP BY id )a on a.id = asd.id order by asd.id desc
+[2020-11-03T17:54:18.950] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_smtp where  game_id= '1' and  channel = '["测试渠道二渠道"]'  and status = 1
+[2020-11-03T17:54:19.390] [DEBUG] debugLogger - Executing (default): with asd as (			
+				select * from gm_smtp  where  game_id= '1' and channel @> '["测试渠道二渠道","测试渠道五渠道"]'  and  jsonb_array_length(channel) = jsonb_array_length('["测试渠道二渠道","测试渠道五渠道"]'::jsonb)   and status = 1 ORDER BY id desc limit 50 offset 0 
+			),
+			dsa as (select * from gm_server),
+			ssss as( select asd.servername, string_to_array(string_agg(dsa.servername, ','),',') as servernames from asd LEFT JOIN dsa on dsa.serverid::jsonb <@ (asd.servername) GROUP BY  asd.servername),
+			qweqweqwe  as (select asd.* ,ssss.servernames from asd left join ssss on ssss.servername = asd.servername),
+			asdasd as (select jsonb_array_elements(annex) ->> 'ID' as names, jsonb_array_elements(annex) ->> 'number' as numbers ,id  from  qweqweqwe ),
+			qweqwe as (select asdasd.id,string_to_array(string_agg(concat(gm_article.name,'  ',asdasd.numbers,'个'),','),',') as annexnames from asdasd left JOIN gm_article on gm_article.article_id = asdasd.names GROUP BY asdasd.id ),
+			qweasd as (select (case when plaform = '"1"' then '安卓' when plaform = '"2"' then '苹果'  end ) as plaform ,id from (select jsonb_array_elements(plaform) as plaform,id from asd )a )
+			select asd.*,qweqwe.annexnames,a.plaforms from asd left join qweqwe on qweqwe.id = asd.id left
+			join (select string_to_array(string_agg(plaform,','),',')as plaforms ,id from qweasd GROUP BY id )a on a.id = asd.id order by asd.id desc
+[2020-11-03T17:54:19.398] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_smtp where  game_id= '1' and channel @> '["测试渠道二渠道","测试渠道五渠道"]'  and  jsonb_array_length(channel) = jsonb_array_length('["测试渠道二渠道","测试渠道五渠道"]'::jsonb)  and status = 1
+[2020-11-03T17:54:20.345] [DEBUG] debugLogger - Executing (default): with asd as (			
+				select * from gm_smtp  where  game_id= '1' and  channel = '["测试渠道二渠道"]'   and status = 1 ORDER BY id desc limit 50 offset 0 
+			),
+			dsa as (select * from gm_server),
+			ssss as( select asd.servername, string_to_array(string_agg(dsa.servername, ','),',') as servernames from asd LEFT JOIN dsa on dsa.serverid::jsonb <@ (asd.servername) GROUP BY  asd.servername),
+			qweqweqwe  as (select asd.* ,ssss.servernames from asd left join ssss on ssss.servername = asd.servername),
+			asdasd as (select jsonb_array_elements(annex) ->> 'ID' as names, jsonb_array_elements(annex) ->> 'number' as numbers ,id  from  qweqweqwe ),
+			qweqwe as (select asdasd.id,string_to_array(string_agg(concat(gm_article.name,'  ',asdasd.numbers,'个'),','),',') as annexnames from asdasd left JOIN gm_article on gm_article.article_id = asdasd.names GROUP BY asdasd.id ),
+			qweasd as (select (case when plaform = '"1"' then '安卓' when plaform = '"2"' then '苹果'  end ) as plaform ,id from (select jsonb_array_elements(plaform) as plaform,id from asd )a )
+			select asd.*,qweqwe.annexnames,a.plaforms from asd left join qweqwe on qweqwe.id = asd.id left
+			join (select string_to_array(string_agg(plaform,','),',')as plaforms ,id from qweasd GROUP BY id )a on a.id = asd.id order by asd.id desc
+[2020-11-03T17:54:20.354] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_smtp where  game_id= '1' and  channel = '["测试渠道二渠道"]'  and status = 1
+[2020-11-03T17:54:20.889] [DEBUG] debugLogger - Executing (default): with asd as (			
+				select * from gm_smtp  where  game_id= '1'  and status = 1 ORDER BY id desc limit 50 offset 0 
+			),
+			dsa as (select * from gm_server),
+			ssss as( select asd.servername, string_to_array(string_agg(dsa.servername, ','),',') as servernames from asd LEFT JOIN dsa on dsa.serverid::jsonb <@ (asd.servername) GROUP BY  asd.servername),
+			qweqweqwe  as (select asd.* ,ssss.servernames from asd left join ssss on ssss.servername = asd.servername),
+			asdasd as (select jsonb_array_elements(annex) ->> 'ID' as names, jsonb_array_elements(annex) ->> 'number' as numbers ,id  from  qweqweqwe ),
+			qweqwe as (select asdasd.id,string_to_array(string_agg(concat(gm_article.name,'  ',asdasd.numbers,'个'),','),',') as annexnames from asdasd left JOIN gm_article on gm_article.article_id = asdasd.names GROUP BY asdasd.id ),
+			qweasd as (select (case when plaform = '"1"' then '安卓' when plaform = '"2"' then '苹果'  end ) as plaform ,id from (select jsonb_array_elements(plaform) as plaform,id from asd )a )
+			select asd.*,qweqwe.annexnames,a.plaforms from asd left join qweqwe on qweqwe.id = asd.id left
+			join (select string_to_array(string_agg(plaform,','),',')as plaforms ,id from qweasd GROUP BY id )a on a.id = asd.id order by asd.id desc
+[2020-11-03T17:54:20.907] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_smtp where  game_id= '1' and status = 1
+[2020-11-03T17:56:13.315] [DEBUG] debugLogger - Executing (default): with qwe as (select * ,group_name as groupName  from gm_purview where gid = '1' and status = '1'   and group_name is not null order by id limit 10 offset 0 ),
+		asd as (select id,jsonb_array_elements_text(uids)  as uid from qwe ),
+		zxc as (select a.id,b.username from asd a join auth_user b on b.id = a.uid::int ),
+		zxcv as (select a.id,b.username from asd a join gm_user b on b.id = a.uid::int),
+		qwer as (select * from zxc union select * from zxcv),
+		asdf as (select id, string_to_array(string_agg(username, ','),',') as username from qwer GROUP BY id )
+		select a.username,b.* from asdf a right join qwe b on a.id=b.id
+[2020-11-03T17:56:13.325] [DEBUG] debugLogger - Executing (default): select count(*) as total  from gm_purview where gid = '1' and status = '1'    and group_name is not null
+[2020-11-03T17:56:13.444] [DEBUG] debugLogger - Executing (default): select id,username,alias,create_time as createTime from auth_user where gameid = '1' and status = '1'   order by id limit 10 offset 0
+[2020-11-03T17:56:13.452] [DEBUG] debugLogger - Executing (default): select count(id) as total from auth_user   where gameid = '1' and status = '1'
+[2020-11-03T17:56:14.016] [DEBUG] debugLogger - Executing (default): SELECT id,super_user_id as userId,game_name as gamename ,image_url as url ,false as movehover FROM "gm_game"  where case when 5 = '1'::int then id != '5' else id = '1' end and status = '1'
+[2020-11-03T17:56:15.370] [DEBUG] debugLogger - Executing (default): select  * from   gm_game_channel    where  gameid =  '1' and status = '1'   order by id limit 10 offset 0
+[2020-11-03T17:56:15.377] [DEBUG] debugLogger - Executing (default): select  count(*) from   gm_game_channel    where  gameid =  '1' and status = '1'
+[2020-11-03T17:56:16.086] [DEBUG] debugLogger - Executing (default): select classification as label , classification as value  from gm_logs   where  game_id = $gameid$1$gameid$ GROUP BY classification
+[2020-11-03T17:56:16.426] [DEBUG] debugLogger - Executing (default): select * , (nick_name || "alias" ) as  usernames from gm_logs  where game_id= $$1$$ and classification = $classification$邮件管理$classification$  ORDER BY  operating_time  desc  limit 100 OFFSET 0
+[2020-11-03T17:56:16.438] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_logs  where game_id= $$1$$ and classification = $classification$邮件管理$classification$
+[2020-11-03T17:56:18.207] [DEBUG] debugLogger - Executing (default): with qwe as (select * ,group_name as groupName  from gm_purview where gid = '1' and status = '1'   and group_name is not null order by id limit 10 offset 0 ),
+		asd as (select id,jsonb_array_elements_text(uids)  as uid from qwe ),
+		zxc as (select a.id,b.username from asd a join auth_user b on b.id = a.uid::int ),
+		zxcv as (select a.id,b.username from asd a join gm_user b on b.id = a.uid::int),
+		qwer as (select * from zxc union select * from zxcv),
+		asdf as (select id, string_to_array(string_agg(username, ','),',') as username from qwer GROUP BY id )
+		select a.username,b.* from asdf a right join qwe b on a.id=b.id
+[2020-11-03T17:56:18.216] [DEBUG] debugLogger - Executing (default): select count(*) as total  from gm_purview where gid = '1' and status = '1'    and group_name is not null
+[2020-11-03T17:56:18.511] [DEBUG] debugLogger - Executing (default): select id,username,alias,create_time as createTime from auth_user where gameid = '1' and status = '1'   order by id limit 10 offset 0
+[2020-11-03T17:56:18.517] [DEBUG] debugLogger - Executing (default): select count(id) as total from auth_user   where gameid = '1' and status = '1'
+[2020-11-03T17:56:22.620] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(channel, ','), ',')  as values  from gm_game_channel where gameid = '1' and status = '1'
+[2020-11-03T17:56:22.712] [DEBUG] debugLogger - Executing (default): select jsonb_array_elements_text(channel) as label,jsonb_array_elements_text(channel)  as value  from gm_client where game_id = '1' and status='1'
+        union 
+        select jsonb_array_elements_text(channel) as label,jsonb_array_elements_text(channel)  as value from gm_client where game_id = '1' and status='1'
+[2020-11-03T17:56:23.062] [DEBUG] debugLogger - Executing (default): select *,(case when plaform = '["1"]' then '["安卓"]'::jsonb when plaform = '["2"]' then '["苹果"]'::jsonb when   plaform @> '["1","2"]'::jsonb then '["安卓","平果"]'::jsonb end)
+         as plaforms,(select count(*) from gm_client  where game_id = '1' and status ='1' ) as total  from gm_client  where game_id = '1' and status ='1'  ORDER BY id desc limit 10 offset 0
+[2020-11-03T17:56:26.770] [DEBUG] debugLogger - Executing (default): select *,(case when plaform = '["1"]' then '["安卓"]'::jsonb when plaform = '["2"]' then '["苹果"]'::jsonb when   plaform @> '["1","2"]'::jsonb then '["安卓","平果"]'::jsonb end)
+         as plaforms,(select count(*) from gm_client  where game_id = '1' and status ='1'  and channel =  '["fancyguo"]' ) as total  from gm_client  where game_id = '1' and status ='1'  and channel =  '["fancyguo"]'  ORDER BY id desc limit 10 offset 0
+[2020-11-03T17:56:28.111] [DEBUG] debugLogger - Executing (default): select *,(case when plaform = '["1"]' then '["安卓"]'::jsonb when plaform = '["2"]' then '["苹果"]'::jsonb when   plaform @> '["1","2"]'::jsonb then '["安卓","平果"]'::jsonb end)
+         as plaforms,(select count(*) from gm_client  where game_id = '1' and status ='1'   and channel @> '["fancyguo","测试渠道二渠道"]'  and  jsonb_array_length(channel) = jsonb_array_length('["fancyguo","测试渠道二渠道"]'::jsonb)) as total  from gm_client  where game_id = '1' and status ='1'   and channel @> '["fancyguo","测试渠道二渠道"]'  and  jsonb_array_length(channel) = jsonb_array_length('["fancyguo","测试渠道二渠道"]'::jsonb) ORDER BY id desc limit 10 offset 0
+[2020-11-03T17:56:28.663] [DEBUG] debugLogger - Executing (default): select *,(case when plaform = '["1"]' then '["安卓"]'::jsonb when plaform = '["2"]' then '["苹果"]'::jsonb when   plaform @> '["1","2"]'::jsonb then '["安卓","平果"]'::jsonb end)
+         as plaforms,(select count(*) from gm_client  where game_id = '1' and status ='1'  and channel =  '["测试渠道二渠道"]' ) as total  from gm_client  where game_id = '1' and status ='1'  and channel =  '["测试渠道二渠道"]'  ORDER BY id desc limit 10 offset 0
+[2020-11-03T17:56:30.410] [DEBUG] debugLogger - Executing (default): select *,(case when plaform = '["1"]' then '["安卓"]'::jsonb when plaform = '["2"]' then '["苹果"]'::jsonb when   plaform @> '["1","2"]'::jsonb then '["安卓","平果"]'::jsonb end)
+         as plaforms,(select count(*) from gm_client  where game_id = '1' and status ='1' ) as total  from gm_client  where game_id = '1' and status ='1'  ORDER BY id desc limit 10 offset 0
+[2020-11-03T17:56:31.252] [DEBUG] debugLogger - Executing (default): select *,(case when plaform = '["1"]' then '["安卓"]'::jsonb when plaform = '["2"]' then '["苹果"]'::jsonb when   plaform @> '["1","2"]'::jsonb then '["安卓","平果"]'::jsonb end)
+         as plaforms,(select count(*) from gm_client  where game_id = '1' and status ='1'  and is_show_type =  '["测试"]' ) as total  from gm_client  where game_id = '1' and status ='1'  and is_show_type =  '["测试"]'  ORDER BY id desc limit 10 offset 0
+[2020-11-03T17:56:32.303] [DEBUG] debugLogger - Executing (default): select *,(case when plaform = '["1"]' then '["安卓"]'::jsonb when plaform = '["2"]' then '["苹果"]'::jsonb when   plaform @> '["1","2"]'::jsonb then '["安卓","平果"]'::jsonb end)
+         as plaforms,(select count(*) from gm_client  where game_id = '1' and status ='1'   and is_show_type @> '["测试","正式"]'  and  jsonb_array_length(is_show_type) = jsonb_array_length('["测试","正式"]'::jsonb)) as total  from gm_client  where game_id = '1' and status ='1'   and is_show_type @> '["测试","正式"]'  and  jsonb_array_length(is_show_type) = jsonb_array_length('["测试","正式"]'::jsonb) ORDER BY id desc limit 10 offset 0
+[2020-11-03T17:56:33.274] [DEBUG] debugLogger - Executing (default): select *,(case when plaform = '["1"]' then '["安卓"]'::jsonb when plaform = '["2"]' then '["苹果"]'::jsonb when   plaform @> '["1","2"]'::jsonb then '["安卓","平果"]'::jsonb end)
+         as plaforms,(select count(*) from gm_client  where game_id = '1' and status ='1'  and is_show_type =  '["测试"]' ) as total  from gm_client  where game_id = '1' and status ='1'  and is_show_type =  '["测试"]'  ORDER BY id desc limit 10 offset 0
+[2020-11-03T17:56:33.511] [DEBUG] debugLogger - Executing (default): select *,(case when plaform = '["1"]' then '["安卓"]'::jsonb when plaform = '["2"]' then '["苹果"]'::jsonb when   plaform @> '["1","2"]'::jsonb then '["安卓","平果"]'::jsonb end)
+         as plaforms,(select count(*) from gm_client  where game_id = '1' and status ='1' ) as total  from gm_client  where game_id = '1' and status ='1'  ORDER BY id desc limit 10 offset 0
+[2020-11-03T17:56:34.414] [DEBUG] debugLogger - Executing (default): select *,(case when plaform = '["1"]' then '["安卓"]'::jsonb when plaform = '["2"]' then '["苹果"]'::jsonb when   plaform @> '["1","2"]'::jsonb then '["安卓","平果"]'::jsonb end)
+         as plaforms,(select count(*) from gm_client  where game_id = '1' and status ='1'  and plaform =  '["1"]' ) as total  from gm_client  where game_id = '1' and status ='1'  and plaform =  '["1"]'  ORDER BY id desc limit 10 offset 0
+[2020-11-03T17:56:35.739] [DEBUG] debugLogger - Executing (default): select *,(case when plaform = '["1"]' then '["安卓"]'::jsonb when plaform = '["2"]' then '["苹果"]'::jsonb when   plaform @> '["1","2"]'::jsonb then '["安卓","平果"]'::jsonb end)
+         as plaforms,(select count(*) from gm_client  where game_id = '1' and status ='1' ) as total  from gm_client  where game_id = '1' and status ='1'  ORDER BY id desc limit 10 offset 0
+[2020-11-03T17:56:36.790] [DEBUG] debugLogger - Executing (default): select *,(case when plaform = '["1"]' then '["安卓"]'::jsonb when plaform = '["2"]' then '["苹果"]'::jsonb when   plaform @> '["1","2"]'::jsonb then '["安卓","平果"]'::jsonb end)
+         as plaforms,(select count(*) from gm_client  where game_id = '1' and status ='1'  and plaform =  '["2"]' ) as total  from gm_client  where game_id = '1' and status ='1'  and plaform =  '["2"]'  ORDER BY id desc limit 10 offset 0
+[2020-11-03T17:56:37.607] [DEBUG] debugLogger - Executing (default): select *,(case when plaform = '["1"]' then '["安卓"]'::jsonb when plaform = '["2"]' then '["苹果"]'::jsonb when   plaform @> '["1","2"]'::jsonb then '["安卓","平果"]'::jsonb end)
+         as plaforms,(select count(*) from gm_client  where game_id = '1' and status ='1' ) as total  from gm_client  where game_id = '1' and status ='1'  ORDER BY id desc limit 10 offset 0
+[2020-11-03T17:56:38.513] [DEBUG] debugLogger - Executing (default): select *,(case when plaform = '["1"]' then '["安卓"]'::jsonb when plaform = '["2"]' then '["苹果"]'::jsonb when   plaform @> '["1","2"]'::jsonb then '["安卓","平果"]'::jsonb end)
+         as plaforms,(select count(*) from gm_client  where game_id = '1' and status ='1' ) as total  from gm_client  where game_id = '1' and status ='1'  ORDER BY id desc limit 10 offset 0
+[2020-11-03T17:56:38.996] [DEBUG] debugLogger - Executing (default): select *,(case when plaform = '["1"]' then '["安卓"]'::jsonb when plaform = '["2"]' then '["苹果"]'::jsonb when   plaform @> '["1","2"]'::jsonb then '["安卓","平果"]'::jsonb end)
+         as plaforms,(select count(*) from gm_client  where game_id = '1' and status ='1' ) as total  from gm_client  where game_id = '1' and status ='1'  ORDER BY id desc limit 10 offset 0
+[2020-11-03T17:56:40.192] [DEBUG] debugLogger - Executing (default): select *,(case when plaform = '["1"]' then '["安卓"]'::jsonb when plaform = '["2"]' then '["苹果"]'::jsonb when   plaform @> '["1","2"]'::jsonb then '["安卓","平果"]'::jsonb end)
+         as plaforms,(select count(*) from gm_client  where game_id = '1' and status ='1'  and version_id = '1' ) as total  from gm_client  where game_id = '1' and status ='1'  and version_id = '1'  ORDER BY id desc limit 10 offset 0
+[2020-11-03T18:33:46.318] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(channel, ','), ',')  as values  from gm_game_channel where gameid = '1' and status = '1'
+[2020-11-03T18:33:46.329] [DEBUG] debugLogger - Executing (default): select * from gm_server  where gameid='1'and test='0' and status = 1 and (pid is null or  trim(pid) ='') order by id limit 20 offset (20*0)
+[2020-11-03T18:33:46.338] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_server where gameid='1'and test='0' and status = 1 and (pid is null or  trim(pid) ='')
+[2020-11-03T18:33:46.345] [DEBUG] debugLogger - Executing (default): select max(num), display from (SELECT count(display) as num,
+		case 
+		when display='1' then '空闲'
+		when display='2' then '繁忙'
+		when display='3' then '维护'
+		when display='4' then '爆满'
+		end
+		as display
+		from gm_server where id in ( SELECT id from gm_server  where gameid='1'and test='0' and  status = 1 and (pid is null or  trim(pid) ='')  ORDER BY id limit 20 offset (20*0)  ) GROUP BY display 
+		union 
+		select 0 as num ,'繁忙' as display
+		union 
+		select 0 as num ,'空闲' as display
+		union
+		select 0 as num ,'维护' as display
+		union
+		select 0 as num ,'爆满' as display
+		)a GROUP BY display
+[2020-11-03T18:37:07.201] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(channel, ','), ',')  as values  from gm_game_channel where gameid = '1' and status = '1'
+[2020-11-03T18:37:07.203] [DEBUG] debugLogger - Executing (default): select servername from gm_server where gameid='1' and status = 1
+[2020-11-03T18:37:09.516] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(channel, ','), ',')  as values  from gm_game_channel where gameid = '1' and status = '1'
+[2020-11-03T18:37:09.769] [DEBUG] debugLogger - Executing (default): select servername from gm_server where gameid='1' and status = 1
+[2020-11-03T18:37:09.854] [DEBUG] debugLogger - Executing (default): with qwe as (	select id ,(case when plaforms = '1'::text then '安卓' when plaforms = '2'::text then '苹果' end ) as plaforms  from gm_announcement,jsonb_array_elements_text(plaform)  with  ordinality  arr(plaforms, index)),
+            asd as (select id,status,end_time,start_time,anno_status,title,game_id,text,time_interval,img_url,weights,link,job_id,sendtime,
+					(case when type::int = 1 then start_time else sendtime end) as stime ,
+					(case when type::int = 1 then end_time else endtime end) as etime ,
+					(case when type::int = 1 then '跑马灯' when type::int = 2 then '公告板' end ) as type,
+					( case when cardinality(	array_remove(client,'')) = 0 then null else client end ) as client ,
+					( case when cardinality(	array_remove(servername,'')) = 0 then null else servername end ) as servername 
+					from gm_announcement  where  game_id=1  and status = 1  and (anno_status::int  not in (1,3)  or anno_status    is null )  
+					order by id  offset 0 limit 10),
+			zxc as (select id,string_to_array(string_agg(plaforms, ','), ',')as plaforms from qwe  GROUP BY id )
+			select asd.*,zxc.plaforms from  asd left join zxc  on asd.id=zxc.id
+[2020-11-03T18:37:09.863] [DEBUG] debugLogger - Executing (default): select count(*) as total  from gm_announcement  where  game_id=1  and status = 1  and (anno_status::int  not in (1,3)  or anno_status    is null )
+[2020-11-03T18:37:12.798] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(channel, ','), ',')  as values  from gm_game_channel where gameid = '1' and status = '1'
+[2020-11-03T18:37:13.138] [DEBUG] debugLogger - Executing (default): select a as value ,a as label from  (	 select DISTINCT servername  as a from gm_server  where gameid =1 and status  = 1  ) a
+[2020-11-03T18:37:13.389] [DEBUG] debugLogger - Executing (default): select 
+        name as label ,
+        article_id as value  from gm_article where gameid=1
+[2020-11-03T18:37:13.550] [DEBUG] debugLogger - Executing (default): with asd as (			
+				select * from gm_smtp  where  game_id= '1'  and status = 1 ORDER BY id desc limit 50 offset 0 
+			),
+			dsa as (select * from gm_server),
+			ssss as( select asd.servername, string_to_array(string_agg(dsa.servername, ','),',') as servernames from asd LEFT JOIN dsa on dsa.serverid::jsonb <@ (asd.servername) GROUP BY  asd.servername),
+			qweqweqwe  as (select asd.* ,ssss.servernames from asd left join ssss on ssss.servername = asd.servername),
+			asdasd as (select jsonb_array_elements(annex) ->> 'ID' as names, jsonb_array_elements(annex) ->> 'number' as numbers ,id  from  qweqweqwe ),
+			qweqwe as (select asdasd.id,string_to_array(string_agg(concat(gm_article.name,'  ',asdasd.numbers,'个'),','),',') as annexnames from asdasd left JOIN gm_article on gm_article.article_id = asdasd.names GROUP BY asdasd.id ),
+			qweasd as (select (case when plaform = '"1"' then '安卓' when plaform = '"2"' then '苹果'  end ) as plaform ,id from (select jsonb_array_elements(plaform) as plaform,id from asd )a )
+			select asd.*,qweqwe.annexnames,a.plaforms from asd left join qweqwe on qweqwe.id = asd.id left
+			join (select string_to_array(string_agg(plaform,','),',')as plaforms ,id from qweasd GROUP BY id )a on a.id = asd.id order by asd.id desc
+[2020-11-03T18:37:13.570] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_smtp where  game_id= '1' and status = 1
+[2020-11-03T18:37:14.026] [DEBUG] debugLogger - Executing (default): select MAX(id) from gm_smtp where game_id= 1
+[2020-11-03T18:37:14.103] [DEBUG] debugLogger - Executing (default): select name as label , article_id as value  , TRUE as leaf  from gm_article where gameid =1 and classification = 'undefined'
+[2020-11-03T18:37:14.274] [DEBUG] debugLogger - Executing (default): select classification as label , classification as value from gm_article where gameid =1 GROUP BY classification
+[2020-11-03T18:37:29.815] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(channel, ','), ',')  as values  from gm_game_channel where gameid = '1' and status = '1'
+[2020-11-03T18:37:30.050] [DEBUG] debugLogger - Executing (default): select servername from gm_server where gameid='1' and status = 1
+[2020-11-03T18:37:30.222] [DEBUG] debugLogger - Executing (default): with qwe as (	select id ,(case when plaforms = '1'::text then '安卓' when plaforms = '2'::text then '苹果' end ) as plaforms  from gm_announcement,jsonb_array_elements_text(plaform)  with  ordinality  arr(plaforms, index)),
+            asd as (select id,status,end_time,start_time,anno_status,title,game_id,text,time_interval,img_url,weights,link,job_id,sendtime,
+					(case when type::int = 1 then start_time else sendtime end) as stime ,
+					(case when type::int = 1 then end_time else endtime end) as etime ,
+					(case when type::int = 1 then '跑马灯' when type::int = 2 then '公告板' end ) as type,
+					( case when cardinality(	array_remove(client,'')) = 0 then null else client end ) as client ,
+					( case when cardinality(	array_remove(servername,'')) = 0 then null else servername end ) as servername 
+					from gm_announcement  where  game_id=1  and status = 1  and (anno_status::int  not in (1,3)  or anno_status    is null )  
+					order by id  offset 0 limit 10),
+			zxc as (select id,string_to_array(string_agg(plaforms, ','), ',')as plaforms from qwe  GROUP BY id )
+			select asd.*,zxc.plaforms from  asd left join zxc  on asd.id=zxc.id
+[2020-11-03T18:37:30.234] [DEBUG] debugLogger - Executing (default): select count(*) as total  from gm_announcement  where  game_id=1  and status = 1  and (anno_status::int  not in (1,3)  or anno_status    is null )
+[2020-11-03T18:37:33.127] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(channel, ','), ',')  as values  from gm_game_channel where gameid = '1' and status = '1'
+[2020-11-03T18:37:33.471] [DEBUG] debugLogger - Executing (default): select a as value ,a as label from  (	 select DISTINCT servername  as a from gm_server  where gameid =1 and status  = 1  ) a
+[2020-11-03T18:37:33.721] [DEBUG] debugLogger - Executing (default): select 
+        name as label ,
+        article_id as value  from gm_article where gameid=1
+[2020-11-03T18:37:33.908] [DEBUG] debugLogger - Executing (default): with asd as (			
+				select * from gm_smtp  where  game_id= '1'  and status = 1 ORDER BY id desc limit 50 offset 0 
+			),
+			dsa as (select * from gm_server),
+			ssss as( select asd.servername, string_to_array(string_agg(dsa.servername, ','),',') as servernames from asd LEFT JOIN dsa on dsa.serverid::jsonb <@ (asd.servername) GROUP BY  asd.servername),
+			qweqweqwe  as (select asd.* ,ssss.servernames from asd left join ssss on ssss.servername = asd.servername),
+			asdasd as (select jsonb_array_elements(annex) ->> 'ID' as names, jsonb_array_elements(annex) ->> 'number' as numbers ,id  from  qweqweqwe ),
+			qweqwe as (select asdasd.id,string_to_array(string_agg(concat(gm_article.name,'  ',asdasd.numbers,'个'),','),',') as annexnames from asdasd left JOIN gm_article on gm_article.article_id = asdasd.names GROUP BY asdasd.id ),
+			qweasd as (select (case when plaform = '"1"' then '安卓' when plaform = '"2"' then '苹果'  end ) as plaform ,id from (select jsonb_array_elements(plaform) as plaform,id from asd )a )
+			select asd.*,qweqwe.annexnames,a.plaforms from asd left join qweqwe on qweqwe.id = asd.id left
+			join (select string_to_array(string_agg(plaform,','),',')as plaforms ,id from qweasd GROUP BY id )a on a.id = asd.id order by asd.id desc
+[2020-11-03T18:37:33.924] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_smtp where  game_id= '1' and status = 1
+[2020-11-03T18:37:34.404] [DEBUG] debugLogger - Executing (default): select MAX(id) from gm_smtp where game_id= 1
+[2020-11-03T18:37:34.412] [DEBUG] debugLogger - Executing (default): select name as label , article_id as value  , TRUE as leaf  from gm_article where gameid =1 and classification = 'undefined'
+[2020-11-03T18:37:34.579] [DEBUG] debugLogger - Executing (default): select classification as label , classification as value from gm_article where gameid =1 GROUP BY classification
+[2020-11-03T18:37:47.581] [DEBUG] debugLogger - Executing (default): select cdkid from gm_cdk where game_id = 1 and type = '1'
+[2020-11-03T18:37:47.587] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(channel, ','), ',')  as values  from gm_game_channel where gameid = '1' and status = '1'
+[2020-11-03T18:37:47.941] [DEBUG] debugLogger - Executing (default): with asd as (select (jsonb_array_elements(annex) ->> 'annexName')::jsonb ->> 1  as name, jsonb_array_elements(annex) ->> 'annexNumber' as numbers ,id  from  gm_cdk),
+		dsa as (select  asd.id, string_to_array(string_agg(concat(art.name,'  ',asd.numbers,'个'),','),',')  as annexs  from asd  left join gm_article art on art.article_id = asd.name GROUP BY asd.id ),
+	sda as (select cdk.*,dsa.annexs   from dsa left join  gm_cdk cdk on dsa.id = cdk.id where cdk.game_id='1'   limit 10 offset 0   ),
+	pla as (select  jsonb_array_elements(plaform) as plaform ,id from gm_cdk  where id in (select id from sda)),
+	pls as (select id,string_to_array(string_agg((case 
+	when pla.plaform = '"1"' then '安卓'
+	when pla.plaform = '"2"' then '苹果'
+	end),','),',') as plaforms  from pla  GROUP BY pla.id)
+	select  sda.*,pls.plaforms ,(case 
+		when sda.type = '1' then '唯一'
+		when sda.type = '2' then '互斥'
+		when sda.type = '3' then '通用'
+		end
+		) as types  from sda left JOIN pls on pls.id=sda.id
+[2020-11-03T18:37:48.161] [DEBUG] debugLogger - Executing (default): select count(id) as total  from gm_cdk cdk where cdk.game_id='1'
+[2020-11-03T18:37:48.590] [DEBUG] debugLogger - Executing (default): select classification as label , classification as value from gm_article where gameid =1 GROUP BY classification
+[2020-11-03T18:37:48.897] [DEBUG] debugLogger - Executing (default): select name as label , article_id as value  , TRUE as leaf  from gm_article where gameid =1 and classification = 'undefined'
+[2020-11-03T18:37:51.316] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(channel, ','), ',')  as values  from gm_game_channel where gameid = '1' and status = '1'
+[2020-11-03T18:37:53.661] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(channel, ','), ',')  as values  from gm_game_channel where gameid = '1' and status = '1'
+[2020-11-03T18:37:53.912] [DEBUG] debugLogger - Executing (default): select a as value ,a as label from  (	 select DISTINCT servername  as a from gm_server  where gameid =1 and status  = 1  ) a
+[2020-11-03T18:37:53.996] [DEBUG] debugLogger - Executing (default): select 
+        name as label ,
+        article_id as value  from gm_article where gameid=1
+[2020-11-03T18:37:54.253] [DEBUG] debugLogger - Executing (default): select MAX(id) from gm_smtp where game_id= 1
+[2020-11-03T18:37:54.386] [DEBUG] debugLogger - Executing (default): select name as label , article_id as value  , TRUE as leaf  from gm_article where gameid =1 and classification = 'undefined'
+[2020-11-03T18:37:54.459] [DEBUG] debugLogger - Executing (default): select classification as label , classification as value from gm_article where gameid =1 GROUP BY classification
+[2020-11-03T18:37:55.619] [DEBUG] debugLogger - Executing (default): with asd as (			
+				select * from gm_smtp  where  game_id= '1'  and status = 1 ORDER BY id desc limit 50 offset 0 
+			),
+			dsa as (select * from gm_server),
+			ssss as( select asd.servername, string_to_array(string_agg(dsa.servername, ','),',') as servernames from asd LEFT JOIN dsa on dsa.serverid::jsonb <@ (asd.servername) GROUP BY  asd.servername),
+			qweqweqwe  as (select asd.* ,ssss.servernames from asd left join ssss on ssss.servername = asd.servername),
+			asdasd as (select jsonb_array_elements(annex) ->> 'ID' as names, jsonb_array_elements(annex) ->> 'number' as numbers ,id  from  qweqweqwe ),
+			qweqwe as (select asdasd.id,string_to_array(string_agg(concat(gm_article.name,'  ',asdasd.numbers,'个'),','),',') as annexnames from asdasd left JOIN gm_article on gm_article.article_id = asdasd.names GROUP BY asdasd.id ),
+			qweasd as (select (case when plaform = '"1"' then '安卓' when plaform = '"2"' then '苹果'  end ) as plaform ,id from (select jsonb_array_elements(plaform) as plaform,id from asd )a )
+			select asd.*,qweqwe.annexnames,a.plaforms from asd left join qweqwe on qweqwe.id = asd.id left
+			join (select string_to_array(string_agg(plaform,','),',')as plaforms ,id from qweasd GROUP BY id )a on a.id = asd.id order by asd.id desc
+[2020-11-03T18:37:56.434] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_smtp where  game_id= '1' and status = 1
+[2020-11-03T18:48:41.111] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(channel, ','), ',')  as values  from gm_game_channel where gameid = '1' and status = '1'
+[2020-11-03T18:48:41.115] [DEBUG] debugLogger - Executing (default): select * from gm_server  where gameid='1'and test='0' and status = 1 and (pid is null or  trim(pid) ='') order by id limit 20 offset (20*0)
+[2020-11-03T18:48:41.126] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_server where gameid='1'and test='0' and status = 1 and (pid is null or  trim(pid) ='')
+[2020-11-03T18:48:41.135] [DEBUG] debugLogger - Executing (default): select max(num), display from (SELECT count(display) as num,
+		case 
+		when display='1' then '空闲'
+		when display='2' then '繁忙'
+		when display='3' then '维护'
+		when display='4' then '爆满'
+		end
+		as display
+		from gm_server where id in ( SELECT id from gm_server  where gameid='1'and test='0' and  status = 1 and (pid is null or  trim(pid) ='')  ORDER BY id limit 20 offset (20*0)  ) GROUP BY display 
+		union 
+		select 0 as num ,'繁忙' as display
+		union 
+		select 0 as num ,'空闲' as display
+		union
+		select 0 as num ,'维护' as display
+		union
+		select 0 as num ,'爆满' as display
+		)a GROUP BY display
+[2020-11-03T18:52:35.164] [DEBUG] debugLogger - Executing (default): select * from gm_server  where gameid='1'and test='0' and status = 1 and (pid is null or  trim(pid) ='') order by id limit 20 offset (20*0)
+[2020-11-03T18:52:35.173] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_server where gameid='1'and test='0' and status = 1 and (pid is null or  trim(pid) ='')
+[2020-11-03T18:52:35.180] [DEBUG] debugLogger - Executing (default): select max(num), display from (SELECT count(display) as num,
+		case 
+		when display='1' then '空闲'
+		when display='2' then '繁忙'
+		when display='3' then '维护'
+		when display='4' then '爆满'
+		end
+		as display
+		from gm_server where id in ( SELECT id from gm_server  where gameid='1'and test='0' and  status = 1 and (pid is null or  trim(pid) ='')  ORDER BY id limit 20 offset (20*0)  ) GROUP BY display 
+		union 
+		select 0 as num ,'繁忙' as display
+		union 
+		select 0 as num ,'空闲' as display
+		union
+		select 0 as num ,'维护' as display
+		union
+		select 0 as num ,'爆满' as display
+		)a GROUP BY display
+[2020-11-03T18:52:35.385] [DEBUG] debugLogger - Executing (default): select * from gm_server  where gameid='1'and test='0' and status = 1 and (pid is null or  trim(pid) ='') order by id limit 20 offset (20*0)
+[2020-11-03T18:52:35.394] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_server where gameid='1'and test='0' and status = 1 and (pid is null or  trim(pid) ='')
+[2020-11-03T18:52:35.400] [DEBUG] debugLogger - Executing (default): select max(num), display from (SELECT count(display) as num,
+		case 
+		when display='1' then '空闲'
+		when display='2' then '繁忙'
+		when display='3' then '维护'
+		when display='4' then '爆满'
+		end
+		as display
+		from gm_server where id in ( SELECT id from gm_server  where gameid='1'and test='0' and  status = 1 and (pid is null or  trim(pid) ='')  ORDER BY id limit 20 offset (20*0)  ) GROUP BY display 
+		union 
+		select 0 as num ,'繁忙' as display
+		union 
+		select 0 as num ,'空闲' as display
+		union
+		select 0 as num ,'维护' as display
+		union
+		select 0 as num ,'爆满' as display
+		)a GROUP BY display
+[2020-11-03T18:52:35.498] [DEBUG] debugLogger - Executing (default): select * from gm_server  where gameid='1'and test='0' and status = 1 and (pid is null or  trim(pid) ='') order by id limit 20 offset (20*0)
+[2020-11-03T18:52:35.506] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_server where gameid='1'and test='0' and status = 1 and (pid is null or  trim(pid) ='')
+[2020-11-03T18:52:35.512] [DEBUG] debugLogger - Executing (default): select max(num), display from (SELECT count(display) as num,
+		case 
+		when display='1' then '空闲'
+		when display='2' then '繁忙'
+		when display='3' then '维护'
+		when display='4' then '爆满'
+		end
+		as display
+		from gm_server where id in ( SELECT id from gm_server  where gameid='1'and test='0' and  status = 1 and (pid is null or  trim(pid) ='')  ORDER BY id limit 20 offset (20*0)  ) GROUP BY display 
+		union 
+		select 0 as num ,'繁忙' as display
+		union 
+		select 0 as num ,'空闲' as display
+		union
+		select 0 as num ,'维护' as display
+		union
+		select 0 as num ,'爆满' as display
+		)a GROUP BY display
+[2020-11-03T18:52:43.211] [DEBUG] debugLogger - Executing (default): select cdkid from gm_cdk where game_id = 1 and type = '1'
+[2020-11-03T18:52:43.276] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(channel, ','), ',')  as values  from gm_game_channel where gameid = '1' and status = '1'
+[2020-11-03T18:52:43.462] [DEBUG] debugLogger - Executing (default): with asd as (select (jsonb_array_elements(annex) ->> 'annexName')::jsonb ->> 1  as name, jsonb_array_elements(annex) ->> 'annexNumber' as numbers ,id  from  gm_cdk),
+		dsa as (select  asd.id, string_to_array(string_agg(concat(art.name,'  ',asd.numbers,'个'),','),',')  as annexs  from asd  left join gm_article art on art.article_id = asd.name GROUP BY asd.id ),
+	sda as (select cdk.*,dsa.annexs   from dsa left join  gm_cdk cdk on dsa.id = cdk.id where cdk.game_id='1'   limit 10 offset 0   ),
+	pla as (select  jsonb_array_elements(plaform) as plaform ,id from gm_cdk  where id in (select id from sda)),
+	pls as (select id,string_to_array(string_agg((case 
+	when pla.plaform = '"1"' then '安卓'
+	when pla.plaform = '"2"' then '苹果'
+	end),','),',') as plaforms  from pla  GROUP BY pla.id)
+	select  sda.*,pls.plaforms ,(case 
+		when sda.type = '1' then '唯一'
+		when sda.type = '2' then '互斥'
+		when sda.type = '3' then '通用'
+		end
+		) as types  from sda left JOIN pls on pls.id=sda.id
+[2020-11-03T18:52:43.475] [DEBUG] debugLogger - Executing (default): select count(id) as total  from gm_cdk cdk where cdk.game_id='1'
+[2020-11-03T18:52:45.002] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(channel, ','), ',')  as values  from gm_game_channel where gameid = '1' and status = '1'
+[2020-11-03T18:52:45.350] [DEBUG] debugLogger - Executing (default): with asd as (select (jsonb_array_elements(annex) ->> 'annexName')::jsonb ->> 1  as name, jsonb_array_elements(annex) ->> 'annexNumber' as numbers ,id  from  gm_cdk),
+				dsa as (select  asd.id, string_to_array(string_agg(concat(art.name,'  ',asd.numbers,'个'),','),',')  as annexs  from asd  left join gm_article art on art.article_id = asd.name GROUP BY asd.id ),
+			sda as (select cdk.*,dsa.annexs   from dsa left join  gm_cdk cdk on dsa.id = cdk.id where cdk.game_id='1' and cdk.id=131 ),
+			pla as (select  jsonb_array_elements(plaform) as plaform ,id from gm_cdk  where id in (select id from sda)),
+			pls as (select id,string_to_array(string_agg((case 
+			when pla.plaform = '"1"' then '安卓'
+			when pla.plaform = '"2"' then '苹果'
+			end),','),',') as plaforms  from pla  GROUP BY pla.id)
+			select  sda.*,pls.plaforms ,(case 
+				when sda.type = '1' then '唯一'
+				when sda.type = '2' then '互斥'
+				when sda.type = '3' then '通用'
+				end
+				) as types from sda left JOIN pls on pls.id=sda.id
+[2020-11-03T18:52:47.385] [DEBUG] debugLogger - Executing (default): with asd as (select (jsonb_array_elements(annex) ->> 'annexName')::jsonb ->> 1  as name, jsonb_array_elements(annex) ->> 'annexNumber' as numbers ,id  from  gm_cdk),
+				dsa as (select  asd.id, string_to_array(string_agg(concat(art.name,'  ',asd.numbers,'个'),','),',')  as annexs  from asd  left join gm_article art on art.article_id = asd.name GROUP BY asd.id ),
+			sda as (select cdk.*,dsa.annexs   from dsa left join  gm_cdk cdk on dsa.id = cdk.id where cdk.game_id='1' and cdk.id=131 ),
+			pla as (select  jsonb_array_elements(plaform) as plaform ,id from gm_cdk  where id in (select id from sda)),
+			pls as (select id,string_to_array(string_agg((case 
+			when pla.plaform = '"1"' then '安卓'
+			when pla.plaform = '"2"' then '苹果'
+			end),','),',') as plaforms  from pla  GROUP BY pla.id)
+			select  sda.*,pls.plaforms ,(case 
+				when sda.type = '1' then '唯一'
+				when sda.type = '2' then '互斥'
+				when sda.type = '3' then '通用'
+				end
+				) as types from sda left JOIN pls on pls.id=sda.id

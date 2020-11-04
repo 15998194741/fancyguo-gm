@@ -290,7 +290,7 @@ class CDKService{
 				when sda.type = '2' then '互斥'
 				when sda.type = '3' then '通用'
 				end
-				) as types from sda left JOIN pls on pls.id=sda.id 
+				) as types from sda left JOIN pls on pls.id=sda.id   ORDER BY id desc
 				`;
 		
 			let res =   await dbSequelize.query(sql, {
@@ -328,7 +328,7 @@ class CDKService{
 			when sda.type = '2' then '互斥'
 			when sda.type = '3' then '通用'
 			end
-			) as types from sda left JOIN pls on pls.id=sda.id 
+			) as types from sda left JOIN pls on pls.id=sda.id ORDER BY id desc
 			`;
 			let res =   await dbSequelize.query(sql, {
 				replacements:['active'], type:Sequelize.QueryTypes.SELECT
@@ -379,7 +379,7 @@ class CDKService{
 		when sda.type = '2' then '互斥'
 		when sda.type = '3' then '通用'
 		end
-		) as types  from sda left JOIN pls on pls.id=sda.id 
+		) as types  from sda left JOIN pls on pls.id=sda.id  ORDER BY id desc
 	`;
 		
 		let res =   await dbSequelize.query(sql, {
