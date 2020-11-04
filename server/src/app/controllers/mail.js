@@ -68,7 +68,7 @@ export class CharacterController {
 		let data = ctx.query;
 		let {id} = data;
 		let result = await MailService.mailSendCancel(data);
-    	ctx.logging( '邮件创建', '邮件管理', `创建了ID为 ${id} ,定时发送的邮件` );
+    	ctx.logging( '邮件取消', '邮件管理', `取消了ID为 ${id}的邮件` );
     	ctx.body = statusCode.SUCCESS_200('停用成功', result);
 	}
 	@get('/maxID')

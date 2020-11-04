@@ -220,7 +220,7 @@
             </el-option>
           </el-select>
         </el-form-item>
-        <el-form-item label="IP/PORT" class="createFormAlertBody" prop='ip' hide-required-asterisk required>
+        <el-form-item label="IP/PORT" class="createFormAlertBody" prop='ip' hide-required-asterisk :required='!createForm.address'>
           <el-input v-model="createForm.ip" class="alertcontant"  placeholder="请输入IP地址和端口用:分开"></el-input>
         </el-form-item>
         <el-form-item label="显示状态" class="createFormAlertBody" prop='display' hide-required-asterisk required>
@@ -243,7 +243,7 @@
           <el-switch v-model="createForm.test" active-color="#13ce66"   active-value='1' inactive-value='0' inactive-color="#ff4949"></el-switch>
           <el-button type="danger" icon="el-icon-refresh-right" style="margin: 0 0 0 155px;"    @click="createFormResetForm('createForm')">清空</el-button>
         </el-form-item>
-        <el-form-item label="资源地址" class="createFormAlertButtom" hide-required-asterisk required prop='address' >
+        <el-form-item label="资源地址" class="createFormAlertButtom" hide-required-asterisk  prop='address' :required='!createForm.ip' >
           <el-input v-model="createForm.address"  class="alterbuttominput" placeholder="请输入资源地址"></el-input>
         </el-form-item>
         <el-form-item size="large">
@@ -291,7 +291,25 @@ import { servercreate, serverUpdateToOne, serverallupdate, findServerByID, getpa
 export default {
   name: 'zoneset',
   data() {
+    var addresscheck = (rule, value, callback) => {
+      if (this.$data.createForm.ip && value) {
+        return callback(new Error('资源地址与ip:port不可同时存在'));
+      }
+      if (this.$data.createForm.ip) {
+        return callback();
+      }
+      if (!value) {
+        return callback(new Error('资源地址不可为空'));
+      }
+      return callback();
+    };
     var ipcheck = (rule, value, callback) =>{
+      if (this.$data.createForm.address && value) {
+        return callback(new Error('资源地址与ip:port不可同时存在'));
+      }
+      if (this.$data.createForm.address) {
+        return callback();
+      }
       if (!value) {
         return callback(new Error('IP不可为空'));
       }
@@ -451,7 +469,8 @@ export default {
           { type: 'date', required: true, message: '请选择开服时间', trigger: ['blur', 'change'] }
         ],
         address: [
-          { required: true, message: '请输入资源地址', trigger: ['blur', 'change'] }
+      
+          { validator: addresscheck, trigger: ['blur', 'change'] }
         ]
       },
       //筛选栏过滤
@@ -1078,7 +1097,7 @@ export default {
     }
   },  
   async mounted() {
-
+    console.log(this);
     findComponents({ code: 'areaclothing', gameid: this.gameid }).then(res => {
       let components = res.data.values.map(item=>({
         label: item,

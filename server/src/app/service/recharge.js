@@ -75,7 +75,7 @@ class rechargeService{
         ON a.uid=b.uid 
        ${where}`;
 		let res = await new Promise((resolve, reject)=>{
-			connection.query(sql, async(err, result)=>{
+			 connection.query(sql, (err, result)=>{
 				if(err){
 					console.log(err);
 					return;
@@ -85,7 +85,7 @@ class rechargeService{
 			});
 		});
 		let total = await new Promise((resolve, reject)=>{
-			connection.query(totalsql, async(err, result)=>{
+			connection.query(totalsql, (err, result)=>{
 				if(err){
 					// console.log(err);
 					return reject(err);

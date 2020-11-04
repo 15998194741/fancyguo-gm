@@ -52,7 +52,7 @@ class MailService{
 			select asd.*,qweqwe.annexnames,a.plaforms from asd left join qweqwe on qweqwe.id = asd.id left
 			join (select string_to_array(string_agg(plaform,','),',')as plaforms ,id from qweasd GROUP BY id )a on a.id = asd.id order by asd.id desc
 		`;
-		// console.log(sql);
+		console.log(sql);
 		let res = await dbSequelize.query(sql, {
 			replacements:['active'], type:Sequelize.QueryTypes.SELECT
 		});
@@ -226,24 +226,28 @@ class MailService{
 		
 	}
 	async mailSendTiming(data){
-		let {gameid} = data;
+		let {gameid, id} = data;
 		let res = await  this.SenClient.get('mail', 'timedMail', {body:data});
 		
 		let {code, data:CpData} = res;
-		if(code === 200 ){
-			return ;	
+		if(+code !== +200 ){	
+			// let sql = ` update gm_smtp   set status = 0 where id = '${id}' and game_id='${gameid}'`;
+			// let ress = await dbSequelize.query(sql);
+			throw {message:'邮件定时发送 失败'};
 		}
-		// console.log(res);
-		throw new Error('邮件定时发送 失败');
+	
+		return res;	
+	
 	}
 	async mailSendCancel(data){
-		let {gameid} = data;
+		let { gameid, id } = data;
 		let res = await  this.SenClient.get('mail', 'timedMailCancel', {body:data});
 		let {code, data:CpData} = res;
-		if(code === 200 && CpData){
-			return;	
-		}
-		throw new Error('取消邮件定时发送 失败');
+		if(+code !== +200 ){	throw {message:'取消邮件定时发送失败'};}
+		let sql = ` update gm_smtp   set status = 0 where id = '${id}' and game_id='${gameid}'`;
+		let ress = await dbSequelize.query(sql);
+		return ress;	
+	
 	}
 	async maxID(data){
 		let { gameid } = data;
