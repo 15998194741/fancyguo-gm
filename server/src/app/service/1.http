@@ -1,0 +1,4 @@
+POST  http://s99981.mrhx.hz.37.com.cn:80/gmswap/serverCreate?id=99981 HTTP/1.1
+Content-Type: application/json
+
+{"id":99981}

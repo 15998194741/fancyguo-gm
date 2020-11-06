@@ -109,6 +109,13 @@ export class UserController {
 	 * 
 	 * 区服创建
 	 */
+	/**
+  * 描述
+  * @author 小鹿
+  * @date 2020-11-05
+  * @param {any} '/serverCreate'
+  * @returns {any}
+  */
 	@post('/serverCreate')
 	async serverCreate(ctx){
     	ctx.log.resourceDesc = '区服创建';
@@ -117,6 +124,7 @@ export class UserController {
 		let result = await gmServerService.serverCreate({data, user});
 		ctx.logging( '创建区服', '区服管理', `创建了区服ID为 ${result['id']} 的区服 ` );
 		ctx.body = statusCode.SUCCESS_200('创建成功', result);
+	
 	}
 	/**
 	 * 

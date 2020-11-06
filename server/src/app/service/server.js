@@ -5,6 +5,7 @@ import { dbSequelize } from '../../config';
 const Sequelize = require('sequelize');
 import dayjs from 'dayjs';
 import Cp from '../../utils/Cp';
+import { add } from 'ramda';
 class GmServerService extends BaseService{
 	constructor() {
 		super(gmServerDao, gmServerDO);
@@ -151,65 +152,46 @@ class GmServerService extends BaseService{
 	  async serverCreate(args){
 		  let  {data, user} = args;
 		let {id :userId} = user;
-		let {servername, gameid, address, test, ip:ipPort, display, srttime, channel, plaform} = data;
+		let {servername, gameid, address, test, ip:ipPort, display, srttime, channel, plaform, serverid, serveridTrue} = data;
 		srttime = dayjs(srttime).add(8, 'hour');
-		let english = ipPort.split(':');
-		let chinese = ipPort.split('：');
-		let  ipp = english.length === 2 ? english:chinese.length === 2 ?chinese :null;
-		if(!ipp){throw {code:500, message:'参数不合法'};}
-		let {0:ip, 1:port}=ipp;
+		let ipAndPort = address || ipPort;
+		let ip = ipAndPort.replace(/^(.+)[:：]([0-9]+)/, '$1');
+		let port = ipAndPort.replace(/^(.+)[:：]([0-9]+)/, '$2'); 
+		 port = port === ip ?'80':port;
 		let sql = `
 		insert into gm_server (
-			create_user_id,servername,gameid,address,test,ip_port,display,srttime,channel,plaform,ip,port
+			create_user_id,servername,gameid,address,test,ip_port,
+			display,srttime,channel,plaform,
+			ip,port,serverid,"serverTrue"
 		)values(
-			'${userId}','${servername}','${gameid}','${address}','${test}','${ipPort}','${display}','${ srttime }','${JSON.stringify(channel)}','${JSON.stringify(plaform)}','${ip}','${port}'
-		) RETURNING id
+			'${userId}','${servername}','${gameid}','${address}','${test}','${ipPort}',
+			'${display}','${ srttime }','${JSON.stringify(channel)}','${JSON.stringify(plaform)}',
+			'${ip}','${port}','${serverid}',${!!serveridTrue}	
+				) RETURNING id
 		`;
-		
+		console.log(sql);
 		let res = await dbSequelize.query(sql, {
 			replacements:['active'], type:Sequelize.QueryTypes.INSERT
 		});
-		let updatesql = ' update gm_server set serverid = id';
-		await dbSequelize.query(updatesql, {
-			replacements:['active'], type:Sequelize.QueryTypes.UPDATE
-		});
+		// let updatesql = ' update gm_server set serverid = id';
+		// await dbSequelize.query(updatesql, {
+			// replacements:['active'], type:Sequelize.QueryTypes.UPDATE
+		// });
 		 
 		
-		if(+res[1] === 1){
-			// await Cp.post(gameid, 'server/createServer', res[0][0]);
-		
-			let body = res[0][0];
-			let { code } = await this.SenClient.get('server', 'createServer', {body});
-			if(+code !== 200) {
-				let falseSql = ` update  gm_server set  status = '0' where id = ${body['id']}`;
-				await dbSequelize.query(falseSql, {
-					replacements:['active'], type:Sequelize.QueryTypes.UPDATE
-				});
-				throw {code:500, message:'Cp交互失败,请确认IP地址'};
-			}
-			// console.log('-------------------------------------------');
-			// console.log(SenClientres);
-			// console.log('-------------------------------------------');
-			// const seneca = require('seneca')();
-			// const bluebird = require('bluebird');
-			// const act = bluebird.promisify(seneca.act, { context: seneca });
-			// seneca.client({
-			// 	host:'127.0.0.1',
-			// 	port:10002,
-			// 	type:'tcp'
-			// });
-			// let a = await act({
-			// 	server:'createServer',
-			// 	args:{
-			// 		query:{
-			// 			...res[0][0]
-			// 		}
-			// 	}
-			// });
-			return res[0][0];
-		}else {
+		if(+res[1] !== 1){
 			throw {code:500, message:'创建失败，请连续管理员。'};
 		}
+		let body = res[0][0];
+			
+		let { code } = await this.SenClient.get('server', 'createServer', {body}).catch(e=>({code:500}));
+			
+		if(+code === 200) {return res[0][0];}
+		let falseSql = ` update  gm_server set  status = '0' where id = ${body['id']}`;
+		await dbSequelize.query(falseSql, {
+			replacements:['active'], type:Sequelize.QueryTypes.UPDATE
+		});
+		throw { message:'Cp交互失败,请确认交互地址'};
 
 	  }
 

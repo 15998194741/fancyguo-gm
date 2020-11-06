@@ -83,7 +83,7 @@ class UserServer extends BaseService{
 		});
 		let gamesql = `
 		select string_to_array(string_agg(game_name, ','), ',')  as games from (
-			select  DISTINCT game_name,b.id from gm_purview a join gm_game b on a.gid = b.id  where uids @> '${id}' and b.status = '1'  ORDER BY id 
+			select  DISTINCT game_name,b.id from gm_purview a join gm_game b on a.gid = b.id  where uids @> '${id}' and b.status = '1' and a.status = '1'   ORDER BY id 
 		) a 
 		`;
 		let {0:{games}} = await dbSequelize.query(gamesql, {

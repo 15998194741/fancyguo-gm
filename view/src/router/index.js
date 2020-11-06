@@ -142,7 +142,7 @@ router.beforeEach(async(to, from, next) => {
     if (to.redirectedFrom !== '/' && to.redirectedFrom === pathName && to.redirectedFrom !== '/index') {
       return next(pathName);
     }
-    return next();
+    return next('/index');
   } else {
     return next();
   }

@@ -3,6 +3,25 @@
   <div ref="rechaContainer" class="distric-container"  >
     <div class="option-container" style="margin-bottom: -2px;">
       <ul>
+  <!-- <li>          <el-button v-if="grade"  slot="reference" icon="el-icon-thumb" size='small'   class="button-with-header" :disabled='allselectchangeopen' @click="dialogFormchange = true">删除安全组</el-button>
+        </li>
+        <li>
+          <el-button v-if="grade"  slot="reference" icon="el-icon-thumb" size='small'   class="button-with-header" :disabled='allselectchangeopen' @click="dialogFormchange = true">添加安全组</el-button>
+        </li> -->
+
+
+         <li>
+       <el-dropdown>
+  <el-button  class="button-with-header"  size='small' >
+    安全组<i class="el-icon-arrow-down el-icon--right"></i>
+  </el-button>
+  <el-dropdown-menu slot="dropdown">
+    <el-dropdown-item>添加</el-dropdown-item>
+    <el-dropdown-item>清空</el-dropdown-item>
+  
+  </el-dropdown-menu>
+</el-dropdown>
+        </li>
         <li>
           <el-button v-if="grade"  slot="reference" icon="el-icon-thumb" size='small'   class="button-with-header" :disabled='allselectchangeopen' @click="dialogFormchange = true">批量操作</el-button>
         </li>
@@ -202,9 +221,23 @@
     <!-- 区服创建表单弹窗 -->
     <el-dialog  title="新建区服" :visible.sync="serverCreatedialogFormVisible" :close-on-click-modal="false">
       <el-form ref="createForm"  key="createForm" :rules="createFormRules" :model="createForm" label-width="100px"  class='createFormAlert'> 
-        <!-- <el-form-item label="区服ID:" class="createFormAlertBody" >
-          <el-input v-model="createForm.serverid" disabled class="alertcontant"></el-input>
+          <!-- <el-form-item label=":"  prop='serverid' class="createFormAlertBody" >
+          <el-switch
+            v-model="createForm.serveridTrue"
+            active-color="#13ce66"
+            inactive-color="#ff4949">
+          </el-switch>
+        
         </el-form-item> -->
+        <el-form-item label="区服ID:"  prop='serverid' class="createFormAlertBody" >
+          <label>手动输入</label> 
+           <el-switch
+            v-model="createForm.serveridTrue"
+            active-color="#13ce66"
+            inactive-color="#ff4949">
+          </el-switch>
+          <el-input v-show="createForm.serveridTrue" v-model="createForm.serverid" :required="!!createForm.serveridTrue" :disabled='!createForm.serveridTrue' class="alertcontant"></el-input>
+        </el-form-item>
         <el-form-item label="区服名称:" class="createFormAlertBody" prop='servername' hide-required-asterisk required>
           <el-input v-model="createForm.servername" class="alertcontant" placeholder="请输入区服名称"></el-input>
         </el-form-item>
@@ -291,6 +324,13 @@ import { servercreate, serverUpdateToOne, serverallupdate, findServerByID, getpa
 export default {
   name: 'zoneset',
   data() {
+    var serverTrue = (rule, value, callback) => {
+      if (this.$data.createForm.serveridTrue) {
+        return value ? callback() : callback('区服ID不可为空');
+
+      }
+      return callback();
+    };
     var addresscheck = (rule, value, callback) => {
       if (this.$data.createForm.ip && value) {
         return callback(new Error('资源地址与ip:port不可同时存在'));
@@ -437,6 +477,7 @@ export default {
       createForm: { //区服创建表单值
         serverid: '',
         servername: '',
+        serveridTrue: false,
         plaform: [],
         channel: [],
         ip: '',
@@ -449,6 +490,9 @@ export default {
       },
     
       createFormRules: {
+        serverid: [
+          { validator: serverTrue, trigger: 'blur' }
+        ],
         servername: [
           { required: true, message: '请输入区服名称', trigger: ['blur', 'change'] },
           { validator: servernameRepeat, trigger: 'blur' }
