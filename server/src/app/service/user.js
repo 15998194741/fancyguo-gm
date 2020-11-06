@@ -45,7 +45,7 @@ class UserServer extends BaseService{
 	async findUser(id, game, loginType) {
 		game = game?`and a.game_name = '${game}'`:'';
 		let gamenameAndId= `
-		select a.id,a.game_name ,a.image_url as img from gm_game a join gm_purview b on b.gid = a.id where b.uids @> '${id}' and a.status = '1'   ${game} limit 1
+		select a.id,a.game_name ,a.image_url as img from gm_game a join gm_purview b on b.gid = a.id where b.uids @> '${id}' and a.status = '1'  and b.status = '1'  ${game} limit 1
 		`;
 		
 		let gamenameData  = await dbSequelize.query(gamenameAndId, {
