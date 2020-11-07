@@ -11,13 +11,13 @@
 
 
          <li>
-       <el-dropdown>
-  <el-button  class="button-with-header"  size='small' >
+       <el-dropdown  v-if="grade"  @command="handleCommand">
+  <el-button  :disabled='!(allselectchange.length > 0)' class="button-with-header"  size='small' >
     安全组<i class="el-icon-arrow-down el-icon--right"></i>
   </el-button>
   <el-dropdown-menu slot="dropdown">
-    <el-dropdown-item>添加</el-dropdown-item>
-    <el-dropdown-item>清空</el-dropdown-item>
+    <el-dropdown-item command="a">添加</el-dropdown-item>
+    <el-dropdown-item command="b">清空</el-dropdown-item>
   
   </el-dropdown-menu>
 </el-dropdown>
@@ -68,7 +68,7 @@
 
       <div  class="table-body">
       <el-table
-        ref="multipleTable"
+        ref="multipleTablejklgjkljl"
         v-loading="loading"
         style="min-height: 66vh;" 
         element-loading-text="拼命加载中" 
@@ -89,7 +89,7 @@
           <template slot-scope="scope">{{ scope.row.childrens?scope.row.id:'' }} </template>
         </el-table-column>
         <el-table-column label="区服ID" >
-          <template slot-scope="scope">{{ scope.row.childrens?'':scope.row.id }} </template>
+          <template slot-scope="scope">{{ scope.row.childrens?'': scope.row.serverid||scope.row.id  }} </template>
         </el-table-column>
         <el-table-column label="名称" >
           <template slot-scope="scope">{{ scope.row.servername }} </template>
@@ -105,6 +105,15 @@
             <el-tooltip effect='light'  placement="top" class="aasdhjkahskdhjk">
               <div slot="content" :ref="'contentCssTableHover'+scope.$index" class="contentCssTableHover" > <el-tag v-for='(i,index) in  scope.row["channel"]' :key="index" >{{ i }}</el-tag></div>
             <div class="contentCssTableHidden" style="max-height:30px"><el-tag v-for='(i,index) in  scope.row["channel"]' :key="index">{{ i }}</el-tag></div> 
+            </el-tooltip>
+            <!-- <el-tag v-for='(i,index) in  scope.row["channel"]' :key="index">{{ i }}</el-tag> -->
+          </template>
+        </el-table-column>
+         <el-table-column label="安全组"  >
+          <template slot-scope="scope" >
+            <el-tooltip effect='light'  placement="top" class="aasdhjkahskdhjk">
+              <div slot="content" :ref="'contentCssTableHover'+scope.$index" class="contentCssTableHover" > <el-tag v-for='(i,index) in  scope.row["securityGroup"]' :key="index" >{{ i }}</el-tag></div>
+            <div class="contentCssTableHidden" style="max-height:30px"><el-tag v-for='(i,index) in  scope.row["securityGroup"]' :key="index">{{ i }}</el-tag></div> 
             </el-tooltip>
             <!-- <el-tag v-for='(i,index) in  scope.row["channel"]' :key="index">{{ i }}</el-tag> -->
           </template>
@@ -173,21 +182,21 @@
 
       <div class="alertname">
         <el-table ref="multipleTable" :data="allselectchange">
-          <el-table-column prop='pid' label="合服ID" :width="widthtable">
+          <el-table-column prop='pid' label="合服ID"  >
           </el-table-column>
-          <el-table-column prop="serverid" label="区服ID" :width="widthtable">
+          <el-table-column prop="serverid" label="区服ID"  >
           </el-table-column>
-          <el-table-column prop="servername" label="名称" :width="widthtable">
+          <el-table-column prop="servername" label="名称"  >
           </el-table-column>
-          <el-table-column prop="plaform" label="平台" :width="widthtable">
+          <el-table-column prop="plaform" label="平台"  >
           </el-table-column>
-          <el-table-column prop="channel" label="渠道" :width="widthtable">
+          <el-table-column prop="channel" label="渠道"  >
           </el-table-column>
-          <el-table-column prop="display" label="显示状态" :width="widthtable">
+          <el-table-column prop="display" label="显示状态"  >
           </el-table-column>
-          <el-table-column prop="load" label="负载状态" :width="widthtable">
+          <el-table-column prop="load" label="负载状态"  >
           </el-table-column>
-          <el-table-column prop="srttime" label="开服时间" :width="widthtable">
+          <el-table-column prop="srttime" label="开服时间"  >
           </el-table-column>
  <el-table-column v-if="grade" prop='status' label="操作">
           <template slot-scope="scope">
@@ -212,7 +221,7 @@
           <el-option label="维护" value="3"></el-option>
         </el-select>
         <el-button style="margin-left: 10px;" @click="dialogFormchange = false">取 消</el-button>
-        <el-button type="primary" @click="updateserver">确 定</el-button>
+        <el-button type="primary"  :disabled="!(allselectchange.length > 0 )"  @click="updateserver">确 定</el-button>
       </div>
     </el-dialog>
 
@@ -281,7 +290,7 @@
         </el-form-item>
         <el-form-item size="large">
           <el-button @click="serverCreatedialogFormVisible = false">取 消</el-button>
-          <el-button type="primary"   @click="createFormSubmitForm('createForm')">确 定</el-button>
+          <el-button type="primary"  @click="createFormSubmitForm('createForm')">确 定</el-button>
         
         </el-form-item>
       </el-form>
@@ -311,6 +320,82 @@
         <el-button type="primary" @click="updateServerToOne(false)">确 定</el-button>
       </div>
     </el-dialog>
+
+
+
+     <el-dialog title="安全组添加" :visible.sync="dialogFormVisibleAddIp"  :close-on-click-modal="false">
+     
+      <div class="alertname">
+        <el-table ref="multipleTable" :data="allselectchange">
+
+
+
+          <el-table-column prop='pid' label="合服ID" >
+          </el-table-column>
+          <el-table-column prop="serverid" label="区服ID" >
+          </el-table-column>
+          <el-table-column prop="servername" label="名称"  >
+          </el-table-column>
+          <el-table-column prop="plaform" label="平台"  >
+          </el-table-column>
+          <el-table-column prop="channel" label="渠道"  >
+          </el-table-column>
+          <el-table-column prop="display" label="显示状态"  >
+          </el-table-column>
+          <el-table-column prop="load" label="负载状态"  >
+          </el-table-column>
+          <el-table-column prop="srttime" label="开服时间"  >
+          </el-table-column>
+            <el-table-column label="安全组"  >
+          <template slot-scope="scope" >
+            <el-tooltip effect='light'  placement="top" class="aasdhjkahskdhjk">
+              <div slot="content" :ref="'contentCssTableHover'+scope.$index" class="contentCssTableHover" > <el-tag v-for='(i,index) in  scope.row["securityGroup"]' :key="index" >{{ i }}</el-tag></div>
+            <div class="contentCssTableHidden" style="max-height:30px"><el-tag v-for='(i,index) in  scope.row["securityGroup"]' :key="index">{{ i }}</el-tag></div> 
+            </el-tooltip>
+            <!-- <el-tag v-for='(i,index) in  scope.row["channel"]' :key="index">{{ i }}</el-tag> -->
+          </template>
+        </el-table-column>
+ <el-table-column v-if="grade" prop='status' label="操作">
+          <template slot-scope="scope">
+            <div class="tableFlex">
+            <el-button
+              size="mini" style="color: red;"
+              icon="el-icon-video-pause" class="button-with-header" @click="piliangcaozuoCancel(scope.$index,scope.row)">取消
+            </el-button>
+            </div>
+          </template>
+        </el-table-column>
+
+        </el-table>
+      </div>
+      <div slot="footer" class="dialog-footer">
+     <el-form ref="IpcreateForm"  key="IpcreateForm"  :model="ipList" label-width="100px"  > 
+          <!-- <el-form-item label=":"  prop='serverid' class="createFormAlertBody" >
+          <el-switch
+            v-model="createForm.serveridTrue"
+            active-color="#13ce66"
+            inactive-color="#ff4949">
+          </el-switch>
+        
+        </el-form-item> -->
+    
+        <el-form-item
+v-for="(value,index) in  ipList" :key="index" :label="`IP地址${index}:`" class="createFormAlertBodyIp"
+:prop='index+".ip"' :hide-required-asterisk='true'  :rules="[
+{   required: true, message: 'ip不能为空', trigger: 'blur' },
+{ validator:ipRules ,trigger :'blur'   }
+]" >
+          <el-input v-model="ipList[index]['ip']" class="alertcontant" placeholder="请输入ip地址"></el-input>
+          <el-button  v-if="+index === ipList.length-1" type="primary" icon="el-icon-circle-plus" @click="ipListAdd"></el-button>
+          <el-button  v-if="+index === ipList.length-1" type="primary" icon="el-icon-remove" @click="ipListRemove"></el-button>
+        </el-form-item>
+       
+      </el-form>
+       
+        <el-button style="margin-left: 10px;" @click="dialogFormVisibleAddIp = false">取 消</el-button>
+        <el-button type="primary" :disabled="!(allselectchange.length > 0 )"  @click="addIpSumbit">确 定</el-button>
+      </div>
+    </el-dialog>
   </div>
 </template>
 
@@ -321,6 +406,7 @@ import { loading, close, secondConfirmation } from '@/views/loading';
 import dayjs from 'dayjs';
 import { findComponents, findServer, stopserver, ServerMerge, serverselect } from '@/api/components.js';
 import { servercreate, serverUpdateToOne, serverallupdate, findServerByID, getpage } from '@/api/components.js';
+import { clearIpAll, addIpSecurityGroup } from '@/api/components.js';
 export default {
   name: 'zoneset',
   data() {
@@ -379,6 +465,16 @@ export default {
       servernames: '',
       showstatusIsShow: false,
       showstatusIsvalue: '',
+      dialogFormVisibleAddIp: false, //安全组弹窗
+      ipList: [{
+        ip: ''
+      }], //安全组ip组
+      ipRules: (rule, value, callback)=>{
+        if (!(/^(25[0-5]|2[0-4]\d|[0-1]\d{2}|[1-9]?\d)\.(25[0-5]|2[0-4]\d|[0-1]\d{2}|[1-9]?\d)\.(25[0-5]|2[0-4]\d|[0-1]\d{2}|[1-9]?\d)\.(25[0-5]|2[0-4]\d|[0-1]\d{2}|[1-9]?\d)$/.test(value))) {
+          return callback(new Error('请输入正确的IP地址'));
+        }
+        return callback();
+      },
       clientOptions: [], //客户端组件
       serverCreatedialogFormVisible: false, //区服创建弹窗变量
       selectForm: [{
@@ -671,6 +767,92 @@ export default {
  
 
   methods: { 
+    async ipListAdd() {
+      
+      let ip = this.ipList[this.ipList.length - 1]['ip'];
+      if (!ip) {
+        this.$message.info('最后一条未输入,');
+        return;
+      }
+      if (!(/^(25[0-5]|2[0-4]\d|[0-1]\d{2}|[1-9]?\d)\.(25[0-5]|2[0-4]\d|[0-1]\d{2}|[1-9]?\d)\.(25[0-5]|2[0-4]\d|[0-1]\d{2}|[1-9]?\d)\.(25[0-5]|2[0-4]\d|[0-1]\d{2}|[1-9]?\d)$/.test(ip))) {
+        this.$message.info('输入错误.');
+        return;
+      } 
+      this.ipList = this.ipList.concat({ ip: '' });
+    },
+    async ipListRemove() {
+      if (this.ipList.length === 1) {
+        this.$message.warning('最后一条数据不可删除');
+        return;
+      }
+      this.ipList.pop();
+    },
+    /**
+     * 描述
+     * @author 小鹿
+     * @date 2020-11-07
+     * @param {any} c  安全组操作指令  a为添加ip  b为清空所选区服所有ip组
+     * @returns {any}
+     */
+    async handleCommand(c) {
+      switch (c) {
+        case 'a':this.addIp(); break;
+        case 'b':this.clearIpAll(); break;
+      }
+    },
+    async clearIpAll() {
+      let mergetrue = await this.$confirm('是否确认清空所有安全组?', '提示', {
+        confirmButtonText: '确定',
+        cancelButtonText: '取消',
+        type: 'warning' })
+        .catch(err => false);
+      if (!mergetrue) {return;}
+      console.log(this.allselectchange);
+      let { code } = await clearIpAll({ server: this.allselectchange });
+      if (+code !== 200) {return;}
+      this.$message.success('操作成功,页面刷新中~');
+      this.filterFormChange('flush');
+    },
+    async addIp() {
+      this.dialogFormVisibleAddIp = true;
+    },
+    async addIpSumbit() {
+      let cat = await this.$refs.IpcreateForm.validate().catch(a=>false);
+      if (!cat) {return;}
+      let mergetrue = await this.$confirm('是否确认添加安全组?', '提示', {
+        confirmButtonText: '确定',
+        cancelButtonText: '取消',
+        type: 'warning' })
+        .catch(err => false);
+      if (!mergetrue) {return;}
+      
+      // for (let ips of this.ipList) {
+      //   if (!ips) {
+      //     this.$message.info('不允许存在空记录');
+      //     return;
+      //   }
+      //   if (!(/^(25[0-5]|2[0-4]\d|[0-1]\d{2}|[1-9]?\d)\.(25[0-5]|2[0-4]\d|[0-1]\d{2}|[1-9]?\d)\.(25[0-5]|2[0-4]\d|[0-1]\d{2}|[1-9]?\d)\.(25[0-5]|2[0-4]\d|[0-1]\d{2}|[1-9]?\d)$/.test(ips))) {
+      //     this.$message.info('ip地址不正确');
+      //     return;
+      //   } 
+      // }
+    
+      let server = this.allselectchange;
+      let ip = this.ipList;
+      let { code } = await addIpSecurityGroup({
+        server,
+        ip
+      });
+      if (+code !== 200) {return;}
+      this.$message.success('添加成功,页面刷新中~');
+      this.filterFormChange('flush');
+      this.dialogFormVisibleAddIp = false;
+      this.ipList = [{
+        ip: ''
+      }];
+
+
+    },
     async piliangcaozuoCancel(a, b) {
       let mergetrue = await this.$confirm('是否确认取消此记录?', '提示', {
         confirmButtonText: '确定',
@@ -679,6 +861,11 @@ export default {
         .catch(err => false);
       if (!mergetrue) {return;}
       this.allselectchange.splice(a, 1);
+      //  b.forEach(row => {
+      //       this.$refs.multipleTable.toggleRowSelection(row);
+      //     });
+      this.$refs.multipleTablejklgjkljl.toggleRowSelection(b);
+      // console.log(b);
     },
     async showStatusChange(a, b) {
       if (!this.grade) {
@@ -691,7 +878,7 @@ export default {
       // console.log(a);
     },
     async showStatusChangeCancel(a, b) {
-      console.log(a, b);
+      // console.log(a, b);
       // this.tableData[a]['showstatusIsvalue'] = false;
       // b['showstatusIsShow'] = false;
     },
@@ -758,7 +945,7 @@ export default {
           this.filterFormChange('flush');
           return;
         }
-        this.$message.warning('合服失败!'); 
+     
       
       }
    
@@ -1141,7 +1328,6 @@ export default {
     }
   },  
   async mounted() {
-    console.log(this);
     findComponents({ code: 'areaclothing', gameid: this.gameid }).then(res => {
       let components = res.data.values.map(item=>({
         label: item,
@@ -1203,9 +1389,18 @@ export default {
   }
 
   .distric-container {
+    .createFormAlertBodyIp{
+      &> div {
+        text-align: left;
+
+      }
+    }
     height: calc(100vh - 200px);
     .tableFlex {
         display: flex;
+        justify-content: center;
+    justify-items: center;
+    justify-self: center;
     }
      .is-checked , .is_focus{
         color: #2BBFBD !important;

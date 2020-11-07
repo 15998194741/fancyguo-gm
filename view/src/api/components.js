@@ -23,7 +23,22 @@ export function serverselect(data) {
 }
 
 
+export function clearIpAll(data) {
+  return request({
+    url: 'server/clearIpAll',
+    method: 'post',
+    data
+  });
+}
 
+
+export function addIpSecurityGroup(data) {
+  return request({
+    url: 'server/addIpSecurityGroup',
+    method: 'post',
+    data
+  });
+}
 //服务器创建
 export function servercreate(data) {
   return request({

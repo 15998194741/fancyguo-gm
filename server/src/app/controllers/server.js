@@ -151,7 +151,30 @@ export class UserController {
 		let serverIDS = ctx.request.body;
 		// console.log(serverIDS);
 		let result = await gmServerService.mergeServer(serverIDS);
-		ctx.logging( '区服合并', '区服管理', `合并了区服id ${serverIDS.map(a=>a.serverid)}` );
+		ctx.logging( '区服合并', '区服管理', `合并了区服id ${serverIDS.map(a=>a.serverid ||a['id'] )}` );
 		ctx.body = statusCode.SUCCESS_200('成功', result);
+	}
+
+
+
+	@post('/clearIpAll')
+	async clearIpAll(ctx) {
+		// ctx.log.resourceDesc = '区服创建';
+		let form = ctx.request.body;
+		let {server} = form;
+		let result = await gmServerService.clearIpAll(form);
+		ctx.logging( '清空安全组', '区服管理', `清空了区服id${server.map(a=>a['serverid']||a['id'])}` );
+		ctx.body = statusCode.SUCCESS_200('创建成功', result);
+	}
+
+
+	@post('/addIpSecurityGroup')
+	async addIpSecurityGroup(ctx) {
+		// ctx.log.resourceDesc = '区服创建';
+		let form = ctx.request.body;
+		let  { server, ip } = form;
+		let result = await gmServerService.addIpSecurityGroup(form);
+		ctx.logging( '添加安全组', '区服管理', `添加了区服id${server.map(a=>a['serverid']||a['id'])} 安全组为${ip.map(a=>a['ip'])}` );
+		ctx.body = statusCode.SUCCESS_200('创建成功', result);
 	}
 }

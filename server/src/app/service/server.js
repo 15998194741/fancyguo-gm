@@ -6,6 +6,7 @@ const Sequelize = require('sequelize');
 import dayjs from 'dayjs';
 import Cp from '../../utils/Cp';
 import { add } from 'ramda';
+import { config } from 'bluebird';
 class GmServerService extends BaseService{
 	constructor() {
 		super(gmServerDao, gmServerDO);
@@ -193,6 +194,25 @@ class GmServerService extends BaseService{
 		});
 		throw { message:'Cp交互失败,请确认交互地址'};
 
+	  }
+	  async clearIpAll({server, gameid}){
+		let sql = `
+		update "gm_server" set "securityGroup" = null where id in (${server.map(a=>a.id)} ) and gameid = ${gameid}
+		`;
+		return await dbSequelize.query(sql, {
+			replacements:['active'], type:Sequelize.QueryTypes.UPDATE
+		});
+
+	  }
+	  async addIpSecurityGroup({server, ip, gameid}){
+		
+		let ips = JSON.stringify(ip.map(a=>a.ip));
+		let sql =` 
+		update "gm_server" set "securityGroup" = case when "securityGroup"  is null   then       '${ips}'::jsonb    else  "securityGroup"    ||  '${ips}'::jsonb end  where id in (${server.map(a=> Number(a.id))} ) and gameid = ${gameid}
+		`;
+		return await dbSequelize.query(sql, {
+			replacements:['active'], type:Sequelize.QueryTypes.UPDATE
+		});
 	  }
 
 }
