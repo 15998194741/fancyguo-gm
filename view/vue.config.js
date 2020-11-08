@@ -5,7 +5,7 @@ const path = require('path');
 function resolve(dir) {
   return path.join(__dirname, dir);
 }
-const name = '青果灵动';
+const name = 'GM|青果灵动';
 // 如果你的端口设置为80，
 // 使用管理员特权执行命令行。
 // 例如，Mac: sudo npm run
@@ -43,7 +43,7 @@ module.exports = {
     },
     proxy: {
       '/api': {
-        target: 'http://127.0.0.1',
+        target: 'http://127.0.0.1:8080',
         changeOrigin: true
       }
     }

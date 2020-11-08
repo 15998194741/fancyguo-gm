@@ -58,7 +58,7 @@
 
 import UserDao from '../dao/user';
 import BaseService from '../../lib/base-service';
-
+import dayjs from 'dayjs';
 const crypto = require('crypto');
 
 
@@ -99,16 +99,111 @@ class components extends BaseService{
 		// return [...new Set(serverall.map(({ pid }) => pid).filter(pid => pid))].map(pid => serverall.filter(({ pid: _pid }) => _pid === pid)).map(children => ({children})).concat(serverall.filter(({pid}) => !pid));
 		// return serverall;
 	}
-	async updateserver(form){
-		let gametable = await UserDao.findSqlByParamsToOne('update gm_server set display = :display where  gameid=:gameid and serverid=:serverid returning *', form);
+	async updateserver(ctx){
+		let form = ctx.request.body;
+		let {  srttimeChange, displayChange } = form;
+		form.srttime = dayjs(form.srttime).format('YYYY-MM-DD HH:mm:ss');
+		let {id, serverid, ip, port} = form;
+		const request = require('request');
+
+		if(srttimeChange){
+			let url = `http://${ip}:${port}/gmswap/modifyStartTime`;
+			let {code}  = await new Promise((res, rej)=> {
+				request({
+					url,
+					method:'post',
+					data:{
+						srttime:form.srttime
+					},
+					body:{data:JSON.stringify({
+						srttime:form.srttime
+					})},
+					form :{
+						srttime:form.srttime
+					}
+				}, (e, r, b)=>{
+					if(e){
+						rej(e);
+					}else{
+						try{
+							res(JSON.parse(b));
+						}catch (e){
+							res(b);
+						}
+					}
+				});
+			}).catch(()=>({code:500}));  
+			if(+code !== 200){	throw {message:'开服时间修改失败'};	}
+			ctx.logging( '开服时间修改', '区服管理', `修改了区服id ${id||serverid} 时间为 ${form.srttime}` );
+		}
+		if(displayChange){
+			let {display} = form;
+			if(+display === 3 ){
+				let url = `http://${ip}:${port}/gmswap/clearUser`;
+				let { code }  = await new Promise((res, rej)=> {
+					request({
+						url,
+						method:'get',
+					}, (e, r, b)=>{
+						if(e){
+							rej(e);
+						}else{
+							try{
+								res(JSON.parse(b));
+							}catch (e){
+								res(b);
+							}
+						}
+					});
+				}).catch(()=>({code:500}));  
+				if(+code !== 200){throw {message:'踢人下线失败'};}
+			
+			}
+			switch (+display){
+				case 1:display = '空闲';break;
+				case 2:display = '繁忙';break;
+				case 3:display = '维护';break;
+				case 4:display = '爆满';break;
+			}
+			ctx.logging( '状态修改', '区服管理', `修改了区服id ${id||serverid} 状态为 ${display}` );
+		}
+		
+	
+		
+		
+		let gametable = await UserDao.findSqlByParamsToOne('update gm_server set display = :display,srttime=:srttime where  gameid=:gameid and serverid=:serverid returning *', form);
 		return gametable;
 	}
 	async updateserversnomerge(forms, gameid, display, merge){
-
+		let clearuser = false;
+		if(+display === 3){clearuser = true;} 
+		const request = require('request');
+		let c = async(ip, port) =>{
+			let url = `http://${ip}:${port}/gmswap/clearUser`;
+			let { code }  = await new Promise((res, rej)=> {
+				request({
+					url,
+					method:'get',
+				}, (e, r, b)=>{
+					if(e){
+						rej(e);
+					}else{
+						try{
+							res(JSON.parse(b));
+						}catch (e){
+							res(b);
+						}
+					}
+				});
+			}).catch(()=>({code:500}));  
+			if(+code !== 200){throw {message:'踢人下线失败'};}
+		};
 		for(let form  of  forms){
 			if(display === '0'){
 				break;
 			}
+			let {ip, port} = form;
+			clearuser? await c(ip, port):'';
 			await UserDao.findSqlByParamsToOne('update gm_server set display = :display where  gameid=:gameid and serverid=:serverid', {...form, gameid, display});
 		}
 		if(merge){

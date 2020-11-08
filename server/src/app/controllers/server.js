@@ -21,16 +21,11 @@ export class UserController {
 	async updateserver(ctx) {
 		ctx.log.resourceDesc = '区服更改';
 		// console.log(ctx.request.body);
-		let form = ctx.request.body;
-		let result = await Components.updateserver(form);
-		let {id, display} = result;
-		switch (+display){
-			case 1:display = '空闲';break;
-			case 2:display = '繁忙';break;
-			case 3:display = '维护';break;
-			case 4:display = '爆满';break;
-		}
-		ctx.logging( '区服修改', '区服管理', `修改了区服id ${id} 状态为 ${display}` );
+		
+		let result = await Components.updateserver(ctx);
+		
+		
+		
 		ctx.body = statusCode.SUCCESS_200('查找成功', result);
 	}
 	@put('/allupdate')

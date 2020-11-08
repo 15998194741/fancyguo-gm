@@ -1,0 +1,52 @@
+[2020-11-08T13:50:22.599] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: PUT
+request originalUrl:  /api/server/update
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"id":49,"status":1,"create_user_id":79,"update_user_id":null,"create_time":"2020-11-02T08:23:11.185Z","update_time":"2020-11-02T08:23:11.185Z","servername":"测试区服一服","ip_port":"127.0.0.1：24024","address":"a","plaform":["1"],"display":"4","srttime":"2020-12-25 00:00:00","gamename":"","pid":null,"serverid":"49","test":"0","load":"2","gameid":"1","childrens":null,"port":"24024","ip":"127.0.0.1","channel":["测试渠道二渠道"],"serverTrue":null,"securityGroup":null,"showstatusIsShow":false,"index":0}
+response time: 1604814622598
+err name: undefined
+err message: 开服时间修改失败
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-08T13:50:49.471] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: PUT
+request originalUrl:  /api/server/update
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"id":49,"status":1,"create_user_id":79,"update_user_id":null,"create_time":"2020-11-02T08:23:11.185Z","update_time":"2020-11-02T08:23:11.185Z","servername":"测试区服一服","ip_port":"127.0.0.1：24024","address":"a","plaform":["1"],"display":"4","srttime":"2020-12-18 00:00:00","gamename":"","pid":null,"serverid":"49","test":"0","load":"2","gameid":"1","childrens":null,"port":"24024","ip":"127.0.0.1","channel":["测试渠道二渠道"],"serverTrue":null,"securityGroup":null,"showstatusIsShow":false,"index":0}
+response time: 1604814649470
+err name: undefined
+err message: 开服时间修改失败
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-08T13:50:59.422] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: PUT
+request originalUrl:  /api/server/update
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"id":49,"status":1,"create_user_id":79,"update_user_id":null,"create_time":"2020-11-02T08:23:11.185Z","update_time":"2020-11-02T08:23:11.185Z","servername":"测试区服一服","ip_port":"127.0.0.1：24024","address":"a","plaform":["1"],"display":"4","srttime":"2020-12-18 00:00:00","gamename":"","pid":null,"serverid":"49","test":"0","load":"2","gameid":"1","childrens":null,"port":"24024","ip":"127.0.0.1","channel":["测试渠道二渠道"],"serverTrue":null,"securityGroup":null,"showstatusIsShow":false,"index":0}
+response time: 1604814659422
+err name: undefined
+err message: 开服时间修改失败
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-08T15:00:43.068] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: PUT
+request originalUrl:  /api/server/update
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"id":49,"status":1,"create_user_id":79,"update_user_id":null,"create_time":"2020-11-02T08:23:11.185Z","update_time":"2020-11-02T08:23:11.185Z","servername":"测试区服一服","ip_port":"127.0.0.1：24024","address":"a","plaform":["1"],"display":"1","srttime":"2021-01-28 00:00:00","gamename":"","pid":null,"serverid":"49","test":"0","load":"2","gameid":"1","childrens":null,"port":"24024","ip":"127.0.0.1","channel":["测试渠道二渠道"],"serverTrue":null,"securityGroup":null,"showstatusIsShow":false,"index":0,"srttimeChange":true}
+response time: 1604818843068
+err name: undefined
+err message: 开服时间修改失败
+err stack: undefined
+*************** error log end ***************
+

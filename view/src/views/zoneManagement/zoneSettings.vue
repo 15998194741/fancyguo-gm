@@ -136,6 +136,18 @@
         </el-table-column>
         <el-table-column label="开服时间"  >
           <template slot-scope="scope">{{scope.row.srttime?scope.row.srttime:scope.row.create_time | timeFormate }} </template>
+       
+         <!-- <span v-if="scope.row.showstatusIsShow" :key="scope.row.id">
+            <el-select v-model="scope.row.display"  :focus='true'  placeholder="请选择活动区域" @blur='showStatusChangeCancel(scope.$index,scope.row)'  @change="showStatusChangeSubmit(scope.$index,scope.row)" @visible-change='showStatusChangeBlur'>
+              <el-option label="空闲" value="1"></el-option>
+              <el-option label="繁忙" value="2"></el-option>
+              <el-option label="爆满" value="4"></el-option>
+              <el-option label="维护" value="3"></el-option>
+            </el-select> 
+            </span>
+            <span v-else :key="scope.row.id" style="width:50px;" @dblclick="showStatusChange(scope.$index,scope.row)"> {{ scope.row.display|display }} </span>
+             </template> -->
+       
         </el-table-column>
         <el-table-column v-if="grade" prop='status' label="操作">
           <template slot-scope="scope">
@@ -306,18 +318,36 @@
         <div class="changeAlertBody"><span class="alertspan">IP/PORT</span><el-input v-model="formchange.ip_port" disabled class="alertcontant"></el-input>     </div>
         <div class="changeAlertBody">   
          <span class="alertspan">显示状态<b style="color: red;">*</b></span>
-            <el-select v-model="formchange.display" class="alertcontant" :value='formchange.display' placeholder="请选择活动区域"   @change="changes">
+            <el-select v-model="formchange.display"  class="alertcontant" :value='formchange.display' placeholder="请选择活动区域" @change="formchange.displayChange = true"   >
               <el-option  v-for="(item,index) in selectForm[2].options" v-show="item.value==''||item.value =='5' ?false:true"  :key="index" :label='item.label' :value="item.value"></el-option>
             </el-select>
         </div>
-        <div class="changeAlertBody">  <span class="alertspan">开服时间</span>  <el-date-picker  v-model="formchange.srttime" disabled type="datetime" placeholder="选择日期时间"   class="alertcontant">  </el-date-picker>      </div>
+        <div class="changeAlertBody"> 
+           <span class="alertspan">开服时间</span>  
+           <el-date-picker
+                  v-model="formchange.srttime"  
+                  :picker-options="{
+                disabledDate: time => {
+                  return time.getTime() < Date.now() - 3600 * 1000 * 24
+                },
+              }"
+            type="datetime"   
+              placeholder="选择日期时间" 
+              :clearable='false'   
+              class="alertcontant"
+              @change='formchange.srttimeChange = true'
+              @blur='formchange.srttimeChange = true'
+              @input='formchange.srttimeChange = true'
+              > 
+              </el-date-picker>  
+        </div>
         <div class="changeAlertBody"> </div>
       </div>     
 
       <div class="alterbuttom"> <span>资源地址</span> <el-input v-model="formchange.address" disabled class="changebuttominput" ></el-input> </div>
       <div slot="footer" class="dialog-footer">
         <el-button @click="dialogFormVisiblechange = false">取 消</el-button>
-        <el-button type="primary" @click="updateServerToOne(false)">确 定</el-button>
+        <el-button type="primary" :disabled="!(formchange.srttimeChange ||  formchange.displayChange)" @click="updateServerToOne(false)">确 定</el-button>
       </div>
     </el-dialog>
 
@@ -452,11 +482,11 @@ export default {
       if (!value) {
         return callback(new Error('区服名称不可为空'));
       }
-      let { data } = await findServername();
-      this.$data.servernames = data.map(item=> item['value']);
-      if (this.$data.servernames.find(item => item === value)) {
-        return callback(new Error('区服名称不可重复'));
-      }
+      // let { data } = await findServername();
+      // this.$data.servernames = data.map(item=> item['value']);
+      // if (this.$data.servernames.find(item => item === value)) {
+      //   return callback(new Error('区服名称不可重复'));
+      // }
       
       callback();
     };
@@ -889,9 +919,9 @@ export default {
       b['index'] = a;
       this.updateServerToOne(b);
     },
-    changes() {
-      // console.log(this.formchange.display, this.formchange.index);
-    },
+    // changes() {
+    // console.log(this.formchange.display, this.formchange.index);
+    // },
     async loadpid(tree, treeNode, resolve) {
    
       let res = await findServerByID(tree);
@@ -1290,6 +1320,10 @@ export default {
     },
     //区服修改
     async updateServerToOne(displaychanges) {
+      if (!this.formchange.srttime) {
+        this.$message.info('开服时间不可以为空');
+        return;
+      }
       let sendtrue = await secondConfirmation(this, `您正在修改数据，请谨慎处理！是否继续?`);
       if (!sendtrue) {return;}
       if (displaychanges) {
