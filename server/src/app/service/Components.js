@@ -116,7 +116,7 @@ class components extends BaseService{
 				headers:{
 					Connection: 'close'
 				}
-					 }).catch(()=>({code:500})); 
+					 }).catch(()=>({data:{code:500}})); 
 			if(+data.code !== 200){	throw {message:'开服时间修改失败'};	}
 			ctx.logging( '开服时间修改', '区服管理', `修改了区服id ${id||serverid} 时间为 ${form.srttime}` );
 		}
@@ -131,7 +131,7 @@ class components extends BaseService{
 					headers:{
 						Connection: 'close'
 					}
-					 }).catch(()=>({code:500}));  
+					 }).catch(()=>({data:{code:500}}));  
 				if(+data.code !== 200){throw {message:'踢人下线失败'};}
 			
 			}
@@ -162,7 +162,7 @@ class components extends BaseService{
 				headers:{
 					Connection: 'close'
 				}
-					 }).catch(()=>({code:500}));  
+					 }).catch(()=>({data:{code:500}}));  
 			if(+data.code !== 200){throw {message:'踢人下线失败'};}
 		};
 		for(let form  of  forms){
@@ -185,7 +185,7 @@ class components extends BaseService{
 	}
 	async stopserver(form){
 		let a = '5';
-		await UserDao.findSqlByParamsToOne('update gm_server set display = :a ,status = 0 where  gameid=:gameid and serverid=:serverid', {...form, a});
+		await UserDao.findSqlByParamsToOne('update gm_server set display = :a ,status = 0 where  gameid=:gameid and id=:id', {...form, a});
 		return true;
 	}
 	async selectserver(parmas){

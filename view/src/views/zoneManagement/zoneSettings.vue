@@ -49,7 +49,7 @@
         <span style="padding-left: 1%;">开服时间：</span>
           <el-date-picker   v-model="filterForm['srttime']"  size='small' type="datetimerange" range-separator="至" start-placeholder="开始日期" end-placeholder="结束日期"   @change='filterFormChange'>
           </el-date-picker>
-          <el-checkbox v-model="filterForm['test']" true-label='1' false-label='0' @change='filterFormChange'>测试机</el-checkbox>
+          <el-checkbox v-model="filterForm['test']" true-label='1' false-label='0' @change='filterFormChange'>测试服</el-checkbox>
       </div>
      
       <div class="comprehensive-container">
@@ -250,14 +250,17 @@
           </el-switch>
         
         </el-form-item> -->
-        <el-form-item label="区服ID:"  prop='serverid' class="createFormAlertBody" >
+        <el-form-item label="区服ID:"  prop='serveridTrue' class="createFormAlertBody" :required="!!createForm.serveridTrue" >
           <label>手动输入</label> 
            <el-switch
             v-model="createForm.serveridTrue"
             active-color="#13ce66"
             inactive-color="#ff4949">
           </el-switch>
-          <el-input v-show="createForm.serveridTrue" v-model="createForm.serverid" :required="!!createForm.serveridTrue" :disabled='!createForm.serveridTrue' class="alertcontant"></el-input>
+          <!-- <el-input v-show="createForm.serveridTrue" v-model="createForm.serverid"  :disabled='!createForm.serveridTrue' class="alertcontant"></el-input> -->
+        </el-form-item>
+           <el-form-item label="区服ID:"  prop='serverid' class="createFormAlertBody" :required="!!createForm.serveridTrue" >
+          <el-input  v-model="createForm.serverid"  :disabled='!createForm.serveridTrue' class="alertcontant"></el-input>
         </el-form-item>
         <el-form-item label="区服名称:" class="createFormAlertBody" prop='servername' hide-required-asterisk required>
           <el-input v-model="createForm.servername" class="alertcontant" placeholder="请输入区服名称"></el-input>
@@ -293,7 +296,7 @@
             type="datetime"   class="alertcontant" placeholder="选择日期时间" >
           </el-date-picker>
         </el-form-item>
-        <el-form-item label="测试机">
+        <el-form-item label="测试服">
           <el-switch v-model="createForm.test" active-color="#13ce66"   active-value='1' inactive-value='0' inactive-color="#ff4949"></el-switch>
           <el-button type="danger" icon="el-icon-refresh-right" style="margin: 0 0 0 155px;"    @click="createFormResetForm('createForm')">清空</el-button>
         </el-form-item>
@@ -445,8 +448,11 @@ export default {
   data() {
     var serverTrue = (rule, value, callback) => {
       if (this.$data.createForm.serveridTrue) {
-        return value ? callback() : callback('区服ID不可为空');
-
+        if (value) {
+          return /^[0-9]*$/.test(value) ? callback() : callback('只能为纯数字');
+        } else {
+          return callback('区服ID不可为空');
+        }
       }
       return callback();
     };

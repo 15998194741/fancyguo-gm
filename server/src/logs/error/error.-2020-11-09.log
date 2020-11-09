@@ -149,3 +149,268 @@ Require stack:
     at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
 *************** error log end ***************
 
+[2020-11-09T16:52:00.138] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/server/serverCreate
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"serverid":"","servername":"1232123","serveridTrue":false,"plaform":["1"],"channel":["测试渠道二渠道"],"ip":"127.0.0.1:24024","display":"1","srttime":"2020-12-01T16:00:00.000Z","address":"","test":"0","page":1,"pagesize":20,"gameid":"1"}
+response time: 1604911920138
+err name: TypeError
+err message: Cannot read property 'id' of undefined
+err stack: TypeError: Cannot read property 'id' of undefined
+    at _callee9$ (H:\致命代码\fancyguo-gm\server\src\app\controllers\/server.js:120:50)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+*************** error log end ***************
+
+[2020-11-09T17:07:09.744] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/server/serverCreate
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"serverid":"99981","servername":"123","serveridTrue":true,"plaform":["1"],"channel":["测试渠道三渠道"],"ip":"","display":"1","srttime":"2020-11-17T16:00:00.000Z","address":"s99981.mrhx.hz.37.com.cn","test":"0","page":1,"pagesize":20,"gameid":"1"}
+response time: 1604912829743
+err name: undefined
+err message: Cp交互失败,请确认交互地址
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-09T17:21:47.053] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/server/serverCreate
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"serverid":"","servername":"123","serveridTrue":false,"plaform":["1"],"channel":["测试渠道二渠道"],"ip":"127.0.0.1:24024","display":"1","srttime":"2020-11-16T09:12:53.253Z","address":"","test":"0","page":1,"pagesize":20,"gameid":"1"}
+response time: 1604913707052
+err name: SequelizeDatabaseError
+err message: column "undefined" does not exist
+err stack: SequelizeDatabaseError: column "undefined" does not exist
+    at Query.formatError (H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:366:16)
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:72:18
+From previous event:
+    at Query.run (H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:64:23)
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:29
+From previous event:
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:12
+    at processImmediate (internal/timers.js:456:21)
+From previous event:
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:651:10
+    at H:\致命代码\fancyguo-gm\server\node_modules\retry-as-promised\index.js:70:21
+    at new Promise (<anonymous>)
+    at retryAsPromised (H:\致命代码\fancyguo-gm\server\node_modules\retry-as-promised\index.js:60:10)
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:641:30
+From previous event:
+    at Sequelize.query (H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:590:23)
+    at GmServerService._callee4$ (H:\致命代码\fancyguo-gm\server\src\app\service\/server.js:191:21)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+*************** error log end ***************
+
+[2020-11-09T20:00:41.445] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/server/serverCreate
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"serverid":"","servername":"123","serveridTrue":false,"plaform":["1"],"channel":["测试渠道二渠道"],"ip":"127.0.0.1：24024","display":"1","srttime":"2020-11-26T16:00:00.000Z","address":"","test":"0","page":1,"pagesize":20,"gameid":"1"}
+response time: 1604923241444
+err name: SequelizeDatabaseError
+err message: syntax error at or near "select"
+err stack: SequelizeDatabaseError: syntax error at or near "select"
+    at Query.formatError (H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:366:16)
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:72:18
+From previous event:
+    at Query.run (H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:64:23)
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:29
+From previous event:
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:12
+    at processImmediate (internal/timers.js:456:21)
+From previous event:
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:651:10
+    at H:\致命代码\fancyguo-gm\server\node_modules\retry-as-promised\index.js:70:21
+    at new Promise (<anonymous>)
+    at retryAsPromised (H:\致命代码\fancyguo-gm\server\node_modules\retry-as-promised\index.js:60:10)
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:641:30
+From previous event:
+    at Sequelize.query (H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:590:23)
+    at GmServerService._callee4$ (H:\致命代码\fancyguo-gm\server\src\app\service\/server.js:178:31)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at GmServerService.<anonymous> (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at GmServerService.serverCreate (H:\致命代码\fancyguo-gm\server\src\app\service\server.js:402:30)
+    at _callee9$ (H:\致命代码\fancyguo-gm\server\src\app\controllers\/server.js:119:38)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at serverCreate (H:\致命代码\fancyguo-gm\server\src\app\controllers\server.js:400:30)
+    at dispatch (H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at next (H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:45:18)
+    at H:\致命代码\fancyguo-gm\server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:36:12
+    at dispatch (H:\致命代码\fancyguo-gm\server\node_modules\koa-router\lib\router.js:351:31)
+    at next (H:\致命代码\fancyguo-gm\server\node_modules\koa\node_modules\koa-compose\index.js:42:32)
+    at _callee$ (H:\致命代码\fancyguo-gm\server\src\middleware\/index.js:47:11)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at H:\致命代码\fancyguo-gm\server\src\middleware\/index.js:42:2
+*************** error log end ***************
+
+[2020-11-09T20:01:55.995] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/server/serverCreate
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"serverid":"","servername":"123","serveridTrue":false,"plaform":["1"],"channel":["测试渠道二渠道"],"ip":"127.0.0.1：24024","display":"1","srttime":"2020-11-26T16:00:00.000Z","address":"","test":"0","page":1,"pagesize":20,"gameid":"1"}
+response time: 1604923315993
+err name: undefined
+err message: Cp交互失败,请确认交互地址
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-09T20:02:12.562] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/server/serverCreate
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"serverid":"","servername":"123","serveridTrue":false,"plaform":["1"],"channel":["测试渠道二渠道"],"ip":"127.0.0.1：24024","display":"1","srttime":"2020-11-26T16:00:00.000Z","address":"","test":"0","page":1,"pagesize":20,"gameid":"1"}
+response time: 1604923332561
+err name: undefined
+err message: Cp交互失败,请确认交互地址
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-09T20:02:19.393] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/server/serverCreate
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"serverid":"","servername":"123","serveridTrue":false,"plaform":["1"],"channel":["测试渠道二渠道"],"ip":"127.0.0.1：24024","display":"1","srttime":"2020-11-26T16:00:00.000Z","address":"","test":"0","page":1,"pagesize":20,"gameid":"1"}
+response time: 1604923339393
+err name: undefined
+err message: Cp交互失败,请确认交互地址
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-09T20:03:53.907] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/server/serverCreate
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"serverid":"","servername":"123","serveridTrue":false,"plaform":["1"],"channel":["测试渠道二渠道"],"ip":"127.0.0.1：24024","display":"1","srttime":"2020-11-26T16:00:00.000Z","address":"","test":"0","page":1,"pagesize":20,"gameid":"1"}
+response time: 1604923433907
+err name: undefined
+err message: Cp交互失败,请确认交互地址
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-09T20:04:30.516] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/server/serverCreate
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"serverid":"","servername":"123","serveridTrue":false,"plaform":["1"],"channel":["测试渠道二渠道"],"ip":"127.0.0.1：24024","display":"1","srttime":"2020-11-26T16:00:00.000Z","address":"","test":"0","page":1,"pagesize":20,"gameid":"1"}
+response time: 1604923470516
+err name: undefined
+err message: Cp交互失败,请确认交互地址
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-09T20:08:52.417] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/server/serverCreate
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"serverid":"","servername":"123","serveridTrue":false,"plaform":["1"],"channel":["测试渠道二渠道"],"ip":"127.0.0.1：24024","display":"1","srttime":"2020-11-26T16:00:00.000Z","address":"","test":"0","page":1,"pagesize":20,"gameid":"1"}
+response time: 1604923732416
+err name: undefined
+err message: Cp交互失败,请确认交互地址
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-09T20:09:18.442] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/server/serverCreate
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"serverid":"","servername":"123","serveridTrue":false,"plaform":["1"],"channel":["测试渠道二渠道"],"ip":"127.0.0.1：24024","display":"1","srttime":"2020-11-26T16:00:00.000Z","address":"","test":"0","page":1,"pagesize":20,"gameid":"1"}
+response time: 1604923758442
+err name: undefined
+err message: Cp交互失败,请确认交互地址
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-09T20:09:38.717] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/server/serverCreate
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"serverid":"","servername":"123","serveridTrue":false,"plaform":["1"],"channel":["测试渠道二渠道"],"ip":"127.0.0.1：24024","display":"1","srttime":"2020-11-26T16:00:00.000Z","address":"","test":"0","page":1,"pagesize":20,"gameid":"1"}
+response time: 1604923778717
+err name: undefined
+err message: Cp交互失败,请确认交互地址
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-09T20:10:20.752] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/server/serverCreate
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"serverid":"","servername":"123","serveridTrue":false,"plaform":["1"],"channel":["测试渠道二渠道"],"ip":"127.0.0.1：24024","display":"1","srttime":"2020-11-26T16:00:00.000Z","address":"","test":"0","page":1,"pagesize":20,"gameid":"1"}
+response time: 1604923820751
+err name: undefined
+err message: Cp交互失败,请确认交互地址
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-09T20:12:22.864] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/server/serverCreate
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"serverid":"","servername":"123","serveridTrue":false,"plaform":["1"],"channel":["测试渠道二渠道"],"ip":"127.0.0.1：24024","display":"1","srttime":"2020-11-26T16:00:00.000Z","address":"","test":"0","page":1,"pagesize":20,"gameid":"1"}
+response time: 1604923942864
+err name: undefined
+err message: Cp交互失败,请确认交互地址
+err stack: undefined
+*************** error log end ***************
+

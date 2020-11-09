@@ -167,8 +167,12 @@ class GmServerService extends BaseService{
 		)values(
 			'${userId}','${servername}','${gameid}','${address}','${test}','${ipPort}',
 			'${display}','${ srttime }','${JSON.stringify(channel)}','${JSON.stringify(plaform)}',
-			'${ip}','${port}','${serverid}',${!!serveridTrue}	
-				) RETURNING id
+			'${ip}','${port}',${serverid?
+	`'${serverid}'`:` (select id from (
+		select serverid::int as id  from gm_server where gameid = '${gameid}' and status = '1'
+		UNION ALL
+		select generate_series(1, (select  case when max(id) is  not  null then max(id ) else 1 end from gm_server where gameid = '${gameid}' and status = '1' ))   as id   )a GROUP BY id HAVING count(id) = 1 ORDER BY id     limit 1)   `},${!!serveridTrue}	
+				) RETURNING *
 		`;
 		console.log(sql);
 		let res = await dbSequelize.query(sql, {
@@ -176,24 +180,21 @@ class GmServerService extends BaseService{
 		});
 		// let updatesql = ' update gm_server set serverid = id';
 		// await dbSequelize.query(updatesql, {
-			// replacements:['active'], type:Sequelize.QueryTypes.UPDATE
+		// replacements:['active'], type:Sequelize.QueryTypes.UPDATE
 		// });
 		 
 		
 		if(+res[1] !== 1){
-			throw {code:500, message:'创建失败，请连续管理员。'};
+			throw {code:500, message:'创建失败，请联系管理员。'};
 		}
 		let body = res[0][0];
-			
 		let { code } = await this.SenClient.get('server', 'createServer', {body}).catch(e=>({code:500}));
-			
-		if(+code === 200) {return res[0][0];}
+		if(+code === 200) {return {...res[0][0], id:res[0][0].serverid};}
 		let falseSql = ` update  gm_server set  status = '0' where id = ${body['id']}`;
 		await dbSequelize.query(falseSql, {
 			replacements:['active'], type:Sequelize.QueryTypes.UPDATE
 		});
 		throw { message:'Cp交互失败,请确认交互地址'};
-
 	  }
 	  async clearIpAll({server, gameid}){
 		let sql = `
