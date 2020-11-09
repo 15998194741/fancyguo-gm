@@ -62,7 +62,9 @@ export default {
     gameIndex.$on('DivClick', (index) => {
       try {
         this.$refs[`${index}`].click();
-      } catch (e) {}
+      } catch (e) {
+        console.log(e.message);
+      }
     });
 
     // this.$refs.icons.addEventListener('transitionstart', () => {

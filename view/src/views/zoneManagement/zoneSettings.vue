@@ -353,7 +353,7 @@
 
 
 
-     <el-dialog title="安全组添加" :visible.sync="dialogFormVisibleAddIp"  :close-on-click-modal="false">
+     <el-dialog title="安全组添加" :visible.sync="dialogFormVisibleAddIp"  :close-on-click-modal="false" class="ipAddClass">
      
       <div class="alertname">
         <el-table ref="multipleTable" :data="allselectchange">
@@ -375,6 +375,9 @@
           <el-table-column prop="load" label="负载状态"  >
           </el-table-column>
           <el-table-column prop="srttime" label="开服时间"  >
+          <template slot-scope="scope">{{ scope.row.srttime  | timeFormate }} </template>
+              
+          
           </el-table-column>
             <el-table-column label="安全组"  >
           <template slot-scope="scope" >
@@ -410,7 +413,7 @@
         </el-form-item> -->
     
         <el-form-item
-v-for="(value,index) in  ipList" :key="index" :label="`IP地址${index}:`" class="createFormAlertBodyIp"
+v-for="(value,index) in  ipList" :key="index" :label="`IP地址 ${index+1}:`" class="createFormAlertBodyIp"
 :prop='index+".ip"' :hide-required-asterisk='true'  :rules="[
 {   required: true, message: 'ip不能为空', trigger: 'blur' },
 { validator:ipRules ,trigger :'blur'   }
@@ -431,7 +434,7 @@ v-for="(value,index) in  ipList" :key="index" :label="`IP地址${index}:`" class
 
 <script>
 // import { deepCopy } from '@/utils/zoneSettings';
-import { findServername } from '@/api/character.js';
+// import { findServername } from '@/api/character.js';
 import { loading, close, secondConfirmation } from '@/views/loading';
 import dayjs from 'dayjs';
 import { findComponents, findServer, stopserver, ServerMerge, serverselect } from '@/api/components.js';
@@ -1011,11 +1014,11 @@ export default {
           this.filterFormChange('flush');
           let { code, data } = await servercreate({ ...this.createForm });
           loading.close();
-         
+          let { serverid } = this.createForm;
           if (code === 200) {
             this.$message({
               type: 'success',
-              message: `区服创建成功,您创建的区服ID是  ${data['id']} `
+              message: `区服创建成功,您创建的区服ID是  ${serverid || data['id']} `
             });
             this.newCreateServer();
             this.$refs[formName].resetFields();
@@ -1331,7 +1334,7 @@ export default {
       }
       this.loading = true;
       let { code } = await serverUpdateToOne({ ...this.formchange });
-      if (code !== 200) {return;}
+      if (code !== 200) { this.loading = false; return;}
       this.$message.success('修改成功。');
       // 获取最新任务列表
       let index = this.formchange.index;
@@ -1382,6 +1385,11 @@ export default {
 </script>
 
 <style lang="scss" rel="stylesheet/scss">
+.ipAddClass{
+  &>div{
+    width: 90%;
+  }
+}
 .aasdhjkahskdhjk{
  max-height: 5vh;
     overflow: hidden;

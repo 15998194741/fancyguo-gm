@@ -101,26 +101,18 @@ class components extends BaseService{
 	}
 	async updateserver(ctx){
 		let form = ctx.request.body;
-		let {  srttimeChange, displayChange } = form;
+		let {  srttimeChange, displayChange, srttime } = form;
 		form.srttime = dayjs(form.srttime).format('YYYY-MM-DD HH:mm:ss');
 		let {id, serverid, ip, port} = form;
 		const request = require('request');
 
 		if(srttimeChange){
-			let url = `http://${ip}:${port}/gmswap/modifyStartTime`;
+		
+			let url = `http://${ip}:${port}/gmswap/modifyStartTime?startTime=${new Date(srttime).getTime()}`;
 			let {code}  = await new Promise((res, rej)=> {
 				request({
 					url,
-					method:'post',
-					data:{
-						srttime:form.srttime
-					},
-					body:{data:JSON.stringify({
-						srttime:form.srttime
-					})},
-					form :{
-						srttime:form.srttime
-					}
+					method:'get',
 				}, (e, r, b)=>{
 					if(e){
 						rej(e);
@@ -139,24 +131,17 @@ class components extends BaseService{
 		if(displayChange){
 			let {display} = form;
 			if(+display === 3 ){
-				let url = `http://${ip}:${port}/gmswap/clearUser`;
-				let { code }  = await new Promise((res, rej)=> {
-					request({
-						url,
-						method:'get',
-					}, (e, r, b)=>{
-						if(e){
-							rej(e);
-						}else{
-							try{
-								res(JSON.parse(b));
-							}catch (e){
-								res(b);
-							}
-						}
-					});
-				}).catch(()=>({code:500}));  
-				if(+code !== 200){throw {message:'踢人下线失败'};}
+				let url = `http://${ip}:${port}/gmswap/clearUser?all=1&roleid=`;
+				const axios = require('axios');
+				let { data }  = await axios({
+					method: 'get',
+					url,
+					headers:{
+						Connection: 'close'
+					}
+						
+					 }).catch(()=>({code:500}));  
+				if(+data.code !== 200){throw {message:'踢人下线失败'};}
 			
 			}
 			switch (+display){
@@ -177,26 +162,17 @@ class components extends BaseService{
 	async updateserversnomerge(forms, gameid, display, merge){
 		let clearuser = false;
 		if(+display === 3){clearuser = true;} 
-		const request = require('request');
 		let c = async(ip, port) =>{
-			let url = `http://${ip}:${port}/gmswap/clearUser`;
-			let { code }  = await new Promise((res, rej)=> {
-				request({
-					url,
-					method:'get',
-				}, (e, r, b)=>{
-					if(e){
-						rej(e);
-					}else{
-						try{
-							res(JSON.parse(b));
-						}catch (e){
-							res(b);
-						}
-					}
-				});
-			}).catch(()=>({code:500}));  
-			if(+code !== 200){throw {message:'踢人下线失败'};}
+			let url = `http://${ip}:${port}/gmswap/clearUser?all=1&roleid=`;
+			const axios = require('axios');
+			let { data }  = await axios({
+				method: 'get',
+				url,
+				headers:{
+					Connection: 'close'
+				}
+					 }).catch(()=>({code:500}));  
+			if(+data.code !== 200){throw {message:'踢人下线失败'};}
 		};
 		for(let form  of  forms){
 			if(display === '0'){

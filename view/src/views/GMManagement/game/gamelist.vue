@@ -398,10 +398,10 @@ export default {
     },
     gradele9999() {
       return +this.grade === 9999;
-    },
-    backgroundColor() {
-      return `background-color: ${this.color};`;
     }
+    // backgroundColor() {
+    //   return `background-color: ${this.color};`;
+    // }
   },
   methods: {
  
