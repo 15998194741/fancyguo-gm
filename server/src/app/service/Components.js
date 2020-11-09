@@ -104,28 +104,20 @@ class components extends BaseService{
 		let {  srttimeChange, displayChange, srttime } = form;
 		form.srttime = dayjs(form.srttime).format('YYYY-MM-DD HH:mm:ss');
 		let {id, serverid, ip, port} = form;
-		const request = require('request');
 
 		if(srttimeChange){
 		
 			let url = `http://${ip}:${port}/gmswap/modifyStartTime?startTime=${new Date(srttime).getTime()}`;
-			let {code}  = await new Promise((res, rej)=> {
-				request({
-					url,
-					method:'get',
-				}, (e, r, b)=>{
-					if(e){
-						rej(e);
-					}else{
-						try{
-							res(JSON.parse(b));
-						}catch (e){
-							res(b);
-						}
-					}
-				});
-			}).catch(()=>({code:500}));  
-			if(+code !== 200){	throw {message:'开服时间修改失败'};	}
+			
+			const axios = require('axios');
+			let { data }  = await axios({
+				method: 'get',
+				url,
+				headers:{
+					Connection: 'close'
+				}
+					 }).catch(()=>({code:500})); 
+			if(+data.code !== 200){	throw {message:'开服时间修改失败'};	}
 			ctx.logging( '开服时间修改', '区服管理', `修改了区服id ${id||serverid} 时间为 ${form.srttime}` );
 		}
 		if(displayChange){
@@ -139,7 +131,6 @@ class components extends BaseService{
 					headers:{
 						Connection: 'close'
 					}
-						
 					 }).catch(()=>({code:500}));  
 				if(+data.code !== 200){throw {message:'踢人下线失败'};}
 			

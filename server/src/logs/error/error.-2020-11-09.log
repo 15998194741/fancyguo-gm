@@ -84,3 +84,68 @@ err message: 开服时间修改失败
 err stack: undefined
 *************** error log end ***************
 
+[2020-11-09T15:36:18.222] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: PUT
+request originalUrl:  /api/server/update
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"id":76,"status":1,"create_user_id":79,"update_user_id":null,"create_time":"2020-11-06T06:45:51.183Z","update_time":"2020-11-06T06:45:51.183Z","servername":"122313","ip_port":"","address":"s99981.mrhx.hz.37.com.cn","plaform":["1"],"display":"1","srttime":"2020-11-28 00:00:00","gamename":"","pid":null,"serverid":"99981","test":"1","load":null,"gameid":"13","childrens":null,"port":"80","ip":"s99981.mrhx.hz.37.com.cn","channel":["测试渠道"],"serverTrue":true,"securityGroup":["61.49.68.34","127.0.0.1"],"showstatusIsShow":false,"index":2,"srttimeChange":true}
+response time: 1604907378221
+err name: Error
+err message: Cannot find module 'axios'
+Require stack:
+- H:\致命代码\fancyguo-gm\server\src\app\service\Components.js
+- H:\致命代码\fancyguo-gm\server\src\app\controllers\server.js
+- H:\致命代码\fancyguo-gm\server\src\lib\router-permission\router.js
+- H:\致命代码\fancyguo-gm\server\src\lib\router-permission\index.js
+- H:\致命代码\fancyguo-gm\server\src\middleware\router.js
+- H:\致命代码\fancyguo-gm\server\src\middleware\index.js
+- H:\致命代码\fancyguo-gm\server\src\index.js
+- H:\致命代码\fancyguo-gm\server\start.js
+err stack: Error: Cannot find module 'axios'
+Require stack:
+- H:\致命代码\fancyguo-gm\server\src\app\service\Components.js
+- H:\致命代码\fancyguo-gm\server\src\app\controllers\server.js
+- H:\致命代码\fancyguo-gm\server\src\lib\router-permission\router.js
+- H:\致命代码\fancyguo-gm\server\src\lib\router-permission\index.js
+- H:\致命代码\fancyguo-gm\server\src\middleware\router.js
+- H:\致命代码\fancyguo-gm\server\src\middleware\index.js
+- H:\致命代码\fancyguo-gm\server\src\index.js
+- H:\致命代码\fancyguo-gm\server\start.js
+    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:966:15)
+    at Function.Module._load (internal/modules/cjs/loader.js:842:27)
+    at Module.require (internal/modules/cjs/loader.js:1026:19)
+    at require (internal/modules/cjs/helpers.js:72:18)
+    at _callee5$ (H:\致命代码\fancyguo-gm\server\src\app\service\/Components.js:113:18)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at components.<anonymous> (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at components.updateserver (H:\致命代码\fancyguo-gm\server\src\app\service\Components.js:371:30)
+    at _callee2$ (H:\致命代码\fancyguo-gm\server\src\app\controllers\/server.js:25:33)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at updateserver (H:\致命代码\fancyguo-gm\server\src\app\controllers\server.js:121:30)
+    at dispatch (H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at next (H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:45:18)
+    at H:\致命代码\fancyguo-gm\server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:36:12
+    at dispatch (H:\致命代码\fancyguo-gm\server\node_modules\koa-router\lib\router.js:351:31)
+    at next (H:\致命代码\fancyguo-gm\server\node_modules\koa\node_modules\koa-compose\index.js:42:32)
+    at _callee$ (H:\致命代码\fancyguo-gm\server\src\middleware\/index.js:47:11)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+*************** error log end ***************
+
