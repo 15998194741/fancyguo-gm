@@ -114,7 +114,7 @@ class GmServerService extends BaseService{
 	}
 	async mergeServer(data){
 		// console.log(data);
-		let children = data.map(item=> {return `'${item.serverid}'`;});
+		let children = data.map(item=> {return `'${item.id}'`;});
 		// let pid = dayjs(new Date()).add(8, 'hour').format('YY-MM-DD HH:mm:ss');
 		// let channel = data[0].channel.map(item => {return `'${item}'`;});
 		let channel = data[0].channel;
@@ -132,8 +132,7 @@ class GmServerService extends BaseService{
 			select id,childrens from gm_server where id = ${pid}
 			union all
 			select  a.id,a.childrens from gm_server a ,le b where a.id::varchar = any(b.childrens)),
-			asd as (select id from le  where id <> ${pid}),
-			qwe as (update gm_server set serverid = id)
+			asd as (select id from le  where id <> ${pid})
 			update gm_server set pid = ${pid}  where id in (select * from asd )
 		`;
 		 await dbSequelize.query(mergreSql, {

@@ -18,7 +18,6 @@ class Ta{
 		this.res='';
 	}
 	async tasql(sql, token){
-
 		let req ={
 			url:this.url,
 			method:this.method,

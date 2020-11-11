@@ -184,10 +184,10 @@ class CharacterService{
 		
 			res =await CharacterService.byMany(sql);
 		}else{
-			let sql = `select  *  from ${tablename}  ${sqls} order by "#user_id" offset ${pagesize*(page-1)} limit ${pagesize}  `;	
+			let sql = `select * from (select  a.*  from (select role_id,max(timestamp) as timestamp from ${tablename} GROUP BY role_id ) qwe join ${tablename}  a on a.timestamp = qwe.timestamp and a.role_id = qwe.role_id ) a   ${sqls} order by "#user_id" offset ${pagesize*(page-1)} limit ${pagesize}  `;	
 			res =   await Ta.tasql(sql, token);
 			console.log(sql, token);
-			sql = `select  count(*)  from ${tablename}  ${sqls}`;	
+			sql = `select count(*) from (select  a.*  from (select role_id,max(timestamp) as timestamp from ${tablename} GROUP BY role_id ) qwe join ${tablename}  a on a.timestamp = qwe.timestamp and a.role_id = qwe.role_id ) a     ${sqls}`;	
 			total = await Ta.sqltoTotal(sql, token);
 			if(!res){
 				res='';

@@ -308,8 +308,8 @@
             inactive-color="#ff4949">
           </el-switch>
           <!-- <el-input v-show="createForm.serveridTrue" v-model="createForm.serverid"  :disabled='!createForm.serveridTrue' class="alertcontant"></el-input> -->
-        </el-form-item>
-           <el-form-item label="区服ID:"  prop='serverid' class="createFormAlertBody" :required="!!createForm.serveridTrue" >
+        </el-form-item >
+           <el-form-item v-show="createForm.serveridTrue" label="区服ID:"  prop='serverid' class="createFormAlertBody" :required="!!createForm.serveridTrue" >
           <el-input  v-model="createForm.serverid"  :disabled='!createForm.serveridTrue' class="alertcontant"></el-input>
         </el-form-item>
         <el-form-item label="区服名称:" class="createFormAlertBody" prop='servername' hide-required-asterisk required>
@@ -645,11 +645,11 @@ export default {
           label: '繁忙',
           value: '2'
         }, {
-          label: '维护',
-          value: '3'
-        }, {
           label: '爆满',
           value: '4'
+        }, {
+          label: '维护',
+          value: '3'
         }]
       }, {
         label: '负载状态',

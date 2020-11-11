@@ -325,15 +325,15 @@ export default {
       ],
       tableData: [],
       tablecolumn: [
-        { label: '角色ID', prop: 'roleid', width: 50 },
+        { label: '角色ID', prop: 'role_id', width: 50 },
         { label: '账户ID', prop: 'account_id', width: 40 },
         { label: '昵称', prop: 'role_name', width: 25 },
-        { label: '平台', prop: 'plaform', width: -50 },
+        { label: '平台', prop: 'platform', width: -50 },
         { label: '渠道', prop: 'channel', width: -50 },
         { label: '设备ID', prop: 'distinct_id', width: 53 },
         { label: '设备类型', prop: 'machine', width: -20 },
         { label: '区服名称', prop: 'vip_level', width: 15 },
-        { label: '区服ID', prop: 'serverid', width: 30 },
+        { label: '区服ID', prop: 'server_id', width: 30 },
         { label: '等级', prop: 'level', width: -50 },
         { label: 'VIP等级', prop: 'vip_level', width: -50 }
 
@@ -341,7 +341,7 @@ export default {
       tablecolumns: [
         { label: '付费总额', prop: 'sum_recharge' },
         { label: 'IP', prop: 'ip' },
-        { label: '注册时间', prop: 'regtime' },
+        { label: '注册时间', prop: 'reg_time' },
         { label: '最后登录时间', prop: 'update_time' },
         { label: '封禁类型', prop: 'banned_type' },
         { label: '封禁范围', prop: 'banned_area' },
@@ -498,16 +498,17 @@ export default {
       this.total = Number(res.data.total);
       if (+this.total === +0) { this.loading = false; this.tableData = []; return;}
       this.tableData = res.data.res;
-      this.tableData.map(item =>{
-        item['stime_etime'] = dayjs(item.stime).format('YYYY-MM-DD HH:mm:ss') + '----' + dayjs(item.stime).add(item.banned_time, 'hour').format('YYYY-MM-DD HH:mm:ss');
-        item.plaform = item.plaform ? item.plaform === '1' ? '安卓' : '苹果' : '';
-        item['banned_time'] = item.banned_time > 24 ? (item.banned_time - item.banned_time % 24) / 24 + '天' + item.banned_time % 24 + '小时' : item.banned_time + '小时';
-        item['banned_type'] = item.banned_type ? item.banned_type === '1' ? '封号' : '禁言' : '';
-        item['banned_area'] = item.banned_area ? item.banned_area === '1' ? '角色' : item.banned_area === '2' ? '账号' : 'IP' : '';
-        item.regtime = dayjs(item.regtime).format('YYYY-MM-DD HH:mm:ss');
-        item['update_time'] = dayjs(item.update_time).format('YYYY-MM-DD HH:mm:ss'); 
-        return { ...item };
-      });
+      console.log(this.tableData);
+      // this.tableData.map(item =>{
+      //   item['stime_etime'] = dayjs(item.stime).format('YYYY-MM-DD HH:mm:ss') + '----' + dayjs(item.stime).add(item.banned_time, 'hour').format('YYYY-MM-DD HH:mm:ss');
+      //   item.plaform = item.plaform ? item.plaform === '1' ? '安卓' : '苹果' : '';
+      //   item['banned_time'] = item.banned_time > 24 ? (item.banned_time - item.banned_time % 24) / 24 + '天' + item.banned_time % 24 + '小时' : item.banned_time + '小时';
+      //   item['banned_type'] = item.banned_type ? item.banned_type === '1' ? '封号' : '禁言' : '';
+      //   item['banned_area'] = item.banned_area ? item.banned_area === '1' ? '角色' : item.banned_area === '2' ? '账号' : 'IP' : '';
+      //   item.regtime = dayjs(item.regtime).format('YYYY-MM-DD HH:mm:ss');
+      //   item['update_time'] = dayjs(item.update_time).format('YYYY-MM-DD HH:mm:ss'); 
+      //   return { ...item };
+      // });
       this.loading = false;
     }
   },
