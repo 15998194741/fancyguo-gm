@@ -134,3 +134,15 @@ export function ServerMerge(data) {
     data 
   });
 }
+
+
+
+
+
+export function stopall(data) {
+  return request({
+    url: 'server/stopall',
+    method: 'put',
+    data
+  });
+}

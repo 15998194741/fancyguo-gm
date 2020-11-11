@@ -1,6 +1,9 @@
 <template>
   <!-- <div class="distric-container"  :style=" `opacity: ${opacity};background-image: url('${this.$store.getters.permissionInfo.imgUrl}');` " @mouseover="opacity=1" @mouseout="opacity =0.3"> -->
   <div ref="rechaContainer" class="distric-container"  >
+    <div v-show="menuVisible" ref="createmenus">
+                  <el-button  v-if="grade" slot="append" icon="el-icon-circle-plus-outline" size='small'  class="button-with-header"   @click="serverCreatedialogFormVisibleAll = true">批量新建</el-button>
+            </div>
     <div class="option-container" style="margin-bottom: -2px;">
       <ul>
   <!-- <li>          <el-button v-if="grade"  slot="reference" icon="el-icon-thumb" size='small'   class="button-with-header" :disabled='allselectchangeopen' @click="dialogFormchange = true">删除安全组</el-button>
@@ -18,12 +21,22 @@
   <el-dropdown-menu slot="dropdown">
     <el-dropdown-item command="a">添加</el-dropdown-item>
     <el-dropdown-item command="b">清空</el-dropdown-item>
-  
   </el-dropdown-menu>
 </el-dropdown>
         </li>
         <li>
-          <el-button v-if="grade"  slot="reference" icon="el-icon-thumb" size='small'   class="button-with-header" :disabled='allselectchangeopen' @click="dialogFormchange = true">批量操作</el-button>
+          <!-- <el-button v-if="grade"  slot="reference" icon="el-icon-thumb" size='small'   class="button-with-header"  @click="dialogFormchange = true">批量操作</el-button> -->
+
+
+           <el-dropdown  v-if="grade"  @command="handleCommandcaozuo">
+  <el-button  :disabled='allselectchangeopen' class="button-with-header"  size='small' >
+    批量操作<i class="el-icon-arrow-down el-icon--right"></i>
+  </el-button>
+  <el-dropdown-menu slot="dropdown">
+    <el-dropdown-item command="a">修改</el-dropdown-item>
+    <el-dropdown-item command="b">停用</el-dropdown-item>
+  </el-dropdown-menu>
+</el-dropdown>
         </li>
         <li>
           <el-button   v-if="grade" slot="reference" icon="el-icon-refresh" size='small' class="button-with-header"   :disabled='allselectchangeopen'  @click='mergeServer'>合服</el-button>
@@ -32,7 +45,7 @@
           <el-button slot="reference" icon="el-icon-refresh-right" size='small' class="button-with-header"   @click="filterFormChange('flush')">刷新</el-button>
         </li>
         <li>
-          <el-button  v-if="grade" slot="append" icon="el-icon-circle-plus-outline" size='small'  class="button-with-header" @click="newCreateServer">新建</el-button>
+          <el-button  v-if="grade" slot="append" icon="el-icon-circle-plus-outline" size='small'  class="button-with-header"  @contextmenu.prevent.native="show" @click="newCreateServer">新建</el-button>
         </li>
       </ul>
     </div>
@@ -156,11 +169,14 @@
               v-if="scope.row.display==='5' ? false : true" v-show="scope.row.childertrue?false:true" size="mini"
               icon="el-icon-edit-outline"
               type="warning"
-              class="button-with-header" @click="changeHandleEdit(scope.$index,scope.row)">修改</el-button>
+              class="button-with-header"
+               @click="changeHandleEdit(scope.$index,scope.row)">修改</el-button>
             <el-button
             v-if="scope.row.display==='5' ?  false: true"
               v-show="scope.row.childertrue?false:true" type="danger" size="mini" 
-              icon="el-icon-video-pause" class="button-with-header" @click="handleStop(scope.$index,scope.row)">停用
+              icon="el-icon-video-pause"
+               class="button-with-header"
+                @click="handleStop(scope.$index,scope.row)">停用
             </el-button>
 </div>
           </template>
@@ -192,8 +208,7 @@
         </div>
       </div>
     </div>
-    <el-dialog title="批量操作" :visible.sync="dialogFormchange"  :close-on-click-modal="false" class="ipAddClass">
-
+    <el-dialog title="批量修改" :visible.sync="dialogFormchange"  :close-on-click-modal="false" class="ipAddClass">
       <div class="alertname">
         <el-table ref="multipleTable" :data="allselectchange">
           <el-table-column  label="合服ID" >
@@ -289,6 +304,97 @@
 
 
 
+ <el-dialog title="批量停用" :visible.sync="dialogFormchangeStop"  :close-on-click-modal="false" class="ipAddClass">
+      <div class="alertname">
+        <el-table ref="multipleTable" :data="allselectchange">
+          <el-table-column  label="合服ID" >
+          <template slot-scope="scope">{{ scope.row.childrens?scope.row.id:'' }} </template>
+        </el-table-column>
+        <el-table-column label="区服ID" >
+          <template slot-scope="scope">{{ scope.row.childrens?'': scope.row.serverid||scope.row.id  }} </template>
+        </el-table-column>
+        <el-table-column label="名称" >
+          <template slot-scope="scope">{{ scope.row.servername }} </template>
+        </el-table-column>
+        <el-table-column   label="平台"   name='plaform'>
+          <!-- <template slot-scope="scope">{{ scope.row.plaform|plaform }} </template> -->
+          <template slot-scope="scope"> 
+            <el-tag v-for='(i,index) in  scope.row["plaform"]' :key="index">{{ i |plaform}}</el-tag>
+            </template>
+        </el-table-column>
+        <el-table-column label="渠道"  >
+          <template slot-scope="scope" >
+            <el-tooltip effect='light'  placement="top" class="aasdhjkahskdhjk">
+              <div slot="content" :ref="'contentCssTableHover'+scope.$index" class="contentCssTableHover" > <el-tag v-for='(i,index) in  scope.row["channel"]' :key="index" >{{ i }}</el-tag></div>
+            <div class="contentCssTableHidden" style="max-height:30px"><el-tag v-for='(i,index) in  scope.row["channel"]' :key="index">{{ i }}</el-tag></div> 
+            </el-tooltip>
+            <!-- <el-tag v-for='(i,index) in  scope.row["channel"]' :key="index">{{ i }}</el-tag> -->
+          </template>
+        </el-table-column>
+         <el-table-column label="安全组"  >
+          <template slot-scope="scope" >
+            <el-tooltip effect='light'  placement="top" class="aasdhjkahskdhjk">
+              <div slot="content" :ref="'contentCssTableHover'+scope.$index" class="contentCssTableHover" > <el-tag v-for='(i,index) in  scope.row["securityGroup"]' :key="index" >{{ i }}</el-tag></div>
+            <div class="contentCssTableHidden" style="max-height:30px"><el-tag v-for='(i,index) in  scope.row["securityGroup"]' :key="index">{{ i }}</el-tag></div> 
+            </el-tooltip>
+            <!-- <el-tag v-for='(i,index) in  scope.row["channel"]' :key="index">{{ i }}</el-tag> -->
+          </template>
+        </el-table-column>
+        <el-table-column  label="显示状态"   >
+          <template slot-scope="scope">
+            <span v-if="scope.row.showstatusIsShow" :key="scope.row.id">
+            <el-select v-model="scope.row.display"  :focus='true'  placeholder="请选择活动区域" @blur='showStatusChangeCancel(scope.$index,scope.row)'  @change="showStatusChangeSubmit(scope.$index,scope.row)" @visible-change='showStatusChangeBlur'>
+              <el-option label="空闲" value="1"></el-option>
+              <el-option label="繁忙" value="2"></el-option>
+              <el-option label="爆满" value="4"></el-option>
+              <el-option label="维护" value="3"></el-option>
+            </el-select> 
+            </span>
+            <span v-else :key="scope.row.id" style="width:50px;" @dblclick="showStatusChange(scope.$index,scope.row)"> {{ scope.row.display|display }} </span>
+             </template>
+        </el-table-column>
+        <el-table-column   label="负载状态">
+          <template slot-scope="scope">{{ scope.row.load|display }} </template>
+        </el-table-column>
+        <el-table-column label="开服时间"  >
+          <template slot-scope="scope">{{scope.row.srttime?scope.row.srttime:scope.row.create_time | timeFormate }} </template>
+       
+         <!-- <span v-if="scope.row.showstatusIsShow" :key="scope.row.id">
+            <el-select v-model="scope.row.display"  :focus='true'  placeholder="请选择活动区域" @blur='showStatusChangeCancel(scope.$index,scope.row)'  @change="showStatusChangeSubmit(scope.$index,scope.row)" @visible-change='showStatusChangeBlur'>
+              <el-option label="空闲" value="1"></el-option>
+              <el-option label="繁忙" value="2"></el-option>
+              <el-option label="爆满" value="4"></el-option>
+              <el-option label="维护" value="3"></el-option>
+            </el-select> 
+            </span>
+            <span v-else :key="scope.row.id" style="width:50px;" @dblclick="showStatusChange(scope.$index,scope.row)"> {{ scope.row.display|display }} </span>
+             </template> -->
+       
+        </el-table-column>
+ <el-table-column v-if="grade" prop='status' label="操作">
+          <template slot-scope="scope">
+            <div class="tableFlex">
+            <el-button
+              size="mini" style="color: red;"
+              icon="el-icon-video-pause" class="button-with-header" @click="piliangcaozuoCancel(scope.$index,scope.row)">取消
+            </el-button>
+            </div>
+          </template>
+
+        </el-table-column>
+
+        </el-table>
+      </div>
+      <div slot="footer" class="dialog-footer">
+
+        <el-button style="margin-left: 10px;" @click="dialogFormchangeStop = false">取 消</el-button>
+        <el-button type="primary"  :disabled="!(allselectchange.length > 0 )"  @click="serverStop">确 定</el-button>
+      </div>
+    </el-dialog>
+
+
+
+
     <!-- 区服创建表单弹窗 -->
     <el-dialog  title="新建区服" :visible.sync="serverCreatedialogFormVisible" :close-on-click-modal="false">
       <el-form ref="createForm"  key="createForm" :rules="createFormRules" :model="createForm" label-width="100px"  class='createFormAlert'> 
@@ -360,6 +466,90 @@
           <el-button @click="serverCreatedialogFormVisible = false">取 消</el-button>
           <el-button type="primary"  @click="createFormSubmitForm('createForm')">确 定</el-button>
         
+        </el-form-item>
+      </el-form>
+    </el-dialog>
+
+
+
+
+<el-dialog  title="区服批量新建" :visible.sync="serverCreatedialogFormVisibleAll" :close-on-click-modal="false" class="ipAddClass">
+      <el-form ref="createForm"  key="createForm" :rules="createFormRules" :model="createForm" label-width="100px"  class='createFormAlert'> 
+      
+       
+         <el-form-item
+            label="平台" class="createFormAlertBody"  prop='plaform' 
+            hide-required-asterisk
+             >
+          <el-select v-model="createForm.plaform" class="alertcontant"  multiple placeholder="请选择平台">
+            <el-option v-for="(item,index) in selectForm[0].options" :key="index"  :label='item.label' :value="item.value?item.value:0">
+            </el-option>
+          </el-select>
+        </el-form-item>
+        <el-form-item label="渠道" class="createFormAlertBody"  prop='channel' hide-required-asterisk required>
+          <el-select v-model="createForm.channel"  class="alertcontant" multiple placeholder="请选择渠道">
+            <el-option v-for="(item,index) in selectForm[1].options" v-show="item.value===''?false:true" :key="index" :label='item.label' :value="item.value">
+            </el-option>
+          </el-select>
+        </el-form-item>
+       
+        <el-form-item label="显示状态" class="createFormAlertBody" prop='display' hide-required-asterisk required>
+          <el-select v-model="createForm.display"  class="alertcontant"  placeholder="请选择显示状态">
+            <el-option  v-for="(item,index) in selectForm[2].options" v-show="item.value===''||item.value ==5 ?false:true"  :key="index" :label='item.label' :value="item.value"></el-option>
+          </el-select>
+        </el-form-item>
+        <el-form-item label="开服时间" class="createFormAlertBody" prop='srttime' hide-required-asterisk required >
+          <el-date-picker
+            v-model="createForm.srttime" 
+            :picker-options="{
+                disabledDate: time => {
+                  return time.getTime() < Date.now() - 3600 * 1000 * 24
+                },
+              }" 
+            type="datetime"   class="alertcontant" placeholder="选择日期时间" >
+          </el-date-picker>
+        </el-form-item>
+        <el-form-item label="测试服">
+          <el-switch v-model="createForm.test" active-color="#13ce66"   active-value='1' inactive-value='0' inactive-color="#ff4949"></el-switch>
+          <el-button type="danger" icon="el-icon-refresh-right" style="margin: 0 0 0 155px;"    @click="createFormResetForm('createForm')">清空</el-button>
+        </el-form-item>
+    
+        <el-form-item label="区服1" class="createFormAlertButtom" >
+          
+         <el-form :inline="true" :model="formInline" class="demo-form-inline">
+            <el-form-item label="区服ID:"  prop='serveridTrue' :required="!!createForm.serveridTrue" >
+          <label>手动输入</label> 
+           <el-switch
+            v-model="createForm.serveridTrue"
+            active-color="#13ce66"
+            inactive-color="#ff4949">
+          </el-switch>
+        </el-form-item >
+           <el-form-item v-show="createForm.serveridTrue" label="区服ID:"  prop='serverid' :required="!!createForm.serveridTrue" >
+          <el-input  v-model="createForm.serverid"  :disabled='!createForm.serveridTrue' ></el-input>
+        </el-form-item>
+
+
+        <el-form-item label="区服名称:" prop='servername' hide-required-asterisk required>
+          <el-input v-model="createForm.servername"  placeholder="请输入区服名称"></el-input>
+        </el-form-item>
+
+
+          <el-form-item label="IP/PORT" prop='ip' hide-required-asterisk :required='!createForm.address'>
+          <el-input v-model="formInline.ip" placeholder="请输入IP地址和端口用:分开"></el-input>
+        </el-form-item>
+            <el-form-item label="资源地址"  hide-required-asterisk  prop='address' :required='!createForm.ip' >
+          <el-input v-model="createForm.address"   placeholder="请输入资源地址"></el-input>
+        </el-form-item>
+          
+            <el-form-item>
+              <el-button type="primary" @click="onSubmit">添加</el-button>
+            </el-form-item>
+          </el-form>
+        </el-form-item>
+        <el-form-item size="large">
+          <el-button @click="serverCreatedialogFormVisibleAll = false">取 消</el-button>
+          <el-button type="primary"  @click="createFormSubmitForm('createForm')">确 定</el-button>
         </el-form-item>
       </el-form>
     </el-dialog>
@@ -530,6 +720,7 @@ import dayjs from 'dayjs';
 import { findComponents, findServer, stopserver, ServerMerge, serverselect } from '@/api/components.js';
 import { servercreate, serverUpdateToOne, serverallupdate, findServerByID, getpage } from '@/api/components.js';
 import { clearIpAll, addIpSecurityGroup } from '@/api/components.js';
+import { stopall } from '@/api/components.js';
 export default {
   name: 'zoneset',
   data() {
@@ -587,9 +778,15 @@ export default {
       callback();
     };
     return {
+      formInline: {
+        user: '',
+        region: '',
+        ip: ''
+      },
       opacity: 0.5,
       servernames: '',
       showstatusIsShow: false,
+      dialogFormchangeStop: false,
       showstatusIsvalue: '',
       dialogFormVisibleAddIp: false, //安全组弹窗
       ipList: [{
@@ -603,6 +800,7 @@ export default {
       },
       clientOptions: [], //客户端组件
       serverCreatedialogFormVisible: false, //区服创建弹窗变量
+      serverCreatedialogFormVisibleAll: false, //区服创建弹窗变量
       selectForm: [{
         label: '游戏平台',
         multiple: true,
@@ -671,9 +869,6 @@ export default {
         }, {
           label: '爆满',
           value: '4'
-        }, {
-          label: '维护',
-          value: '3'
         }]
       }, {
         label: '是否合服',
@@ -800,7 +995,7 @@ export default {
       widthtable: 170,
 
       multipleTable: '',
-    
+      menuVisible: false,
       platformoptions: [
         '不限制',
         'Android',
@@ -891,6 +1086,35 @@ export default {
  
 
   methods: { 
+    async show(MouseEvent) {
+      console.log(1111);
+      console.log(MouseEvent);
+      console.log(1111);
+      console.log(this);
+      this.menuVisible = false; // 先把模态框关死，目的是 第二次或者第n次右键鼠标的时候 它默认的是true
+      this.menuVisible = true; // 显示模态窗口，跳出自定义菜单栏
+      // var menu = document.querySelector('#menu');
+      var menu = this.$refs.createmenus;
+      document.addEventListener('click', this.foo); // 给整个document添加监听鼠标事件，点击任何位置执行foo方法
+      menu.style.position = 'fixed';
+      menu.style.left = MouseEvent.clientX + 'px';
+      menu.style.top = MouseEvent.clientY + 'px';
+    },
+    foo() { // 取消鼠标监听事件 菜单栏
+      this.menuVisible = false;
+      document.removeEventListener('click', this.foo); // 要及时关掉监听，不关掉的是一个坑，不信你试试，虽然前台显示的时候没有啥毛病，加一个alert你就知道了
+    },
+    async serverStop() {
+      let data = { 'server': this.allselectchange, 'merge': this.radio2, 'showstatus': this.radio3, 'gameid': this.gameid };
+      let sendtrue = await secondConfirmation(this, `是否确认继续操作?`);
+      if (!sendtrue) {return;}
+      loading(this);
+      let { code } = await stopall(data);
+      if (code !== 200) { close(this); return;}
+      this.$message.success('停用成功');
+      close(this);
+      this.filterFormChange('flush');
+    },
     async ipListAdd() {
       
       let ip = this.ipList[this.ipList.length - 1]['ip'];
@@ -910,6 +1134,12 @@ export default {
         return;
       }
       this.ipList.pop();
+    },
+    async handleCommandcaozuo(c) {
+      switch (c) {
+        case 'a':this.dialogFormchange = true; break;
+        case 'b':this.dialogFormchangeStop = true; break;
+      }
     },
     /**
      * 描述
@@ -1337,7 +1567,7 @@ export default {
 
       loading(this);
       let { code } = await serverallupdate(data);
-      if (code !== 200) {return;}
+      if (code !== 200) { close(this); return;}
       this.allselectchange.forEach(a=>{
         let q;
         switch (+a.display) {

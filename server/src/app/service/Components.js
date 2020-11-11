@@ -171,7 +171,7 @@ class components extends BaseService{
 			}
 			let {ip, port} = form;
 			clearuser? await c(ip, port):'';
-			await UserDao.findSqlByParamsToOne('update gm_server set display = :display where  gameid=:gameid and serverid=:serverid', {...form, gameid, display});
+			await UserDao.findSqlByParamsToOne('update gm_server set display = :display where  gameid=:gameid and serverid=:serverid and id=:id', {...form, gameid, display});
 		}
 		if(merge){
 			let md5 = crypto.createHash('md5');
@@ -199,6 +199,15 @@ class components extends BaseService{
 		let b = await UserDao.findSqlByParamsToList(`select * from gm_server where  plaform=${parmas.plaform} and gameid=${parmas.gameid} and ${parmas.client} and display=${parmas.showstatus} and ${parmas.data} `);
 		return b;
 
+	}
+	async allserverstop(forms, gameid, display){
+
+		for(let form  of  forms){
+		
+
+			await UserDao.findSqlByParamsToOne('update gm_server set status = 0 where  gameid=:gameid and serverid=:serverid and id=:id', {...form, gameid, display});
+		}
+		return true;
 	}
 }
 

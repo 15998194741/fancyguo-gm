@@ -195,11 +195,11 @@ export default {
       filelist: [],
       total: 0,
       filterForm: {
-        key: 'roleid',
+        key: 'role_id',
         value: '',
         regtime: '',
         stime: '',
-        plaform: '',
+        platform: '',
         channel: '',
         servername: '',
         'banned_type': '',
@@ -237,7 +237,7 @@ export default {
       selectForm: [{
         label: '游戏平台',
         multiple: false,
-        key: 'plaform',
+        key: 'platform',
         value: '',
         options: [
           {
@@ -245,11 +245,11 @@ export default {
             value: ''
           }, {
             label: '安卓',
-            value: '1'
+            value: 'Android'
 
           }, {
             label: '苹果',
-            value: '2'
+            value: 'IOS'
           }]
       }, {
         label: '游戏渠道',
@@ -261,7 +261,7 @@ export default {
       },
       {
         label: '服务器名称',
-        key: 'servername',
+        key: 'server_name',
         multiple: false,
         filterable: true,
         value: '',
@@ -310,7 +310,7 @@ export default {
       ],
       idoptions: [{
         label: '角色ID',
-        value: 'roleid'
+        value: 'role_id'
       }, {
         label: '账户ID',
         value: 'account_id'
@@ -332,7 +332,7 @@ export default {
         { label: '渠道', prop: 'channel', width: -50 },
         { label: '设备ID', prop: 'distinct_id', width: 53 },
         { label: '设备类型', prop: 'machine', width: -20 },
-        { label: '区服名称', prop: 'vip_level', width: 15 },
+        { label: '区服名称', prop: 'server_name', width: 15 },
         { label: '区服ID', prop: 'server_id', width: 30 },
         { label: '等级', prop: 'level', width: -50 },
         { label: 'VIP等级', prop: 'vip_level', width: -50 }

@@ -126,9 +126,9 @@ class CharacterService{
 			value,
 			regtime,
 			stime,
-			plaform,
+			platform,
 			channel,
-			servername,
+			server_name,
 			banned_type,
 			banned_area,
 			gameid,
@@ -146,10 +146,10 @@ class CharacterService{
 		if(stime || banned_type ||  banned_area){
 			data = {
 				[key]:value,
-				plaform,
+				platform,
 				banned_area,
 				banned_type,
-				servername,
+				server_name,
 				gameid
 			};
 			tablename = 'gm_character';
@@ -157,10 +157,10 @@ class CharacterService{
 		}else{
 			data = {
 				[key]:value,
-				plaform,
+				platform,
 				banned_area,
 				banned_type,
-				servername,
+				server_name,
 			};
 		}
 
@@ -184,10 +184,10 @@ class CharacterService{
 		
 			res =await CharacterService.byMany(sql);
 		}else{
-			let sql = `select * from (select  a.*  from (select role_id,max(timestamp) as timestamp from ${tablename} GROUP BY role_id ) qwe join ${tablename}  a on a.timestamp = qwe.timestamp and a.role_id = qwe.role_id ) a   ${sqls} order by "#user_id" offset ${pagesize*(page-1)} limit ${pagesize}  `;	
+			let sql = `select * from (select  a.*  from (select role_id,max(timestamp) as timestamp from ${tablename} where "$part_date"  is not   null  GROUP BY role_id ) qwe join ${tablename}  a on a.timestamp = qwe.timestamp and a.role_id = qwe.role_id ) a   ${sqls} order by "#user_id" offset ${pagesize*(page-1)} limit ${pagesize}  `;	
 			res =   await Ta.tasql(sql, token);
 			console.log(sql, token);
-			sql = `select count(*) from (select  a.*  from (select role_id,max(timestamp) as timestamp from ${tablename} GROUP BY role_id ) qwe join ${tablename}  a on a.timestamp = qwe.timestamp and a.role_id = qwe.role_id ) a     ${sqls}`;	
+			sql = `select count(*) from (select  a.*  from (select role_id,max(timestamp) as timestamp from ${tablename}  where "$part_date"  is not   null GROUP BY role_id ) qwe join ${tablename}    a on a.timestamp = qwe.timestamp and a.role_id = qwe.role_id ) a     ${sqls}`;	
 			total = await Ta.sqltoTotal(sql, token);
 			if(!res){
 				res='';
@@ -296,8 +296,8 @@ class CharacterService{
 		let gameid = data.gameid;
 		let banned_time = data.time * data.long;
 		for(let i of data.value){
-			var {account_id, distinct_id,  roleid, role_name, plaform, channel, machine, serverid, level, vip_level, sum_recharge, ip, regtime, update_time, servername} = i;
-			var columns = {banned_area, banned_type, gameid, account_id, distinct_id,  roleid, role_name, plaform, channel, machine, serverid, level, vip_level, sum_recharge, ip, regtime, update_time, servername, banned_time, banned_reason};
+			var {account_id, distinct_id,  roleid, role_name, platform, channel, machine, serverid, level, vip_level, sum_recharge, ip, regtime, update_time, server_name:servername} = i;
+			var columns = {banned_area, banned_type, gameid, account_id, distinct_id,  roleid, role_name, platform, channel, machine, serverid, level, vip_level, sum_recharge, ip, regtime, update_time, servername, banned_time, banned_reason};
 			dbSequelize.query(`insert into  gm_character 
 			(${Object.keys(columns).map(item=>`"${item}"`)})values(${Object.values(columns).map(item=>`'${item}'`)})`);
 		}
