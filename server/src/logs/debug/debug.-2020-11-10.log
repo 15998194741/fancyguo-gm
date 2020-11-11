@@ -1,0 +1,21 @@
+[2020-11-10T14:26:39.377] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(channel, ','), ',')  as values  from gm_game_channel where gameid = '13' and status = '1'
+[2020-11-10T14:26:39.418] [DEBUG] debugLogger - Executing (default): select * from gm_server  where gameid='13'and test='0' and status = 1 and (pid is null or  trim(pid) ='') order by id limit 20 offset (20*0)
+[2020-11-10T14:26:39.462] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_server where gameid='13'and test='0' and status = 1 and (pid is null or  trim(pid) ='')
+[2020-11-10T14:26:39.477] [DEBUG] debugLogger - Executing (default): select max(num), display from (SELECT count(display) as num,
+		case 
+		when display='1' then '空闲'
+		when display='2' then '繁忙'
+		when display='3' then '维护'
+		when display='4' then '爆满'
+		end
+		as display
+		from gm_server where id in ( SELECT id from gm_server  where gameid='13'and test='0' and  status = 1 and (pid is null or  trim(pid) ='')  ORDER BY id limit 20 offset (20*0)  ) GROUP BY display 
+		union 
+		select 0 as num ,'繁忙' as display
+		union 
+		select 0 as num ,'空闲' as display
+		union
+		select 0 as num ,'维护' as display
+		union
+		select 0 as num ,'爆满' as display
+		)a GROUP BY display

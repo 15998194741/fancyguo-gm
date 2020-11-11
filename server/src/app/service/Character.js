@@ -179,12 +179,14 @@ class CharacterService{
 		let res;
 		if(pgsql === 1){
 			let sql = `select * from gm_character ${sqls} offset ${pagesize*(page-1)} limit ${pagesize}  `; 
-			var { total } = await CharacterService.byOne(`select count(*)as total from gm_character ${sqls} `);
+			// console.log(`select * from gm_character ${sqls} offset ${pagesize*(page-1)} limit ${pagesize}`);
+			var { total } = await CharacterService.byOne(`select count(*) as total from gm_character ${sqls} `);
 		
 			res =await CharacterService.byMany(sql);
 		}else{
 			let sql = `select  *  from ${tablename}  ${sqls} order by "#user_id" offset ${pagesize*(page-1)} limit ${pagesize}  `;	
 			res =   await Ta.tasql(sql, token);
+			console.log(sql, token);
 			sql = `select  count(*)  from ${tablename}  ${sqls}`;	
 			total = await Ta.sqltoTotal(sql, token);
 			if(!res){

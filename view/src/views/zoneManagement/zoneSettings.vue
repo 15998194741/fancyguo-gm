@@ -155,9 +155,11 @@
             <el-button
               v-if="scope.row.display==='5' ? false : true" v-show="scope.row.childertrue?false:true" size="mini"
               icon="el-icon-edit-outline"
+              type="warning"
               class="button-with-header" @click="changeHandleEdit(scope.$index,scope.row)">修改</el-button>
             <el-button
-              v-if="scope.row.display==='5' ?  false: true" v-show="scope.row.childertrue?false:true" size="mini" style="color: red;"
+            v-if="scope.row.display==='5' ?  false: true"
+              v-show="scope.row.childertrue?false:true" type="danger" size="mini" 
               icon="el-icon-video-pause" class="button-with-header" @click="handleStop(scope.$index,scope.row)">停用
             </el-button>
 </div>
@@ -190,26 +192,74 @@
         </div>
       </div>
     </div>
-    <el-dialog title="批量操作" :visible.sync="dialogFormchange"  :close-on-click-modal="false">
+    <el-dialog title="批量操作" :visible.sync="dialogFormchange"  :close-on-click-modal="false" class="ipAddClass">
 
       <div class="alertname">
         <el-table ref="multipleTable" :data="allselectchange">
-          <el-table-column prop='pid' label="合服ID"  >
-          </el-table-column>
-          <el-table-column prop="serverid" label="区服ID"  >
-          </el-table-column>
-          <el-table-column prop="servername" label="名称"  >
-          </el-table-column>
-          <el-table-column prop="plaform" label="平台"  >
-          </el-table-column>
-          <el-table-column prop="channel" label="渠道"  >
-          </el-table-column>
-          <el-table-column prop="display" label="显示状态"  >
-          </el-table-column>
-          <el-table-column prop="load" label="负载状态"  >
-          </el-table-column>
-          <el-table-column prop="srttime" label="开服时间"  >
-          </el-table-column>
+          <el-table-column  label="合服ID" >
+          <template slot-scope="scope">{{ scope.row.childrens?scope.row.id:'' }} </template>
+        </el-table-column>
+        <el-table-column label="区服ID" >
+          <template slot-scope="scope">{{ scope.row.childrens?'': scope.row.serverid||scope.row.id  }} </template>
+        </el-table-column>
+        <el-table-column label="名称" >
+          <template slot-scope="scope">{{ scope.row.servername }} </template>
+        </el-table-column>
+        <el-table-column   label="平台"   name='plaform'>
+          <!-- <template slot-scope="scope">{{ scope.row.plaform|plaform }} </template> -->
+          <template slot-scope="scope"> 
+            <el-tag v-for='(i,index) in  scope.row["plaform"]' :key="index">{{ i |plaform}}</el-tag>
+            </template>
+        </el-table-column>
+        <el-table-column label="渠道"  >
+          <template slot-scope="scope" >
+            <el-tooltip effect='light'  placement="top" class="aasdhjkahskdhjk">
+              <div slot="content" :ref="'contentCssTableHover'+scope.$index" class="contentCssTableHover" > <el-tag v-for='(i,index) in  scope.row["channel"]' :key="index" >{{ i }}</el-tag></div>
+            <div class="contentCssTableHidden" style="max-height:30px"><el-tag v-for='(i,index) in  scope.row["channel"]' :key="index">{{ i }}</el-tag></div> 
+            </el-tooltip>
+            <!-- <el-tag v-for='(i,index) in  scope.row["channel"]' :key="index">{{ i }}</el-tag> -->
+          </template>
+        </el-table-column>
+         <el-table-column label="安全组"  >
+          <template slot-scope="scope" >
+            <el-tooltip effect='light'  placement="top" class="aasdhjkahskdhjk">
+              <div slot="content" :ref="'contentCssTableHover'+scope.$index" class="contentCssTableHover" > <el-tag v-for='(i,index) in  scope.row["securityGroup"]' :key="index" >{{ i }}</el-tag></div>
+            <div class="contentCssTableHidden" style="max-height:30px"><el-tag v-for='(i,index) in  scope.row["securityGroup"]' :key="index">{{ i }}</el-tag></div> 
+            </el-tooltip>
+            <!-- <el-tag v-for='(i,index) in  scope.row["channel"]' :key="index">{{ i }}</el-tag> -->
+          </template>
+        </el-table-column>
+        <el-table-column  label="显示状态"   >
+          <template slot-scope="scope">
+            <span v-if="scope.row.showstatusIsShow" :key="scope.row.id">
+            <el-select v-model="scope.row.display"  :focus='true'  placeholder="请选择活动区域" @blur='showStatusChangeCancel(scope.$index,scope.row)'  @change="showStatusChangeSubmit(scope.$index,scope.row)" @visible-change='showStatusChangeBlur'>
+              <el-option label="空闲" value="1"></el-option>
+              <el-option label="繁忙" value="2"></el-option>
+              <el-option label="爆满" value="4"></el-option>
+              <el-option label="维护" value="3"></el-option>
+            </el-select> 
+            </span>
+            <span v-else :key="scope.row.id" style="width:50px;" @dblclick="showStatusChange(scope.$index,scope.row)"> {{ scope.row.display|display }} </span>
+             </template>
+        </el-table-column>
+        <el-table-column   label="负载状态">
+          <template slot-scope="scope">{{ scope.row.load|display }} </template>
+        </el-table-column>
+        <el-table-column label="开服时间"  >
+          <template slot-scope="scope">{{scope.row.srttime?scope.row.srttime:scope.row.create_time | timeFormate }} </template>
+       
+         <!-- <span v-if="scope.row.showstatusIsShow" :key="scope.row.id">
+            <el-select v-model="scope.row.display"  :focus='true'  placeholder="请选择活动区域" @blur='showStatusChangeCancel(scope.$index,scope.row)'  @change="showStatusChangeSubmit(scope.$index,scope.row)" @visible-change='showStatusChangeBlur'>
+              <el-option label="空闲" value="1"></el-option>
+              <el-option label="繁忙" value="2"></el-option>
+              <el-option label="爆满" value="4"></el-option>
+              <el-option label="维护" value="3"></el-option>
+            </el-select> 
+            </span>
+            <span v-else :key="scope.row.id" style="width:50px;" @dblclick="showStatusChange(scope.$index,scope.row)"> {{ scope.row.display|display }} </span>
+             </template> -->
+       
+        </el-table-column>
  <el-table-column v-if="grade" prop='status' label="操作">
           <template slot-scope="scope">
             <div class="tableFlex">
@@ -265,7 +315,10 @@
         <el-form-item label="区服名称:" class="createFormAlertBody" prop='servername' hide-required-asterisk required>
           <el-input v-model="createForm.servername" class="alertcontant" placeholder="请输入区服名称"></el-input>
         </el-form-item>
-        <el-form-item label="平台" class="createFormAlertBody"  prop='plaform' hide-required-asterisk required>
+         <el-form-item
+            label="平台" class="createFormAlertBody"  prop='plaform' 
+            hide-required-asterisk
+             >
           <el-select v-model="createForm.plaform" class="alertcontant"  multiple placeholder="请选择平台">
             <el-option v-for="(item,index) in selectForm[0].options" :key="index"  :label='item.label' :value="item.value?item.value:0">
             </el-option>
@@ -361,28 +414,31 @@
       <div class="alertname">
         <el-table ref="multipleTable" :data="allselectchange">
 
-
-
-          <el-table-column prop='pid' label="合服ID" >
-          </el-table-column>
-          <el-table-column prop="serverid" label="区服ID" >
-          </el-table-column>
-          <el-table-column prop="servername" label="名称"  >
-          </el-table-column>
-          <el-table-column prop="plaform" label="平台"  >
-          </el-table-column>
-          <el-table-column prop="channel" label="渠道"  >
-          </el-table-column>
-          <el-table-column prop="display" label="显示状态"  >
-          </el-table-column>
-          <el-table-column prop="load" label="负载状态"  >
-          </el-table-column>
-          <el-table-column prop="srttime" label="开服时间"  >
-          <template slot-scope="scope">{{ scope.row.srttime  | timeFormate }} </template>
-              
-          
-          </el-table-column>
-            <el-table-column label="安全组"  >
+ <el-table-column  label="合服ID" >
+          <template slot-scope="scope">{{ scope.row.childrens?scope.row.id:'' }} </template>
+        </el-table-column>
+        <el-table-column label="区服ID" >
+          <template slot-scope="scope">{{ scope.row.childrens?'': scope.row.serverid||scope.row.id  }} </template>
+        </el-table-column>
+        <el-table-column label="名称" >
+          <template slot-scope="scope">{{ scope.row.servername }} </template>
+        </el-table-column>
+        <el-table-column   label="平台"   name='plaform'>
+          <!-- <template slot-scope="scope">{{ scope.row.plaform|plaform }} </template> -->
+          <template slot-scope="scope"> 
+            <el-tag v-for='(i,index) in  scope.row["plaform"]' :key="index">{{ i |plaform}}</el-tag>
+            </template>
+        </el-table-column>
+        <el-table-column label="渠道"  >
+          <template slot-scope="scope" >
+            <el-tooltip effect='light'  placement="top" class="aasdhjkahskdhjk">
+              <div slot="content" :ref="'contentCssTableHover'+scope.$index" class="contentCssTableHover" > <el-tag v-for='(i,index) in  scope.row["channel"]' :key="index" >{{ i }}</el-tag></div>
+            <div class="contentCssTableHidden" style="max-height:30px"><el-tag v-for='(i,index) in  scope.row["channel"]' :key="index">{{ i }}</el-tag></div> 
+            </el-tooltip>
+            <!-- <el-tag v-for='(i,index) in  scope.row["channel"]' :key="index">{{ i }}</el-tag> -->
+          </template>
+        </el-table-column>
+         <el-table-column label="安全组"  >
           <template slot-scope="scope" >
             <el-tooltip effect='light'  placement="top" class="aasdhjkahskdhjk">
               <div slot="content" :ref="'contentCssTableHover'+scope.$index" class="contentCssTableHover" > <el-tag v-for='(i,index) in  scope.row["securityGroup"]' :key="index" >{{ i }}</el-tag></div>
@@ -390,6 +446,37 @@
             </el-tooltip>
             <!-- <el-tag v-for='(i,index) in  scope.row["channel"]' :key="index">{{ i }}</el-tag> -->
           </template>
+        </el-table-column>
+        <el-table-column  label="显示状态"   >
+          <template slot-scope="scope">
+            <span v-if="scope.row.showstatusIsShow" :key="scope.row.id">
+            <el-select v-model="scope.row.display"  :focus='true'  placeholder="请选择活动区域" @blur='showStatusChangeCancel(scope.$index,scope.row)'  @change="showStatusChangeSubmit(scope.$index,scope.row)" @visible-change='showStatusChangeBlur'>
+              <el-option label="空闲" value="1"></el-option>
+              <el-option label="繁忙" value="2"></el-option>
+              <el-option label="爆满" value="4"></el-option>
+              <el-option label="维护" value="3"></el-option>
+            </el-select> 
+            </span>
+            <span v-else :key="scope.row.id" style="width:50px;" @dblclick="showStatusChange(scope.$index,scope.row)"> {{ scope.row.display|display }} </span>
+             </template>
+        </el-table-column>
+        <el-table-column   label="负载状态">
+          <template slot-scope="scope">{{ scope.row.load|display }} </template>
+        </el-table-column>
+        <el-table-column label="开服时间"  >
+          <template slot-scope="scope">{{scope.row.srttime?scope.row.srttime:scope.row.create_time | timeFormate }} </template>
+       
+         <!-- <span v-if="scope.row.showstatusIsShow" :key="scope.row.id">
+            <el-select v-model="scope.row.display"  :focus='true'  placeholder="请选择活动区域" @blur='showStatusChangeCancel(scope.$index,scope.row)'  @change="showStatusChangeSubmit(scope.$index,scope.row)" @visible-change='showStatusChangeBlur'>
+              <el-option label="空闲" value="1"></el-option>
+              <el-option label="繁忙" value="2"></el-option>
+              <el-option label="爆满" value="4"></el-option>
+              <el-option label="维护" value="3"></el-option>
+            </el-select> 
+            </span>
+            <span v-else :key="scope.row.id" style="width:50px;" @dblclick="showStatusChange(scope.$index,scope.row)"> {{ scope.row.display|display }} </span>
+             </template> -->
+       
         </el-table-column>
  <el-table-column v-if="grade" prop='status' label="操作">
           <template slot-scope="scope">
@@ -632,9 +719,7 @@ export default {
           { required: true, message: '请输入区服名称', trigger: ['blur', 'change'] },
           { validator: servernameRepeat, trigger: 'blur' }
         ],
-        plaform: [
-          { required: true, message: '请选择一个平台', trigger: 'blur' }
-        ],
+        plaform: [{ required: true, message: '请选择一个平台', trigger: ['blur', 'change'] }],        
         channel: [
           { required: true, message: '请选择一个渠道', trigger: ['blur', 'change'] }
         ],
