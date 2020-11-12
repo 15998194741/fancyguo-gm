@@ -67,7 +67,7 @@ class GmServerService extends BaseService{
 		let displayNumSql =	`
 		select max(num), display from (SELECT count(display) as num,
 		case 
-		when display='1' then '空闲'
+		when display='1' then '流畅'
 		when display='2' then '繁忙'
 		when display='3' then '维护'
 		when display='4' then '爆满'
@@ -77,7 +77,7 @@ class GmServerService extends BaseService{
 		union 
 		select 0 as num ,'繁忙' as display
 		union 
-		select 0 as num ,'空闲' as display
+		select 0 as num ,'流畅' as display
 		union
 		select 0 as num ,'维护' as display
 		union

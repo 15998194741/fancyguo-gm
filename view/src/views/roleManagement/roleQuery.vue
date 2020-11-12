@@ -178,6 +178,7 @@ import dayjs from 'dayjs';
 // import elementResizeDetectorMaker from 'element-resize-detector';
 import { queryCharacter, findServername, prohibitedMute } from '@/api/character.js';
 import { uploadFile } from '@/api/character.js';
+import { loading, close, secondConfirmation } from '@/views/loading';
 export default {
 
   name: 'rolequery',
@@ -342,7 +343,7 @@ export default {
         { label: '付费总额', prop: 'sum_recharge' },
         { label: 'IP', prop: 'ip' },
         { label: '注册时间', prop: 'reg_time' },
-        { label: '最后登录时间', prop: 'update_time' },
+        { label: '最后登录时间', prop: 'timestamp' },
         { label: '封禁类型', prop: 'banned_type' },
         { label: '封禁范围', prop: 'banned_area' },
         { label: '封禁原因', prop: 'banned_reason' },
@@ -493,12 +494,15 @@ export default {
       this.findCharacter();
     },
     async findCharacter() {
-      this.loading = true;
+      loading(this);
       let res = await queryCharacter(this.filterForm);
       this.total = Number(res.data.total);
-      if (+this.total === +0) { this.loading = false; this.tableData = []; return;}
+      if (+this.total === +0) { close(this); this.tableData = []; return;}
       this.tableData = res.data.res;
-      console.log(this.tableData);
+      this.tableData.map(a => {
+        a.timestamp = dayjs(new Date(a.timestamp / 1000)).format('YYYY-MM-DD HH:mm:ss');
+        return a; 
+      });
       // this.tableData.map(item =>{
       //   item['stime_etime'] = dayjs(item.stime).format('YYYY-MM-DD HH:mm:ss') + '----' + dayjs(item.stime).add(item.banned_time, 'hour').format('YYYY-MM-DD HH:mm:ss');
       //   item.plaform = item.plaform ? item.plaform === '1' ? '安卓' : '苹果' : '';
@@ -509,7 +513,7 @@ export default {
       //   item['update_time'] = dayjs(item.update_time).format('YYYY-MM-DD HH:mm:ss'); 
       //   return { ...item };
       // });
-      this.loading = false;
+      close(this);
     }
   },
   async mounted() {

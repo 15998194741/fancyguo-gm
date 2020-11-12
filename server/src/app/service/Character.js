@@ -296,12 +296,15 @@ class CharacterService{
 		let gameid = data.gameid;
 		let banned_time = data.time * data.long;
 		for(let i of data.value){
-			var {account_id, distinct_id,  roleid, role_name, platform, channel, machine, serverid, level, vip_level, sum_recharge, ip, regtime, update_time, server_name:servername} = i;
+			var {account_id, distinct_id,  role_id:roleid, role_name, platform, channel, machine, serverid, level, vip_level, sum_recharge, ip, reg_time:regtime, timestamp:update_time, server_name:servername} = i;
+			regtime =   dayjs(regtime).format('YYYY-MM-DD HH:mm:ss');
+			update_time =  dayjs(update_time).format('YYYY-MM-DD HH:mm:ss');
 			var columns = {banned_area, banned_type, gameid, account_id, distinct_id,  roleid, role_name, platform, channel, machine, serverid, level, vip_level, sum_recharge, ip, regtime, update_time, servername, banned_time, banned_reason};
-			dbSequelize.query(`insert into  gm_character 
+			await dbSequelize.query(`insert into  gm_character 
 			(${Object.keys(columns).map(item=>`"${item}"`)})values(${Object.values(columns).map(item=>`'${item}'`)})`);
 		}
 		let res = await this.SenClient.get('char', 'BannedAsk', {body:data});
+		console.log(res);
 		return res ;
 	}
 	async outputConsume(data){

@@ -45,7 +45,8 @@
           <el-button slot="reference" icon="el-icon-refresh-right" size='small' class="button-with-header"   @click="filterFormChange('flush')">刷新</el-button>
         </li>
         <li>
-          <el-button  v-if="grade" slot="append" icon="el-icon-circle-plus-outline" size='small'  class="button-with-header"  @contextmenu.prevent.native="show" @click="newCreateServer">新建</el-button>
+          <el-button  v-if="grade" slot="append" icon="el-icon-circle-plus-outline" size='small'  class="button-with-header"   @click="newCreateServer">新建</el-button>
+          <!-- <el-button  v-if="grade" slot="append" icon="el-icon-circle-plus-outline" size='small'  class="button-with-header"  @contextmenu.prevent.native="show" @click="newCreateServer">新建</el-button> -->
         </li>
       </ul>
     </div>
@@ -135,7 +136,7 @@
           <template slot-scope="scope">
             <span v-if="scope.row.showstatusIsShow" :key="scope.row.id">
             <el-select v-model="scope.row.display"  :focus='true'  placeholder="请选择活动区域" @blur='showStatusChangeCancel(scope.$index,scope.row)'  @change="showStatusChangeSubmit(scope.$index,scope.row)" @visible-change='showStatusChangeBlur'>
-              <el-option label="空闲" value="1"></el-option>
+              <el-option label="流畅" value="1"></el-option>
               <el-option label="繁忙" value="2"></el-option>
               <el-option label="爆满" value="4"></el-option>
               <el-option label="维护" value="3"></el-option>
@@ -152,7 +153,7 @@
        
          <!-- <span v-if="scope.row.showstatusIsShow" :key="scope.row.id">
             <el-select v-model="scope.row.display"  :focus='true'  placeholder="请选择活动区域" @blur='showStatusChangeCancel(scope.$index,scope.row)'  @change="showStatusChangeSubmit(scope.$index,scope.row)" @visible-change='showStatusChangeBlur'>
-              <el-option label="空闲" value="1"></el-option>
+              <el-option label="流畅" value="1"></el-option>
               <el-option label="繁忙" value="2"></el-option>
               <el-option label="爆满" value="4"></el-option>
               <el-option label="维护" value="3"></el-option>
@@ -162,7 +163,7 @@
              </template> -->
        
         </el-table-column>
-        <el-table-column v-if="grade" prop='status' label="操作">
+        <el-table-column v-if="grade" prop='status' min-width='100' label="操作">
           <template slot-scope="scope">
             <div class="tableFlex">
             <el-button
@@ -248,7 +249,7 @@
           <template slot-scope="scope">
             <span v-if="scope.row.showstatusIsShow" :key="scope.row.id">
             <el-select v-model="scope.row.display"  :focus='true'  placeholder="请选择活动区域" @blur='showStatusChangeCancel(scope.$index,scope.row)'  @change="showStatusChangeSubmit(scope.$index,scope.row)" @visible-change='showStatusChangeBlur'>
-              <el-option label="空闲" value="1"></el-option>
+              <el-option label="流畅" value="1"></el-option>
               <el-option label="繁忙" value="2"></el-option>
               <el-option label="爆满" value="4"></el-option>
               <el-option label="维护" value="3"></el-option>
@@ -265,7 +266,7 @@
        
          <!-- <span v-if="scope.row.showstatusIsShow" :key="scope.row.id">
             <el-select v-model="scope.row.display"  :focus='true'  placeholder="请选择活动区域" @blur='showStatusChangeCancel(scope.$index,scope.row)'  @change="showStatusChangeSubmit(scope.$index,scope.row)" @visible-change='showStatusChangeBlur'>
-              <el-option label="空闲" value="1"></el-option>
+              <el-option label="流畅" value="1"></el-option>
               <el-option label="繁忙" value="2"></el-option>
               <el-option label="爆满" value="4"></el-option>
               <el-option label="维护" value="3"></el-option>
@@ -292,7 +293,7 @@
       <div slot="footer" class="dialog-footer">
         
         <el-select v-model="radio3" value='1' placeholder="请选择活动区域">
-          <el-option label="空闲" value="1"></el-option>
+          <el-option label="流畅" value="1"></el-option>
           <el-option label="繁忙" value="2"></el-option>
           <el-option label="爆满" value="4"></el-option>
           <el-option label="维护" value="3"></el-option>
@@ -344,7 +345,7 @@
           <template slot-scope="scope">
             <span v-if="scope.row.showstatusIsShow" :key="scope.row.id">
             <el-select v-model="scope.row.display"  :focus='true'  placeholder="请选择活动区域" @blur='showStatusChangeCancel(scope.$index,scope.row)'  @change="showStatusChangeSubmit(scope.$index,scope.row)" @visible-change='showStatusChangeBlur'>
-              <el-option label="空闲" value="1"></el-option>
+              <el-option label="流畅" value="1"></el-option>
               <el-option label="繁忙" value="2"></el-option>
               <el-option label="爆满" value="4"></el-option>
               <el-option label="维护" value="3"></el-option>
@@ -361,7 +362,7 @@
        
          <!-- <span v-if="scope.row.showstatusIsShow" :key="scope.row.id">
             <el-select v-model="scope.row.display"  :focus='true'  placeholder="请选择活动区域" @blur='showStatusChangeCancel(scope.$index,scope.row)'  @change="showStatusChangeSubmit(scope.$index,scope.row)" @visible-change='showStatusChangeBlur'>
-              <el-option label="空闲" value="1"></el-option>
+              <el-option label="流畅" value="1"></el-option>
               <el-option label="繁忙" value="2"></el-option>
               <el-option label="爆满" value="4"></el-option>
               <el-option label="维护" value="3"></el-option>
@@ -641,7 +642,7 @@
           <template slot-scope="scope">
             <span v-if="scope.row.showstatusIsShow" :key="scope.row.id">
             <el-select v-model="scope.row.display"  :focus='true'  placeholder="请选择活动区域" @blur='showStatusChangeCancel(scope.$index,scope.row)'  @change="showStatusChangeSubmit(scope.$index,scope.row)" @visible-change='showStatusChangeBlur'>
-              <el-option label="空闲" value="1"></el-option>
+              <el-option label="流畅" value="1"></el-option>
               <el-option label="繁忙" value="2"></el-option>
               <el-option label="爆满" value="4"></el-option>
               <el-option label="维护" value="3"></el-option>
@@ -658,7 +659,7 @@
        
          <!-- <span v-if="scope.row.showstatusIsShow" :key="scope.row.id">
             <el-select v-model="scope.row.display"  :focus='true'  placeholder="请选择活动区域" @blur='showStatusChangeCancel(scope.$index,scope.row)'  @change="showStatusChangeSubmit(scope.$index,scope.row)" @visible-change='showStatusChangeBlur'>
-              <el-option label="空闲" value="1"></el-option>
+              <el-option label="流畅" value="1"></el-option>
               <el-option label="繁忙" value="2"></el-option>
               <el-option label="爆满" value="4"></el-option>
               <el-option label="维护" value="3"></el-option>
@@ -836,7 +837,7 @@ export default {
           label: '不限制',
           value: ''
         }, {
-          label: '空闲',
+          label: '流畅',
           value: '1'
 
         }, {
@@ -860,7 +861,7 @@ export default {
           label: '不限制',
           value: ''
         }, {
-          label: '空闲',
+          label: '流畅',
           value: '1'
 
         }, {
@@ -962,10 +963,10 @@ export default {
       }],
       //表格赛选菜单
       tableFilter: {
-        display: [{ text: '空闲', value: '1' }, { text: '维护', value: '3' }, { text: '繁忙', value: '2' }, { text: '爆满', value: '4' }, { text: '停用', value: '5' }],
+        display: [{ text: '流畅', value: '1' }, { text: '维护', value: '3' }, { text: '繁忙', value: '2' }, { text: '爆满', value: '4' }, { text: '停用', value: '5' }],
         plaform: [{ text: '安卓', value: '1' }, { text: '苹果', value: '2' }, { text: '互通', value: '0' }],
         channel: '',
-        load: [{ text: '空闲', value: '1' }, { text: '维护', value: '2' }, { text: '繁忙', value: '3' }, { text: '爆满', value: '4' }]
+        load: [{ text: '流畅', value: '1' }, { text: '维护', value: '2' }, { text: '繁忙', value: '3' }, { text: '爆满', value: '4' }]
 
       },
       //表格
@@ -1021,7 +1022,7 @@ export default {
     },
     display(val) {
       switch (+val) {
-        case 1: return '空闲';
+        case 1: return '流畅';
         case 2: return '繁忙';
         case 3: return '维护';
         case 4: return '爆满';
@@ -1571,7 +1572,7 @@ export default {
       this.allselectchange.forEach(a=>{
         let q;
         switch (+a.display) {
-          case 1:q = '空闲';            
+          case 1:q = '流畅';            
             break;
           case 2:q = '繁忙';
             break;
@@ -1587,7 +1588,7 @@ export default {
       });
       let radio3;
       switch (+this.radio3) {
-        case 1:radio3 = '空闲';            
+        case 1:radio3 = '流畅';            
           break;
         case 2:radio3 = '繁忙';
           break;

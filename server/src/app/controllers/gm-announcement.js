@@ -38,7 +38,9 @@ export class GmAnnouncementController {
 	  }
 	  @put('/update')
 	  async update(ctx) {
-	  	let data = ctx.query;
+	  	//   let data = ctx.query;
+		  let data = ctx.request.body;
+	  	//   console.log(data);
 	  	let {type, id} = data;
 	  	ctx.logging( '停用公告', '公告管理', `停用了ID为 ${id} 的 ${ type} ` );
 	  	let result = await gmAnnouncementService.updateBulletin(data);

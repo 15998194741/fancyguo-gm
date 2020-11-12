@@ -43,7 +43,7 @@
             <el-option   label='游戏内公告（进入游戏后展示的公告）' value="2" ></el-option>
           </el-select>
         </el-form-item>
-        <el-form-item label="平台:" prop='plaform'>
+        <el-form-item v-show="+createForm.range !== 1" label="平台:" prop='plaform'>
           <el-select v-model="createForm.plaform" clearable multiple placeholder="请选择" size='small' style="border-radius: 10px;" >
             <el-option   label='安卓' value="1" ></el-option>
             <el-option   label='苹果' value="2" ></el-option>
@@ -198,8 +198,8 @@ export default {
         weights: [{ validator: linkruleone, trigger: ['blur', 'change'] }]
       },
       announcementrule: { 
-        title: [{ validator: titleruleone, trigger: ['blur', 'change'] }],
-        a: [{ validator: linkruleone, trigger: ['blur', 'change'] }] 
+        title: [{ validator: titleruleone, trigger: ['blur', 'change'] }]
+        //   a: [{ validator: linkruleone, trigger: ['blur', 'change'] }] 
       },
       textrule: {
         text: [

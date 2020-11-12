@@ -25,7 +25,8 @@ export function putupdateAnnouncement(params) {
   return request({
     url: `announcement/update`,
     method: 'PUT',
-    params
+    params,
+    data: params
     
   });
 }
