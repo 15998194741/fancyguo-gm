@@ -201,7 +201,7 @@ class GmAnnouncementService extends BaseService{
 		let res = await dbSequelize.query(`
 		select weights as label , weights as value 
 		from gm_announcement  
-		where game_id = '${gameid}' and type = '1' ${channel} ${plaform?plaform:''} ${servername}
+		where game_id = '${gameid}' and status =1 and type = '1' ${channel} ${plaform?plaform:''} ${servername}
 		and  ('${stime}' BETWEEN start_time and  end_time  
 		or '${etime}' BETWEEN start_time and  end_time 
 		or start_time BETWEEN '${dayjs(stime).format('YYYY-MM-DD HH:mm:ss')}' and  '${dayjs(etime).format('YYYY-MM-DD HH:mm:ss')}'  
