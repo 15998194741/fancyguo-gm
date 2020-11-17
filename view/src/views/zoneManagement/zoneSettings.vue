@@ -105,7 +105,7 @@
         <el-table-column label="区服ID" >
           <template slot-scope="scope">{{ scope.row.childrens?'': scope.row.serverid||scope.row.id  }} </template>
         </el-table-column>
-        <el-table-column label="名称" >
+        <el-table-column label="区服名称" >
           <template slot-scope="scope">{{ scope.row.servername }} </template>
         </el-table-column>
         <el-table-column   label="平台"   name='plaform'>

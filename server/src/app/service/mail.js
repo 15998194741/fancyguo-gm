@@ -156,14 +156,13 @@ class MailService{
 			roleIds = ['全服邮件'];
 		}else{
 			let querySql = `with 
-				asd as ( select plaform,channel,id,servername from gm_server where id in (${roleId.map(item => item['serverid'])}) ),
+				asd as ( select plaform,channel,id,servername from gm_server where serverid::int  in (${roleId.map(item => item['serverid'])}) ),
 				ghj as (select array_to_json(string_to_array(string_agg(servername,','),','))  as servername  ,1 as id from (select servername , 1 as id from asd ) a group by id ),																					
 				ert as (select jsonb_array_elements(channel) as test from asd where plaform = plaform ),
 				dfg as (select json_agg(test)  as channel,1 as id  from (select test ,1 as id  from ert GROUP BY test ) a  GROUP BY id ),
 				qwe as (select array_to_json(string_to_array(string_agg(plaform,',') ,',')) as plaform,id from (select plaform ,1 as id from (select jsonb_array_elements_text(plaform) as plaform ,1 as id from (select plaform,1 as id  from asd) a )a  group by plaform  ) a  GROUP BY id )
 				select plaform,channel ,servername from (qwe join dfg on dfg.id = qwe.id) join ghj on ghj.id = qwe.id
 			`;
-			
 			let DBres = await dbSequelize.query(querySql, {
 				replacements:['active'], type:Sequelize.QueryTypes.SELECT
 			});

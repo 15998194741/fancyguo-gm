@@ -1,8 +1,11 @@
 {
   "ExpandedNodes": [
     "",
-    "\\server"
+    "\\view",
+    "\\view\\src",
+    "\\view\\src\\views",
+    "\\view\\src\\views\\roleManagement"
   ],
-  "SelectedNode": "\\server\\start.js",
+  "SelectedNode": "\\view\\src\\views\\roleManagement\\rucksackQuery.vue",
   "PreviewInSolutionExplorer": false
 }

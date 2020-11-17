@@ -1,0 +1,163 @@
+[2020-11-13T11:11:48.040] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/mail/postMailToCreate
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"title":"123","text":"123123","allServerTrue":false,"roleId":[{"serverid":1,"id":1231231},{"serverid":2,"id":5456465},{"serverid":3,"id":9681699},{"serverid":4,"id":13906933},{"serverid":5,"id":18132167},{"serverid":6,"id":22357401},{"serverid":7,"id":26582635},{"serverid":8,"id":30807869},{"serverid":9,"id":35033103},{"serverid":10,"id":39258337},{"serverid":11,"id":43483571},{"serverid":12,"id":47708805},{"serverid":13,"id":51934039},{"serverid":14,"id":56159273},{"serverid":15,"id":60384507},{"serverid":16,"id":64609741},{"serverid":17,"id":68834975},{"serverid":18,"id":73060209},{"serverid":19,"id":77285443},{"serverid":20,"id":81510677},{"serverid":21,"id":85735911},{"serverid":22,"id":89961145},{"serverid":23,"id":94186379},{"serverid":24,"id":98411613},{"serverid":25,"id":102636847},{"serverid":26,"id":106862081},{"serverid":27,"id":111087315},{"serverid":28,"id":115312549},{"serverid":29,"id":23},{"serverid":30,"id":31},{"serverid":31,"id":2312},{"serverid":32,"id":123},{"serverid":33,"id":1},{"serverid":34,"id":12313},{"serverid":35,"id":23},{"serverid":36,"id":2321},{"serverid":37,"id":31231},{"serverid":38,"id":123},{"serverid":39,"id":312},{"serverid":40,"id":23},{"serverid":41,"id":12},{"serverid":42,"id":1212312313},{"serverid":43,"id":23},{"serverid":44,"id":23},{"serverid":45,"id":23},{"serverid":46,"id":12},{"serverid":47,"id":31231},{"serverid":48,"id":123},{"serverid":49,"id":12312},{"serverid":50,"id":12},{"serverid":51,"id":31},{"serverid":52,"id":123},{"serverid":53,"id":31231},{"serverid":54,"id":231},{"serverid":55,"id":23},{"serverid":56,"id":12},{"serverid":57,"id":312},{"serverid":58,"id":2312}],"mailLink":"123","plaform":"","channel":"","serverName":"","carryAnnex":false,"sendTime":true,"smtpId":"11478","gameid":"1"}
+response time: 1605237108039
+err name: Error
+err message: seneca: [TIMEOUT] Action  timed out. Timeout was: 22222 (start: 1605237082954, end: 1605237105265. Message was: {
+  module: 'mail',
+  mail: 'immediate',
+  args: { query: undefined, body: { gameid: '1', id: 79 } }
+}.
+err stack: Error: seneca: [TIMEOUT] Action  timed out. Timeout was: 22222 (start: 1605237082954, end: 1605237105265. Message was: {
+  module: 'mail',
+  mail: 'immediate',
+  args: { query: undefined, body: { gameid: '1', id: 79 } }
+}.
+    at Object.errormaker (H:\致命代码\fancyguo-gm\server\node_modules\eraro\eraro.js:112:15)
+    at Object.act_tm [as ontm] (H:\致命代码\fancyguo-gm\server\node_modules\seneca\lib\act.js:86:32)
+    at Timeout.timeout_check [as _onTimeout] (H:\致命代码\fancyguo-gm\server\node_modules\gate-executor\gate-executor.js:207:16)
+    at listOnTimeout (internal/timers.js:549:17)
+    at processTimers (internal/timers.js:492:7)
+From previous event:
+    at SenecaClient._callee$ (H:\致命代码\fancyguo-gm\server\src\xiaolu\/senecaclient.js:16:21)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at SenecaClient.<anonymous> (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at SenecaClient.get (H:\致命代码\fancyguo-gm\server\src\xiaolu\senecaclient.js:86:21)
+    at MailService._callee9$ (H:\致命代码\fancyguo-gm\server\src\app\service\/mail.js:219:34)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at MailService.<anonymous> (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at MailService.mailSendTimely (H:\致命代码\fancyguo-gm\server\src\app\service\mail.js:537:32)
+    at MailService._callee6$ (H:\致命代码\fancyguo-gm\server\src\app\service\/mail.js:192:16)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+*************** error log end ***************
+
+[2020-11-13T11:15:20.439] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/mail/postMailToCreate
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"title":"123","text":"123123","allServerTrue":false,"roleId":[{"serverid":1,"id":1231231},{"serverid":2,"id":5456465},{"serverid":3,"id":9681699},{"serverid":4,"id":13906933},{"serverid":5,"id":18132167},{"serverid":6,"id":22357401},{"serverid":7,"id":26582635},{"serverid":8,"id":30807869},{"serverid":9,"id":35033103},{"serverid":10,"id":39258337},{"serverid":11,"id":43483571},{"serverid":12,"id":47708805},{"serverid":13,"id":51934039},{"serverid":14,"id":56159273},{"serverid":15,"id":60384507},{"serverid":16,"id":64609741},{"serverid":17,"id":68834975},{"serverid":18,"id":73060209},{"serverid":19,"id":77285443},{"serverid":20,"id":81510677},{"serverid":21,"id":85735911},{"serverid":22,"id":89961145},{"serverid":23,"id":94186379},{"serverid":24,"id":98411613},{"serverid":25,"id":102636847},{"serverid":26,"id":106862081},{"serverid":27,"id":111087315},{"serverid":28,"id":115312549},{"serverid":29,"id":23},{"serverid":30,"id":31},{"serverid":31,"id":2312},{"serverid":32,"id":123},{"serverid":33,"id":1},{"serverid":34,"id":12313},{"serverid":35,"id":23},{"serverid":36,"id":2321},{"serverid":37,"id":31231},{"serverid":38,"id":123},{"serverid":39,"id":312},{"serverid":40,"id":23},{"serverid":41,"id":12},{"serverid":42,"id":1212312313},{"serverid":43,"id":23},{"serverid":44,"id":23},{"serverid":45,"id":23},{"serverid":46,"id":12},{"serverid":47,"id":31231},{"serverid":48,"id":123},{"serverid":49,"id":12312},{"serverid":50,"id":12},{"serverid":51,"id":31},{"serverid":52,"id":123},{"serverid":53,"id":31231},{"serverid":54,"id":231},{"serverid":55,"id":23},{"serverid":56,"id":12},{"serverid":57,"id":312},{"serverid":58,"id":2312}],"mailLink":"123","plaform":"","channel":"","serverName":"","carryAnnex":false,"sendTime":true,"smtpId":"11478","gameid":"1"}
+response time: 1605237320439
+err name: Error
+err message: seneca: [TIMEOUT] Action  timed out. Timeout was: 22222 (start: 1605237294710, end: 1605237317026. Message was: {
+  module: 'mail',
+  mail: 'immediate',
+  args: { query: undefined, body: { gameid: '1', id: 80 } }
+}.
+err stack: Error: seneca: [TIMEOUT] Action  timed out. Timeout was: 22222 (start: 1605237294710, end: 1605237317026. Message was: {
+  module: 'mail',
+  mail: 'immediate',
+  args: { query: undefined, body: { gameid: '1', id: 80 } }
+}.
+    at Object.errormaker (H:\致命代码\fancyguo-gm\server\node_modules\eraro\eraro.js:112:15)
+    at Object.act_tm [as ontm] (H:\致命代码\fancyguo-gm\server\node_modules\seneca\lib\act.js:86:32)
+    at Timeout.timeout_check [as _onTimeout] (H:\致命代码\fancyguo-gm\server\node_modules\gate-executor\gate-executor.js:207:16)
+    at listOnTimeout (internal/timers.js:549:17)
+    at processTimers (internal/timers.js:492:7)
+From previous event:
+    at SenecaClient._callee$ (H:\致命代码\fancyguo-gm\server\src\xiaolu\/senecaclient.js:16:21)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at SenecaClient.<anonymous> (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at SenecaClient.get (H:\致命代码\fancyguo-gm\server\src\xiaolu\senecaclient.js:86:21)
+    at MailService._callee9$ (H:\致命代码\fancyguo-gm\server\src\app\service\/mail.js:219:34)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at MailService.<anonymous> (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at MailService.mailSendTimely (H:\致命代码\fancyguo-gm\server\src\app\service\mail.js:537:32)
+    at MailService._callee6$ (H:\致命代码\fancyguo-gm\server\src\app\service\/mail.js:192:16)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+*************** error log end ***************
+
+[2020-11-13T14:10:02.054] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/mail/postMailToCreate
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"title":"123","text":"角色橘色橘色","allServerTrue":false,"roleId":[{"serverid":1,"id":399981}],"mailLink":"123","plaform":"","channel":"","serverName":"","carryAnnex":false,"sendTime":true,"smtpId":"950101","gameid":"1"}
+response time: 1605247802054
+err name: TypeError
+err message: Cannot read property 'plaform' of undefined
+err stack: TypeError: Cannot read property 'plaform' of undefined
+    at MailService._callee6$ (H:\致命代码\fancyguo-gm\server\src\app\service\/mail.js:170:14)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+*************** error log end ***************
+
+[2020-11-13T14:12:20.375] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/mail/postMailToCreate
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"title":"123","text":"角色角色角色","allServerTrue":false,"roleId":[{"serverid":1,"id":399981}],"sendTime":true,"mailLink":"1","plaform":"","channel":"","serverName":"","carryAnnex":false,"sendDateTime":"","smtpId":"123101","gameid":"1"}
+response time: 1605247940375
+err name: TypeError
+err message: Cannot read property 'plaform' of undefined
+err stack: TypeError: Cannot read property 'plaform' of undefined
+    at MailService._callee6$ (H:\致命代码\fancyguo-gm\server\src\app\service\/mail.js:171:14)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+*************** error log end ***************
+
+[2020-11-13T14:12:49.525] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/mail/postMailToCreate
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"title":"123","text":"角色角色角色","allServerTrue":false,"roleId":[{"serverid":1,"id":399981}],"sendTime":true,"mailLink":"1","plaform":"","channel":"","serverName":"","carryAnnex":false,"sendDateTime":"","smtpId":"123101","gameid":"1"}
+response time: 1605247969524
+err name: TypeError
+err message: Cannot read property 'plaform' of undefined
+err stack: TypeError: Cannot read property 'plaform' of undefined
+    at MailService._callee6$ (H:\致命代码\fancyguo-gm\server\src\app\service\/mail.js:171:14)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+*************** error log end ***************
+

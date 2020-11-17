@@ -182,20 +182,20 @@ class CharacterService{
 			// console.log(`select * from gm_character ${sqls} offset ${pagesize*(page-1)} limit ${pagesize}`);
 			var { total } = await CharacterService.byOne(`select count(*) as total from gm_character ${sqls} `);
 		
-			res =await CharacterService.byMany(sql);
+			res = await CharacterService.byMany(sql);
 		}else{
 			let sql = `select * from (select  a.*  from (select role_id,max(timestamp) as timestamp from ${tablename} where "$part_date"  is not   null  GROUP BY role_id ) qwe join ${tablename}  a on a.timestamp = qwe.timestamp and a.role_id = qwe.role_id ) a   ${sqls} order by "#user_id" offset ${pagesize*(page-1)} limit ${pagesize}  `;	
 			res =   await Ta.tasql(sql, token);
-			console.log(sql, token);
 			sql = `select count(*) from (select  a.*  from (select role_id,max(timestamp) as timestamp from ${tablename}  where "$part_date"  is not   null GROUP BY role_id ) qwe join ${tablename}    a on a.timestamp = qwe.timestamp and a.role_id = qwe.role_id ) a     ${sqls}`;	
 			total = await Ta.sqltoTotal(sql, token);
 			if(!res){
 				res='';
 			}else{
-				let children =  sqls?'':await CharacterService.byMany( `select * from gm_character  where gameid='${gameid}' and roleid in (${res.map(item => `'${item.roleid}'`)}) offset ${pagesize*(page-1)} limit ${pagesize}  `);
+				let sql = `select * from gm_character  where gameid='${gameid}' and roleid in (${res.map(item => `'${item.role_id}'`)}) offset ${pagesize * (page - 1)} limit ${pagesize}  `;
+				let children = sqls ? '' : await CharacterService.byMany(sql);
 				if(children.length>0){
 					res = res.map(item =>{
-						let a = children.find(_item => _item.roleid===item.roleid);
+						let a = children.find(_item => _item.roleid === item.role_id);
 						return {...item, ...a};
 					});
 				}
@@ -296,13 +296,14 @@ class CharacterService{
 		let gameid = data.gameid;
 		let banned_time = data.time * data.long;
 		for(let i of data.value){
-			var {account_id, distinct_id,  role_id:roleid, role_name, platform, channel, machine, serverid, level, vip_level, sum_recharge, ip, reg_time:regtime, timestamp:update_time, server_name:servername} = i;
+			var { account_id, distinct_id,  role_id:roleid, role_name, platform, channel, machine, server_id:serverid, level, vip_level, sum_recharge, ip, reg_time:regtime, timestamp:update_time, server_name:servername } = i;
 			regtime =   dayjs(regtime).format('YYYY-MM-DD HH:mm:ss');
 			update_time =  dayjs(update_time).format('YYYY-MM-DD HH:mm:ss');
 			var columns = {banned_area, banned_type, gameid, account_id, distinct_id,  roleid, role_name, platform, channel, machine, serverid, level, vip_level, sum_recharge, ip, regtime, update_time, servername, banned_time, banned_reason};
 			await dbSequelize.query(`insert into  gm_character 
 			(${Object.keys(columns).map(item=>`"${item}"`)})values(${Object.values(columns).map(item=>`'${item}'`)})`);
 		}
+
 		let res = await this.SenClient.get('char', 'BannedAsk', {body:data});
 		console.log(res);
 		return res ;

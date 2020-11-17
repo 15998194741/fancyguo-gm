@@ -108,7 +108,7 @@ export default {
         options: []
       },
       {
-        label: '服务器名称',
+        label: '区服名称',
         key: 'servername',
         multiple: false,
         value: '',

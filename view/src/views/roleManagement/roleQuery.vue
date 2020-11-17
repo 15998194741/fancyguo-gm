@@ -261,7 +261,7 @@ export default {
         options: []
       },
       {
-        label: '服务器名称',
+        label: '区服名称',
         key: 'server_name',
         multiple: false,
         filterable: true,
@@ -422,15 +422,18 @@ export default {
             cancelButtonText: '取消',
             type: 'warning' })
             .catch(err => false);
-          if (!doubleTrue) {return;}
-    
+          if (!doubleTrue) { return; }
+          loading(this);
           let res = await prohibitedMute({ ...this.insertForm, value: this.tableTrue });
-          if (res.code === 200) {
-            this.dialogFormchange = false; this.filterFormChange('flush'); this.$message({
+          if (res.code !== 200) { close(this); return; }
+            this.dialogFormchange = false;
+            this.filterFormChange('flush');
+            this.$message({
               type: 'success',
               message: '操作成功'
-            }); return; 
-          }
+            });
+            close(this);
+            return; 
         }
       });
 

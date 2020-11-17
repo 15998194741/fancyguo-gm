@@ -16,8 +16,8 @@ export class CharacterController {
 	}
     @get('/find')
 	async find(ctx) {
-		ctx.log.resourceDesc = '查找';
-		let data = ctx.data;
+        ctx.log.resourceDesc = '查找';
+        let data = ctx.data;
 		let result = await clientService.find(data);
 		ctx.body = statusCode.SUCCESS_200('查找成功', result);
 	}
