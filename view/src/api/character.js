@@ -10,6 +10,13 @@ export function queryCharacter(params) {
 }
 
 
+export function BannedAskCancel(data) { 
+  return request({
+    url: `character/BannedAskCancel`,
+    method: 'put',
+    data
+  });
+}
 
 
 

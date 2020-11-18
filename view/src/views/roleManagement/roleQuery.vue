@@ -1,12 +1,25 @@
 <template>
   <div ref="rechaContainer" class="role-container">
     <div class="role-container-header" >
-    <ul style="margin-top: 5px;margin-bottom: -5px;margin-right: 0.8rem;">
-      <li><el-button  v-if="grade" slot="reference" icon="el-icon-upload2" size='small' class="button-with-header"  @click="serverCreatedialogFormVisible = true" >导入</el-button></li>
-      <li><el-button  v-if="grade" slot="reference" icon="el-icon-download" size='small' class="button-with-header" :disabled='this.tableTrue.length === 0' @click='exportFile' >导出</el-button></li>
-      <li><el-button  slot="reference" icon="el-icon-refresh-right" size='small' class="button-with-header"  @click='filterFormChange'>刷新</el-button></li>
-      <li> <el-button v-if="grade" slot="append" icon="el-icon-circle-plus-outline" size='small' class="button-with-header" :disabled='fenghaocaozuo' @click='dialogFormchange = true'>封号禁言</el-button></li>
-    </ul>
+      <ul style="margin-top: 5px;margin-bottom: -5px;margin-right: 0.8rem;">
+        <li><el-button v-if="grade" slot="reference" icon="el-icon-upload2" size='small' class="button-with-header" @click="serverCreatedialogFormVisible = true">导入</el-button></li>
+        <li><el-button v-if="grade" slot="reference" icon="el-icon-download" size='small' class="button-with-header" :disabled='this.tableTrue.length === 0' @click='exportFile'>导出</el-button></li>
+        <li><el-button slot="reference" icon="el-icon-refresh-right" size='small' class="button-with-header" @click='filterFormChange'>刷新</el-button></li>
+        <li> <el-button v-if="grade"
+                        slot="append"
+                        icon="el-icon-circle-plus-outline"
+                        size='small'
+                        class="button-with-header"
+                        :disabled='fenghaocaozuo'
+                        @click='dialogFormchange = true'>封号禁言</el-button></li>
+        <li> <el-button v-if="grade"
+                        slot="append"
+                        icon="el-icon-remove-outline"
+                        size='small'
+                        class="button-with-header"
+                        :disabled='fenghaocaozuo'
+                        @click='BannedAskCancel'>解除封禁</el-button></li>
+      </ul>
   </div>
   <div class="role-container-search">
     <div class="server-container">ID：
@@ -108,7 +121,6 @@
 
 
   <el-dialog title="封号操作" :visible.sync="dialogFormchange"  :close-on-click-modal="false">
-
     <div class="alertname">
       <el-table
       ref="multipleTable"
@@ -127,7 +139,6 @@
       <el-table-column v-for='(column,index) in tablecolumn' :key='index'  :label="column.label">
         <template slot-scope="scope">{{ scope.row[column.prop] }}</template>
       </el-table-column>
-     
     </el-table>
     </div>
     <div slot="footer" class="dialog-footer">
@@ -161,10 +172,6 @@
           </el-select>
       </el-form-item>
       </el-form>     
- 
-    
-
-   
       <el-button @click="dialogFormchange = false">取 消</el-button>
       <el-button type="primary"  @click="createFormSubmitForm('insertForm')" >确 定</el-button>
     </div>
@@ -176,7 +183,7 @@
 import { findComponents } from '@/api/components.js';
 import dayjs from 'dayjs';
 // import elementResizeDetectorMaker from 'element-resize-detector';
-import { queryCharacter, findServername, prohibitedMute } from '@/api/character.js';
+import { queryCharacter, findServername, prohibitedMute,BannedAskCancel } from '@/api/character.js';
 import { uploadFile } from '@/api/character.js';
 import { loading, close, secondConfirmation } from '@/views/loading';
 export default {
@@ -411,7 +418,20 @@ export default {
         await this.$refs.upload.submit();
         this.$message.success('上传成功!'); 
       }
-    
+    },
+    async BannedAskCancel() {
+      let doubleTrue = await this.$confirm('是否确认解除封禁?', '提示', {
+        confirmButtonText: '确定',
+        cancelButtonText: '取消',
+        type: 'warning'
+      }).catch(err => false);
+      if (!doubleTrue) { return; }
+      loading(this);
+      let { code } = await BannedAskCancel({ value: this.tableTrue });
+      if (+code !== 200) { close(this); return; }
+      this.$message.success('解封成功');
+      this.filterFormChange('flush');
+      return;
     },
     createFormSubmitForm(formName) {
       this.$refs[formName].validate(async(valid) => {
@@ -426,14 +446,10 @@ export default {
           loading(this);
           let res = await prohibitedMute({ ...this.insertForm, value: this.tableTrue });
           if (res.code !== 200) { close(this); return; }
-            this.dialogFormchange = false;
-            this.filterFormChange('flush');
-            this.$message({
-              type: 'success',
-              message: '操作成功'
-            });
-            close(this);
-            return; 
+          this.dialogFormchange = false;
+          this.filterFormChange('flush');
+          this.$message.success('操作成功');
+          return; 
         }
       });
 
@@ -496,16 +512,18 @@ export default {
       }
       this.findCharacter();
     },
-    async findCharacter() {
+    findCharacter() {
       loading(this);
-      let res = await queryCharacter(this.filterForm);
-      this.total = Number(res.data.total);
-      if (+this.total === +0) { close(this); this.tableData = []; return;}
-      this.tableData = res.data.res;
-      this.tableData.map(a => {
-        a.timestamp = dayjs(new Date(a.timestamp / 1000)).format('YYYY-MM-DD HH:mm:ss');
-        return a; 
-      });
+      queryCharacter(this.filterForm).then(res => {
+        this.total = Number(res.data.total);
+        if (+this.total === +0) { close(this); this.tableData = []; return; }
+        this.tableData = res.data.res;
+        this.tableData.map(a => {
+          a.timestamp = dayjs(new Date(a.timestamp / 1000)).format('YYYY-MM-DD HH:mm:ss');
+          return a; 
+        });
+        close(this);
+      }).catch(a => close(this));
       // this.tableData.map(item =>{
       //   item['stime_etime'] = dayjs(item.stime).format('YYYY-MM-DD HH:mm:ss') + '----' + dayjs(item.stime).add(item.banned_time, 'hour').format('YYYY-MM-DD HH:mm:ss');
       //   item.plaform = item.plaform ? item.plaform === '1' ? '安卓' : '苹果' : '';
@@ -516,7 +534,7 @@ export default {
       //   item['update_time'] = dayjs(item.update_time).format('YYYY-MM-DD HH:mm:ss'); 
       //   return { ...item };
       // });
-      close(this);
+    
     }
   },
   async mounted() {
