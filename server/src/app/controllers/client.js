@@ -1,4 +1,4 @@
-import { controller, get, post, put, del, permission, login } from '../../lib/router-permission';
+import { controller, get, post, put, del } from '../../lib/router-permission';
 import statusCode from '../../utils/status-code';
 import clientService from '../service/client';
 
@@ -13,12 +13,12 @@ export class CharacterController {
 		let result = await clientService.create(data);
 		ctx.logging( '创建客户端', '客户端管理', `创建了区服版本号为${data.versionId} 的客户端 ` );
 		ctx.body = statusCode.SUCCESS_200('创建成功', result);
-	}
+    }
     @get('/find')
 	async find(ctx) {
         ctx.log.resourceDesc = '查找';
         let data = ctx.data;
-		let result = await clientService.find(data);
+        let result = await clientService.find(data);
 		ctx.body = statusCode.SUCCESS_200('查找成功', result);
 	}
     @get('/channelfind')

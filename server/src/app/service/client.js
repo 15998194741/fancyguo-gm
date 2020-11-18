@@ -13,12 +13,10 @@ class clientService{
         values
         ('${versionId}','${JSON.stringify(plaform)}','${JSON.stringify(channel)}','${JSON.stringify(showType)}','${gameid}','${user['id']}')
         `;
-		// console.log(sql);
 		let res = await dbSequelize.query(sql, {
 			replacements:['active'], type:Sequelize.QueryTypes.INSERT
 		});
 		return res;
-		// return;
 	}
 	async find(data){
 		let {page, pagesize, gameid, value, plaform, channel, isShowType} =data;

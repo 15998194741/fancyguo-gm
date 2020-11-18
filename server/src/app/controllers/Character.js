@@ -82,4 +82,11 @@ export class CharacterController {
 		ctx.body = result;
 	}
 
+	@put('/BannedAskCancel')
+	async BannedAskCancel(ctx) {
+		ctx.log.resourceDesc = '解除封禁';
+		let result = await CharacterService.BannedAskCancel(ctx.request.body);
+		ctx.body = result;
+	}
+
 }

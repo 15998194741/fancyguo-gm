@@ -41,7 +41,7 @@ class rechargeService{
 		}); 
 		connection.connect();
 	
-		let {roleid, stime, plaform, servername, page, pagesize, gameid} = data;
+		let {roleid,  plaform, servername, page, pagesize, gameid} = data;
 		let srttime = data['srttime[]'];
 		let channel = data['channel[]'];
 		let serverid ;
@@ -49,7 +49,6 @@ class rechargeService{
 			 serverid = await dbSequelize.query(`select serverid from gm_server where  servername ='${servername}' `);
 			serverid = serverid[0][0].serverid;		
 		}
-		gameid = '22222222';
 		let where = `where  appid ='${gameid}'`;
 		where += !channel?'':typeof channel === 'string'?` and channel =  '${channel}'`:` and channel in (${channel.map(item=>`'${item}'`).join(',')})`;
 		where += !roleid?'':` and roleid='${roleid}'`;

@@ -23,9 +23,7 @@ module.exports = {
     "no-const-assign": 2,
     'no-mixed-spaces-and-tabs': 0,
     "indent": [
-      "error",
-      "tab",
-      { "SwitchCase": 1 }
+     "off","tab"
     ],
     "linebreak-style": [
       "error",

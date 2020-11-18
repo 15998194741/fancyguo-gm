@@ -351,6 +351,12 @@ class CharacterService{
 			return false;
 		}
 	}	
+	async BannedAskCancel(data) {
+		let { code, message } = await this.SenClient.get('char', 'BannedAskCancel', { body: data });
+		if (+code !== 200) throw { message };
+		return;
+
+    }
 
 }
 

@@ -1,6 +1,7 @@
-import { controller, get, post, put, del, permission, login } from '../../lib/router-permission';
+import { controller, get, post, put, del } from '../../lib/router-permission';
 import gmPurviewService from '../service/gm-purview';
 import statusCode from '../../utils/status-code';
+
 @controller('/gm/purview')
 export class GmPurviewController {
   @get('/findAll')

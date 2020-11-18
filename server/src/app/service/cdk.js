@@ -262,7 +262,6 @@ class CDKService{
 		}else{
 			res = await this.findByFilter(where);
 		}
-		
 		return res;
 	}
 	async findByKey(data){
@@ -279,7 +278,7 @@ class CDKService{
 				
 				with asd as (select (jsonb_array_elements(annex) ->> 'annexName')::jsonb ->> 1  as name, jsonb_array_elements(annex) ->> 'annexNumber' as numbers ,id  from  gm_cdk),
 				dsa as (select  asd.id, string_to_array(string_agg(concat(art.name,'  ',asd.numbers,'个'),','),',')  as annexs  from asd  left join gm_article art on art.article_id = asd.name GROUP BY asd.id ),
-			sda as (select cdk.*,dsa.annexs   from dsa left join  gm_cdk cdk on dsa.id = cdk.id where cdk.game_id='${gameid}' and cdk.id=${ value } ),
+			sda as (select cdk.*,dsa.annexs   from dsa left join  gm_cdk cdk on dsa.id = cdk.id where cdk.game_id='${gameid}' and cdk.id=${ value } and cdk.status = 1 ),
 			pla as (select  jsonb_array_elements(plaform) as plaform ,id from gm_cdk  where id in (select id from sda)),
 			pls as (select id,string_to_array(string_agg((case 
 			when pla.plaform = '"1"' then '安卓'
@@ -312,7 +311,7 @@ class CDKService{
 
 			with asd as (select (jsonb_array_elements(annex) ->> 'annexName')::jsonb ->> 1  as name, jsonb_array_elements(annex) ->> 'annexNumber' as numbers ,id  from  gm_cdk),
 			dsa as (select  asd.id, string_to_array(string_agg(concat(art.name,'  ',asd.numbers,'个'),','),',')  as annexs  from asd  left join gm_article art on art.article_id = asd.name GROUP BY asd.id ),
-		sda as (select cdk.*,dsa.annexs   from dsa left join  gm_cdk cdk on dsa.id = cdk.id where cdk.game_id='${gameid}' and case 
+		sda as (select cdk.*,dsa.annexs   from dsa left join  gm_cdk cdk on dsa.id = cdk.id where cdk.game_id='${gameid}' and cdk.status  = 1  and case 
 		when cdk.type = '1'
 		then cdk.cdkid = '${key}'
 		else cdk.cdkid = '${tableName}'
@@ -351,7 +350,7 @@ class CDKService{
 	async findByFilter(data){
 		let { plaform, channel, page, pagesize, takeEffectTime, srtfailureTimetime, gameid} = data;
 		let getType = data => Object.prototype.toString.call(data).split(' ')[1].slice(0, -1);
-		let where = `where cdk.game_id='${gameid}' `;
+		let where = `where cdk.game_id='${gameid}' and cdk.status = 1  `;
 		// if(typeof plaform === 'string' && plaform){plaform = [plaform];}
 		if(plaform){
 			where += getType(plaform)==='String'?` and plaform =  '[${JSON.stringify(plaform)}]' `:`  and plaform @> '${JSON.stringify(plaform)}' `;
@@ -368,7 +367,7 @@ class CDKService{
 		let sql = `
 		with asd as (select (jsonb_array_elements(annex) ->> 'annexName')::jsonb ->> 1  as name, jsonb_array_elements(annex) ->> 'annexNumber' as numbers ,id  from  gm_cdk),
 		dsa as (select  asd.id, string_to_array(string_agg(concat(art.name,'  ',asd.numbers,'个'),','),',')  as annexs  from asd  left join gm_article art on art.article_id = asd.name GROUP BY asd.id ),
-	sda as (select cdk.*,dsa.annexs   from dsa left join  gm_cdk cdk on dsa.id = cdk.id ${where}  limit ${pagesize} offset ${pagesize*(page-1)}   ),
+	sda as (select cdk.*,dsa.annexs   from dsa left join  gm_cdk cdk on dsa.id = cdk.id ${where}   limit ${pagesize} offset ${pagesize*(page-1)}   ),
 	pla as (select  jsonb_array_elements(plaform) as plaform ,id from gm_cdk  where id in (select id from sda)),
 	pls as (select id,string_to_array(string_agg((case 
 	when pla.plaform = '"1"' then '安卓'

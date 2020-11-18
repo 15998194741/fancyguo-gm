@@ -1,11 +1,12 @@
-import { controller, get, post, put, del, permission, login } from '../../lib/router-permission';
+import { controller, get, post, put, del } from '../../lib/router-permission';
 import gmDictService from '../service/gm-dict';
 import statusCode from '../../utils/status-code';
+
 @controller('/gm/dict')
 export class GmDictController {
   @get('/findAll')
 	async findAll(ctx) {
-		ctx.log.resourceDesc = '查找全部数据';
+        ctx.log.resourceDesc = '查找全部数据';
 		const result = await gmDictService.findAll();
 		ctx.body = statusCode.SUCCESS_200('查找成功', result);
 	}
