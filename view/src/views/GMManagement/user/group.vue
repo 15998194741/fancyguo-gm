@@ -187,11 +187,6 @@
         </el-form-item>
       </el-form>
     </el-dialog>
-
-
-
-
-
     </div>
 </template>
   
@@ -282,6 +277,9 @@ export default {
     },
     async createFormEldialog() {
       let { data } = await findAllUrl();
+      // this.urlData = [{
+      //   label: '游戏',
+      //   children: data }];
       this.urlData = data;
       this.dialogFormchange = true;
     },

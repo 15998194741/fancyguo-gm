@@ -1,0 +1,768 @@
+[2020-11-19T10:53:18.722] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/backpack/queryServer?roleid=1
+request client ip:  ::ffff:127.0.0.1
+request query:  {"roleid":"1","gameid":"13"}
+response time: 1605754398722
+err name: undefined
+err message: ����ʧ��
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-19T10:55:11.201] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/backpack/queryServer?roleid=11
+request client ip:  ::ffff:127.0.0.1
+request query:  {"roleid":"11","gameid":"13"}
+response time: 1605754511201
+err name: undefined
+err message: ����ʧ��
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-19T10:55:19.786] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/backpack/queryServer?roleid=123
+request client ip:  ::ffff:127.0.0.1
+request query:  {"roleid":"123","gameid":"13"}
+response time: 1605754519785
+err name: undefined
+err message: ����ʧ��
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-19T10:55:48.544] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/backpack/queryServer?roleid=123
+request client ip:  ::ffff:127.0.0.1
+request query:  {"roleid":"123","gameid":"13"}
+response time: 1605754548544
+err name: undefined
+err message: ���Ͱ���
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-19T10:55:57.452] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/backpack/queryServer?roleid=123
+request client ip:  ::ffff:127.0.0.1
+request query:  {"roleid":"123","gameid":"13"}
+response time: 1605754557452
+err name: undefined
+err message: ���Ͱ���
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-19T10:55:59.822] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/backpack/queryServer?roleid=123
+request client ip:  ::ffff:127.0.0.1
+request query:  {"roleid":"123","gameid":"13"}
+response time: 1605754559821
+err name: undefined
+err message: ���Ͱ���
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-19T10:56:00.486] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/backpack/queryServer?roleid=123
+request client ip:  ::ffff:127.0.0.1
+request query:  {"roleid":"123","gameid":"13"}
+response time: 1605754560486
+err name: undefined
+err message: ���Ͱ���
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-19T10:56:01.658] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/backpack/queryServer?roleid=123
+request client ip:  ::ffff:127.0.0.1
+request query:  {"roleid":"123","gameid":"13"}
+response time: 1605754561658
+err name: undefined
+err message: ���Ͱ���
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-19T10:56:02.106] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/backpack/queryServer?roleid=123
+request client ip:  ::ffff:127.0.0.1
+request query:  {"roleid":"123","gameid":"13"}
+response time: 1605754562106
+err name: undefined
+err message: ���Ͱ���
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-19T10:56:03.081] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/backpack/queryServer?roleid=123
+request client ip:  ::ffff:127.0.0.1
+request query:  {"roleid":"123","gameid":"13"}
+response time: 1605754563081
+err name: undefined
+err message: ���Ͱ���
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-19T10:56:03.502] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/backpack/queryServer?roleid=123
+request client ip:  ::ffff:127.0.0.1
+request query:  {"roleid":"123","gameid":"13"}
+response time: 1605754563502
+err name: undefined
+err message: ���Ͱ���
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-19T10:56:04.849] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/backpack/queryServer?roleid=123
+request client ip:  ::ffff:127.0.0.1
+request query:  {"roleid":"123","gameid":"13"}
+response time: 1605754564849
+err name: undefined
+err message: ���Ͱ���
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-19T10:56:05.831] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/backpack/queryServer?roleid=123
+request client ip:  ::ffff:127.0.0.1
+request query:  {"roleid":"123","gameid":"13"}
+response time: 1605754565830
+err name: undefined
+err message: ���Ͱ���
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-19T10:56:07.300] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/backpack/queryServer?roleid=123
+request client ip:  ::ffff:127.0.0.1
+request query:  {"roleid":"123","gameid":"13"}
+response time: 1605754567300
+err name: undefined
+err message: ���Ͱ���
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-19T10:56:07.586] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/backpack/queryServer?roleid=123
+request client ip:  ::ffff:127.0.0.1
+request query:  {"roleid":"123","gameid":"13"}
+response time: 1605754567586
+err name: undefined
+err message: ���Ͱ���
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-19T10:56:07.697] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/backpack/queryServer?roleid=123
+request client ip:  ::ffff:127.0.0.1
+request query:  {"roleid":"123","gameid":"13"}
+response time: 1605754567696
+err name: undefined
+err message: ���Ͱ���
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-19T10:56:08.106] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/backpack/queryServer?roleid=123
+request client ip:  ::ffff:127.0.0.1
+request query:  {"roleid":"123","gameid":"13"}
+response time: 1605754568106
+err name: undefined
+err message: ���Ͱ���
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-19T10:56:09.448] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/backpack/queryServer?roleid=123
+request client ip:  ::ffff:127.0.0.1
+request query:  {"roleid":"123","gameid":"13"}
+response time: 1605754569448
+err name: undefined
+err message: ���Ͱ���
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-19T10:56:23.363] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/backpack/queryServer?roleid=123
+request client ip:  ::ffff:127.0.0.1
+request query:  {"roleid":"123","gameid":"13"}
+response time: 1605754583362
+err name: undefined
+err message: undefined
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-19T10:56:23.369] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/backpack/queryServer?roleid=123
+request client ip:  ::ffff:127.0.0.1
+request query:  {"roleid":"123","gameid":"13"}
+response time: 1605754583369
+err name: undefined
+err message: undefined
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-19T10:56:23.373] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/backpack/queryServer?roleid=123
+request client ip:  ::ffff:127.0.0.1
+request query:  {"roleid":"123","gameid":"13"}
+response time: 1605754583373
+err name: undefined
+err message: undefined
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-19T10:56:23.413] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/backpack/queryServer?roleid=123
+request client ip:  ::ffff:127.0.0.1
+request query:  {"roleid":"123","gameid":"13"}
+response time: 1605754583413
+err name: undefined
+err message: undefined
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-19T10:56:23.421] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/backpack/queryServer?roleid=123
+request client ip:  ::ffff:127.0.0.1
+request query:  {"roleid":"123","gameid":"13"}
+response time: 1605754583421
+err name: undefined
+err message: undefined
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-19T10:56:23.509] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/backpack/queryServer?roleid=123
+request client ip:  ::ffff:127.0.0.1
+request query:  {"roleid":"123","gameid":"13"}
+response time: 1605754583509
+err name: undefined
+err message: undefined
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-19T10:57:29.827] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/backpack/queryServer?roleid=123
+request client ip:  ::ffff:127.0.0.1
+request query:  {"roleid":"123","gameid":"13"}
+response time: 1605754649826
+err name: undefined
+err message: �û�������
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-19T10:58:15.396] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/backpack/queryServer?roleid=123
+request client ip:  ::ffff:127.0.0.1
+request query:  {"roleid":"123","gameid":"13"}
+response time: 1605754695395
+err name: undefined
+err message: ���߲���
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-19T10:58:15.645] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/backpack/queryServer?roleid=123
+request client ip:  ::ffff:127.0.0.1
+request query:  {"roleid":"123","gameid":"13"}
+response time: 1605754695645
+err name: undefined
+err message: ���߲���
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-19T10:58:16.166] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/backpack/queryServer?roleid=123
+request client ip:  ::ffff:127.0.0.1
+request query:  {"roleid":"123","gameid":"13"}
+response time: 1605754696165
+err name: undefined
+err message: ���߲���
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-19T10:58:16.356] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/backpack/queryServer?roleid=123
+request client ip:  ::ffff:127.0.0.1
+request query:  {"roleid":"123","gameid":"13"}
+response time: 1605754696355
+err name: undefined
+err message: ���߲���
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-19T10:58:16.491] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/backpack/queryServer?roleid=123
+request client ip:  ::ffff:127.0.0.1
+request query:  {"roleid":"123","gameid":"13"}
+response time: 1605754696491
+err name: undefined
+err message: ���߲���
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-19T10:58:17.653] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/backpack/queryServer?roleid=123
+request client ip:  ::ffff:127.0.0.1
+request query:  {"roleid":"123","gameid":"13"}
+response time: 1605754697653
+err name: undefined
+err message: ���߲���
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-19T10:58:17.907] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/backpack/queryServer?roleid=123
+request client ip:  ::ffff:127.0.0.1
+request query:  {"roleid":"123","gameid":"13"}
+response time: 1605754697907
+err name: undefined
+err message: ���߲���
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-19T10:58:18.110] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/backpack/queryServer?roleid=123
+request client ip:  ::ffff:127.0.0.1
+request query:  {"roleid":"123","gameid":"13"}
+response time: 1605754698110
+err name: undefined
+err message: ���߲���
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-19T10:58:18.341] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/backpack/queryServer?roleid=123
+request client ip:  ::ffff:127.0.0.1
+request query:  {"roleid":"123","gameid":"13"}
+response time: 1605754698341
+err name: undefined
+err message: ���߲���
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-19T10:58:18.550] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/backpack/queryServer?roleid=123
+request client ip:  ::ffff:127.0.0.1
+request query:  {"roleid":"123","gameid":"13"}
+response time: 1605754698550
+err name: undefined
+err message: ���߲���
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-19T10:58:18.845] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/backpack/queryServer?roleid=123
+request client ip:  ::ffff:127.0.0.1
+request query:  {"roleid":"123","gameid":"13"}
+response time: 1605754698845
+err name: undefined
+err message: ���߲���
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-19T10:58:19.372] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/backpack/queryServer?roleid=123
+request client ip:  ::ffff:127.0.0.1
+request query:  {"roleid":"123","gameid":"13"}
+response time: 1605754699372
+err name: undefined
+err message: ���߲���
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-19T10:58:19.553] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/backpack/queryServer?roleid=123
+request client ip:  ::ffff:127.0.0.1
+request query:  {"roleid":"123","gameid":"13"}
+response time: 1605754699553
+err name: undefined
+err message: ���߲���
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-19T10:58:19.621] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/backpack/queryServer?roleid=123
+request client ip:  ::ffff:127.0.0.1
+request query:  {"roleid":"123","gameid":"13"}
+response time: 1605754699621
+err name: undefined
+err message: ���߲���
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-19T10:58:19.791] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/backpack/queryServer?roleid=123
+request client ip:  ::ffff:127.0.0.1
+request query:  {"roleid":"123","gameid":"13"}
+response time: 1605754699790
+err name: undefined
+err message: ���߲���
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-19T10:58:20.000] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/backpack/queryServer?roleid=123
+request client ip:  ::ffff:127.0.0.1
+request query:  {"roleid":"123","gameid":"13"}
+response time: 1605754700000
+err name: undefined
+err message: ���߲���
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-19T10:58:20.187] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/backpack/queryServer?roleid=123
+request client ip:  ::ffff:127.0.0.1
+request query:  {"roleid":"123","gameid":"13"}
+response time: 1605754700187
+err name: undefined
+err message: ���߲���
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-19T10:58:20.373] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/backpack/queryServer?roleid=123
+request client ip:  ::ffff:127.0.0.1
+request query:  {"roleid":"123","gameid":"13"}
+response time: 1605754700373
+err name: undefined
+err message: ���߲���
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-19T10:58:20.561] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/backpack/queryServer?roleid=123
+request client ip:  ::ffff:127.0.0.1
+request query:  {"roleid":"123","gameid":"13"}
+response time: 1605754700561
+err name: undefined
+err message: ���߲���
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-19T10:59:27.187] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/backpack/queryServer?roleid=123
+request client ip:  ::ffff:127.0.0.1
+request query:  {"roleid":"123","gameid":"13"}
+response time: 1605754767186
+err name: undefined
+err message: �û�������
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-19T11:00:23.954] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/backpack/queryServer?roleid=123
+request client ip:  ::ffff:127.0.0.1
+request query:  {"roleid":"123","gameid":"13"}
+response time: 1605754823954
+err name: undefined
+err message: no role
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-19T11:00:25.820] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/backpack/queryServer?roleid=123
+request client ip:  ::ffff:127.0.0.1
+request query:  {"roleid":"123","gameid":"13"}
+response time: 1605754825820
+err name: undefined
+err message: no role
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-19T11:01:11.522] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/backpack/queryServer?roleid=1
+request client ip:  ::ffff:127.0.0.1
+request query:  {"roleid":"1","gameid":"13"}
+response time: 1605754871521
+err name: undefined
+err message: no role
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-19T11:01:40.861] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/backpack/queryServer?roleid=1
+request client ip:  ::ffff:127.0.0.1
+request query:  {"roleid":"1","gameid":"13"}
+response time: 1605754900861
+err name: undefined
+err message: no role
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-19T11:01:48.703] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/backpack/queryServer?roleid=123
+request client ip:  ::ffff:127.0.0.1
+request query:  {"roleid":"123","gameid":"13"}
+response time: 1605754908703
+err name: undefined
+err message: no role
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-19T11:02:37.124] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/backpack/queryServer?roleid=123
+request client ip:  ::ffff:127.0.0.1
+request query:  {"roleid":"123","gameid":"13"}
+response time: 1605754957123
+err name: undefined
+err message: û�������ɫ
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-19T11:02:39.393] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/backpack/queryServer?roleid=123
+request client ip:  ::ffff:127.0.0.1
+request query:  {"roleid":"123","gameid":"13"}
+response time: 1605754959393
+err name: undefined
+err message: û�������ɫ
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-19T11:02:48.810] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/backpack/queryServer?roleid=123
+request client ip:  ::ffff:127.0.0.1
+request query:  {"roleid":"123","gameid":"13"}
+response time: 1605754968810
+err name: undefined
+err message: û�������ɫ
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-19T11:02:50.751] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/backpack/queryServer?roleid=123
+request client ip:  ::ffff:127.0.0.1
+request query:  {"roleid":"123","gameid":"13"}
+response time: 1605754970751
+err name: undefined
+err message: û�������ɫ
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-19T11:02:51.807] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/backpack/queryServer?roleid=123
+request client ip:  ::ffff:127.0.0.1
+request query:  {"roleid":"123","gameid":"13"}
+response time: 1605754971807
+err name: undefined
+err message: û�������ɫ
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-19T11:02:52.388] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/backpack/queryServer?roleid=123
+request client ip:  ::ffff:127.0.0.1
+request query:  {"roleid":"123","gameid":"13"}
+response time: 1605754972388
+err name: undefined
+err message: û�������ɫ
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-19T11:04:05.955] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/backpack/queryServer?roleid=1
+request client ip:  ::ffff:127.0.0.1
+request query:  {"roleid":"1","gameid":"13"}
+response time: 1605755045955
+err name: undefined
+err message: û�������ɫ
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-19T11:04:08.153] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/backpack/queryServer?roleid=123
+request client ip:  ::ffff:127.0.0.1
+request query:  {"roleid":"123","gameid":"13"}
+response time: 1605755048153
+err name: undefined
+err message: û�������ɫ
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-19T11:04:08.650] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/backpack/queryServer?roleid=123
+request client ip:  ::ffff:127.0.0.1
+request query:  {"roleid":"123","gameid":"13"}
+response time: 1605755048649
+err name: undefined
+err message: û�������ɫ
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-19T11:04:21.707] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/backpack/queryServer?roleid=123
+request client ip:  ::ffff:127.0.0.1
+request query:  {"roleid":"123","gameid":"13"}
+response time: 1605755061707
+err name: undefined
+err message: û�������ɫ
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-19T11:04:46.073] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/backpack/queryServer?roleid=12
+request client ip:  ::ffff:127.0.0.1
+request query:  {"roleid":"12","gameid":"13"}
+response time: 1605755086073
+err name: undefined
+err message: û�������ɫ
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-19T11:05:22.498] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/backpack/queryServer?roleid=1
+request client ip:  ::ffff:127.0.0.1
+request query:  {"roleid":"1","gameid":"13"}
+response time: 1605755122498
+err name: undefined
+err message: û�������ɫ
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-19T11:05:28.256] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/backpack/queryServer?roleid=1
+request client ip:  ::ffff:127.0.0.1
+request query:  {"roleid":"1","gameid":"13"}
+response time: 1605755128256
+err name: undefined
+err message: û�������ɫ
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-19T11:06:44.355] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/backpack/queryServer?roleid=1
+request client ip:  ::ffff:127.0.0.1
+request query:  {"roleid":"1","gameid":"13"}
+response time: 1605755204355
+err name: undefined
+err message: û�������ɫ
+err stack: undefined
+*************** error log end ***************
+

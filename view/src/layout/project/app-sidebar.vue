@@ -1,6 +1,6 @@
 <template>
   <div class="app-sidebar-container" style="width: 100%;">
-    <div style="background-color:#091B2F ;height: 90%;">
+    <div class="app-sidebar-container-ul" style="background-color:#091B2F ;height: 90%;">
       <!-- <el-radio-group v-model="isCollapse" style="margin-bottom: 20px;">
                 <el-radio-button :label="false">展开</el-radio-button>
                 <el-radio-button :label="true">收起</el-radio-button>
@@ -15,41 +15,37 @@
       <div class="arrow-right-container" @click="shrink">
         <i :class="{'el-icon-d-arrow-right': true, gotoLeft: isCollapse}"></i>
       </div>
-      <el-menu
-        class="el-menu-vertical-demo"
-        :collapse="isCollapse"
-        background-color="#091B2F"
-        text-color="#34C3BB"
-        active-text-color="white"
-        unique-opened
-        router
-        :default-active='defaultActive'
-        @open="handleOpen"
-        @close="handleClose"
-      >
-        <template v-for="(route, index) in routes">
-          <el-submenu
-            v-if="route.children && route.children.length"
-            :key="index"
-            :index="`${index}`"
-          >
-            <template #title>
-              <i class="el-icon-location" />
-              <span>{{route.name}}</span>
-            </template>
-            <el-menu-item
-              v-for="({name, url}, _index) in route.children"
-              :key="_index"
-              :index="`${index}-${_index}`"
-              :route="url"
-            >{{name}}</el-menu-item>
-          </el-submenu>
-          <el-menu-item v-else :key="index" :index="`${index}`" :route="route.url">
-            <i class="el-icon-location"></i>
-            <span slot="title">{{route.name}}</span>
-          </el-menu-item>
-        </template>
-      </el-menu>
+      <div style="height: 100%; overflow-y: auto; overflow-x: hidden;">
+        <el-menu class="el-menu-vertical-demo-app-sidebar"
+                 :collapse="isCollapse"
+                 background-color="#091B2F"
+                 text-color="#34C3BB"
+                 active-text-color="white"
+                 unique-opened
+                 router
+                 :default-active='defaultActive'
+                 @open="handleOpen"
+                 @close="handleClose">
+          <template v-for="(route, index) in routes">
+            <el-submenu v-if="route.children && route.children.length"
+                        :key="index"
+                        :index="`${index}`">
+              <template #title>
+                <i class="el-icon-location" />
+                <span>{{route.name}}</span>
+              </template>
+              <el-menu-item v-for="({name, url}, _index) in route.children"
+                            :key="_index"
+                            :index="`${index}-${_index}`"
+                            :route="url">{{name}}</el-menu-item>
+            </el-submenu>
+            <el-menu-item v-else :key="index" :index="`${index}`" :route="route.url">
+              <i class="el-icon-location"></i>
+              <span slot="title">{{route.name}}</span>
+            </el-menu-item>
+          </template>
+        </el-menu>
+      </div>
     </div>
   </div>
 </template>
@@ -121,6 +117,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  .app-sidebar-container {
+    .el-menu-vertical-demo-app-sidebar{
+                                         
+                                      }
+  }
 .app-sidebar-container-logo {
   height: 100px;
   margin-bottom: 10px;
@@ -150,8 +151,10 @@ export default {
   animation: header-flash-before-animation 1s forwards;
 }
 
-@keyframes header-flash-before-animation {
-  0% {
+
+
+  @keyframes header-flash-before-animation {
+    0% {
     opacity: 1;
   }
   50% {

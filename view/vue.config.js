@@ -68,6 +68,10 @@ module.exports = {
       alias: {
         '@': resolve('src')
       }
+    },
+    output: {
+      filename: `static/js/[name].${new Date().getTime()}.js`,
+      chunkFilename: `static/js/[name].${new Date().getTime()}.js`
     }
   },
   chainWebpack(config) {

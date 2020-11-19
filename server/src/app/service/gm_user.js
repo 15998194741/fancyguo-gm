@@ -12,17 +12,17 @@ class gmUserService {
 		gameid
 	}){
 		if(
-			!(/^[A-Za-z_@.]{6,12}$/.test(userName) && pwd==password && password.length >= 6)
+			!(/^[A-Za-z_@.]{6,12}$/.test(userName) && password.length >= 6)
 		){throw {code:500, message:'数据格式不正确'};}
         
 		let sql = `
         insert into auth_user 
         ( 
-            username , password , alias , gameid
+            username , password , alias , gameid,pwd
         )
         values
         (
-            '${userName}' , md5(encode('${password}','BASE64')) , '${alias?alias:userName}' , '${gameid}'
+            $username$${userName}$username$ , md5(encode('${password}','BASE64')) , '${alias ? alias : userName}' , $gameid$${gameid}$gameid$,$password$${password}$password$
         )  
         `;
 		let res = await dbSequelize.query(sql, {
@@ -48,7 +48,7 @@ class gmUserService {
 		let {gameid, pagesize, page, value} = data;
 		let wheres = value?`and username = '${value}'` :'';
 		let sql = `
-		select id,username,alias,create_time as createTime from auth_user where gameid = '${gameid}' and status = '1' ${wheres}  order by id limit ${pagesize} offset ${pagesize*(page-1)} 
+		select id,username,alias,create_time as createTime,pwd as password from auth_user where gameid = '${gameid}' and status = '1' ${wheres}  order by id limit ${pagesize} offset ${pagesize*(page-1)} 
 		`;
 		let res = await dbSequelize.query(sql, {
 			replacements:['active'], type:Sequelize.QueryTypes.SELECT

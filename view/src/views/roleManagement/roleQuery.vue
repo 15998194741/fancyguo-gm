@@ -5,14 +5,16 @@
         <li><el-button v-if="grade" slot="reference" icon="el-icon-upload2" size='small' class="button-with-header" @click="serverCreatedialogFormVisible = true">导入</el-button></li>
         <li><el-button v-if="grade" slot="reference" icon="el-icon-download" size='small' class="button-with-header" :disabled='this.tableTrue.length === 0' @click='exportFile'>导出</el-button></li>
         <li><el-button slot="reference" icon="el-icon-refresh-right" size='small' class="button-with-header" @click='filterFormChange'>刷新</el-button></li>
-        <li> <el-button v-if="grade"
+        <li> <el-button
+                        v-if="grade"
                         slot="append"
                         icon="el-icon-circle-plus-outline"
                         size='small'
                         class="button-with-header"
                         :disabled='fenghaocaozuo'
                         @click='dialogFormchange = true'>封号禁言</el-button></li>
-        <li> <el-button v-if="grade"
+        <li> <el-button
+                        v-if="grade"  
                         slot="append"
                         icon="el-icon-remove-outline"
                         size='small'
@@ -183,9 +185,9 @@
 import { findComponents } from '@/api/components.js';
 import dayjs from 'dayjs';
 // import elementResizeDetectorMaker from 'element-resize-detector';
-import { queryCharacter, findServername, prohibitedMute,BannedAskCancel } from '@/api/character.js';
+import { queryCharacter, findServername, prohibitedMute, BannedAskCancel } from '@/api/character.js';
 import { uploadFile } from '@/api/character.js';
-import { loading, close, secondConfirmation } from '@/views/loading';
+import { loading, close } from '@/views/loading';
 export default {
 
   name: 'rolequery',

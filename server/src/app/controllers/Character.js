@@ -85,7 +85,9 @@ export class CharacterController {
 	@put('/BannedAskCancel')
 	async BannedAskCancel(ctx) {
 		ctx.log.resourceDesc = '解除封禁';
+		let { value } = ctx.request.body;
 		let result = await CharacterService.BannedAskCancel(ctx.request.body);
+		ctx.logging('封号禁言', '角色管理', `解封了角色id为${ value.map(a => a.role_id)}`);
 		ctx.body = result;
 	}
 

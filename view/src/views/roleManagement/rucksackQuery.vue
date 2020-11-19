@@ -9,8 +9,9 @@
     </ul>
   </div>
   <div class="role-container-search">
-    <div class="server-container">ID：
-      <el-input v-model="filterForm.roleid" placeholder="请输入角色ID" size='small' class="input-with-select" >
+    <div class="server-container">
+      角色ID：
+      <el-input v-model="filterForm.roleid" placeholder="请输入角色ID" size='small' class="input-with-select">
       </el-input>
       <el-button slot="append" icon="el-icon-search" size='small' class="button-with-select" name='truesearch' @click="filterFormChange('click')">
       </el-button>
@@ -34,7 +35,7 @@
     @selection-change="handleSelectionChange"
     >
     <el-table-column  type="selection" width="40"></el-table-column>
-    <el-table-column v-for='(column,index) in tablecolumn' :key='index' :width="screenWidth" :label="column.label">
+    <el-table-column v-for='(column,index) in tablecolumn' :key='index'  :label="column.label">
       <template slot-scope="scope">{{ scope.row[column.prop] }}</template>
     </el-table-column>
   </el-table>
@@ -82,8 +83,8 @@
 </template>
 
 <script>
-import elementResizeDetectorMaker from 'element-resize-detector';
 import { backPackQuery, backPackRecycle } from '@/api/character.js';
+import { queryServer, BackPackRecycle } from '@/api/character.js';
 
 export default {
 
@@ -182,14 +183,7 @@ export default {
       }
       ],
       tableDataBackup: [],
-      tableData: [
-        // {
-        // articleId: '', 
-        // articleName: '', 
-        // articleClass: '', 
-        // articleAmount: '' 
-        // }
-      ],
+      tableData: [],
       tablecolumn: [
         { label: '物品ID', prop: 'articleId', width: 50 },
         { label: '物品名称', prop: 'articleName', width: 50 },
@@ -235,20 +229,15 @@ export default {
         .catch(err => false);
       if (!mergetrue) {return;}
     
-      let res = await backPackRecycle({ value: this.allselectchange, roleid: this.filterForm.roleid });
-      if (Number(res.code) === 200) {
-        this.$notify({
-          title: '消息提醒',
-          message: ('i', { style: 'color: teal' }, '回收成功')
-        });
-
-      } else {
-        this.$notify({
-          title: '消息提醒',
-          message: ('i', { style: 'color: teal' }, '回收失败')
-        });
+      // let res = await backPackRecycle({ value: this.allselectchange, roleid: this.filterForm.roleid });
+      let res = await BackPackRecycle({ value: this.allselectchange, roleid: this.filterForm.roleid });
+      if (+res.code !== 200) { return; }
+      if (+res?.data?.failure?.length > 0) {
+        let failureData = res.data.failure.map(a => a?.articleId);
+        this.$message.warning(` ${failureData} 回收失败，数据刷新中···`);
       }
-      this.filterFormChange('click');
+      let { newData } = res.data;
+      this.tableData = newData;
       this.dialogFormchange = false;
      
     },
@@ -284,7 +273,7 @@ export default {
     },    
     async filterFormChanges() {
       let { articleId, articleName, articleClass } = this.filterForm;
-      if (!articleId && !articleName && !articleClass) {this.tableData = this.tableDataBackup; return;}
+      if (!articleId && !articleName && !articleClass) { this.tableData = this.tableDataBackup; this.tableData = []; return;}
       this.tableData = this.tableDataBackup;
       this.tableData = this.tableData.filter(item => {
         let a = articleId ? articleId === item.articleId : true;
@@ -295,7 +284,7 @@ export default {
       });
     },
     async filterFormClick() {
-      if (this.filterForm.roleid.length === 0) {return;}
+      if (this.filterForm.roleid.length === 0) { this.$message.info('没有输入角色ID'); this.tableData = []; return;}
       this.selectForm.map(item=>{
         item.options = [{
           label: '不限制',
@@ -303,42 +292,33 @@ export default {
         }];
         return item;
       });
+
       let { roleid } = this.filterForm;
-      let res = await backPackQuery({ roleid });
-      try {
-        res = JSON.parse(res);
-      } catch {
-        console.log(1);
-      }
+      let res = await queryServer({ roleid });
       let tableDatas = res.data;
+      if (+res.code !== 200) { this.$message.info('没有此角色'); this.tableData = []; return;}
       // console.log(res);
       // this.tableData = res.data;
       try {
         tableDatas.map(item =>{
           this.selectForm[0].options.find(ele => ele.label === item.articleId) || !item.articleId
-            ? item : this.selectForm[0].options.push(({ 'label': item.articleId, 'value': item.articleId })) 
-          ;
-        }
-        );
-
+            ? item : this.selectForm[0].options.push(({ 'label': item.articleId, 'value': item.articleId }));
+        });
         tableDatas.map(item =>{
           this.selectForm[1].options.find(ele => ele.label === item.articleName) || !item.articleName
-            ? item : this.selectForm[1].options.push(({ 'label': item.articleName, 'value': item.articleName })) 
-          ;
-        }
-        );
+            ? item : this.selectForm[1].options.push(({ 'label': item.articleName, 'value': item.articleName }));
+        });
         tableDatas.map(item =>{
           this.selectForm[2].options.find(ele => ele.label === item.articleClass) || !item.articleClass
-            ? item : this.selectForm[2].options.push(({ 'label': item.articleClass, 'value': item.articleClass })) 
-          ;
-        }
-        );
+            ? item : this.selectForm[2].options.push(({ 'label': item.articleClass, 'value': item.articleClass }));
+        });
         this.tableDataBackup = this.tableData = tableDatas;
       } catch (err) {
-        this.$notify({
-          title: '消息提醒',
-          message: ('i', { style: 'color: teal' }, '查找失败，不存在.')
-        });
+     //this.$notify({
+     //     title: '消息提醒',
+     //     message: ('i', { style: 'color: teal' }, '查找失败，角色不存在.')
+        //   });
+        console.log(err); 
       }
 
     }
@@ -346,11 +326,11 @@ export default {
   mounted() {
 
     // const _this = this;
-    const erd = elementResizeDetectorMaker();
-    erd.listenTo(document.getElementById('body'), element =>{
-      this.screenWidth = element.offsetWidth * 0.2429;
-    });
-  }
+ // const erd = elementResizeDetectorMaker();
+   // erd.listenTo(document.getElementById('body'), element =>{
+   //   this.screenWidth = element.offsetWidth * 0.2429;
+  //  });
+ }
 
 
   

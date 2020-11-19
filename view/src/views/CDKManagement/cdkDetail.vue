@@ -220,22 +220,22 @@ v-loading='creatinng'
 import { findComponents } from '@/api/components.js';
 import { getQueryAnnexOptionsLazy, getQueryAnnexOptions } from '@/api/mail.js';
 import { generateCodeFrame } from './cdkGenerate.js';
-import { CDKcreate, CDKFind, cdkDownload, detailsFind } from '@/api/cdk'; 
-import { cdkkeyfind } from '@/api/cdk'; 
+import { CDKcreate, CDKFind, cdkDownload, detailsFind } from '@/api/cdk';
+import { cdkkeyfind } from '@/api/cdk';
 import dayjs from 'dayjs';
 let id = 0;
 export default {
   name: 'cdkDetail',
   data() {
     let quantity, annexList;
- 
-    quantity = (rule, value, callback) =>{
+
+    quantity = (rule, value, callback) => {
       if (/^[0-9]*$/.test(value)) {
         return callback();
       }
       return callback(new Error('请输入正整数'));
     };
-    annexList = (rule, value, callback) =>{
+    annexList = (rule, value, callback) => {
       for (let i of value) {
         if (!(i.annexName)) {
           return callback(new Error('请选择附件'));
@@ -246,9 +246,9 @@ export default {
       }
       return callback();
     };
-    let failureTimeRules = (rule, value, callback) =>{
+    let failureTimeRules = (rule, value, callback) => {
       if (!this.$data.createForm['takeEffectTime']) {
-        let a = this.$data.createForm['takeEffectTime']; 
+        let a = this.$data.createForm['takeEffectTime'];
         this.$data.createForm['takeEffectTime'] = 1;
         this.$data.createForm['takeEffectTime'] = a;
         return callback(new Error('请选择生效时间'));
@@ -260,7 +260,7 @@ export default {
       }
       return callback();
     };
-    let takeEffectTime = (rule, value, callback) =>{
+    let takeEffectTime = (rule, value, callback) => {
       if (!this.$data.createForm['failureTime']) {
         this.$data.createForm['failureTime'] = this.$data.createForm['failureTime'];
         return callback(new Error('请选择失效时间'));
@@ -271,7 +271,7 @@ export default {
       }
       return callback();
     };
-    let cdkkey = (rule, value, callback) =>{
+    let cdkkey = (rule, value, callback) => {
       if (this.$data.createForm['type'] === '1') {
         if (!value) {
           return callback(new Error('请输入CDKKEY,不想手输可以使用自动生成功能'));
@@ -371,12 +371,12 @@ export default {
         { label: 'CDKEY内容', prop: 'annexs' }
       ],
       tablecolumnTwo: [
-        { label: 'CDKKEYID', prop: '_id' },
-        { label: '用户ID', prop: 'roleid' },
+        { label: 'CDKEY', prop: 'key' },
+        { label: '用户ID', prop: 'accountid' },
+        { label: '角色ID', prop: 'roleid' },
         { label: '平台', prop: 'plaform' },
         { label: '渠道', prop: 'channel' },
-        { label: 'CDKKEY', prop: 'key' },
-        { label: '是否领取', prop: 'isUse' },
+        { label: '领取情况', prop: 'isUse' },
         { label: '领取时间', prop: 'receive' }
       ],
       createFormRulesLeft: {
@@ -396,7 +396,7 @@ export default {
         annexList: { validator: annexList, trigger: ['blur', 'change'] }
       }
     };
-    
+
   },
   computed: {
     onlyOneCdkSelect() {
@@ -406,7 +406,7 @@ export default {
       }
       return false;
     }
-  },  
+  },
   methods: {
     async downloadCDK(val) {
       let tablename = val['row']['cdkid'];
@@ -414,9 +414,9 @@ export default {
       let res = await cdkDownload({ tablename });
       require.ensure([], () => {
         const { export_json_to_excel: exportJsonToExcel } = require('@/Excel/Export2Excel');//注意这个Export2Excel路径
-        // let tHeader = ['cdkkey']; 
+        // let tHeader = ['cdkkey'];
         let excelval = res.split(`\n`);
-        let tHeader = [excelval[0]]; 
+        let tHeader = [excelval[0]];
         var list = []; //把要导出的数据tableData存到list
         for (let i of excelval.slice(1, excelval.length)) {
           var a = [i];
@@ -435,21 +435,21 @@ export default {
       });
     },
     handleSelectionChange() {
-      
+
     },
     cdkKeyGenerate() {
-      this.createForm['cdkkey'] = generateCodeFrame();  
+      this.createForm['cdkkey'] = generateCodeFrame();
     },
     async createFormSubmit() {
       this.creatinng = true;
-      let right = await this.$refs['createFormRulesRight'].validate().catch(err=>false);
-      let left = await this.$refs['createFormRulesLeft'].validate().catch(err=>false);
-      if (!(right && left)) {this.creatinng = false; return;}
+      let right = await this.$refs['createFormRulesRight'].validate().catch(err => false);
+      let left = await this.$refs['createFormRulesLeft'].validate().catch(err => false);
+      if (!(right && left)) { this.creatinng = false; return; }
       let { code, data } = await CDKcreate(this.createForm);
-      if (+code !== +200) {this.$message.info('创建失败'); this.creatinng = true; return; }
+      if (+code !== +200) { this.$message.info('创建失败'); this.creatinng = true; return; }
       this.creatinng = false;
       this.$message.success(`创建成功,您创建的CDKID为   ${data}`);
-      
+
     },
     createFormMailCancel() {
       this.$refs['createFormRulesLeft'].resetFields();
@@ -461,19 +461,19 @@ export default {
     },
     filterFormChange(val) {
       this.$refs['CDKContainer'].parentElement.scrollTo({
-        top: 0, 
-        behavior: 'smooth' 
+        top: 0,
+        behavior: 'smooth'
       });
       switch (val) {
-        case 'click':this.filterFormChangeClick(); break;
-        case 'change':this.filterFormChangeChange(); break;
-        case 'pagechange':this.filterFormChangeSubmit(); break;
-        default:this.filterFormChangeFlush();
+        case 'click': this.filterFormChangeClick(); break;
+        case 'change': this.filterFormChangeChange(); break;
+        case 'pagechange': this.filterFormChangeSubmit(); break;
+        default: this.filterFormChangeFlush();
       }
     },
     async filterFormChangeClick() {
       for (let i in this.filterForm) {
-        if (i === 'value' || i === 'key' || i === 'pagesize') {continue;}
+        if (i === 'value' || i === 'key' || i === 'pagesize') { continue; }
         this.filterForm[i] = '';
       }
       this.filterForm['page'] = 1;
@@ -482,7 +482,7 @@ export default {
     },
     async filterFormChangeChange() {
       let { click } = this.filterFormShow;
-      if (!click) {return;}
+      if (!click) { return; }
       this.filterFormChangeSubmit();
     },
     async filterFormChangeSubmit() {
@@ -524,12 +524,12 @@ export default {
       let querys = { page, tablename, pagesize, plaform, channel, takeEffectTime };
       let queryByKey = { page, tablename, pagesize, value, plaform, channel, takeEffectTime };
       // let responseData;
-     
+
       switch (!!value) {
         case key === 'CDKKEY': await this.ByCdkKey(queryByKey); break;
-        case key === 'CDKID':await this.ByCdkID(querys); break;
+        case key === 'CDKID': await this.ByCdkID(querys); break;
       }
-      
+
       // let { data: detailsdata } = responseData;
       // let { res: detailsres, total } = detailsdata;
       // this.total = total;
@@ -541,30 +541,30 @@ export default {
       //   });
       // }
       this.$refs['CDKContainer'].parentElement.scrollTo({
-        top: 0, 
-        behavior: 'smooth' 
+        top: 0,
+        behavior: 'smooth'
       });
       loading.close();
     },
     async ByCdkKey(val) {
       let res = await cdkkeyfind(val);
-      if (!res) {return;}
+      if (!res) { return; }
       let { data } = res;
       let { res: responseData, total, only } = data;
-      if (!responseData) {this.tableDataTwo = []; return;}
+      if (!responseData) { this.tableDataTwo = []; return; }
       this.total = total;
       this.tableDataTwo = responseData.map(item => {
         item['isUse'] = item['isUse'] || only ? '是' : '否';
         item['receive'] = dayjs(item['receive']).format('YYYY-MM-DD HH:mm:ss');
         return item;
       });
-      
+
     },
     async ByCdkID(val) {
       let res = await detailsFind(val);
       let { data } = res;
       let { res: responseData, total, useTotal } = data;
-      if (!responseData) {this.tableDataTwo = []; return;}
+      if (!responseData) { this.tableDataTwo = []; return; }
       this.total = total;
       this.useTotal = useTotal;
       this.tableDataTwo = responseData.map(item => {
@@ -596,26 +596,26 @@ export default {
 
 
 
-    
+
     async createCdkForm() {
       this.dialogFormchange = true;
       let { code, data } = await getQueryAnnexOptions();
       if (code === 200) {
         this.annexOptions = data;
       }
-     
+
     },
-    
+
     annexListAdd() {
       let a = this.createForm['annexList'][this.createForm['annexList'].length - 1];
-      a['annexName'] && a['annexNumber'] ? this.createForm['annexList'].push({ annexName: '', annexNumber: '', id: ++id }) : this.$message.warning('请填写完整');  
+      a['annexName'] && a['annexNumber'] ? this.createForm['annexList'].push({ annexName: '', annexNumber: '', id: ++id }) : this.$message.warning('请填写完整');
     },
 
     annexListCut(index) {
       // console.log(index);
       // console.log(...(this.annexList.map(item => ({ ...item }))));
       if (this.createForm['annexList'].length === 1) {
-        this.$message.warning('必须有一条记录。');  
+        this.$message.warning('必须有一条记录。');
         return;
       }
       this.createForm['annexList'].splice(index, 1);
@@ -626,7 +626,7 @@ export default {
   },
   async mounted() {
     let res = await findComponents({ code: 'areaclothing', gameid: this.gameid });
-    let components = res.data.values.map(item=>({
+    let components = res.data.values.map(item => ({
       label: item,
       value: item
     }));
@@ -651,17 +651,12 @@ export default {
       page,
       value: id,
       gameid,
-      key: 'CDKID'      
+      key: 'CDKID'
     };
     if (id) {
       this.filterFormChangeClick();
     }
-
-  } 
-   
-
-
-  
+  }
 };
 </script>
 
@@ -872,7 +867,10 @@ export default {
     .createFormAlertBodys div{
       display: flex;
     }
-
+  .role-container-bottom {
+    display: flex;
+    justify-content: space-between;
+  }
     .createFormAlert{
     display: grid;
     grid-template-columns: 1fr 1fr;

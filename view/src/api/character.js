@@ -88,3 +88,29 @@ export function uploadFile(data) {
     form: data
   });
 }
+
+
+
+
+
+export function queryServer(params) {
+
+  return request({
+    url: `backpack/queryServer`,
+    method: 'get',
+    params
+  });
+}
+
+
+
+
+
+export function BackPackRecycle(data) {
+
+  return request({
+    url: `backpack/BackPackRecycle`,
+    method: 'post',
+    data
+  });
+}

@@ -1,4 +1,5 @@
-import { login, getInfo } from '@/api/user';
+import { login } from '@/api/user';
+// import {getInfo,  } from '@/api/user';
 // import {loginOther}from '@/api/user';
 import { getToken, setToken, removeToken } from '@/utils/cookie-utils';
 import { toeknsetuser } from '@/api/components.js';

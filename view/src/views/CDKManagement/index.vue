@@ -82,6 +82,7 @@
   </el-table>
   </div>
   <div class="role-container-bottom">
+    <div></div>
     <el-pagination
     style="text-align: right;"
     :page-size.sync="filterForm['pagesize']"
@@ -122,9 +123,9 @@ v-loading='creatinng'
                       <el-option   label='通用CDK' value="3" ></el-option>
                   </el-select>
              </el-form-item>
-               <el-form-item  v-show="createForm['type'] === '1'" label="CDKKEY:" prop="cdkkey">
+               <el-form-item  v-show="createForm['type'] === '1'" label="CDKEY:" prop="cdkkey">
                   <el-col :span="16">
-                  <el-input  v-model.number="createForm['cdkkey']" class="create-form-input-CDKKEY"   placeholder="请输入CDKKEY" autocomplete="off"> </el-input>
+                  <el-input  v-model.number="createForm['cdkkey']" class="create-form-input-CDKKEY"   placeholder="请输入CDKEY" autocomplete="off"> </el-input>
                   </el-col>
                   <el-col :span="5">
                     <el-button type="primary" @click="cdkKeyGenerate">一键生成</el-button>

@@ -29,7 +29,7 @@ class Ta{
 			}};
 		let res = await new Promise((resolve, reject)=>{
 			request(req, (error, response, body)=>{
-				if(!error && response.statusCode == 200){
+				if (!error && response.statusCode == 200) {
 					let talist = body.split('\r\n');
 					
 					try{

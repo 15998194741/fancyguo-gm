@@ -86,9 +86,9 @@
         <el-form-item label="密码:" class="createFormAlertBody" prop='password' hide-required-asterisk required  >
           <el-input v-model="createForm.password" maxlength="128" class="alertcontant" placeholder="请输入密码" show-password></el-input>
         </el-form-item>
-       <el-form-item label="再次输入密码:" class="createFormAlertBody" prop='pwd' hide-required-asterisk required>
+      <!-- <el-form-item label="再次输入密码:" class="createFormAlertBody" prop='pwd' hide-required-asterisk required>
           <el-input v-model="createForm.pwd" class="alertcontant" placeholder="请再次输入密码" show-password></el-input>
-        </el-form-item>
+        </el-form-item>-->
         <el-form-item size="large" style="display: flex;justify-content: flex-end;">
           <el-button @click="createFormCancel">取 消</el-button>
           <el-button type="primary"   @click="createFormSubmitForm('createForm')">确 定</el-button>
@@ -112,9 +112,9 @@
         <el-form-item label="密码:" class="createFormAlertBody" prop='password' hide-required-asterisk :required='!!changeForm.password'  >
           <el-input v-model="changeForm.password" maxlength="128" class="alertcontant" placeholder="请输入密码" show-password></el-input>
         </el-form-item>
-       <el-form-item v-show="changeForm.password" label="再次输入密码:" class="createFormAlertBody" prop='pwd' hide-required-asterisk :required='!!changeForm.password'>
+      <!-- <el-form-item v-show="changeForm.password" label="再次输入密码:" class="createFormAlertBody" prop='pwd' hide-required-asterisk :required='!!changeForm.password'>
           <el-input v-model="changeForm.pwd" class="alertcontant" placeholder="请再次输入密码" show-password></el-input>
-        </el-form-item>
+        </el-form-item>-->
         <el-form-item size="large" style="display: flex;justify-content: flex-end;">
           <el-button @click="changeFormCancel">取 消</el-button>
           <el-button type="primary"   :disabled='changeFormSubmitTrue' @click="changeFormSubmitForm('changeForm')">确 定</el-button>
@@ -184,21 +184,19 @@ export default {
             }
             return callback(new Error('密码长度至少6位'));
           }, trigger: ['blur', 'change'] }
-        ],
-        pwd: [
-          { required: true, validator: (rule, value, callback) =>{
-            if (!value) {
-              return callback(new Error('请再次输入密码'));
-            }
-            let data = this.$data;
-            if (value !== data.createForm.password) {
-              return callback(new Error('二次密码大不相同。'));
-            }
-            return callback();
-              
-
-          }, trigger: ['blur', 'change'] }
         ]
+        // pwd: [
+        //  { required: true, validator: (rule, value, callback) =>{
+        //    if (!value) {
+        //      return callback(new Error('请再次输入密码'));
+        //    }
+        //    let data = this.$data;
+        //    if (value !== data.createForm.password) {
+        //      return callback(new Error('二次密码大不相同。'));
+        //    }
+      //      return callback();
+        //     }, trigger: ['blur', 'change'] }
+        //   ]
       },
       changeFormRules: {
         password: [
@@ -217,25 +215,25 @@ export default {
             }
             return callback(new Error('密码长度至少6位'));
           }, trigger: ['blur', 'change'] }
-        ],
-        pwd: [
-          { validator: (rule, value, callback) =>{
-            let data = this.$data;
-            if (data.changeForm.password === '') {
-              return callback();
-            }
-            if (!value) {
-              return callback(new Error('请再次输入密码'));
-            }
-           
-            if (value !== data.changeForm.password) {
-              return callback(new Error('二次密码大不相同。'));
-            }
-            return callback();
-              
-
-          }, trigger: ['blur', 'change'] }
         ]
+        //    pwd: [
+        //      { validator: (rule, value, callback) =>{
+        //        let data = this.$data;
+        //        if (data.changeForm.password === '') {
+        //          return callback();
+        //        }
+        //        if (!value) {
+        //          return callback(new Error('请再次输入密码'));
+        //        }
+        //       
+        //        if (value !== data.changeForm.password) {
+        //          return callback(new Error('二次密码大不相同。'));
+        //        }
+        //        return callback();
+        //          
+        //
+        //      }, trigger: ['blur', 'change'] }
+        //    ]
       },
       tableData: [],
       tablecolumn: [

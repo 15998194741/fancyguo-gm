@@ -191,7 +191,7 @@ class CharacterService{
 			if(!res){
 				res='';
 			}else{
-				let sql = `select * from gm_character  where gameid='${gameid}' and roleid in (${res.map(item => `'${item.role_id}'`)}) offset ${pagesize * (page - 1)} limit ${pagesize}  `;
+				let sql = `select * from gm_character  where gameid='${gameid}' and status = 1 and roleid in (${res.map(item => `'${item.role_id}'`)}) offset ${pagesize * (page - 1)} limit ${pagesize}  `;
 				let children = sqls ? '' : await CharacterService.byMany(sql);
 				if(children.length>0){
 					res = res.map(item =>{
@@ -352,9 +352,10 @@ class CharacterService{
 		}
 	}	
 	async BannedAskCancel(data) {
-		let { code, message } = await this.SenClient.get('char', 'BannedAskCancel', { body: data });
+		let res = await this.SenClient.get('char', 'BannedAskCancel', { body: data });
+		let { code, message } = res;
 		if (+code !== 200) throw { message };
-		return;
+		return res;
 
     }
 
