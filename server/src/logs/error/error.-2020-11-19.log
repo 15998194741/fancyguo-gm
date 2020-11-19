@@ -766,3 +766,15 @@ err message: û�������ɫ
 err stack: undefined
 *************** error log end ***************
 
+[2020-11-19T14:06:03.691] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/backpack/queryServer?roleid=1
+request client ip:  ::ffff:127.0.0.1
+request query:  {"roleid":"1","gameid":"13"}
+response time: 1605765963690
+err name: undefined
+err message: 没有此角色
+err stack: undefined
+*************** error log end ***************
+

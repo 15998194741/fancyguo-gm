@@ -296,7 +296,7 @@ export default {
       let { roleid } = this.filterForm;
       let res = await queryServer({ roleid });
       let tableDatas = res.data;
-      if (+res.code !== 200) { this.$message.info('没有此角色'); this.tableData = []; return;}
+      if (+res.code !== 200) {this.tableData = []; return;}
       // console.log(res);
       // this.tableData = res.data;
       try {

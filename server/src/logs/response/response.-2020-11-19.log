@@ -883,3 +883,63 @@
 日志记录：{"resourceUrl":"/api/server/findServer?plaform=&display=&load=&channel=&srttime=&key=serverid&value=&test=0&mergeserver=&page=1&pagesize=20","resourceDesc":"","requestType":"GET","requestParams":"{\"plaform\":\"\",\"display\":\"\",\"load\":\"\",\"channel\":\"\",\"srttime\":\"\",\"key\":\"serverid\",\"value\":\"\",\"test\":\"0\",\"mergeserver\":\"\",\"page\":\"1\",\"pagesize\":\"20\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查找","data":{"total":"1","table":[{"id":76,"status":1,"create_user_id":79,"update_user_id":null,"create_time":"2020-11-06T06:45:51.183Z","update_time":"2020-11-06T06:45:51.183Z","servername":"介个是安卓滴","ip_port":"","address":"s99981.mrhx.hz.37.com.cn","plaform":["1","2"],"display":"1","srttime":"2020-11-10T16:00:00.000Z","gamename":"","pid":null,"serverid":"123456","test":"0","load":null,"gameid":13,"childrens":null,"port":"80","ip":"s99981.mrhx.hz.37.com.cn","channel":["测试渠道"],"serverTrue":true,"securityGroup":["61.49.68.34","127.0.0.1"]}],"displayNum":[{"max":"1","display":"流畅"},{"max":"0","display":"爆满"},{"max":"0","display":"繁忙"},{"max":"0","display":"维护"}],"page":"1"}},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-19 1:59:52 ├F10: PM┤","executionTime":0}
 *************** log end ***************
 
+[2020-11-19T14:03:54.981] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/backpack/queryServer?roleid=399981","resourceDesc":"","requestType":"GET","requestParams":"{\"roleid\":\"399981\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"��¼�ɹ�","data":{}},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-19 2:03:53 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-19T14:03:57.712] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/backpack/queryServer?roleid=399981","resourceDesc":"","requestType":"GET","requestParams":"{\"roleid\":\"399981\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"��¼�ɹ�","data":{}},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-19 2:03:56 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-19T14:04:02.347] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/backpack/queryServer?roleid=399981","resourceDesc":"","requestType":"GET","requestParams":"{\"roleid\":\"399981\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"��¼�ɹ�","data":{}},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-19 2:04:01 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-19T14:04:02.430] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/backpack/queryServer?roleid=399981","resourceDesc":"","requestType":"GET","requestParams":"{\"roleid\":\"399981\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"��¼�ɹ�","data":{}},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-19 2:04:02 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-19T14:04:02.929] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/backpack/queryServer?roleid=399981","resourceDesc":"","requestType":"GET","requestParams":"{\"roleid\":\"399981\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"��¼�ɹ�","data":{}},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-19 2:04:02 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-19T14:04:11.319] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/backpack/queryServer?roleid=399981","resourceDesc":"","requestType":"GET","requestParams":"{\"roleid\":\"399981\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"��¼�ɹ�","data":{}},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-19 2:04:11 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-19T14:04:28.034] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/server/selectComponent?code=areaclothing&gameid=13","resourceDesc":"根据游戏ID 组件名称搜索 区服组件","requestType":"GET","requestParams":"{\"code\":\"areaclothing\",\"gameid\":\"13\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查找成功","data":{"values":["测试渠道","测试渠道1","UC"]}},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-19 2:04:27 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-19T14:04:28.051] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/server/findServer?display=&load=&srttime=&key=serverid&value=&test=0&mergeserver=&page=1&pagesize=20","resourceDesc":"","requestType":"GET","requestParams":"{\"display\":\"\",\"load\":\"\",\"srttime\":\"\",\"key\":\"serverid\",\"value\":\"\",\"test\":\"0\",\"mergeserver\":\"\",\"page\":\"1\",\"pagesize\":\"20\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查找","data":{"total":"1","table":[{"id":76,"status":1,"create_user_id":79,"update_user_id":null,"create_time":"2020-11-06T06:45:51.183Z","update_time":"2020-11-06T06:45:51.183Z","servername":"介个是安卓滴","ip_port":"","address":"s99981.mrhx.hz.37.com.cn","plaform":["1","2"],"display":"1","srttime":"2020-11-10T16:00:00.000Z","gamename":"","pid":null,"serverid":"99981","test":"0","load":null,"gameid":13,"childrens":null,"port":"80","ip":"s99981.mrhx.hz.37.com.cn","channel":["测试渠道"],"serverTrue":true,"securityGroup":["61.49.68.34","127.0.0.1"]}],"displayNum":[{"max":"1","display":"流畅"},{"max":"0","display":"爆满"},{"max":"0","display":"繁忙"},{"max":"0","display":"维护"}],"page":"1"}},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-19 2:04:28 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-19T14:04:29.315] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/server/findServer?plaform=&display=&load=&channel=&srttime=&key=serverid&value=&test=0&mergeserver=&page=1&pagesize=20","resourceDesc":"","requestType":"GET","requestParams":"{\"plaform\":\"\",\"display\":\"\",\"load\":\"\",\"channel\":\"\",\"srttime\":\"\",\"key\":\"serverid\",\"value\":\"\",\"test\":\"0\",\"mergeserver\":\"\",\"page\":\"1\",\"pagesize\":\"20\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查找","data":{"total":"1","table":[{"id":76,"status":1,"create_user_id":79,"update_user_id":null,"create_time":"2020-11-06T06:45:51.183Z","update_time":"2020-11-06T06:45:51.183Z","servername":"介个是安卓滴","ip_port":"","address":"s99981.mrhx.hz.37.com.cn","plaform":["1","2"],"display":"1","srttime":"2020-11-10T16:00:00.000Z","gamename":"","pid":null,"serverid":"99981","test":"0","load":null,"gameid":13,"childrens":null,"port":"80","ip":"s99981.mrhx.hz.37.com.cn","channel":["测试渠道"],"serverTrue":true,"securityGroup":["61.49.68.34","127.0.0.1"]}],"displayNum":[{"max":"1","display":"流畅"},{"max":"0","display":"爆满"},{"max":"0","display":"繁忙"},{"max":"0","display":"维护"}],"page":"1"}},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-19 2:04:29 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-19T14:05:02.757] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/backpack/queryServer?roleid=399981","resourceDesc":"","requestType":"GET","requestParams":"{\"roleid\":\"399981\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"��¼�ɹ�","data":{}},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-19 2:05:02 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-19T14:05:54.656] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/backpack/queryServer?roleid=399981","resourceDesc":"","requestType":"GET","requestParams":"{\"roleid\":\"399981\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"��¼�ɹ�","data":{}},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-19 2:05:54 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-19T14:06:03.691] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/backpack/queryServer?roleid=1","resourceDesc":"","requestType":"GET","requestParams":"{\"roleid\":\"1\"}","responseCode":500,"responseMessage":"没有此角色","responseDate":{"code":500,"message":"没有此角色"},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-19 2:06:02 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+

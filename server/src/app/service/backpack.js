@@ -20,6 +20,7 @@ class BackpackService {
             type: 'SELECT'
         });
         let url = `http://${ip}:${port}/gmswap/BackPackQuery`;
+        console.log(url);
         let reqData = { role_id: roleid };
         let req = {
             url,
@@ -34,7 +35,7 @@ class BackpackService {
         const axios = require('axios');
         let { data: res } = await axios(req).catch((a) => ({ data: { code: 500 } }));
         if (+res.code !== 200) {
-            throw { code: 201, message: 'û�������ɫ'};
+            throw { code: 500, message: '没有此角色'};
         } else {
             return res?.data;
         }
@@ -87,7 +88,7 @@ class BackpackService {
         let { data: res } = await axios(req).catch((a) => ({ data: { code: 500 } }));
         console.log(res);
         if (+res.code !== 200) {
-            throw { code: 201, message: 'û�������ɫ' };
+            throw { code: 500, message: '回收失败' };
         } else {
             return res?.data;
         }
