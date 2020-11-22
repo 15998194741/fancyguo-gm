@@ -1582,3 +1582,41 @@ select * from asd where id::varchar in (select id from qwe GROUP BY id )
 [2020-11-22T19:41:11.385] [DEBUG] debugLogger - Executing (default): select serverid from gm_server where  gameid ='13' and status =1 and servername = '小鹿测试服'
 [2020-11-22T19:41:17.286] [DEBUG] debugLogger - Executing (default): select serverid from gm_server where  gameid ='13' and status =1 and servername = '介个是安卓滴'
 [2020-11-22T19:41:21.237] [DEBUG] debugLogger - Executing (default): select serverid from gm_server where  gameid ='13' and status =1 and servername = '小鹿测试服'
+[2020-11-22T19:47:41.918] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(channel, ','), ',')  as values  from gm_game_channel where gameid = '13' and status = '1'
+[2020-11-22T19:47:41.921] [DEBUG] debugLogger - Executing (default): select servername from gm_server where gameid='13' and status = 1
+[2020-11-22T19:47:46.628] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(channel, ','), ',')  as values  from gm_game_channel where gameid = '13' and status = '1'
+[2020-11-22T19:47:46.629] [DEBUG] debugLogger - Executing (default): select servername from gm_server where gameid='13' and status = 1
+[2020-11-22T19:48:18.689] [DEBUG] debugLogger - Executing (default): select serverid from gm_server where  gameid ='13' and status =1 and servername = '小鹿测试服'
+[2020-11-22T19:48:21.721] [DEBUG] debugLogger - Executing (default): INSERT into gm_logs 
+				(user_id,ip,nick_name,instructions,classification,"text",game_id,alias,kwargs)
+				VALUES
+				('79','127.0.0.1','','订单补单','充值明细','订单号:GM_3_659122953853
+','13','长澜月','{"value":[{"roleId":"test","uid":"6bb99ca8c6464392aca364a06e048c88","roleName":"testsname","platform":"ios","channel":"UC","deviceid":"1280c42b32c354fd","type":"alipay","serverId":"99983","price":"1","pid":"1","status":"发货失败","tid":"GM_3_659122953853\n","createdAt":"2020-11-19 11:43:26","updatedAt":"2020-11-22 19:47:36","mongeyType":"RMB"}],"gameid":"13"}')
+[2020-11-22T19:48:22.041] [DEBUG] debugLogger - Executing (default): select serverid from gm_server where  gameid ='13' and status =1 and servername = '小鹿测试服'
+[2020-11-22T19:48:27.153] [DEBUG] debugLogger - Executing (default): INSERT into gm_logs 
+				(user_id,ip,nick_name,instructions,classification,"text",game_id,alias,kwargs)
+				VALUES
+				('79','127.0.0.1','','订单补单','充值明细','订单号:GM_2_659122955451','13','长澜月','{"value":[{"roleId":"test","uid":"6bb99ca8c6464392aca364a06e048c88","roleName":"testsname","platform":"ios","channel":"UC","deviceid":"1280c42b32c354fd","type":"alipay","serverId":"99983","price":"1","pid":"1","status":"发货失败","tid":"GM_2_659122955451","createdAt":"2020-11-19 11:43:26","updatedAt":"2020-11-22 19:47:39","mongeyType":"RMB"}],"gameid":"13"}')
+[2020-11-22T19:48:27.472] [DEBUG] debugLogger - Executing (default): select serverid from gm_server where  gameid ='13' and status =1 and servername = '小鹿测试服'
+[2020-11-22T20:02:33.213] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(channel, ','), ',')  as values  from gm_game_channel where gameid = '13' and status = '1'
+[2020-11-22T20:02:33.492] [DEBUG] debugLogger - Executing (default): select servername from gm_server where gameid='13' and status = 1
+[2020-11-22T20:02:34.128] [DEBUG] debugLogger - Executing (default): select a.id,a.game_name ,a.image_url as img from gm_game a join gm_purview b on b.gid = a.id where b.uids @> '79' and a.status = '1'  and b.status = '1'  and a.game_name = 'KOG测试' limit 1
+[2020-11-22T20:02:34.137] [DEBUG] debugLogger - Executing (default): with qwe as (select a.url,a.pid,a.name,d.game_name,d.id as gameid, a.id,b.grede , b.purview_id,c.uid,c.gid from gm_url a join gm_url_purview  b on  a.id = b.url_id  join gm_purview c on c.id = b.purview_id join gm_game d on d.id = c.gid where  c.uids @> '79' and d.id = '13' and d.status = 1 and b.grede != 827 and c.status = 1  and a.status = 1 order by id ),
+					qwer as (select * from qwe a where (select count(*) > 1 from qwe b where b.id = a.id )),
+					asd as (select * from qwe a where (select count(*) =  1 from qwe b where b.id = a.id )),
+					zxc as (select * from qwer where grede = '1'),
+					wer as (select * from qwer where id not in (select id from zxc )
+					union 
+					select * from qwer where id not in (select id from zxc )),
+					sdf as (select url,pid,name,gameid,grede,id from asd 
+					union 
+					select url,pid,name,gameid,grede,id from zxc 
+					union 
+					select url,pid,name,gameid,grede,id from wer ),
+					ewq as (select * from sdf ORDER BY id )
+					select name,(select json_agg(concat('{"url":"',url,'","name":"',name,'","meta":"',grede,'"}')::jsonb) from ewq  where ewq.pid = d.id) as children from ewq as d where pid = 0 ORDER BY d.id
+[2020-11-22T20:02:34.151] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(game_name, ','), ',')  as games from (
+			select  DISTINCT game_name,b.id from gm_purview a join gm_game b on a.gid = b.id  where uids @> '79' and b.status = '1' and a.status = '1'   ORDER BY id 
+		) a
+[2020-11-22T20:02:34.695] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(channel, ','), ',')  as values  from gm_game_channel where gameid = '13' and status = '1'
+[2020-11-22T20:02:34.703] [DEBUG] debugLogger - Executing (default): select servername from gm_server where gameid='13' and status = 1
