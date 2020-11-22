@@ -778,3 +778,975 @@ err message: 没有此角色
 err stack: undefined
 *************** error log end ***************
 
+[2020-11-19T14:08:56.472] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/backpack/queryServer?roleid=1
+request client ip:  ::ffff:127.0.0.1
+request query:  {"roleid":"1","gameid":"13"}
+response time: 1605766136472
+err name: undefined
+err message: 没有此角色
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-19T14:10:04.675] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/server/serverCreate
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"serverid":"99983","servername":"小鹿测试区服","serveridTrue":true,"plaform":["2"],"channel":["测试渠道"],"ip":"","display":"1","srttime":"2020-11-18T16:00:00.000Z","address":"s99983.mrhx.hz.37.com.cn","test":"0","page":1,"pagesize":20,"gameid":"13"}
+response time: 1605766204675
+err name: undefined
+err message: Cp交互失败,请确认交互地址
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-19T14:12:46.993] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/server/serverCreate
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"serverid":"99983","servername":"小鹿测试区服","serveridTrue":true,"plaform":["2"],"channel":["测试渠道"],"ip":"","display":"1","srttime":"2020-11-18T16:00:00.000Z","address":"s99983.mrhx.hz.37.com.cn","test":"0","page":1,"pagesize":20,"gameid":"13"}
+response time: 1605766366993
+err name: undefined
+err message: Cp交互失败,请确认交互地址
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-19T14:13:18.133] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/server/serverCreate
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"serverid":"99983","servername":"小鹿测试区服","serveridTrue":true,"plaform":["2"],"channel":["测试渠道"],"ip":"","display":"1","srttime":"2020-11-18T16:00:00.000Z","address":"s99983.mrhx.hz.37.com.cn","test":"0","page":1,"pagesize":20,"gameid":"13"}
+response time: 1605766398133
+err name: undefined
+err message: Cp交互失败,请确认交互地址
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-19T14:13:59.455] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/server/serverCreate
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"serverid":"99983","servername":"小鹿测试区服","serveridTrue":true,"plaform":["2"],"channel":["测试渠道"],"ip":"","display":"1","srttime":"2020-11-18T16:00:00.000Z","address":"s99983.mrhx.hz.37.com.cn","test":"0","page":1,"pagesize":20,"gameid":"13"}
+response time: 1605766439455
+err name: undefined
+err message: Cp交互失败,请确认交互地址
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-19T14:15:48.595] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/server/serverCreate
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"serverid":"999981","servername":"小鹿测试区服","serveridTrue":true,"plaform":["2"],"channel":["测试渠道"],"ip":"","display":"1","srttime":"2020-11-18T16:00:00.000Z","address":"s99981.mrhx.hz.37.com.cn","test":"0","page":1,"pagesize":20,"gameid":"13"}
+response time: 1605766548595
+err name: undefined
+err message: Cp交互失败,请确认交互地址
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-19T14:15:52.473] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/server/serverCreate
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"serverid":"999981","servername":"小鹿测试区服","serveridTrue":true,"plaform":["2"],"channel":["测试渠道"],"ip":"","display":"1","srttime":"2020-11-18T16:00:00.000Z","address":"s99981.mrhx.hz.37.com.cn","test":"0","page":1,"pagesize":20,"gameid":"13"}
+response time: 1605766552472
+err name: undefined
+err message: Cp交互失败,请确认交互地址
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-19T14:16:01.690] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/server/serverCreate
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"serverid":"999981","servername":"小鹿测试区服","serveridTrue":true,"plaform":["2"],"channel":["测试渠道"],"ip":"","display":"1","srttime":"2020-11-18T16:00:00.000Z","address":"s99981.mrhx.hz.37.com.cn","test":"0","page":1,"pagesize":20,"gameid":"13"}
+response time: 1605766561690
+err name: undefined
+err message: Cp交互失败,请确认交互地址
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-19T14:16:40.229] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/server/serverCreate
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"serverid":"999981","servername":"小鹿测试区服","serveridTrue":true,"plaform":["2"],"channel":["测试渠道"],"ip":"","display":"1","srttime":"2020-11-18T16:00:00.000Z","address":"s99981.mrhx.hz.37.com.cn","test":"0","page":1,"pagesize":20,"gameid":"13"}
+response time: 1605766600229
+err name: undefined
+err message: Cp交互失败,请确认交互地址
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-19T14:17:18.277] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/server/serverCreate
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"serverid":"999981","servername":"小鹿测试区服","serveridTrue":true,"plaform":["2"],"channel":["测试渠道"],"ip":"","display":"1","srttime":"2020-11-18T16:00:00.000Z","address":"s99981.mrhx.hz.37.com.cn","test":"0","page":1,"pagesize":20,"gameid":"13"}
+response time: 1605766638277
+err name: undefined
+err message: Cp交互失败,请确认交互地址
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-19T14:17:32.662] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/server/serverCreate
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"serverid":"99981","servername":"小鹿测试区服","serveridTrue":true,"plaform":["2"],"channel":["测试渠道"],"ip":"","display":"1","srttime":"2020-11-18T16:00:00.000Z","address":"s99981.mrhx.hz.37.com.cn","test":"0","page":1,"pagesize":20,"gameid":"13"}
+response time: 1605766652662
+err name: undefined
+err message: Cp交互失败,请确认交互地址
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-19T14:18:50.191] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/server/serverCreate
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"serverid":"99983","servername":"小鹿测试区服","serveridTrue":true,"plaform":["2"],"channel":["测试渠道"],"ip":"","display":"1","srttime":"2020-11-19T06:20:20.000Z","address":"s99983.mrhx.hz.37.com.cn","test":"0","page":1,"pagesize":20,"gameid":"13"}
+response time: 1605766730191
+err name: undefined
+err message: Cp交互失败,请确认交互地址
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-19T14:23:32.600] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/server/serverCreate
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"serverid":"99983","servername":"小鹿测试区服","serveridTrue":true,"plaform":["2"],"channel":["测试渠道"],"ip":"","display":"1","srttime":"2020-11-19T06:20:20.000Z","address":"s99983.mrhx.hz.37.com.cn","test":"0","page":1,"pagesize":20,"gameid":"13"}
+response time: 1605767012600
+err name: undefined
+err message: Cp交互失败,请确认交互地址
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-19T15:34:48.366] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/server/serverCreate
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"serverid":"99983","servername":"小鹿测试服","serveridTrue":true,"plaform":["2"],"channel":["测试渠道"],"ip":"","display":"1","srttime":"2020-11-19T09:00:00.000Z","address":"s99983.mrhx.hz.37.com.cn","test":"0","page":1,"pagesize":20,"gameid":"13"}
+response time: 1605771288366
+err name: undefined
+err message: Cp交互失败,请确认交互地址
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-19T15:35:24.238] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/server/serverCreate
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"serverid":"99983","servername":"小鹿测试服","serveridTrue":true,"plaform":["2"],"channel":["测试渠道"],"ip":"","display":"1","srttime":"2020-11-19T09:00:00.000Z","address":"s99983.mrhx.hz.37.com.cn","test":"0","page":1,"pagesize":20,"gameid":"13"}
+response time: 1605771324238
+err name: undefined
+err message: Cp交互失败,请确认交互地址
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-19T15:45:30.336] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/server/serverCreate
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"serverid":"99983","servername":"小鹿测试服","serveridTrue":true,"plaform":["2"],"channel":["测试渠道"],"ip":"","display":"1","srttime":"2020-11-19T09:00:00.000Z","address":"s99983.mrhx.hz.37.com.cn","test":"0","page":1,"pagesize":20,"gameid":"13"}
+response time: 1605771930336
+err name: undefined
+err message: Cp交互失败,请确认交互地址
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-19T15:46:57.656] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/server/serverCreate
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"serverid":"99983","servername":"小鹿测试服","serveridTrue":true,"plaform":["2"],"channel":["测试渠道"],"ip":"","display":"1","srttime":"2020-11-19T09:00:00.000Z","address":"s99983.mrhx.hz.37.com.cn","test":"0","page":1,"pagesize":20,"gameid":"13"}
+response time: 1605772017656
+err name: undefined
+err message: Cp交互失败,请确认交互地址
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-19T19:06:10.166] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/recharge/query?roleid=&stime=&plaform=&channel=&servername=&page=1&pagesize=80
+request client ip:  ::ffff:127.0.0.1
+request query:  {"roleid":"","stime":"","plaform":"","channel":"","servername":"","page":"1","pagesize":"80","gameid":"13"}
+response time: 1605783970165
+err name: Error
+err message: Request failed with status code 500
+err stack: Error: Request failed with status code 500
+    at createError (H:\致命代码\fancyguo-gm\server\node_modules\axios\lib\core\createError.js:16:15)
+    at settle (H:\致命代码\fancyguo-gm\server\node_modules\axios\lib\core\settle.js:17:12)
+    at IncomingMessage.handleStreamEnd (H:\致命代码\fancyguo-gm\server\node_modules\axios\lib\adapters\http.js:244:11)
+    at IncomingMessage.emit (events.js:327:22)
+    at endReadableNT (_stream_readable.js:1221:12)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21)
+*************** error log end ***************
+
+[2020-11-19T19:06:49.843] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/recharge/query?roleid=&stime=&plaform=&channel=&servername=&page=1&pagesize=80
+request client ip:  ::ffff:127.0.0.1
+request query:  {"roleid":"","stime":"","plaform":"","channel":"","servername":"","page":"1","pagesize":"80","gameid":"13"}
+response time: 1605784009842
+err name: TypeError
+err message: Cannot set property 'gameid' of undefined
+err stack: TypeError: Cannot set property 'gameid' of undefined
+    at _callee$ (H:\致命代码\fancyguo-gm\server\src\app\service\/recharge.js:63:3)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at rechargeService.<anonymous> (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at rechargeService.query (H:\致命代码\fancyguo-gm\server\src\app\service\recharge.js:137:23)
+    at _callee$ (H:\致命代码\fancyguo-gm\server\src\app\controllers\/recharge.js:13:38)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at queryCharacter (H:\致命代码\fancyguo-gm\server\src\app\controllers\recharge.js:76:32)
+    at dispatch (H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at next (H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:45:18)
+    at H:\致命代码\fancyguo-gm\server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:36:12
+    at dispatch (H:\致命代码\fancyguo-gm\server\node_modules\koa-router\lib\router.js:351:31)
+    at next (H:\致命代码\fancyguo-gm\server\node_modules\koa\node_modules\koa-compose\index.js:42:32)
+    at _callee$ (H:\致命代码\fancyguo-gm\server\src\middleware\/index.js:47:11)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+*************** error log end ***************
+
+[2020-11-19T19:06:51.247] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/recharge/query?roleid=&stime=&plaform=&channel=&servername=&page=1&pagesize=80
+request client ip:  ::ffff:127.0.0.1
+request query:  {"roleid":"","stime":"","plaform":"","channel":"","servername":"","page":"1","pagesize":"80","gameid":"13"}
+response time: 1605784011247
+err name: TypeError
+err message: Cannot set property 'gameid' of undefined
+err stack: TypeError: Cannot set property 'gameid' of undefined
+    at _callee$ (H:\致命代码\fancyguo-gm\server\src\app\service\/recharge.js:63:3)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at rechargeService.<anonymous> (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at rechargeService.query (H:\致命代码\fancyguo-gm\server\src\app\service\recharge.js:137:23)
+    at _callee$ (H:\致命代码\fancyguo-gm\server\src\app\controllers\/recharge.js:13:38)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at queryCharacter (H:\致命代码\fancyguo-gm\server\src\app\controllers\recharge.js:76:32)
+    at dispatch (H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at next (H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:45:18)
+    at H:\致命代码\fancyguo-gm\server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:36:12
+    at dispatch (H:\致命代码\fancyguo-gm\server\node_modules\koa-router\lib\router.js:351:31)
+    at next (H:\致命代码\fancyguo-gm\server\node_modules\koa\node_modules\koa-compose\index.js:42:32)
+    at _callee$ (H:\致命代码\fancyguo-gm\server\src\middleware\/index.js:47:11)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+*************** error log end ***************
+
+[2020-11-19T19:07:04.601] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/recharge/query?roleid=&stime=&plaform=&channel=&servername=&page=1&pagesize=80
+request client ip:  ::ffff:127.0.0.1
+request query:  {"roleid":"","stime":"","plaform":"","channel":"","servername":"","page":"1","pagesize":"80","gameid":"13"}
+response time: 1605784024600
+err name: TypeError
+err message: Cannot set property 'gameid' of undefined
+err stack: TypeError: Cannot set property 'gameid' of undefined
+    at _callee$ (H:\致命代码\fancyguo-gm\server\src\app\service\/recharge.js:63:3)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at rechargeService.<anonymous> (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at rechargeService.query (H:\致命代码\fancyguo-gm\server\src\app\service\recharge.js:137:23)
+    at _callee$ (H:\致命代码\fancyguo-gm\server\src\app\controllers\/recharge.js:13:38)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at queryCharacter (H:\致命代码\fancyguo-gm\server\src\app\controllers\recharge.js:76:32)
+    at dispatch (H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at next (H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:45:18)
+    at H:\致命代码\fancyguo-gm\server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:36:12
+    at dispatch (H:\致命代码\fancyguo-gm\server\node_modules\koa-router\lib\router.js:351:31)
+    at next (H:\致命代码\fancyguo-gm\server\node_modules\koa\node_modules\koa-compose\index.js:42:32)
+    at _callee$ (H:\致命代码\fancyguo-gm\server\src\middleware\/index.js:47:11)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+*************** error log end ***************
+
+[2020-11-19T19:07:05.447] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/recharge/query?roleid=&stime=&plaform=&channel=&servername=&page=1&pagesize=80
+request client ip:  ::ffff:127.0.0.1
+request query:  {"roleid":"","stime":"","plaform":"","channel":"","servername":"","page":"1","pagesize":"80","gameid":"13"}
+response time: 1605784025447
+err name: TypeError
+err message: Cannot set property 'gameid' of undefined
+err stack: TypeError: Cannot set property 'gameid' of undefined
+    at _callee$ (H:\致命代码\fancyguo-gm\server\src\app\service\/recharge.js:63:3)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at rechargeService.<anonymous> (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at rechargeService.query (H:\致命代码\fancyguo-gm\server\src\app\service\recharge.js:137:23)
+    at _callee$ (H:\致命代码\fancyguo-gm\server\src\app\controllers\/recharge.js:13:38)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at queryCharacter (H:\致命代码\fancyguo-gm\server\src\app\controllers\recharge.js:76:32)
+    at dispatch (H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at next (H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:45:18)
+    at H:\致命代码\fancyguo-gm\server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:36:12
+    at dispatch (H:\致命代码\fancyguo-gm\server\node_modules\koa-router\lib\router.js:351:31)
+    at next (H:\致命代码\fancyguo-gm\server\node_modules\koa\node_modules\koa-compose\index.js:42:32)
+    at _callee$ (H:\致命代码\fancyguo-gm\server\src\middleware\/index.js:47:11)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+*************** error log end ***************
+
+[2020-11-19T19:08:22.341] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/recharge/query?roleid=&stime=&plaform=&channel=&servername=&page=1&pagesize=80
+request client ip:  ::ffff:127.0.0.1
+request query:  {"roleid":"","stime":"","plaform":"","channel":"","servername":"","page":"1","pagesize":"80","gameid":"13"}
+response time: 1605784102340
+err name: TypeError
+err message: Cannot set property 'gameid' of undefined
+err stack: TypeError: Cannot set property 'gameid' of undefined
+    at _callee$ (H:\致命代码\fancyguo-gm\server\src\app\service\/recharge.js:59:5)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at rechargeService.<anonymous> (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at rechargeService.query (H:\致命代码\fancyguo-gm\server\src\app\service\recharge.js:137:23)
+    at _callee$ (H:\致命代码\fancyguo-gm\server\src\app\controllers\/recharge.js:13:38)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at queryCharacter (H:\致命代码\fancyguo-gm\server\src\app\controllers\recharge.js:76:32)
+    at dispatch (H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at next (H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:45:18)
+    at H:\致命代码\fancyguo-gm\server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:36:12
+    at dispatch (H:\致命代码\fancyguo-gm\server\node_modules\koa-router\lib\router.js:351:31)
+    at next (H:\致命代码\fancyguo-gm\server\node_modules\koa\node_modules\koa-compose\index.js:42:32)
+    at _callee$ (H:\致命代码\fancyguo-gm\server\src\middleware\/index.js:47:11)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+*************** error log end ***************
+
+[2020-11-19T19:09:10.717] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/recharge/query?roleid=&stime=&plaform=&channel=&servername=&page=1&pagesize=80
+request client ip:  ::ffff:127.0.0.1
+request query:  {"roleid":"","stime":"","plaform":"","channel":"","servername":"","page":"1","pagesize":"80","gameid":"13"}
+response time: 1605784150717
+err name: TypeError
+err message: Cannot set property 'gameid' of undefined
+err stack: TypeError: Cannot set property 'gameid' of undefined
+    at _callee$ (H:\致命代码\fancyguo-gm\server\src\app\service\/recharge.js:59:5)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at rechargeService.<anonymous> (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at rechargeService.query (H:\致命代码\fancyguo-gm\server\src\app\service\recharge.js:141:23)
+    at _callee$ (H:\致命代码\fancyguo-gm\server\src\app\controllers\/recharge.js:13:38)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at queryCharacter (H:\致命代码\fancyguo-gm\server\src\app\controllers\recharge.js:76:32)
+    at dispatch (H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at next (H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:45:18)
+    at H:\致命代码\fancyguo-gm\server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:36:12
+    at dispatch (H:\致命代码\fancyguo-gm\server\node_modules\koa-router\lib\router.js:351:31)
+    at next (H:\致命代码\fancyguo-gm\server\node_modules\koa\node_modules\koa-compose\index.js:42:32)
+    at _callee$ (H:\致命代码\fancyguo-gm\server\src\middleware\/index.js:47:11)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+*************** error log end ***************
+
+[2020-11-19T19:09:50.182] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/recharge/query?roleid=&stime=&plaform=&channel=&servername=&page=1&pagesize=80
+request client ip:  ::ffff:127.0.0.1
+request query:  {"roleid":"","stime":"","plaform":"","channel":"","servername":"","page":"1","pagesize":"80","gameid":"13"}
+response time: 1605784190182
+err name: TypeError
+err message: Cannot set property 'gameid' of undefined
+err stack: TypeError: Cannot set property 'gameid' of undefined
+    at _callee$ (H:\致命代码\fancyguo-gm\server\src\app\service\/recharge.js:59:5)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at rechargeService.<anonymous> (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at rechargeService.query (H:\致命代码\fancyguo-gm\server\src\app\service\recharge.js:142:23)
+    at _callee$ (H:\致命代码\fancyguo-gm\server\src\app\controllers\/recharge.js:13:38)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at queryCharacter (H:\致命代码\fancyguo-gm\server\src\app\controllers\recharge.js:76:32)
+    at dispatch (H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at next (H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:45:18)
+    at H:\致命代码\fancyguo-gm\server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:36:12
+    at dispatch (H:\致命代码\fancyguo-gm\server\node_modules\koa-router\lib\router.js:351:31)
+    at next (H:\致命代码\fancyguo-gm\server\node_modules\koa\node_modules\koa-compose\index.js:42:32)
+    at _callee$ (H:\致命代码\fancyguo-gm\server\src\middleware\/index.js:47:11)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+*************** error log end ***************
+
+[2020-11-19T19:10:44.322] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/recharge/query?roleid=&stime=&plaform=&channel=&servername=&page=1&pagesize=80
+request client ip:  ::ffff:127.0.0.1
+request query:  {"roleid":"","stime":"","plaform":"","channel":"","servername":"","page":"1","pagesize":"80","gameid":"13"}
+response time: 1605784244320
+err name: TypeError
+err message: Cannot set property 'channel' of undefined
+err stack: TypeError: Cannot set property 'channel' of undefined
+    at _callee$ (H:\致命代码\fancyguo-gm\server\src\app\service\/recharge.js:61:4)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at rechargeService.<anonymous> (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at rechargeService.query (H:\致命代码\fancyguo-gm\server\src\app\service\recharge.js:158:23)
+    at _callee$ (H:\致命代码\fancyguo-gm\server\src\app\controllers\/recharge.js:13:38)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at queryCharacter (H:\致命代码\fancyguo-gm\server\src\app\controllers\recharge.js:76:32)
+    at dispatch (H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at next (H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:45:18)
+    at H:\致命代码\fancyguo-gm\server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:36:12
+    at dispatch (H:\致命代码\fancyguo-gm\server\node_modules\koa-router\lib\router.js:351:31)
+    at next (H:\致命代码\fancyguo-gm\server\node_modules\koa\node_modules\koa-compose\index.js:42:32)
+    at _callee$ (H:\致命代码\fancyguo-gm\server\src\middleware\/index.js:47:11)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+*************** error log end ***************
+
+[2020-11-19T19:12:35.959] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/recharge/query?roleid=&stime=&plaform=&channel=&servername=&page=1&pagesize=80
+request client ip:  ::ffff:127.0.0.1
+request query:  {"roleid":"","stime":"","plaform":"","channel":"","servername":"","page":"1","pagesize":"80","gameid":"13"}
+response time: 1605784355958
+err name: TypeError
+err message: Cannot set property 'channel' of undefined
+err stack: TypeError: Cannot set property 'channel' of undefined
+    at _callee$ (H:\致命代码\fancyguo-gm\server\src\app\service\/recharge.js:62:4)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at rechargeService.<anonymous> (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at rechargeService.query (H:\致命代码\fancyguo-gm\server\src\app\service\recharge.js:159:23)
+    at _callee$ (H:\致命代码\fancyguo-gm\server\src\app\controllers\/recharge.js:13:38)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at queryCharacter (H:\致命代码\fancyguo-gm\server\src\app\controllers\recharge.js:76:32)
+    at dispatch (H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at next (H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:45:18)
+    at H:\致命代码\fancyguo-gm\server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:36:12
+    at dispatch (H:\致命代码\fancyguo-gm\server\node_modules\koa-router\lib\router.js:351:31)
+    at next (H:\致命代码\fancyguo-gm\server\node_modules\koa\node_modules\koa-compose\index.js:42:32)
+    at _callee$ (H:\致命代码\fancyguo-gm\server\src\middleware\/index.js:47:11)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+*************** error log end ***************
+
+[2020-11-19T19:48:10.784] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/recharge/replenishment
+request client ip:  ::ffff:127.0.0.1
+request body: 
+[{"roleId":"testroleid","uid":"6bb99ca8c6464392aca364a06e048c88","roleName":"testrolename","platform":"android","channel":"fancyguo","deviceid":"1280c42b32c354fd","type":"alipay","serverId":"testserver1","price":"1","pid":"1","status":"发货失败","tid":"43595120201119114250000001","createdAt":"2020-11-19 11:42:50","updatedAt":"2020-11-19 19:47:21","mongeyType":"RMB"},{"roleId":"testroleid","uid":"6bb99ca8c6464392aca364a06e048c88","roleName":"testrolename","platform":"android","channel":"fancyguo","deviceid":"1280c42b32c354fd","type":"alipay","serverId":"testserver1","price":"1","pid":"1","status":"发货失败","tid":"53861320201119114326000002","createdAt":"2020-11-19 11:43:26","updatedAt":"2020-11-19 19:47:21","mongeyType":"RMB"}]
+response time: 1605786490783
+err name: undefined
+err message: 交互失败
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-19T20:16:55.304] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/recharge/query?roleid=&stime=&plaform=&channel=&servername=%E5%B0%8F%E9%B9%BF%E6%B5%8B%E8%AF%95%E6%9C%8D&page=1&pagesize=20
+request client ip:  ::ffff:127.0.0.1
+request query:  {"roleid":"","stime":"","plaform":"","channel":"","servername":"小鹿测试服","page":"1","pagesize":"20","gameid":"13"}
+response time: 1605788215303
+err name: SequelizeDatabaseError
+err message: column "小鹿测试服" does not exist
+err stack: SequelizeDatabaseError: column "小鹿测试服" does not exist
+    at Query.formatError (H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:366:16)
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:72:18
+From previous event:
+    at Query.run (H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:64:23)
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:29
+From previous event:
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:12
+    at processImmediate (internal/timers.js:456:21)
+From previous event:
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:651:10
+    at H:\致命代码\fancyguo-gm\server\node_modules\retry-as-promised\index.js:70:21
+    at new Promise (<anonymous>)
+    at retryAsPromised (H:\致命代码\fancyguo-gm\server\node_modules\retry-as-promised\index.js:60:10)
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:641:30
+From previous event:
+    at Sequelize.query (H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:590:23)
+    at _callee$ (H:\致命代码\fancyguo-gm\server\src\app\service\/recharge.js:49:35)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at rechargeService.<anonymous> (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at rechargeService.query (H:\致命代码\fancyguo-gm\server\src\app\service\recharge.js:165:23)
+    at _callee$ (H:\致命代码\fancyguo-gm\server\src\app\controllers\/recharge.js:13:38)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at queryCharacter (H:\致命代码\fancyguo-gm\server\src\app\controllers\recharge.js:76:32)
+    at dispatch (H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at next (H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:45:18)
+    at H:\致命代码\fancyguo-gm\server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:36:12
+    at dispatch (H:\致命代码\fancyguo-gm\server\node_modules\koa-router\lib\router.js:351:31)
+    at next (H:\致命代码\fancyguo-gm\server\node_modules\koa\node_modules\koa-compose\index.js:42:32)
+    at _callee$ (H:\致命代码\fancyguo-gm\server\src\middleware\/index.js:47:11)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at H:\致命代码\fancyguo-gm\server\src\middleware\/index.js:42:2
+*************** error log end ***************
+
+[2020-11-19T20:25:13.056] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/recharge/replenishment
+request client ip:  ::ffff:127.0.0.1
+request body: 
+[{"roleId":"testroleid","uid":"6bb99ca8c6464392aca364a06e048c88","roleName":"testrolename","platform":"android","channel":"fancyguo","deviceid":"1280c42b32c354fd","type":"alipay","serverId":"testserver1","price":"1","pid":"1","status":"发货失败","tid":"43595120201119114250000001","createdAt":"2020-11-19 11:42:50","updatedAt":"2020-11-19 20:22:44","mongeyType":"RMB"},{"roleId":"testroleid","uid":"6bb99ca8c6464392aca364a06e048c88","roleName":"testrolename","platform":"android","channel":"fancyguo","deviceid":"1280c42b32c354fd","type":"alipay","serverId":"testserver1","price":"1","pid":"1","status":"发货失败","tid":"53861320201119114326000002","createdAt":"2020-11-19 11:43:26","updatedAt":"2020-11-19 20:22:44","mongeyType":"RMB"}]
+response time: 1605788713056
+err name: undefined
+err message: 交互失败
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-19T20:29:53.313] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/recharge/replenishment
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"value":[{"roleId":"testroleid","uid":"6bb99ca8c6464392aca364a06e048c88","roleName":"testrolename","platform":"android","channel":"fancyguo","deviceid":"1280c42b32c354fd","type":"alipay","serverId":"testserver1","price":"1","pid":"1","status":"发货失败","tid":"43595120201119114250000001","createdAt":"2020-11-19 11:42:50","updatedAt":"2020-11-19 20:25:59","mongeyType":"RMB"},{"roleId":"testroleid","uid":"6bb99ca8c6464392aca364a06e048c88","roleName":"testrolename","platform":"android","channel":"fancyguo","deviceid":"1280c42b32c354fd","type":"alipay","serverId":"testserver1","price":"1","pid":"1","status":"发货失败","tid":"53861320201119114326000002","createdAt":"2020-11-19 11:43:26","updatedAt":"2020-11-19 20:25:59","mongeyType":"RMB"}],"gameid":"13"}
+response time: 1605788993313
+err name: undefined
+err message: 交互失败
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-19T20:31:53.079] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/recharge/replenishment
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"value":[{"roleId":"testroleid","uid":"6bb99ca8c6464392aca364a06e048c88","roleName":"testrolename","platform":"android","channel":"fancyguo","deviceid":"1280c42b32c354fd","type":"alipay","serverId":"99981","price":"1","pid":"1","status":"发货失败","tid":"43595120201119114250000001","createdAt":"2020-11-19 11:42:50","updatedAt":"2020-11-19 20:31:04","mongeyType":"RMB"},{"roleId":"testroleid","uid":"6bb99ca8c6464392aca364a06e048c88","roleName":"testrolename","platform":"android","channel":"fancyguo","deviceid":"1280c42b32c354fd","type":"alipay","serverId":"99981","price":"1","pid":"1","status":"发货失败","tid":"53861320201119114326000002","createdAt":"2020-11-19 11:43:26","updatedAt":"2020-11-19 20:31:04","mongeyType":"RMB"}],"gameid":"13"}
+response time: 1605789113079
+err name: undefined
+err message: 交互失败
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-19T20:32:27.922] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/recharge/replenishment
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"value":[{"roleId":"testroleid","uid":"6bb99ca8c6464392aca364a06e048c88","roleName":"testrolename","platform":"android","channel":"fancyguo","deviceid":"1280c42b32c354fd","type":"alipay","serverId":"99981","price":"1","pid":"1","status":"发货失败","tid":"43595120201119114250000001","createdAt":"2020-11-19 11:42:50","updatedAt":"2020-11-19 20:31:04","mongeyType":"RMB"},{"roleId":"testroleid","uid":"6bb99ca8c6464392aca364a06e048c88","roleName":"testrolename","platform":"android","channel":"fancyguo","deviceid":"1280c42b32c354fd","type":"alipay","serverId":"99981","price":"1","pid":"1","status":"发货失败","tid":"53861320201119114326000002","createdAt":"2020-11-19 11:43:26","updatedAt":"2020-11-19 20:31:04","mongeyType":"RMB"}],"gameid":"13"}
+response time: 1605789147922
+err name: undefined
+err message: 交互失败
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-19T20:34:29.811] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/recharge/replenishment
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"value":[{"roleId":"testroleid","uid":"6bb99ca8c6464392aca364a06e048c88","roleName":"testrolename","platform":"android","channel":"fancyguo","deviceid":"1280c42b32c354fd","type":"alipay","serverId":"99981","price":"1","pid":"1","status":"发货失败","tid":"43595120201119114250000001","createdAt":"2020-11-19 11:42:50","updatedAt":"2020-11-19 20:31:04","mongeyType":"RMB"},{"roleId":"testroleid","uid":"6bb99ca8c6464392aca364a06e048c88","roleName":"testrolename","platform":"android","channel":"fancyguo","deviceid":"1280c42b32c354fd","type":"alipay","serverId":"99981","price":"1","pid":"1","status":"发货失败","tid":"53861320201119114326000002","createdAt":"2020-11-19 11:43:26","updatedAt":"2020-11-19 20:31:04","mongeyType":"RMB"}],"gameid":"13"}
+response time: 1605789269811
+err name: TypeError
+err message: data.map is not a function
+err stack: TypeError: data.map is not a function
+    at _callee2$ (H:\致命代码\fancyguo-gm\server\src\app\controllers\/recharge.js:21:49)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+*************** error log end ***************
+
+[2020-11-19T20:35:21.415] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/recharge/replenishment
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"value":[{"roleId":"testroleid","uid":"6bb99ca8c6464392aca364a06e048c88","roleName":"testrolename","platform":"android","channel":"fancyguo","deviceid":"1280c42b32c354fd","type":"alipay","serverId":"99981","price":"1","pid":"1","status":"发货失败","tid":"43595120201119114250000001","createdAt":"2020-11-19 11:42:50","updatedAt":"2020-11-19 20:31:04","mongeyType":"RMB"},{"roleId":"testroleid","uid":"6bb99ca8c6464392aca364a06e048c88","roleName":"testrolename","platform":"android","channel":"fancyguo","deviceid":"1280c42b32c354fd","type":"alipay","serverId":"99981","price":"1","pid":"1","status":"发货失败","tid":"53861320201119114326000002","createdAt":"2020-11-19 11:43:26","updatedAt":"2020-11-19 20:31:04","mongeyType":"RMB"}],"gameid":"13"}
+response time: 1605789321415
+err name: TypeError
+err message: data.map is not a function
+err stack: TypeError: data.map is not a function
+    at _callee2$ (H:\致命代码\fancyguo-gm\server\src\app\controllers\/recharge.js:21:49)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+*************** error log end ***************
+
+[2020-11-19T20:42:34.036] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/recharge/replenishment
+request client ip:  
+request body: 
+{"value":[{"roleId":"testroleid","uid":"6bb99ca8c6464392aca364a06e048c88","roleName":"testrolename","platform":"android","channel":"fancyguo","deviceid":"1280c42b32c354fd","type":"alipay","serverId":"99981","price":"1","pid":"1","status":"发货失败","tid":"43595120201119114250000001","createdAt":"2020-11-19 11:42:50","updatedAt":"2020-11-19 20:31:04","mongeyType":"RMB"},{"roleId":"testroleid","uid":"6bb99ca8c6464392aca364a06e048c88","roleName":"testrolename","platform":"android","channel":"fancyguo","deviceid":"1280c42b32c354fd","type":"alipay","serverId":"99981","price":"1","pid":"1","status":"发货失败","tid":"53861320201119114326000002","createdAt":"2020-11-19 11:43:26","updatedAt":"2020-11-19 20:31:04","mongeyType":"RMB"}],"gameid":"13"}
+response time: 1605789754036
+err name: Error
+err message: seneca: [TIMEOUT] Action  timed out. Timeout was: 22222 (start: 1605789731706, end: 1605789753933. Message was: {
+  module: 'Order',
+  Order: 'Replenishment',
+  args: { query: undefined, body: { value: [Array], gameid: '13' } }
+}.
+err stack: Error: seneca: [TIMEOUT] Action  timed out. Timeout was: 22222 (start: 1605789731706, end: 1605789753933. Message was: {
+  module: 'Order',
+  Order: 'Replenishment',
+  args: { query: undefined, body: { value: [Array], gameid: '13' } }
+}.
+    at Object.errormaker (H:\致命代码\fancyguo-gm\server\node_modules\eraro\eraro.js:112:15)
+    at Object.act_tm [as ontm] (H:\致命代码\fancyguo-gm\server\node_modules\seneca\lib\act.js:86:32)
+    at Timeout.timeout_check [as _onTimeout] (H:\致命代码\fancyguo-gm\server\node_modules\gate-executor\gate-executor.js:207:16)
+    at listOnTimeout (internal/timers.js:549:17)
+    at processTimers (internal/timers.js:492:7)
+From previous event:
+    at SenecaClient._callee$ (H:\致命代码\fancyguo-gm\server\src\xiaolu\/senecaclient.js:16:21)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at SenecaClient.<anonymous> (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at SenecaClient.get (H:\致命代码\fancyguo-gm\server\src\xiaolu\senecaclient.js:86:21)
+    at rechargeService._callee2$ (H:\致命代码\fancyguo-gm\server\src\app\service\/recharge.js:140:39)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at rechargeService.<anonymous> (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at rechargeService.replenishment (H:\致命代码\fancyguo-gm\server\src\app\service\recharge.js:211:31)
+    at _callee2$ (H:\致命代码\fancyguo-gm\server\src\app\controllers\/recharge.js:20:44)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at replenishment (H:\致命代码\fancyguo-gm\server\src\app\controllers\recharge.js:111:31)
+    at dispatch (H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at next (H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:45:18)
+    at H:\致命代码\fancyguo-gm\server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:36:12
+    at dispatch (H:\致命代码\fancyguo-gm\server\node_modules\koa-router\lib\router.js:351:31)
+    at next (H:\致命代码\fancyguo-gm\server\node_modules\koa\node_modules\koa-compose\index.js:42:32)
+    at _callee$ (H:\致命代码\fancyguo-gm\server\src\middleware\/index.js:47:11)
+*************** error log end ***************
+
+[2020-11-19T20:42:55.345] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/recharge/replenishment
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"value":[{"roleId":"testroleid","uid":"6bb99ca8c6464392aca364a06e048c88","roleName":"testrolename","platform":"android","channel":"fancyguo","deviceid":"1280c42b32c354fd","type":"alipay","serverId":"99981","price":"1","pid":"1","status":"发货失败","tid":"43595120201119114250000001","createdAt":"2020-11-19 11:42:50","updatedAt":"2020-11-19 20:41:45","mongeyType":"RMB"},{"roleId":"testroleid","uid":"6bb99ca8c6464392aca364a06e048c88","roleName":"testrolename","platform":"android","channel":"fancyguo","deviceid":"1280c42b32c354fd","type":"alipay","serverId":"99981","price":"1","pid":"1","status":"发货失败","tid":"53861320201119114326000002","createdAt":"2020-11-19 11:43:26","updatedAt":"2020-11-19 20:41:45","mongeyType":"RMB"}],"gameid":"13"}
+response time: 1605789775345
+err name: Error
+err message: seneca: [TIMEOUT] Action  timed out. Timeout was: 22222 (start: 1605789753028, end: 1605789775294. Message was: {
+  module: 'Order',
+  Order: 'Replenishment',
+  args: { query: undefined, body: { value: [Array], gameid: '13' } }
+}.
+err stack: Error: seneca: [TIMEOUT] Action  timed out. Timeout was: 22222 (start: 1605789753028, end: 1605789775294. Message was: {
+  module: 'Order',
+  Order: 'Replenishment',
+  args: { query: undefined, body: { value: [Array], gameid: '13' } }
+}.
+    at Object.errormaker (H:\致命代码\fancyguo-gm\server\node_modules\eraro\eraro.js:112:15)
+    at Object.act_tm [as ontm] (H:\致命代码\fancyguo-gm\server\node_modules\seneca\lib\act.js:86:32)
+    at Timeout.timeout_check [as _onTimeout] (H:\致命代码\fancyguo-gm\server\node_modules\gate-executor\gate-executor.js:207:16)
+    at listOnTimeout (internal/timers.js:549:17)
+    at processTimers (internal/timers.js:492:7)
+From previous event:
+    at SenecaClient._callee$ (H:\致命代码\fancyguo-gm\server\src\xiaolu\/senecaclient.js:16:21)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at SenecaClient.<anonymous> (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at SenecaClient.get (H:\致命代码\fancyguo-gm\server\src\xiaolu\senecaclient.js:86:21)
+    at rechargeService._callee2$ (H:\致命代码\fancyguo-gm\server\src\app\service\/recharge.js:140:39)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at rechargeService.<anonymous> (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at rechargeService.replenishment (H:\致命代码\fancyguo-gm\server\src\app\service\recharge.js:211:31)
+    at _callee2$ (H:\致命代码\fancyguo-gm\server\src\app\controllers\/recharge.js:20:44)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at replenishment (H:\致命代码\fancyguo-gm\server\src\app\controllers\recharge.js:111:31)
+    at dispatch (H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at next (H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:45:18)
+    at H:\致命代码\fancyguo-gm\server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:36:12
+    at dispatch (H:\致命代码\fancyguo-gm\server\node_modules\koa-router\lib\router.js:351:31)
+    at next (H:\致命代码\fancyguo-gm\server\node_modules\koa\node_modules\koa-compose\index.js:42:32)
+    at _callee$ (H:\致命代码\fancyguo-gm\server\src\middleware\/index.js:47:11)
+*************** error log end ***************
+
+[2020-11-19T20:43:04.295] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/recharge/replenishment
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"value":[{"roleId":"testroleid","uid":"6bb99ca8c6464392aca364a06e048c88","roleName":"testrolename","platform":"android","channel":"fancyguo","deviceid":"1280c42b32c354fd","type":"alipay","serverId":"99981","price":"1","pid":"1","status":"发货失败","tid":"43595120201119114250000001","createdAt":"2020-11-19 11:42:50","updatedAt":"2020-11-19 20:41:45","mongeyType":"RMB"},{"roleId":"testroleid","uid":"6bb99ca8c6464392aca364a06e048c88","roleName":"testrolename","platform":"android","channel":"fancyguo","deviceid":"1280c42b32c354fd","type":"alipay","serverId":"99981","price":"1","pid":"1","status":"发货失败","tid":"53861320201119114326000002","createdAt":"2020-11-19 11:43:26","updatedAt":"2020-11-19 20:41:45","mongeyType":"RMB"}],"gameid":"13"}
+response time: 1605789784295
+err name: TypeError
+err message: data.map is not a function
+err stack: TypeError: data.map is not a function
+    at _callee2$ (H:\致命代码\fancyguo-gm\server\src\app\controllers\/recharge.js:21:49)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+*************** error log end ***************
+

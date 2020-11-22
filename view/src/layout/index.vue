@@ -1,10 +1,10 @@
 <template>
   <div class="layout-box" >
     <el-container class="app-container">
-      <el-aside class="shrinkTransition" :width="isCollapse ? '200px' : '60px'" style="background-color: rgb(9, 27, 47);">        <appSidebar style="height: 100%;" @shrink="shrink"> </appSidebar>      </el-aside>
+      <el-aside v-if="gradele9999" class="shrinkTransition" :width="isCollapse ? '200px' : '60px'" style="background-color: rgb(9, 27, 47);">        <appSidebar style="height: 100%;" @shrink="shrink"> </appSidebar>      </el-aside>
       <el-container class="app-body-container">
-        <el-header class="app-header-container"  style="height: 100px;"><Navbar></Navbar>         </el-header>
-        <el-main>          <AppProject></AppProject>        </el-main>
+        <el-header  class="app-header-container"  style="height: 100px;"><Navbar></Navbar>         </el-header>
+        <el-main  > <AppProject></AppProject></el-main>
       </el-container>
     </el-container>
   
@@ -36,6 +36,12 @@ export default {
     };
   },
   computed: {
+    grade() {
+      return this.$route.meta.grade;       
+    },
+    gradele9999() {
+      return +this.grade !== 9999; 
+    },
     scrollheight() {
       return document.body.scrollHeight;
     },

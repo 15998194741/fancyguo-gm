@@ -18,7 +18,7 @@ export class rechargeController {
     	ctx.log.resourceDesc = '充值订单补单';
     	let data = ctx.request.body;
         let result = await rechargeService.replenishment(data);
-        ctx.logging('订单补单', '充值明细', `订单号:${data.map(a => a.tid || '')}`);
+        ctx.logging('订单补单', '充值明细', `订单号:${data.value.map(a => a.tid || '')}`);
     	ctx.body = statusCode.SUCCESS_200('补单成功', result);
     }
 }

@@ -1,0 +1,127 @@
+[2020-11-22T16:31:14.958] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/backpack/queryServer?roleid=599983
+request client ip:  ::ffff:127.0.0.1
+request query:  {"roleid":"599983","gameid":"13"}
+response time: 1606033874958
+err name: undefined
+err message: 没有此角色
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-22T16:31:16.570] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/backpack/queryServer?roleid=599983
+request client ip:  ::ffff:127.0.0.1
+request query:  {"roleid":"599983","gameid":"13"}
+response time: 1606033876570
+err name: undefined
+err message: 没有此角色
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-22T16:34:00.434] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/backpack/queryServer?roleid=599983
+request client ip:  ::ffff:127.0.0.1
+request query:  {"roleid":"599983","gameid":"13"}
+response time: 1606034040433
+err name: undefined
+err message: 没有此角色
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-22T16:34:02.303] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/backpack/queryServer?roleid=599983
+request client ip:  ::ffff:127.0.0.1
+request query:  {"roleid":"599983","gameid":"13"}
+response time: 1606034042303
+err name: undefined
+err message: 没有此角色
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-22T18:43:38.061] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/recharge/replenishment
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"value":[{"roleId":"test","uid":"6bb99ca8c6464392aca364a06e048c88","roleName":"testsname","platform":"ios","channel":"UC","deviceid":"1280c42b32c354fd","type":"alipay","serverId":"99983","price":"1","pid":"1","status":"发货失败","tid":"GM_2_659122953607\n","createdAt":"2020-11-19 11:43:26","updatedAt":"2020-11-22 17:22:41","mongeyType":"RMB"}],"gameid":"13"}
+response time: 1606041818060
+err name: undefined
+err message: 补单完成，告知SDK失败
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-22T18:49:12.771] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/recharge/replenishment
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"value":[{"roleId":"test","uid":"6bb99ca8c6464392aca364a06e048c88","roleName":"testsname","platform":"ios","channel":"UC","deviceid":"1280c42b32c354fd","type":"alipay","serverId":"99983","price":"1","pid":"1","status":"发货失败","tid":"GM_3_659122953853\n","createdAt":"2020-11-19 11:43:26","updatedAt":"2020-11-22 18:48:22","mongeyType":"RMB"}],"gameid":"13"}
+response time: 1606042152771
+err name: undefined
+err message: 补单完成，告知SDK失败
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-22T18:58:36.201] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/recharge/replenishment
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"value":[{"roleId":"test","uid":"6bb99ca8c6464392aca364a06e048c88","roleName":"testsname","platform":"ios","channel":"UC","deviceid":"1280c42b32c354fd","type":"alipay","serverId":"99983","price":"1","pid":"1","status":"发货失败","tid":"GM_3_659122953853\n","createdAt":"2020-11-19 11:43:26","updatedAt":"2020-11-22 18:49:19","mongeyType":"RMB"},{"roleId":"test","uid":"6bb99ca8c6464392aca364a06e048c88","roleName":"testsname","platform":"ios","channel":"UC","deviceid":"1280c42b32c354fd","type":"alipay","serverId":"99983","price":"1","pid":"1","status":"发货失败","tid":"GM_4_659122954546","createdAt":"2020-11-19 11:43:26","updatedAt":"2020-11-22 18:49:19","mongeyType":"RMB"},{"roleId":"test","uid":"6bb99ca8c6464392aca364a06e048c88","roleName":"testsname","platform":"ios","channel":"UC","deviceid":"1280c42b32c354fd","type":"alipay","serverId":"99983","price":"1","pid":"1","status":"发货失败","tid":"GM_2_659122955451","createdAt":"2020-11-19 11:43:26","updatedAt":"2020-11-22 18:49:19","mongeyType":"RMB"},{"roleId":"test","uid":"6bb99ca8c6464392aca364a06e048c88","roleName":"testsname","platform":"ios","channel":"UC","deviceid":"1280c42b32c354fd","type":"alipay","serverId":"99983","price":"1","pid":"1","status":"发货失败","tid":"GM_3_659122955770","createdAt":"2020-11-19 11:43:26","updatedAt":"2020-11-22 18:49:19","mongeyType":"RMB"},{"roleId":"test","uid":"6bb99ca8c6464392aca364a06e048c88","roleName":"testsname","platform":"ios","channel":"UC","deviceid":"1280c42b32c354fd","type":"alipay","serverId":"99983","price":"1","pid":"1","status":"发货失败","tid":"GM_1_659122956165","createdAt":"2020-11-19 11:43:26","updatedAt":"2020-11-22 18:49:19","mongeyType":"RMB"},{"roleId":"test","uid":"6bb99ca8c6464392aca364a06e048c88","roleName":"testsname","platform":"ios","channel":"UC","deviceid":"1280c42b32c354fd","type":"alipay","serverId":"99983","price":"1","pid":"1","status":"发货失败","tid":"GM_4_659122956543","createdAt":"2020-11-19 11:43:26","updatedAt":"2020-11-22 18:49:19","mongeyType":"RMB"},{"roleId":"test","uid":"6bb99ca8c6464392aca364a06e048c88","roleName":"testsname","platform":"ios","channel":"UC","deviceid":"1280c42b32c354fd","type":"alipay","serverId":"99983","price":"1","pid":"1","status":"发货失败","tid":"GM_2_659122956967","createdAt":"2020-11-19 11:43:26","updatedAt":"2020-11-22 18:49:19","mongeyType":"RMB"},{"roleId":"test","uid":"6bb99ca8c6464392aca364a06e048c88","roleName":"testsname","platform":"ios","channel":"UC","deviceid":"1280c42b32c354fd","type":"alipay","serverId":"99983","price":"1","pid":"1","status":"发货失败","tid":"GM_5_659122957342","createdAt":"2020-11-19 11:43:26","updatedAt":"2020-11-22 18:49:19","mongeyType":"RMB"},{"roleId":"test","uid":"6bb99ca8c6464392aca364a06e048c88","roleName":"testsname","platform":"ios","channel":"UC","deviceid":"1280c42b32c354fd","type":"alipay","serverId":"99983","price":"1","pid":"1","status":"发货失败","tid":"GM_3_659122957676","createdAt":"2020-11-19 11:43:26","updatedAt":"2020-11-22 18:49:19","mongeyType":"RMB"},{"roleId":"test","uid":"6bb99ca8c6464392aca364a06e048c88","roleName":"testsname","platform":"ios","channel":"UC","deviceid":"1280c42b32c354fd","type":"alipay","serverId":"99983","price":"1","pid":"1","status":"发货失败","tid":"GM_3_659122957935","createdAt":"2020-11-19 11:43:26","updatedAt":"2020-11-22 18:49:19","mongeyType":"RMB"},{"roleId":"test","uid":"6bb99ca8c6464392aca364a06e048c88","roleName":"testsname","platform":"ios","channel":"UC","deviceid":"1280c42b32c354fd","type":"alipay","serverId":"99983","price":"1","pid":"1","status":"发货失败","tid":"GM_2_659122958215","createdAt":"2020-11-19 11:43:26","updatedAt":"2020-11-22 18:49:19","mongeyType":"RMB"}],"gameid":"13"}
+response time: 1606042716200
+err name: undefined
+err message: 交互失败
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-22T19:32:53.534] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/recharge/replenishment
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"value":[{"roleId":"test","uid":"6bb99ca8c6464392aca364a06e048c88","roleName":"testsname","platform":"ios","channel":"UC","deviceid":"1280c42b32c354fd","type":"alipay","serverId":"99983","price":"1","pid":"1","status":"发货失败","tid":"GM_3_659122953853\n","createdAt":"2020-11-19 11:43:26","updatedAt":"2020-11-22 19:32:01","mongeyType":"RMB"}],"gameid":"13"}
+response time: 1606044773533
+err name: TypeError
+err message: connection.close is not a function
+err stack: TypeError: connection.close is not a function
+    at rechargeService._callee2$ (H:\致命代码\fancyguo-gm\server\src\app\service\/recharge.js:170:14)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+*************** error log end ***************
+
+[2020-11-22T19:33:17.044] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/recharge/replenishment
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"value":[{"roleId":"test","uid":"6bb99ca8c6464392aca364a06e048c88","roleName":"testsname","platform":"ios","channel":"UC","deviceid":"1280c42b32c354fd","type":"alipay","serverId":"99983","price":"1","pid":"1","status":"发货失败","tid":"GM_3_659122953853\n","createdAt":"2020-11-19 11:43:26","updatedAt":"2020-11-22 19:32:26","mongeyType":"RMB"}],"gameid":"13"}
+response time: 1606044797044
+err name: TypeError
+err message: connection.close is not a function
+err stack: TypeError: connection.close is not a function
+    at rechargeService._callee2$ (H:\致命代码\fancyguo-gm\server\src\app\service\/recharge.js:170:14)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+*************** error log end ***************
+

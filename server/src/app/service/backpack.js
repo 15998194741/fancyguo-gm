@@ -13,7 +13,7 @@ class BackpackService {
     async query(data) {
         /* let { serverid, gameid, roleid } = data;*/
         let { serverid, gameid, roleid  } = data;
-        serverid = '99981';
+        serverid = '99983';
         let sql = `select * from gm_server where serverid = '${serverid}' and gameid ='${gameid}' and status = 1`;
         let { ip, port } = await dbSequelize.query(sql, {
             plain: true,
@@ -65,7 +65,7 @@ class BackpackService {
     async BackPackRecycle(data) {
         console.log(data);
         let { gameid, roleid, value, serverid } = data;
-        serverid = '99981';
+        serverid = '99983';
         let sql = `select * from gm_server where serverid = '${serverid}' and gameid ='${gameid}' and status = 1`;
         let { ip, port } = await dbSequelize.query(sql, {
             plain: true,

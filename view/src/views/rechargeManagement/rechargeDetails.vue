@@ -19,7 +19,7 @@
    
     <div class="comprehensive-container">
       <div v-for='(i,index) in selectForm' :key='index'  class="select-item"  > {{i.label}}:
-        <el-select v-model="filterForm[i.key]" :multiple="i['multiple']" placeholder="请选择" size='small' style="border-radius: 10px;" @change="filterFormChange('change')" >
+        <el-select v-model="filterForm[i.key]" :multiple="i['multiple']" clearable placeholder="请选择" size='small' style="border-radius: 10px;" @change="filterFormChange('change')" >
           <el-option v-for="(item,index) in i.options" :key="index"  :label='item.label' :value="item.value" >
           </el-option>
         </el-select>
@@ -35,11 +35,12 @@
     <el-table
     ref="multipleTable"
     border
-    :data="tableData" 
+    :data="tableData"
+    :row-class-name="tableRowClassName" 
     @selection-change="handleSelectionChange"
     >
-    <el-table-column  type="selection" width="40"></el-table-column>
-    <el-table-column v-for='(column,index) in tablecolumn' :key='index'  :label="column.label">
+    <el-table-column  :cell-class-name='selectionClassName' type="selection" width="40"></el-table-column>
+    <el-table-column  v-for='(column,index) in tablecolumn' :key='index'  :label="column.label">
       <template slot-scope="scope">{{ scope.row[column.prop] }}</template>
     </el-table-column>
   </el-table>
@@ -67,7 +68,6 @@ import { findComponents } from '@/api/components.js';
 import { findServername } from '@/api/character.js';
 import { rechargeQuery, replenishmentpost } from '@/api/rechargeDetails.js';
 import { loading, close, secondConfirmation } from '@/views/loading';
-
 import dayjs from 'dayjs';
 export default {
   name: 'rechargedetails',
@@ -103,7 +103,7 @@ export default {
       }, {
         label: '游戏渠道',
         key: 'channel',
-        multiple: true,
+        multiple: false,
         value: '',
         options: []
       },
@@ -130,8 +130,9 @@ export default {
         { label: '区服ID', prop: 'serverId' },
         { label: '充值金额', prop: 'price' },
         { label: '商品ID', prop: 'pid' },
-        { label: '订单状态', prop: 'isOK' },
-        { label: '补单状态', prop: 'isSend' },
+        // { label: '订单状态', prop: 'isOK' },
+        { label: '订单状态', prop: 'status' },
+        // { label: '补单状态', prop: 'isSend' },
         { label: '订单号', prop: 'tid' },
         { label: '下单时间', prop: 'createdAt' },
         { label: '到账时间', prop: 'updatedAt' }
@@ -153,14 +154,33 @@ export default {
     }
   },
   methods: {
+    tableRowClassName({ row, rowIndex }) {
+      if (row.status !== '发货失败') {
+        return 'success-row';
+      }  
+    },
+    selectionClassName({ row }) {
+      console.log('单元格级');
+      if (row.status) {
+        return 'send-success';
+      }
+    },
     async Replenishmentclick() {
       let replentrue = await secondConfirmation(this, '您正在修改数据，请谨慎处理！是否继续?');
       if (!replentrue) {return;}
       loading(this);
-      let res = await replenishmentpost(this.tableTrue);
+      let res = await replenishmentpost({ value: this.tableTrue });
       close(this);
       if (res.code !== 200) {return;}
-      this.$message.success('补单成功'); 
+      let { data } = res;
+      let successData = data['100'].concat(data['200']);
+      if (successData.length > 0) {
+        this.$message.success(`补单成功的单号有, ${successData.map(a => a.tid + ',')}`); 
+      }
+      if (data['300'].length > 0) {
+        this.$message.warning(`补单失败得订单号有，${data[300].map(a => a.tid + ',')}`);
+      }
+      this.filterFormChangeChange();
     },
     async filterFormChange(methods) {
       switch (methods) {
@@ -179,7 +199,6 @@ export default {
       this.rechargeDetails();
     },
     async filterFormChangeChange() {
-      this.filterForm['roleid'] = '';
       this.rechargeDetails();
     },
     async filterFormChangeFlush() {
@@ -198,21 +217,22 @@ export default {
       let res = await rechargeQuery(this.filterForm);
       this.tableData = res.data.res;
       this.total = res.data.total;
-      this.tableData.map(item =>{
-        item.isOK = item.isOK === 'success' ? '成功' : item.isOK === '0' ? '未支付' : item.isOK === 'sending' ? '补单' : item.isOK === 'failure' ? '支付失败' : '';
-        item.isSend = item.isSend === 'success' ? '成功' : item.isSend === 'failure' ? '失败' : '';
-        item.createdAt = dayjs(item.createdAt).format('YYYY年MM月DD日HH时mm分ss秒');
-        item.updatedAt = dayjs(item.updatedAt).format('YYYY年MM月DD日HH时mm分ss秒');
-        item.type = item.type === 'apple' ? '苹果' : '安卓';
-        return { ...item };
-      });
+      this.tableData = res.data.res.filter(a => a.status === '发货失败').concat(res.data.res.filter(a => a.status !== '发货失败'));
+      // this.tableData.map(item =>{
+      //   item.isOK = item.isOK === 'success' ? '成功' : item.isOK === '0' ? '未支付' : item.isOK === 'sending' ? '补单' : item.isOK === 'failure' ? '支付失败' : '';
+      //   item.isSend = item.isSend === 'success' ? '成功' : item.isSend === 'failure' ? '失败' : '';
+      //   item.createdAt = dayjs(item.createdAt).format('YYYY年MM月DD日HH时mm分ss秒');
+      //   item.updatedAt = dayjs(item.updatedAt).format('YYYY年MM月DD日HH时mm分ss秒');
+      //   item.type = item.type === 'apple' ? '苹果' : '安卓';
+      //   return { ...item };
+      // });
       this.$refs['rechaContainer'].parentElement.scrollTo({
         top: 0, 
         behavior: 'smooth' 
       });
     },
     handleSelectionChange(val) {
-      this.tableTrue = val;
+      this.tableTrue = val.filter(a => a.status === '发货失败');
     }
   },
   async mounted() {
@@ -242,6 +262,10 @@ export default {
 
 <style lang="scss" rel="stylesheet/scss">
 .recha-container{
+  .send-success{
+    color: black;
+
+  }
   .selectID {
     span:first-child{
       display: none;
@@ -289,6 +313,10 @@ export default {
     .el-table .cell{
       word-break: keep-all;
     } 
+    
+    .success-row td:first-child div{
+  visibility: hidden;
+}
   }
   .role-container-header ul li{
     float: right;

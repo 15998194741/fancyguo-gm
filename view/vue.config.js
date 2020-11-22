@@ -43,7 +43,7 @@ module.exports = {
     },
     proxy: {
       '/api': {
-        target: 'http://127.0.0.1',
+        target: 'http://127.0.0.1:8080',
         changeOrigin: true
       }
     }
@@ -53,14 +53,14 @@ module.exports = {
     //在webpack的name字段中提供应用程序的标题，以便
     //可以在index.html中访问它来注入正确的标题。
     externals: {
-      'vue': 'Vue',
+      //'vue': 'Vue',
       //包名 ： 全局变量
       // 'element-ui': 'ElementUI',
       // 'element-ui/lib/locale/lang/zh-CN': 'locale',
       // 'axios': 'axios',
       // 'js-cookie': 'Cookies',
-      'vuex': 'Vuex',
-      'Router': 'vue-router'
+      //'vuex': 'Vuex',
+      //'Router': 'vue-router'
       // 'xlsx': 'xlsx'
     }, 
     name: name,

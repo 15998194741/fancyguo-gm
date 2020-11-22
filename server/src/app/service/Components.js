@@ -30,7 +30,7 @@
 // 	user:'postgres',
 // 	password:'Ll789456',
 // 	database:'fancy',
-// 	host:'106.75.7.83',
+
 // 	port:5432,
 // 	dialect: 'postgres',
 // 	// 扩展属性

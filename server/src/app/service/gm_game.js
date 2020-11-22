@@ -126,7 +126,7 @@ select * from zxc;
 	
 		// switch ('true') {
 		// 	case iamgeChange:
-		// 		filePath = 'http://106.75.7.83/images/game/' + this.fileUpload(file);
+		// 		
 		// 		sql += `update gm_game set  image_url = ${filePath}  where id ='${id}'::int `;
 		// 		break;
 		// 	case gameNameChange:

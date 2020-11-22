@@ -1,0 +1,1392 @@
+[2020-11-20T14:26:26.505] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605853586505
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:26:26.533] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/token
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605853586533
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:27:44.801] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605853664800
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:27:44.832] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/token
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605853664831
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:27:48.636] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605853668636
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:27:48.660] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/token
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605853668660
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:27:53.366] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605853673366
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:27:53.392] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/token
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605853673392
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:28:10.319] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605853690318
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:28:10.366] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/token
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605853690366
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:28:49.712] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605853729712
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:28:49.753] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/token
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605853729753
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:28:52.435] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605853732435
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:28:52.480] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/token
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605853732480
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:28:54.797] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605853734797
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:28:54.862] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/token
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605853734862
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:28:59.114] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605853739114
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:28:59.165] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/token
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605853739164
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:29:04.578] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605853744578
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:29:04.610] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/token
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605853744610
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:29:10.358] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605853750358
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:29:10.380] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/token
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605853750380
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:29:23.294] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605853763294
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:29:23.328] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/token
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605853763327
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:29:59.348] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605853799347
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:29:59.366] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/token
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605853799366
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:30:00.778] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605853800778
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:30:00.875] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/token
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605853800875
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:30:01.970] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605853801970
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:30:02.004] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/token
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605853802004
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:30:13.746] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605853813746
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:30:13.774] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/token
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605853813774
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:31:23.715] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605853883715
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:31:23.741] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/token
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605853883741
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:31:54.303] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605853914303
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:31:54.327] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/token
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605853914327
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:31:55.718] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605853915718
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:31:55.748] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/token
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605853915748
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:32:20.925] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605853940925
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:32:20.950] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/token
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605853940950
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:32:22.708] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605853942708
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:32:22.759] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/token
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605853942759
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:36:46.042] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605854206042
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:36:46.097] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/token
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605854206097
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:37:51.081] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605854271081
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:37:51.122] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/token
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605854271122
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:38:16.141] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605854296140
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:38:16.161] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/token
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605854296161
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:38:20.735] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605854300735
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:38:20.748] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/token
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605854300748
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:39:05.944] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605854345944
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:39:05.972] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/token
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605854345972
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:39:07.401] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605854347401
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:39:07.425] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/token
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605854347425
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:39:08.642] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605854348642
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:39:08.670] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/token
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605854348670
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:39:10.831] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605854350831
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:39:10.971] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/token
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605854350971
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:39:11.740] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605854351740
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:39:11.760] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/token
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605854351760
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:39:12.593] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605854352593
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:39:12.613] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/token
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605854352613
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:39:37.302] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605854377302
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:39:37.342] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/token
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605854377342
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:39:50.325] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605854390325
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:39:50.365] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/token
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605854390365
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:42:47.376] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605854567376
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:42:47.404] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/token
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605854567404
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:42:52.484] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605854572484
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:42:52.502] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/token
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605854572502
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:43:36.489] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605854616489
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:43:36.509] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/token
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605854616509
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:43:45.436] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605854625436
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:43:45.455] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/token
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605854625455
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:44:17.259] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605854657259
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:44:17.287] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/token
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605854657286
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:44:20.875] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605854660874
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:44:20.902] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/token
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605854660902
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:45:15.009] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605854715009
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:45:15.061] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/token
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605854715061
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:45:50.916] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605854750916
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:45:50.953] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/token
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605854750952
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:45:55.473] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605854755473
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:45:55.506] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/token
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605854755505
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:47:03.501] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605854823501
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:47:03.541] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/token
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605854823540
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:47:05.329] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605854825329
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:47:05.371] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/token
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605854825371
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:49:02.428] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605854942428
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:49:02.484] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/token
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605854942484
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:49:05.181] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605854945181
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:49:05.252] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/token
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605854945251
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:49:22.308] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605854962308
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:49:22.349] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/token
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605854962349
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:49:59.222] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605854999221
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:49:59.265] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/token
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605854999265
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:52:35.306] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605855155305
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:52:35.339] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/token
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605855155339
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:53:19.121] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605855199121
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:53:19.332] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/token
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605855199328
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:53:24.169] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605855204169
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:53:24.476] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/token
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605855204476
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:53:39.234] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605855219233
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:53:39.268] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/token
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605855219267
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:53:58.933] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605855238933
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:53:58.969] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/token
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605855238969
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:55:03.502] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605855303501
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:55:03.557] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/token
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605855303557
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:55:48.498] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605855348498
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:55:48.523] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/token
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605855348522
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:57:36.939] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605855456939
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:57:36.983] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/token
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605855456983
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:57:51.465] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605855471464
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:57:51.494] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/token
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605855471494
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:59:13.285] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605855553284
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-20T14:59:13.338] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/token
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1605855553338
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+

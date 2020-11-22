@@ -83,9 +83,9 @@
 </template>
 
 <script>
-import { backPackQuery, backPackRecycle } from '@/api/character.js';
+// import { backPackQuery, backPackRecycle } from '@/api/character.js';
 import { queryServer, BackPackRecycle } from '@/api/character.js';
-
+import { loading, close, secondConfirmation } from '@/views/loading';
 export default {
 
   name: 'rucksackquery',
@@ -228,18 +228,22 @@ export default {
         type: 'warning' })
         .catch(err => false);
       if (!mergetrue) {return;}
-    
+      loading(this);
       // let res = await backPackRecycle({ value: this.allselectchange, roleid: this.filterForm.roleid });
       let res = await BackPackRecycle({ value: this.allselectchange, roleid: this.filterForm.roleid });
-      if (+res.code !== 200) { return; }
+      if (+res.code !== 200) { close(this); return; }
       if (+res?.data?.failure?.length > 0) {
         let failureData = res.data.failure.map(a => a?.articleId);
         this.$message.warning(` ${failureData} 回收失败，数据刷新中···`);
       }
       let { newData } = res.data;
+      if (JSON.stringify(newData) === '{}') { this.$message.success('该人背包为空~'); newData = [];}
+      this.tableData = [];
+      
       this.tableData = newData;
       this.dialogFormchange = false;
-     
+      this.$message.success('数据刷新成功~');
+      close(this);
     },
     async filterFormChange(methods) {
       switch (methods) {
@@ -264,12 +268,8 @@ export default {
       for (let i in this.filterForm) {
         this.filterForm[i] = '';
       }
-      this.tableData = [{
-        articleId: '', 
-        articleName: '', 
-        articleClass: '', 
-        articleAmount: '' 
-      }];
+      this.tableData = [];
+      await this.filterFormClick();
     },    
     async filterFormChanges() {
       let { articleId, articleName, articleClass } = this.filterForm;
@@ -314,9 +314,9 @@ export default {
         });
         this.tableDataBackup = this.tableData = tableDatas;
       } catch (err) {
-     //this.$notify({
-     //     title: '消息提醒',
-     //     message: ('i', { style: 'color: teal' }, '查找失败，角色不存在.')
+        //this.$notify({
+        //     title: '消息提醒',
+        //     message: ('i', { style: 'color: teal' }, '查找失败，角色不存在.')
         //   });
         console.log(err); 
       }
@@ -326,11 +326,11 @@ export default {
   mounted() {
 
     // const _this = this;
- // const erd = elementResizeDetectorMaker();
-   // erd.listenTo(document.getElementById('body'), element =>{
-   //   this.screenWidth = element.offsetWidth * 0.2429;
+    // const erd = elementResizeDetectorMaker();
+    // erd.listenTo(document.getElementById('body'), element =>{
+    //   this.screenWidth = element.offsetWidth * 0.2429;
   //  });
- }
+  }
 
 
   
