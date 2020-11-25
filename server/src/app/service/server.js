@@ -71,7 +71,12 @@ class GmServerService extends BaseService{
 		where += mergeserver?` and ${+mergeserver===1?'NOT':''}(childrens is null)`:'';
 		// where += plaform?` and plaform =  '${JSON.stringify(plaform)}' `:'';
 		if(value){
-			where += key ==='serverid'?` and serverid = '${value}'`: ` and serverid='${value}' and not(childrens is null)   `;
+			// where += key ==='serverid'?` and serverid = '${value}'`: ` and serverid='${value}' and not(childrens is null)   `;
+			switch (key){
+				case 'serverid':where +=` and serverid = '${value}'`;break;
+				case 'pid':where +=` and serverid='${value}' and not(childrens is null)   `;break;
+				case 'servername':where +=` and servername like '%${value.split('').join('%')}%'`;break;
+			}
 		}
 		let selectSql = `select * from gm_server  ${where} and status = 1 and (pid is null or  trim(pid) ='') order by id limit ${pagesize} offset (${pagesize}*${page-1})`;
 		let arr =  await dbSequelize.query(selectSql);

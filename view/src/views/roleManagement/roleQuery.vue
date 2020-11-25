@@ -168,7 +168,7 @@
         </el-form-item>
         <el-form-item label="封禁时长" class="createFormAlertBodys"   prop='long'  hide-required-asterisk required>
           <el-input v-model="insertForm.long" placeholder="请输入内容"></el-input>
-          <el-select  v-model='insertForm.time' class="alertcontant"  placeholder="请选择内容">
+          <el-select  v-model.number='insertForm.time' class="alertcontant"  placeholder="请选择内容">
             <el-option  label='小时' value='1' ></el-option>
             <el-option  label='天' value='24' ></el-option>
           </el-select>
@@ -232,7 +232,7 @@ export default {
           { required: true, message: '请输入原因', trigger: ['blur', 'change'] }
         ],
         long: [
-          { required: true, message: '请输入时长', trigger: ['blur', 'change'] }
+          { type: 'number', required: true, message: '请输入时长', trigger: ['blur', 'change'] }
         ]
         
       },

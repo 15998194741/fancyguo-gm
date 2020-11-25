@@ -1585,6 +1585,9 @@ export default {
       }, {
         value: 'pid',
         label: '合服ID'
+      }, {
+        value: 'servername',
+        label: '区服名称'
       }],
       //表格赛选菜单
       tableFilter: {
