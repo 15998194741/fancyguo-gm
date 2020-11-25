@@ -3178,3 +3178,733 @@
 日志记录：{"resourceUrl":"/api/server/batchCreate","resourceDesc":"区服批量创建","requestType":"POST","requestParams":"{\"value\":[{\"serverid\":\"21\",\"servername\":\"asdasd\",\"platform\":\"苹果\",\"srttime\":\"2020-12-13 12:00:00\",\"display\":\"流畅\",\"test\":\"是\",\"address\":\"127.0.0.1\",\"key\":2,\"change\":false,\"channel\":[\"fancyguo\"],\"success\":true},{\"serverid\":3,\"servername\":\"驱蚊器恶趣味\",\"platform\":\"全平台\",\"srttime\":\"2020-12-13 12:00:00\",\"display\":\"流畅\",\"test\":\"是\",\"address\":\"127.0.0.1:24024\",\"key\":3,\"change\":false,\"channel\":[\"测试渠道一渠道\"],\"success\":true}]}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"成功","data":[{"status":"rejected","reason":{"code":500,"message":{"code":500,"message":"Cp交互失败,请确认交互地址","data":{"serverid":"21","servername":"asdasd","platform":[2],"srttime":"2020-12-13 12:00:00","display":1,"test":"1","address":"127.0.0.1","key":2,"change":false,"channel":["fancyguo"],"success":true,"plaform":[2],"gameid":"1"}}}},{"status":"fulfilled","value":{"id":"3","status":1,"create_user_id":79,"update_user_id":null,"create_time":"2020-11-25T13:25:37.545Z","update_time":"2020-11-25T13:25:37.545Z","servername":"驱蚊器恶趣味","ip_port":null,"address":"127.0.0.1:24024","plaform":[1,2],"display":"1","srttime":"2020-12-13T04:00:00.000Z","gamename":"","pid":null,"serverid":"3","test":"1","load":null,"gameid":1,"childrens":null,"port":"24024","ip":"127.0.0.1","channel":["测试渠道一渠道"],"serverTrue":false,"securityGroup":null,"clientshow":"0","stopshow":"0","stopmessage":null,"stopuser":null,"code":200}}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:25:40 ├F10: PM┤","executionTime":0}
 *************** log end ***************
 
+[2020-11-25T21:28:43.961] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/server/selectComponent?code=areaclothing&gameid=1","resourceDesc":"根据游戏ID 组件名称搜索 区服组件","requestType":"GET","requestParams":"{\"code\":\"areaclothing\",\"gameid\":\"1\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查找成功","data":{"values":["测试渠道二渠道","测试渠道三渠道","测试渠道四渠道","测试渠道五渠道","测试渠道六渠道","测试渠道一渠道","fancyguo"]}},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:28:43 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:28:44.133] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/server/findServer?plaform=&display=&load=&srttime=&key=serverid&value=&test=0&mergeserver=&page=1&pagesize=20&clientshow=&stopshow=","resourceDesc":"","requestType":"GET","requestParams":"{\"plaform\":\"\",\"display\":\"\",\"load\":\"\",\"srttime\":\"\",\"key\":\"serverid\",\"value\":\"\",\"test\":\"0\",\"mergeserver\":\"\",\"page\":\"1\",\"pagesize\":\"20\",\"clientshow\":\"\",\"stopshow\":\"\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查找","data":{"total":"3","table":[{"id":54,"status":1,"create_user_id":79,"update_user_id":null,"create_time":"2020-11-02T08:25:08.681Z","update_time":"2020-11-02T08:25:08.681Z","servername":"测试机一","ip_port":"127.0.0.1：24024","address":"aa","plaform":["1"],"display":"3","srttime":"2020-11-15T16:00:00.000Z","gamename":"","pid":null,"serverid":"54","test":"0","load":"2","gameid":1,"childrens":null,"port":"24024","ip":"127.0.0.1","channel":["测试渠道一渠道","测试渠道二渠道","测试渠道三渠道","测试渠道四渠道","测试渠道五渠道","测试渠道六渠道"],"serverTrue":null,"securityGroup":null,"clientshow":"1","stopshow":"1","stopmessage":null,"stopuser":null},{"id":150,"status":1,"create_user_id":79,"update_user_id":null,"create_time":"2020-11-12T03:30:33.660Z","update_time":"2020-11-12T03:30:33.660Z","servername":"123123","ip_port":"127.0.0.1:24024","address":"","plaform":["1"],"display":"3","srttime":"2020-11-12T03:23:50.000Z","gamename":"","pid":null,"serverid":"1","test":"0","load":"2","gameid":1,"childrens":null,"port":"24024","ip":"127.0.0.1","channel":["fancyguo"],"serverTrue":false,"securityGroup":null,"clientshow":"0","stopshow":"0","stopmessage":null,"stopuser":null},{"id":174,"status":1,"create_user_id":79,"update_user_id":null,"create_time":"2020-11-24T03:20:48.079Z","update_time":"2020-11-24T03:20:48.079Z","servername":"123","ip_port":"","address":"127.0.0.1:24024","plaform":["1","2"],"display":"3","srttime":"2020-11-24T16:00:00.000Z","gamename":"","pid":null,"serverid":"2","test":"0","load":"2","gameid":1,"childrens":null,"port":"24024","ip":"127.0.0.1","channel":["测试渠道二渠道"],"serverTrue":false,"securityGroup":null,"clientshow":"0","stopshow":"0","stopmessage":null,"stopuser":null}],"displayNum":[{"max":"0","display":"繁忙"},{"max":"0","display":"爆满"},{"max":"3","display":"维护"},{"max":"0","display":"流畅"}],"page":"1"}},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:28:44 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:29:31.758] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/server/selectComponent?code=areaclothing&gameid=1","resourceDesc":"根据游戏ID 组件名称搜索 区服组件","requestType":"GET","requestParams":"{\"code\":\"areaclothing\",\"gameid\":\"1\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查找成功","data":{"values":["测试渠道二渠道","测试渠道三渠道","测试渠道四渠道","测试渠道五渠道","测试渠道六渠道","测试渠道一渠道","fancyguo"]}},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:29:31 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:29:32.059] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/server/findServer?plaform=&display=&load=&srttime=&key=serverid&value=&test=0&mergeserver=&page=1&pagesize=20&clientshow=&stopshow=","resourceDesc":"","requestType":"GET","requestParams":"{\"plaform\":\"\",\"display\":\"\",\"load\":\"\",\"srttime\":\"\",\"key\":\"serverid\",\"value\":\"\",\"test\":\"0\",\"mergeserver\":\"\",\"page\":\"1\",\"pagesize\":\"20\",\"clientshow\":\"\",\"stopshow\":\"\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查找","data":{"total":"3","table":[{"id":54,"status":1,"create_user_id":79,"update_user_id":null,"create_time":"2020-11-02T08:25:08.681Z","update_time":"2020-11-02T08:25:08.681Z","servername":"测试机一","ip_port":"127.0.0.1：24024","address":"aa","plaform":["1"],"display":"3","srttime":"2020-11-15T16:00:00.000Z","gamename":"","pid":null,"serverid":"54","test":"0","load":"2","gameid":1,"childrens":null,"port":"24024","ip":"127.0.0.1","channel":["测试渠道一渠道","测试渠道二渠道","测试渠道三渠道","测试渠道四渠道","测试渠道五渠道","测试渠道六渠道"],"serverTrue":null,"securityGroup":null,"clientshow":"1","stopshow":"1","stopmessage":null,"stopuser":null},{"id":150,"status":1,"create_user_id":79,"update_user_id":null,"create_time":"2020-11-12T03:30:33.660Z","update_time":"2020-11-12T03:30:33.660Z","servername":"123123","ip_port":"127.0.0.1:24024","address":"","plaform":["1"],"display":"3","srttime":"2020-11-12T03:23:50.000Z","gamename":"","pid":null,"serverid":"1","test":"0","load":"2","gameid":1,"childrens":null,"port":"24024","ip":"127.0.0.1","channel":["fancyguo"],"serverTrue":false,"securityGroup":null,"clientshow":"0","stopshow":"0","stopmessage":null,"stopuser":null},{"id":174,"status":1,"create_user_id":79,"update_user_id":null,"create_time":"2020-11-24T03:20:48.079Z","update_time":"2020-11-24T03:20:48.079Z","servername":"123","ip_port":"","address":"127.0.0.1:24024","plaform":["1","2"],"display":"3","srttime":"2020-11-24T16:00:00.000Z","gamename":"","pid":null,"serverid":"2","test":"0","load":"2","gameid":1,"childrens":null,"port":"24024","ip":"127.0.0.1","channel":["测试渠道二渠道"],"serverTrue":false,"securityGroup":null,"clientshow":"0","stopshow":"0","stopmessage":null,"stopuser":null}],"displayNum":[{"max":"0","display":"繁忙"},{"max":"0","display":"爆满"},{"max":"3","display":"维护"},{"max":"0","display":"流畅"}],"page":"1"}},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:29:32 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:29:48.442] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/server/selectComponent?code=areaclothing&gameid=1","resourceDesc":"根据游戏ID 组件名称搜索 区服组件","requestType":"GET","requestParams":"{\"code\":\"areaclothing\",\"gameid\":\"1\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查找成功","data":{"values":["测试渠道二渠道","测试渠道三渠道","测试渠道四渠道","测试渠道五渠道","测试渠道六渠道","测试渠道一渠道","fancyguo"]}},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:29:48 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:29:48.749] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/server/findServer?plaform=&display=&load=&srttime=&key=serverid&value=&test=0&mergeserver=&page=1&pagesize=20&clientshow=&stopshow=","resourceDesc":"","requestType":"GET","requestParams":"{\"plaform\":\"\",\"display\":\"\",\"load\":\"\",\"srttime\":\"\",\"key\":\"serverid\",\"value\":\"\",\"test\":\"0\",\"mergeserver\":\"\",\"page\":\"1\",\"pagesize\":\"20\",\"clientshow\":\"\",\"stopshow\":\"\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查找","data":{"total":"3","table":[{"id":54,"status":1,"create_user_id":79,"update_user_id":null,"create_time":"2020-11-02T08:25:08.681Z","update_time":"2020-11-02T08:25:08.681Z","servername":"测试机一","ip_port":"127.0.0.1：24024","address":"aa","plaform":["1"],"display":"3","srttime":"2020-11-15T16:00:00.000Z","gamename":"","pid":null,"serverid":"54","test":"0","load":"2","gameid":1,"childrens":null,"port":"24024","ip":"127.0.0.1","channel":["测试渠道一渠道","测试渠道二渠道","测试渠道三渠道","测试渠道四渠道","测试渠道五渠道","测试渠道六渠道"],"serverTrue":null,"securityGroup":null,"clientshow":"1","stopshow":"1","stopmessage":null,"stopuser":null},{"id":150,"status":1,"create_user_id":79,"update_user_id":null,"create_time":"2020-11-12T03:30:33.660Z","update_time":"2020-11-12T03:30:33.660Z","servername":"123123","ip_port":"127.0.0.1:24024","address":"","plaform":["1"],"display":"3","srttime":"2020-11-12T03:23:50.000Z","gamename":"","pid":null,"serverid":"1","test":"0","load":"2","gameid":1,"childrens":null,"port":"24024","ip":"127.0.0.1","channel":["fancyguo"],"serverTrue":false,"securityGroup":null,"clientshow":"0","stopshow":"0","stopmessage":null,"stopuser":null},{"id":174,"status":1,"create_user_id":79,"update_user_id":null,"create_time":"2020-11-24T03:20:48.079Z","update_time":"2020-11-24T03:20:48.079Z","servername":"123","ip_port":"","address":"127.0.0.1:24024","plaform":["1","2"],"display":"3","srttime":"2020-11-24T16:00:00.000Z","gamename":"","pid":null,"serverid":"2","test":"0","load":"2","gameid":1,"childrens":null,"port":"24024","ip":"127.0.0.1","channel":["测试渠道二渠道"],"serverTrue":false,"securityGroup":null,"clientshow":"0","stopshow":"0","stopmessage":null,"stopuser":null}],"displayNum":[{"max":"0","display":"繁忙"},{"max":"0","display":"爆满"},{"max":"3","display":"维护"},{"max":"0","display":"流畅"}],"page":"1"}},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:29:48 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:29:52.001] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/character/findServerid","resourceDesc":"区服id获取","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查询成功","data":[{"serverid":"54"},{"serverid":"2"},{"serverid":"1"}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:29:51 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:29:52.334] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/character/findServername","resourceDesc":"区服名称获取","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查询成功","data":[{"label":"测试机一","value":"测试机一"},{"label":"123","value":"123"},{"label":"123123","value":"123123"}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:29:52 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:29:58.823] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/character/findServername","resourceDesc":"区服名称获取","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查询成功","data":[{"label":"测试机一","value":"测试机一"},{"label":"123","value":"123"},{"label":"123123","value":"123123"}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:29:58 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:29:59.150] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/character/findServerid","resourceDesc":"区服id获取","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查询成功","data":[{"serverid":"54"},{"serverid":"2"},{"serverid":"1"}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:29:59 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:29:59.379] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/character/findServername","resourceDesc":"区服名称获取","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查询成功","data":[{"label":"测试机一","value":"测试机一"},{"label":"123","value":"123"},{"label":"123123","value":"123123"}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:29:59 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:30:02.367] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/character/findServername","resourceDesc":"区服名称获取","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查询成功","data":[{"label":"测试机一","value":"测试机一"},{"label":"123","value":"123"},{"label":"123123","value":"123123"}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:30:02 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:30:02.697] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/character/findServerid","resourceDesc":"区服id获取","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查询成功","data":[{"serverid":"54"},{"serverid":"2"},{"serverid":"1"}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:30:02 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:30:05.087] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/character/findServerid","resourceDesc":"区服id获取","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查询成功","data":[{"serverid":"54"},{"serverid":"2"},{"serverid":"1"}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:30:05 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:30:05.172] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/character/findServername","resourceDesc":"区服名称获取","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查询成功","data":[{"label":"测试机一","value":"测试机一"},{"label":"123","value":"123"},{"label":"123123","value":"123123"}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:30:05 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:30:05.498] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/character/findServerid","resourceDesc":"区服id获取","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查询成功","data":[{"serverid":"54"},{"serverid":"2"},{"serverid":"1"}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:30:05 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:30:08.910] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/server/batchCreate","resourceDesc":"区服批量创建","requestType":"POST","requestParams":"{\"value\":[{\"serverid\":\"21\",\"servername\":\"asdasd\",\"platform\":\"苹果\",\"srttime\":\"2020-12-13 12:00:00\",\"display\":\"流畅\",\"test\":\"是\",\"address\":\"127.0.0.1\",\"key\":2,\"change\":false,\"channel\":[\"fancyguo\"],\"success\":true},{\"serverid\":3,\"servername\":\"驱蚊器恶趣味\",\"platform\":\"全平台\",\"srttime\":\"2020-12-13 12:00:00\",\"display\":\"流畅\",\"test\":\"是\",\"address\":\"127.0.0.1:24024\",\"key\":3,\"change\":false,\"channel\":[\"测试渠道五渠道\"],\"success\":true}]}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"成功","data":[{"status":"rejected","reason":{"code":500,"message":{"code":500,"message":"Cp交互失败,请确认交互地址","data":{"serverid":"21","servername":"asdasd","platform":"苹果","srttime":"2020-12-13 12:00:00","display":1,"test":"1","address":"127.0.0.1","key":2,"change":false,"channel":["fancyguo"],"success":true,"plaform":[2],"gameid":"1"}}}},{"status":"fulfilled","value":{"id":"3","status":1,"create_user_id":79,"update_user_id":null,"create_time":"2020-11-25T13:30:06.167Z","update_time":"2020-11-25T13:30:06.167Z","servername":"驱蚊器恶趣味","ip_port":null,"address":"127.0.0.1:24024","plaform":[1,2],"display":"1","srttime":"2020-12-13T04:00:00.000Z","gamename":"","pid":null,"serverid":"3","test":"1","load":null,"gameid":1,"childrens":null,"port":"24024","ip":"127.0.0.1","channel":["测试渠道五渠道"],"serverTrue":false,"securityGroup":null,"clientshow":"0","stopshow":"0","stopmessage":null,"stopuser":null,"code":200}}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:30:08 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:32:36.728] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/server/selectComponent?code=areaclothing&gameid=1","resourceDesc":"根据游戏ID 组件名称搜索 区服组件","requestType":"GET","requestParams":"{\"code\":\"areaclothing\",\"gameid\":\"1\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查找成功","data":{"values":["测试渠道二渠道","测试渠道三渠道","测试渠道四渠道","测试渠道五渠道","测试渠道六渠道","测试渠道一渠道","fancyguo"]}},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:32:36 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:32:36.750] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/server/findServer?plaform=&display=&load=&srttime=&key=serverid&value=&test=0&mergeserver=&page=1&pagesize=20&clientshow=&stopshow=","resourceDesc":"","requestType":"GET","requestParams":"{\"plaform\":\"\",\"display\":\"\",\"load\":\"\",\"srttime\":\"\",\"key\":\"serverid\",\"value\":\"\",\"test\":\"0\",\"mergeserver\":\"\",\"page\":\"1\",\"pagesize\":\"20\",\"clientshow\":\"\",\"stopshow\":\"\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查找","data":{"total":"3","table":[{"id":54,"status":1,"create_user_id":79,"update_user_id":null,"create_time":"2020-11-02T08:25:08.681Z","update_time":"2020-11-02T08:25:08.681Z","servername":"测试机一","ip_port":"127.0.0.1：24024","address":"aa","plaform":["1"],"display":"3","srttime":"2020-11-15T16:00:00.000Z","gamename":"","pid":null,"serverid":"54","test":"0","load":"2","gameid":1,"childrens":null,"port":"24024","ip":"127.0.0.1","channel":["测试渠道一渠道","测试渠道二渠道","测试渠道三渠道","测试渠道四渠道","测试渠道五渠道","测试渠道六渠道"],"serverTrue":null,"securityGroup":null,"clientshow":"1","stopshow":"1","stopmessage":null,"stopuser":null},{"id":150,"status":1,"create_user_id":79,"update_user_id":null,"create_time":"2020-11-12T03:30:33.660Z","update_time":"2020-11-12T03:30:33.660Z","servername":"123123","ip_port":"127.0.0.1:24024","address":"","plaform":["1"],"display":"3","srttime":"2020-11-12T03:23:50.000Z","gamename":"","pid":null,"serverid":"1","test":"0","load":"2","gameid":1,"childrens":null,"port":"24024","ip":"127.0.0.1","channel":["fancyguo"],"serverTrue":false,"securityGroup":null,"clientshow":"0","stopshow":"0","stopmessage":null,"stopuser":null},{"id":174,"status":1,"create_user_id":79,"update_user_id":null,"create_time":"2020-11-24T03:20:48.079Z","update_time":"2020-11-24T03:20:48.079Z","servername":"123","ip_port":"","address":"127.0.0.1:24024","plaform":["1","2"],"display":"3","srttime":"2020-11-24T16:00:00.000Z","gamename":"","pid":null,"serverid":"2","test":"0","load":"2","gameid":1,"childrens":null,"port":"24024","ip":"127.0.0.1","channel":["测试渠道二渠道"],"serverTrue":false,"securityGroup":null,"clientshow":"0","stopshow":"0","stopmessage":null,"stopuser":null}],"displayNum":[{"max":"0","display":"繁忙"},{"max":"0","display":"爆满"},{"max":"3","display":"维护"},{"max":"0","display":"流畅"}],"page":"1"}},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:32:36 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:32:37.215] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/server/selectComponent?code=areaclothing&gameid=1","resourceDesc":"根据游戏ID 组件名称搜索 区服组件","requestType":"GET","requestParams":"{\"code\":\"areaclothing\",\"gameid\":\"1\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查找成功","data":{"values":["测试渠道二渠道","测试渠道三渠道","测试渠道四渠道","测试渠道五渠道","测试渠道六渠道","测试渠道一渠道","fancyguo"]}},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:32:37 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:32:37.554] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/server/findServer?plaform=&display=&load=&srttime=&key=serverid&value=&test=0&mergeserver=&page=1&pagesize=20&clientshow=&stopshow=","resourceDesc":"","requestType":"GET","requestParams":"{\"plaform\":\"\",\"display\":\"\",\"load\":\"\",\"srttime\":\"\",\"key\":\"serverid\",\"value\":\"\",\"test\":\"0\",\"mergeserver\":\"\",\"page\":\"1\",\"pagesize\":\"20\",\"clientshow\":\"\",\"stopshow\":\"\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查找","data":{"total":"3","table":[{"id":54,"status":1,"create_user_id":79,"update_user_id":null,"create_time":"2020-11-02T08:25:08.681Z","update_time":"2020-11-02T08:25:08.681Z","servername":"测试机一","ip_port":"127.0.0.1：24024","address":"aa","plaform":["1"],"display":"3","srttime":"2020-11-15T16:00:00.000Z","gamename":"","pid":null,"serverid":"54","test":"0","load":"2","gameid":1,"childrens":null,"port":"24024","ip":"127.0.0.1","channel":["测试渠道一渠道","测试渠道二渠道","测试渠道三渠道","测试渠道四渠道","测试渠道五渠道","测试渠道六渠道"],"serverTrue":null,"securityGroup":null,"clientshow":"1","stopshow":"1","stopmessage":null,"stopuser":null},{"id":150,"status":1,"create_user_id":79,"update_user_id":null,"create_time":"2020-11-12T03:30:33.660Z","update_time":"2020-11-12T03:30:33.660Z","servername":"123123","ip_port":"127.0.0.1:24024","address":"","plaform":["1"],"display":"3","srttime":"2020-11-12T03:23:50.000Z","gamename":"","pid":null,"serverid":"1","test":"0","load":"2","gameid":1,"childrens":null,"port":"24024","ip":"127.0.0.1","channel":["fancyguo"],"serverTrue":false,"securityGroup":null,"clientshow":"0","stopshow":"0","stopmessage":null,"stopuser":null},{"id":174,"status":1,"create_user_id":79,"update_user_id":null,"create_time":"2020-11-24T03:20:48.079Z","update_time":"2020-11-24T03:20:48.079Z","servername":"123","ip_port":"","address":"127.0.0.1:24024","plaform":["1","2"],"display":"3","srttime":"2020-11-24T16:00:00.000Z","gamename":"","pid":null,"serverid":"2","test":"0","load":"2","gameid":1,"childrens":null,"port":"24024","ip":"127.0.0.1","channel":["测试渠道二渠道"],"serverTrue":false,"securityGroup":null,"clientshow":"0","stopshow":"0","stopmessage":null,"stopuser":null}],"displayNum":[{"max":"0","display":"繁忙"},{"max":"0","display":"爆满"},{"max":"3","display":"维护"},{"max":"0","display":"流畅"}],"page":"1"}},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:32:37 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:32:38.205] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/user/permission?username=","resourceDesc":"根据id查找数据","requestType":"GET","requestParams":"{\"username\":\"\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查找成功","data":{"routes":[{"name":"区服管理","children":[{"url":"/zoneManagement/zoneSettings","meta":"1","name":"区服设置"}]},{"name":"角色管理","children":[{"url":"/roleManagement/roleQuery","meta":"1","name":"角色查询"},{"url":"/roleManagement/chatQuery","meta":"1","name":"聊天查询"},{"url":"/roleManagement/prosumingQuery","meta":"1","name":"产消查询"},{"url":"/roleManagement/rucksackQuery","meta":"1","name":"背包查询"}]},{"name":"充值管理","children":[{"url":"/rechargeManagement/rechargeDetails","meta":"1","name":"充值明细"}]},{"name":"公告管理","children":[{"url":"/announcedManagement/index","meta":"1","name":"公告管理"}]},{"name":"邮件管理","children":[{"url":"/mailManagement/index","meta":"1","name":"邮件管理"}]},{"name":"活动管理","children":[{"url":"/activityManagement/index","meta":"1","name":"活动管理"}]},{"name":"CDK管理","children":[{"url":"/CDKManagement/index","meta":"1","name":"CDK管理"},{"url":"/CDKManagement/cdkDetail","meta":"1","name":"CDK详情"}]},{"name":"白名单管理","children":[{"url":"/whiteListManagement/index","meta":"1","name":"白名单管理"},{"url":"/whiteListManagement/whiteListMail","meta":"1","name":"白名单邮件"},{"url":"/whiteListManagement/whiterecording","meta":"1","name":"白名单记录"}]},{"name":"客户端管理","children":[{"url":"/clientManagement","meta":"1","name":"客户端管理"}]},{"name":"GM管理","children":[{"url":"/GMManagement/gameManagement","meta":"1","name":"游戏管理"},{"url":"/GMManagement/userManagement","meta":"1","name":"用户管理"},{"url":"/GMManagement/operationRecord","meta":"1","name":"操作日志"}]}],"games":["空翼冒险团","KOG测试"],"gamename":"空翼冒险团","gameid":1,"imgUrl":"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1604477627621&di=882a29d8d1e769a0c71086e14360555a&imgtype=0&src=http%3A%2F%2Fimg2.40407.com%2Fupload%2F202004%2F25%2F2515223062ecd8TQokrsbeUpo6a.jpg"}},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:32:38 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:32:38.975] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/user/token","resourceDesc":"返回用户姓名 头像 花名","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查找成功","data":{"username":"zhangzongchu","avatar":"https://wework.qpic.cn/wwhead/nMl9ssowtibVGyrmvBiaibzDlNMxxiaWGSjSGG4UzOOS2TrAXp5ro1zfqCFPjykaf4PxcE0cSjRwRWA/100","alias":"长澜月"}},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:32:38 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:32:38.978] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/server/selectComponent?code=areaclothing&gameid=1","resourceDesc":"根据游戏ID 组件名称搜索 区服组件","requestType":"GET","requestParams":"{\"code\":\"areaclothing\",\"gameid\":\"1\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查找成功","data":{"values":["测试渠道二渠道","测试渠道三渠道","测试渠道四渠道","测试渠道五渠道","测试渠道六渠道","测试渠道一渠道","fancyguo"]}},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:32:38 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:32:39.018] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/server/findServer?plaform=&display=&load=&srttime=&key=serverid&value=&test=0&mergeserver=&page=1&pagesize=20&clientshow=&stopshow=","resourceDesc":"","requestType":"GET","requestParams":"{\"plaform\":\"\",\"display\":\"\",\"load\":\"\",\"srttime\":\"\",\"key\":\"serverid\",\"value\":\"\",\"test\":\"0\",\"mergeserver\":\"\",\"page\":\"1\",\"pagesize\":\"20\",\"clientshow\":\"\",\"stopshow\":\"\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查找","data":{"total":"3","table":[{"id":54,"status":1,"create_user_id":79,"update_user_id":null,"create_time":"2020-11-02T08:25:08.681Z","update_time":"2020-11-02T08:25:08.681Z","servername":"测试机一","ip_port":"127.0.0.1：24024","address":"aa","plaform":["1"],"display":"3","srttime":"2020-11-15T16:00:00.000Z","gamename":"","pid":null,"serverid":"54","test":"0","load":"2","gameid":1,"childrens":null,"port":"24024","ip":"127.0.0.1","channel":["测试渠道一渠道","测试渠道二渠道","测试渠道三渠道","测试渠道四渠道","测试渠道五渠道","测试渠道六渠道"],"serverTrue":null,"securityGroup":null,"clientshow":"1","stopshow":"1","stopmessage":null,"stopuser":null},{"id":150,"status":1,"create_user_id":79,"update_user_id":null,"create_time":"2020-11-12T03:30:33.660Z","update_time":"2020-11-12T03:30:33.660Z","servername":"123123","ip_port":"127.0.0.1:24024","address":"","plaform":["1"],"display":"3","srttime":"2020-11-12T03:23:50.000Z","gamename":"","pid":null,"serverid":"1","test":"0","load":"2","gameid":1,"childrens":null,"port":"24024","ip":"127.0.0.1","channel":["fancyguo"],"serverTrue":false,"securityGroup":null,"clientshow":"0","stopshow":"0","stopmessage":null,"stopuser":null},{"id":174,"status":1,"create_user_id":79,"update_user_id":null,"create_time":"2020-11-24T03:20:48.079Z","update_time":"2020-11-24T03:20:48.079Z","servername":"123","ip_port":"","address":"127.0.0.1:24024","plaform":["1","2"],"display":"3","srttime":"2020-11-24T16:00:00.000Z","gamename":"","pid":null,"serverid":"2","test":"0","load":"2","gameid":1,"childrens":null,"port":"24024","ip":"127.0.0.1","channel":["测试渠道二渠道"],"serverTrue":false,"securityGroup":null,"clientshow":"0","stopshow":"0","stopmessage":null,"stopuser":null}],"displayNum":[{"max":"0","display":"繁忙"},{"max":"0","display":"爆满"},{"max":"3","display":"维护"},{"max":"0","display":"流畅"}],"page":"1"}},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:32:38 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:32:42.715] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/character/findServerid","resourceDesc":"区服id获取","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查询成功","data":[{"serverid":"54"},{"serverid":"2"},{"serverid":"1"}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:32:42 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:32:43.047] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/character/findServername","resourceDesc":"区服名称获取","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查询成功","data":[{"label":"测试机一","value":"测试机一"},{"label":"123","value":"123"},{"label":"123123","value":"123123"}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:32:43 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:32:48.818] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/character/findServername","resourceDesc":"区服名称获取","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查询成功","data":[{"label":"测试机一","value":"测试机一"},{"label":"123","value":"123"},{"label":"123123","value":"123123"}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:32:48 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:32:49.070] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/character/findServerid","resourceDesc":"区服id获取","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查询成功","data":[{"serverid":"54"},{"serverid":"2"},{"serverid":"1"}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:32:49 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:32:50.695] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/character/findServerid","resourceDesc":"区服id获取","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查询成功","data":[{"serverid":"54"},{"serverid":"2"},{"serverid":"1"}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:32:50 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:32:51.088] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/character/findServername","resourceDesc":"区服名称获取","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查询成功","data":[{"label":"测试机一","value":"测试机一"},{"label":"123","value":"123"},{"label":"123123","value":"123123"}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:32:51 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:32:51.338] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/character/findServerid","resourceDesc":"区服id获取","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查询成功","data":[{"serverid":"54"},{"serverid":"2"},{"serverid":"1"}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:32:51 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:32:54.054] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/server/batchCreate","resourceDesc":"区服批量创建","requestType":"POST","requestParams":"{\"value\":[{\"serverid\":\"2123\",\"servername\":\"asdasd\",\"platform\":\"苹果\",\"srttime\":\"2020-12-13 12:00:00\",\"display\":\"流畅\",\"test\":\"是\",\"address\":\"127.0.0.1\",\"key\":2,\"change\":false,\"channel\":[\"fancyguo\"],\"success\":true},{\"serverid\":3,\"servername\":\"驱蚊器恶趣味\",\"platform\":\"全平台\",\"srttime\":\"2020-12-13 12:00:00\",\"display\":\"流畅\",\"test\":\"是\",\"address\":\"127.0.0.1:24024\",\"key\":3,\"change\":false,\"channel\":[\"测试渠道四渠道\"],\"success\":true}]}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"成功","data":[{"status":"rejected","reason":{"code":500,"message":{"code":500,"message":"Cp交互失败,请确认交互地址","data":{"serverid":"2123","servername":"asdasd","platform":"苹果","srttime":"2020-12-13 12:00:00","display":1,"test":"1","address":"127.0.0.1","key":2,"change":false,"channel":["fancyguo"],"success":true,"plaform":[2],"gameid":"1"}}}},{"status":"fulfilled","value":{"id":"3","status":1,"create_user_id":79,"update_user_id":null,"create_time":"2020-11-25T13:32:51.324Z","update_time":"2020-11-25T13:32:51.324Z","servername":"驱蚊器恶趣味","ip_port":null,"address":"127.0.0.1:24024","plaform":[1,2],"display":"1","srttime":"2020-12-13T04:00:00.000Z","gamename":"","pid":null,"serverid":"3","test":"1","load":null,"gameid":1,"childrens":null,"port":"24024","ip":"127.0.0.1","channel":["测试渠道四渠道"],"serverTrue":false,"securityGroup":null,"clientshow":"0","stopshow":"0","stopmessage":null,"stopuser":null,"code":200}}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:32:53 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:33:27.023] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/user/permission?username=","resourceDesc":"根据id查找数据","requestType":"GET","requestParams":"{\"username\":\"\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查找成功","data":{"routes":[{"name":"区服管理","children":[{"url":"/zoneManagement/zoneSettings","meta":"1","name":"区服设置"}]},{"name":"角色管理","children":[{"url":"/roleManagement/roleQuery","meta":"1","name":"角色查询"},{"url":"/roleManagement/chatQuery","meta":"1","name":"聊天查询"},{"url":"/roleManagement/prosumingQuery","meta":"1","name":"产消查询"},{"url":"/roleManagement/rucksackQuery","meta":"1","name":"背包查询"}]},{"name":"充值管理","children":[{"url":"/rechargeManagement/rechargeDetails","meta":"1","name":"充值明细"}]},{"name":"公告管理","children":[{"url":"/announcedManagement/index","meta":"1","name":"公告管理"}]},{"name":"邮件管理","children":[{"url":"/mailManagement/index","meta":"1","name":"邮件管理"}]},{"name":"活动管理","children":[{"url":"/activityManagement/index","meta":"1","name":"活动管理"}]},{"name":"CDK管理","children":[{"url":"/CDKManagement/index","meta":"1","name":"CDK管理"},{"url":"/CDKManagement/cdkDetail","meta":"1","name":"CDK详情"}]},{"name":"白名单管理","children":[{"url":"/whiteListManagement/index","meta":"1","name":"白名单管理"},{"url":"/whiteListManagement/whiteListMail","meta":"1","name":"白名单邮件"},{"url":"/whiteListManagement/whiterecording","meta":"1","name":"白名单记录"}]},{"name":"客户端管理","children":[{"url":"/clientManagement","meta":"1","name":"客户端管理"}]},{"name":"GM管理","children":[{"url":"/GMManagement/gameManagement","meta":"1","name":"游戏管理"},{"url":"/GMManagement/userManagement","meta":"1","name":"用户管理"},{"url":"/GMManagement/operationRecord","meta":"1","name":"操作日志"}]}],"games":["空翼冒险团","KOG测试"],"gamename":"空翼冒险团","gameid":1,"imgUrl":"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1604477627621&di=882a29d8d1e769a0c71086e14360555a&imgtype=0&src=http%3A%2F%2Fimg2.40407.com%2Fupload%2F202004%2F25%2F2515223062ecd8TQokrsbeUpo6a.jpg"}},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:33:26 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:33:28.076] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/user/token","resourceDesc":"返回用户姓名 头像 花名","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查找成功","data":{"username":"zhangzongchu","avatar":"https://wework.qpic.cn/wwhead/nMl9ssowtibVGyrmvBiaibzDlNMxxiaWGSjSGG4UzOOS2TrAXp5ro1zfqCFPjykaf4PxcE0cSjRwRWA/100","alias":"长澜月"}},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:33:28 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:33:28.079] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/server/selectComponent?code=areaclothing&gameid=1","resourceDesc":"根据游戏ID 组件名称搜索 区服组件","requestType":"GET","requestParams":"{\"code\":\"areaclothing\",\"gameid\":\"1\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查找成功","data":{"values":["测试渠道二渠道","测试渠道三渠道","测试渠道四渠道","测试渠道五渠道","测试渠道六渠道","测试渠道一渠道","fancyguo"]}},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:33:28 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:33:28.103] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/server/findServer?plaform=&display=&load=&srttime=&key=serverid&value=&test=0&mergeserver=&page=1&pagesize=20&clientshow=&stopshow=","resourceDesc":"","requestType":"GET","requestParams":"{\"plaform\":\"\",\"display\":\"\",\"load\":\"\",\"srttime\":\"\",\"key\":\"serverid\",\"value\":\"\",\"test\":\"0\",\"mergeserver\":\"\",\"page\":\"1\",\"pagesize\":\"20\",\"clientshow\":\"\",\"stopshow\":\"\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查找","data":{"total":"3","table":[{"id":54,"status":1,"create_user_id":79,"update_user_id":null,"create_time":"2020-11-02T08:25:08.681Z","update_time":"2020-11-02T08:25:08.681Z","servername":"测试机一","ip_port":"127.0.0.1：24024","address":"aa","plaform":["1"],"display":"3","srttime":"2020-11-15T16:00:00.000Z","gamename":"","pid":null,"serverid":"54","test":"0","load":"2","gameid":1,"childrens":null,"port":"24024","ip":"127.0.0.1","channel":["测试渠道一渠道","测试渠道二渠道","测试渠道三渠道","测试渠道四渠道","测试渠道五渠道","测试渠道六渠道"],"serverTrue":null,"securityGroup":null,"clientshow":"1","stopshow":"1","stopmessage":null,"stopuser":null},{"id":150,"status":1,"create_user_id":79,"update_user_id":null,"create_time":"2020-11-12T03:30:33.660Z","update_time":"2020-11-12T03:30:33.660Z","servername":"123123","ip_port":"127.0.0.1:24024","address":"","plaform":["1"],"display":"3","srttime":"2020-11-12T03:23:50.000Z","gamename":"","pid":null,"serverid":"1","test":"0","load":"2","gameid":1,"childrens":null,"port":"24024","ip":"127.0.0.1","channel":["fancyguo"],"serverTrue":false,"securityGroup":null,"clientshow":"0","stopshow":"0","stopmessage":null,"stopuser":null},{"id":174,"status":1,"create_user_id":79,"update_user_id":null,"create_time":"2020-11-24T03:20:48.079Z","update_time":"2020-11-24T03:20:48.079Z","servername":"123","ip_port":"","address":"127.0.0.1:24024","plaform":["1","2"],"display":"3","srttime":"2020-11-24T16:00:00.000Z","gamename":"","pid":null,"serverid":"2","test":"0","load":"2","gameid":1,"childrens":null,"port":"24024","ip":"127.0.0.1","channel":["测试渠道二渠道"],"serverTrue":false,"securityGroup":null,"clientshow":"0","stopshow":"0","stopmessage":null,"stopuser":null}],"displayNum":[{"max":"0","display":"繁忙"},{"max":"0","display":"爆满"},{"max":"3","display":"维护"},{"max":"0","display":"流畅"}],"page":"1"}},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:33:28 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:33:34.485] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/character/findServerid","resourceDesc":"区服id获取","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查询成功","data":[{"serverid":"54"},{"serverid":"2"},{"serverid":"1"}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:33:34 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:33:34.511] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/character/findServername","resourceDesc":"区服名称获取","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查询成功","data":[{"label":"测试机一","value":"测试机一"},{"label":"123","value":"123"},{"label":"123123","value":"123123"}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:33:34 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:33:40.386] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/character/findServername","resourceDesc":"区服名称获取","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查询成功","data":[{"label":"测试机一","value":"测试机一"},{"label":"123","value":"123"},{"label":"123123","value":"123123"}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:33:40 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:33:40.634] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/character/findServerid","resourceDesc":"区服id获取","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查询成功","data":[{"serverid":"54"},{"serverid":"2"},{"serverid":"1"}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:33:40 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:33:42.812] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/character/findServerid","resourceDesc":"区服id获取","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查询成功","data":[{"serverid":"54"},{"serverid":"2"},{"serverid":"1"}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:33:42 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:33:43.198] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/character/findServername","resourceDesc":"区服名称获取","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查询成功","data":[{"label":"测试机一","value":"测试机一"},{"label":"123","value":"123"},{"label":"123123","value":"123123"}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:33:43 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:33:43.449] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/character/findServerid","resourceDesc":"区服id获取","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查询成功","data":[{"serverid":"54"},{"serverid":"2"},{"serverid":"1"}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:33:43 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:33:46.042] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/server/batchCreate","resourceDesc":"区服批量创建","requestType":"POST","requestParams":"{\"value\":[{\"serverid\":\"2123\",\"servername\":\"asdasd\",\"platform\":\"苹果\",\"srttime\":\"2020-12-13 12:00:00\",\"display\":\"流畅\",\"test\":\"是\",\"address\":\"127.0.0.1\",\"key\":2,\"change\":false,\"channel\":[\"fancyguo\"],\"success\":true},{\"serverid\":3,\"servername\":\"驱蚊器恶趣味\",\"platform\":\"全平台\",\"srttime\":\"2020-12-13 12:00:00\",\"display\":\"流畅\",\"test\":\"是\",\"address\":\"127.0.0.1:24024\",\"key\":3,\"change\":false,\"channel\":[\"测试渠道五渠道\"],\"success\":true}]}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"成功","data":[{"status":"rejected","reason":{"code":500,"message":{"code":500,"message":"Cp交互失败,请确认交互地址","data":{"serverid":"2123","servername":"asdasd","platform":"苹果","srttime":"2020-12-13 12:00:00","display":1,"test":"1","address":"127.0.0.1","key":2,"change":false,"channel":["fancyguo"],"success":true,"plaform":[2],"gameid":"1"}}}},{"status":"fulfilled","value":{"id":"3","status":1,"create_user_id":79,"update_user_id":null,"create_time":"2020-11-25T13:33:43.316Z","update_time":"2020-11-25T13:33:43.316Z","servername":"驱蚊器恶趣味","ip_port":null,"address":"127.0.0.1:24024","plaform":[1,2],"display":"1","srttime":"2020-12-13T04:00:00.000Z","gamename":"","pid":null,"serverid":"3","test":"1","load":null,"gameid":1,"childrens":null,"port":"24024","ip":"127.0.0.1","channel":["测试渠道五渠道"],"serverTrue":false,"securityGroup":null,"clientshow":"0","stopshow":"0","stopmessage":null,"stopuser":null,"code":200}}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:33:45 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:34:40.594] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/server/selectComponent?code=areaclothing&gameid=1","resourceDesc":"根据游戏ID 组件名称搜索 区服组件","requestType":"GET","requestParams":"{\"code\":\"areaclothing\",\"gameid\":\"1\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查找成功","data":{"values":["测试渠道二渠道","测试渠道三渠道","测试渠道四渠道","测试渠道五渠道","测试渠道六渠道","测试渠道一渠道","fancyguo"]}},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:34:40 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:34:40.616] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/server/findServer?plaform=&display=&load=&srttime=&key=serverid&value=&test=0&mergeserver=&page=1&pagesize=20&clientshow=&stopshow=","resourceDesc":"","requestType":"GET","requestParams":"{\"plaform\":\"\",\"display\":\"\",\"load\":\"\",\"srttime\":\"\",\"key\":\"serverid\",\"value\":\"\",\"test\":\"0\",\"mergeserver\":\"\",\"page\":\"1\",\"pagesize\":\"20\",\"clientshow\":\"\",\"stopshow\":\"\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查找","data":{"total":"3","table":[{"id":54,"status":1,"create_user_id":79,"update_user_id":null,"create_time":"2020-11-02T08:25:08.681Z","update_time":"2020-11-02T08:25:08.681Z","servername":"测试机一","ip_port":"127.0.0.1：24024","address":"aa","plaform":["1"],"display":"3","srttime":"2020-11-15T16:00:00.000Z","gamename":"","pid":null,"serverid":"54","test":"0","load":"2","gameid":1,"childrens":null,"port":"24024","ip":"127.0.0.1","channel":["测试渠道一渠道","测试渠道二渠道","测试渠道三渠道","测试渠道四渠道","测试渠道五渠道","测试渠道六渠道"],"serverTrue":null,"securityGroup":null,"clientshow":"1","stopshow":"1","stopmessage":null,"stopuser":null},{"id":150,"status":1,"create_user_id":79,"update_user_id":null,"create_time":"2020-11-12T03:30:33.660Z","update_time":"2020-11-12T03:30:33.660Z","servername":"123123","ip_port":"127.0.0.1:24024","address":"","plaform":["1"],"display":"3","srttime":"2020-11-12T03:23:50.000Z","gamename":"","pid":null,"serverid":"1","test":"0","load":"2","gameid":1,"childrens":null,"port":"24024","ip":"127.0.0.1","channel":["fancyguo"],"serverTrue":false,"securityGroup":null,"clientshow":"0","stopshow":"0","stopmessage":null,"stopuser":null},{"id":174,"status":1,"create_user_id":79,"update_user_id":null,"create_time":"2020-11-24T03:20:48.079Z","update_time":"2020-11-24T03:20:48.079Z","servername":"123","ip_port":"","address":"127.0.0.1:24024","plaform":["1","2"],"display":"3","srttime":"2020-11-24T16:00:00.000Z","gamename":"","pid":null,"serverid":"2","test":"0","load":"2","gameid":1,"childrens":null,"port":"24024","ip":"127.0.0.1","channel":["测试渠道二渠道"],"serverTrue":false,"securityGroup":null,"clientshow":"0","stopshow":"0","stopmessage":null,"stopuser":null}],"displayNum":[{"max":"0","display":"繁忙"},{"max":"0","display":"爆满"},{"max":"3","display":"维护"},{"max":"0","display":"流畅"}],"page":"1"}},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:34:40 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:34:42.678] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/user/permission?username=","resourceDesc":"根据id查找数据","requestType":"GET","requestParams":"{\"username\":\"\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查找成功","data":{"routes":[{"name":"区服管理","children":[{"url":"/zoneManagement/zoneSettings","meta":"1","name":"区服设置"}]},{"name":"角色管理","children":[{"url":"/roleManagement/roleQuery","meta":"1","name":"角色查询"},{"url":"/roleManagement/chatQuery","meta":"1","name":"聊天查询"},{"url":"/roleManagement/prosumingQuery","meta":"1","name":"产消查询"},{"url":"/roleManagement/rucksackQuery","meta":"1","name":"背包查询"}]},{"name":"充值管理","children":[{"url":"/rechargeManagement/rechargeDetails","meta":"1","name":"充值明细"}]},{"name":"公告管理","children":[{"url":"/announcedManagement/index","meta":"1","name":"公告管理"}]},{"name":"邮件管理","children":[{"url":"/mailManagement/index","meta":"1","name":"邮件管理"}]},{"name":"活动管理","children":[{"url":"/activityManagement/index","meta":"1","name":"活动管理"}]},{"name":"CDK管理","children":[{"url":"/CDKManagement/index","meta":"1","name":"CDK管理"},{"url":"/CDKManagement/cdkDetail","meta":"1","name":"CDK详情"}]},{"name":"白名单管理","children":[{"url":"/whiteListManagement/index","meta":"1","name":"白名单管理"},{"url":"/whiteListManagement/whiteListMail","meta":"1","name":"白名单邮件"},{"url":"/whiteListManagement/whiterecording","meta":"1","name":"白名单记录"}]},{"name":"客户端管理","children":[{"url":"/clientManagement","meta":"1","name":"客户端管理"}]},{"name":"GM管理","children":[{"url":"/GMManagement/gameManagement","meta":"1","name":"游戏管理"},{"url":"/GMManagement/userManagement","meta":"1","name":"用户管理"},{"url":"/GMManagement/operationRecord","meta":"1","name":"操作日志"}]}],"games":["空翼冒险团","KOG测试"],"gamename":"空翼冒险团","gameid":1,"imgUrl":"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1604477627621&di=882a29d8d1e769a0c71086e14360555a&imgtype=0&src=http%3A%2F%2Fimg2.40407.com%2Fupload%2F202004%2F25%2F2515223062ecd8TQokrsbeUpo6a.jpg"}},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:34:42 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:34:43.702] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/user/token","resourceDesc":"返回用户姓名 头像 花名","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查找成功","data":{"username":"zhangzongchu","avatar":"https://wework.qpic.cn/wwhead/nMl9ssowtibVGyrmvBiaibzDlNMxxiaWGSjSGG4UzOOS2TrAXp5ro1zfqCFPjykaf4PxcE0cSjRwRWA/100","alias":"长澜月"}},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:34:43 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:34:43.708] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/server/selectComponent?code=areaclothing&gameid=1","resourceDesc":"根据游戏ID 组件名称搜索 区服组件","requestType":"GET","requestParams":"{\"code\":\"areaclothing\",\"gameid\":\"1\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查找成功","data":{"values":["测试渠道二渠道","测试渠道三渠道","测试渠道四渠道","测试渠道五渠道","测试渠道六渠道","测试渠道一渠道","fancyguo"]}},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:34:43 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:34:43.740] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/server/findServer?plaform=&display=&load=&srttime=&key=serverid&value=&test=0&mergeserver=&page=1&pagesize=20&clientshow=&stopshow=","resourceDesc":"","requestType":"GET","requestParams":"{\"plaform\":\"\",\"display\":\"\",\"load\":\"\",\"srttime\":\"\",\"key\":\"serverid\",\"value\":\"\",\"test\":\"0\",\"mergeserver\":\"\",\"page\":\"1\",\"pagesize\":\"20\",\"clientshow\":\"\",\"stopshow\":\"\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查找","data":{"total":"3","table":[{"id":54,"status":1,"create_user_id":79,"update_user_id":null,"create_time":"2020-11-02T08:25:08.681Z","update_time":"2020-11-02T08:25:08.681Z","servername":"测试机一","ip_port":"127.0.0.1：24024","address":"aa","plaform":["1"],"display":"3","srttime":"2020-11-15T16:00:00.000Z","gamename":"","pid":null,"serverid":"54","test":"0","load":"2","gameid":1,"childrens":null,"port":"24024","ip":"127.0.0.1","channel":["测试渠道一渠道","测试渠道二渠道","测试渠道三渠道","测试渠道四渠道","测试渠道五渠道","测试渠道六渠道"],"serverTrue":null,"securityGroup":null,"clientshow":"1","stopshow":"1","stopmessage":null,"stopuser":null},{"id":150,"status":1,"create_user_id":79,"update_user_id":null,"create_time":"2020-11-12T03:30:33.660Z","update_time":"2020-11-12T03:30:33.660Z","servername":"123123","ip_port":"127.0.0.1:24024","address":"","plaform":["1"],"display":"3","srttime":"2020-11-12T03:23:50.000Z","gamename":"","pid":null,"serverid":"1","test":"0","load":"2","gameid":1,"childrens":null,"port":"24024","ip":"127.0.0.1","channel":["fancyguo"],"serverTrue":false,"securityGroup":null,"clientshow":"0","stopshow":"0","stopmessage":null,"stopuser":null},{"id":174,"status":1,"create_user_id":79,"update_user_id":null,"create_time":"2020-11-24T03:20:48.079Z","update_time":"2020-11-24T03:20:48.079Z","servername":"123","ip_port":"","address":"127.0.0.1:24024","plaform":["1","2"],"display":"3","srttime":"2020-11-24T16:00:00.000Z","gamename":"","pid":null,"serverid":"2","test":"0","load":"2","gameid":1,"childrens":null,"port":"24024","ip":"127.0.0.1","channel":["测试渠道二渠道"],"serverTrue":false,"securityGroup":null,"clientshow":"0","stopshow":"0","stopmessage":null,"stopuser":null}],"displayNum":[{"max":"0","display":"繁忙"},{"max":"0","display":"爆满"},{"max":"3","display":"维护"},{"max":"0","display":"流畅"}],"page":"1"}},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:34:43 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:34:48.970] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/character/findServerid","resourceDesc":"区服id获取","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查询成功","data":[{"serverid":"54"},{"serverid":"2"},{"serverid":"1"}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:34:48 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:34:49.219] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/character/findServername","resourceDesc":"区服名称获取","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查询成功","data":[{"label":"测试机一","value":"测试机一"},{"label":"123","value":"123"},{"label":"123123","value":"123123"}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:34:49 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:34:54.641] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/character/findServername","resourceDesc":"区服名称获取","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查询成功","data":[{"label":"测试机一","value":"测试机一"},{"label":"123","value":"123"},{"label":"123123","value":"123123"}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:34:54 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:34:54.984] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/character/findServerid","resourceDesc":"区服id获取","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查询成功","data":[{"serverid":"54"},{"serverid":"2"},{"serverid":"1"}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:34:54 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:34:56.392] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/character/findServerid","resourceDesc":"区服id获取","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查询成功","data":[{"serverid":"54"},{"serverid":"2"},{"serverid":"1"}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:34:56 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:34:57.178] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/character/findServername","resourceDesc":"区服名称获取","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查询成功","data":[{"label":"测试机一","value":"测试机一"},{"label":"123","value":"123"},{"label":"123123","value":"123123"}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:34:57 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:34:58.269] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/character/findServerid","resourceDesc":"区服id获取","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查询成功","data":[{"serverid":"54"},{"serverid":"2"},{"serverid":"1"}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:34:58 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:34:58.949] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/character/findServername","resourceDesc":"区服名称获取","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查询成功","data":[{"label":"测试机一","value":"测试机一"},{"label":"123","value":"123"},{"label":"123123","value":"123123"}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:34:58 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:34:59.200] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/character/findServerid","resourceDesc":"区服id获取","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查询成功","data":[{"serverid":"54"},{"serverid":"2"},{"serverid":"1"}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:34:59 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:35:01.002] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/server/batchCreate","resourceDesc":"区服批量创建","requestType":"POST","requestParams":"{\"value\":[{\"serverid\":\"27\",\"servername\":\"asdasd\",\"platform\":\"苹果\",\"srttime\":\"2020-12-13 12:00:00\",\"display\":\"流畅\",\"test\":\"是\",\"address\":\"127.0.0.1\",\"key\":2,\"change\":false,\"channel\":[\"fancyguo\"],\"success\":true},{\"serverid\":3,\"servername\":\"驱蚊器恶趣味\",\"platform\":\"全平台\",\"srttime\":\"2020-12-13 12:00:00\",\"display\":\"流畅\",\"test\":\"是\",\"address\":\"127.0.0.1:24024\",\"key\":3,\"change\":false,\"channel\":[\"测试渠道五渠道\"],\"success\":true}]}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"成功","data":[{"status":"rejected","reason":{"code":500,"message":{"code":500,"message":"Cp交互失败,请确认交互地址","data":{"serverid":"27","servername":"asdasd","platform":"苹果","srttime":"2020-12-13 12:00:00","display":1,"test":"1","address":"127.0.0.1","key":2,"change":false,"channel":["fancyguo"],"success":true,"plaform":[2],"gameid":"1"}}}},{"status":"fulfilled","value":{"id":"3","status":1,"create_user_id":79,"update_user_id":null,"create_time":"2020-11-25T13:34:58.272Z","update_time":"2020-11-25T13:34:58.272Z","servername":"驱蚊器恶趣味","ip_port":null,"address":"127.0.0.1:24024","plaform":[1,2],"display":"1","srttime":"2020-12-13T04:00:00.000Z","gamename":"","pid":null,"serverid":"3","test":"1","load":null,"gameid":1,"childrens":null,"port":"24024","ip":"127.0.0.1","channel":["测试渠道五渠道"],"serverTrue":false,"securityGroup":null,"clientshow":"0","stopshow":"0","stopmessage":null,"stopuser":null,"code":200}}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:35:00 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:36:04.005] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/server/selectComponent?code=areaclothing&gameid=1","resourceDesc":"根据游戏ID 组件名称搜索 区服组件","requestType":"GET","requestParams":"{\"code\":\"areaclothing\",\"gameid\":\"1\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查找成功","data":{"values":["测试渠道二渠道","测试渠道三渠道","测试渠道四渠道","测试渠道五渠道","测试渠道六渠道","测试渠道一渠道","fancyguo"]}},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:36:03 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:36:04.043] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/server/findServer?plaform=&display=&load=&srttime=&key=serverid&value=&test=0&mergeserver=&page=1&pagesize=20&clientshow=&stopshow=","resourceDesc":"","requestType":"GET","requestParams":"{\"plaform\":\"\",\"display\":\"\",\"load\":\"\",\"srttime\":\"\",\"key\":\"serverid\",\"value\":\"\",\"test\":\"0\",\"mergeserver\":\"\",\"page\":\"1\",\"pagesize\":\"20\",\"clientshow\":\"\",\"stopshow\":\"\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查找","data":{"total":"3","table":[{"id":54,"status":1,"create_user_id":79,"update_user_id":null,"create_time":"2020-11-02T08:25:08.681Z","update_time":"2020-11-02T08:25:08.681Z","servername":"测试机一","ip_port":"127.0.0.1：24024","address":"aa","plaform":["1"],"display":"3","srttime":"2020-11-15T16:00:00.000Z","gamename":"","pid":null,"serverid":"54","test":"0","load":"2","gameid":1,"childrens":null,"port":"24024","ip":"127.0.0.1","channel":["测试渠道一渠道","测试渠道二渠道","测试渠道三渠道","测试渠道四渠道","测试渠道五渠道","测试渠道六渠道"],"serverTrue":null,"securityGroup":null,"clientshow":"1","stopshow":"1","stopmessage":null,"stopuser":null},{"id":150,"status":1,"create_user_id":79,"update_user_id":null,"create_time":"2020-11-12T03:30:33.660Z","update_time":"2020-11-12T03:30:33.660Z","servername":"123123","ip_port":"127.0.0.1:24024","address":"","plaform":["1"],"display":"3","srttime":"2020-11-12T03:23:50.000Z","gamename":"","pid":null,"serverid":"1","test":"0","load":"2","gameid":1,"childrens":null,"port":"24024","ip":"127.0.0.1","channel":["fancyguo"],"serverTrue":false,"securityGroup":null,"clientshow":"0","stopshow":"0","stopmessage":null,"stopuser":null},{"id":174,"status":1,"create_user_id":79,"update_user_id":null,"create_time":"2020-11-24T03:20:48.079Z","update_time":"2020-11-24T03:20:48.079Z","servername":"123","ip_port":"","address":"127.0.0.1:24024","plaform":["1","2"],"display":"3","srttime":"2020-11-24T16:00:00.000Z","gamename":"","pid":null,"serverid":"2","test":"0","load":"2","gameid":1,"childrens":null,"port":"24024","ip":"127.0.0.1","channel":["测试渠道二渠道"],"serverTrue":false,"securityGroup":null,"clientshow":"0","stopshow":"0","stopmessage":null,"stopuser":null}],"displayNum":[{"max":"0","display":"繁忙"},{"max":"0","display":"爆满"},{"max":"3","display":"维护"},{"max":"0","display":"流畅"}],"page":"1"}},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:36:03 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:36:07.772] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/character/findServerid","resourceDesc":"区服id获取","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查询成功","data":[{"serverid":"54"},{"serverid":"2"},{"serverid":"1"}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:36:07 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:36:08.020] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/character/findServername","resourceDesc":"区服名称获取","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查询成功","data":[{"label":"测试机一","value":"测试机一"},{"label":"123","value":"123"},{"label":"123123","value":"123123"}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:36:08 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:36:13.247] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/character/findServername","resourceDesc":"区服名称获取","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查询成功","data":[{"label":"测试机一","value":"测试机一"},{"label":"123","value":"123"},{"label":"123123","value":"123123"}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:36:13 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:36:13.581] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/character/findServerid","resourceDesc":"区服id获取","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查询成功","data":[{"serverid":"54"},{"serverid":"2"},{"serverid":"1"}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:36:13 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:36:16.094] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/character/findServerid","resourceDesc":"区服id获取","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查询成功","data":[{"serverid":"54"},{"serverid":"2"},{"serverid":"1"}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:36:16 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:36:16.161] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/character/findServername","resourceDesc":"区服名称获取","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查询成功","data":[{"label":"测试机一","value":"测试机一"},{"label":"123","value":"123"},{"label":"123123","value":"123123"}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:36:16 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:36:16.343] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/character/findServerid","resourceDesc":"区服id获取","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查询成功","data":[{"serverid":"54"},{"serverid":"2"},{"serverid":"1"}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:36:16 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:36:17.973] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/server/batchCreate","resourceDesc":"区服批量创建","requestType":"POST","requestParams":"{\"value\":[{\"serverid\":\"21\",\"servername\":\"asdasd\",\"platform\":\"苹果\",\"srttime\":\"2020-12-13 12:00:00\",\"display\":\"流畅\",\"test\":\"是\",\"address\":\"127.0.0.1\",\"key\":2,\"change\":false,\"channel\":[\"fancyguo\"],\"success\":true},{\"serverid\":3,\"servername\":\"驱蚊器恶趣味\",\"platform\":\"全平台\",\"srttime\":\"2020-12-13 12:00:00\",\"display\":\"流畅\",\"test\":\"是\",\"address\":\"127.0.0.1:24024\",\"key\":3,\"change\":false,\"channel\":[\"测试渠道四渠道\"],\"success\":true}]}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"成功","data":[{"status":"rejected","reason":{"code":500,"message":{"code":500,"message":"Cp交互失败,请确认交互地址","data":{"serverid":"21","servername":"asdasd","platform":"苹果","srttime":"2020-12-13 12:00:00","display":1,"test":"1","address":"127.0.0.1","key":2,"change":false,"channel":["fancyguo"],"success":true,"plaform":[2],"gameid":"1"}}}},{"status":"fulfilled","value":{"id":"3","status":1,"create_user_id":79,"update_user_id":null,"create_time":"2020-11-25T13:36:15.238Z","update_time":"2020-11-25T13:36:15.238Z","servername":"驱蚊器恶趣味","ip_port":null,"address":"127.0.0.1:24024","plaform":[1,2],"display":"1","srttime":"2020-12-13T04:00:00.000Z","gamename":"","pid":null,"serverid":"3","test":"1","load":null,"gameid":1,"childrens":null,"port":"24024","ip":"127.0.0.1","channel":["测试渠道四渠道"],"serverTrue":false,"securityGroup":null,"clientshow":"0","stopshow":"0","stopmessage":null,"stopuser":null,"code":200}}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:36:17 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:37:47.728] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/user/permission?username=","resourceDesc":"根据id查找数据","requestType":"GET","requestParams":"{\"username\":\"\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查找成功","data":{"routes":[{"name":"区服管理","children":[{"url":"/zoneManagement/zoneSettings","meta":"1","name":"区服设置"}]},{"name":"角色管理","children":[{"url":"/roleManagement/roleQuery","meta":"1","name":"角色查询"},{"url":"/roleManagement/chatQuery","meta":"1","name":"聊天查询"},{"url":"/roleManagement/prosumingQuery","meta":"1","name":"产消查询"},{"url":"/roleManagement/rucksackQuery","meta":"1","name":"背包查询"}]},{"name":"充值管理","children":[{"url":"/rechargeManagement/rechargeDetails","meta":"1","name":"充值明细"}]},{"name":"公告管理","children":[{"url":"/announcedManagement/index","meta":"1","name":"公告管理"}]},{"name":"邮件管理","children":[{"url":"/mailManagement/index","meta":"1","name":"邮件管理"}]},{"name":"活动管理","children":[{"url":"/activityManagement/index","meta":"1","name":"活动管理"}]},{"name":"CDK管理","children":[{"url":"/CDKManagement/index","meta":"1","name":"CDK管理"},{"url":"/CDKManagement/cdkDetail","meta":"1","name":"CDK详情"}]},{"name":"白名单管理","children":[{"url":"/whiteListManagement/index","meta":"1","name":"白名单管理"},{"url":"/whiteListManagement/whiteListMail","meta":"1","name":"白名单邮件"},{"url":"/whiteListManagement/whiterecording","meta":"1","name":"白名单记录"}]},{"name":"客户端管理","children":[{"url":"/clientManagement","meta":"1","name":"客户端管理"}]},{"name":"GM管理","children":[{"url":"/GMManagement/gameManagement","meta":"1","name":"游戏管理"},{"url":"/GMManagement/userManagement","meta":"1","name":"用户管理"},{"url":"/GMManagement/operationRecord","meta":"1","name":"操作日志"}]}],"games":["空翼冒险团","KOG测试"],"gamename":"空翼冒险团","gameid":1,"imgUrl":"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1604477627621&di=882a29d8d1e769a0c71086e14360555a&imgtype=0&src=http%3A%2F%2Fimg2.40407.com%2Fupload%2F202004%2F25%2F2515223062ecd8TQokrsbeUpo6a.jpg"}},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:37:47 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:37:48.553] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/user/token","resourceDesc":"返回用户姓名 头像 花名","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查找成功","data":{"username":"zhangzongchu","avatar":"https://wework.qpic.cn/wwhead/nMl9ssowtibVGyrmvBiaibzDlNMxxiaWGSjSGG4UzOOS2TrAXp5ro1zfqCFPjykaf4PxcE0cSjRwRWA/100","alias":"长澜月"}},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:37:48 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:37:48.561] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/server/selectComponent?code=areaclothing&gameid=1","resourceDesc":"根据游戏ID 组件名称搜索 区服组件","requestType":"GET","requestParams":"{\"code\":\"areaclothing\",\"gameid\":\"1\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查找成功","data":{"values":["测试渠道二渠道","测试渠道三渠道","测试渠道四渠道","测试渠道五渠道","测试渠道六渠道","测试渠道一渠道","fancyguo"]}},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:37:48 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:37:48.684] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/server/findServer?plaform=&display=&load=&srttime=&key=serverid&value=&test=0&mergeserver=&page=1&pagesize=20&clientshow=&stopshow=","resourceDesc":"","requestType":"GET","requestParams":"{\"plaform\":\"\",\"display\":\"\",\"load\":\"\",\"srttime\":\"\",\"key\":\"serverid\",\"value\":\"\",\"test\":\"0\",\"mergeserver\":\"\",\"page\":\"1\",\"pagesize\":\"20\",\"clientshow\":\"\",\"stopshow\":\"\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查找","data":{"total":"3","table":[{"id":54,"status":1,"create_user_id":79,"update_user_id":null,"create_time":"2020-11-02T08:25:08.681Z","update_time":"2020-11-02T08:25:08.681Z","servername":"测试机一","ip_port":"127.0.0.1：24024","address":"aa","plaform":["1"],"display":"3","srttime":"2020-11-15T16:00:00.000Z","gamename":"","pid":null,"serverid":"54","test":"0","load":"2","gameid":1,"childrens":null,"port":"24024","ip":"127.0.0.1","channel":["测试渠道一渠道","测试渠道二渠道","测试渠道三渠道","测试渠道四渠道","测试渠道五渠道","测试渠道六渠道"],"serverTrue":null,"securityGroup":null,"clientshow":"1","stopshow":"1","stopmessage":null,"stopuser":null},{"id":150,"status":1,"create_user_id":79,"update_user_id":null,"create_time":"2020-11-12T03:30:33.660Z","update_time":"2020-11-12T03:30:33.660Z","servername":"123123","ip_port":"127.0.0.1:24024","address":"","plaform":["1"],"display":"3","srttime":"2020-11-12T03:23:50.000Z","gamename":"","pid":null,"serverid":"1","test":"0","load":"2","gameid":1,"childrens":null,"port":"24024","ip":"127.0.0.1","channel":["fancyguo"],"serverTrue":false,"securityGroup":null,"clientshow":"0","stopshow":"0","stopmessage":null,"stopuser":null},{"id":174,"status":1,"create_user_id":79,"update_user_id":null,"create_time":"2020-11-24T03:20:48.079Z","update_time":"2020-11-24T03:20:48.079Z","servername":"123","ip_port":"","address":"127.0.0.1:24024","plaform":["1","2"],"display":"3","srttime":"2020-11-24T16:00:00.000Z","gamename":"","pid":null,"serverid":"2","test":"0","load":"2","gameid":1,"childrens":null,"port":"24024","ip":"127.0.0.1","channel":["测试渠道二渠道"],"serverTrue":false,"securityGroup":null,"clientshow":"0","stopshow":"0","stopmessage":null,"stopuser":null}],"displayNum":[{"max":"0","display":"繁忙"},{"max":"0","display":"爆满"},{"max":"3","display":"维护"},{"max":"0","display":"流畅"}],"page":"1"}},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:37:48 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:37:53.898] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/character/findServerid","resourceDesc":"区服id获取","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查询成功","data":[{"serverid":"54"},{"serverid":"2"},{"serverid":"1"}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:37:53 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:37:54.236] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/character/findServername","resourceDesc":"区服名称获取","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查询成功","data":[{"label":"测试机一","value":"测试机一"},{"label":"123","value":"123"},{"label":"123123","value":"123123"}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:37:54 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:38:01.103] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/character/findServername","resourceDesc":"区服名称获取","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查询成功","data":[{"label":"测试机一","value":"测试机一"},{"label":"123","value":"123"},{"label":"123123","value":"123123"}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:38:01 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:38:01.439] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/character/findServerid","resourceDesc":"区服id获取","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查询成功","data":[{"serverid":"54"},{"serverid":"2"},{"serverid":"1"}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:38:01 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:38:05.130] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/character/findServerid","resourceDesc":"区服id获取","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查询成功","data":[{"serverid":"54"},{"serverid":"2"},{"serverid":"1"}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:38:05 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:38:05.225] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/character/findServername","resourceDesc":"区服名称获取","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查询成功","data":[{"label":"测试机一","value":"测试机一"},{"label":"123","value":"123"},{"label":"123123","value":"123123"}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:38:05 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:38:05.564] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/character/findServerid","resourceDesc":"区服id获取","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查询成功","data":[{"serverid":"54"},{"serverid":"2"},{"serverid":"1"}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:38:05 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:38:08.254] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/server/batchCreate","resourceDesc":"区服批量创建","requestType":"POST","requestParams":"{\"value\":[{\"serverid\":\"\",\"servername\":\"asdasd\",\"platform\":\"苹果\",\"srttime\":\"2020-12-13 12:00:00\",\"display\":\"流畅\",\"test\":\"是\",\"address\":\"127.0.0.1\",\"key\":2,\"change\":false,\"channel\":[\"fancyguo\"],\"success\":true},{\"serverid\":3,\"servername\":\"驱蚊器恶趣味\",\"platform\":\"全平台\",\"srttime\":\"2020-12-13 12:00:00\",\"display\":\"流畅\",\"test\":\"是\",\"address\":\"127.0.0.1:24024\",\"key\":3,\"change\":false,\"channel\":[\"测试渠道五渠道\"],\"success\":true}]}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"成功","data":[{"status":"rejected","reason":{"code":500,"message":{"code":500,"message":"Cp交互失败,请确认交互地址","data":{"serverid":"","servername":"asdasd","platform":"苹果","srttime":"2020-12-13 12:00:00","display":1,"test":"1","address":"127.0.0.1","key":2,"change":false,"channel":["fancyguo"],"success":true,"plaform":[2],"gameid":"1"}}}},{"status":"fulfilled","value":{"id":"3","status":1,"create_user_id":79,"update_user_id":null,"create_time":"2020-11-25T13:38:05.497Z","update_time":"2020-11-25T13:38:05.497Z","servername":"驱蚊器恶趣味","ip_port":null,"address":"127.0.0.1:24024","plaform":[1,2],"display":"1","srttime":"2020-12-13T04:00:00.000Z","gamename":"","pid":null,"serverid":"3","test":"1","load":null,"gameid":1,"childrens":null,"port":"24024","ip":"127.0.0.1","channel":["测试渠道五渠道"],"serverTrue":false,"securityGroup":null,"clientshow":"0","stopshow":"0","stopmessage":null,"stopuser":null,"code":200}}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:38:08 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:39:03.729] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/server/selectComponent?code=areaclothing&gameid=1","resourceDesc":"根据游戏ID 组件名称搜索 区服组件","requestType":"GET","requestParams":"{\"code\":\"areaclothing\",\"gameid\":\"1\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查找成功","data":{"values":["测试渠道二渠道","测试渠道三渠道","测试渠道四渠道","测试渠道五渠道","测试渠道六渠道","测试渠道一渠道","fancyguo"]}},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:39:03 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:39:04.033] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/server/findServer?plaform=&display=&load=&srttime=&key=serverid&value=&test=0&mergeserver=&page=1&pagesize=20&clientshow=&stopshow=","resourceDesc":"","requestType":"GET","requestParams":"{\"plaform\":\"\",\"display\":\"\",\"load\":\"\",\"srttime\":\"\",\"key\":\"serverid\",\"value\":\"\",\"test\":\"0\",\"mergeserver\":\"\",\"page\":\"1\",\"pagesize\":\"20\",\"clientshow\":\"\",\"stopshow\":\"\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查找","data":{"total":"3","table":[{"id":54,"status":1,"create_user_id":79,"update_user_id":null,"create_time":"2020-11-02T08:25:08.681Z","update_time":"2020-11-02T08:25:08.681Z","servername":"测试机一","ip_port":"127.0.0.1：24024","address":"aa","plaform":["1"],"display":"3","srttime":"2020-11-15T16:00:00.000Z","gamename":"","pid":null,"serverid":"54","test":"0","load":"2","gameid":1,"childrens":null,"port":"24024","ip":"127.0.0.1","channel":["测试渠道一渠道","测试渠道二渠道","测试渠道三渠道","测试渠道四渠道","测试渠道五渠道","测试渠道六渠道"],"serverTrue":null,"securityGroup":null,"clientshow":"1","stopshow":"1","stopmessage":null,"stopuser":null},{"id":150,"status":1,"create_user_id":79,"update_user_id":null,"create_time":"2020-11-12T03:30:33.660Z","update_time":"2020-11-12T03:30:33.660Z","servername":"123123","ip_port":"127.0.0.1:24024","address":"","plaform":["1"],"display":"3","srttime":"2020-11-12T03:23:50.000Z","gamename":"","pid":null,"serverid":"1","test":"0","load":"2","gameid":1,"childrens":null,"port":"24024","ip":"127.0.0.1","channel":["fancyguo"],"serverTrue":false,"securityGroup":null,"clientshow":"0","stopshow":"0","stopmessage":null,"stopuser":null},{"id":174,"status":1,"create_user_id":79,"update_user_id":null,"create_time":"2020-11-24T03:20:48.079Z","update_time":"2020-11-24T03:20:48.079Z","servername":"123","ip_port":"","address":"127.0.0.1:24024","plaform":["1","2"],"display":"3","srttime":"2020-11-24T16:00:00.000Z","gamename":"","pid":null,"serverid":"2","test":"0","load":"2","gameid":1,"childrens":null,"port":"24024","ip":"127.0.0.1","channel":["测试渠道二渠道"],"serverTrue":false,"securityGroup":null,"clientshow":"0","stopshow":"0","stopmessage":null,"stopuser":null}],"displayNum":[{"max":"0","display":"繁忙"},{"max":"0","display":"爆满"},{"max":"3","display":"维护"},{"max":"0","display":"流畅"}],"page":"1"}},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:39:03 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:39:15.964] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/character/findServerid","resourceDesc":"区服id获取","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查询成功","data":[{"serverid":"54"},{"serverid":"2"},{"serverid":"1"}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:39:15 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:39:16.293] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/character/findServername","resourceDesc":"区服名称获取","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查询成功","data":[{"label":"测试机一","value":"测试机一"},{"label":"123","value":"123"},{"label":"123123","value":"123123"}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:39:16 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:39:21.949] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/character/findServername","resourceDesc":"区服名称获取","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查询成功","data":[{"label":"测试机一","value":"测试机一"},{"label":"123","value":"123"},{"label":"123123","value":"123123"}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:39:21 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:39:22.281] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/character/findServerid","resourceDesc":"区服id获取","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查询成功","data":[{"serverid":"54"},{"serverid":"2"},{"serverid":"1"}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:39:22 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:39:24.711] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/character/findServerid","resourceDesc":"区服id获取","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查询成功","data":[{"serverid":"54"},{"serverid":"2"},{"serverid":"1"}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:39:24 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:39:24.798] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/character/findServername","resourceDesc":"区服名称获取","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查询成功","data":[{"label":"测试机一","value":"测试机一"},{"label":"123","value":"123"},{"label":"123123","value":"123123"}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:39:24 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:39:25.135] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/character/findServerid","resourceDesc":"区服id获取","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查询成功","data":[{"serverid":"54"},{"serverid":"2"},{"serverid":"1"}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:39:25 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:39:27.613] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/server/batchCreate","resourceDesc":"区服批量创建","requestType":"POST","requestParams":"{\"value\":[{\"serverid\":\"21\",\"servername\":\"asdasd\",\"platform\":\"苹果\",\"srttime\":\"2020-12-13 12:00:00\",\"display\":\"流畅\",\"test\":\"是\",\"address\":\"127.0.0.1\",\"key\":2,\"change\":false,\"channel\":[\"fancyguo\"],\"success\":true},{\"serverid\":3,\"servername\":\"驱蚊器恶趣味\",\"platform\":\"全平台\",\"srttime\":\"2020-12-13 12:00:00\",\"display\":\"流畅\",\"test\":\"是\",\"address\":\"127.0.0.1:24024\",\"key\":3,\"change\":false,\"channel\":[\"测试渠道一渠道\"],\"success\":true}]}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"成功","data":[{"status":"rejected","reason":{"code":500,"message":{"code":500,"message":"Cp交互失败,请确认交互地址","data":{"serverid":"21","servername":"asdasd","platform":"苹果","srttime":"2020-12-13 12:00:00","display":1,"test":"1","address":"127.0.0.1","key":2,"change":false,"channel":["fancyguo"],"success":true,"plaform":[2],"gameid":"1"}}}},{"status":"fulfilled","value":{"id":"3","status":1,"create_user_id":79,"update_user_id":null,"create_time":"2020-11-25T13:39:24.872Z","update_time":"2020-11-25T13:39:24.872Z","servername":"驱蚊器恶趣味","ip_port":null,"address":"127.0.0.1:24024","plaform":[1,2],"display":"1","srttime":"2020-12-13T04:00:00.000Z","gamename":"","pid":null,"serverid":"3","test":"1","load":null,"gameid":1,"childrens":null,"port":"24024","ip":"127.0.0.1","channel":["测试渠道一渠道"],"serverTrue":false,"securityGroup":null,"clientshow":"0","stopshow":"0","stopmessage":null,"stopuser":null,"code":200}}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:39:27 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:47:11.974] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/server/selectComponent?code=areaclothing&gameid=1","resourceDesc":"根据游戏ID 组件名称搜索 区服组件","requestType":"GET","requestParams":"{\"code\":\"areaclothing\",\"gameid\":\"1\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查找成功","data":{"values":["测试渠道二渠道","测试渠道三渠道","测试渠道四渠道","测试渠道五渠道","测试渠道六渠道","测试渠道一渠道","fancyguo"]}},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:47:11 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:47:12.278] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/server/findServer?plaform=&display=&load=&srttime=&key=serverid&value=&test=0&mergeserver=&page=1&pagesize=20&clientshow=&stopshow=","resourceDesc":"","requestType":"GET","requestParams":"{\"plaform\":\"\",\"display\":\"\",\"load\":\"\",\"srttime\":\"\",\"key\":\"serverid\",\"value\":\"\",\"test\":\"0\",\"mergeserver\":\"\",\"page\":\"1\",\"pagesize\":\"20\",\"clientshow\":\"\",\"stopshow\":\"\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查找","data":{"total":"3","table":[{"id":54,"status":1,"create_user_id":79,"update_user_id":null,"create_time":"2020-11-02T08:25:08.681Z","update_time":"2020-11-02T08:25:08.681Z","servername":"测试机一","ip_port":"127.0.0.1：24024","address":"aa","plaform":["1"],"display":"3","srttime":"2020-11-15T16:00:00.000Z","gamename":"","pid":null,"serverid":"54","test":"0","load":"2","gameid":1,"childrens":null,"port":"24024","ip":"127.0.0.1","channel":["测试渠道一渠道","测试渠道二渠道","测试渠道三渠道","测试渠道四渠道","测试渠道五渠道","测试渠道六渠道"],"serverTrue":null,"securityGroup":null,"clientshow":"1","stopshow":"1","stopmessage":null,"stopuser":null},{"id":150,"status":1,"create_user_id":79,"update_user_id":null,"create_time":"2020-11-12T03:30:33.660Z","update_time":"2020-11-12T03:30:33.660Z","servername":"123123","ip_port":"127.0.0.1:24024","address":"","plaform":["1"],"display":"3","srttime":"2020-11-12T03:23:50.000Z","gamename":"","pid":null,"serverid":"1","test":"0","load":"2","gameid":1,"childrens":null,"port":"24024","ip":"127.0.0.1","channel":["fancyguo"],"serverTrue":false,"securityGroup":null,"clientshow":"0","stopshow":"0","stopmessage":null,"stopuser":null},{"id":174,"status":1,"create_user_id":79,"update_user_id":null,"create_time":"2020-11-24T03:20:48.079Z","update_time":"2020-11-24T03:20:48.079Z","servername":"123","ip_port":"","address":"127.0.0.1:24024","plaform":["1","2"],"display":"3","srttime":"2020-11-24T16:00:00.000Z","gamename":"","pid":null,"serverid":"2","test":"0","load":"2","gameid":1,"childrens":null,"port":"24024","ip":"127.0.0.1","channel":["测试渠道二渠道"],"serverTrue":false,"securityGroup":null,"clientshow":"0","stopshow":"0","stopmessage":null,"stopuser":null}],"displayNum":[{"max":"0","display":"繁忙"},{"max":"0","display":"爆满"},{"max":"3","display":"维护"},{"max":"0","display":"流畅"}],"page":"1"}},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:47:12 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:47:15.828] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/character/findServerid","resourceDesc":"区服id获取","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查询成功","data":[{"serverid":"54"},{"serverid":"2"},{"serverid":"1"}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:47:15 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:47:16.158] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/character/findServername","resourceDesc":"区服名称获取","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查询成功","data":[{"label":"测试机一","value":"测试机一"},{"label":"123","value":"123"},{"label":"123123","value":"123123"}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:47:16 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:47:23.070] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/character/findServername","resourceDesc":"区服名称获取","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查询成功","data":[{"label":"测试机一","value":"测试机一"},{"label":"123","value":"123"},{"label":"123123","value":"123123"}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:47:23 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:47:23.411] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/character/findServerid","resourceDesc":"区服id获取","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查询成功","data":[{"serverid":"54"},{"serverid":"2"},{"serverid":"1"}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:47:23 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:47:26.518] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/character/findServername","resourceDesc":"区服名称获取","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查询成功","data":[{"label":"测试机一","value":"测试机一"},{"label":"123","value":"123"},{"label":"123123","value":"123123"}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:47:26 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:47:26.849] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/character/findServerid","resourceDesc":"区服id获取","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查询成功","data":[{"serverid":"54"},{"serverid":"2"},{"serverid":"1"}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:47:26 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:47:29.201] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/character/findServerid","resourceDesc":"区服id获取","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查询成功","data":[{"serverid":"54"},{"serverid":"2"},{"serverid":"1"}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:47:29 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:47:29.288] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/character/findServername","resourceDesc":"区服名称获取","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查询成功","data":[{"label":"测试机一","value":"测试机一"},{"label":"123","value":"123"},{"label":"123123","value":"123123"}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:47:29 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:47:29.618] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/character/findServerid","resourceDesc":"区服id获取","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查询成功","data":[{"serverid":"54"},{"serverid":"2"},{"serverid":"1"}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:47:29 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:47:31.490] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/server/batchCreate","resourceDesc":"区服批量创建","requestType":"POST","requestParams":"{\"value\":[{\"serverid\":\"22\",\"servername\":\"asdasd\",\"platform\":\"苹果\",\"srttime\":\"2020-12-13 12:00:00\",\"display\":\"流畅\",\"test\":\"是\",\"address\":\"127.0.0.1\",\"key\":2,\"change\":false,\"channel\":[\"测试渠道四渠道\"],\"success\":true},{\"serverid\":3,\"servername\":\"驱蚊器恶趣味\",\"platform\":\"全平台\",\"srttime\":\"2020-12-13 12:00:00\",\"display\":\"流畅\",\"test\":\"是\",\"address\":\"127.0.0.1:24024\",\"key\":3,\"change\":false,\"channel\":[\"fancyguo\"],\"success\":true}]}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"成功","data":[{"status":"rejected","reason":{"code":500,"message":{"code":500,"message":"Cp交互失败,请确认交互地址","data":{"serverid":"22","servername":"asdasd","platform":"苹果","srttime":"2020-12-13 12:00:00","display":1,"test":"1","address":"127.0.0.1","key":2,"change":false,"channel":["测试渠道四渠道"],"success":true,"plaform":[2],"gameid":"1"}}}},{"status":"fulfilled","value":{"id":"3","status":1,"create_user_id":79,"update_user_id":null,"create_time":"2020-11-25T13:47:28.741Z","update_time":"2020-11-25T13:47:28.741Z","servername":"驱蚊器恶趣味","ip_port":null,"address":"127.0.0.1:24024","plaform":[1,2],"display":"1","srttime":"2020-12-13T04:00:00.000Z","gamename":"","pid":null,"serverid":"3","test":"1","load":null,"gameid":1,"childrens":null,"port":"24024","ip":"127.0.0.1","channel":["fancyguo"],"serverTrue":false,"securityGroup":null,"clientshow":"0","stopshow":"0","stopmessage":null,"stopuser":null,"code":200}}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:47:31 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:47:52.069] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/character/findServername","resourceDesc":"区服名称获取","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查询成功","data":[{"label":"测试机一","value":"测试机一"},{"label":"123","value":"123"},{"label":"123123","value":"123123"},{"label":"驱蚊器恶趣味","value":"驱蚊器恶趣味"}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:47:52 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:47:52.396] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/character/findServerid","resourceDesc":"区服id获取","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查询成功","data":[{"serverid":"54"},{"serverid":"2"},{"serverid":"1"},{"serverid":"3"}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:47:52 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:47:53.316] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/character/findServername","resourceDesc":"区服名称获取","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查询成功","data":[{"label":"测试机一","value":"测试机一"},{"label":"123","value":"123"},{"label":"123123","value":"123123"},{"label":"驱蚊器恶趣味","value":"驱蚊器恶趣味"}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:47:53 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:47:53.649] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/character/findServerid","resourceDesc":"区服id获取","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查询成功","data":[{"serverid":"54"},{"serverid":"2"},{"serverid":"1"},{"serverid":"3"}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:47:53 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:47:55.329] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/character/findServername","resourceDesc":"区服名称获取","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查询成功","data":[{"label":"测试机一","value":"测试机一"},{"label":"123","value":"123"},{"label":"123123","value":"123123"},{"label":"驱蚊器恶趣味","value":"驱蚊器恶趣味"}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:47:55 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:47:56.841] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/character/findServerid","resourceDesc":"区服id获取","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查询成功","data":[{"serverid":"54"},{"serverid":"2"},{"serverid":"1"},{"serverid":"3"}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:47:56 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:47:56.939] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/character/findServername","resourceDesc":"区服名称获取","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查询成功","data":[{"label":"测试机一","value":"测试机一"},{"label":"123","value":"123"},{"label":"123123","value":"123123"},{"label":"驱蚊器恶趣味","value":"驱蚊器恶趣味"}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:47:56 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:47:57.266] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/character/findServerid","resourceDesc":"区服id获取","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查询成功","data":[{"serverid":"54"},{"serverid":"2"},{"serverid":"1"},{"serverid":"3"}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:47:57 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:48:16.474] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/server/selectComponent?code=areaclothing&gameid=1","resourceDesc":"根据游戏ID 组件名称搜索 区服组件","requestType":"GET","requestParams":"{\"code\":\"areaclothing\",\"gameid\":\"1\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查找成功","data":{"values":["测试渠道二渠道","测试渠道三渠道","测试渠道四渠道","测试渠道五渠道","测试渠道六渠道","测试渠道一渠道","fancyguo"]}},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:48:16 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:48:16.770] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/server/findServer?plaform=&display=&load=&srttime=&key=serverid&value=&test=0&mergeserver=&page=1&pagesize=20&clientshow=&stopshow=","resourceDesc":"","requestType":"GET","requestParams":"{\"plaform\":\"\",\"display\":\"\",\"load\":\"\",\"srttime\":\"\",\"key\":\"serverid\",\"value\":\"\",\"test\":\"0\",\"mergeserver\":\"\",\"page\":\"1\",\"pagesize\":\"20\",\"clientshow\":\"\",\"stopshow\":\"\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查找","data":{"total":"3","table":[{"id":54,"status":1,"create_user_id":79,"update_user_id":null,"create_time":"2020-11-02T08:25:08.681Z","update_time":"2020-11-02T08:25:08.681Z","servername":"测试机一","ip_port":"127.0.0.1：24024","address":"aa","plaform":["1"],"display":"3","srttime":"2020-11-15T16:00:00.000Z","gamename":"","pid":null,"serverid":"54","test":"0","load":"2","gameid":1,"childrens":null,"port":"24024","ip":"127.0.0.1","channel":["测试渠道一渠道","测试渠道二渠道","测试渠道三渠道","测试渠道四渠道","测试渠道五渠道","测试渠道六渠道"],"serverTrue":null,"securityGroup":null,"clientshow":"1","stopshow":"1","stopmessage":null,"stopuser":null},{"id":150,"status":1,"create_user_id":79,"update_user_id":null,"create_time":"2020-11-12T03:30:33.660Z","update_time":"2020-11-12T03:30:33.660Z","servername":"123123","ip_port":"127.0.0.1:24024","address":"","plaform":["1"],"display":"3","srttime":"2020-11-12T03:23:50.000Z","gamename":"","pid":null,"serverid":"1","test":"0","load":"2","gameid":1,"childrens":null,"port":"24024","ip":"127.0.0.1","channel":["fancyguo"],"serverTrue":false,"securityGroup":null,"clientshow":"0","stopshow":"0","stopmessage":null,"stopuser":null},{"id":174,"status":1,"create_user_id":79,"update_user_id":null,"create_time":"2020-11-24T03:20:48.079Z","update_time":"2020-11-24T03:20:48.079Z","servername":"123","ip_port":"","address":"127.0.0.1:24024","plaform":["1","2"],"display":"3","srttime":"2020-11-24T16:00:00.000Z","gamename":"","pid":null,"serverid":"2","test":"0","load":"2","gameid":1,"childrens":null,"port":"24024","ip":"127.0.0.1","channel":["测试渠道二渠道"],"serverTrue":false,"securityGroup":null,"clientshow":"0","stopshow":"0","stopmessage":null,"stopuser":null}],"displayNum":[{"max":"0","display":"繁忙"},{"max":"0","display":"爆满"},{"max":"3","display":"维护"},{"max":"0","display":"流畅"}],"page":"1"}},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:48:16 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:52:17.049] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/server/selectComponent?code=areaclothing&gameid=1","resourceDesc":"根据游戏ID 组件名称搜索 区服组件","requestType":"GET","requestParams":"{\"code\":\"areaclothing\",\"gameid\":\"1\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查找成功","data":{"values":["测试渠道二渠道","测试渠道三渠道","测试渠道四渠道","测试渠道五渠道","测试渠道六渠道","测试渠道一渠道","fancyguo"]}},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:52:17 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:52:17.344] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/server/findServer?plaform=&display=&load=&srttime=&key=serverid&value=&test=0&mergeserver=&page=1&pagesize=20&clientshow=&stopshow=","resourceDesc":"","requestType":"GET","requestParams":"{\"plaform\":\"\",\"display\":\"\",\"load\":\"\",\"srttime\":\"\",\"key\":\"serverid\",\"value\":\"\",\"test\":\"0\",\"mergeserver\":\"\",\"page\":\"1\",\"pagesize\":\"20\",\"clientshow\":\"\",\"stopshow\":\"\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查找","data":{"total":"3","table":[{"id":54,"status":1,"create_user_id":79,"update_user_id":null,"create_time":"2020-11-02T08:25:08.681Z","update_time":"2020-11-02T08:25:08.681Z","servername":"测试机一","ip_port":"127.0.0.1：24024","address":"aa","plaform":["1"],"display":"3","srttime":"2020-11-15T16:00:00.000Z","gamename":"","pid":null,"serverid":"54","test":"0","load":"2","gameid":1,"childrens":null,"port":"24024","ip":"127.0.0.1","channel":["测试渠道一渠道","测试渠道二渠道","测试渠道三渠道","测试渠道四渠道","测试渠道五渠道","测试渠道六渠道"],"serverTrue":null,"securityGroup":null,"clientshow":"1","stopshow":"1","stopmessage":null,"stopuser":null},{"id":150,"status":1,"create_user_id":79,"update_user_id":null,"create_time":"2020-11-12T03:30:33.660Z","update_time":"2020-11-12T03:30:33.660Z","servername":"123123","ip_port":"127.0.0.1:24024","address":"","plaform":["1"],"display":"3","srttime":"2020-11-12T03:23:50.000Z","gamename":"","pid":null,"serverid":"1","test":"0","load":"2","gameid":1,"childrens":null,"port":"24024","ip":"127.0.0.1","channel":["fancyguo"],"serverTrue":false,"securityGroup":null,"clientshow":"0","stopshow":"0","stopmessage":null,"stopuser":null},{"id":174,"status":1,"create_user_id":79,"update_user_id":null,"create_time":"2020-11-24T03:20:48.079Z","update_time":"2020-11-24T03:20:48.079Z","servername":"123","ip_port":"","address":"127.0.0.1:24024","plaform":["1","2"],"display":"3","srttime":"2020-11-24T16:00:00.000Z","gamename":"","pid":null,"serverid":"2","test":"0","load":"2","gameid":1,"childrens":null,"port":"24024","ip":"127.0.0.1","channel":["测试渠道二渠道"],"serverTrue":false,"securityGroup":null,"clientshow":"0","stopshow":"0","stopmessage":null,"stopuser":null}],"displayNum":[{"max":"0","display":"繁忙"},{"max":"0","display":"爆满"},{"max":"3","display":"维护"},{"max":"0","display":"流畅"}],"page":"1"}},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:52:17 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:52:21.230] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/character/findServerid","resourceDesc":"区服id获取","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查询成功","data":[{"serverid":"54"},{"serverid":"2"},{"serverid":"1"}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:52:21 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:52:21.567] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/character/findServername","resourceDesc":"区服名称获取","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查询成功","data":[{"label":"测试机一","value":"测试机一"},{"label":"123","value":"123"},{"label":"123123","value":"123123"}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:52:21 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:52:27.067] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/character/findServername","resourceDesc":"区服名称获取","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查询成功","data":[{"label":"测试机一","value":"测试机一"},{"label":"123","value":"123"},{"label":"123123","value":"123123"}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:52:27 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:52:27.405] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/character/findServerid","resourceDesc":"区服id获取","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查询成功","data":[{"serverid":"54"},{"serverid":"2"},{"serverid":"1"}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:52:27 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:52:30.177] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/character/findServerid","resourceDesc":"区服id获取","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查询成功","data":[{"serverid":"54"},{"serverid":"2"},{"serverid":"1"}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:52:30 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:52:30.250] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/character/findServername","resourceDesc":"区服名称获取","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查询成功","data":[{"label":"测试机一","value":"测试机一"},{"label":"123","value":"123"},{"label":"123123","value":"123123"}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:52:30 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:52:30.577] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/character/findServerid","resourceDesc":"区服id获取","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查询成功","data":[{"serverid":"54"},{"serverid":"2"},{"serverid":"1"}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:52:30 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:52:32.528] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/server/batchCreate","resourceDesc":"区服批量创建","requestType":"POST","requestParams":"{\"value\":[{\"serverid\":\"21\",\"servername\":\"asdasd\",\"platform\":\"苹果\",\"srttime\":\"2020-12-13 12:00:00\",\"display\":\"流畅\",\"test\":\"是\",\"address\":\"127.0.0.1\",\"key\":2,\"change\":false,\"channel\":[\"fancyguo\"],\"success\":true},{\"serverid\":3,\"servername\":\"驱蚊器恶趣味\",\"platform\":\"全平台\",\"srttime\":\"2020-12-13 12:00:00\",\"display\":\"流畅\",\"test\":\"是\",\"address\":\"127.0.0.1:24024\",\"key\":3,\"change\":false,\"channel\":[\"测试渠道五渠道\"],\"success\":true}]}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"成功","data":[{"status":"rejected","reason":{"code":500,"message":{"code":500,"message":"Cp交互失败,请确认交互地址","data":{"serverid":"21","servername":"asdasd","platform":"苹果","srttime":"2020-12-13 12:00:00","display":1,"test":"1","address":"127.0.0.1","key":2,"change":false,"channel":["fancyguo"],"success":true,"plaform":[2],"gameid":"1"}}}},{"status":"fulfilled","value":{"id":"3","status":1,"create_user_id":79,"update_user_id":null,"create_time":"2020-11-25T13:52:29.755Z","update_time":"2020-11-25T13:52:29.755Z","servername":"驱蚊器恶趣味","ip_port":null,"address":"127.0.0.1:24024","plaform":[1,2],"display":"1","srttime":"2020-12-13T04:00:00.000Z","gamename":"","pid":null,"serverid":"3","test":"1","load":null,"gameid":1,"childrens":null,"port":"24024","ip":"127.0.0.1","channel":["测试渠道五渠道"],"serverTrue":false,"securityGroup":null,"clientshow":"0","stopshow":"0","stopmessage":null,"stopuser":null,"code":200}}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:52:32 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:53:19.576] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/server/selectComponent?code=areaclothing&gameid=1","resourceDesc":"根据游戏ID 组件名称搜索 区服组件","requestType":"GET","requestParams":"{\"code\":\"areaclothing\",\"gameid\":\"1\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查找成功","data":{"values":["测试渠道二渠道","测试渠道三渠道","测试渠道四渠道","测试渠道五渠道","测试渠道六渠道","测试渠道一渠道","fancyguo"]}},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:53:19 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:53:19.879] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/server/findServer?plaform=&display=&load=&srttime=&key=serverid&value=&test=0&mergeserver=&page=1&pagesize=20&clientshow=&stopshow=","resourceDesc":"","requestType":"GET","requestParams":"{\"plaform\":\"\",\"display\":\"\",\"load\":\"\",\"srttime\":\"\",\"key\":\"serverid\",\"value\":\"\",\"test\":\"0\",\"mergeserver\":\"\",\"page\":\"1\",\"pagesize\":\"20\",\"clientshow\":\"\",\"stopshow\":\"\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查找","data":{"total":"2","table":[{"id":54,"status":1,"create_user_id":79,"update_user_id":null,"create_time":"2020-11-02T08:25:08.681Z","update_time":"2020-11-02T08:25:08.681Z","servername":"测试机一","ip_port":"127.0.0.1：24024","address":"aa","plaform":["1"],"display":"3","srttime":"2020-11-15T16:00:00.000Z","gamename":"","pid":null,"serverid":"54","test":"0","load":"2","gameid":1,"childrens":null,"port":"24024","ip":"127.0.0.1","channel":["测试渠道一渠道","测试渠道二渠道","测试渠道三渠道","测试渠道四渠道","测试渠道五渠道","测试渠道六渠道"],"serverTrue":null,"securityGroup":null,"clientshow":"1","stopshow":"1","stopmessage":null,"stopuser":null},{"id":150,"status":1,"create_user_id":79,"update_user_id":null,"create_time":"2020-11-12T03:30:33.660Z","update_time":"2020-11-12T03:30:33.660Z","servername":"123123","ip_port":"127.0.0.1:24024","address":"","plaform":["1"],"display":"3","srttime":"2020-11-12T03:23:50.000Z","gamename":"","pid":null,"serverid":"1","test":"0","load":"2","gameid":1,"childrens":null,"port":"24024","ip":"127.0.0.1","channel":["fancyguo"],"serverTrue":false,"securityGroup":null,"clientshow":"0","stopshow":"0","stopmessage":null,"stopuser":null}],"displayNum":[{"max":"0","display":"繁忙"},{"max":"0","display":"爆满"},{"max":"2","display":"维护"},{"max":"0","display":"流畅"}],"page":"1"}},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:53:19 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:53:24.242] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/character/findServerid","resourceDesc":"区服id获取","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查询成功","data":[{"serverid":"54"},{"serverid":"1"},{"serverid":"3"}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:53:24 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:53:24.569] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/character/findServername","resourceDesc":"区服名称获取","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查询成功","data":[{"label":"测试机一","value":"测试机一"},{"label":"123123","value":"123123"},{"label":"驱蚊器恶趣味","value":"驱蚊器恶趣味"}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:53:24 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:53:30.264] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/character/findServername","resourceDesc":"区服名称获取","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查询成功","data":[{"label":"测试机一","value":"测试机一"},{"label":"123123","value":"123123"},{"label":"驱蚊器恶趣味","value":"驱蚊器恶趣味"}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:53:30 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:53:30.603] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/character/findServerid","resourceDesc":"区服id获取","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查询成功","data":[{"serverid":"54"},{"serverid":"1"},{"serverid":"3"}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:53:30 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:53:33.255] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/character/findServerid","resourceDesc":"区服id获取","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查询成功","data":[{"serverid":"54"},{"serverid":"1"},{"serverid":"3"}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:53:33 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:53:38.784] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/character/findServerid","resourceDesc":"区服id获取","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查询成功","data":[{"serverid":"54"},{"serverid":"1"}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:53:38 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:53:38.869] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/character/findServername","resourceDesc":"区服名称获取","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查询成功","data":[{"label":"测试机一","value":"测试机一"},{"label":"123123","value":"123123"}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:53:38 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:53:39.202] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/character/findServerid","resourceDesc":"区服id获取","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查询成功","data":[{"serverid":"54"},{"serverid":"1"}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:53:39 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:53:41.419] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/character/findServerid","resourceDesc":"区服id获取","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查询成功","data":[{"serverid":"54"},{"serverid":"1"}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:53:41 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:53:41.497] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/character/findServername","resourceDesc":"区服名称获取","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查询成功","data":[{"label":"测试机一","value":"测试机一"},{"label":"123123","value":"123123"}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:53:41 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:53:41.832] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/character/findServerid","resourceDesc":"区服id获取","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查询成功","data":[{"serverid":"54"},{"serverid":"1"}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:53:41 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:53:43.501] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/server/batchCreate","resourceDesc":"区服批量创建","requestType":"POST","requestParams":"{\"value\":[{\"serverid\":\"21\",\"servername\":\"asdasd\",\"platform\":\"苹果\",\"srttime\":\"2020-12-13 12:00:00\",\"display\":\"流畅\",\"test\":\"是\",\"address\":\"127.0.0.1\",\"key\":2,\"change\":false,\"channel\":[\"fancyguo\"],\"success\":true},{\"serverid\":3,\"servername\":\"驱蚊器恶趣味\",\"platform\":\"全平台\",\"srttime\":\"2020-12-13 12:00:00\",\"display\":\"流畅\",\"test\":\"是\",\"address\":\"127.0.0.1:24024\",\"key\":3,\"change\":false,\"channel\":[\"测试渠道三渠道\"],\"success\":true}]}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"成功","data":[{"status":"rejected","reason":{"code":500,"message":{"code":500,"message":"Cp交互失败,请确认交互地址","data":{"serverid":"21","servername":"asdasd","platform":"苹果","srttime":"2020-12-13 12:00:00","display":1,"test":"1","address":"127.0.0.1","key":2,"change":false,"channel":["fancyguo"],"success":true,"plaform":[2],"gameid":"1"}}}},{"status":"fulfilled","value":{"id":"3","status":1,"create_user_id":79,"update_user_id":null,"create_time":"2020-11-25T13:53:40.731Z","update_time":"2020-11-25T13:53:40.731Z","servername":"驱蚊器恶趣味","ip_port":null,"address":"127.0.0.1:24024","plaform":[1,2],"display":"1","srttime":"2020-12-13T04:00:00.000Z","gamename":"","pid":null,"serverid":"3","test":"1","load":null,"gameid":1,"childrens":null,"port":"24024","ip":"127.0.0.1","channel":["测试渠道三渠道"],"serverTrue":false,"securityGroup":null,"clientshow":"0","stopshow":"0","stopmessage":null,"stopuser":null,"code":200}}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:53:43 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:54:00.697] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/character/findServername","resourceDesc":"区服名称获取","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查询成功","data":[{"label":"测试机一","value":"测试机一"},{"label":"123123","value":"123123"},{"label":"驱蚊器恶趣味","value":"驱蚊器恶趣味"}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:54:00 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:54:01.026] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/character/findServerid","resourceDesc":"区服id获取","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查询成功","data":[{"serverid":"54"},{"serverid":"1"},{"serverid":"3"}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:54:01 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:54:04.618] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/server/batchCreate","resourceDesc":"区服批量创建","requestType":"POST","requestParams":"{\"value\":[{\"serverid\":\"21\",\"servername\":\"asdasd\",\"platform\":\"苹果\",\"srttime\":\"2020-12-13 12:00:00\",\"display\":\"流畅\",\"test\":\"是\",\"address\":\"127.0.0.1:24024\",\"key\":2,\"change\":false,\"channel\":[\"fancyguo\"],\"success\":true}]}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"成功","data":[{"status":"fulfilled","value":{"id":"21","status":1,"create_user_id":79,"update_user_id":null,"create_time":"2020-11-25T13:54:01.859Z","update_time":"2020-11-25T13:54:01.859Z","servername":"asdasd","ip_port":null,"address":"127.0.0.1:24024","plaform":[2],"display":"1","srttime":"2020-12-13T04:00:00.000Z","gamename":"","pid":null,"serverid":"21","test":"1","load":null,"gameid":1,"childrens":null,"port":"24024","ip":"127.0.0.1","channel":["fancyguo"],"serverTrue":false,"securityGroup":null,"clientshow":"0","stopshow":"0","stopmessage":null,"stopuser":null,"code":200}}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:54:04 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:57:12.834] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/server/selectComponent?code=areaclothing&gameid=1","resourceDesc":"根据游戏ID 组件名称搜索 区服组件","requestType":"GET","requestParams":"{\"code\":\"areaclothing\",\"gameid\":\"1\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查找成功","data":{"values":["测试渠道二渠道","测试渠道三渠道","测试渠道四渠道","测试渠道五渠道","测试渠道六渠道","测试渠道一渠道","fancyguo"]}},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:57:12 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:57:12.860] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/server/findServer?plaform=&display=&load=&srttime=&key=serverid&value=&test=0&mergeserver=&page=1&pagesize=20&clientshow=&stopshow=","resourceDesc":"","requestType":"GET","requestParams":"{\"plaform\":\"\",\"display\":\"\",\"load\":\"\",\"srttime\":\"\",\"key\":\"serverid\",\"value\":\"\",\"test\":\"0\",\"mergeserver\":\"\",\"page\":\"1\",\"pagesize\":\"20\",\"clientshow\":\"\",\"stopshow\":\"\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查找","data":{"total":"2","table":[{"id":54,"status":1,"create_user_id":79,"update_user_id":null,"create_time":"2020-11-02T08:25:08.681Z","update_time":"2020-11-02T08:25:08.681Z","servername":"测试机一","ip_port":"127.0.0.1：24024","address":"aa","plaform":["1"],"display":"3","srttime":"2020-11-15T16:00:00.000Z","gamename":"","pid":null,"serverid":"54","test":"0","load":"2","gameid":1,"childrens":null,"port":"24024","ip":"127.0.0.1","channel":["测试渠道一渠道","测试渠道二渠道","测试渠道三渠道","测试渠道四渠道","测试渠道五渠道","测试渠道六渠道"],"serverTrue":null,"securityGroup":null,"clientshow":"1","stopshow":"1","stopmessage":null,"stopuser":null},{"id":150,"status":1,"create_user_id":79,"update_user_id":null,"create_time":"2020-11-12T03:30:33.660Z","update_time":"2020-11-12T03:30:33.660Z","servername":"123123","ip_port":"127.0.0.1:24024","address":"","plaform":["1"],"display":"3","srttime":"2020-11-12T03:23:50.000Z","gamename":"","pid":null,"serverid":"1","test":"0","load":"2","gameid":1,"childrens":null,"port":"24024","ip":"127.0.0.1","channel":["fancyguo"],"serverTrue":false,"securityGroup":null,"clientshow":"0","stopshow":"0","stopmessage":null,"stopuser":null}],"displayNum":[{"max":"0","display":"繁忙"},{"max":"0","display":"爆满"},{"max":"2","display":"维护"},{"max":"0","display":"流畅"}],"page":"1"}},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:57:12 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:57:13.103] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/server/selectComponent?code=areaclothing&gameid=1","resourceDesc":"根据游戏ID 组件名称搜索 区服组件","requestType":"GET","requestParams":"{\"code\":\"areaclothing\",\"gameid\":\"1\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查找成功","data":{"values":["测试渠道二渠道","测试渠道三渠道","测试渠道四渠道","测试渠道五渠道","测试渠道六渠道","测试渠道一渠道","fancyguo"]}},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:57:13 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-11-25T21:57:13.401] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/server/findServer?plaform=&display=&load=&srttime=&key=serverid&value=&test=0&mergeserver=&page=1&pagesize=20&clientshow=&stopshow=","resourceDesc":"","requestType":"GET","requestParams":"{\"plaform\":\"\",\"display\":\"\",\"load\":\"\",\"srttime\":\"\",\"key\":\"serverid\",\"value\":\"\",\"test\":\"0\",\"mergeserver\":\"\",\"page\":\"1\",\"pagesize\":\"20\",\"clientshow\":\"\",\"stopshow\":\"\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查找","data":{"total":"2","table":[{"id":54,"status":1,"create_user_id":79,"update_user_id":null,"create_time":"2020-11-02T08:25:08.681Z","update_time":"2020-11-02T08:25:08.681Z","servername":"测试机一","ip_port":"127.0.0.1：24024","address":"aa","plaform":["1"],"display":"3","srttime":"2020-11-15T16:00:00.000Z","gamename":"","pid":null,"serverid":"54","test":"0","load":"2","gameid":1,"childrens":null,"port":"24024","ip":"127.0.0.1","channel":["测试渠道一渠道","测试渠道二渠道","测试渠道三渠道","测试渠道四渠道","测试渠道五渠道","测试渠道六渠道"],"serverTrue":null,"securityGroup":null,"clientshow":"1","stopshow":"1","stopmessage":null,"stopuser":null},{"id":150,"status":1,"create_user_id":79,"update_user_id":null,"create_time":"2020-11-12T03:30:33.660Z","update_time":"2020-11-12T03:30:33.660Z","servername":"123123","ip_port":"127.0.0.1:24024","address":"","plaform":["1"],"display":"3","srttime":"2020-11-12T03:23:50.000Z","gamename":"","pid":null,"serverid":"1","test":"0","load":"2","gameid":1,"childrens":null,"port":"24024","ip":"127.0.0.1","channel":["fancyguo"],"serverTrue":false,"securityGroup":null,"clientshow":"0","stopshow":"0","stopmessage":null,"stopuser":null}],"displayNum":[{"max":"0","display":"繁忙"},{"max":"0","display":"爆满"},{"max":"2","display":"维护"},{"max":"0","display":"流畅"}],"page":"1"}},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-11-25 9:57:13 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+

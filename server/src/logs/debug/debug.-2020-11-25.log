@@ -6943,3 +6943,790 @@ select * from asd where id::varchar in (select id from qwe GROUP BY id )
 [2020-11-25T21:26:50.678] [DEBUG] debugLogger - Executing (default): SELECT i.relname AS name, ix.indisprimary AS primary, ix.indisunique AS unique, ix.indkey AS indkey, array_agg(a.attnum) as column_indexes, array_agg(a.attname) AS column_names, pg_get_indexdef(ix.indexrelid) AS definition FROM pg_class t, pg_class i, pg_index ix, pg_attribute a WHERE t.oid = ix.indrelid AND i.oid = ix.indexrelid AND a.attrelid = t.oid AND t.relkind = 'r' and t.relname = 'gm_user' GROUP BY i.relname, ix.indexrelid, ix.indisprimary, ix.indisunique, ix.indkey ORDER BY i.relname;
 [2020-11-25T21:26:50.679] [DEBUG] debugLogger - Executing (default): SELECT i.relname AS name, ix.indisprimary AS primary, ix.indisunique AS unique, ix.indkey AS indkey, array_agg(a.attnum) as column_indexes, array_agg(a.attname) AS column_names, pg_get_indexdef(ix.indexrelid) AS definition FROM pg_class t, pg_class i, pg_index ix, pg_attribute a WHERE t.oid = ix.indrelid AND i.oid = ix.indexrelid AND a.attrelid = t.oid AND t.relkind = 'r' and t.relname = 'gm_server' GROUP BY i.relname, ix.indexrelid, ix.indisprimary, ix.indisunique, ix.indkey ORDER BY i.relname;
 [2020-11-25T21:26:50.680] [DEBUG] debugLogger - Executing (default): SELECT i.relname AS name, ix.indisprimary AS primary, ix.indisunique AS unique, ix.indkey AS indkey, array_agg(a.attnum) as column_indexes, array_agg(a.attname) AS column_names, pg_get_indexdef(ix.indexrelid) AS definition FROM pg_class t, pg_class i, pg_index ix, pg_attribute a WHERE t.oid = ix.indrelid AND i.oid = ix.indexrelid AND a.attrelid = t.oid AND t.relkind = 'r' and t.relname = 'auth_user' GROUP BY i.relname, ix.indexrelid, ix.indisprimary, ix.indisunique, ix.indkey ORDER BY i.relname;
+[2020-11-25T21:28:43.951] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(channel, ','), ',')  as values  from gm_game_channel where gameid = '1' and status = '1'
+[2020-11-25T21:28:44.106] [DEBUG] debugLogger - Executing (default): select * from gm_server  where gameid='1'and test='0' and status = 1 and (pid is null or  trim(pid) ='') order by id limit 20 offset (20*0)
+[2020-11-25T21:28:44.115] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_server where gameid='1'and test='0' and status = 1 and (pid is null or  trim(pid) ='')
+[2020-11-25T21:28:44.124] [DEBUG] debugLogger - Executing (default): select max(num), display from (SELECT count(display) as num,
+		case 
+		when display='1' then '流畅'
+		when display='2' then '繁忙'
+		when display='3' then '维护'
+		when display='4' then '爆满'
+		end
+		as display
+		from gm_server where id in ( SELECT id from gm_server  where gameid='1'and test='0' and  status = 1 and (pid is null or  trim(pid) ='')  ORDER BY id limit 20 offset (20*0)  ) GROUP BY display 
+		union 
+		select 0 as num ,'繁忙' as display
+		union 
+		select 0 as num ,'流畅' as display
+		union
+		select 0 as num ,'维护' as display
+		union
+		select 0 as num ,'爆满' as display
+		)a GROUP BY display
+[2020-11-25T21:29:31.752] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(channel, ','), ',')  as values  from gm_game_channel where gameid = '1' and status = '1'
+[2020-11-25T21:29:32.034] [DEBUG] debugLogger - Executing (default): select * from gm_server  where gameid='1'and test='0' and status = 1 and (pid is null or  trim(pid) ='') order by id limit 20 offset (20*0)
+[2020-11-25T21:29:32.043] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_server where gameid='1'and test='0' and status = 1 and (pid is null or  trim(pid) ='')
+[2020-11-25T21:29:32.052] [DEBUG] debugLogger - Executing (default): select max(num), display from (SELECT count(display) as num,
+		case 
+		when display='1' then '流畅'
+		when display='2' then '繁忙'
+		when display='3' then '维护'
+		when display='4' then '爆满'
+		end
+		as display
+		from gm_server where id in ( SELECT id from gm_server  where gameid='1'and test='0' and  status = 1 and (pid is null or  trim(pid) ='')  ORDER BY id limit 20 offset (20*0)  ) GROUP BY display 
+		union 
+		select 0 as num ,'繁忙' as display
+		union 
+		select 0 as num ,'流畅' as display
+		union
+		select 0 as num ,'维护' as display
+		union
+		select 0 as num ,'爆满' as display
+		)a GROUP BY display
+[2020-11-25T21:29:48.431] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(channel, ','), ',')  as values  from gm_game_channel where gameid = '1' and status = '1'
+[2020-11-25T21:29:48.723] [DEBUG] debugLogger - Executing (default): select * from gm_server  where gameid='1'and test='0' and status = 1 and (pid is null or  trim(pid) ='') order by id limit 20 offset (20*0)
+[2020-11-25T21:29:48.731] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_server where gameid='1'and test='0' and status = 1 and (pid is null or  trim(pid) ='')
+[2020-11-25T21:29:48.743] [DEBUG] debugLogger - Executing (default): select max(num), display from (SELECT count(display) as num,
+		case 
+		when display='1' then '流畅'
+		when display='2' then '繁忙'
+		when display='3' then '维护'
+		when display='4' then '爆满'
+		end
+		as display
+		from gm_server where id in ( SELECT id from gm_server  where gameid='1'and test='0' and  status = 1 and (pid is null or  trim(pid) ='')  ORDER BY id limit 20 offset (20*0)  ) GROUP BY display 
+		union 
+		select 0 as num ,'繁忙' as display
+		union 
+		select 0 as num ,'流畅' as display
+		union
+		select 0 as num ,'维护' as display
+		union
+		select 0 as num ,'爆满' as display
+		)a GROUP BY display
+[2020-11-25T21:29:51.996] [DEBUG] debugLogger - Executing (default): select serverid from gm_server where gameid = '1' and status = 1
+[2020-11-25T21:29:52.326] [DEBUG] debugLogger - Executing (default): select servername from gm_server where gameid='1' and status = 1
+[2020-11-25T21:29:58.816] [DEBUG] debugLogger - Executing (default): select servername from gm_server where gameid='1' and status = 1
+[2020-11-25T21:29:59.145] [DEBUG] debugLogger - Executing (default): select serverid from gm_server where gameid = '1' and status = 1
+[2020-11-25T21:29:59.374] [DEBUG] debugLogger - Executing (default): select servername from gm_server where gameid='1' and status = 1
+[2020-11-25T21:30:02.362] [DEBUG] debugLogger - Executing (default): select servername from gm_server where gameid='1' and status = 1
+[2020-11-25T21:30:02.692] [DEBUG] debugLogger - Executing (default): select serverid from gm_server where gameid = '1' and status = 1
+[2020-11-25T21:30:05.080] [DEBUG] debugLogger - Executing (default): select serverid from gm_server where gameid = '1' and status = 1
+[2020-11-25T21:30:05.167] [DEBUG] debugLogger - Executing (default): select servername from gm_server where gameid='1' and status = 1
+[2020-11-25T21:30:05.493] [DEBUG] debugLogger - Executing (default): select serverid from gm_server where gameid = '1' and status = 1
+[2020-11-25T21:30:08.847] [DEBUG] debugLogger - Executing (default): insert into gm_server (
+			create_user_id,servername,gameid,address,test,ip_port,
+			display,srttime,channel,plaform,
+			ip,port,serverid,"serverTrue"
+		)values(
+			'79','asdasd','1','127.0.0.1','1',null,
+			'1','Sun, 13 Dec 2020 12:00:00 GMT','["fancyguo"]','[2]',
+			'127.0.0.1','80','21',false	
+				) RETURNING *
+[2020-11-25T21:30:08.855] [DEBUG] debugLogger - Executing (default): insert into gm_server (
+			create_user_id,servername,gameid,address,test,ip_port,
+			display,srttime,channel,plaform,
+			ip,port,serverid,"serverTrue"
+		)values(
+			'79','驱蚊器恶趣味','1','127.0.0.1:24024','1',null,
+			'1','Sun, 13 Dec 2020 12:00:00 GMT','["测试渠道五渠道"]','[1,2]',
+			'127.0.0.1','24024','3',false	
+				) RETURNING *
+[2020-11-25T21:30:08.898] [DEBUG] debugLogger - Executing (default): update  gm_server set  status = '0' where id = 188
+[2020-11-25T21:30:08.911] [DEBUG] debugLogger - Executing (default): INSERT into gm_logs 
+				(user_id,ip,nick_name,instructions,classification,"text",game_id,alias,kwargs)
+				VALUES
+				('79','127.0.0.1','','区服合并','区服管理','合并了区服id [object Object]','1','长澜月','{"value":[{"serverid":"21","servername":"asdasd","platform":"苹果","srttime":"2020-12-13 12:00:00","display":1,"test":"1","address":"127.0.0.1","key":2,"change":false,"channel":["fancyguo"],"success":true,"plaform":[2],"gameid":"1"},{"serverid":3,"servername":"驱蚊器恶趣味","platform":"全平台","srttime":"2020-12-13 12:00:00","display":1,"test":"1","address":"127.0.0.1:24024","key":3,"change":false,"channel":["测试渠道五渠道"],"success":true,"plaform":[1,2],"gameid":"1"}],"gameid":"1"}')
+[2020-11-25T21:32:36.722] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(channel, ','), ',')  as values  from gm_game_channel where gameid = '1' and status = '1'
+[2020-11-25T21:32:36.727] [DEBUG] debugLogger - Executing (default): select * from gm_server  where gameid='1'and test='0' and status = 1 and (pid is null or  trim(pid) ='') order by id limit 20 offset (20*0)
+[2020-11-25T21:32:36.735] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_server where gameid='1'and test='0' and status = 1 and (pid is null or  trim(pid) ='')
+[2020-11-25T21:32:36.744] [DEBUG] debugLogger - Executing (default): select max(num), display from (SELECT count(display) as num,
+		case 
+		when display='1' then '流畅'
+		when display='2' then '繁忙'
+		when display='3' then '维护'
+		when display='4' then '爆满'
+		end
+		as display
+		from gm_server where id in ( SELECT id from gm_server  where gameid='1'and test='0' and  status = 1 and (pid is null or  trim(pid) ='')  ORDER BY id limit 20 offset (20*0)  ) GROUP BY display 
+		union 
+		select 0 as num ,'繁忙' as display
+		union 
+		select 0 as num ,'流畅' as display
+		union
+		select 0 as num ,'维护' as display
+		union
+		select 0 as num ,'爆满' as display
+		)a GROUP BY display
+[2020-11-25T21:32:37.209] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(channel, ','), ',')  as values  from gm_game_channel where gameid = '1' and status = '1'
+[2020-11-25T21:32:37.526] [DEBUG] debugLogger - Executing (default): select * from gm_server  where gameid='1'and test='0' and status = 1 and (pid is null or  trim(pid) ='') order by id limit 20 offset (20*0)
+[2020-11-25T21:32:37.533] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_server where gameid='1'and test='0' and status = 1 and (pid is null or  trim(pid) ='')
+[2020-11-25T21:32:37.547] [DEBUG] debugLogger - Executing (default): select max(num), display from (SELECT count(display) as num,
+		case 
+		when display='1' then '流畅'
+		when display='2' then '繁忙'
+		when display='3' then '维护'
+		when display='4' then '爆满'
+		end
+		as display
+		from gm_server where id in ( SELECT id from gm_server  where gameid='1'and test='0' and  status = 1 and (pid is null or  trim(pid) ='')  ORDER BY id limit 20 offset (20*0)  ) GROUP BY display 
+		union 
+		select 0 as num ,'繁忙' as display
+		union 
+		select 0 as num ,'流畅' as display
+		union
+		select 0 as num ,'维护' as display
+		union
+		select 0 as num ,'爆满' as display
+		)a GROUP BY display
+[2020-11-25T21:32:38.182] [DEBUG] debugLogger - Executing (default): select a.id,a.game_name ,a.image_url as img from gm_game a join gm_purview b on b.gid = a.id where b.uids @> '79' and a.status = '1'  and b.status = '1'   limit 1
+[2020-11-25T21:32:38.191] [DEBUG] debugLogger - Executing (default): with qwe as (select a.url,a.pid,a.name,d.game_name,d.id as gameid, a.id,b.grede , b.purview_id,c.uid,c.gid from gm_url a join gm_url_purview  b on  a.id = b.url_id  join gm_purview c on c.id = b.purview_id join gm_game d on d.id = c.gid where  c.uids @> '79' and d.id = '1' and d.status = 1 and b.grede != 827 and c.status = 1  and a.status = 1 order by id ),
+					qwer as (select * from qwe a where (select count(*) > 1 from qwe b where b.id = a.id )),
+					asd as (select * from qwe a where (select count(*) =  1 from qwe b where b.id = a.id )),
+					zxc as (select * from qwer where grede = '1'),
+					wer as (select * from qwer where id not in (select id from zxc )
+					union 
+					select * from qwer where id not in (select id from zxc )),
+					sdf as (select url,pid,name,gameid,grede,id from asd 
+					union 
+					select url,pid,name,gameid,grede,id from zxc 
+					union 
+					select url,pid,name,gameid,grede,id from wer ),
+					ewq as (select * from sdf ORDER BY id )
+					select name,(select json_agg(concat('{"url":"',url,'","name":"',name,'","meta":"',grede,'"}')::jsonb) from ewq  where ewq.pid = d.id) as children from ewq as d where pid = 0 ORDER BY d.id
+[2020-11-25T21:32:38.200] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(game_name, ','), ',')  as games from (
+			select  DISTINCT game_name,b.id from gm_purview a join gm_game b on a.gid = b.id  where uids @> '79' and b.status = '1' and a.status = '1'   ORDER BY id 
+		) a
+[2020-11-25T21:32:38.971] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(channel, ','), ',')  as values  from gm_game_channel where gameid = '1' and status = '1'
+[2020-11-25T21:32:38.977] [DEBUG] debugLogger - Executing (default): select * from gm_server  where gameid='1'and test='0' and status = 1 and (pid is null or  trim(pid) ='') order by id limit 20 offset (20*0)
+[2020-11-25T21:32:38.996] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_server where gameid='1'and test='0' and status = 1 and (pid is null or  trim(pid) ='')
+[2020-11-25T21:32:39.011] [DEBUG] debugLogger - Executing (default): select max(num), display from (SELECT count(display) as num,
+		case 
+		when display='1' then '流畅'
+		when display='2' then '繁忙'
+		when display='3' then '维护'
+		when display='4' then '爆满'
+		end
+		as display
+		from gm_server where id in ( SELECT id from gm_server  where gameid='1'and test='0' and  status = 1 and (pid is null or  trim(pid) ='')  ORDER BY id limit 20 offset (20*0)  ) GROUP BY display 
+		union 
+		select 0 as num ,'繁忙' as display
+		union 
+		select 0 as num ,'流畅' as display
+		union
+		select 0 as num ,'维护' as display
+		union
+		select 0 as num ,'爆满' as display
+		)a GROUP BY display
+[2020-11-25T21:32:42.708] [DEBUG] debugLogger - Executing (default): select serverid from gm_server where gameid = '1' and status = 1
+[2020-11-25T21:32:43.041] [DEBUG] debugLogger - Executing (default): select servername from gm_server where gameid='1' and status = 1
+[2020-11-25T21:32:48.813] [DEBUG] debugLogger - Executing (default): select servername from gm_server where gameid='1' and status = 1
+[2020-11-25T21:32:49.065] [DEBUG] debugLogger - Executing (default): select serverid from gm_server where gameid = '1' and status = 1
+[2020-11-25T21:32:50.690] [DEBUG] debugLogger - Executing (default): select serverid from gm_server where gameid = '1' and status = 1
+[2020-11-25T21:32:51.083] [DEBUG] debugLogger - Executing (default): select servername from gm_server where gameid='1' and status = 1
+[2020-11-25T21:32:51.332] [DEBUG] debugLogger - Executing (default): select serverid from gm_server where gameid = '1' and status = 1
+[2020-11-25T21:32:54.009] [DEBUG] debugLogger - Executing (default): insert into gm_server (
+			create_user_id,servername,gameid,address,test,ip_port,
+			display,srttime,channel,plaform,
+			ip,port,serverid,"serverTrue"
+		)values(
+			'79','asdasd','1','127.0.0.1','1',null,
+			'1','Sun, 13 Dec 2020 12:00:00 GMT','["fancyguo"]','[2]',
+			'127.0.0.1','80','2123',false	
+				) RETURNING *
+[2020-11-25T21:32:54.017] [DEBUG] debugLogger - Executing (default): insert into gm_server (
+			create_user_id,servername,gameid,address,test,ip_port,
+			display,srttime,channel,plaform,
+			ip,port,serverid,"serverTrue"
+		)values(
+			'79','驱蚊器恶趣味','1','127.0.0.1:24024','1',null,
+			'1','Sun, 13 Dec 2020 12:00:00 GMT','["测试渠道四渠道"]','[1,2]',
+			'127.0.0.1','24024','3',false	
+				) RETURNING *
+[2020-11-25T21:32:54.045] [DEBUG] debugLogger - Executing (default): update  gm_server set  status = '0' where id = 190
+[2020-11-25T21:32:54.057] [DEBUG] debugLogger - Executing (default): INSERT into gm_logs 
+				(user_id,ip,nick_name,instructions,classification,"text",game_id,alias,kwargs)
+				VALUES
+				('79','127.0.0.1','','区服合并','区服管理','合并了区服id [object Object]','1','长澜月','{"value":[{"serverid":"2123","servername":"asdasd","platform":"苹果","srttime":"2020-12-13 12:00:00","display":1,"test":"1","address":"127.0.0.1","key":2,"change":false,"channel":["fancyguo"],"success":true,"plaform":[2],"gameid":"1"},{"serverid":3,"servername":"驱蚊器恶趣味","platform":"全平台","srttime":"2020-12-13 12:00:00","display":1,"test":"1","address":"127.0.0.1:24024","key":3,"change":false,"channel":["测试渠道四渠道"],"success":true,"plaform":[1,2],"gameid":"1"}],"gameid":"1"}')
+[2020-11-25T21:33:26.998] [DEBUG] debugLogger - Executing (default): select a.id,a.game_name ,a.image_url as img from gm_game a join gm_purview b on b.gid = a.id where b.uids @> '79' and a.status = '1'  and b.status = '1'   limit 1
+[2020-11-25T21:33:27.005] [DEBUG] debugLogger - Executing (default): with qwe as (select a.url,a.pid,a.name,d.game_name,d.id as gameid, a.id,b.grede , b.purview_id,c.uid,c.gid from gm_url a join gm_url_purview  b on  a.id = b.url_id  join gm_purview c on c.id = b.purview_id join gm_game d on d.id = c.gid where  c.uids @> '79' and d.id = '1' and d.status = 1 and b.grede != 827 and c.status = 1  and a.status = 1 order by id ),
+					qwer as (select * from qwe a where (select count(*) > 1 from qwe b where b.id = a.id )),
+					asd as (select * from qwe a where (select count(*) =  1 from qwe b where b.id = a.id )),
+					zxc as (select * from qwer where grede = '1'),
+					wer as (select * from qwer where id not in (select id from zxc )
+					union 
+					select * from qwer where id not in (select id from zxc )),
+					sdf as (select url,pid,name,gameid,grede,id from asd 
+					union 
+					select url,pid,name,gameid,grede,id from zxc 
+					union 
+					select url,pid,name,gameid,grede,id from wer ),
+					ewq as (select * from sdf ORDER BY id )
+					select name,(select json_agg(concat('{"url":"',url,'","name":"',name,'","meta":"',grede,'"}')::jsonb) from ewq  where ewq.pid = d.id) as children from ewq as d where pid = 0 ORDER BY d.id
+[2020-11-25T21:33:27.015] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(game_name, ','), ',')  as games from (
+			select  DISTINCT game_name,b.id from gm_purview a join gm_game b on a.gid = b.id  where uids @> '79' and b.status = '1' and a.status = '1'   ORDER BY id 
+		) a
+[2020-11-25T21:33:28.073] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(channel, ','), ',')  as values  from gm_game_channel where gameid = '1' and status = '1'
+[2020-11-25T21:33:28.079] [DEBUG] debugLogger - Executing (default): select * from gm_server  where gameid='1'and test='0' and status = 1 and (pid is null or  trim(pid) ='') order by id limit 20 offset (20*0)
+[2020-11-25T21:33:28.088] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_server where gameid='1'and test='0' and status = 1 and (pid is null or  trim(pid) ='')
+[2020-11-25T21:33:28.097] [DEBUG] debugLogger - Executing (default): select max(num), display from (SELECT count(display) as num,
+		case 
+		when display='1' then '流畅'
+		when display='2' then '繁忙'
+		when display='3' then '维护'
+		when display='4' then '爆满'
+		end
+		as display
+		from gm_server where id in ( SELECT id from gm_server  where gameid='1'and test='0' and  status = 1 and (pid is null or  trim(pid) ='')  ORDER BY id limit 20 offset (20*0)  ) GROUP BY display 
+		union 
+		select 0 as num ,'繁忙' as display
+		union 
+		select 0 as num ,'流畅' as display
+		union
+		select 0 as num ,'维护' as display
+		union
+		select 0 as num ,'爆满' as display
+		)a GROUP BY display
+[2020-11-25T21:33:34.480] [DEBUG] debugLogger - Executing (default): select serverid from gm_server where gameid = '1' and status = 1
+[2020-11-25T21:33:34.504] [DEBUG] debugLogger - Executing (default): select servername from gm_server where gameid='1' and status = 1
+[2020-11-25T21:33:40.380] [DEBUG] debugLogger - Executing (default): select servername from gm_server where gameid='1' and status = 1
+[2020-11-25T21:33:40.629] [DEBUG] debugLogger - Executing (default): select serverid from gm_server where gameid = '1' and status = 1
+[2020-11-25T21:33:42.806] [DEBUG] debugLogger - Executing (default): select serverid from gm_server where gameid = '1' and status = 1
+[2020-11-25T21:33:43.193] [DEBUG] debugLogger - Executing (default): select servername from gm_server where gameid='1' and status = 1
+[2020-11-25T21:33:43.443] [DEBUG] debugLogger - Executing (default): select serverid from gm_server where gameid = '1' and status = 1
+[2020-11-25T21:33:46.000] [DEBUG] debugLogger - Executing (default): insert into gm_server (
+			create_user_id,servername,gameid,address,test,ip_port,
+			display,srttime,channel,plaform,
+			ip,port,serverid,"serverTrue"
+		)values(
+			'79','asdasd','1','127.0.0.1','1',null,
+			'1','Sun, 13 Dec 2020 12:00:00 GMT','["fancyguo"]','[2]',
+			'127.0.0.1','80','2123',false	
+				) RETURNING *
+[2020-11-25T21:33:46.011] [DEBUG] debugLogger - Executing (default): insert into gm_server (
+			create_user_id,servername,gameid,address,test,ip_port,
+			display,srttime,channel,plaform,
+			ip,port,serverid,"serverTrue"
+		)values(
+			'79','驱蚊器恶趣味','1','127.0.0.1:24024','1',null,
+			'1','Sun, 13 Dec 2020 12:00:00 GMT','["测试渠道五渠道"]','[1,2]',
+			'127.0.0.1','24024','3',false	
+				) RETURNING *
+[2020-11-25T21:33:46.033] [DEBUG] debugLogger - Executing (default): update  gm_server set  status = '0' where id = 192
+[2020-11-25T21:33:46.043] [DEBUG] debugLogger - Executing (default): INSERT into gm_logs 
+				(user_id,ip,nick_name,instructions,classification,"text",game_id,alias,kwargs)
+				VALUES
+				('79','127.0.0.1','','区服合并','区服管理','合并了区服id [object Object]','1','长澜月','{"value":[{"serverid":"2123","servername":"asdasd","platform":"苹果","srttime":"2020-12-13 12:00:00","display":1,"test":"1","address":"127.0.0.1","key":2,"change":false,"channel":["fancyguo"],"success":true,"plaform":[2],"gameid":"1"},{"serverid":3,"servername":"驱蚊器恶趣味","platform":"全平台","srttime":"2020-12-13 12:00:00","display":1,"test":"1","address":"127.0.0.1:24024","key":3,"change":false,"channel":["测试渠道五渠道"],"success":true,"plaform":[1,2],"gameid":"1"}],"gameid":"1"}')
+[2020-11-25T21:34:40.589] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(channel, ','), ',')  as values  from gm_game_channel where gameid = '1' and status = '1'
+[2020-11-25T21:34:40.593] [DEBUG] debugLogger - Executing (default): select * from gm_server  where gameid='1'and test='0' and status = 1 and (pid is null or  trim(pid) ='') order by id limit 20 offset (20*0)
+[2020-11-25T21:34:40.602] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_server where gameid='1'and test='0' and status = 1 and (pid is null or  trim(pid) ='')
+[2020-11-25T21:34:40.610] [DEBUG] debugLogger - Executing (default): select max(num), display from (SELECT count(display) as num,
+		case 
+		when display='1' then '流畅'
+		when display='2' then '繁忙'
+		when display='3' then '维护'
+		when display='4' then '爆满'
+		end
+		as display
+		from gm_server where id in ( SELECT id from gm_server  where gameid='1'and test='0' and  status = 1 and (pid is null or  trim(pid) ='')  ORDER BY id limit 20 offset (20*0)  ) GROUP BY display 
+		union 
+		select 0 as num ,'繁忙' as display
+		union 
+		select 0 as num ,'流畅' as display
+		union
+		select 0 as num ,'维护' as display
+		union
+		select 0 as num ,'爆满' as display
+		)a GROUP BY display
+[2020-11-25T21:34:42.649] [DEBUG] debugLogger - Executing (default): select a.id,a.game_name ,a.image_url as img from gm_game a join gm_purview b on b.gid = a.id where b.uids @> '79' and a.status = '1'  and b.status = '1'   limit 1
+[2020-11-25T21:34:42.659] [DEBUG] debugLogger - Executing (default): with qwe as (select a.url,a.pid,a.name,d.game_name,d.id as gameid, a.id,b.grede , b.purview_id,c.uid,c.gid from gm_url a join gm_url_purview  b on  a.id = b.url_id  join gm_purview c on c.id = b.purview_id join gm_game d on d.id = c.gid where  c.uids @> '79' and d.id = '1' and d.status = 1 and b.grede != 827 and c.status = 1  and a.status = 1 order by id ),
+					qwer as (select * from qwe a where (select count(*) > 1 from qwe b where b.id = a.id )),
+					asd as (select * from qwe a where (select count(*) =  1 from qwe b where b.id = a.id )),
+					zxc as (select * from qwer where grede = '1'),
+					wer as (select * from qwer where id not in (select id from zxc )
+					union 
+					select * from qwer where id not in (select id from zxc )),
+					sdf as (select url,pid,name,gameid,grede,id from asd 
+					union 
+					select url,pid,name,gameid,grede,id from zxc 
+					union 
+					select url,pid,name,gameid,grede,id from wer ),
+					ewq as (select * from sdf ORDER BY id )
+					select name,(select json_agg(concat('{"url":"',url,'","name":"',name,'","meta":"',grede,'"}')::jsonb) from ewq  where ewq.pid = d.id) as children from ewq as d where pid = 0 ORDER BY d.id
+[2020-11-25T21:34:42.671] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(game_name, ','), ',')  as games from (
+			select  DISTINCT game_name,b.id from gm_purview a join gm_game b on a.gid = b.id  where uids @> '79' and b.status = '1' and a.status = '1'   ORDER BY id 
+		) a
+[2020-11-25T21:34:43.698] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(channel, ','), ',')  as values  from gm_game_channel where gameid = '1' and status = '1'
+[2020-11-25T21:34:43.704] [DEBUG] debugLogger - Executing (default): select * from gm_server  where gameid='1'and test='0' and status = 1 and (pid is null or  trim(pid) ='') order by id limit 20 offset (20*0)
+[2020-11-25T21:34:43.717] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_server where gameid='1'and test='0' and status = 1 and (pid is null or  trim(pid) ='')
+[2020-11-25T21:34:43.732] [DEBUG] debugLogger - Executing (default): select max(num), display from (SELECT count(display) as num,
+		case 
+		when display='1' then '流畅'
+		when display='2' then '繁忙'
+		when display='3' then '维护'
+		when display='4' then '爆满'
+		end
+		as display
+		from gm_server where id in ( SELECT id from gm_server  where gameid='1'and test='0' and  status = 1 and (pid is null or  trim(pid) ='')  ORDER BY id limit 20 offset (20*0)  ) GROUP BY display 
+		union 
+		select 0 as num ,'繁忙' as display
+		union 
+		select 0 as num ,'流畅' as display
+		union
+		select 0 as num ,'维护' as display
+		union
+		select 0 as num ,'爆满' as display
+		)a GROUP BY display
+[2020-11-25T21:34:48.965] [DEBUG] debugLogger - Executing (default): select serverid from gm_server where gameid = '1' and status = 1
+[2020-11-25T21:34:49.214] [DEBUG] debugLogger - Executing (default): select servername from gm_server where gameid='1' and status = 1
+[2020-11-25T21:34:54.635] [DEBUG] debugLogger - Executing (default): select servername from gm_server where gameid='1' and status = 1
+[2020-11-25T21:34:54.979] [DEBUG] debugLogger - Executing (default): select serverid from gm_server where gameid = '1' and status = 1
+[2020-11-25T21:34:56.385] [DEBUG] debugLogger - Executing (default): select serverid from gm_server where gameid = '1' and status = 1
+[2020-11-25T21:34:57.173] [DEBUG] debugLogger - Executing (default): select servername from gm_server where gameid='1' and status = 1
+[2020-11-25T21:34:58.264] [DEBUG] debugLogger - Executing (default): select serverid from gm_server where gameid = '1' and status = 1
+[2020-11-25T21:34:58.943] [DEBUG] debugLogger - Executing (default): select servername from gm_server where gameid='1' and status = 1
+[2020-11-25T21:34:59.195] [DEBUG] debugLogger - Executing (default): select serverid from gm_server where gameid = '1' and status = 1
+[2020-11-25T21:35:00.959] [DEBUG] debugLogger - Executing (default): insert into gm_server (
+			create_user_id,servername,gameid,address,test,ip_port,
+			display,srttime,channel,plaform,
+			ip,port,serverid,"serverTrue"
+		)values(
+			'79','asdasd','1','127.0.0.1','1',null,
+			'1','Sun, 13 Dec 2020 12:00:00 GMT','["fancyguo"]','[2]',
+			'127.0.0.1','80','27',false	
+				) RETURNING *
+[2020-11-25T21:35:00.968] [DEBUG] debugLogger - Executing (default): insert into gm_server (
+			create_user_id,servername,gameid,address,test,ip_port,
+			display,srttime,channel,plaform,
+			ip,port,serverid,"serverTrue"
+		)values(
+			'79','驱蚊器恶趣味','1','127.0.0.1:24024','1',null,
+			'1','Sun, 13 Dec 2020 12:00:00 GMT','["测试渠道五渠道"]','[1,2]',
+			'127.0.0.1','24024','3',false	
+				) RETURNING *
+[2020-11-25T21:35:00.992] [DEBUG] debugLogger - Executing (default): update  gm_server set  status = '0' where id = 194
+[2020-11-25T21:35:01.006] [DEBUG] debugLogger - Executing (default): INSERT into gm_logs 
+				(user_id,ip,nick_name,instructions,classification,"text",game_id,alias,kwargs)
+				VALUES
+				('79','127.0.0.1','','区服合并','区服管理','合并了区服id [object Object]','1','长澜月','{"value":[{"serverid":"27","servername":"asdasd","platform":"苹果","srttime":"2020-12-13 12:00:00","display":1,"test":"1","address":"127.0.0.1","key":2,"change":false,"channel":["fancyguo"],"success":true,"plaform":[2],"gameid":"1"},{"serverid":3,"servername":"驱蚊器恶趣味","platform":"全平台","srttime":"2020-12-13 12:00:00","display":1,"test":"1","address":"127.0.0.1:24024","key":3,"change":false,"channel":["测试渠道五渠道"],"success":true,"plaform":[1,2],"gameid":"1"}],"gameid":"1"}')
+[2020-11-25T21:36:03.997] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(channel, ','), ',')  as values  from gm_game_channel where gameid = '1' and status = '1'
+[2020-11-25T21:36:04.001] [DEBUG] debugLogger - Executing (default): select * from gm_server  where gameid='1'and test='0' and status = 1 and (pid is null or  trim(pid) ='') order by id limit 20 offset (20*0)
+[2020-11-25T21:36:04.011] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_server where gameid='1'and test='0' and status = 1 and (pid is null or  trim(pid) ='')
+[2020-11-25T21:36:04.033] [DEBUG] debugLogger - Executing (default): select max(num), display from (SELECT count(display) as num,
+		case 
+		when display='1' then '流畅'
+		when display='2' then '繁忙'
+		when display='3' then '维护'
+		when display='4' then '爆满'
+		end
+		as display
+		from gm_server where id in ( SELECT id from gm_server  where gameid='1'and test='0' and  status = 1 and (pid is null or  trim(pid) ='')  ORDER BY id limit 20 offset (20*0)  ) GROUP BY display 
+		union 
+		select 0 as num ,'繁忙' as display
+		union 
+		select 0 as num ,'流畅' as display
+		union
+		select 0 as num ,'维护' as display
+		union
+		select 0 as num ,'爆满' as display
+		)a GROUP BY display
+[2020-11-25T21:36:07.766] [DEBUG] debugLogger - Executing (default): select serverid from gm_server where gameid = '1' and status = 1
+[2020-11-25T21:36:08.015] [DEBUG] debugLogger - Executing (default): select servername from gm_server where gameid='1' and status = 1
+[2020-11-25T21:36:13.240] [DEBUG] debugLogger - Executing (default): select servername from gm_server where gameid='1' and status = 1
+[2020-11-25T21:36:13.574] [DEBUG] debugLogger - Executing (default): select serverid from gm_server where gameid = '1' and status = 1
+[2020-11-25T21:36:16.088] [DEBUG] debugLogger - Executing (default): select serverid from gm_server where gameid = '1' and status = 1
+[2020-11-25T21:36:16.154] [DEBUG] debugLogger - Executing (default): select servername from gm_server where gameid='1' and status = 1
+[2020-11-25T21:36:16.338] [DEBUG] debugLogger - Executing (default): select serverid from gm_server where gameid = '1' and status = 1
+[2020-11-25T21:36:17.928] [DEBUG] debugLogger - Executing (default): insert into gm_server (
+			create_user_id,servername,gameid,address,test,ip_port,
+			display,srttime,channel,plaform,
+			ip,port,serverid,"serverTrue"
+		)values(
+			'79','asdasd','1','127.0.0.1','1',null,
+			'1','Sun, 13 Dec 2020 12:00:00 GMT','["fancyguo"]','[2]',
+			'127.0.0.1','80','21',false	
+				) RETURNING *
+[2020-11-25T21:36:17.937] [DEBUG] debugLogger - Executing (default): insert into gm_server (
+			create_user_id,servername,gameid,address,test,ip_port,
+			display,srttime,channel,plaform,
+			ip,port,serverid,"serverTrue"
+		)values(
+			'79','驱蚊器恶趣味','1','127.0.0.1:24024','1',null,
+			'1','Sun, 13 Dec 2020 12:00:00 GMT','["测试渠道四渠道"]','[1,2]',
+			'127.0.0.1','24024','3',false	
+				) RETURNING *
+[2020-11-25T21:36:17.961] [DEBUG] debugLogger - Executing (default): update  gm_server set  status = '0' where id = 196
+[2020-11-25T21:36:17.979] [DEBUG] debugLogger - Executing (default): INSERT into gm_logs 
+				(user_id,ip,nick_name,instructions,classification,"text",game_id,alias,kwargs)
+				VALUES
+				('79','127.0.0.1','','区服合并','区服管理','合并了区服id [object Object]','1','长澜月','{"value":[{"serverid":"21","servername":"asdasd","platform":"苹果","srttime":"2020-12-13 12:00:00","display":1,"test":"1","address":"127.0.0.1","key":2,"change":false,"channel":["fancyguo"],"success":true,"plaform":[2],"gameid":"1"},{"serverid":3,"servername":"驱蚊器恶趣味","platform":"全平台","srttime":"2020-12-13 12:00:00","display":1,"test":"1","address":"127.0.0.1:24024","key":3,"change":false,"channel":["测试渠道四渠道"],"success":true,"plaform":[1,2],"gameid":"1"}],"gameid":"1"}')
+[2020-11-25T21:37:47.696] [DEBUG] debugLogger - Executing (default): select a.id,a.game_name ,a.image_url as img from gm_game a join gm_purview b on b.gid = a.id where b.uids @> '79' and a.status = '1'  and b.status = '1'   limit 1
+[2020-11-25T21:37:47.704] [DEBUG] debugLogger - Executing (default): with qwe as (select a.url,a.pid,a.name,d.game_name,d.id as gameid, a.id,b.grede , b.purview_id,c.uid,c.gid from gm_url a join gm_url_purview  b on  a.id = b.url_id  join gm_purview c on c.id = b.purview_id join gm_game d on d.id = c.gid where  c.uids @> '79' and d.id = '1' and d.status = 1 and b.grede != 827 and c.status = 1  and a.status = 1 order by id ),
+					qwer as (select * from qwe a where (select count(*) > 1 from qwe b where b.id = a.id )),
+					asd as (select * from qwe a where (select count(*) =  1 from qwe b where b.id = a.id )),
+					zxc as (select * from qwer where grede = '1'),
+					wer as (select * from qwer where id not in (select id from zxc )
+					union 
+					select * from qwer where id not in (select id from zxc )),
+					sdf as (select url,pid,name,gameid,grede,id from asd 
+					union 
+					select url,pid,name,gameid,grede,id from zxc 
+					union 
+					select url,pid,name,gameid,grede,id from wer ),
+					ewq as (select * from sdf ORDER BY id )
+					select name,(select json_agg(concat('{"url":"',url,'","name":"',name,'","meta":"',grede,'"}')::jsonb) from ewq  where ewq.pid = d.id) as children from ewq as d where pid = 0 ORDER BY d.id
+[2020-11-25T21:37:47.717] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(game_name, ','), ',')  as games from (
+			select  DISTINCT game_name,b.id from gm_purview a join gm_game b on a.gid = b.id  where uids @> '79' and b.status = '1' and a.status = '1'   ORDER BY id 
+		) a
+[2020-11-25T21:37:48.535] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(channel, ','), ',')  as values  from gm_game_channel where gameid = '1' and status = '1'
+[2020-11-25T21:37:48.561] [DEBUG] debugLogger - Executing (default): select * from gm_server  where gameid='1'and test='0' and status = 1 and (pid is null or  trim(pid) ='') order by id limit 20 offset (20*0)
+[2020-11-25T21:37:48.578] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_server where gameid='1'and test='0' and status = 1 and (pid is null or  trim(pid) ='')
+[2020-11-25T21:37:48.677] [DEBUG] debugLogger - Executing (default): select max(num), display from (SELECT count(display) as num,
+		case 
+		when display='1' then '流畅'
+		when display='2' then '繁忙'
+		when display='3' then '维护'
+		when display='4' then '爆满'
+		end
+		as display
+		from gm_server where id in ( SELECT id from gm_server  where gameid='1'and test='0' and  status = 1 and (pid is null or  trim(pid) ='')  ORDER BY id limit 20 offset (20*0)  ) GROUP BY display 
+		union 
+		select 0 as num ,'繁忙' as display
+		union 
+		select 0 as num ,'流畅' as display
+		union
+		select 0 as num ,'维护' as display
+		union
+		select 0 as num ,'爆满' as display
+		)a GROUP BY display
+[2020-11-25T21:37:53.890] [DEBUG] debugLogger - Executing (default): select serverid from gm_server where gameid = '1' and status = 1
+[2020-11-25T21:37:54.230] [DEBUG] debugLogger - Executing (default): select servername from gm_server where gameid='1' and status = 1
+[2020-11-25T21:38:01.097] [DEBUG] debugLogger - Executing (default): select servername from gm_server where gameid='1' and status = 1
+[2020-11-25T21:38:01.434] [DEBUG] debugLogger - Executing (default): select serverid from gm_server where gameid = '1' and status = 1
+[2020-11-25T21:38:05.123] [DEBUG] debugLogger - Executing (default): select serverid from gm_server where gameid = '1' and status = 1
+[2020-11-25T21:38:05.219] [DEBUG] debugLogger - Executing (default): select servername from gm_server where gameid='1' and status = 1
+[2020-11-25T21:38:05.558] [DEBUG] debugLogger - Executing (default): select serverid from gm_server where gameid = '1' and status = 1
+[2020-11-25T21:38:08.189] [DEBUG] debugLogger - Executing (default): insert into gm_server (
+			create_user_id,servername,gameid,address,test,ip_port,
+			display,srttime,channel,plaform,
+			ip,port,serverid,"serverTrue"
+		)values(
+			'79','asdasd','1','127.0.0.1','1',null,
+			'1','Sun, 13 Dec 2020 12:00:00 GMT','["fancyguo"]','[2]',
+			'127.0.0.1','80', (select id from (
+		select serverid::int as id  from gm_server where gameid = '1' and status = '1'
+		UNION ALL
+		select generate_series(1, (select  case when max(id) is  not  null then max(id ) else 1 end from gm_server where gameid = '1' and status = '1' ))   as id   )a GROUP BY id HAVING count(id) = 1 ORDER BY id     limit 1)   ,false	
+				) RETURNING *
+[2020-11-25T21:38:08.199] [DEBUG] debugLogger - Executing (default): insert into gm_server (
+			create_user_id,servername,gameid,address,test,ip_port,
+			display,srttime,channel,plaform,
+			ip,port,serverid,"serverTrue"
+		)values(
+			'79','驱蚊器恶趣味','1','127.0.0.1:24024','1',null,
+			'1','Sun, 13 Dec 2020 12:00:00 GMT','["测试渠道五渠道"]','[1,2]',
+			'127.0.0.1','24024','3',false	
+				) RETURNING *
+[2020-11-25T21:38:08.230] [DEBUG] debugLogger - Executing (default): update  gm_server set  status = '0' where id = 198
+[2020-11-25T21:38:08.255] [DEBUG] debugLogger - Executing (default): INSERT into gm_logs 
+				(user_id,ip,nick_name,instructions,classification,"text",game_id,alias,kwargs)
+				VALUES
+				('79','127.0.0.1','','区服合并','区服管理','合并了区服id [object Object]','1','长澜月','{"value":[{"serverid":"","servername":"asdasd","platform":"苹果","srttime":"2020-12-13 12:00:00","display":1,"test":"1","address":"127.0.0.1","key":2,"change":false,"channel":["fancyguo"],"success":true,"plaform":[2],"gameid":"1"},{"serverid":3,"servername":"驱蚊器恶趣味","platform":"全平台","srttime":"2020-12-13 12:00:00","display":1,"test":"1","address":"127.0.0.1:24024","key":3,"change":false,"channel":["测试渠道五渠道"],"success":true,"plaform":[1,2],"gameid":"1"}],"gameid":"1"}')
+[2020-11-25T21:39:03.722] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(channel, ','), ',')  as values  from gm_game_channel where gameid = '1' and status = '1'
+[2020-11-25T21:39:04.009] [DEBUG] debugLogger - Executing (default): select * from gm_server  where gameid='1'and test='0' and status = 1 and (pid is null or  trim(pid) ='') order by id limit 20 offset (20*0)
+[2020-11-25T21:39:04.018] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_server where gameid='1'and test='0' and status = 1 and (pid is null or  trim(pid) ='')
+[2020-11-25T21:39:04.027] [DEBUG] debugLogger - Executing (default): select max(num), display from (SELECT count(display) as num,
+		case 
+		when display='1' then '流畅'
+		when display='2' then '繁忙'
+		when display='3' then '维护'
+		when display='4' then '爆满'
+		end
+		as display
+		from gm_server where id in ( SELECT id from gm_server  where gameid='1'and test='0' and  status = 1 and (pid is null or  trim(pid) ='')  ORDER BY id limit 20 offset (20*0)  ) GROUP BY display 
+		union 
+		select 0 as num ,'繁忙' as display
+		union 
+		select 0 as num ,'流畅' as display
+		union
+		select 0 as num ,'维护' as display
+		union
+		select 0 as num ,'爆满' as display
+		)a GROUP BY display
+[2020-11-25T21:39:15.957] [DEBUG] debugLogger - Executing (default): select serverid from gm_server where gameid = '1' and status = 1
+[2020-11-25T21:39:16.288] [DEBUG] debugLogger - Executing (default): select servername from gm_server where gameid='1' and status = 1
+[2020-11-25T21:39:21.943] [DEBUG] debugLogger - Executing (default): select servername from gm_server where gameid='1' and status = 1
+[2020-11-25T21:39:22.275] [DEBUG] debugLogger - Executing (default): select serverid from gm_server where gameid = '1' and status = 1
+[2020-11-25T21:39:24.705] [DEBUG] debugLogger - Executing (default): select serverid from gm_server where gameid = '1' and status = 1
+[2020-11-25T21:39:24.792] [DEBUG] debugLogger - Executing (default): select servername from gm_server where gameid='1' and status = 1
+[2020-11-25T21:39:25.129] [DEBUG] debugLogger - Executing (default): select serverid from gm_server where gameid = '1' and status = 1
+[2020-11-25T21:39:27.569] [DEBUG] debugLogger - Executing (default): insert into gm_server (
+			create_user_id,servername,gameid,address,test,ip_port,
+			display,srttime,channel,plaform,
+			ip,port,serverid,"serverTrue"
+		)values(
+			'79','asdasd','1','127.0.0.1','1',null,
+			'1','Sun, 13 Dec 2020 12:00:00 GMT','["fancyguo"]','[2]',
+			'127.0.0.1','80','21',false	
+				) RETURNING *
+[2020-11-25T21:39:27.576] [DEBUG] debugLogger - Executing (default): insert into gm_server (
+			create_user_id,servername,gameid,address,test,ip_port,
+			display,srttime,channel,plaform,
+			ip,port,serverid,"serverTrue"
+		)values(
+			'79','驱蚊器恶趣味','1','127.0.0.1:24024','1',null,
+			'1','Sun, 13 Dec 2020 12:00:00 GMT','["测试渠道一渠道"]','[1,2]',
+			'127.0.0.1','24024','3',false	
+				) RETURNING *
+[2020-11-25T21:39:27.604] [DEBUG] debugLogger - Executing (default): update  gm_server set  status = '0' where id = 200
+[2020-11-25T21:39:27.614] [DEBUG] debugLogger - Executing (default): INSERT into gm_logs 
+				(user_id,ip,nick_name,instructions,classification,"text",game_id,alias,kwargs)
+				VALUES
+				('79','127.0.0.1','','区服合并','区服管理','合并了区服id [object Object]','1','长澜月','{"value":[{"serverid":"21","servername":"asdasd","platform":"苹果","srttime":"2020-12-13 12:00:00","display":1,"test":"1","address":"127.0.0.1","key":2,"change":false,"channel":["fancyguo"],"success":true,"plaform":[2],"gameid":"1"},{"serverid":3,"servername":"驱蚊器恶趣味","platform":"全平台","srttime":"2020-12-13 12:00:00","display":1,"test":"1","address":"127.0.0.1:24024","key":3,"change":false,"channel":["测试渠道一渠道"],"success":true,"plaform":[1,2],"gameid":"1"}],"gameid":"1"}')
+[2020-11-25T21:47:11.968] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(channel, ','), ',')  as values  from gm_game_channel where gameid = '1' and status = '1'
+[2020-11-25T21:47:12.255] [DEBUG] debugLogger - Executing (default): select * from gm_server  where gameid='1'and test='0' and status = 1 and (pid is null or  trim(pid) ='') order by id limit 20 offset (20*0)
+[2020-11-25T21:47:12.263] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_server where gameid='1'and test='0' and status = 1 and (pid is null or  trim(pid) ='')
+[2020-11-25T21:47:12.272] [DEBUG] debugLogger - Executing (default): select max(num), display from (SELECT count(display) as num,
+		case 
+		when display='1' then '流畅'
+		when display='2' then '繁忙'
+		when display='3' then '维护'
+		when display='4' then '爆满'
+		end
+		as display
+		from gm_server where id in ( SELECT id from gm_server  where gameid='1'and test='0' and  status = 1 and (pid is null or  trim(pid) ='')  ORDER BY id limit 20 offset (20*0)  ) GROUP BY display 
+		union 
+		select 0 as num ,'繁忙' as display
+		union 
+		select 0 as num ,'流畅' as display
+		union
+		select 0 as num ,'维护' as display
+		union
+		select 0 as num ,'爆满' as display
+		)a GROUP BY display
+[2020-11-25T21:47:15.823] [DEBUG] debugLogger - Executing (default): select serverid from gm_server where gameid = '1' and status = 1
+[2020-11-25T21:47:16.152] [DEBUG] debugLogger - Executing (default): select servername from gm_server where gameid='1' and status = 1
+[2020-11-25T21:47:23.065] [DEBUG] debugLogger - Executing (default): select servername from gm_server where gameid='1' and status = 1
+[2020-11-25T21:47:23.404] [DEBUG] debugLogger - Executing (default): select serverid from gm_server where gameid = '1' and status = 1
+[2020-11-25T21:47:26.513] [DEBUG] debugLogger - Executing (default): select servername from gm_server where gameid='1' and status = 1
+[2020-11-25T21:47:26.844] [DEBUG] debugLogger - Executing (default): select serverid from gm_server where gameid = '1' and status = 1
+[2020-11-25T21:47:29.195] [DEBUG] debugLogger - Executing (default): select serverid from gm_server where gameid = '1' and status = 1
+[2020-11-25T21:47:29.283] [DEBUG] debugLogger - Executing (default): select servername from gm_server where gameid='1' and status = 1
+[2020-11-25T21:47:29.612] [DEBUG] debugLogger - Executing (default): select serverid from gm_server where gameid = '1' and status = 1
+[2020-11-25T21:47:31.451] [DEBUG] debugLogger - Executing (default): insert into gm_server (
+			create_user_id,servername,gameid,address,test,ip_port,
+			display,srttime,channel,plaform,
+			ip,port,serverid,"serverTrue"
+		)values(
+			'79','asdasd','1','127.0.0.1','1',null,
+			'1','Sun, 13 Dec 2020 12:00:00 GMT','["测试渠道四渠道"]','[2]',
+			'127.0.0.1','80','22',false	
+				) RETURNING *
+[2020-11-25T21:47:31.460] [DEBUG] debugLogger - Executing (default): insert into gm_server (
+			create_user_id,servername,gameid,address,test,ip_port,
+			display,srttime,channel,plaform,
+			ip,port,serverid,"serverTrue"
+		)values(
+			'79','驱蚊器恶趣味','1','127.0.0.1:24024','1',null,
+			'1','Sun, 13 Dec 2020 12:00:00 GMT','["fancyguo"]','[1,2]',
+			'127.0.0.1','24024','3',false	
+				) RETURNING *
+[2020-11-25T21:47:31.481] [DEBUG] debugLogger - Executing (default): update  gm_server set  status = '0' where id = 202
+[2020-11-25T21:47:31.492] [DEBUG] debugLogger - Executing (default): INSERT into gm_logs 
+				(user_id,ip,nick_name,instructions,classification,"text",game_id,alias,kwargs)
+				VALUES
+				('79','127.0.0.1','','区服合并','区服管理','合并了区服id [object Object]','1','长澜月','{"value":[{"serverid":"22","servername":"asdasd","platform":"苹果","srttime":"2020-12-13 12:00:00","display":1,"test":"1","address":"127.0.0.1","key":2,"change":false,"channel":["测试渠道四渠道"],"success":true,"plaform":[2],"gameid":"1"},{"serverid":3,"servername":"驱蚊器恶趣味","platform":"全平台","srttime":"2020-12-13 12:00:00","display":1,"test":"1","address":"127.0.0.1:24024","key":3,"change":false,"channel":["fancyguo"],"success":true,"plaform":[1,2],"gameid":"1"}],"gameid":"1"}')
+[2020-11-25T21:47:52.063] [DEBUG] debugLogger - Executing (default): select servername from gm_server where gameid='1' and status = 1
+[2020-11-25T21:47:52.391] [DEBUG] debugLogger - Executing (default): select serverid from gm_server where gameid = '1' and status = 1
+[2020-11-25T21:47:53.309] [DEBUG] debugLogger - Executing (default): select servername from gm_server where gameid='1' and status = 1
+[2020-11-25T21:47:53.643] [DEBUG] debugLogger - Executing (default): select serverid from gm_server where gameid = '1' and status = 1
+[2020-11-25T21:47:55.324] [DEBUG] debugLogger - Executing (default): select servername from gm_server where gameid='1' and status = 1
+[2020-11-25T21:47:56.835] [DEBUG] debugLogger - Executing (default): select serverid from gm_server where gameid = '1' and status = 1
+[2020-11-25T21:47:56.933] [DEBUG] debugLogger - Executing (default): select servername from gm_server where gameid='1' and status = 1
+[2020-11-25T21:47:57.262] [DEBUG] debugLogger - Executing (default): select serverid from gm_server where gameid = '1' and status = 1
+[2020-11-25T21:48:16.465] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(channel, ','), ',')  as values  from gm_game_channel where gameid = '1' and status = '1'
+[2020-11-25T21:48:16.747] [DEBUG] debugLogger - Executing (default): select * from gm_server  where gameid='1'and test='0' and status = 1 and (pid is null or  trim(pid) ='') order by id limit 20 offset (20*0)
+[2020-11-25T21:48:16.755] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_server where gameid='1'and test='0' and status = 1 and (pid is null or  trim(pid) ='')
+[2020-11-25T21:48:16.764] [DEBUG] debugLogger - Executing (default): select max(num), display from (SELECT count(display) as num,
+		case 
+		when display='1' then '流畅'
+		when display='2' then '繁忙'
+		when display='3' then '维护'
+		when display='4' then '爆满'
+		end
+		as display
+		from gm_server where id in ( SELECT id from gm_server  where gameid='1'and test='0' and  status = 1 and (pid is null or  trim(pid) ='')  ORDER BY id limit 20 offset (20*0)  ) GROUP BY display 
+		union 
+		select 0 as num ,'繁忙' as display
+		union 
+		select 0 as num ,'流畅' as display
+		union
+		select 0 as num ,'维护' as display
+		union
+		select 0 as num ,'爆满' as display
+		)a GROUP BY display
+[2020-11-25T21:52:17.042] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(channel, ','), ',')  as values  from gm_game_channel where gameid = '1' and status = '1'
+[2020-11-25T21:52:17.318] [DEBUG] debugLogger - Executing (default): select * from gm_server  where gameid='1'and test='0' and status = 1 and (pid is null or  trim(pid) ='') order by id limit 20 offset (20*0)
+[2020-11-25T21:52:17.327] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_server where gameid='1'and test='0' and status = 1 and (pid is null or  trim(pid) ='')
+[2020-11-25T21:52:17.337] [DEBUG] debugLogger - Executing (default): select max(num), display from (SELECT count(display) as num,
+		case 
+		when display='1' then '流畅'
+		when display='2' then '繁忙'
+		when display='3' then '维护'
+		when display='4' then '爆满'
+		end
+		as display
+		from gm_server where id in ( SELECT id from gm_server  where gameid='1'and test='0' and  status = 1 and (pid is null or  trim(pid) ='')  ORDER BY id limit 20 offset (20*0)  ) GROUP BY display 
+		union 
+		select 0 as num ,'繁忙' as display
+		union 
+		select 0 as num ,'流畅' as display
+		union
+		select 0 as num ,'维护' as display
+		union
+		select 0 as num ,'爆满' as display
+		)a GROUP BY display
+[2020-11-25T21:52:21.224] [DEBUG] debugLogger - Executing (default): select serverid from gm_server where gameid = '1' and status = 1
+[2020-11-25T21:52:21.560] [DEBUG] debugLogger - Executing (default): select servername from gm_server where gameid='1' and status = 1
+[2020-11-25T21:52:27.061] [DEBUG] debugLogger - Executing (default): select servername from gm_server where gameid='1' and status = 1
+[2020-11-25T21:52:27.400] [DEBUG] debugLogger - Executing (default): select serverid from gm_server where gameid = '1' and status = 1
+[2020-11-25T21:52:30.171] [DEBUG] debugLogger - Executing (default): select serverid from gm_server where gameid = '1' and status = 1
+[2020-11-25T21:52:30.245] [DEBUG] debugLogger - Executing (default): select servername from gm_server where gameid='1' and status = 1
+[2020-11-25T21:52:30.572] [DEBUG] debugLogger - Executing (default): select serverid from gm_server where gameid = '1' and status = 1
+[2020-11-25T21:52:32.475] [DEBUG] debugLogger - Executing (default): insert into gm_server (
+			create_user_id,servername,gameid,address,test,ip_port,
+			display,srttime,channel,plaform,
+			ip,port,serverid,"serverTrue"
+		)values(
+			'79','asdasd','1','127.0.0.1','1',null,
+			'1','Sun, 13 Dec 2020 12:00:00 GMT','["fancyguo"]','[2]',
+			'127.0.0.1','80','21',false	
+				) RETURNING *
+[2020-11-25T21:52:32.484] [DEBUG] debugLogger - Executing (default): insert into gm_server (
+			create_user_id,servername,gameid,address,test,ip_port,
+			display,srttime,channel,plaform,
+			ip,port,serverid,"serverTrue"
+		)values(
+			'79','驱蚊器恶趣味','1','127.0.0.1:24024','1',null,
+			'1','Sun, 13 Dec 2020 12:00:00 GMT','["测试渠道五渠道"]','[1,2]',
+			'127.0.0.1','24024','3',false	
+				) RETURNING *
+[2020-11-25T21:52:32.519] [DEBUG] debugLogger - Executing (default): update  gm_server set  status = '0' where id = 204
+[2020-11-25T21:52:32.529] [DEBUG] debugLogger - Executing (default): INSERT into gm_logs 
+				(user_id,ip,nick_name,instructions,classification,"text",game_id,alias,kwargs)
+				VALUES
+				('79','127.0.0.1','','区服合并','区服管理','合并了区服id [object Object]','1','长澜月','{"value":[{"serverid":"21","servername":"asdasd","platform":"苹果","srttime":"2020-12-13 12:00:00","display":1,"test":"1","address":"127.0.0.1","key":2,"change":false,"channel":["fancyguo"],"success":true,"plaform":[2],"gameid":"1"},{"serverid":3,"servername":"驱蚊器恶趣味","platform":"全平台","srttime":"2020-12-13 12:00:00","display":1,"test":"1","address":"127.0.0.1:24024","key":3,"change":false,"channel":["测试渠道五渠道"],"success":true,"plaform":[1,2],"gameid":"1"}],"gameid":"1"}')
+[2020-11-25T21:53:19.569] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(channel, ','), ',')  as values  from gm_game_channel where gameid = '1' and status = '1'
+[2020-11-25T21:53:19.856] [DEBUG] debugLogger - Executing (default): select * from gm_server  where gameid='1'and test='0' and status = 1 and (pid is null or  trim(pid) ='') order by id limit 20 offset (20*0)
+[2020-11-25T21:53:19.864] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_server where gameid='1'and test='0' and status = 1 and (pid is null or  trim(pid) ='')
+[2020-11-25T21:53:19.873] [DEBUG] debugLogger - Executing (default): select max(num), display from (SELECT count(display) as num,
+		case 
+		when display='1' then '流畅'
+		when display='2' then '繁忙'
+		when display='3' then '维护'
+		when display='4' then '爆满'
+		end
+		as display
+		from gm_server where id in ( SELECT id from gm_server  where gameid='1'and test='0' and  status = 1 and (pid is null or  trim(pid) ='')  ORDER BY id limit 20 offset (20*0)  ) GROUP BY display 
+		union 
+		select 0 as num ,'繁忙' as display
+		union 
+		select 0 as num ,'流畅' as display
+		union
+		select 0 as num ,'维护' as display
+		union
+		select 0 as num ,'爆满' as display
+		)a GROUP BY display
+[2020-11-25T21:53:24.236] [DEBUG] debugLogger - Executing (default): select serverid from gm_server where gameid = '1' and status = 1
+[2020-11-25T21:53:24.563] [DEBUG] debugLogger - Executing (default): select servername from gm_server where gameid='1' and status = 1
+[2020-11-25T21:53:30.259] [DEBUG] debugLogger - Executing (default): select servername from gm_server where gameid='1' and status = 1
+[2020-11-25T21:53:30.597] [DEBUG] debugLogger - Executing (default): select serverid from gm_server where gameid = '1' and status = 1
+[2020-11-25T21:53:33.250] [DEBUG] debugLogger - Executing (default): select serverid from gm_server where gameid = '1' and status = 1
+[2020-11-25T21:53:38.779] [DEBUG] debugLogger - Executing (default): select serverid from gm_server where gameid = '1' and status = 1
+[2020-11-25T21:53:38.863] [DEBUG] debugLogger - Executing (default): select servername from gm_server where gameid='1' and status = 1
+[2020-11-25T21:53:39.197] [DEBUG] debugLogger - Executing (default): select serverid from gm_server where gameid = '1' and status = 1
+[2020-11-25T21:53:41.412] [DEBUG] debugLogger - Executing (default): select serverid from gm_server where gameid = '1' and status = 1
+[2020-11-25T21:53:41.487] [DEBUG] debugLogger - Executing (default): select servername from gm_server where gameid='1' and status = 1
+[2020-11-25T21:53:41.826] [DEBUG] debugLogger - Executing (default): select serverid from gm_server where gameid = '1' and status = 1
+[2020-11-25T21:53:43.453] [DEBUG] debugLogger - Executing (default): insert into gm_server (
+			create_user_id,servername,gameid,address,test,ip_port,
+			display,srttime,channel,plaform,
+			ip,port,serverid,"serverTrue"
+		)values(
+			'79','asdasd','1','127.0.0.1','1',null,
+			'1','Sun, 13 Dec 2020 12:00:00 GMT','["fancyguo"]','[2]',
+			'127.0.0.1','80','21',false	
+				) RETURNING *
+[2020-11-25T21:53:43.461] [DEBUG] debugLogger - Executing (default): insert into gm_server (
+			create_user_id,servername,gameid,address,test,ip_port,
+			display,srttime,channel,plaform,
+			ip,port,serverid,"serverTrue"
+		)values(
+			'79','驱蚊器恶趣味','1','127.0.0.1:24024','1',null,
+			'1','Sun, 13 Dec 2020 12:00:00 GMT','["测试渠道三渠道"]','[1,2]',
+			'127.0.0.1','24024','3',false	
+				) RETURNING *
+[2020-11-25T21:53:43.492] [DEBUG] debugLogger - Executing (default): update  gm_server set  status = '0' where id = 206
+[2020-11-25T21:53:43.502] [DEBUG] debugLogger - Executing (default): INSERT into gm_logs 
+				(user_id,ip,nick_name,instructions,classification,"text",game_id,alias,kwargs)
+				VALUES
+				('79','127.0.0.1','','区服合并','区服管理','合并了区服id [object Object]','1','长澜月','{"value":[{"serverid":"21","servername":"asdasd","platform":"苹果","srttime":"2020-12-13 12:00:00","display":1,"test":"1","address":"127.0.0.1","key":2,"change":false,"channel":["fancyguo"],"success":true,"plaform":[2],"gameid":"1"},{"serverid":3,"servername":"驱蚊器恶趣味","platform":"全平台","srttime":"2020-12-13 12:00:00","display":1,"test":"1","address":"127.0.0.1:24024","key":3,"change":false,"channel":["测试渠道三渠道"],"success":true,"plaform":[1,2],"gameid":"1"}],"gameid":"1"}')
+[2020-11-25T21:54:00.691] [DEBUG] debugLogger - Executing (default): select servername from gm_server where gameid='1' and status = 1
+[2020-11-25T21:54:01.021] [DEBUG] debugLogger - Executing (default): select serverid from gm_server where gameid = '1' and status = 1
+[2020-11-25T21:54:04.589] [DEBUG] debugLogger - Executing (default): insert into gm_server (
+			create_user_id,servername,gameid,address,test,ip_port,
+			display,srttime,channel,plaform,
+			ip,port,serverid,"serverTrue"
+		)values(
+			'79','asdasd','1','127.0.0.1:24024','1',null,
+			'1','Sun, 13 Dec 2020 12:00:00 GMT','["fancyguo"]','[2]',
+			'127.0.0.1','24024','21',false	
+				) RETURNING *
+[2020-11-25T21:54:04.620] [DEBUG] debugLogger - Executing (default): INSERT into gm_logs 
+				(user_id,ip,nick_name,instructions,classification,"text",game_id,alias,kwargs)
+				VALUES
+				('79','127.0.0.1','','区服合并','区服管理','合并了区服id [object Object]','1','长澜月','{"value":[{"serverid":"21","servername":"asdasd","platform":"苹果","srttime":"2020-12-13 12:00:00","display":1,"test":"1","address":"127.0.0.1:24024","key":2,"change":false,"channel":["fancyguo"],"success":true,"plaform":[2],"gameid":"1"}],"gameid":"1"}')
+[2020-11-25T21:57:12.828] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(channel, ','), ',')  as values  from gm_game_channel where gameid = '1' and status = '1'
+[2020-11-25T21:57:12.833] [DEBUG] debugLogger - Executing (default): select * from gm_server  where gameid='1'and test='0' and status = 1 and (pid is null or  trim(pid) ='') order by id limit 20 offset (20*0)
+[2020-11-25T21:57:12.841] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_server where gameid='1'and test='0' and status = 1 and (pid is null or  trim(pid) ='')
+[2020-11-25T21:57:12.850] [DEBUG] debugLogger - Executing (default): select max(num), display from (SELECT count(display) as num,
+		case 
+		when display='1' then '流畅'
+		when display='2' then '繁忙'
+		when display='3' then '维护'
+		when display='4' then '爆满'
+		end
+		as display
+		from gm_server where id in ( SELECT id from gm_server  where gameid='1'and test='0' and  status = 1 and (pid is null or  trim(pid) ='')  ORDER BY id limit 20 offset (20*0)  ) GROUP BY display 
+		union 
+		select 0 as num ,'繁忙' as display
+		union 
+		select 0 as num ,'流畅' as display
+		union
+		select 0 as num ,'维护' as display
+		union
+		select 0 as num ,'爆满' as display
+		)a GROUP BY display
+[2020-11-25T21:57:13.095] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(channel, ','), ',')  as values  from gm_game_channel where gameid = '1' and status = '1'
+[2020-11-25T21:57:13.379] [DEBUG] debugLogger - Executing (default): select * from gm_server  where gameid='1'and test='0' and status = 1 and (pid is null or  trim(pid) ='') order by id limit 20 offset (20*0)
+[2020-11-25T21:57:13.385] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_server where gameid='1'and test='0' and status = 1 and (pid is null or  trim(pid) ='')
+[2020-11-25T21:57:13.395] [DEBUG] debugLogger - Executing (default): select max(num), display from (SELECT count(display) as num,
+		case 
+		when display='1' then '流畅'
+		when display='2' then '繁忙'
+		when display='3' then '维护'
+		when display='4' then '爆满'
+		end
+		as display
+		from gm_server where id in ( SELECT id from gm_server  where gameid='1'and test='0' and  status = 1 and (pid is null or  trim(pid) ='')  ORDER BY id limit 20 offset (20*0)  ) GROUP BY display 
+		union 
+		select 0 as num ,'繁忙' as display
+		union 
+		select 0 as num ,'流畅' as display
+		union
+		select 0 as num ,'维护' as display
+		union
+		select 0 as num ,'爆满' as display
+		)a GROUP BY display
