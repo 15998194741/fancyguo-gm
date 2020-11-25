@@ -1,0 +1,425 @@
+[2020-11-24T11:06:46.239] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: PUT
+request originalUrl:  /api/server/allupdate
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"server":[{"id":54,"status":1,"create_user_id":79,"update_user_id":null,"create_time":"2020-11-02T08:25:08.681Z","update_time":"2020-11-02T08:25:08.681Z","servername":"测试机一","ip_port":"127.0.0.1：24024","address":"aa","plaform":["1"],"display":"1","srttime":"2020-11-15T16:00:00.000Z","gamename":"","pid":null,"serverid":"54","test":"0","load":"2","gameid":1,"childrens":null,"port":"24024","ip":"127.0.0.1","channel":["测试渠道一渠道","测试渠道二渠道","测试渠道三渠道","测试渠道四渠道","测试渠道五渠道","测试渠道六渠道"],"serverTrue":null,"securityGroup":null,"clientshow":"1","stopshow":"1","stopmessage":null,"stopuser":null,"showstatusIsShow":false},{"id":150,"status":1,"create_user_id":79,"update_user_id":null,"create_time":"2020-11-12T03:30:33.660Z","update_time":"2020-11-12T03:30:33.660Z","servername":"1","ip_port":"127.0.0.1:24024","address":"","plaform":["1"],"display":"1","srttime":"2020-11-12T03:23:50.000Z","gamename":"","pid":null,"serverid":"1","test":"0","load":"2","gameid":1,"childrens":null,"port":"80","ip":"s99981.mrhx.hz.37.com.cn","channel":["fancyguo"],"serverTrue":false,"securityGroup":null,"clientshow":"1","stopshow":"1","stopmessage":null,"stopuser":null,"showstatusIsShow":false}],"merge":false,"showstatus":"3","gameid":"1"}
+response time: 1606187206239
+err name: undefined
+err message: 踢人下线失败
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-24T11:06:55.976] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: PUT
+request originalUrl:  /api/server/update
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"id":54,"status":1,"create_user_id":79,"update_user_id":null,"create_time":"2020-11-02T08:25:08.681Z","update_time":"2020-11-02T08:25:08.681Z","servername":"测试机一","ip_port":"127.0.0.1：24024","address":"aa","plaform":["1"],"display":"3","srttime":"2020-11-16 00:00:00","gamename":"","pid":null,"serverid":"54","test":"0","load":"2","gameid":"1","childrens":null,"port":"24024","ip":"127.0.0.1","channel":["测试渠道一渠道","测试渠道二渠道","测试渠道三渠道","测试渠道四渠道","测试渠道五渠道","测试渠道六渠道"],"serverTrue":null,"securityGroup":null,"clientshow":"1","stopshow":"1","stopmessage":null,"stopuser":null,"showstatusIsShow":false,"index":0,"displayChange":true}
+response time: 1606187215976
+err name: undefined
+err message: 踢人下线失败
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-24T11:07:54.543] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: PUT
+request originalUrl:  /api/server/allupdate
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"server":[{"id":54,"status":1,"create_user_id":79,"update_user_id":null,"create_time":"2020-11-02T08:25:08.681Z","update_time":"2020-11-02T08:25:08.681Z","servername":"测试机一","ip_port":"127.0.0.1：24024","address":"aa","plaform":["1"],"display":"1","srttime":"2020-11-15T16:00:00.000Z","gamename":"","pid":null,"serverid":"54","test":"0","load":"2","gameid":1,"childrens":null,"port":"24024","ip":"127.0.0.1","channel":["测试渠道一渠道","测试渠道二渠道","测试渠道三渠道","测试渠道四渠道","测试渠道五渠道","测试渠道六渠道"],"serverTrue":null,"securityGroup":null,"clientshow":"1","stopshow":"1","stopmessage":null,"stopuser":null,"showstatusIsShow":false},{"id":150,"status":1,"create_user_id":79,"update_user_id":null,"create_time":"2020-11-12T03:30:33.660Z","update_time":"2020-11-12T03:30:33.660Z","servername":"1","ip_port":"127.0.0.1:24024","address":"","plaform":["1"],"display":"1","srttime":"2020-11-12T03:23:50.000Z","gamename":"","pid":null,"serverid":"1","test":"0","load":"2","gameid":1,"childrens":null,"port":"24024","ip":"127.0.0.1","channel":["fancyguo"],"serverTrue":false,"securityGroup":null,"clientshow":"1","stopshow":"1","stopmessage":null,"stopuser":null,"showstatusIsShow":false}],"merge":false,"showstatus":"3","gameid":"1"}
+response time: 1606187274543
+err name: undefined
+err message: 踢人下线失败
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-24T14:46:31.567] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/server/download
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1606200391567
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-24T14:49:53.893] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /zoneManagement/gm.fancyguo.com/api/server/download
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1606200593893
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-24T14:50:09.081] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /zoneManagement/gm.fancyguo.com/api/server/download
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1606200609081
+err name: undefined
+err message: 你没有该系统使用权限
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-24T14:52:01.194] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/server/download
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1606200721193
+err name: Error
+err message: ENOENT: no such file or directory, stat 'H:\致命代码\fancyguo-gm\server\src\app\controllers\测试.xlsx'
+err stack: Error: ENOENT: no such file or directory, stat 'H:\致命代码\fancyguo-gm\server\src\app\controllers\测试.xlsx'
+*************** error log end ***************
+
+[2020-11-24T14:52:47.048] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/server/download
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1606200767047
+err name: Error
+err message: ENOENT: no such file or directory, stat 'H:\致命代码\fancyguo-gm\server\src\app\controllers\server.xlsx'
+err stack: Error: ENOENT: no such file or directory, stat 'H:\致命代码\fancyguo-gm\server\src\app\controllers\server.xlsx'
+*************** error log end ***************
+
+[2020-11-24T14:52:53.682] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/server/download
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1606200773682
+err name: Error
+err message: ENOENT: no such file or directory, stat 'H:\致命代码\fancyguo-gm\server\src\app\controllers\server.xlsx'
+err stack: Error: ENOENT: no such file or directory, stat 'H:\致命代码\fancyguo-gm\server\src\app\controllers\server.xlsx'
+*************** error log end ***************
+
+[2020-11-24T19:29:58.448] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/white/mailRelatedUser
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"roleId":[{"serverid":99983,"id":1399983},{"serverid":99983,"id":1099983}],"name":"这是白名单邮件","type":false,"notebook":"","gameid":"13"}
+response time: 1606217398448
+err name: Error
+err message: seneca: [TIMEOUT] Action  timed out. Timeout was: 22222 (start: 1606217375979, end: 1606217398276. Message was: {
+  module: 'white',
+  white: 'create',
+  args: {
+    query: undefined,
+    body: {
+      roleId: [Array],
+      name: '这是白名单邮件',
+      type: false,
+      notebook: '',
+      gameid: '13',
+      user: [Object],
+      id: 53
+    }
+  }
+}.
+err stack: Error: seneca: [TIMEOUT] Action  timed out. Timeout was: 22222 (start: 1606217375979, end: 1606217398276. Message was: {
+  module: 'white',
+  white: 'create',
+  args: {
+    query: undefined,
+    body: {
+      roleId: [Array],
+      name: '这是白名单邮件',
+      type: false,
+      notebook: '',
+      gameid: '13',
+      user: [Object],
+      id: 53
+    }
+  }
+}.
+    at Object.errormaker (H:\致命代码\fancyguo-gm\server\node_modules\eraro\eraro.js:112:15)
+    at Object.act_tm [as ontm] (H:\致命代码\fancyguo-gm\server\node_modules\seneca\lib\act.js:86:32)
+    at Timeout.timeout_check [as _onTimeout] (H:\致命代码\fancyguo-gm\server\node_modules\gate-executor\gate-executor.js:207:16)
+    at listOnTimeout (internal/timers.js:549:17)
+    at processTimers (internal/timers.js:492:7)
+From previous event:
+    at SenecaClient._callee$ (H:\致命代码\fancyguo-gm\server\src\xiaolu\/senecaclient.js:16:21)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at SenecaClient.<anonymous> (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at SenecaClient.get (H:\致命代码\fancyguo-gm\server\src\xiaolu\senecaclient.js:86:21)
+    at whiteServer._callee11$ (H:\致命代码\fancyguo-gm\server\src\app\service\/white.js:216:37)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at whiteServer.<anonymous> (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at whiteServer.sendWhiteMail (H:\致命代码\fancyguo-gm\server\src\app\service\white.js:612:31)
+    at whiteServer._callee7$ (H:\致命代码\fancyguo-gm\server\src\app\service\/white.js:160:24)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+*************** error log end ***************
+
+[2020-11-24T19:30:31.754] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/white/mailRelatedUser
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"roleId":[{"serverid":99983,"id":1399983},{"serverid":99983,"id":1099983}],"name":"这是白名单邮件","type":false,"notebook":"","gameid":"13"}
+response time: 1606217431754
+err name: Error
+err message: seneca: [TIMEOUT] Action  timed out. Timeout was: 22222 (start: 1606217409384, end: 1606217431702. Message was: {
+  module: 'white',
+  white: 'create',
+  args: {
+    query: undefined,
+    body: {
+      roleId: [Array],
+      name: '这是白名单邮件',
+      type: false,
+      notebook: '',
+      gameid: '13',
+      user: [Object],
+      id: 54
+    }
+  }
+}.
+err stack: Error: seneca: [TIMEOUT] Action  timed out. Timeout was: 22222 (start: 1606217409384, end: 1606217431702. Message was: {
+  module: 'white',
+  white: 'create',
+  args: {
+    query: undefined,
+    body: {
+      roleId: [Array],
+      name: '这是白名单邮件',
+      type: false,
+      notebook: '',
+      gameid: '13',
+      user: [Object],
+      id: 54
+    }
+  }
+}.
+    at Object.errormaker (H:\致命代码\fancyguo-gm\server\node_modules\eraro\eraro.js:112:15)
+    at Object.act_tm [as ontm] (H:\致命代码\fancyguo-gm\server\node_modules\seneca\lib\act.js:86:32)
+    at Timeout.timeout_check [as _onTimeout] (H:\致命代码\fancyguo-gm\server\node_modules\gate-executor\gate-executor.js:207:16)
+    at listOnTimeout (internal/timers.js:549:17)
+    at processTimers (internal/timers.js:492:7)
+From previous event:
+    at SenecaClient._callee$ (H:\致命代码\fancyguo-gm\server\src\xiaolu\/senecaclient.js:16:21)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at SenecaClient.<anonymous> (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at SenecaClient.get (H:\致命代码\fancyguo-gm\server\src\xiaolu\senecaclient.js:86:21)
+    at whiteServer._callee11$ (H:\致命代码\fancyguo-gm\server\src\app\service\/white.js:216:37)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at whiteServer.<anonymous> (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at whiteServer.sendWhiteMail (H:\致命代码\fancyguo-gm\server\src\app\service\white.js:612:31)
+    at whiteServer._callee7$ (H:\致命代码\fancyguo-gm\server\src\app\service\/white.js:160:24)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+*************** error log end ***************
+
+[2020-11-24T19:31:50.253] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/white/mailRelatedUser
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"roleId":[{"serverid":99983,"id":1399983},{"serverid":99983,"id":1099983}],"name":"这是白名单邮件","type":false,"notebook":"","gameid":"13"}
+response time: 1606217510252
+err name: Error
+err message: seneca: [TIMEOUT] Action white:create timed out. Timeout was: 22222 (start: 1606217487892, end: 1606217510124. Message was: {
+  module: 'white',
+  white: 'create',
+  args: {
+    body: {
+      roleId: [Array],
+      name: '这是白名单邮件',
+      type: false,
+      notebook: '',
+      gameid: '13',
+      user: [Object],
+      id: 55
+    }
+  },
+  'custom$': {},
+  'transport$': {
+    track: [ 'havkkyqc8vyq/1606217483489/2736/3.22.0/-' ],
+    origin: 'havkkyqc8vyq/1606217483489/2736/3.22.0/-',
+    time: { client_sent: 1606217487888 }
+  },
+  'tx$': 'a81yor8btp1e',
+  data: {
+    roleId: [ [Object], [Object] ],
+    name: '这是白名单邮件',
+    type: false,
+    notebook: '',
+    gameid: '13',
+    user: {
+      id: 79,
+      status: 1,
+      create_user_id: null,
+      update_user_id: null,
+      create_time: '2019-07-17T06:07:57.000Z',
+      update_time: '2020-09-17T03:28:36.234Z',
+      username: 'zhangzongchu',
+      password: null,
+      nick_name: '张宗楚',
+      avatar: 'https://wework.qpic.cn/wwhead/nMl9ssowtibVGyrmvBiaibzDlNMxxiaWGSjSGG4UzOOS2TrAXp5ro1zfqCFPjykaf4PxcE0cSjRwRWA/100',
+      email: 'zhangzongchu@fancyguo.cn',
+      source: 2,
+      alias: '长澜月',
+      phone: '13166882400',
+      wechat_user_id: 'YeHuaiChu',
+      loginType: false,
+      iat: 1606200163,
+      exp: 1637757763,
+      ip: '127.0.0.1'
+    },
+    id: 55
+  }
+}.
+err stack: Error: seneca: [TIMEOUT] Action white:create timed out. Timeout was: 22222 (start: 1606217487892, end: 1606217510124. Message was: {
+  module: 'white',
+  white: 'create',
+  args: {
+    body: {
+      roleId: [Array],
+      name: '这是白名单邮件',
+      type: false,
+      notebook: '',
+      gameid: '13',
+      user: [Object],
+      id: 55
+    }
+  },
+  'custom$': {},
+  'transport$': {
+    track: [ 'havkkyqc8vyq/1606217483489/2736/3.22.0/-' ],
+    origin: 'havkkyqc8vyq/1606217483489/2736/3.22.0/-',
+    time: { client_sent: 1606217487888 }
+  },
+  'tx$': 'a81yor8btp1e',
+  data: {
+    roleId: [ [Object], [Object] ],
+    name: '这是白名单邮件',
+    type: false,
+    notebook: '',
+    gameid: '13',
+    user: {
+      id: 79,
+      status: 1,
+      create_user_id: null,
+      update_user_id: null,
+      create_time: '2019-07-17T06:07:57.000Z',
+      update_time: '2020-09-17T03:28:36.234Z',
+      username: 'zhangzongchu',
+      password: null,
+      nick_name: '张宗楚',
+      avatar: 'https://wework.qpic.cn/wwhead/nMl9ssowtibVGyrmvBiaibzDlNMxxiaWGSjSGG4UzOOS2TrAXp5ro1zfqCFPjykaf4PxcE0cSjRwRWA/100',
+      email: 'zhangzongchu@fancyguo.cn',
+      source: 2,
+      alias: '长澜月',
+      phone: '13166882400',
+      wechat_user_id: 'YeHuaiChu',
+      loginType: false,
+      iat: 1606200163,
+      exp: 1637757763,
+      ip: '127.0.0.1'
+    },
+    id: 55
+  }
+}.
+    at module.exports.internals.Utils.internals.Utils.handle_response (H:\致命代码\fancyguo-gm\server\node_modules\seneca-transport\lib\transport-utils.js:77:11)
+    at Duplex.messager._write (H:\致命代码\fancyguo-gm\server\node_modules\seneca-transport\lib\tcp.js:240:19)
+    at doWrite (_stream_writable.js:403:12)
+    at writeOrBuffer (_stream_writable.js:387:5)
+    at Duplex.Writable.write (_stream_writable.js:318:11)
+    at DestroyableTransform.ondata (H:\致命代码\fancyguo-gm\server\node_modules\readable-stream\lib\_stream_readable.js:619:20)
+    at DestroyableTransform.emit (events.js:315:20)
+    at addChunk (H:\致命代码\fancyguo-gm\server\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+    at readableAddChunk (H:\致命代码\fancyguo-gm\server\node_modules\readable-stream\lib\_stream_readable.js:278:11)
+    at DestroyableTransform.Readable.push (H:\致命代码\fancyguo-gm\server\node_modules\readable-stream\lib\_stream_readable.js:245:10)
+    at DestroyableTransform.Transform.push (H:\致命代码\fancyguo-gm\server\node_modules\readable-stream\lib\_stream_transform.js:148:32)
+    at push (H:\致命代码\fancyguo-gm\server\node_modules\split2\index.js:52:10)
+    at DestroyableTransform.transform [as _transform] (H:\致命代码\fancyguo-gm\server\node_modules\split2\index.js:33:5)
+    at DestroyableTransform.Transform._read (H:\致命代码\fancyguo-gm\server\node_modules\readable-stream\lib\_stream_transform.js:184:10)
+    at DestroyableTransform.Transform._write (H:\致命代码\fancyguo-gm\server\node_modules\readable-stream\lib\_stream_transform.js:172:83)
+    at doWrite (H:\致命代码\fancyguo-gm\server\node_modules\readable-stream\lib\_stream_writable.js:428:64)
+    at writeOrBuffer (H:\致命代码\fancyguo-gm\server\node_modules\readable-stream\lib\_stream_writable.js:417:5)
+    at DestroyableTransform.Writable.write (H:\致命代码\fancyguo-gm\server\node_modules\readable-stream\lib\_stream_writable.js:334:11)
+    at Socket.ondata (_stream_readable.js:717:22)
+    at Socket.emit (events.js:315:20)
+    at addChunk (_stream_readable.js:295:12)
+    at readableAddChunk (_stream_readable.js:271:9)
+    at Socket.Readable.push (_stream_readable.js:212:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:186:23)
+From previous event:
+    at SenecaClient._callee$ (H:\致命代码\fancyguo-gm\server\src\xiaolu\/senecaclient.js:16:21)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at SenecaClient.<anonymous> (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at SenecaClient.get (H:\致命代码\fancyguo-gm\server\src\xiaolu\senecaclient.js:86:21)
+    at whiteServer._callee11$ (H:\致命代码\fancyguo-gm\server\src\app\service\/white.js:216:37)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at whiteServer.<anonymous> (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at whiteServer.sendWhiteMail (H:\致命代码\fancyguo-gm\server\src\app\service\white.js:612:31)
+    at whiteServer._callee7$ (H:\致命代码\fancyguo-gm\server\src\app\service\/white.js:160:24)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+*************** error log end ***************
+

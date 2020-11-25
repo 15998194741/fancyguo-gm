@@ -19,6 +19,13 @@ export class CharacterController {
 		let result = await CharacterService.findServername(data.gameid);
 		ctx.body = statusCode.SUCCESS_200('查询成功', result);
 	}
+	@get('/findServerid')
+	async findServerid(ctx) {
+		ctx.log.resourceDesc = '区服id获取';
+		let data = ctx.query;
+		let result = await CharacterService.findServerid(data.gameid);
+		ctx.body = statusCode.SUCCESS_200('查询成功', result);
+	}
 
 	@post('/uploadFile')
 	async uploadFile(ctx) {

@@ -1,0 +1,572 @@
+[2020-11-23T11:18:12.537] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/server/serverCreate
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"serverid":"99983","servername":"苹果测试","serveridTrue":true,"plaform":["2"],"channel":["测试渠道"],"ip":"","display":"1","srttime":"2020-11-23T03:18:02.000Z","address":"s99983.mrhx.hz.37.com.cn","test":"0","page":1,"pagesize":20,"gameid":"13"}
+response time: 1606101492537
+err name: undefined
+err message: Cp交互失败,请确认交互地址
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-23T11:18:26.211] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/server/serverCreate
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"serverid":"99983","servername":"苹果测试","serveridTrue":true,"plaform":["2"],"channel":["测试渠道"],"ip":"","display":"1","srttime":"2020-11-23T03:20:02.000Z","address":"s99983.mrhx.hz.37.com.cn","test":"0","page":1,"pagesize":20,"gameid":"13"}
+response time: 1606101506211
+err name: undefined
+err message: Cp交互失败,请确认交互地址
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-23T11:53:13.720] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: PUT
+request originalUrl:  /api/character/BannedAskCancel
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"value":[{"user_id":780397869651988500,"event_name":"Target_click","event_time":"2020-11-23 11:51:24.569","app_id":"ba36ec84b57a4057adb5db94a7e1b2b1","account_id":"99983|221455","distinct_id":"00000000-0000-0000-0000-000000000000","server_time":"2020-11-23 11:51:32.276","kafka_offset":23505652,"country_code":"CN","ip":"61.49.68.34","serverid":null,"server_version":"","timestamp":"2020-11-23 11:51:24","province":"北京","country":null,"channel":"0","roleid":null,"platform":"Android","machine":"iPhone12,1","system":"Android14.1","loader_step":null,"city":"北京","guild_id":0,"sum_online":0,"reg_time":"2020-11-23 11:41:14.378","weapon_type":"双轮","ttime":596,"sum_recharge":0,"vip_level":0,"role_name":"[99983]若娜罗克萨那","oldsid":"99983","targets":"/task_info/mc_main/mc_rw/gun/mc/rbtn_031","server_id":99983,"role_id":"1099983","force":39,"role_gender":"女","create_time":"2020-11-23 11:41:22.304","sum_logindays":1,"role_class":"控术师","level":1,"tut_name":null,"tut_step":null,"kill":null,"battle_status":null,"task_step":null,"zone_id":null,"battle_result":null,"task_id":null,"guild_name":null,"log_type":null,"guild":null,"object_type":null,"object_id":null,"object_status_id":null,"object_number":null,"object_method_cn":null,"object_name":null,"object_total":null,"object_method_en":null,"game_time":null,"now_force":null,"grownsys_name_en":null,"grownsys_change_force":null,"grownsys_name_cn":null,"after_level":null,"grownsys_level":null,"grownsys_unit_cn":null,"grownsys_part_cn":null,"heartbeat":null,"game_name_cn":null,"event_type":null,"subid":null,"store_open":null,"mall_entrance":null,"old_wtype":null,"star":null,"role_attributes":null,"regtime":null,"onlinesum":null,"createtime":null,"parent_mall":null,"milestone_id":null,"$part_event":"Target_click","$part_date":"2020-11-23"}],"gameid":"13"}
+response time: 1606103593720
+err name: undefined
+err message: syntax error at or near ")"
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-23T13:51:32.633] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: PUT
+request originalUrl:  /api/white/whiteStopMail
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"id":24,"gameid":"13"}
+response time: 1606110692633
+err name: Error
+err message: 此邮件有白名单用户存在！！！
+err stack: Error: 此邮件有白名单用户存在！！！
+    at _callee4$ (H:\致命代码\fancyguo-gm\server\src\app\service\/white.js:95:10)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+*************** error log end ***************
+
+[2020-11-23T13:51:36.597] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: PUT
+request originalUrl:  /api/white/whiteStopMail
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"id":26,"gameid":"13"}
+response time: 1606110696597
+err name: Error
+err message: 此邮件有白名单用户存在！！！
+err stack: Error: 此邮件有白名单用户存在！！！
+    at _callee4$ (H:\致命代码\fancyguo-gm\server\src\app\service\/white.js:95:10)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+*************** error log end ***************
+
+[2020-11-23T16:16:46.139] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: PUT
+request originalUrl:  /api/character/BannedAskCancel
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"value":[{"user_id":780403297693732900,"event_name":"Logout","event_time":"2020-11-05 15:31:16.787","app_id":"ba36ec84b57a4057adb5db94a7e1b2b1","account_id":"99984|25b2fa404d6c4ec985ab916a47f357c1","distinct_id":"866177039460174","server_time":"2020-11-23 12:03:50.538","kafka_offset":21538754,"country_code":"US","ip":"216.63.43.254","serverid":null,"server_version":"server_72812.zip","timestamp":"2020-11-05 15:31:16","province":"","country":null,"channel":"0","roleid":null,"platform":"Android","machine":"OPPOOPPO R11","system":"Android8.1.0","loader_step":null,"city":"","guild_id":0,"sum_online":2,"reg_time":"2020-11-05 15:22:21.485","weapon_type":"双轮","ttime":157,"sum_recharge":0,"vip_level":0,"role_name":"[99984]罗丝艾谱莉","oldsid":"99984","targets":null,"server_id":99984,"role_id":"399984","force":73,"role_gender":"女","create_time":null,"sum_logindays":1,"role_class":"控术师","level":2,"tut_name":null,"tut_step":null,"kill":null,"battle_status":null,"task_step":null,"zone_id":null,"battle_result":null,"task_id":null,"guild_name":"","log_type":1,"guild":null,"object_type":null,"object_id":null,"object_status_id":null,"object_number":null,"object_method_cn":null,"object_name":null,"object_total":null,"object_method_en":null,"game_time":334,"now_force":null,"grownsys_name_en":null,"grownsys_change_force":null,"grownsys_name_cn":null,"after_level":null,"grownsys_level":null,"grownsys_unit_cn":null,"grownsys_part_cn":null,"heartbeat":null,"game_name_cn":null,"event_type":null,"subid":null,"store_open":null,"mall_entrance":null,"old_wtype":null,"star":null,"role_attributes":null,"regtime":null,"onlinesum":null,"createtime":"2020-11-05 15:22:43.364","parent_mall":null,"milestone_id":null,"chat_content":null,"chat_channel_cn":null,"user":null,"sid":null,"after":null,"before":null,"grownsys_key":null,"grownsys_name":null,"change":null,"change_force":null,"object_method":null,"type":null,"game_name":null,"quit_type":null,"category":null,"status":null,"commodity_id":null,"in_order":null,"money":null,"out_order":null,"shop_name":null,"buy_num":null,"shop_id":null,"shop_kind":null,"floor":null,"before_force":null,"after_force":null,"channel_order":null,"client_order":null,"recharge_status":null,"commodity_name":null,"currency":null,"recharge_type":null,"sdk_order":null,"$part_event":"Logout","$part_date":"2020-11-05"}],"gameid":"13"}
+response time: 1606119406139
+err name: undefined
+err message: syntax error at or near ")"
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-23T16:25:34.406] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: PUT
+request originalUrl:  /api/character/BannedAskCancel
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"value":[{"user_id":780457176733061100,"event_name":"Target_click","event_time":"2020-11-23 16:24:28.100","app_id":"ba36ec84b57a4057adb5db94a7e1b2b1","account_id":"99983|j","distinct_id":"00000000-0000-0000-0000-000000000000","server_time":"2020-11-23 16:24:33.882","kafka_offset":23775634,"country_code":"CN","ip":"61.49.68.34","serverid":null,"server_version":"","timestamp":"2020-11-23 16:24:28","province":"北京","country":null,"channel":"0","roleid":null,"platform":"Android","machine":"iPhone12,1","system":"Android14.1","loader_step":null,"city":"北京","guild_id":0,"sum_online":0,"reg_time":"2020-11-23 15:37:58.963","weapon_type":"双轮","ttime":215,"sum_recharge":0,"vip_level":0,"role_name":"[99983]蓓姬艾丝翠得","oldsid":"99983","targets":"/equip_suit/mc_dh/btn","server_id":99983,"role_id":"1399983","force":6258,"role_gender":"女","create_time":"2020-11-23 16:20:49.619","sum_logindays":1,"role_class":"控术师","level":5,"tut_name":null,"tut_step":null,"kill":null,"battle_status":null,"task_step":null,"zone_id":null,"battle_result":null,"task_id":null,"guild_name":null,"log_type":null,"guild":null,"object_type":null,"object_id":null,"object_status_id":null,"object_number":null,"object_method_cn":null,"object_name":null,"object_total":null,"object_method_en":null,"game_time":null,"now_force":null,"grownsys_name_en":null,"grownsys_change_force":null,"grownsys_name_cn":null,"after_level":null,"grownsys_level":null,"grownsys_unit_cn":null,"grownsys_part_cn":null,"heartbeat":null,"game_name_cn":null,"event_type":null,"subid":null,"store_open":null,"mall_entrance":null,"old_wtype":null,"star":null,"role_attributes":null,"regtime":null,"onlinesum":null,"createtime":null,"parent_mall":null,"milestone_id":null,"chat_content":null,"chat_channel_cn":null,"user":null,"sid":null,"after":null,"before":null,"grownsys_key":null,"grownsys_name":null,"change":null,"change_force":null,"object_method":null,"type":null,"game_name":null,"quit_type":null,"category":null,"status":null,"commodity_id":null,"in_order":null,"money":null,"out_order":null,"shop_name":null,"buy_num":null,"shop_id":null,"shop_kind":null,"floor":null,"before_force":null,"after_force":null,"channel_order":null,"client_order":null,"recharge_status":null,"commodity_name":null,"currency":null,"recharge_type":null,"sdk_order":null,"$part_event":"Target_click","$part_date":"2020-11-23"}],"gameid":"13"}
+response time: 1606119934405
+err name: undefined
+err message: syntax error at or near ")"
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-23T16:31:40.783] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: PUT
+request originalUrl:  /api/character/BannedAskCancel
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"value":[{"user_id":780457176733061100,"event_name":"Target_click","event_time":"2020-11-23 16:24:28.100","app_id":"ba36ec84b57a4057adb5db94a7e1b2b1","account_id":"99983|j","distinct_id":"00000000-0000-0000-0000-000000000000","server_time":"2020-11-23 16:24:33.882","kafka_offset":23775634,"country_code":"CN","ip":"61.49.68.34","serverid":null,"server_version":"","timestamp":"2020-11-23 16:24:28","province":"北京","country":null,"channel":"0","roleid":null,"platform":"Android","machine":"iPhone12,1","system":"Android14.1","loader_step":null,"city":"北京","guild_id":0,"sum_online":0,"reg_time":"2020-11-23 15:37:58.963","weapon_type":"双轮","ttime":215,"sum_recharge":0,"vip_level":0,"role_name":"[99983]蓓姬艾丝翠得","oldsid":"99983","targets":"/equip_suit/mc_dh/btn","server_id":99983,"role_id":"1399983","force":6258,"role_gender":"女","create_time":"2020-11-23 16:20:49.619","sum_logindays":1,"role_class":"控术师","level":5,"tut_name":null,"tut_step":null,"kill":null,"battle_status":null,"task_step":null,"zone_id":null,"battle_result":null,"task_id":null,"guild_name":null,"log_type":null,"guild":null,"object_type":null,"object_id":null,"object_status_id":null,"object_number":null,"object_method_cn":null,"object_name":null,"object_total":null,"object_method_en":null,"game_time":null,"now_force":null,"grownsys_name_en":null,"grownsys_change_force":null,"grownsys_name_cn":null,"after_level":null,"grownsys_level":null,"grownsys_unit_cn":null,"grownsys_part_cn":null,"heartbeat":null,"game_name_cn":null,"event_type":null,"subid":null,"store_open":null,"mall_entrance":null,"old_wtype":null,"star":null,"role_attributes":null,"regtime":null,"onlinesum":null,"createtime":null,"parent_mall":null,"milestone_id":null,"chat_content":null,"chat_channel_cn":null,"user":null,"sid":null,"after":null,"before":null,"grownsys_key":null,"grownsys_name":null,"change":null,"change_force":null,"object_method":null,"type":null,"game_name":null,"quit_type":null,"category":null,"status":null,"commodity_id":null,"in_order":null,"money":null,"out_order":null,"shop_name":null,"buy_num":null,"shop_id":null,"shop_kind":null,"floor":null,"before_force":null,"after_force":null,"channel_order":null,"client_order":null,"recharge_status":null,"commodity_name":null,"currency":null,"recharge_type":null,"sdk_order":null,"$part_event":"Target_click","$part_date":"2020-11-23"}],"gameid":"13"}
+response time: 1606120300783
+err name: undefined
+err message: syntax error at or near ")"
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-23T16:32:37.580] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: PUT
+request originalUrl:  /api/character/BannedAskCancel
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"value":[{"user_id":780457176733061100,"event_name":"Target_click","event_time":"2020-11-23 16:24:28.100","app_id":"ba36ec84b57a4057adb5db94a7e1b2b1","account_id":"99983|j","distinct_id":"00000000-0000-0000-0000-000000000000","server_time":"2020-11-23 16:24:33.882","kafka_offset":23775634,"country_code":"CN","ip":"61.49.68.34","serverid":null,"server_version":"","timestamp":"2020-11-23 16:24:28","province":"北京","country":null,"channel":"0","roleid":null,"platform":"Android","machine":"iPhone12,1","system":"Android14.1","loader_step":null,"city":"北京","guild_id":0,"sum_online":0,"reg_time":"2020-11-23 15:37:58.963","weapon_type":"双轮","ttime":215,"sum_recharge":0,"vip_level":0,"role_name":"[99983]蓓姬艾丝翠得","oldsid":"99983","targets":"/equip_suit/mc_dh/btn","server_id":99983,"role_id":"1399983","force":6258,"role_gender":"女","create_time":"2020-11-23 16:20:49.619","sum_logindays":1,"role_class":"控术师","level":5,"tut_name":null,"tut_step":null,"kill":null,"battle_status":null,"task_step":null,"zone_id":null,"battle_result":null,"task_id":null,"guild_name":null,"log_type":null,"guild":null,"object_type":null,"object_id":null,"object_status_id":null,"object_number":null,"object_method_cn":null,"object_name":null,"object_total":null,"object_method_en":null,"game_time":null,"now_force":null,"grownsys_name_en":null,"grownsys_change_force":null,"grownsys_name_cn":null,"after_level":null,"grownsys_level":null,"grownsys_unit_cn":null,"grownsys_part_cn":null,"heartbeat":null,"game_name_cn":null,"event_type":null,"subid":null,"store_open":null,"mall_entrance":null,"old_wtype":null,"star":null,"role_attributes":null,"regtime":null,"onlinesum":null,"createtime":null,"parent_mall":null,"milestone_id":null,"chat_content":null,"chat_channel_cn":null,"user":null,"sid":null,"after":null,"before":null,"grownsys_key":null,"grownsys_name":null,"change":null,"change_force":null,"object_method":null,"type":null,"game_name":null,"quit_type":null,"category":null,"status":null,"commodity_id":null,"in_order":null,"money":null,"out_order":null,"shop_name":null,"buy_num":null,"shop_id":null,"shop_kind":null,"floor":null,"before_force":null,"after_force":null,"channel_order":null,"client_order":null,"recharge_status":null,"commodity_name":null,"currency":null,"recharge_type":null,"sdk_order":null,"$part_event":"Target_click","$part_date":"2020-11-23"}],"gameid":"13"}
+response time: 1606120357580
+err name: undefined
+err message: success.find is not a function
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-23T16:34:02.569] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: PUT
+request originalUrl:  /api/character/BannedAskCancel
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"value":[{"user_id":780457176733061100,"event_name":"Target_click","event_time":"2020-11-23 16:24:28.100","app_id":"ba36ec84b57a4057adb5db94a7e1b2b1","account_id":"99983|j","distinct_id":"00000000-0000-0000-0000-000000000000","server_time":"2020-11-23 16:24:33.882","kafka_offset":23775634,"country_code":"CN","ip":"61.49.68.34","serverid":null,"server_version":"","timestamp":"2020-11-23 16:24:28","province":"北京","country":null,"channel":"0","roleid":null,"platform":"Android","machine":"iPhone12,1","system":"Android14.1","loader_step":null,"city":"北京","guild_id":0,"sum_online":0,"reg_time":"2020-11-23 15:37:58.963","weapon_type":"双轮","ttime":215,"sum_recharge":0,"vip_level":0,"role_name":"[99983]蓓姬艾丝翠得","oldsid":"99983","targets":"/equip_suit/mc_dh/btn","server_id":99983,"role_id":"1399983","force":6258,"role_gender":"女","create_time":"2020-11-23 16:20:49.619","sum_logindays":1,"role_class":"控术师","level":5,"tut_name":null,"tut_step":null,"kill":null,"battle_status":null,"task_step":null,"zone_id":null,"battle_result":null,"task_id":null,"guild_name":null,"log_type":null,"guild":null,"object_type":null,"object_id":null,"object_status_id":null,"object_number":null,"object_method_cn":null,"object_name":null,"object_total":null,"object_method_en":null,"game_time":null,"now_force":null,"grownsys_name_en":null,"grownsys_change_force":null,"grownsys_name_cn":null,"after_level":null,"grownsys_level":null,"grownsys_unit_cn":null,"grownsys_part_cn":null,"heartbeat":null,"game_name_cn":null,"event_type":null,"subid":null,"store_open":null,"mall_entrance":null,"old_wtype":null,"star":null,"role_attributes":null,"regtime":null,"onlinesum":null,"createtime":null,"parent_mall":null,"milestone_id":null,"chat_content":null,"chat_channel_cn":null,"user":null,"sid":null,"after":null,"before":null,"grownsys_key":null,"grownsys_name":null,"change":null,"change_force":null,"object_method":null,"type":null,"game_name":null,"quit_type":null,"category":null,"status":null,"commodity_id":null,"in_order":null,"money":null,"out_order":null,"shop_name":null,"buy_num":null,"shop_id":null,"shop_kind":null,"floor":null,"before_force":null,"after_force":null,"channel_order":null,"client_order":null,"recharge_status":null,"commodity_name":null,"currency":null,"recharge_type":null,"sdk_order":null,"$part_event":"Target_click","$part_date":"2020-11-23"}],"gameid":"13"}
+response time: 1606120442569
+err name: undefined
+err message: success.find is not a function
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-23T16:34:42.629] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: PUT
+request originalUrl:  /api/character/BannedAskCancel
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"value":[{"user_id":780457176733061100,"event_name":"Target_click","event_time":"2020-11-23 16:24:28.100","app_id":"ba36ec84b57a4057adb5db94a7e1b2b1","account_id":"99983|j","distinct_id":"00000000-0000-0000-0000-000000000000","server_time":"2020-11-23 16:24:33.882","kafka_offset":23775634,"country_code":"CN","ip":"61.49.68.34","serverid":null,"server_version":"","timestamp":"2020-11-23 16:24:28","province":"北京","country":null,"channel":"0","roleid":null,"platform":"Android","machine":"iPhone12,1","system":"Android14.1","loader_step":null,"city":"北京","guild_id":0,"sum_online":0,"reg_time":"2020-11-23 15:37:58.963","weapon_type":"双轮","ttime":215,"sum_recharge":0,"vip_level":0,"role_name":"[99983]蓓姬艾丝翠得","oldsid":"99983","targets":"/equip_suit/mc_dh/btn","server_id":99983,"role_id":"1399983","force":6258,"role_gender":"女","create_time":"2020-11-23 16:20:49.619","sum_logindays":1,"role_class":"控术师","level":5,"tut_name":null,"tut_step":null,"kill":null,"battle_status":null,"task_step":null,"zone_id":null,"battle_result":null,"task_id":null,"guild_name":null,"log_type":null,"guild":null,"object_type":null,"object_id":null,"object_status_id":null,"object_number":null,"object_method_cn":null,"object_name":null,"object_total":null,"object_method_en":null,"game_time":null,"now_force":null,"grownsys_name_en":null,"grownsys_change_force":null,"grownsys_name_cn":null,"after_level":null,"grownsys_level":null,"grownsys_unit_cn":null,"grownsys_part_cn":null,"heartbeat":null,"game_name_cn":null,"event_type":null,"subid":null,"store_open":null,"mall_entrance":null,"old_wtype":null,"star":null,"role_attributes":null,"regtime":null,"onlinesum":null,"createtime":null,"parent_mall":null,"milestone_id":null,"chat_content":null,"chat_channel_cn":null,"user":null,"sid":null,"after":null,"before":null,"grownsys_key":null,"grownsys_name":null,"change":null,"change_force":null,"object_method":null,"type":null,"game_name":null,"quit_type":null,"category":null,"status":null,"commodity_id":null,"in_order":null,"money":null,"out_order":null,"shop_name":null,"buy_num":null,"shop_id":null,"shop_kind":null,"floor":null,"before_force":null,"after_force":null,"channel_order":null,"client_order":null,"recharge_status":null,"commodity_name":null,"currency":null,"recharge_type":null,"sdk_order":null,"$part_event":"Target_click","$part_date":"2020-11-23"}],"gameid":"13"}
+response time: 1606120482629
+err name: undefined
+err message: success.find is not a function
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-23T16:36:19.723] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: PUT
+request originalUrl:  /api/character/BannedAskCancel
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"value":[{"user_id":780457176733061100,"event_name":"Target_click","event_time":"2020-11-23 16:24:28.100","app_id":"ba36ec84b57a4057adb5db94a7e1b2b1","account_id":"99983|j","distinct_id":"00000000-0000-0000-0000-000000000000","server_time":"2020-11-23 16:24:33.882","kafka_offset":23775634,"country_code":"CN","ip":"61.49.68.34","serverid":null,"server_version":"","timestamp":"2020-11-23 16:24:28","province":"北京","country":null,"channel":"0","roleid":null,"platform":"Android","machine":"iPhone12,1","system":"Android14.1","loader_step":null,"city":"北京","guild_id":0,"sum_online":0,"reg_time":"2020-11-23 15:37:58.963","weapon_type":"双轮","ttime":215,"sum_recharge":0,"vip_level":0,"role_name":"[99983]蓓姬艾丝翠得","oldsid":"99983","targets":"/equip_suit/mc_dh/btn","server_id":99983,"role_id":"1399983","force":6258,"role_gender":"女","create_time":"2020-11-23 16:20:49.619","sum_logindays":1,"role_class":"控术师","level":5,"tut_name":null,"tut_step":null,"kill":null,"battle_status":null,"task_step":null,"zone_id":null,"battle_result":null,"task_id":null,"guild_name":null,"log_type":null,"guild":null,"object_type":null,"object_id":null,"object_status_id":null,"object_number":null,"object_method_cn":null,"object_name":null,"object_total":null,"object_method_en":null,"game_time":null,"now_force":null,"grownsys_name_en":null,"grownsys_change_force":null,"grownsys_name_cn":null,"after_level":null,"grownsys_level":null,"grownsys_unit_cn":null,"grownsys_part_cn":null,"heartbeat":null,"game_name_cn":null,"event_type":null,"subid":null,"store_open":null,"mall_entrance":null,"old_wtype":null,"star":null,"role_attributes":null,"regtime":null,"onlinesum":null,"createtime":null,"parent_mall":null,"milestone_id":null,"chat_content":null,"chat_channel_cn":null,"user":null,"sid":null,"after":null,"before":null,"grownsys_key":null,"grownsys_name":null,"change":null,"change_force":null,"object_method":null,"type":null,"game_name":null,"quit_type":null,"category":null,"status":null,"commodity_id":null,"in_order":null,"money":null,"out_order":null,"shop_name":null,"buy_num":null,"shop_id":null,"shop_kind":null,"floor":null,"before_force":null,"after_force":null,"channel_order":null,"client_order":null,"recharge_status":null,"commodity_name":null,"currency":null,"recharge_type":null,"sdk_order":null,"$part_event":"Target_click","$part_date":"2020-11-23"}],"gameid":"13"}
+response time: 1606120579723
+err name: undefined
+err message: success.find is not a function
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-23T16:36:58.878] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: PUT
+request originalUrl:  /api/character/BannedAskCancel
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"value":[{"user_id":780457176733061100,"event_name":"Target_click","event_time":"2020-11-23 16:24:28.100","app_id":"ba36ec84b57a4057adb5db94a7e1b2b1","account_id":"99983|j","distinct_id":"00000000-0000-0000-0000-000000000000","server_time":"2020-11-23 16:24:33.882","kafka_offset":23775634,"country_code":"CN","ip":"61.49.68.34","serverid":null,"server_version":"","timestamp":"2020-11-23 16:24:28","province":"北京","country":null,"channel":"0","roleid":null,"platform":"Android","machine":"iPhone12,1","system":"Android14.1","loader_step":null,"city":"北京","guild_id":0,"sum_online":0,"reg_time":"2020-11-23 15:37:58.963","weapon_type":"双轮","ttime":215,"sum_recharge":0,"vip_level":0,"role_name":"[99983]蓓姬艾丝翠得","oldsid":"99983","targets":"/equip_suit/mc_dh/btn","server_id":99983,"role_id":"1399983","force":6258,"role_gender":"女","create_time":"2020-11-23 16:20:49.619","sum_logindays":1,"role_class":"控术师","level":5,"tut_name":null,"tut_step":null,"kill":null,"battle_status":null,"task_step":null,"zone_id":null,"battle_result":null,"task_id":null,"guild_name":null,"log_type":null,"guild":null,"object_type":null,"object_id":null,"object_status_id":null,"object_number":null,"object_method_cn":null,"object_name":null,"object_total":null,"object_method_en":null,"game_time":null,"now_force":null,"grownsys_name_en":null,"grownsys_change_force":null,"grownsys_name_cn":null,"after_level":null,"grownsys_level":null,"grownsys_unit_cn":null,"grownsys_part_cn":null,"heartbeat":null,"game_name_cn":null,"event_type":null,"subid":null,"store_open":null,"mall_entrance":null,"old_wtype":null,"star":null,"role_attributes":null,"regtime":null,"onlinesum":null,"createtime":null,"parent_mall":null,"milestone_id":null,"chat_content":null,"chat_channel_cn":null,"user":null,"sid":null,"after":null,"before":null,"grownsys_key":null,"grownsys_name":null,"change":null,"change_force":null,"object_method":null,"type":null,"game_name":null,"quit_type":null,"category":null,"status":null,"commodity_id":null,"in_order":null,"money":null,"out_order":null,"shop_name":null,"buy_num":null,"shop_id":null,"shop_kind":null,"floor":null,"before_force":null,"after_force":null,"channel_order":null,"client_order":null,"recharge_status":null,"commodity_name":null,"currency":null,"recharge_type":null,"sdk_order":null,"$part_event":"Target_click","$part_date":"2020-11-23"}],"gameid":"13"}
+response time: 1606120618878
+err name: undefined
+err message: success.find is not a function
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-23T16:37:53.361] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: PUT
+request originalUrl:  /api/character/BannedAskCancel
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"value":[{"user_id":780457176733061100,"event_name":"Target_click","event_time":"2020-11-23 16:24:28.100","app_id":"ba36ec84b57a4057adb5db94a7e1b2b1","account_id":"99983|j","distinct_id":"00000000-0000-0000-0000-000000000000","server_time":"2020-11-23 16:24:33.882","kafka_offset":23775634,"country_code":"CN","ip":"61.49.68.34","serverid":null,"server_version":"","timestamp":"2020-11-23 16:24:28","province":"北京","country":null,"channel":"0","roleid":null,"platform":"Android","machine":"iPhone12,1","system":"Android14.1","loader_step":null,"city":"北京","guild_id":0,"sum_online":0,"reg_time":"2020-11-23 15:37:58.963","weapon_type":"双轮","ttime":215,"sum_recharge":0,"vip_level":0,"role_name":"[99983]蓓姬艾丝翠得","oldsid":"99983","targets":"/equip_suit/mc_dh/btn","server_id":99983,"role_id":"1399983","force":6258,"role_gender":"女","create_time":"2020-11-23 16:20:49.619","sum_logindays":1,"role_class":"控术师","level":5,"tut_name":null,"tut_step":null,"kill":null,"battle_status":null,"task_step":null,"zone_id":null,"battle_result":null,"task_id":null,"guild_name":null,"log_type":null,"guild":null,"object_type":null,"object_id":null,"object_status_id":null,"object_number":null,"object_method_cn":null,"object_name":null,"object_total":null,"object_method_en":null,"game_time":null,"now_force":null,"grownsys_name_en":null,"grownsys_change_force":null,"grownsys_name_cn":null,"after_level":null,"grownsys_level":null,"grownsys_unit_cn":null,"grownsys_part_cn":null,"heartbeat":null,"game_name_cn":null,"event_type":null,"subid":null,"store_open":null,"mall_entrance":null,"old_wtype":null,"star":null,"role_attributes":null,"regtime":null,"onlinesum":null,"createtime":null,"parent_mall":null,"milestone_id":null,"chat_content":null,"chat_channel_cn":null,"user":null,"sid":null,"after":null,"before":null,"grownsys_key":null,"grownsys_name":null,"change":null,"change_force":null,"object_method":null,"type":null,"game_name":null,"quit_type":null,"category":null,"status":null,"commodity_id":null,"in_order":null,"money":null,"out_order":null,"shop_name":null,"buy_num":null,"shop_id":null,"shop_kind":null,"floor":null,"before_force":null,"after_force":null,"channel_order":null,"client_order":null,"recharge_status":null,"commodity_name":null,"currency":null,"recharge_type":null,"sdk_order":null,"$part_event":"Target_click","$part_date":"2020-11-23"}],"gameid":"13"}
+response time: 1606120673361
+err name: undefined
+err message: Cannot read property 'trim' of undefined
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-23T16:38:55.704] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: PUT
+request originalUrl:  /api/character/BannedAskCancel
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"value":[{"user_id":780457176733061100,"event_name":"Target_click","event_time":"2020-11-23 16:24:28.100","app_id":"ba36ec84b57a4057adb5db94a7e1b2b1","account_id":"99983|j","distinct_id":"00000000-0000-0000-0000-000000000000","server_time":"2020-11-23 16:24:33.882","kafka_offset":23775634,"country_code":"CN","ip":"61.49.68.34","serverid":null,"server_version":"","timestamp":"2020-11-23 16:24:28","province":"北京","country":null,"channel":"0","roleid":null,"platform":"Android","machine":"iPhone12,1","system":"Android14.1","loader_step":null,"city":"北京","guild_id":0,"sum_online":0,"reg_time":"2020-11-23 15:37:58.963","weapon_type":"双轮","ttime":215,"sum_recharge":0,"vip_level":0,"role_name":"[99983]蓓姬艾丝翠得","oldsid":"99983","targets":"/equip_suit/mc_dh/btn","server_id":99983,"role_id":"1399983","force":6258,"role_gender":"女","create_time":"2020-11-23 16:20:49.619","sum_logindays":1,"role_class":"控术师","level":5,"tut_name":null,"tut_step":null,"kill":null,"battle_status":null,"task_step":null,"zone_id":null,"battle_result":null,"task_id":null,"guild_name":null,"log_type":null,"guild":null,"object_type":null,"object_id":null,"object_status_id":null,"object_number":null,"object_method_cn":null,"object_name":null,"object_total":null,"object_method_en":null,"game_time":null,"now_force":null,"grownsys_name_en":null,"grownsys_change_force":null,"grownsys_name_cn":null,"after_level":null,"grownsys_level":null,"grownsys_unit_cn":null,"grownsys_part_cn":null,"heartbeat":null,"game_name_cn":null,"event_type":null,"subid":null,"store_open":null,"mall_entrance":null,"old_wtype":null,"star":null,"role_attributes":null,"regtime":null,"onlinesum":null,"createtime":null,"parent_mall":null,"milestone_id":null,"chat_content":null,"chat_channel_cn":null,"user":null,"sid":null,"after":null,"before":null,"grownsys_key":null,"grownsys_name":null,"change":null,"change_force":null,"object_method":null,"type":null,"game_name":null,"quit_type":null,"category":null,"status":null,"commodity_id":null,"in_order":null,"money":null,"out_order":null,"shop_name":null,"buy_num":null,"shop_id":null,"shop_kind":null,"floor":null,"before_force":null,"after_force":null,"channel_order":null,"client_order":null,"recharge_status":null,"commodity_name":null,"currency":null,"recharge_type":null,"sdk_order":null,"$part_event":"Target_click","$part_date":"2020-11-23"}],"gameid":"13"}
+response time: 1606120735704
+err name: undefined
+err message: success.find is not a function
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-23T16:40:02.130] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: PUT
+request originalUrl:  /api/character/BannedAskCancel
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"value":[{"user_id":780457176733061100,"event_name":"Target_click","event_time":"2020-11-23 16:24:28.100","app_id":"ba36ec84b57a4057adb5db94a7e1b2b1","account_id":"99983|j","distinct_id":"00000000-0000-0000-0000-000000000000","server_time":"2020-11-23 16:24:33.882","kafka_offset":23775634,"country_code":"CN","ip":"61.49.68.34","serverid":null,"server_version":"","timestamp":"2020-11-23 16:24:28","province":"北京","country":null,"channel":"0","roleid":null,"platform":"Android","machine":"iPhone12,1","system":"Android14.1","loader_step":null,"city":"北京","guild_id":0,"sum_online":0,"reg_time":"2020-11-23 15:37:58.963","weapon_type":"双轮","ttime":215,"sum_recharge":0,"vip_level":0,"role_name":"[99983]蓓姬艾丝翠得","oldsid":"99983","targets":"/equip_suit/mc_dh/btn","server_id":99983,"role_id":"1399983","force":6258,"role_gender":"女","create_time":"2020-11-23 16:20:49.619","sum_logindays":1,"role_class":"控术师","level":5,"tut_name":null,"tut_step":null,"kill":null,"battle_status":null,"task_step":null,"zone_id":null,"battle_result":null,"task_id":null,"guild_name":null,"log_type":null,"guild":null,"object_type":null,"object_id":null,"object_status_id":null,"object_number":null,"object_method_cn":null,"object_name":null,"object_total":null,"object_method_en":null,"game_time":null,"now_force":null,"grownsys_name_en":null,"grownsys_change_force":null,"grownsys_name_cn":null,"after_level":null,"grownsys_level":null,"grownsys_unit_cn":null,"grownsys_part_cn":null,"heartbeat":null,"game_name_cn":null,"event_type":null,"subid":null,"store_open":null,"mall_entrance":null,"old_wtype":null,"star":null,"role_attributes":null,"regtime":null,"onlinesum":null,"createtime":null,"parent_mall":null,"milestone_id":null,"chat_content":null,"chat_channel_cn":null,"user":null,"sid":null,"after":null,"before":null,"grownsys_key":null,"grownsys_name":null,"change":null,"change_force":null,"object_method":null,"type":null,"game_name":null,"quit_type":null,"category":null,"status":null,"commodity_id":null,"in_order":null,"money":null,"out_order":null,"shop_name":null,"buy_num":null,"shop_id":null,"shop_kind":null,"floor":null,"before_force":null,"after_force":null,"channel_order":null,"client_order":null,"recharge_status":null,"commodity_name":null,"currency":null,"recharge_type":null,"sdk_order":null,"$part_event":"Target_click","$part_date":"2020-11-23"}],"gameid":"13"}
+response time: 1606120802130
+err name: undefined
+err message: success.find is not a function
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-23T16:45:14.730] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: PUT
+request originalUrl:  /api/character/BannedAskCancel
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"value":[{"user_id":780457176733061100,"event_name":"Target_click","event_time":"2020-11-23 16:24:28.100","app_id":"ba36ec84b57a4057adb5db94a7e1b2b1","account_id":"99983|j","distinct_id":"00000000-0000-0000-0000-000000000000","server_time":"2020-11-23 16:24:33.882","kafka_offset":23775634,"country_code":"CN","ip":"61.49.68.34","serverid":null,"server_version":"","timestamp":"2020-11-23 16:24:28","province":"北京","country":null,"channel":"0","roleid":null,"platform":"Android","machine":"iPhone12,1","system":"Android14.1","loader_step":null,"city":"北京","guild_id":0,"sum_online":0,"reg_time":"2020-11-23 15:37:58.963","weapon_type":"双轮","ttime":215,"sum_recharge":0,"vip_level":0,"role_name":"[99983]蓓姬艾丝翠得","oldsid":"99983","targets":"/equip_suit/mc_dh/btn","server_id":99983,"role_id":"1399983","force":6258,"role_gender":"女","create_time":"2020-11-23 16:20:49.619","sum_logindays":1,"role_class":"控术师","level":5,"tut_name":null,"tut_step":null,"kill":null,"battle_status":null,"task_step":null,"zone_id":null,"battle_result":null,"task_id":null,"guild_name":null,"log_type":null,"guild":null,"object_type":null,"object_id":null,"object_status_id":null,"object_number":null,"object_method_cn":null,"object_name":null,"object_total":null,"object_method_en":null,"game_time":null,"now_force":null,"grownsys_name_en":null,"grownsys_change_force":null,"grownsys_name_cn":null,"after_level":null,"grownsys_level":null,"grownsys_unit_cn":null,"grownsys_part_cn":null,"heartbeat":null,"game_name_cn":null,"event_type":null,"subid":null,"store_open":null,"mall_entrance":null,"old_wtype":null,"star":null,"role_attributes":null,"regtime":null,"onlinesum":null,"createtime":null,"parent_mall":null,"milestone_id":null,"chat_content":null,"chat_channel_cn":null,"user":null,"sid":null,"after":null,"before":null,"grownsys_key":null,"grownsys_name":null,"change":null,"change_force":null,"object_method":null,"type":null,"game_name":null,"quit_type":null,"category":null,"status":null,"commodity_id":null,"in_order":null,"money":null,"out_order":null,"shop_name":null,"buy_num":null,"shop_id":null,"shop_kind":null,"floor":null,"before_force":null,"after_force":null,"channel_order":null,"client_order":null,"recharge_status":null,"commodity_name":null,"currency":null,"recharge_type":null,"sdk_order":null,"$part_event":"Target_click","$part_date":"2020-11-23"}],"gameid":"13"}
+response time: 1606121114729
+err name: undefined
+err message: success.find is not a function
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-23T16:58:40.969] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: PUT
+request originalUrl:  /api/character/BannedAskCancel
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"value":[{"user_id":780457176733061100,"event_name":"Target_click","event_time":"2020-11-23 16:24:28.100","app_id":"ba36ec84b57a4057adb5db94a7e1b2b1","account_id":"99983|j","distinct_id":"00000000-0000-0000-0000-000000000000","server_time":"2020-11-23 16:24:33.882","kafka_offset":23775634,"country_code":"CN","ip":"61.49.68.34","serverid":"99983","server_version":"","timestamp":"2020-11-23 16:24:28","province":"北京","country":null,"channel":"0","roleid":"1399983","platform":"Android","machine":"iPhone12,1","system":"Android14.1","loader_step":null,"city":"北京","guild_id":0,"sum_online":0,"reg_time":"2020-11-23 15:37:58.963","weapon_type":"双轮","ttime":215,"sum_recharge":"0","vip_level":"0","role_name":"[99983]蓓姬艾丝翠得","oldsid":"99983","targets":"/equip_suit/mc_dh/btn","server_id":99983,"role_id":"1399983","force":6258,"role_gender":"女","create_time":"2020-11-23T08:24:04.959Z","sum_logindays":1,"role_class":"控术师","level":"4","tut_name":null,"tut_step":null,"kill":null,"battle_status":null,"task_step":null,"zone_id":null,"battle_result":null,"task_id":null,"guild_name":null,"log_type":null,"guild":null,"object_type":null,"object_id":null,"object_status_id":null,"object_number":null,"object_method_cn":null,"object_name":null,"object_total":null,"object_method_en":null,"game_time":null,"now_force":null,"grownsys_name_en":null,"grownsys_change_force":null,"grownsys_name_cn":null,"after_level":null,"grownsys_level":null,"grownsys_unit_cn":null,"grownsys_part_cn":null,"heartbeat":null,"game_name_cn":null,"event_type":null,"subid":null,"store_open":null,"mall_entrance":null,"old_wtype":null,"star":null,"role_attributes":null,"regtime":"2020-11-23T07:37:58.000Z","onlinesum":null,"createtime":null,"parent_mall":null,"milestone_id":null,"chat_content":null,"chat_channel_cn":null,"user":null,"sid":null,"after":null,"before":null,"grownsys_key":null,"grownsys_name":null,"change":null,"change_force":null,"object_method":null,"type":null,"game_name":null,"quit_type":null,"category":null,"status":1,"commodity_id":null,"in_order":null,"money":null,"out_order":null,"shop_name":null,"buy_num":null,"shop_id":null,"shop_kind":null,"floor":null,"before_force":null,"after_force":null,"channel_order":null,"client_order":null,"recharge_status":null,"commodity_name":null,"currency":null,"recharge_type":null,"sdk_order":null,"$part_event":"Target_click","$part_date":"2020-11-23","id":197,"create_user_id":null,"update_user_id":null,"gameid":13,"update_time":"2020-11-23T08:23:18.000Z","banned_type":"1","banned_area":"1","banned_reason":"kjhlkjkljl jlkjklj","banned_time":"12","stime":"2020-11-23T16:24:05.000Z","servername":"undefined"}],"gameid":"13"}
+response time: 1606121920968
+err name: undefined
+err message: success.find is not a function
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-23T17:33:49.022] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/mail/postMailToCreate
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"title":"123","text":"123","allServerTrue":false,"roleId":[{"serverid":99983,"id":1399983},{"serverid":99983,"id":1099983}],"mailLink":"","plaform":"","channel":"","serverName":"","carryAnnex":true,"sendTime":true,"smtpId":"3331137","Annex":["{\"ID\":\"5000002\",\"name\":\"货币\",\"number\":\"1250\"}"],"gameid":"13"}
+response time: 1606124029021
+err name: Error
+err message: 邮件及时发送 失败
+err stack: Error: 邮件及时发送 失败
+    at MailService._callee9$ (H:\致命代码\fancyguo-gm\server\src\app\service\/mail.js:224:9)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+*************** error log end ***************
+
+[2020-11-23T17:34:35.150] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/mail/postMailToCreate
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"title":"123","text":"123","allServerTrue":false,"roleId":[{"serverid":99983,"id":1399983},{"serverid":99983,"id":1099983}],"mailLink":"","plaform":"","channel":"","serverName":"","carryAnnex":true,"sendTime":true,"smtpId":"3331137","Annex":["{\"ID\":\"5000002\",\"name\":\"货币\",\"number\":\"1250\"}"],"gameid":"13"}
+response time: 1606124075150
+err name: Error
+err message: 邮件及时发送 失败
+err stack: Error: 邮件及时发送 失败
+    at MailService._callee9$ (H:\致命代码\fancyguo-gm\server\src\app\service\/mail.js:224:9)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+*************** error log end ***************
+
+[2020-11-23T17:35:43.800] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/mail/postMailToCreate
+request client ip:  
+request body: 
+{"title":"123","text":"123","allServerTrue":false,"roleId":[{"serverid":99983,"id":1399983},{"serverid":99983,"id":1099983}],"mailLink":"","plaform":"","channel":"","serverName":"","carryAnnex":true,"sendTime":true,"smtpId":"3331137","Annex":["{\"ID\":\"5000002\",\"name\":\"货币\",\"number\":\"1250\"}"],"gameid":"13"}
+response time: 1606124143800
+err name: Error
+err message: seneca: [TIMEOUT] Action  timed out. Timeout was: 22222 (start: 1606124121418, end: 1606124143713. Message was: {
+  module: 'mail',
+  mail: 'immediate',
+  args: { query: undefined, body: { gameid: '13', id: 140 } }
+}.
+err stack: Error: seneca: [TIMEOUT] Action  timed out. Timeout was: 22222 (start: 1606124121418, end: 1606124143713. Message was: {
+  module: 'mail',
+  mail: 'immediate',
+  args: { query: undefined, body: { gameid: '13', id: 140 } }
+}.
+    at Object.errormaker (H:\致命代码\fancyguo-gm\server\node_modules\eraro\eraro.js:112:15)
+    at Object.act_tm [as ontm] (H:\致命代码\fancyguo-gm\server\node_modules\seneca\lib\act.js:86:32)
+    at Timeout.timeout_check [as _onTimeout] (H:\致命代码\fancyguo-gm\server\node_modules\gate-executor\gate-executor.js:207:16)
+    at listOnTimeout (internal/timers.js:549:17)
+    at processTimers (internal/timers.js:492:7)
+From previous event:
+    at SenecaClient._callee$ (H:\致命代码\fancyguo-gm\server\src\xiaolu\/senecaclient.js:16:21)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at SenecaClient.<anonymous> (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at SenecaClient.get (H:\致命代码\fancyguo-gm\server\src\xiaolu\senecaclient.js:86:21)
+    at MailService._callee9$ (H:\致命代码\fancyguo-gm\server\src\app\service\/mail.js:218:34)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at MailService.<anonymous> (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at MailService.mailSendTimely (H:\致命代码\fancyguo-gm\server\src\app\service\mail.js:537:32)
+    at MailService._callee6$ (H:\致命代码\fancyguo-gm\server\src\app\service\/mail.js:191:16)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+*************** error log end ***************
+
+[2020-11-23T17:36:04.305] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/mail/postMailToCreate
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"title":"123","text":"123","allServerTrue":false,"roleId":[{"serverid":99983,"id":1399983},{"serverid":99983,"id":1099983}],"sendTime":true,"mailLink":"","plaform":"","channel":"","serverName":"","carryAnnex":true,"sendDateTime":"","smtpId":"3542140","Annex":["{\"ID\":\"5000002\",\"name\":\"货币\",\"number\":\"123\"}"],"gameid":"13"}
+response time: 1606124164304
+err name: Error
+err message: 邮件及时发送 失败
+err stack: Error: 邮件及时发送 失败
+    at MailService._callee9$ (H:\致命代码\fancyguo-gm\server\src\app\service\/mail.js:224:9)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+*************** error log end ***************
+
+[2020-11-23T17:36:35.227] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/mail/postMailToCreate
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"title":"123","text":"123","allServerTrue":false,"roleId":[{"serverid":99983,"id":1399983},{"serverid":99983,"id":1099983}],"sendTime":true,"mailLink":"","plaform":"","channel":"","serverName":"","carryAnnex":true,"sendDateTime":"","smtpId":"3542140","Annex":["{\"ID\":\"5000002\",\"name\":\"货币\",\"number\":\"123\"}"],"gameid":"13"}
+response time: 1606124195226
+err name: Error
+err message: 邮件及时发送 失败
+err stack: Error: 邮件及时发送 失败
+    at MailService._callee9$ (H:\致命代码\fancyguo-gm\server\src\app\service\/mail.js:224:9)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+*************** error log end ***************
+
+[2020-11-23T19:19:56.613] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/server/findServer
+request client ip:  ::ffff:127.0.0.1
+request query:  {"gameid":"13"}
+response time: 1606130396613
+err name: SequelizeDatabaseError
+err message: column "undefined" does not exist
+err stack: SequelizeDatabaseError: column "undefined" does not exist
+    at Query.formatError (H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:366:16)
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:72:18
+From previous event:
+    at Query.run (H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:64:23)
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:29
+From previous event:
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:12
+    at processImmediate (internal/timers.js:456:21)
+From previous event:
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:651:10
+    at H:\致命代码\fancyguo-gm\server\node_modules\retry-as-promised\index.js:70:21
+    at new Promise (<anonymous>)
+    at retryAsPromised (H:\致命代码\fancyguo-gm\server\node_modules\retry-as-promised\index.js:60:10)
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:641:30
+From previous event:
+    at Sequelize.query (H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:590:23)
+    at GmServerService._callee$ (H:\致命代码\fancyguo-gm\server\src\app\service\/server.js:59:32)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at GmServerService.<anonymous> (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at GmServerService.serverFindByParam (H:\致命代码\fancyguo-gm\server\src\app\service\server.js:213:35)
+    at _callee11$ (H:\致命代码\fancyguo-gm\server\src\app\controllers\/server.js:142:38)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at findServer (H:\致命代码\fancyguo-gm\server\src\app\controllers\server.js:474:28)
+    at dispatch (H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at next (H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:45:18)
+    at H:\致命代码\fancyguo-gm\server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:36:12
+    at dispatch (H:\致命代码\fancyguo-gm\server\node_modules\koa-router\lib\router.js:351:31)
+    at next (H:\致命代码\fancyguo-gm\server\node_modules\koa\node_modules\koa-compose\index.js:42:32)
+    at _callee$ (H:\致命代码\fancyguo-gm\server\src\middleware\/index.js:47:11)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at H:\致命代码\fancyguo-gm\server\src\middleware\/index.js:42:2
+*************** error log end ***************
+
+[2020-11-23T19:38:13.779] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/server/serverCreate
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"serverid":"","servername":"1","serveridTrue":false,"plaform":["1","2"],"channel":["测试渠道"],"ip":"","display":"1","srttime":"2020-11-23T11:38:09.000Z","address":"127.0.0.1:123","test":"0","page":1,"pagesize":20,"gameid":"13"}
+response time: 1606131493779
+err name: undefined
+err message: Cp交互失败,请确认交互地址
+err stack: undefined
+*************** error log end ***************
+
+[2020-11-23T19:40:46.139] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/server/findServer
+request client ip:  ::ffff:127.0.0.1
+request query:  {"gameid":"13"}
+response time: 1606131646139
+err name: SequelizeDatabaseError
+err message: column "undefined" does not exist
+err stack: SequelizeDatabaseError: column "undefined" does not exist
+    at Query.formatError (H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:366:16)
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:72:18
+From previous event:
+    at Query.run (H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:64:23)
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:29
+From previous event:
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:12
+    at processImmediate (internal/timers.js:456:21)
+From previous event:
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:651:10
+    at H:\致命代码\fancyguo-gm\server\node_modules\retry-as-promised\index.js:70:21
+    at new Promise (<anonymous>)
+    at retryAsPromised (H:\致命代码\fancyguo-gm\server\node_modules\retry-as-promised\index.js:60:10)
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:641:30
+From previous event:
+    at Sequelize.query (H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:590:23)
+    at GmServerService._callee$ (H:\致命代码\fancyguo-gm\server\src\app\service\/server.js:59:32)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at GmServerService.<anonymous> (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at GmServerService.serverFindByParam (H:\致命代码\fancyguo-gm\server\src\app\service\server.js:213:35)
+    at _callee11$ (H:\致命代码\fancyguo-gm\server\src\app\controllers\/server.js:142:38)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at findServer (H:\致命代码\fancyguo-gm\server\src\app\controllers\server.js:474:28)
+    at dispatch (H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at next (H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:45:18)
+    at H:\致命代码\fancyguo-gm\server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:44:32)
+    at H:\致命代码\fancyguo-gm\server\node_modules\koa-compose\index.js:36:12
+    at dispatch (H:\致命代码\fancyguo-gm\server\node_modules\koa-router\lib\router.js:351:31)
+    at next (H:\致命代码\fancyguo-gm\server\node_modules\koa\node_modules\koa-compose\index.js:42:32)
+    at _callee$ (H:\致命代码\fancyguo-gm\server\src\middleware\/index.js:47:11)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at H:\致命代码\fancyguo-gm\server\src\middleware\/index.js:42:2
+*************** error log end ***************
+
+[2020-11-23T20:19:02.818] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/character/query?key=role_id&value=1399983&regtime=&stime=&platform=&channel=&servername=&banned_type=&banned_area=&page=1&pagesize=10
+request client ip:  ::ffff:127.0.0.1
+request query:  {"key":"role_id","value":"1399983","regtime":"","stime":"","platform":"","channel":"","servername":"","banned_type":"","banned_area":"","page":"1","pagesize":"10","gameid":"13"}
+response time: 1606133942817
+err name: SequelizeDatabaseError
+err message: syntax error at or near ")"
+err stack: SequelizeDatabaseError: syntax error at or near ")"
+    at Query.formatError (H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:366:16)
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:72:18
+From previous event:
+    at Query.run (H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\dialects\postgres\query.js:64:23)
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:29
+From previous event:
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:655:12
+    at processImmediate (internal/timers.js:456:21)
+From previous event:
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:651:10
+    at H:\致命代码\fancyguo-gm\server\node_modules\retry-as-promised\index.js:70:21
+    at new Promise (<anonymous>)
+    at retryAsPromised (H:\致命代码\fancyguo-gm\server\node_modules\retry-as-promised\index.js:60:10)
+    at H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:641:30
+From previous event:
+    at Sequelize.query (H:\致命代码\fancyguo-gm\server\node_modules\sequelize\lib\sequelize.js:590:23)
+    at _callee14$ (H:\致命代码\fancyguo-gm\server\src\app\service\/Character.js:91:31)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at Function.<anonymous> (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at Function.byMany (H:\致命代码\fancyguo-gm\server\src\app\service\Character.js:893:24)
+    at _callee$ (H:\致命代码\fancyguo-gm\server\src\app\service\/Character.js:196:44)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+*************** error log end ***************
+

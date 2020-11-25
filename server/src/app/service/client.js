@@ -35,7 +35,7 @@ class clientService{
 			condition += getType(channel)==='String'?` and channel =  '[${JSON.stringify(channel)}]' `:`  and channel @> '${JSON.stringify(channel)}'  and  jsonb_array_length(channel) = jsonb_array_length('${JSON.stringify(channel)}'::jsonb)`;
 		}
 		let sql = `
-        select *,(case when plaform = '["1"]' then '["安卓"]'::jsonb when plaform = '["2"]' then '["苹果"]'::jsonb when   plaform @> '["1","2"]'::jsonb then '["安卓","平果"]'::jsonb end)
+        select *,(case when plaform = '["1"]' then '["安卓"]'::jsonb when plaform = '["2"]' then '["苹果"]'::jsonb when   plaform @> '["1","2"]'::jsonb then '["安卓","苹果"]'::jsonb end)
          as plaforms,(select count(*) from gm_client ${condition}) as total  from gm_client ${condition} ORDER BY id desc limit ${pagesize} offset ${pagesize*(page-1)}
         `;
 		let res = await dbSequelize.query(sql, {

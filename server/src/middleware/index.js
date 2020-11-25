@@ -34,6 +34,7 @@ module.exports = (app) => {
 			maxFileSize:200*1024*1024
 		}
 	}));
+	
 	app.use(cors);
 	app.use(interceptor());
 	app.use(permission());

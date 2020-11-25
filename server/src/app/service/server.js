@@ -20,13 +20,23 @@ class GmServerService extends BaseService{
   
 	//区服按需查找
 	async serverFindByParam(findForm) {
+		console.log(findForm);
 		let getType = data => Object.prototype.toString.call(data).split(' ')[1].slice(0, -1);
-		let { plaform, display, load, gameid, test, srttime, channel, page, pagesize, mergeserver, key, value} = findForm;
+		let { plaform, display, load, gameid, test, srttime, channel, page, pagesize, mergeserver, key, value, clientshow, stopshow} = findForm;
 		findForm = {
-			display, load, gameid, test
+			display, load, gameid, test, clientshow, stopshow
 		};
+		console.log(findForm);
 		let  whereObj = {};
-		for (const key in this.gmServerDO) {
+		for (const key in findForm) {
+			if(key === 'clientshow' && findForm[key] ){
+				whereObj[key] = findForm[key];
+				continue;
+			}
+			if(key === 'stopshow' && findForm[key] ){
+				whereObj[key] = findForm[key];
+				continue;
+			}
 			if (findForm[key] && findForm[key]!='0') {
 				whereObj[key] = findForm[key];
 			}
@@ -43,9 +53,17 @@ class GmServerService extends BaseService{
 		if(channel){
 			where += getType(channel)==='String'?` and  channel = '[${JSON.stringify(channel)}]' `:` and channel @> '${JSON.stringify(channel)}'  and  jsonb_array_length(channel) = jsonb_array_length('${JSON.stringify(channel)}'::jsonb) `;
 		}
-		if(plaform){
-			where += getType(plaform)==='String'?` and plaform =  '[${JSON.stringify(plaform)}]' `:`  and plaform @> '${JSON.stringify(plaform)}' `;
+		// if(plaform){
+		// 	where += getType(plaform)==='String'?` and plaform =  '[${JSON.stringify(plaform)}]' `:`  and plaform @> '${JSON.stringify(plaform)}' `;
+		// }
+		switch (+plaform){
+			case 1:where += ` and plaform =  '[${JSON.stringify(plaform)}]' `;break;
+			case 2:where += ` and plaform =  '[${JSON.stringify(plaform)}]' `;break;
+			case 3:where += '  and plaform @> \'["1","2"]\' and  jsonb_array_length(plaform) = jsonb_array_length(\'["1","2"]\'::jsonb)  ';break;
+			case 4:where += '  and plaform @> \'["1"]\' ';break;
+			case 5:where += '  and plaform @> \'["2"]\' ';break;
 		}
+
 		
 		// where += channel && channel.length > 0? ' and array[\''+channel.join(' ')+'\']::varchar[] <@  channel ':'';
 		where += srttime?` and srttime BETWEEN '${srttime[0]}'::TIMESTAMP  + '8:00' and '${srttime[1]}'::TIMESTAMP  + '8:00' `:'';
@@ -83,7 +101,7 @@ class GmServerService extends BaseService{
 		union
 		select 0 as num ,'爆满' as display
 		)a GROUP BY display`;
-		
+		console.log(displayNumSql);
 		 let displayNum = await dbSequelize.query(displayNumSql);
 		let pidarr = [];
 		if(arr[0].length > 0){
@@ -164,7 +182,7 @@ class GmServerService extends BaseService{
 			display,srttime,channel,plaform,
 			ip,port,serverid,"serverTrue"
 		)values(
-			'${userId}','${servername}','${gameid}','${address}','${test}','${ipPort}',
+			'${userId}','${servername}','${gameid}','${address}','${test}',${ipPort ? `'${ipPort}'` : null},
 			'${display}','${ srttime }','${JSON.stringify(channel)}','${JSON.stringify(plaform)}',
 			'${ip}','${port}',${serverid?
 	`'${serverid}'`:` (select id from (
@@ -184,16 +202,16 @@ class GmServerService extends BaseService{
 		 
 		
 		if(+res[1] !== 1){
-			throw {code:500, message:'创建失败，请联系管理员。'};
+			throw {code:500, message:'创建失败，请联系管理员。', data};
 		}
 		let body = res[0][0];
 		let { code } = await this.SenClient.get('server', 'createServer', {body}).catch(e=>({code:500}));
-		if(+code === 200) {return {...res[0][0], id:res[0][0].serverid};}
+		if(+code === 200) {return {...res[0][0], id:res[0][0].serverid, code:200};}
 		let falseSql = ` update  gm_server set  status = '0' where id = ${body['id']}`;
 		await dbSequelize.query(falseSql, {
 			replacements:['active'], type:Sequelize.QueryTypes.UPDATE
 		});
-		throw { message:'Cp交互失败,请确认交互地址'};
+		throw {code:500, message:'Cp交互失败,请确认交互地址', data};
 	  }
 	  async clearIpAll({server, gameid}){
 		let sql = `
@@ -215,7 +233,59 @@ class GmServerService extends BaseService{
 		});
 	  }
 
-}
+	  async setClientShow(data){
+		  console.log(data);
+		  let {value, gameid} =data;
+		  let sql = ` update gm_server set clientshow = 1 where id in (${value.map(a => a.id)}) and gameid = ${gameid}`;
+		  let res = await dbSequelize.query(sql, {
+			  type:'UPDATE'
+		  }); 
+		  return res;
+	  }
+		async batchCreate({data, user}){
+		let {value, gameid} = data;
+		value.map(a => {
+			let b ;
+			switch(a.platform){
+				case '安卓':b = [1] ;break;
+				case '苹果':b = [2] ; break;
+				case '全平台':b = [1, 2];break;
+			} 
+			a['plaform'] = b;
+			switch(a.display){
+				case '流畅':b = 1 ; break;
+				case '繁忙':b = 2 ; break;
+				case '维护':b = 3 ; break;
+				case '爆满':b = 4 ; break;
+			}
+			a.display = b;
+			a.test = a.test === '是' ? '1' :'0';
+		
+			a.gameid = gameid;
+			return a;
+		});
+		console.log(data);
+		let res= [];
+		for(let i of value){
+			res.push(new Promise(async (res, rej) => {
+				let a;
+				try{
+					 a= await this.serverCreate({data:i, user}).catch(a =>( {code:500, message :a}));
+
+				}catch (e){
+					rej(a);
+				}
+				if(a?.code === 200 ){
+					res(a);
+				}else {
+					rej(a);
+				}
+			}));
+		}
+		let allRes = await Promise.allSettled(res);
+		return allRes;
+		}
+		}
 
 export default new GmServerService();
 

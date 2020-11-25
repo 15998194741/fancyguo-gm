@@ -66,8 +66,17 @@ export class UserController {
 		ctx.logging( '区服停用', '区服管理', `停用了区服ID为 ${serverid} 的区服` );
 		ctx.body = statusCode.SUCCESS_200('查找成功', result);
 	}
+	@post('/setClientShow')
+	async setClientShow(ctx){
+		ctx.log.resourceDesc = '区服设置可见';
+		let data = ctx.request.body;
+		let result = await gmServerService.setClientShow(data);
+		let {value} = data;
+		ctx.logging( '区服停用', '区服管理', `设置区服ID为 ${value.map(a => a.serverid)} 的区服为可见` );
+		ctx.body = statusCode.SUCCESS_200('查找成功', result);
+	}
 
-
+	
 
 
 	//查看所有区服
@@ -161,7 +170,16 @@ export class UserController {
 		ctx.body = statusCode.SUCCESS_200('成功', result);
 	}
 
-
+	@post('/batchCreate')
+	async batchCreate(ctx){
+		ctx.log.resourceDesc = '区服批量创建';
+		let data = ctx.request.body;
+		let user = ctx.user;
+		// console.log(serverIDS);
+		let result = await gmServerService.batchCreate({data, user});
+		ctx.logging( '区服合并', '区服管理', `合并了区服id ${data}` );
+		ctx.body = statusCode.SUCCESS_200('成功', result);
+	}
 
 	@post('/clearIpAll')
 	async clearIpAll(ctx) {
@@ -182,5 +200,12 @@ export class UserController {
 		let result = await gmServerService.addIpSecurityGroup(form);
 		ctx.logging( '添加安全组', '区服管理', `添加了区服id${server.map(a=>a['serverid']||a['id'])} 安全组为${ip.map(a=>a['ip'])}` );
 		ctx.body = statusCode.SUCCESS_200('创建成功', result);
+	}
+	@get('/download')
+	async download(ctx){
+		const sendflie = require('koa-send');
+		var fileName = 'serverCreate.xlsx';
+		ctx.attachment(fileName);
+		await sendflie(ctx, fileName, { root: __dirname  });
 	}
 }

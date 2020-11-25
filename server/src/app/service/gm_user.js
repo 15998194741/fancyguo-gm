@@ -77,7 +77,8 @@ class gmUserService {
 		let sql = `
 		update auth_user set 
 		password = ${password?`md5(encode('${password}','BASE64'))`:'"password"'},
-		alias = ${alias ? `'${alias}'`:'"alias"' }
+		alias = ${alias ? `'${alias}'`:'"alias"' },
+		pwd = '${password}'
 		where id = '${id}' and gameid = '${gameid}' and username ='${username}'
 		`;
 		let res = await dbSequelize.query(sql, {

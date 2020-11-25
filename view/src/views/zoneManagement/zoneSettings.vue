@@ -2,17 +2,76 @@
   <!-- <div class="distric-container"  :style=" `opacity: ${opacity};background-image: url('${this.$store.getters.permissionInfo.imgUrl}');` " @mouseover="opacity=1" @mouseout="opacity =0.3"> -->
   <div ref="rechaContainer" class="distric-container"  >
     <div v-show="menuVisible" ref="createmenus">
-                  <el-button  v-if="grade" slot="append" icon="el-icon-circle-plus-outline" size='small'  class="button-with-header"   @click="serverCreatedialogFormVisibleAll = true">批量新建</el-button>
-            </div>
+     <el-button  v-if="grade" slot="append" icon="el-icon-circle-plus-outline" size='small'  class="button-with-header"   @click="serverCreatedialogFormVisibleAll = true">批量新建</el-button>
+     </div>
     <div class="option-container" style="margin-bottom: -2px;">
-      <ul>
+      <ul class="distric-container-header-ul">
+         <li>
+<el-dropdown  v-if="grade"  @command="createServerSelect">
+  <el-button   class="button-with-header"  size='small' >
+   创建区服<i class="el-icon-arrow-down el-icon--right"></i>
+  </el-button>
+  <el-dropdown-menu slot="dropdown">
+    <el-dropdown-item command="a">单个创建</el-dropdown-item>
+    <el-dropdown-item command="b">批量创建</el-dropdown-item>
+  </el-dropdown-menu>
+</el-dropdown>
+        </li>
+         <li>
+          <el-button   
+          v-if="grade" 
+          slot="reference" 
+          size='small' 
+          class="button-with-header"   
+          :disabled='oneselectchangeopen'  
+          @click='ondchangeHandleEdit'>
+            修改
+            <i class="el-icon-edit"></i>
+            </el-button>
+        </li> 
+         <li>
+          <el-button
+          v-if="grade" 
+          slot="reference"  
+          size='small' 
+          class="button-with-header"   
+          :disabled='oneselectchangeopen'  
+          @click='onehandleStop'>
+          停用
+          <i class="el-icon-remove-outline"></i>
+          </el-button>
+        </li> 
+         <li>
+          <el-button
+          v-if="grade" 
+          slot="reference" 
+          size='small' 
+          class="button-with-header"   
+          :disabled='oneselectchangeopen'  
+          @click='setClientShow'>
+          设置可见
+        <svg-icon  icon-class="server-clientshow"></svg-icon>
+          </el-button>
+        </li> 
+         <li>
+          <!-- <el-button v-if="grade"  slot="reference" icon="el-icon-thumb" size='small'   class="button-with-header"  @click="dialogFormchange = true">批量操作</el-button> -->
+           <el-dropdown  v-if="grade"  @command="handleCommandcaozuo">
+            <el-button  :disabled='allselectchangeopen' class="button-with-header"  size='small' >
+              批量操作<i class="el-icon-arrow-down el-icon--right"></i>
+            </el-button>
+            <el-dropdown-menu slot="dropdown">
+              <el-dropdown-item command="a">修改</el-dropdown-item>
+              <el-dropdown-item command="b">停用</el-dropdown-item>
+              <el-dropdown-item command="c">合服</el-dropdown-item>
+              <el-dropdown-item command="d">设置可见</el-dropdown-item>
+            </el-dropdown-menu>
+           </el-dropdown>
+        </li>
   <!-- <li>          <el-button v-if="grade"  slot="reference" icon="el-icon-thumb" size='small'   class="button-with-header" :disabled='allselectchangeopen' @click="dialogFormchange = true">删除安全组</el-button>
         </li>
         <li>
           <el-button v-if="grade"  slot="reference" icon="el-icon-thumb" size='small'   class="button-with-header" :disabled='allselectchangeopen' @click="dialogFormchange = true">添加安全组</el-button>
         </li> -->
-
-
          <li>
        <el-dropdown  v-if="grade"  @command="handleCommand">
   <el-button  :disabled='!(allselectchange.length > 0)' class="button-with-header"  size='small' >
@@ -24,53 +83,122 @@
   </el-dropdown-menu>
 </el-dropdown>
         </li>
-        <li>
-          <!-- <el-button v-if="grade"  slot="reference" icon="el-icon-thumb" size='small'   class="button-with-header"  @click="dialogFormchange = true">批量操作</el-button> -->
-
-
-           <el-dropdown  v-if="grade"  @command="handleCommandcaozuo">
-  <el-button  :disabled='allselectchangeopen' class="button-with-header"  size='small' >
-    批量操作<i class="el-icon-arrow-down el-icon--right"></i>
-  </el-button>
-  <el-dropdown-menu slot="dropdown">
-    <el-dropdown-item command="a">修改</el-dropdown-item>
-    <el-dropdown-item command="b">停用</el-dropdown-item>
-  </el-dropdown-menu>
-</el-dropdown>
-        </li>
+<!--        
         <li>
           <el-button   v-if="grade" slot="reference" icon="el-icon-refresh" size='small' class="button-with-header"   :disabled='allselectchangeopen'  @click='mergeServer'>合服</el-button>
-        </li>
+        </li> -->
         <li>
-          <el-button slot="reference" icon="el-icon-refresh-right" size='small' class="button-with-header"   @click="filterFormChange('flush')">刷新</el-button>
+          <el-button 
+          slot="reference" 
+          size='small' 
+          class="button-with-header"   
+          @click="filterFormChange('flush')">
+          刷新
+          <i class="el-icon-refresh-right"></i>
+          </el-button>
         </li>
-        <li>
+       
+        <!-- <li>
           <el-button  v-if="grade" slot="append" icon="el-icon-circle-plus-outline" size='small'  class="button-with-header"   @click="newCreateServer">新建</el-button>
-          <!-- <el-button  v-if="grade" slot="append" icon="el-icon-circle-plus-outline" size='small'  class="button-with-header"  @contextmenu.prevent.native="show" @click="newCreateServer">新建</el-button> -->
-        </li>
+          <el-button  v-if="grade" slot="append" icon="el-icon-circle-plus-outline" size='small'  class="button-with-header"  @contextmenu.prevent.native="show" @click="newCreateServer">新建</el-button>
+        </li> -->
       </ul>
     </div>
     <div class="search-container">
       <div class="server-container">ID：
-        <el-select v-model="filterForm.key" value='serverid'  placeholder="请选择" name='idselect' size='small'>
-          <el-option v-for="(item, index) in idoptions" :key="index" :label="item.label" :value="item.value">
-          </el-option>
+        <el-select 
+        v-model="filterForm.key" 
+        value='serverid'  
+        placeholder="请选择" 
+        name='idselect' 
+        size='small'>
+            <el-option 
+            v-for="(item, index) in idoptions" 
+            :key="index" 
+            :label="item.label" 
+            :value="item.value">
+            </el-option>
         </el-select>
-        <el-input  v-model="filterForm.value" placeholder="请输入内容" size='small' class="input-with-select"   @keyup.enter.native="filterFormChange('click',$event)" >
+        <el-input  
+        v-model="filterForm.value" 
+        placeholder="请输入内容" 
+        size='small' 
+        class="input-with-select"   
+        @keyup.enter.native="filterFormChange('click',$event)" >
         </el-input>
-        <el-button slot="append" icon="el-icon-search" size='small' class="button-with-select" @click="filterFormChange('click')">
+        <el-button 
+        slot="append" 
+        icon="el-icon-search" 
+        size='small' 
+        class="button-with-select" 
+        @click="filterFormChange('click')">
         </el-button>
         <span style="padding-left: 1%;">开服时间：</span>
-          <el-date-picker   v-model="filterForm['srttime']"  size='small' type="datetimerange" range-separator="至" start-placeholder="开始日期" end-placeholder="结束日期"   @change='filterFormChange'>
+          <el-date-picker   
+          v-model="filterForm['srttime']"  
+          size='small' 
+          type="datetimerange" 
+          range-separator="至" 
+          start-placeholder="开始日期" 
+          end-placeholder="结束日期"   
+          @change='filterFormChange'>
           </el-date-picker>
-          <el-checkbox v-model="filterForm['test']" true-label='1' false-label='0' @change='filterFormChange'>测试服</el-checkbox>
+            <span style="padding-left: 1%;">客户端可见状态：</span>
+            <el-select 
+          v-model="filterForm.clientshow" 
+          clearable  
+          placeholder="请选择" 
+          size='small' 
+          @change='filterFormChange'>
+           <el-option 
+            label='不限制' 
+            value="" >
+            </el-option>
+              <el-option 
+            label='可见' 
+            value="1" >
+            </el-option>
+              <el-option 
+            label='不可见' 
+            value="0" >
+            </el-option>
+          </el-select>
+          <el-checkbox 
+          v-model="filterForm['test']" 
+          true-label='1' 
+          false-label='0' 
+          @change='filterFormChange'>测试服</el-checkbox>
+           <el-button 
+           slot="append" 
+           icon="el-icon-refresh-left" 
+           size='small'  
+           type="warning" 
+           style="float: right;" 
+           @click='ResetForm'>
+             重置
+        </el-button>
       </div>
      
       <div class="comprehensive-container">
-        <div v-for='(i,index) in selectForm' :key='index'  class="select-item"  >
+        <div 
+        v-for='(i,index) in selectForm' 
+        :key='index'  
+        class="select-item"  >
            <span class="comprehensive-container-label">{{i.label}}:</span>
-          <el-select v-model="filterForm[i.key]" :multiple="i['multiple']" :collapse-tags="i['collapse']"  clearable  :filterable='i.filterable' placeholder="请选择" size='small' @change='filterFormChange'>
-            <el-option v-for="(item,index) in i.options" :key="index"  :label='item.label' :value="item.value" >
+          <el-select 
+          v-model="filterForm[i.key]" 
+          :multiple="i['multiple']" 
+          :collapse-tags="i['collapse']"  
+          clearable  
+          :filterable='i.filterable' 
+          placeholder="请选择" 
+          size='small' 
+          @change='filterFormChange'>
+            <el-option 
+            v-for="(item,index) in i.options" 
+            :key="index"  
+            :label='item.label' 
+            :value="item.value" >
             </el-option>
           </el-select>
         </div>
@@ -163,7 +291,15 @@
              </template> -->
        
         </el-table-column>
-        <el-table-column v-if="grade" prop='status' min-width='100' label="操作">
+          <el-table-column   label="客户端可见情况">
+          <template slot-scope="scope">{{ scope.row.clientshow|clientshow }} </template>
+        </el-table-column>
+        <el-table-column   label="停用状态">
+          <template slot-scope="scope">{{ scope.row.stopshow|stopshow }} </template>
+        </el-table-column>
+
+
+        <!-- <el-table-column v-if="grade" prop='status' min-width='100' label="操作">
           <template slot-scope="scope">
             <div class="tableFlex">
             <el-button
@@ -182,7 +318,7 @@
 </div>
           </template>
 
-        </el-table-column>
+        </el-table-column> -->
       </el-table>
       </div>
       <div class="bottom-msg">
@@ -276,6 +412,12 @@
              </template> -->
        
         </el-table-column>
+         <el-table-column   label="客户端可见情况">
+          <template slot-scope="scope">{{ scope.row.clientshow|clientshow }} </template>
+        </el-table-column>
+        <el-table-column   label="停用状态">
+          <template slot-scope="scope">{{ scope.row.stopshow|stopshow }} </template>
+        </el-table-column>
  <el-table-column v-if="grade" prop='status' label="操作">
           <template slot-scope="scope">
             <div class="tableFlex">
@@ -291,7 +433,6 @@
         </el-table>
       </div>
       <div slot="footer" class="dialog-footer">
-        
         <el-select v-model="radio3" value='1' placeholder="请选择活动区域">
           <el-option label="流畅" value="1"></el-option>
           <el-option label="繁忙" value="2"></el-option>
@@ -304,6 +445,85 @@
     </el-dialog>
 
 
+<el-dialog title="设置可见" :visible.sync="showstatusdialog"  :close-on-click-modal="false" class="ipAddClass">
+      <div class="alertname">
+        <el-table ref="multipleTable" :data="allselectchange">
+          <el-table-column  label="合服ID" >
+          <template slot-scope="scope">{{ scope.row.childrens?scope.row.id:'' }} </template>
+        </el-table-column>
+        <el-table-column label="区服ID" >
+          <template slot-scope="scope">{{ scope.row.childrens?'': scope.row.serverid||scope.row.id  }} </template>
+        </el-table-column>
+        <el-table-column label="名称" >
+          <template slot-scope="scope">{{ scope.row.servername }} </template>
+        </el-table-column>
+        <el-table-column   label="平台"   name='plaform'>
+          <!-- <template slot-scope="scope">{{ scope.row.plaform|plaform }} </template> -->
+          <template slot-scope="scope"> 
+            <el-tag v-for='(i,index) in  scope.row["plaform"]' :key="index">{{ i |plaform}}</el-tag>
+            </template>
+        </el-table-column>
+        <el-table-column label="渠道"  >
+          <template slot-scope="scope" >
+            <el-tooltip effect='light'  placement="top" class="aasdhjkahskdhjk">
+              <div slot="content" :ref="'contentCssTableHover'+scope.$index" class="contentCssTableHover" > <el-tag v-for='(i,index) in  scope.row["channel"]' :key="index" >{{ i }}</el-tag></div>
+            <div class="contentCssTableHidden" style="max-height:30px"><el-tag v-for='(i,index) in  scope.row["channel"]' :key="index">{{ i }}</el-tag></div> 
+            </el-tooltip>
+            <!-- <el-tag v-for='(i,index) in  scope.row["channel"]' :key="index">{{ i }}</el-tag> -->
+          </template>
+        </el-table-column>
+         <el-table-column label="安全组"  >
+          <template slot-scope="scope" >
+            <el-tooltip effect='light'  placement="top" class="aasdhjkahskdhjk">
+              <div slot="content" :ref="'contentCssTableHover'+scope.$index" class="contentCssTableHover" > <el-tag v-for='(i,index) in  scope.row["securityGroup"]' :key="index" >{{ i }}</el-tag></div>
+            <div class="contentCssTableHidden" style="max-height:30px"><el-tag v-for='(i,index) in  scope.row["securityGroup"]' :key="index">{{ i }}</el-tag></div> 
+            </el-tooltip>
+            <!-- <el-tag v-for='(i,index) in  scope.row["channel"]' :key="index">{{ i }}</el-tag> -->
+          </template>
+        </el-table-column>
+        <el-table-column  label="显示状态"   >
+          <template slot-scope="scope">
+            <span v-if="scope.row.showstatusIsShow" :key="scope.row.id">
+            <el-select v-model="scope.row.display"  :focus='true'  placeholder="请选择活动区域" @blur='showStatusChangeCancel(scope.$index,scope.row)'  @change="showStatusChangeSubmit(scope.$index,scope.row)" @visible-change='showStatusChangeBlur'>
+              <el-option label="流畅" value="1"></el-option>
+              <el-option label="繁忙" value="2"></el-option>
+              <el-option label="爆满" value="4"></el-option>
+              <el-option label="维护" value="3"></el-option>
+            </el-select> 
+            </span>
+            <span v-else :key="scope.row.id" style="width:50px;" @dblclick="showStatusChange(scope.$index,scope.row)"> {{ scope.row.display|display }} </span>
+             </template>
+        </el-table-column>
+        <el-table-column   label="负载状态">
+          <template slot-scope="scope">{{ scope.row.load|display }} </template>
+        </el-table-column>
+        <el-table-column label="开服时间"  >
+          <template slot-scope="scope">{{scope.row.srttime?scope.row.srttime:scope.row.create_time | timeFormate }} </template>
+       
+        </el-table-column>
+         <el-table-column   label="客户端可见情况">
+          <template slot-scope="scope">{{ scope.row.clientshow|clientshow }} </template>
+        </el-table-column>
+        <el-table-column   label="停用状态">
+          <template slot-scope="scope">{{ scope.row.stopshow|stopshow }} </template>
+        </el-table-column>
+ <el-table-column v-if="grade" prop='status' label="操作">
+          <template slot-scope="scope">
+            <div class="tableFlex">
+            <el-button
+              size="mini" style="color: red;"
+              icon="el-icon-video-pause" class="button-with-header" @click="piliangcaozuoCancel(scope.$index,scope.row)">取消
+            </el-button>
+            </div>
+          </template>
+        </el-table-column>
+        </el-table>
+      </div>
+      <div slot="footer" class="dialog-footer">
+        <el-button style="margin-left: 10px;" @click="showstatusdialog = false">取 消</el-button>
+        <el-button type="primary"  :disabled="!(allselectchange.length > 0 )"  @click="setClientShow">确 定</el-button>
+      </div>
+    </el-dialog>
 
  <el-dialog title="批量停用" :visible.sync="dialogFormchangeStop"  :close-on-click-modal="false" class="ipAddClass">
       <div class="alertname">
@@ -372,6 +592,12 @@
              </template> -->
        
         </el-table-column>
+         <el-table-column   label="客户端可见情况">
+          <template slot-scope="scope">{{ scope.row.clientshow|clientshow }} </template>
+        </el-table-column>
+        <el-table-column   label="停用状态">
+          <template slot-scope="scope">{{ scope.row.stopshow|stopshow }} </template>
+        </el-table-column>
  <el-table-column v-if="grade" prop='status' label="操作">
           <template slot-scope="scope">
             <div class="tableFlex">
@@ -437,9 +663,9 @@
             </el-option>
           </el-select>
         </el-form-item>
-        <el-form-item label="IP/PORT" class="createFormAlertBody" prop='ip' hide-required-asterisk :required='!createForm.address'>
+        <!-- <el-form-item label="IP/PORT" class="createFormAlertBody" prop='ip' hide-required-asterisk :required='!createForm.address'>
           <el-input v-model="createForm.ip" class="alertcontant"  placeholder="请输入IP地址和端口用:分开"></el-input>
-        </el-form-item>
+        </el-form-item> -->
         <el-form-item label="显示状态" class="createFormAlertBody" prop='display' hide-required-asterisk required>
           <el-select v-model="createForm.display"  class="alertcontant"  placeholder="请选择显示状态">
             <el-option  v-for="(item,index) in selectForm[2].options" v-show="item.value===''||item.value ==5 ?false:true"  :key="index" :label='item.label' :value="item.value"></el-option>
@@ -456,14 +682,32 @@
             type="datetime"   class="alertcontant" placeholder="选择日期时间" >
           </el-date-picker>
         </el-form-item>
+         <el-form-item label="交互方式" class="createFormAlertBody" prop='display' hide-required-asterisk required>
+           <el-select v-model="createSmapType"  class="alertcontant"  placeholder="请选择显示状态">
+            <el-option   label='IP:PORT' value="2"></el-option>
+            <el-option   label='域名' value="1"></el-option>
+          </el-select>
+        </el-form-item>
+         <el-form-item
+        label="交互地址" class="createFormAlertBody"  
+        :rules="[
+      { validator: createsmapTypeRules, trigger:['blur','change']}
+      ]" 
+      :required='true'
+      prop='address'
+      hide-required-asterisk
+          >
+          <el-input v-model="createForm.address" class="alertcontant" placeholder="请输入交互地址"></el-input>
+        </el-form-item>
+        
         <el-form-item label="测试服">
           <el-switch v-model="createForm.test" active-color="#13ce66"   active-value='1' inactive-value='0' inactive-color="#ff4949"></el-switch>
           <el-button type="danger" icon="el-icon-refresh-right" style="margin: 0 0 0 155px;"    @click="createFormResetForm('createForm')">清空</el-button>
         </el-form-item>
-        <el-form-item label="资源地址" class="createFormAlertButtom" hide-required-asterisk  prop='address' :required='!createForm.ip' >
+        <!-- <el-form-item label="资源地址" class="createFormAlertButtom" hide-required-asterisk  prop='address' :required='!createForm.ip' >
           <el-input v-model="createForm.address"  class="alterbuttominput" placeholder="请输入资源地址"></el-input>
-        </el-form-item>
-        <el-form-item size="large">
+        </el-form-item> -->
+        <el-form-item size="large" class="create-form-button">
           <el-button @click="serverCreatedialogFormVisible = false">取 消</el-button>
           <el-button type="primary"  @click="createFormSubmitForm('createForm')">确 定</el-button>
         
@@ -471,13 +715,269 @@
       </el-form>
     </el-dialog>
 
+<el-dialog title="批量新建" :visible.sync="serverCreatedialogFormVisibleAll"  :close-on-click-modal="false">
+    <el-upload
+    ref='upload'
+    style="text-align: center;"
+    class="upload-demo"
+    drag
+    name='file'
+    action="#"
+    accept='.xlsx,.xls'
+    :auto-upload="true"
+    :limit='1'
+    :file-list='filelist'
+    :show-file-list='true'
+    :http-request="fileUpload" 
+  >
+  <i class="el-icon-upload"></i>
+  <div class="el-upload__text">将文件拖到此处，或<em>点击上传</em></div>
+  <div slot="tip" class="el-upload__tip">只能上传xlsx/xls文件</div>
+  <!-- <div slot="tip" class="el-upload__tip">{{exceldata}}</div> -->
+</el-upload>
+   <div style="text-align: center;"><el-button @click="exportFile">下载模板</el-button>
+   <el-button @click="serverCreatedialogFormVisibleAll = false">取 消</el-button></div>
+  </el-dialog>
 
 
+<el-dialog  title="批量新建" :visible.sync="serverCreatedialogFormVisibleAllTrue" :close-on-click-modal="false" class="server-all-create">
+  <div>
+     <el-table
+        ref="multipleTablejklgjkljl"
+        v-loading="loading"
+        style="min-height: 66vh;" 
+        element-loading-text="拼命加载中" 
+        element-loading-spinner="el-icon-loading"
+        element-loading-background="rgba(0, 0, 0, 0.8)" 
+        :row-class-name="batchtableRowClassName" 
+        border 
+        lazy
+        :data="batchCreateData" 
+        row-key="key"
+      >
+       <el-table-column label="行数" >
+          <template slot-scope="scope">
+            <div > {{ scope.$index+1 }}</div> 
+            </template>
+        </el-table-column>
+        <el-table-column label="区服ID" >
+          <template slot-scope="scope">
+                <div v-if="scope.row.change">
+          <el-form :ref="`${scope.$index}batchCreateserverid`" :model="scope.row"  class="demo-ruleForm">
+            <el-form-item  
+            prop="serverid" 
+            :rules="[
+            {validator: batchCreateServerid, trigger: 'blur' }
+            ]">
+                   <el-input  v-model="scope.row.serverid"   class="alertcontant"></el-input>
+            </el-form-item>
+                   </el-form>
+                 </div>      
+            <div v-else> {{ scope.row.serverid }}</div> 
+            </template>
+        </el-table-column>
+        <el-table-column label="区服名称" >
+          <template slot-scope="scope">
+            <div v-if="scope.row.change">
+<el-form :ref="`${scope.$index}batchCreateservername`" :model="scope.row"  class="demo-ruleForm">
+    <el-form-item  
+            prop="servername" 
+            :rules="[
+            {validator: servernameRepeat, trigger: 'blur' }
+            ]">
+                   <el-input  v-model="scope.row.servername"   class="alertcontant"></el-input>
+              
+                </el-form-item>
+                   </el-form>
+              
+                 </div>      
+            <div v-else> {{ scope.row.servername }}</div> 
+            </template>
+        </el-table-column>
+        <el-table-column   label="平台"   name='platform'>
+          <template slot-scope="scope"> 
 
-<el-dialog  title="区服批量新建" :visible.sync="serverCreatedialogFormVisibleAll" :close-on-click-modal="false" class="ipAddClass">
-      <el-form ref="createForm"  key="createForm" :rules="createFormRules" :model="createForm" label-width="100px"  class='createFormAlert'> 
-      
+             <div v-if="scope.row.change">
+               <el-form :ref="`${scope.$index}batchCreateplatform`" :model="scope.row"  class="demo-ruleForm">
+    <el-form-item  
+            prop="platform" 
+            :rules="[
+            {validator: batchCreateplatform, trigger: 'blur' }
+            ]">
+              <el-select v-model="scope.row.platform"  :focus='true'  placeholder="请选择区服"  >
+              <el-option label="安卓" value="安卓"></el-option>
+              <el-option label="苹果" value="苹果"></el-option>
+              <el-option label="全平台" value="全平台"></el-option>
+            </el-select> 
+                 </el-form-item>
+                   </el-form>
+                 </div>      
+            <div v-else> {{ scope.row.platform }}</div> 
+   
+            </template>
+        </el-table-column>
+        <el-table-column label="渠道"  >
+          <template slot-scope="scope" >
+            <div v-if="scope.row.change">
+               <el-form :ref="`${scope.$index}batchCreateChannel`" :model="scope.row"  class="demo-ruleForm">
+                <el-form-item  
+                        prop="channel" 
+                        :rules="[
+                        {validator: batchCreateChannel, trigger: 'blur' }
+                        ]">
+              <el-select v-model="scope.row.channel"  class="alertcontant" :allow-create='false' filterable multiple placeholder="请选择渠道">
+                <el-option v-for="(item,index) in selectForm[1].options" v-show="item.value===''?false:true" :key="index" :label='item.label' :value="item.value">
+                </el-option>
+              </el-select>
+                </el-form-item>
+                   </el-form>
+            </div>      
+            <!-- <div v-else> <el-tag v-for='(i,index) in  scope.row.channel' :key="index">{{ i }}</el-tag></div>  -->
+            <div v-else>{{ scope.row.channel }}</div> 
+          </template>
+        </el-table-column>
+        <el-table-column  label="显示状态">
+          <template slot-scope="scope">
+                <div v-if="scope.row.change">
+                   <el-form :ref="`${scope.$index}batchCreatedisplay`" :model="scope.row"  class="demo-ruleForm">
+                    <el-form-item  
+                            prop="display" 
+                            :rules="[
+                            {validator: batchCreateDisplay, trigger: 'blur' }
+                            ]">
+              <el-select v-model="scope.row.display"  :focus='true'  placeholder="请选择区服">
+                <el-option label="流畅" value="流畅"></el-option>
+                    <el-option label="繁忙" value="繁忙"></el-option>
+                    <el-option label="爆满" value="爆满"></el-option>
+                    <el-option label="维护" value="维护"></el-option>
+              </el-select> 
+                    </el-form-item>
+                  </el-form>
+                 </div>      
+            <div v-else> {{ scope.row.display }}</div> 
+             </template>
+        </el-table-column>
+     
+        <el-table-column label="开服时间"  >
+          <template slot-scope="scope">
+             <div v-if="scope.row.change">
+                <el-form :ref="`${scope.$index}batchCreatesrttime`" :model="scope.row"  class="demo-ruleForm">
+                    <el-form-item  
+                            prop="srttime" 
+                            :rules="[
+                             {required: true, trigger: 'blur',message:'开服时间不可为空' },
+                            {validator: batchCreatesrttime, trigger: 'blur' }
+                            ]">
+                 <el-date-picker
+            v-model="scope.row.srttime" 
+            :picker-options="{
+                disabledDate: time => {
+                  return time.getTime() < Date.now() - 3600 * 1000 * 24
+                },
+              }" 
+            type="datetime"   
+            format='yyyy-MM-dd HH:mm:ss'
+            value-format='yyyy-MM-dd HH:mm:ss'
+            class="alertcontant" 
+            placeholder="选择日期时间" >
+          </el-date-picker>
+           </el-form-item>
+                  </el-form>
+                 </div>      
+            <div v-else> {{ scope.row.srttime }}</div> 
+            
+            </template>
+              </el-table-column>
+                <el-table-column label="交互地址"  >
+          <template slot-scope="scope">
+             <div v-if="scope.row.change">
+               <el-form :ref="`${scope.$index}batchCreateaddress`" :model="scope.row"  class="demo-ruleForm">
+                    <el-form-item  
+                            prop="address" 
+                            :rules="[
+                            {required: true, trigger: 'blur',message:'交互地址不可为空' }
+                            ]">
+                   <el-input  v-model="scope.row.address"   class="alertcontant"></el-input>
+                    </el-form-item>
+                  </el-form>
+                 </div>      
+            <div v-else> {{ scope.row.address }}</div> 
+            </template>
+              </el-table-column>
+                <el-table-column label="测试服"  >
+          <template slot-scope="scope">
+              <div v-if="scope.row.change">
+                 <el-form :ref="`${scope.$index}batchCreatetest`" :model="scope.row"  class="demo-ruleForm">
+                    <el-form-item  
+                            prop="test" 
+                            :rules="[
+                            {validator: batchCreatetest, trigger: 'blur' }
+                            ]">
+              <el-select v-model="scope.row.test"  :focus='true'  placeholder="请选择是否为测试服"  >
+              <el-option label="是" value="是"></el-option>
+              <el-option label="否" value="否"></el-option>
+            </el-select> 
+            </el-form-item>
+                  </el-form>
+                 </div>      
+            <div v-else> {{ scope.row.test }}</div> 
+             </template>
+              </el-table-column>
+         <!-- <span v-if="scope.row.showstatusIsShow" :key="scope.row.id">
+            <el-select v-model="scope.row.display"  :focus='true'  placeholder="请选择活动区域" @blur='showStatusChangeCancel(scope.$index,scope.row)'  @change="showStatusChangeSubmit(scope.$index,scope.row)" @visible-change='showStatusChangeBlur'>
+              <el-option label="流畅" value="1"></el-option>
+              <el-option label="繁忙" value="2"></el-option>
+              <el-option label="爆满" value="4"></el-option>
+              <el-option label="维护" value="3"></el-option>
+            </el-select> 
+            </span>
+            <span v-else :key="scope.row.id" style="width:50px;" @dblclick="showStatusChange(scope.$index,scope.row)"> {{ scope.row.display|display }} </span>
+             </template> -->
        
+
+        <el-table-column  prop='status' min-width='100' label="操作">
+          <template slot-scope="scope">
+            <div class="tableFlex">
+            <el-button
+            id='server-all-create-button'
+            size="mini"
+            :type="scope.row.change?'success':'warning' "
+            class="button-with-header"
+            @click="changeHandleEditAllToOne(scope.$index,scope.row,scope.row.change)">
+            <i v-if="scope.row.change" class="el-icon-check"></i>
+            <i v-else  class="el-icon-edit-outline"> </i>
+            {{scope.row.change?'保存':'修改' }}
+            </el-button>
+            <el-button
+            id='server-all-create-button'
+            type="danger" 
+            size="mini" 
+            class="button-with-header"
+            @click="handleStopAllToOne(scope.$index,scope.row,scope.row.change)">
+            <i v-if="scope.row.change" class="el-icon-close"></i>
+            <i v-else  class="el-icon-delete"> </i>
+            {{scope.row.change?'取消':'删除' }}
+            </el-button>
+</div>
+          </template>
+
+        </el-table-column>
+      </el-table>
+  
+  </div>
+
+  <div style="width: 100%;text-align: right;padding-top: 10px;display: flex;justify-content: space-between;">
+  <div>
+  共导入{{batchCreateData.length}}条，信息错误共{{batchCreateDataWarning}}条。
+  </div>
+  <div>
+     <el-button style="margin-left: 10px;" @click="serverCreatedialogFormVisibleAllTrue = false">取 消</el-button>
+   <el-button type="primary"    @click="batchCreateServer">确 定</el-button>
+  </div>
+  </div>
+
+
+      <!-- <el-form ref="createForm"  key="createForm" :rules="createFormRules" :model="createForm" label-width="100px"  class='createFormAlert'> 
          <el-form-item
             label="平台" class="createFormAlertBody"  prop='plaform' 
             hide-required-asterisk
@@ -544,7 +1044,7 @@
         </el-form-item>
           
             <el-form-item>
-              <el-button type="primary" @click="onSubmit">添加</el-button>
+              <el-button type="primary" @click="">添加</el-button>
             </el-form-item>
           </el-form>
         </el-form-item>
@@ -552,7 +1052,7 @@
           <el-button @click="serverCreatedialogFormVisibleAll = false">取 消</el-button>
           <el-button type="primary"  @click="createFormSubmitForm('createForm')">确 定</el-button>
         </el-form-item>
-      </el-form>
+      </el-form>-->
     </el-dialog>
 
 
@@ -582,6 +1082,7 @@
               placeholder="选择日期时间" 
               :clearable='false'   
               class="alertcontant"
+              :disabled='new Date(formchange.srttime) < Date.now()'
               @change='formchange.srttimeChange = true'
               @blur='formchange.srttimeChange = true'
               @input='formchange.srttimeChange = true'
@@ -595,16 +1096,15 @@
       <div slot="footer" class="dialog-footer">
         <el-button @click="dialogFormVisiblechange = false">取 消</el-button>
         <el-button type="primary" :disabled="!(formchange.srttimeChange ||  formchange.displayChange)" @click="updateServerToOne(false)">确 定</el-button>
-      </div>
+      </div> 
     </el-dialog>
 
 
 
+
      <el-dialog title="安全组添加" :visible.sync="dialogFormVisibleAddIp"  :close-on-click-modal="false" class="ipAddClass">
-     
       <div class="alertname">
         <el-table ref="multipleTable" :data="allselectchange">
-
  <el-table-column  label="合服ID" >
           <template slot-scope="scope">{{ scope.row.childrens?scope.row.id:'' }} </template>
         </el-table-column>
@@ -683,7 +1183,7 @@
         </el-table>
       </div>
       <div slot="footer" class="dialog-footer">
-     <el-form ref="IpcreateForm"  key="IpcreateForm"  :model="ipList" label-width="100px"  > 
+     <el-form ref="IpcreateForm"  key="IpcreateForm"  :model="{...ipList}" label-width="100px"  > 
           <!-- <el-form-item label=":"  prop='serverid' class="createFormAlertBody" >
           <el-switch
             v-model="createForm.serveridTrue"
@@ -715,45 +1215,60 @@ v-for="(value,index) in  ipList" :key="index" :label="`IP地址 ${index+1}:`" cl
 
 <script>
 // import { deepCopy } from '@/utils/zoneSettings';
-// import { findServername } from '@/api/character.js';
+import { findServername, findServerid } from '@/api/character.js';
 import { loading, close, secondConfirmation } from '@/views/loading';
 import dayjs from 'dayjs';
+import { setClientShow, batchCreate } from '@/api/server.js';
+import moment from 'moment';
 import { findComponents, findServer, stopserver, ServerMerge, serverselect } from '@/api/components.js';
 import { servercreate, serverUpdateToOne, serverallupdate, findServerByID, getpage } from '@/api/components.js';
 import { clearIpAll, addIpSecurityGroup } from '@/api/components.js';
 import { stopall } from '@/api/components.js';
+import xlsx from 'xlsx';
 export default {
   name: 'zoneset',
   data() {
-    var serverTrue = (rule, value, callback) => {
+    var srttimeRepat = (rule, value, callback) => {
+      if (new Date(value) < Date.now()) {
+        callback('开服时间不可大于现在');
+      }
+      callback();
+    };
+    var serverTrue = async(rule, value, callback) => {
       if (this.$data.createForm.serveridTrue) {
         if (value) {
-          return /^[0-9]*$/.test(value) ? callback() : callback('只能为纯数字');
+          /^[0-9]*$/.test(value) ? '' : callback('只能为纯数字');
         } else {
           return callback('区服ID不可为空');
         }
+        let { data } = await findServerid();
+        let serveridRepeat = false;
+        try {
+          serveridRepeat = data.some(a => +a.serverid === +value);
+        } catch (e) {}
+        serveridRepeat ? callback('区服ID不可重复') : callback();
       }
       return callback();
     };
     var addresscheck = (rule, value, callback) => {
-      if (this.$data.createForm.ip && value) {
-        return callback(new Error('资源地址与ip:port不可同时存在'));
-      }
-      if (this.$data.createForm.ip) {
-        return callback();
-      }
+      // if (this.$data.createForm.ip && value) {
+      //   return callback(new Error('资源地址与ip:port不可同时存在'));
+      // }
+      // if (this.$data.createForm.ip) {
+      //   return callback();
+      // }
       if (!value) {
         return callback(new Error('资源地址不可为空'));
       }
       return callback();
     };
     var ipcheck = (rule, value, callback) =>{
-      if (this.$data.createForm.address && value) {
-        return callback(new Error('资源地址与ip:port不可同时存在'));
-      }
-      if (this.$data.createForm.address) {
-        return callback();
-      }
+      // if (this.$data.createForm.address && value) {
+      //   return callback(new Error('资源地址与ip:port不可同时存在'));
+      // }
+      // if (this.$data.createForm.address) {
+      //   return callback();
+      // }
       if (!value) {
         return callback(new Error('IP不可为空'));
       }
@@ -770,24 +1285,100 @@ export default {
       if (!value) {
         return callback(new Error('区服名称不可为空'));
       }
-      // let { data } = await findServername();
-      // this.$data.servernames = data.map(item=> item['value']);
-      // if (this.$data.servernames.find(item => item === value)) {
-      //   return callback(new Error('区服名称不可重复'));
-      // }
+      if (this.$data.batchCreateData.filter(a => a.servername === value).length > 1) {
+        
+        return callback(new Error('表单内存在相同区服名'));
+      }
+      let { data } = await findServername();
+      this.$data.servernames = data.map(item=> item['value']);
+      if (this.$data.servernames.find(item => item === value)) {
+        return callback(new Error('区服名称不可重复'));
+      }
       
       callback();
     };
+    var batchCreateServerid = async(rule, value, callback)=>{
+      if (!/^[0-9]*$/.test(value)) {
+        return callback(new Error('只可以为纯数字'));
+      }
+      if (value && this.$data.batchCreateData.filter(a => a.serverid === value).length > 1) {
+        return callback(new Error('表单内存在相同区服ID'));
+      }
+      let { data } = await findServerid();
+      let serveridRepeat = false;
+      try {
+        serveridRepeat = data.some(a => +a.serverid === +value);
+      } catch (e) {}
+      serveridRepeat ? callback('区服ID不可重复') : callback();
+     
+      return callback();
+    };
+    var batchCreateplatform = (rule, value, callback)=>{
+      if (!(/^安卓$|^苹果$|^全平台$/.test(value))) {
+        return callback(new Error('数据错误'));
+      }
+      return callback();
+    };
+    var batchCreateChannel = (rule, value, callback)=>{
+      try {
+        let a = value.every(a => this.selectForm[1].options.some(b => b.label === a));
+        if (!a || value.length === 0) {
+          return callback(new Error('值非法'));
+        }
+      } catch ({ message }) {
+        return callback(new Error(message));
+      }
+      return callback();
+    };
+    var batchCreateDisplay = (rule, value, callback)=>{
+      if (!(/^流畅$|^爆满$|^维护$|^繁忙$/.test(value))) {
+        return callback(new Error('值非法'));
+      }
+      return callback();
+    };
+    var batchCreatesrttime = (rule, value, callback)=>{
+      console.log('时间', value);
+      
+      if (new Date(value) <= new Date()) {
+        return callback(new Error('开服时间不可大于现在'));
+      }
+      return callback();
+    };
+    var batchCreatetest = (rule, value, callback)=>{
+      if (!(/^是$|^否$/.test(value))) {
+        return callback(new Error('值非法'));
+      }
+      return callback();
+    };
+    let batchCreateRules = {
+      batchCreateServerid,
+      batchCreateplatform,
+      batchCreateChannel,
+      batchCreateDisplay,
+      batchCreatesrttime,
+      batchCreatetest
+    };
+    
     return {
+      ...batchCreateRules,
+      servernameRepeat,
+      addresscheck,
+      ipcheck,
+      createSmapType: '1',
       formInline: {
         user: '',
         region: '',
         ip: ''
       },
+      batchCreateData: [],
+      batchCreateDataChangeValue: [],
+      filelist: [],
       opacity: 0.5,
       servernames: '',
       showstatusIsShow: false,
+      showstatusdialog: false,
       dialogFormchangeStop: false,
+      serverCreatedialogFormVisibleAllTrue: false,
       showstatusIsvalue: '',
       dialogFormVisibleAddIp: false, //安全组弹窗
       ipList: [{
@@ -797,6 +1388,9 @@ export default {
         if (!(/^(25[0-5]|2[0-4]\d|[0-1]\d{2}|[1-9]?\d)\.(25[0-5]|2[0-4]\d|[0-1]\d{2}|[1-9]?\d)\.(25[0-5]|2[0-4]\d|[0-1]\d{2}|[1-9]?\d)\.(25[0-5]|2[0-4]\d|[0-1]\d{2}|[1-9]?\d)$/.test(value))) {
           return callback(new Error('请输入正确的IP地址'));
         }
+        if (this.$data.ipList.filter(a=> a.ip === value)?.length > 1) {
+          return callback('存在相同ip地址');
+        }
         return callback();
       },
       clientOptions: [], //客户端组件
@@ -804,19 +1398,31 @@ export default {
       serverCreatedialogFormVisibleAll: false, //区服创建弹窗变量
       selectForm: [{
         label: '游戏平台',
-        multiple: true,
+        multiple: false,
         filterable: true,
         collapse: false,
         key: 'plaform',
         value: '',
         options: [
           {
+            label: '不限制',
+            value: ''
+          }, {
             label: '安卓',
             value: '1'
 
           }, {
             label: '苹果',
             value: '2'
+          }, {
+            label: '双平台',
+            value: '3'
+          }, {
+            label: '安卓+双平台',
+            value: '4'
+          }, {
+            label: '苹果+双平台',
+            value: '5'
           }]
       }, {
         label: '游戏渠道',
@@ -890,6 +1496,28 @@ export default {
           label: '未合服',
           value: '2'
         }]
+      }, {
+        label: '停用状态',
+        key: 'stopshow',
+        collapse: true,
+        multiple: false,
+        filterable: false,
+
+        value: '',
+        options: [{
+          label: '不限制',
+          value: ''
+        }, {
+          label: '未停服',
+          value: '0'
+
+        }, {
+          label: '审核中',
+          value: '1'
+        }, {
+          label: '已打回',
+          value: '3'
+        }]
       }
       ],
       createForm: { //区服创建表单值
@@ -906,7 +1534,6 @@ export default {
         page: 1,
         pagesize: 20
       },
-    
       createFormRules: {
         serverid: [
           { validator: serverTrue, trigger: 'blur' }
@@ -919,19 +1546,15 @@ export default {
         channel: [
           { required: true, message: '请选择一个渠道', trigger: ['blur', 'change'] }
         ],
-        ip: [
-          { validator: ipcheck, trigger: ['blur', 'change'] }
-        ],
+      
         display: [
           { required: true, message: '请选择显示状态', trigger: ['blur', 'change'] }
         ],
         srttime: [
-          { type: 'date', required: true, message: '请选择开服时间', trigger: ['blur', 'change'] }
-        ],
-        address: [
-      
-          { validator: addresscheck, trigger: ['blur', 'change'] }
+          { type: 'date', required: true, message: '请选择开服时间', trigger: ['blur', 'change'] },
+          { validator: srttimeRepat, trigger: 'blur' }
         ]
+       
       },
       //筛选栏过滤
       // filterForm: ['0', '', '', '', undefined, 1, '0', 10],
@@ -946,7 +1569,9 @@ export default {
         test: '0',
         mergeserver: '',
         page: 1,
-        pagesize: 20
+        pagesize: 20,
+        clientshow: '',
+        stopshow: ''
       },
       //id查找区服
       filterServerIdForm: {
@@ -994,14 +1619,8 @@ export default {
 
       },
       widthtable: 170,
-
       multipleTable: '',
       menuVisible: false,
-      platformoptions: [
-        '不限制',
-        'Android',
-        'IOS'
-      ],
       platformoptionsinput: '不限制',
       clientinput: '不限制',
       statusinput: '不限制',
@@ -1014,6 +1633,18 @@ export default {
     };
   },
   filters: {
+    clientshow(val) {
+      return +val === 1 ? '可见' : '不可见';
+    },
+    stopshow(v) {
+      let a = '';
+      switch (+v) {
+        case 0: a = ''; break;
+        case 1: a = '审核中'; break;
+        case 3: a = '已打回'; break;
+      }
+      return a;
+    },
     timeFormate(val) {      
       return dayjs(val).format('YYYY-MM-DD HH:mm:ss');    
     },
@@ -1036,6 +1667,12 @@ export default {
     }
   },
   computed: {
+    batchCreateDataWarning() {
+      return this.batchCreateData.filter(a => !a.success).length;
+    },
+    createsmapTypeRules() {
+      return +this.createSmapType === 1 ? this.addresscheck : this.ipcheck; 
+    },
     gameid() {
       return this.$store.getters.permissionInfo.gameid;
     },
@@ -1075,6 +1712,16 @@ export default {
       // }
       // ;
     },
+    oneselectchangeopen() {
+      if (this.allselectchange.length === 1) {return false;}
+      return true;
+      // if (this.allselectchange.length === 0) {
+      //   return true;
+      // } else if () {
+      //   return false;
+      // }
+      // ;
+    },
     createbutton() {
       if (this.form.address.length > 0 && this.form.open_time && this.form.ip_port.length > 0 && this.form.name.length > 0) {
         return false;
@@ -1087,11 +1734,303 @@ export default {
  
 
   methods: { 
-    async show(MouseEvent) {
-      console.log(1111);
-      console.log(MouseEvent);
-      console.log(1111);
+    async batchCreateServer() {
+      let a = this.batchCreateDataWarning === 0;
+      if (!a) {
+        this.$message.warning('存在错误信息');
+        return;
+      }
+      let sendTrue = await secondConfirmation(this, '是否确认批量新建区服');
+      if (!sendTrue) {return;}
+      loading(this);
+      let { code, data } = await batchCreate({ value: this.batchCreateData });
+      if (code !== 200) {close(this); return;}
+      let allTrue = data.every(a=> a.status === 'fulfilled');
+      if (allTrue) {
+        this.$message.warning('区服批量创建成功~ ');
+        this.filterFormChange('flush');
+        this.serverCreatedialogFormVisibleAll = false;
+        close(this);
+        return;
+
+      }
+      this.$message.warning('区服批量创建成功~ 失败数据正在返回中~');
+      let rejectedData = [];
+      for (let i of data) {
+        if (i.status === 'rejected') {
+          let { reason: { message: { data }}} = i;
+          let { key } = data;
+          rejectedData.push(key);
+        }
+      }
+      let showData = this.batchCreateData.filter(a => {
+        a.success = false;
+        return !rejectedData.some(b => +a.key === +b);
+      });
+      for (let i of showData) {
+        let index = this.batchCreateData.findIndex(a => a.key === i.key);
+        this.batchCreateData.splice(index, 1);
+      }      
+      
+      close(this);
+    },
+    async changeHandleEditAllToOne(index, row, change) {
+      let deepCopy = obj => {
+        if (obj === null || typeof obj !== 'object') { return obj; } // 类型检测
+        let copy = Array.isArray(obj) ? [] : {}; // 声明结果变量
+        Object.keys(obj).forEach(key => (copy[key] = deepCopy(obj[key], copy[key]))); // 递归执行
+        return copy; // 返回结果变量
+      };
+      //保存
+      if (change) {
+        let refs = [
+          `${index}batchCreateChannel`,
+          `${index}batchCreateplatform`,
+          `${index}batchCreateservername`,
+          `${index}batchCreateaddress`,
+          `${index}batchCreatetest`,
+          `${index}batchCreatesrttime`,
+          `${index}batchCreateserverid`,
+          `${index}batchCreatedisplay`
+        ];
+        let testsTrue = [];
+        for (let i of refs) {
+          testsTrue.push(await this.$refs[i].validate().catch(a=>false));
+        }
+       
+        if (!testsTrue.every(a => a)) {return;}
+        
+        // for (let i in this.batchCreateData[index]) {
+        //   if (i === 'serverid' || i === 'key' || i === 'change') {continue;}
+        //   if (!this.batchCreateData[index][i] || JSON.stringify(this.batchCreateData[index][i]) === '[]') {this.$message.warning('信息不完整.'); return;}
+        // }
+        this.batchCreateData[index].success = true;
+        this.batchCreateData[index].change = false;
+      }
+      //修改
+      if (!change) {
+        this.batchCreateData[index].change = true;
+        let a = {};
+        for (let i in this.batchCreateData[index]) {
+          if (i === 'change' || i === 'key') {
+            continue;
+          }
+          
+          a[i] = this.batchCreateData[index][i];
+        }
+        this.batchCreateDataChangeValue[index] = deepCopy(a);
+        row.change = true;
+      }
+  
+
+    },
+    async handleStopAllToOne(index, row, change) {
+      //取消修改
+      if (change) {
+        for (let i in this.batchCreateDataChangeValue[index]) {
+          this.batchCreateData[index][i] = this.batchCreateDataChangeValue[index][i];
+        }
+       
+        row.change = false;
+      }
+      //删除
+      if (!change) {
+        if (this.batchCreateData.length === 1) {
+          this.$confirm(`是否删除最后一条数据，删除后将关闭窗口?`, '提示', {
+            confirmButtonText: '确定',
+            cancelButtonText: '取消',
+            type: 'warning' })
+            .then(()=>{
+              this.batchCreateData.splice(index, 1);
+              this.batchCreateDataChangeValue.splice(index, 1); 
+              this.serverCreatedialogFormVisibleAll = false;
+              this.serverCreatedialogFormVisibleAllTrue = false;
+            })
+            .catch(err => false);
+          return;
+        }
+        this.batchCreateData.splice(index, 1);
+        this.batchCreateDataChangeValue.splice(index, 1); 
+       
+      }
+    },
+    async ResetForm() {
       console.log(this);
+      this.filterForm = {
+        plaform: '',
+        display: '',
+        load: '',
+        channel: '',
+        srttime: '',
+        key: 'serverid',
+        value: '',
+        test: '0',
+        mergeserver: '',
+        page: 1,
+        pagesize: 20
+      };
+      this.filterFormChange('click');
+    },
+    async fileUpload(files) {
+      loading(this);
+      const file = files.file;
+      const fileReader = new FileReader();
+      fileReader.onload = async ev =>{
+        try {
+          const data = ev.target.result;
+          const workbook = xlsx.read(data, {
+            type: 'binary'
+          });
+          let a;
+          for (let sheet in workbook.Sheets) {
+            a = xlsx.utils.sheet_to_json(workbook.Sheets[sheet]);
+            break;
+          }   
+          // a = a.map(item =>[item['serverid'], item['id']]);
+          await readfiles(a, this);
+          // a = a.map(item =>`${item['serverid']}` + `${item['id']}`);
+        } catch ({ message }) {
+          console.log(message);
+          close(this);
+          this.$message.warning(message);
+        }
+      };
+      fileReader.readAsBinaryString(file);
+      
+      // function formatDate(numb, format = '-') {
+      //   let time = new Date((numb - 1) * 24 * 3600000 + 1);
+      //   time.setYear(time.getFullYear() - 70);
+      //   let year = time.getFullYear() + '';
+      //   let month = time.getMonth() + 1 + '';
+      //   let date = time.getDate() + '';
+      //   if (format && format.length === 1) {
+      //     return year + format + month + format + date;
+      //   }
+      //   return year + (month < 10 ? '0' + month : month) + (date < 10 ? '0' + date : date);
+      // }
+      function isValidDate(date) {
+        return date instanceof Date && !isNaN(date.getTime());
+      }
+
+      async function readfiles(data, _this) {
+        // _this.createFormWhite['roleId'] = data;
+        let batchData = [];
+        data.splice(0, 1);
+        // let channelTrue = data.every(a => allChannel.some(b => b.label === a['渠道名称（多渠道请使用中文逗号隔开）']));
+        // if (!channelTrue) throw new Error('文档内渠道，不存在本系统');
+        // if (!channelTrue) this.$message.info('文档内渠道，不存在本系统');
+        
+          
+         
+        // console.log('全部渠道', _this.selectForm[1].options);
+        let { data: serverids } = await await findServerid();
+        
+        let { data: servernames } = await findServername();
+        serverids = serverids.map(a => a?.serverid);
+        servernames = servernames.map(a => a?.label);
+        for (let i = 0; i < data.length; i++) {
+          let a = {};
+          let serverid = data[i]['区服ID(不填写为自动生成)'];
+          let servername = data[i]['区服名称'];
+          let platform = data[i]['平台（安卓/苹果/全平台）'];
+          let srttime = data[i]['开服时间'];
+          let display = data[i]['显示状态（流畅/繁忙/爆满/维护）'];
+          let test = data[i]['测试服（是/否）'];
+          let address = data[i]['交互地址'];
+          let key = data[i]['__rowNum__'];
+          let change = false;
+          let channel = data[i]['渠道名称（多渠道请使用中文逗号隔开）'];
+          let success = false;
+          try {
+            channel = channel ? channel.split('，') : [];
+          } catch ({ message }) {
+            console.log(message);
+            channel = [];
+          }
+          let allChannel = _this.selectForm[1].options;
+          let channelTrue = channel.length > 0 && channel.every(qweqwe => allChannel.some(b => b.label === qweqwe));
+          let platformTrue = ['安卓', '苹果', '全平台'].some(qweqwe => qweqwe === platform);
+          let displayTrue = ['流畅', '繁忙', '爆满', '维护'].some(qweqwe => qweqwe === display);
+          let testTrue = ['是', '否'].some(qweqwe => qweqwe === test);
+          let srttimeTrue = new Date(srttime) > new Date();
+          let serveridTrue = !serverid || !serverids.some(a => +a === +serverid);
+          let servernameTrue = !servernames.some(a => a === servername);
+          if (serveridTrue && servernameTrue && testTrue && channelTrue && servername && platformTrue && displayTrue && srttimeTrue) {
+            success = true;
+          }
+          srttime = srttime ? new Date(srttime) : '';
+          srttime = isValidDate(srttime) && srttime ? dayjs(srttime).format('YYYY-MM-DD HH:mm:ss') : '';
+          
+          a = {
+            serverid, 
+            servername, 
+            platform, 
+            srttime, 
+            display, 
+            test, 
+            address, 
+            key, 
+            change, 
+            channel,
+            success
+          };
+
+          batchData.push(a);
+        }
+        _this.batchCreateData = batchData;
+        _this.batchCreateDataChangeValue = Array(batchData.length);
+        // console.log(_this.batchCreateData);
+        // console.log(data.map(a => {
+        //   a['开服时间'] = new Date(a['开服时间'] * 100000000);
+        //   return a;
+        // }));
+     
+        close(_this);
+         _this.$refs?.upload.clearFiles();
+         _this.$confirm(`数据读取完毕，是否继续?`, '提示', {
+           confirmButtonText: '确定',
+           cancelButtonText: '取消',
+           type: 'warning' })
+           .then(()=>{
+             _this.serverCreatedialogFormVisibleAll = false;
+             _this.serverCreatedialogFormVisibleAllTrue = true;
+       
+           })
+           .catch(err => false);
+      
+      
+      }
+    },
+    async exportFile() {
+      // let res = await download();
+      // let blob = new Blob([res], { type: 'application.octet-stream' });
+      // let url = window.URL.createObjectURL(blob);
+      // let link = document.createElement('a');
+      // link.style.display = 'none';
+      // link.href = url;
+      // document.body.appendChild(link);
+      // link.download = `批量创建区服模板.xlsx`;
+      // link.click();
+      window.open('/api/server/download');
+      // require.ensure([], () => {
+      //   const { export_json_to_excel: exportJsonToExcel } = require('@/Excel/Export2Excel');//注意这个Export2Excel路径
+      //   const tHeader = ['区服ID(不填写自动生成)', '区服名称', '平台(安卓/苹果/全平台)', '渠道名称', '显示状态(流畅/繁忙/爆满/维护)', '开服时间', '交互地址', '测试服(是/否)']; // 上面设置Excel的表格第一行的标题
+      //   var list = [1, '啦啦啦', '安卓', '九游', '流畅', '2020-10-24 14:27:00', '127.0.0.1', '是'];
+      //   exportJsonToExcel(tHeader, list, '批量创建区服模板');//最后一个是表名字
+      // });
+  
+    },
+    async createServerSelect(c) {
+      switch (c) {
+        case 'a': this.newCreateServer(); break;
+        case 'b':this.serverCreatedialogFormVisibleAll = true; break;
+      }
+    },
+    async show(MouseEvent) {
+      // console.log(1111);
+      // console.log(MouseEvent);
+      // console.log(1111);
+      // console.log(this);
       this.menuVisible = false; // 先把模态框关死，目的是 第二次或者第n次右键鼠标的时候 它默认的是true
       this.menuVisible = true; // 显示模态窗口，跳出自定义菜单栏
       // var menu = document.querySelector('#menu');
@@ -1113,6 +2052,7 @@ export default {
       let { code } = await stopall(data);
       if (code !== 200) { close(this); return;}
       this.$message.success('停用成功');
+      this.dialogFormchangeStop = false;
       close(this);
       this.filterFormChange('flush');
     },
@@ -1139,9 +2079,34 @@ export default {
     async handleCommandcaozuo(c) {
       switch (c) {
         case 'a':this.dialogFormchange = true; break;
-        case 'b':this.dialogFormchangeStop = true; break;
+        case 'b':this.dialogFormchangeStopAlert(); break;
+        case 'c':this.mergeServer(); break;
+        case 'd':this.showstatusChange(); break;
       }
     },
+    showstatusChange() {
+      let clientshowTrue = this.allselectchange.some(a => +a.clientshow === 1);
+      if (clientshowTrue) {
+        this.$message.info('已可见区服不可重复设置');
+        return;
+      }
+      this.showstatusdialog = true;
+    },
+    dialogFormchangeStopAlert() {
+      let maintainTrue = this.allselectchange.some(a => +a.display !== 3);
+      if (maintainTrue) {
+        this.$message.info('请先修改为维护,再停用区服。');
+        return;
+      }
+      maintainTrue = this.allselectchange.some(a => +a.stopshow !== 0);
+      if (maintainTrue) {
+        this.$message.info('有区服正在停用审核中。');
+        return;
+      }
+      this.dialogFormchangeStop = true;
+    },
+
+
     /**
      * 描述
      * @author 小鹿
@@ -1259,6 +2224,10 @@ export default {
     //合服
     async mergeServer() {
       let [obj, ...arr] = this.allselectchange;
+      if (this.allselectchange.length <= 1) {
+        this.$message.info('请选择至少两个区服');
+        return;
+      }
       let { channel: _channel, plaform: _plaform } = obj;
       let dispalys = this.allselectchange.find(item => +item['display'] !== 3);
       if (dispalys) {
@@ -1368,13 +2337,11 @@ export default {
       });
       switch (val) {
         case 'click':this.filterFormChangeClick(); break;
-        case 'flush':this.filterFormChangeFlush(); break;
+        case 'flush':this.finservers(this.filterForm); break;
         case 'page':this.filterFormChangePage(); break;
 
         default:this.filterForm.value = ''; findServer(this.filterForm).then(res=>{this.inserttable(res);});
       }
-    
-     
     },
     async finservers(findForm) {
       let res = await findServer(findForm);
@@ -1382,7 +2349,6 @@ export default {
     },
    
     async filterFormChangePage() {
-   
       this.finservers(this.filterForm);
     },
     async filterFormChangeClick() {
@@ -1396,6 +2362,7 @@ export default {
     },
 
     async filterFormChangeFlush() {
+      this.$message.success('数据刷新中···');
       this.filterForm = {
         plaform: '',
         display: '',
@@ -1433,7 +2400,14 @@ export default {
       this.total = res.data.length;
       return;
     },
-
+    batchtableRowClassName({ row }) {
+      // console.log('表格行内颜色', row);
+      if (row.success) {
+        return '';
+      } else {
+        return 'batchtableRowClassName-warning';
+      }
+    },
     tableRowClassName({ row, rowIndex }) {
   
       if (row.display === '5') {
@@ -1471,6 +2445,10 @@ export default {
     loadFilterTag(value, row) {
       return row.load === value;
     },
+    ondchangeHandleEdit() {
+      let row = this.allselectchange[0];
+      this.changeHandleEdit(this.tableData.findIndex(a => JSON.stringify(a) === JSON.stringify(row)), row);
+    },
     //修改传参
     changeHandleEdit(index, row) {
       this.formchange = {
@@ -1481,9 +2459,23 @@ export default {
       this.dialogFormVisiblechange = true;
     //row为数据 
     },
+    onehandleStop() {
+      let row = this.allselectchange[0];
+      this.handleStop(this.tableData.findIndex(a => JSON.stringify(a) === JSON.stringify(row)), row);
+    },
     //停用传参
     async handleStop(index, row) {
     // console.log(index,);
+      let { display, stopshow } = row;
+      console.log(row);
+      if (+display !== 3) {
+        this.$message.warning('区服不是维护状态，不可停用');
+        return;
+      }
+      if (+stopshow === 1) {
+        this.$message.info('该区服已在审批当中，请勿重复申请~');
+        return;
+      }
       let mergetrue = await this.$confirm('是否确认停用区服?', '提示', {
         confirmButtonText: '确定',
         cancelButtonText: '取消',
@@ -1558,14 +2550,22 @@ export default {
 
       this.allselectchange = a;
     },
+    async setClientShow() {
+      let sendtrue = await secondConfirmation(this, `该操作不可逆,是否确认继续操作?`);
+      if (!sendtrue) {return;}
+      loading(this);
+      let { code } = await setClientShow({ value: this.allselectchange });
+      if (code !== 200) { close(this); return;}
+      this.$message.success('设置成功');
+      close(this);
+      this.showstatusdialog = false;
+      this.filterFormChange('flush');
+    },
     async updateserver() {
     //批量操作
       let data = { 'server': this.allselectchange, 'merge': this.radio2, 'showstatus': this.radio3, 'gameid': this.gameid };
       let sendtrue = await secondConfirmation(this, `是否确认继续操作?`);
       if (!sendtrue) {return;}
-    
-     
-
       loading(this);
       let { code } = await serverallupdate(data);
       if (code !== 200) { close(this); return;}
@@ -1677,7 +2677,13 @@ export default {
       
       this.tableData = data.table;
       this.formchange.page = Number(data.page);
-      this.displayNum = data.displayNum;
+      this.displayNum = data.displayNum.filter(a => a.display === '流畅').concat(
+        data.displayNum.filter(a => a.display === '繁忙')
+      ).concat(
+        data.displayNum.filter(a => a.display === '爆满')
+      ).concat(
+        data.displayNum.filter(a => a.display === '维护')
+      );
       this.total = Number(data.total);
     },
     selectservers() {
@@ -1707,9 +2713,25 @@ export default {
 </script>
 
 <style lang="scss" rel="stylesheet/scss">
+.batchtableRowClassName-warning{
+  background-color: red;
+color: red;
+}
+
 .ipAddClass{
   &>div{
     width: 90%;
+  }
+}
+#server-all-create-button:focus{
+color: white !important;
+}
+.server-all-create{
+  &>div{
+    width: 90%;
+  }
+  .button-with-header:focus{
+    color: white !important;
   }
 }
 .aasdhjkahskdhjk{
@@ -1753,6 +2775,10 @@ export default {
   }
 
   .distric-container {
+    .distric-container-header-ul{
+      display: flex;
+      justify-content: flex-end;
+    }
     .createFormAlertBodyIp{
       &> div {
         text-align: left;
@@ -1803,6 +2829,10 @@ export default {
     .createFormAlert{
       display: flex;
       flex-wrap: wrap;
+      .create-form-button{
+        width:100%;
+        text-align: right;
+      }
       .createFormAlertBody{
         width: 50%;
       }
@@ -1911,11 +2941,11 @@ export default {
       margin: 5px 10px;
       height: 30px;
 
-      ul {
-        li {
-          float: right;
-        }
-      }
+      // ul {
+      //   li {
+      //     float: right;
+      //   }
+      // }
     }
 
     .search-container {

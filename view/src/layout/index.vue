@@ -73,6 +73,10 @@ export default {
   },
   mounted() {
     this.$store.dispatch('user/setusers');
+    let a = +this.$store.state.user.permissionInfo.gameid === 5;
+    if (a) {
+      this.$router.push({ path: '/GMManagement/gameManagement' });
+    }
     // var SpeechRecognition = SpeechRecognition || window.webkitSpeechRecognition;
     // var SpeechGrammarList = SpeechGrammarList || window.webkitSpeechGrammarList;
     // // var SpeechRecognitionEvent = SpeechRecognitionEvent || window.webkitSpeechRecognitionEvent;

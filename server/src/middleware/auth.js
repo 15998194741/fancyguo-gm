@@ -12,6 +12,9 @@ export default async (ctx, next) => {
 	if(ctx.url === '/api/user/login'){
 		return next();
 	}
+	if(ctx.url === '/api/server/download'){
+		return next();
+	}
 	const getIp = (req) =>{
 		return req.headers['x-forwarded-for'] || req.headers['x-real-ip'] ||req.socket.remoteAddress ||req.connection.remoteAddress; 
 	};

@@ -191,8 +191,9 @@ class CharacterService{
 			if(!res){
 				res='';
 			}else{
-				let sql = `select * from gm_character  where gameid='${gameid}' and status = 1 and roleid in (${res.map(item => `'${item.role_id}'`)}) offset ${pagesize * (page - 1)} limit ${pagesize}  `;
-				let children = sqls ? '' : await CharacterService.byMany(sql);
+				let sql = `select * from gm_character  where gameid='${gameid}' and status = 1 and roleid in (${res.map(item => `'${item.role_id}'`)})  `;
+				console.log(sql);
+				let children =  await CharacterService.byMany(sql);
 				if(children.length>0){
 					res = res.map(item =>{
 						let a = children.find(_item => _item.roleid === item.role_id);
@@ -220,8 +221,8 @@ class CharacterService{
 		return arr.map(item=>{
 			return {label:item.servername, value:item.servername};
 		});
-
 	}
+
 
 	async uploadFile(data, gameid){
 		const path = require('path');
@@ -357,7 +358,14 @@ class CharacterService{
 		if (+code !== 200) throw { message };
 		return res;
 
-    }
+	}
+	async findServerid(gameid){
+		let sql = `select serverid from gm_server where gameid = '${gameid}' and status = 1`;
+		let res = await dbSequelize.query(sql, {
+			replacements:['active'], type:'SELECT'
+		});
+		return res;
+	}
 
 }
 

@@ -59,6 +59,7 @@
 import UserDao from '../dao/user';
 import BaseService from '../../lib/base-service';
 import dayjs from 'dayjs';
+import { dbSequelize } from '../../config';
 const crypto = require('crypto');
 
 
@@ -184,9 +185,11 @@ class components extends BaseService{
 		return true;
 	}
 	async stopserver(form){
-		let a = '5';
-		await UserDao.findSqlByParamsToOne('update gm_server set display = :a ,status = 0 where  gameid=:gameid and id=:id', {...form, a});
-		return true;
+		let {gameid, id} = form;
+		let sql = `update gm_server set stopshow = 1 where gameid = '${gameid}' and id ='${id}'`;
+		let res = await dbSequelize.query(sql, {type:'UPDATE'});
+		// await UserDao.findSqlByParamsToOne('update gm_server set display = :a ,status = 0 where  gameid=:gameid and id=:id', {...form});
+		return res;
 	}
 	async selectserver(parmas){
 	  if(parmas.id === 'serverid') {
@@ -200,14 +203,26 @@ class components extends BaseService{
 		return b;
 
 	}
-	async allserverstop(forms, gameid, display){
-
-		for(let form  of  forms){
-		
-
-			await UserDao.findSqlByParamsToOne('update gm_server set status = 0 where  gameid=:gameid and serverid=:serverid and id=:id', {...form, gameid, display});
-		}
-		return true;
+	
+ /**
+  * 描述 区服批量停用
+  * @author 小鹿
+  * @date 2020-11-24
+  * @param {any} forms
+  * @param {any} gameid
+  * @param {any} display
+  * @returns {any}
+  */
+	async allserverstop(forms, gameid){
+		console.log(forms, gameid);
+		let sql  = ` update gm_server set stopshow = 1 where id in (${forms.map(a => a.id)}) `; 
+		let res  = await dbSequelize.query(sql, {
+			type:'UPDATE'
+		});
+		// for(let form  of  forms){
+		// 	await UserDao.findSqlByParamsToOne('update gm_server set status = 0 where  gameid=:gameid and serverid=:serverid and id=:id', {...form, gameid, display});
+		// }
+		return res;
 	}
 }
 

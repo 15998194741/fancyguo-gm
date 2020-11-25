@@ -27,6 +27,12 @@ export function findServername() {
   });
 }
 
+export function findServerid() { 
+  return request({
+    url: `character/findServerid`,
+    method: 'get'
+  });
+}
 
 
 export function readfile(data) { 
@@ -114,3 +120,6 @@ export function BackPackRecycle(data) {
     data
   });
 }
+
+
+

@@ -1,5 +1,6 @@
 <template>
-  <div id="app" @contextmenu.prevent="onContextmenu">
+  <!-- <div id="app" @contextmenu.prevent="onContextmenu"> -->
+  <div id="app" >
     <router-view />
   </div>
 </template>
@@ -12,52 +13,55 @@ export default {
   data() {
     return {
       menuVisible: false
-
     };
   },
   methods: {
-    onContextmenu(event) {
-      this.$contextmenu({
-        items: [
-          {
-            label: '返回(B)',
-            onClick: () => {
-              this.message = '返回(B)';
-              location.history;
-            }
-          },
-          { label: '前进(F)', disabled: true },
-          { label: '重新加载(R)', onClick: () => {
-            location.reload();
-          }, divided: true, icon: 'el-icon-refresh' },
-          { label: '另存为(A)...' },
-          { label: '打印(P)...', icon: 'el-icon-printer' },
-          { label: '投射(C)...', divided: true },
+    // onContextmenu(event) {
+    //   this.$contextmenu({
+    //     items: [
+    //       {
+    //         label: '返回(B)',
+    //         onClick: () => {
+    //           this.message = '返回(B)';
+    //           location.history;
+    //         }
+    //       },
+    //       { label: '前进(F)', disabled: true },
+    //       { label: '重新加载(R)', onClick: () => {
+    //         location.reload();
+    //       }, divided: true, icon: 'el-icon-refresh' },
+    //       { label: '另存为(A)...' },
+    //       { label: '打印(P)...', icon: 'el-icon-printer' },
+    //       { label: '投射(C)...', divided: true },
         
-          {
-            label: '截取网页(R)',
-            minWidth: 0,
-            children: [
-              {
-                label: '截取可视化区域',
-                onClick: () => {
-                  this.message = '截取可视化区域';
-                  console.log('截取可视化区域');
-                }
-              },
-              { label: '截取全屏' }
-            ]
-          },
-          { label: '查看网页源代码(V)', icon: 'el-icon-view' },
-          { label: '检查(N)' }
-        ],
-        event,
-        customClass: 'class-a',
-        zIndex: 3,
-        minWidth: 230
-      });
-      return false;
-    }
+    //       {
+    //         label: '截取网页(R)',
+    //         minWidth: 0,
+    //         children: [
+    //           {
+    //             label: '截取可视化区域',
+    //             onClick: () => {
+    //               this.message = '截取可视化区域';
+    //               console.log('截取可视化区域');
+    //             }
+    //           },
+    //           { label: '截取全屏' }
+    //         ]
+    //       },
+    //       { label: '查看网页源代码(V)', icon: 'el-icon-view' },
+    //       { label: '检查(N)' }
+    //     ],
+    //     event,
+    //     customClass: 'class-a',
+    //     zIndex: 3,
+    //     minWidth: 230
+    //   });
+    //   return false;
+    // }
+  },
+  mounted() {
+ 
+    if (+this.grade === 9999) {this.$router.push({ path: '/GMManagement/gameManagement' });}
   },
   created() {
     //在页面刷新时将vuex里的信息保存到sessionStorage里
