@@ -85,7 +85,8 @@
 <script>
 // import { backPackQuery, backPackRecycle } from '@/api/character.js';
 import { queryServer, BackPackRecycle } from '@/api/character.js';
-import { loading, close, secondConfirmation } from '@/views/loading';
+import { loading, close } from '@/views/loading';
+// import { secondConfirmation } from '@/views/loading';
 export default {
 
   name: 'rucksackquery',

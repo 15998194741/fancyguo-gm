@@ -66,6 +66,16 @@ export class UserController {
 		ctx.logging( '区服停用', '区服管理', `停用了区服ID为 ${serverid} 的区服` );
 		ctx.body = statusCode.SUCCESS_200('查找成功', result);
 	}
+
+	@post('/stopCancel')
+	async stopCancel(ctx){
+		ctx.log.resourceDesc = '区服取消停用';
+		let data = ctx.request.body;
+		let result = await Components.stopCancel(data);
+		let {serverid} = data;
+		ctx.logging( '区服停用', '区服管理', `取消停用区服ID为 ${serverid} 的区服` );
+		ctx.body = statusCode.SUCCESS_200('查找成功', result);
+	}
 	@post('/setClientShow')
 	async setClientShow(ctx){
 		ctx.log.resourceDesc = '区服设置可见';

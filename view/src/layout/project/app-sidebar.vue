@@ -16,7 +16,8 @@
         <i :class="{'el-icon-d-arrow-right': true, gotoLeft: isCollapse}"></i>
       </div>
       <div style="height: 100%; overflow-y: auto; overflow-x: hidden;">
-        <el-menu class="el-menu-vertical-demo-app-sidebar"
+        <el-menu 
+        class="el-menu-vertical-demo-app-sidebar"
                  :collapse="isCollapse"
                  background-color="#091B2F"
                  text-color="#34C3BB"
@@ -27,14 +28,16 @@
                  @open="handleOpen"
                  @close="handleClose">
           <template v-for="(route, index) in routes">
-            <el-submenu v-if="route.children && route.children.length"
+            <el-submenu 
+            v-if="route.children && route.children.length"
                         :key="index"
                         :index="`${index}`">
               <template #title>
                 <i class="el-icon-location" />
                 <span>{{route.name}}</span>
               </template>
-              <el-menu-item v-for="({name, url}, _index) in route.children"
+              <el-menu-item
+v-for="({name, url}, _index) in route.children"
                             :key="_index"
                             :index="`${index}-${_index}`"
                             :route="url">{{name}}</el-menu-item>

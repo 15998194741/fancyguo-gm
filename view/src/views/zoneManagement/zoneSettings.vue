@@ -30,17 +30,28 @@
             </el-button>
         </li> 
          <li>
-          <el-button
+             <li>
+<el-dropdown  v-if="grade"     @command="onehandleStopSelect">
+  <el-button :disabled='oneselectchangeopen'   class="button-with-header"  size='small' >
+   停用<i class="el-icon-arrow-down el-icon--right"></i>
+  </el-button>
+  <el-dropdown-menu slot="dropdown">
+    <el-dropdown-item command="a">停用</el-dropdown-item>
+    <el-dropdown-item command="b">撤销停用</el-dropdown-item>
+  </el-dropdown-menu>
+</el-dropdown>
+        </li>
+          <!-- <el-button
           v-if="grade" 
           slot="reference"  
           size='small' 
           class="button-with-header"   
-          :disabled='oneselectchangeopen'  
+          
           @click='onehandleStop'>
           停用
           <i class="el-icon-remove-outline"></i>
           </el-button>
-        </li> 
+        </li>  -->
          <li>
           <el-button
           v-if="grade" 
@@ -501,12 +512,12 @@
           <template slot-scope="scope">{{scope.row.srttime?scope.row.srttime:scope.row.create_time | timeFormate }} </template>
        
         </el-table-column>
-         <el-table-column   label="客户端可见情况">
+         <!-- <el-table-column   label="客户端可见情况">
           <template slot-scope="scope">{{ scope.row.clientshow|clientshow }} </template>
-        </el-table-column>
-        <el-table-column   label="停用状态">
+        </el-table-column> -->
+        <!-- <el-table-column   label="停用状态">
           <template slot-scope="scope">{{ scope.row.stopshow|stopshow }} </template>
-        </el-table-column>
+        </el-table-column> -->
  <el-table-column v-if="grade" prop='status' label="操作">
           <template slot-scope="scope">
             <div class="tableFlex">
@@ -595,9 +606,6 @@
          <el-table-column   label="客户端可见情况">
           <template slot-scope="scope">{{ scope.row.clientshow|clientshow }} </template>
         </el-table-column>
-        <el-table-column   label="停用状态">
-          <template slot-scope="scope">{{ scope.row.stopshow|stopshow }} </template>
-        </el-table-column>
  <el-table-column v-if="grade" prop='status' label="操作">
           <template slot-scope="scope">
             <div class="tableFlex">
@@ -613,19 +621,24 @@
         </el-table>
       </div>
       <div slot="footer" class="dialog-footer">
-         <el-form ref="dialogFormchangeStopBecause" :model="dialogFormchangeStopBecause"  class="demo-ruleForm">
+         <el-form ref="dialogFormchangeStopBecause" :model="dialogFormchangeStopBecauseObject"  class="demo-ruleForm">
                     <el-form-item  
-                             
+                             prop='dialogFormchangeStopBecause'
                             :rules="[
                              {required: true, trigger: 'blur',message:'停服原因不可为空' },
                             ]">
-<el-input
-v-model="dialogFormchangeStopBecause"
+<!-- <el-input
+v-model="dialogFormchangeStopBecauseObject.dialogFormchangeStopBecause"
   style="margin-bottom: 10px;"
   type="textarea"
   :rows="2"
   placeholder="请输入停用原因">
-</el-input>
+</el-input> -->
+  <fuwenben
+          v-model="dialogFormchangeStopBecauseObject.dialogFormchangeStopBecause"
+          placeholder="请输入停用原因"
+	style="margin-top: 10px">
+          </fuwenben>
 </el-form-item>
                   </el-form>
         <el-button style="margin-left: 10px;" @click="dialogFormchangeStop = false">取 消</el-button>
@@ -1227,6 +1240,30 @@ v-for="(value,index) in  ipList" :key="index" :label="`IP地址 ${index+1}:`" cl
         <el-button type="primary" :disabled="!(allselectchange.length > 0 )"  @click="addIpSumbit">确 定</el-button>
       </div>
     </el-dialog>
+
+    <el-dialog title="区服停用" :visible.sync="fuwenceshi"  :close-on-click-modal="false" class="ipAddClass">
+       <div slot="footer" class="dialog-footer">
+<el-form ref="dialogFormchangeStopBecauses" :model="dialogFormchangeStopBecauseObjects"  class="demo-ruleForm">
+                    <el-form-item  
+                             prop='dialogFormchangeStopBecause'
+                            :rules="[
+                             {required: true, trigger: 'blur',message:'停服原因不可为空' },
+                            ]">
+  <fuwenben
+          v-model="dialogFormchangeStopBecauseObjects.dialogFormchangeStopBecause"
+          placeholder="请输入停用原因"
+	style="margin-top: 10px">
+          </fuwenben>
+</el-form-item>
+                  </el-form>
+
+
+<el-button style="margin-left: 10px;" @click="dialogFormchangeStop = false">取 消</el-button>
+        <el-button type="primary"   @click="handleStopCallback(true)">确 定</el-button>
+      </div>
+        
+
+       </el-dialog>
   </div>
 </template>
 
@@ -1235,8 +1272,9 @@ v-for="(value,index) in  ipList" :key="index" :label="`IP地址 ${index+1}:`" cl
 import { findServername, findServerid } from '@/api/character.js';
 import { loading, close, secondConfirmation } from '@/views/loading';
 import dayjs from 'dayjs';
-import { setClientShow, batchCreate } from '@/api/server.js';
-import moment from 'moment';
+import { setClientShow, batchCreate, stopCancel } from '@/api/server.js';
+// import moment from 'moment';
+import fuwenben from '@/utils/fuwenben';
 import { findComponents, findServer, stopserver, ServerMerge, serverselect } from '@/api/components.js';
 import { servercreate, serverUpdateToOne, serverallupdate, findServerByID, getpage } from '@/api/components.js';
 import { clearIpAll, addIpSecurityGroup } from '@/api/components.js';
@@ -1244,6 +1282,9 @@ import { stopall } from '@/api/components.js';
 import xlsx from 'xlsx';
 export default {
   name: 'zoneset',
+  components: {
+    fuwenben
+  },
   data() {
     var srttimeRepat = (rule, value, callback) => {
       if (new Date(value) < Date.now()) {
@@ -1262,7 +1303,9 @@ export default {
         let serveridRepeat = false;
         try {
           serveridRepeat = data.some(a => +a.serverid === +value);
-        } catch (e) {}
+        } catch (e) {
+          console.log(e);
+        }
         serveridRepeat ? callback('区服ID不可重复') : callback();
       }
       return callback();
@@ -1325,7 +1368,9 @@ export default {
       let serveridRepeat = false;
       try {
         serveridRepeat = data.some(a => +a.serverid === +value);
-      } catch (e) {}
+      } catch (e) {
+        console.log(e);
+      }
       serveridRepeat ? callback('区服ID不可重复') : callback();
      
       return callback();
@@ -1378,7 +1423,15 @@ export default {
     
     return {
       ...batchCreateRules,
-      dialogFormchangeStopBecause: '',
+      fuwenben: '',
+      stopValue: '',
+      dialogFormchangeStopBecauseObject: {
+        dialogFormchangeStopBecause: ''
+      },
+      dialogFormchangeStopBecauseObjects: {
+        dialogFormchangeStopBecause: ''
+      },
+      fuwenceshi: false,
       servernameRepeat,
       addresscheck,
       ipcheck,
@@ -1685,6 +1738,9 @@ export default {
   watch: {
     displayNum(n, o) {
       console.log(n, o);
+    },
+    fuwenben(n, o) {
+      console.log(n, o);
     }
   },
   computed: {
@@ -1755,6 +1811,33 @@ export default {
  
 
   methods: { 
+    async onehandleStopSelect(v) {
+      switch (v) {
+        case 'a':await this.onehandleStop(); break;
+        case 'b':await this.onehandleStopCancel(); break;
+      }
+    },
+    async onehandleStopCancel() {
+      let row = this.allselectchange[0];
+      this.handleStopCancel(this.tableData.findIndex(a => JSON.stringify(a) === JSON.stringify(row)), row);
+    },
+    async handleStopCancel(index, row) {
+      let { stopshow } = row;
+      if (+stopshow === 0) {
+        this.$message.info('该区服未在审批当中~');
+        return;
+      }
+      let sendTrue = await secondConfirmation(this, '是否确认撤销审核');
+      if (!sendTrue) {return;}
+      loading(this);
+      let { code } = await stopCancel(row);
+      if (+code !== 200) {close(this); return;}
+      close(this); 
+      this.$message.success('撤销成功');
+      this.filterFormChange('flush');
+      return;
+      
+    },
     async batchCreateServer() {
       let a = this.batchCreateDataWarning === 0;
       if (!a) {
@@ -2066,10 +2149,10 @@ export default {
       document.removeEventListener('click', this.foo); // 要及时关掉监听，不关掉的是一个坑，不信你试试，虽然前台显示的时候没有啥毛病，加一个alert你就知道了
     },
     async serverStop() {
-      let data = { 'server': this.allselectchange, 'merge': this.radio2, 'showstatus': this.radio3, 'gameid': this.gameid, because: this.dialogFormchangeStopBecause };
-      let sendtrue = this.$refs.dialogFormchangeStopBecause.validate().catch(a=>false);
+      let data = { 'server': this.allselectchange, 'merge': this.radio2, 'showstatus': this.radio3, 'gameid': this.gameid, because: this.dialogFormchangeStopBecauseObject.dialogFormchangeStopBecause };
+      let sendtrue = await this.$refs.dialogFormchangeStopBecause.validate().catch(a=>false);
       if (!sendtrue) {return;}
-      sendtrue = await secondConfirmation(this, `是否确认继续操作?`);
+      sendtrue = await secondConfirmation(this, `是否确认停用区服 ${this.allselectchange.map(a => `【${a.serverid} ${a.servername}】`)}?`);
       if (!sendtrue) {return;}
       loading(this);
       let { code } = await stopall(data);
@@ -2490,7 +2573,6 @@ export default {
     async handleStop(index, row) {
     // console.log(index,);
       let { display, stopshow } = row;
-      console.log(row);
       if (+display !== 3) {
         this.$message.warning('区服不是维护状态，不可停用');
         return;
@@ -2499,38 +2581,53 @@ export default {
         this.$message.info('该区服已在审批当中，请勿重复申请~');
         return;
       }
-      let { value: because } = await this.$prompt('请输入停用原因', '提示', {
-        confirmButtonText: '确定',
-        cancelButtonText: '取消',
-        inputPattern: /^.+$/,
-        inputErrorMessage: '请输入停用原因'
-      }).catch(()=> ({ value: false }));
-      if (because === false) {
+      this.stopValue = row;
+      let because = await this.handleStopCallback(false);
+      if (!because) {
         return;
       }
+      // let { value: because } = await this.$prompt('请输入停用原因', '提示', {
+      //   confirmButtonText: '确定',
+      //   cancelButtonText: '取消',
+      //   inputPattern: /^.+$/,
+      //   inputErrorMessage: '请输入停用原因'
+      // }).catch(()=> ({ value: false }));
+      // if (because === false) {
+      //   return;
+      // }
       
-      let mergetrue = await this.$confirm(`是否确认停用区服 区服ID：${row.serverid}，区服名称：${row.servername} `, '提示', {
-        confirmButtonText: '确定',
-        cancelButtonText: '取消',
-        type: 'warning' })
-        .catch(err => false);
-      if (!mergetrue) {return;}
-      const loading = this.$loading({
-        lock: true,
-        text: '拼命加载中',
-        spinner: 'el-icon-loading',
-        background: 'rgba(0, 0, 0, 0.8)'
-      });
-      let res = await stopserver({ ...row, gameid: this.gameid, because });
-      if (res.code === 200) {
-        loading.close();
+      
+    },
+    async handleStopCallback(v) {
+      if (!v) {
+        this.fuwenceshi = true;
+      } else {
+        let sendtrue = await this.$refs.dialogFormchangeStopBecauses.validate().catch(a=>false);
+        if (!sendtrue) {return false;}
+        let because = this.dialogFormchangeStopBecauseObjects.dialogFormchangeStopBecause;
+        let row = this.stopValue;
+        let mergetrue = await this.$confirm(`是否确认停用区服 【${row.serverid} ${row.servername}】 `, '提示', {
+          confirmButtonText: '确定',
+          cancelButtonText: '取消',
+          type: 'warning' })
+          .catch(err => false);
+        if (!mergetrue) {return;}
+        const loading = this.$loading({
+          lock: true,
+          text: '拼命加载中',
+          spinner: 'el-icon-loading',
+          background: 'rgba(0, 0, 0, 0.8)'
+        });
+        let res = await stopserver({ ...row, gameid: this.gameid, because });
+        if (res.code !== 200) {loading.close(); return;}
+          
         this.filterFormChange('flush');
+        this.fuwenceshi = false;
         this.$message.success('停用成功。');
         findServer(this.filterForm).then(res=>{this.inserttable(res);});
+        loading.close();
       }
-      loading.close();
     },
-
     //区服创建
     createserver() {
 
@@ -2584,7 +2681,7 @@ export default {
       this.allselectchange = a;
     },
     async setClientShow() {
-      let sendtrue = await secondConfirmation(this, `该操作不可逆,是否确认继续操作?`);
+      let sendtrue = await secondConfirmation(this, `是否确认将 ${this.allselectchange.map(a => `【${a.serverid} ` + ` ${a.servername}】`)}设置为可见？`);
       if (!sendtrue) {return;}
       loading(this);
       let { code } = await setClientShow({ value: this.allselectchange });
@@ -2740,7 +2837,7 @@ export default {
   },
 
   created() {
-   
+    console.log(this);
   }
 };
 </script>

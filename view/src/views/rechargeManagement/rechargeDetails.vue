@@ -68,7 +68,7 @@ import { findComponents } from '@/api/components.js';
 import { findServername } from '@/api/character.js';
 import { rechargeQuery, replenishmentpost } from '@/api/rechargeDetails.js';
 import { loading, close, secondConfirmation } from '@/views/loading';
-import dayjs from 'dayjs';
+// import dayjs from 'dayjs';
 export default {
   name: 'rechargedetails',
   data() {

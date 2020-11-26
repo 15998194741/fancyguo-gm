@@ -28,3 +28,11 @@ export function batchCreate(data) {
     data
   });
 }
+
+export function stopCancel(data) { 
+  return request({
+    url: `server/stopCancel`,
+    method: 'post',
+    data
+  });
+}

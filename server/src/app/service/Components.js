@@ -224,6 +224,14 @@ class components extends BaseService{
 		// }
 		return res;
 	}
+	async stopCancel(data){
+		let {id, gameid} = data;
+		let sql = `update gm_server set stopshow = 0 where id = '${id}' and gameid = '${gameid}'`;
+		let res = await dbSequelize.query(sql, {
+			type:'UPDATE'
+		});
+		return res;
+	}
 }
 
 export default new components();

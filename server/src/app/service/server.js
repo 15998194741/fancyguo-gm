@@ -78,9 +78,34 @@ class GmServerService extends BaseService{
 				case 'servername':where +=` and servername like '%${value.split('').join('%')}%'`;break;
 			}
 		}
-		let selectSql = `select * from gm_server  ${where} and status = 1 and (pid is null or  trim(pid) ='') order by id limit ${pagesize} offset (${pagesize}*${page-1})`;
+		let selectSql = `select "id",
+        "status",
+        "create_user_id",
+        "update_user_id",
+        "create_time",
+        "update_time",
+        "servername",
+        "ip_port",
+        "address",
+        "plaform",
+        "display",
+        "srttime",
+        "gamename",
+        "pid" ,
+        "serverid",
+        "test",
+        "load",
+        "gameid",
+        "childrens",
+        "port",
+        "ip",
+        "channel",
+        "serverTrue",
+        "securityGroup",
+        "clientshow",
+        "stopshow"  from gm_server  ${where} and status = 1 and (pid is null or  trim(pid) ='') order by id limit ${pagesize} offset (${pagesize}*${page-1})`;
 		let arr =  await dbSequelize.query(selectSql);
-		let totalSql = `select count(*) as total from gm_server ${where} and status = 1 and (pid is null or  trim(pid) ='')  `;
+		let totalSql = `select count(id) as total from gm_server ${where} and status = 1 and (pid is null or  trim(pid) ='')  `;
 		let totals = await dbSequelize.query(totalSql);
 	
 		let {total} = totals[0][0];
