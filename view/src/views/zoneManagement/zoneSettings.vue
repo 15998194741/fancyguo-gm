@@ -613,7 +613,21 @@
         </el-table>
       </div>
       <div slot="footer" class="dialog-footer">
-
+         <el-form ref="dialogFormchangeStopBecause" :model="dialogFormchangeStopBecause"  class="demo-ruleForm">
+                    <el-form-item  
+                             
+                            :rules="[
+                             {required: true, trigger: 'blur',message:'停服原因不可为空' },
+                            ]">
+<el-input
+v-model="dialogFormchangeStopBecause"
+  style="margin-bottom: 10px;"
+  type="textarea"
+  :rows="2"
+  placeholder="请输入停用原因">
+</el-input>
+</el-form-item>
+                  </el-form>
         <el-button style="margin-left: 10px;" @click="dialogFormchangeStop = false">取 消</el-button>
         <el-button type="primary"  :disabled="!(allselectchange.length > 0 )"  @click="serverStop">确 定</el-button>
       </div>
@@ -653,7 +667,10 @@
             hide-required-asterisk
              >
           <el-select v-model="createForm.plaform" class="alertcontant"  multiple placeholder="请选择平台">
-            <el-option v-for="(item,index) in selectForm[0].options" :key="index"  :label='item.label' :value="item.value?item.value:0">
+            
+          <el-option   label='安卓' value="1">
+            </el-option>
+          <el-option   label='苹果' value="2">
             </el-option>
           </el-select>
         </el-form-item>
@@ -1361,6 +1378,7 @@ export default {
     
     return {
       ...batchCreateRules,
+      dialogFormchangeStopBecause: '',
       servernameRepeat,
       addresscheck,
       ipcheck,
@@ -1515,7 +1533,7 @@ export default {
           label: '审核中',
           value: '1'
         }, {
-          label: '已打回',
+          label: '审核未通过',
           value: '3'
         }]
       }
@@ -1644,7 +1662,7 @@ export default {
       switch (+v) {
         case 0: a = ''; break;
         case 1: a = '审核中'; break;
-        case 3: a = '已打回'; break;
+        case 3: a = '审核未通过'; break;
       }
       return a;
     },
@@ -2048,8 +2066,10 @@ export default {
       document.removeEventListener('click', this.foo); // 要及时关掉监听，不关掉的是一个坑，不信你试试，虽然前台显示的时候没有啥毛病，加一个alert你就知道了
     },
     async serverStop() {
-      let data = { 'server': this.allselectchange, 'merge': this.radio2, 'showstatus': this.radio3, 'gameid': this.gameid };
-      let sendtrue = await secondConfirmation(this, `是否确认继续操作?`);
+      let data = { 'server': this.allselectchange, 'merge': this.radio2, 'showstatus': this.radio3, 'gameid': this.gameid, because: this.dialogFormchangeStopBecause };
+      let sendtrue = this.$refs.dialogFormchangeStopBecause.validate().catch(a=>false);
+      if (!sendtrue) {return;}
+      sendtrue = await secondConfirmation(this, `是否确认继续操作?`);
       if (!sendtrue) {return;}
       loading(this);
       let { code } = await stopall(data);
@@ -2479,7 +2499,17 @@ export default {
         this.$message.info('该区服已在审批当中，请勿重复申请~');
         return;
       }
-      let mergetrue = await this.$confirm('是否确认停用区服?', '提示', {
+      let { value: because } = await this.$prompt('请输入停用原因', '提示', {
+        confirmButtonText: '确定',
+        cancelButtonText: '取消',
+        inputPattern: /^.+$/,
+        inputErrorMessage: '请输入停用原因'
+      }).catch(()=> ({ value: false }));
+      if (because === false) {
+        return;
+      }
+      
+      let mergetrue = await this.$confirm(`是否确认停用区服 区服ID：${row.serverid}，区服名称：${row.servername} `, '提示', {
         confirmButtonText: '确定',
         cancelButtonText: '取消',
         type: 'warning' })
@@ -2491,7 +2521,7 @@ export default {
         spinner: 'el-icon-loading',
         background: 'rgba(0, 0, 0, 0.8)'
       });
-      let res = await stopserver({ ...row, gameid: this.gameid });
+      let res = await stopserver({ ...row, gameid: this.gameid, because });
       if (res.code === 200) {
         loading.close();
         this.filterFormChange('flush');

@@ -185,8 +185,8 @@ class components extends BaseService{
 		return true;
 	}
 	async stopserver(form){
-		let {gameid, id} = form;
-		let sql = `update gm_server set stopshow = 1 where gameid = '${gameid}' and id ='${id}'`;
+		let {gameid, id, because} = form;
+		let sql = `update gm_server set stopshow = 1 ,  stopbecause = $because$${because}$because$ where gameid = '${gameid}' and id ='${id}'`;
 		let res = await dbSequelize.query(sql, {type:'UPDATE'});
 		// await UserDao.findSqlByParamsToOne('update gm_server set display = :a ,status = 0 where  gameid=:gameid and id=:id', {...form});
 		return res;
@@ -213,9 +213,9 @@ class components extends BaseService{
   * @param {any} display
   * @returns {any}
   */
-	async allserverstop(forms, gameid){
+	async allserverstop(forms, gameid, because){
 		console.log(forms, gameid);
-		let sql  = ` update gm_server set stopshow = 1 where id in (${forms.map(a => a.id)}) `; 
+		let sql  = ` update gm_server set stopshow = 1,stopbecause = $because$${because}$because$ where id in (${forms.map(a => a.id)}) `; 
 		let res  = await dbSequelize.query(sql, {
 			type:'UPDATE'
 		});

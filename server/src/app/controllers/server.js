@@ -51,7 +51,7 @@ export class UserController {
 		ctx.log.resourceDesc = '区服批量停用';
 		let form = ctx.request.body;
 		// console.log(form);
-		let result = await Components.allserverstop(form.server, form.gameid, form.showstatus, form.merge);
+		let result = await Components.allserverstop(form.server, form.gameid, form.because, form.showstatus, form.merge );
 		let {server} = form;
 		ctx.logging( '批量停用', '区服管理', `停用了区服id ${JSON.stringify(server.map(a=>a.id))}` );
 		// let result = await  Ta.operating(form);

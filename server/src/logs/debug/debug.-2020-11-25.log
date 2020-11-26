@@ -7778,3 +7778,269 @@ select * from asd where id::varchar in (select id from qwe GROUP BY id )
 [2020-11-25T22:31:48.159] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(channel, ','), ',')  as values  from gm_game_channel where gameid = '13' and status = '1'
 [2020-11-25T22:31:51.686] [DEBUG] debugLogger - Executing (default): select token,tablename from gm_game_token where gameid = '13' and type='user'
 [2020-11-25T22:32:21.782] [DEBUG] debugLogger - Executing (default): select * from gm_character  where gameid='13' and status = 1 and roleid in ('6999998','7099998','7199998','300001','500001','600001','400001','7299998','7399998','7499998')
+[2020-11-25T22:37:20.538] [DEBUG] debugLogger - Executing (default): CREATE TABLE IF NOT EXISTS "gm_announcement" ("id" INTEGER NOT NULL , "status" INTEGER DEFAULT 1, "create_user_id" INTEGER, "update_user_id" INTEGER, "create_time" TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP, "update_time" TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP, "type" VARCHAR(255), "end_time" TIMESTAMP WITH TIME ZONE, "start_time" TIMESTAMP WITH TIME ZONE, "anno_status" VARCHAR(255), "title" VARCHAR(255), "area_server_id" VARCHAR(255), "client" VARCHAR(255), "platform" INTEGER, "game_id" INTEGER, "text" VARCHAR(255), "time_interval " VARCHAR(255), "img_url" VARCHAR(255), "weights" INTEGER, "link" VARCHAR(255), PRIMARY KEY ("id"));
+[2020-11-25T22:37:20.539] [DEBUG] debugLogger - Executing (default): CREATE TABLE IF NOT EXISTS "gm_area_server" ("id" INTEGER NOT NULL , "status" INTEGER DEFAULT 1, "create_user_id" INTEGER, "update_user_id" INTEGER, "create_time" TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP, "update_time" TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP, "server_id" INTEGER, "parent_server_id" INTEGER, "name" VARCHAR(255), "platform" INTEGER, "code_show" INTEGER, "code_load" INTEGER, "is_new_server" VARCHAR(255), "open_time" TIMESTAMP WITH TIME ZONE, "resource_adde" VARCHAR(255), "ip_port" VARCHAR(255), "game_id" INTEGER, "client" VARCHAR(255)[], PRIMARY KEY ("id"));
+[2020-11-25T22:37:20.540] [DEBUG] debugLogger - Executing (default): CREATE TABLE IF NOT EXISTS "gm_cdk_depot" ("id" INTEGER NOT NULL , "status" INTEGER DEFAULT 1, "create_user_id" INTEGER, "update_user_id" INTEGER, "create_time" TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP, "update_time" TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP, "cdkid" INTEGER, "value" VARCHAR(255), PRIMARY KEY ("id"));
+[2020-11-25T22:37:20.542] [DEBUG] debugLogger - Executing (default): CREATE TABLE IF NOT EXISTS "gm_cdk" ("id" INTEGER NOT NULL , "status" INTEGER DEFAULT 1, "create_user_id" INTEGER, "update_user_id" INTEGER, "create_time" TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP, "update_time" TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP, "cdkid" INTEGER, "name " VARCHAR(255), "platform" VARCHAR(255), "client" VARCHAR(255), "type" VARCHAR(255), "num" INTEGER, "start_time" TIMESTAMP WITH TIME ZONE, "end_time " TIMESTAMP WITH TIME ZONE, "content" VARCHAR(255), "game_id" INTEGER, PRIMARY KEY ("id"));
+[2020-11-25T22:37:20.542] [DEBUG] debugLogger - Executing (default): CREATE TABLE IF NOT EXISTS "gm_dict" ("id" INTEGER NOT NULL , "status" INTEGER DEFAULT 1, "create_user_id" INTEGER, "update_user_id" INTEGER, "create_time" TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP, "update_time" TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP, "code" VARCHAR(255), "desc" VARCHAR(255), "priority" VARCHAR(255), "values" VARCHAR(255)[], "gameid" INTEGER, PRIMARY KEY ("id"));
+[2020-11-25T22:37:20.547] [DEBUG] debugLogger - Executing (default): CREATE TABLE IF NOT EXISTS "gm_game" ("id" INTEGER NOT NULL , "status" INTEGER DEFAULT 1, "create_user_id" INTEGER, "update_user_id" INTEGER, "create_time" TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP, "update_time" TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP, "game_name" VARCHAR(255), "code" VARCHAR(255), PRIMARY KEY ("id"));
+[2020-11-25T22:37:20.551] [DEBUG] debugLogger - Executing (default): CREATE TABLE IF NOT EXISTS "gm_purview" ("id" INTEGER NOT NULL , "status" INTEGER DEFAULT 1, "create_user_id" INTEGER, "update_user_id" INTEGER, "create_time" TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP, "update_time" TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP, "uid" INTEGER, "gid" INTEGER, PRIMARY KEY ("id"));
+[2020-11-25T22:37:20.551] [DEBUG] debugLogger - Executing (default): CREATE TABLE IF NOT EXISTS "gm_smtp" ("id" INTEGER NOT NULL , "status" INTEGER DEFAULT 1, "create_user_id" INTEGER, "update_user_id" INTEGER, "create_time" TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP, "update_time" TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP, "smtp_id" VARCHAR(255), "title" VARCHAR(255), "platform" VARCHAR(255), "client" VARCHAR(255), "player" VARCHAR(255), "content" VARCHAR(255), "sendtime" TIMESTAMP WITH TIME ZONE, "annex" VARCHAR(255)[], "game_id" INTEGER, PRIMARY KEY ("id"));
+[2020-11-25T22:37:20.552] [DEBUG] debugLogger - Executing (default): CREATE TABLE IF NOT EXISTS "gm_url_purview" ("id" INTEGER NOT NULL , "status" INTEGER DEFAULT 1, "create_user_id" INTEGER, "update_user_id" INTEGER, "create_time" TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP, "update_time" TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP, "purview_id" INTEGER, "url_id" INTEGER, "grede" INTEGER, PRIMARY KEY ("id"));
+[2020-11-25T22:37:20.552] [DEBUG] debugLogger - Executing (default): CREATE TABLE IF NOT EXISTS "gm_url" ("id" INTEGER NOT NULL , "status" INTEGER DEFAULT 1, "create_user_id" INTEGER, "update_user_id" INTEGER, "create_time" TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP, "update_time" TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP, "purview" VARCHAR(255), "url" VARCHAR(255), "pid" INTEGER, "name" VARCHAR(255), "priority" INTEGER, PRIMARY KEY ("id"));
+[2020-11-25T22:37:20.554] [DEBUG] debugLogger - Executing (default): CREATE TABLE IF NOT EXISTS "gm_user" ("status" INTEGER NOT NULL DEFAULT 1 , "create_user_id" INTEGER, "update_user_id" INTEGER, "create_time" TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP, "update_time" TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP, "username" VARCHAR(255), "password" VARCHAR(255), "nick_name" VARCHAR(255), "avatar" VARCHAR(255), "email" VARCHAR(255), "source" INTEGER NOT NULL DEFAULT 1, "alias" VARCHAR(255), "phone" VARCHAR(255), "wechat_user_id" VARCHAR(255), "id" INTEGER NOT NULL, PRIMARY KEY ("status"));
+[2020-11-25T22:37:20.557] [DEBUG] debugLogger - Executing (default): CREATE TABLE IF NOT EXISTS "gm_server" ("id"  SERIAL , "status" INTEGER DEFAULT 1, "create_user_id" INTEGER, "update_user_id" INTEGER, "create_time" TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP, "update_time" TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP, "servername" VARCHAR(255), "ip" VARCHAR(255), "address" VARCHAR(255), "plaform" VARCHAR(255), "display" VARCHAR(255), "srttime" TIMESTAMP WITH TIME ZONE, "channel" VARCHAR(255)[], "gamename" VARCHAR(255), "pid" VARCHAR(255), "serverid" VARCHAR(255), "test" VARCHAR(255), "load" VARCHAR(255), "gameid" INTEGER, PRIMARY KEY ("id"));
+[2020-11-25T22:37:20.563] [DEBUG] debugLogger - Executing (default): CREATE TABLE IF NOT EXISTS "auth_user" ("id"   SERIAL , "username" VARCHAR(255) NOT NULL, "password" VARCHAR(255) NOT NULL, "source" VARCHAR(255), "nick_name" VARCHAR(255), "status" VARCHAR(255), "version" VARCHAR(255), "create_time" TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP, "update_time" TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP, PRIMARY KEY ("id"));
+[2020-11-25T22:37:20.563] [DEBUG] debugLogger - Executing (default): SELECT i.relname AS name, ix.indisprimary AS primary, ix.indisunique AS unique, ix.indkey AS indkey, array_agg(a.attnum) as column_indexes, array_agg(a.attname) AS column_names, pg_get_indexdef(ix.indexrelid) AS definition FROM pg_class t, pg_class i, pg_index ix, pg_attribute a WHERE t.oid = ix.indrelid AND i.oid = ix.indexrelid AND a.attrelid = t.oid AND t.relkind = 'r' and t.relname = 'gm_announcement' GROUP BY i.relname, ix.indexrelid, ix.indisprimary, ix.indisunique, ix.indkey ORDER BY i.relname;
+[2020-11-25T22:37:20.565] [DEBUG] debugLogger - Executing (default): SELECT i.relname AS name, ix.indisprimary AS primary, ix.indisunique AS unique, ix.indkey AS indkey, array_agg(a.attnum) as column_indexes, array_agg(a.attname) AS column_names, pg_get_indexdef(ix.indexrelid) AS definition FROM pg_class t, pg_class i, pg_index ix, pg_attribute a WHERE t.oid = ix.indrelid AND i.oid = ix.indexrelid AND a.attrelid = t.oid AND t.relkind = 'r' and t.relname = 'gm_area_server' GROUP BY i.relname, ix.indexrelid, ix.indisprimary, ix.indisunique, ix.indkey ORDER BY i.relname;
+[2020-11-25T22:37:20.566] [DEBUG] debugLogger - Executing (default): SELECT i.relname AS name, ix.indisprimary AS primary, ix.indisunique AS unique, ix.indkey AS indkey, array_agg(a.attnum) as column_indexes, array_agg(a.attname) AS column_names, pg_get_indexdef(ix.indexrelid) AS definition FROM pg_class t, pg_class i, pg_index ix, pg_attribute a WHERE t.oid = ix.indrelid AND i.oid = ix.indexrelid AND a.attrelid = t.oid AND t.relkind = 'r' and t.relname = 'gm_cdk_depot' GROUP BY i.relname, ix.indexrelid, ix.indisprimary, ix.indisunique, ix.indkey ORDER BY i.relname;
+[2020-11-25T22:37:20.567] [DEBUG] debugLogger - Executing (default): SELECT i.relname AS name, ix.indisprimary AS primary, ix.indisunique AS unique, ix.indkey AS indkey, array_agg(a.attnum) as column_indexes, array_agg(a.attname) AS column_names, pg_get_indexdef(ix.indexrelid) AS definition FROM pg_class t, pg_class i, pg_index ix, pg_attribute a WHERE t.oid = ix.indrelid AND i.oid = ix.indexrelid AND a.attrelid = t.oid AND t.relkind = 'r' and t.relname = 'gm_dict' GROUP BY i.relname, ix.indexrelid, ix.indisprimary, ix.indisunique, ix.indkey ORDER BY i.relname;
+[2020-11-25T22:37:20.569] [DEBUG] debugLogger - Executing (default): SELECT i.relname AS name, ix.indisprimary AS primary, ix.indisunique AS unique, ix.indkey AS indkey, array_agg(a.attnum) as column_indexes, array_agg(a.attname) AS column_names, pg_get_indexdef(ix.indexrelid) AS definition FROM pg_class t, pg_class i, pg_index ix, pg_attribute a WHERE t.oid = ix.indrelid AND i.oid = ix.indexrelid AND a.attrelid = t.oid AND t.relkind = 'r' and t.relname = 'gm_cdk' GROUP BY i.relname, ix.indexrelid, ix.indisprimary, ix.indisunique, ix.indkey ORDER BY i.relname;
+[2020-11-25T22:37:20.575] [DEBUG] debugLogger - Executing (default): SELECT i.relname AS name, ix.indisprimary AS primary, ix.indisunique AS unique, ix.indkey AS indkey, array_agg(a.attnum) as column_indexes, array_agg(a.attname) AS column_names, pg_get_indexdef(ix.indexrelid) AS definition FROM pg_class t, pg_class i, pg_index ix, pg_attribute a WHERE t.oid = ix.indrelid AND i.oid = ix.indexrelid AND a.attrelid = t.oid AND t.relkind = 'r' and t.relname = 'gm_game' GROUP BY i.relname, ix.indexrelid, ix.indisprimary, ix.indisunique, ix.indkey ORDER BY i.relname;
+[2020-11-25T22:37:20.576] [DEBUG] debugLogger - Executing (default): SELECT i.relname AS name, ix.indisprimary AS primary, ix.indisunique AS unique, ix.indkey AS indkey, array_agg(a.attnum) as column_indexes, array_agg(a.attname) AS column_names, pg_get_indexdef(ix.indexrelid) AS definition FROM pg_class t, pg_class i, pg_index ix, pg_attribute a WHERE t.oid = ix.indrelid AND i.oid = ix.indexrelid AND a.attrelid = t.oid AND t.relkind = 'r' and t.relname = 'gm_smtp' GROUP BY i.relname, ix.indexrelid, ix.indisprimary, ix.indisunique, ix.indkey ORDER BY i.relname;
+[2020-11-25T22:37:20.579] [DEBUG] debugLogger - Executing (default): SELECT i.relname AS name, ix.indisprimary AS primary, ix.indisunique AS unique, ix.indkey AS indkey, array_agg(a.attnum) as column_indexes, array_agg(a.attname) AS column_names, pg_get_indexdef(ix.indexrelid) AS definition FROM pg_class t, pg_class i, pg_index ix, pg_attribute a WHERE t.oid = ix.indrelid AND i.oid = ix.indexrelid AND a.attrelid = t.oid AND t.relkind = 'r' and t.relname = 'gm_url_purview' GROUP BY i.relname, ix.indexrelid, ix.indisprimary, ix.indisunique, ix.indkey ORDER BY i.relname;
+[2020-11-25T22:37:20.582] [DEBUG] debugLogger - Executing (default): SELECT i.relname AS name, ix.indisprimary AS primary, ix.indisunique AS unique, ix.indkey AS indkey, array_agg(a.attnum) as column_indexes, array_agg(a.attname) AS column_names, pg_get_indexdef(ix.indexrelid) AS definition FROM pg_class t, pg_class i, pg_index ix, pg_attribute a WHERE t.oid = ix.indrelid AND i.oid = ix.indexrelid AND a.attrelid = t.oid AND t.relkind = 'r' and t.relname = 'gm_purview' GROUP BY i.relname, ix.indexrelid, ix.indisprimary, ix.indisunique, ix.indkey ORDER BY i.relname;
+[2020-11-25T22:37:20.584] [DEBUG] debugLogger - Executing (default): SELECT i.relname AS name, ix.indisprimary AS primary, ix.indisunique AS unique, ix.indkey AS indkey, array_agg(a.attnum) as column_indexes, array_agg(a.attname) AS column_names, pg_get_indexdef(ix.indexrelid) AS definition FROM pg_class t, pg_class i, pg_index ix, pg_attribute a WHERE t.oid = ix.indrelid AND i.oid = ix.indexrelid AND a.attrelid = t.oid AND t.relkind = 'r' and t.relname = 'gm_url' GROUP BY i.relname, ix.indexrelid, ix.indisprimary, ix.indisunique, ix.indkey ORDER BY i.relname;
+[2020-11-25T22:37:20.589] [DEBUG] debugLogger - Executing (default): SELECT i.relname AS name, ix.indisprimary AS primary, ix.indisunique AS unique, ix.indkey AS indkey, array_agg(a.attnum) as column_indexes, array_agg(a.attname) AS column_names, pg_get_indexdef(ix.indexrelid) AS definition FROM pg_class t, pg_class i, pg_index ix, pg_attribute a WHERE t.oid = ix.indrelid AND i.oid = ix.indexrelid AND a.attrelid = t.oid AND t.relkind = 'r' and t.relname = 'gm_user' GROUP BY i.relname, ix.indexrelid, ix.indisprimary, ix.indisunique, ix.indkey ORDER BY i.relname;
+[2020-11-25T22:37:20.592] [DEBUG] debugLogger - Executing (default): SELECT i.relname AS name, ix.indisprimary AS primary, ix.indisunique AS unique, ix.indkey AS indkey, array_agg(a.attnum) as column_indexes, array_agg(a.attname) AS column_names, pg_get_indexdef(ix.indexrelid) AS definition FROM pg_class t, pg_class i, pg_index ix, pg_attribute a WHERE t.oid = ix.indrelid AND i.oid = ix.indexrelid AND a.attrelid = t.oid AND t.relkind = 'r' and t.relname = 'gm_server' GROUP BY i.relname, ix.indexrelid, ix.indisprimary, ix.indisunique, ix.indkey ORDER BY i.relname;
+[2020-11-25T22:37:20.595] [DEBUG] debugLogger - Executing (default): SELECT i.relname AS name, ix.indisprimary AS primary, ix.indisunique AS unique, ix.indkey AS indkey, array_agg(a.attnum) as column_indexes, array_agg(a.attname) AS column_names, pg_get_indexdef(ix.indexrelid) AS definition FROM pg_class t, pg_class i, pg_index ix, pg_attribute a WHERE t.oid = ix.indrelid AND i.oid = ix.indexrelid AND a.attrelid = t.oid AND t.relkind = 'r' and t.relname = 'auth_user' GROUP BY i.relname, ix.indexrelid, ix.indisprimary, ix.indisunique, ix.indkey ORDER BY i.relname;
+[2020-11-25T22:37:23.120] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(channel, ','), ',')  as values  from gm_game_channel where gameid = '13' and status = '1'
+[2020-11-25T22:37:23.121] [DEBUG] debugLogger - Executing (default): select * from gm_server  where gameid='13'and test='0' and status = 1 and (pid is null or  trim(pid) ='') order by id limit 20 offset (20*0)
+[2020-11-25T22:37:23.134] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_server where gameid='13'and test='0' and status = 1 and (pid is null or  trim(pid) ='')
+[2020-11-25T22:37:23.146] [DEBUG] debugLogger - Executing (default): select max(num), display from (SELECT count(display) as num,
+		case 
+		when display='1' then '流畅'
+		when display='2' then '繁忙'
+		when display='3' then '维护'
+		when display='4' then '爆满'
+		end
+		as display
+		from gm_server where id in ( SELECT id from gm_server  where gameid='13'and test='0' and  status = 1 and (pid is null or  trim(pid) ='')  ORDER BY id limit 20 offset (20*0)  ) GROUP BY display 
+		union 
+		select 0 as num ,'繁忙' as display
+		union 
+		select 0 as num ,'流畅' as display
+		union
+		select 0 as num ,'维护' as display
+		union
+		select 0 as num ,'爆满' as display
+		)a GROUP BY display
+[2020-11-25T22:37:29.036] [DEBUG] debugLogger - Executing (default): select * from gm_server  where gameid='13'and test='0' and servername like '%安%' and status = 1 and (pid is null or  trim(pid) ='') order by id limit 20 offset (20*0)
+[2020-11-25T22:37:29.042] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_server where gameid='13'and test='0' and servername like '%安%' and status = 1 and (pid is null or  trim(pid) ='')
+[2020-11-25T22:37:29.051] [DEBUG] debugLogger - Executing (default): select max(num), display from (SELECT count(display) as num,
+		case 
+		when display='1' then '流畅'
+		when display='2' then '繁忙'
+		when display='3' then '维护'
+		when display='4' then '爆满'
+		end
+		as display
+		from gm_server where id in ( SELECT id from gm_server  where gameid='13'and test='0' and servername like '%安%' and  status = 1 and (pid is null or  trim(pid) ='')  ORDER BY id limit 20 offset (20*0)  ) GROUP BY display 
+		union 
+		select 0 as num ,'繁忙' as display
+		union 
+		select 0 as num ,'流畅' as display
+		union
+		select 0 as num ,'维护' as display
+		union
+		select 0 as num ,'爆满' as display
+		)a GROUP BY display
+[2020-11-25T22:37:36.806] [DEBUG] debugLogger - Executing (default): select * from gm_server  where gameid='13'and test='0' and servername like '%苹%果%' and status = 1 and (pid is null or  trim(pid) ='') order by id limit 20 offset (20*0)
+[2020-11-25T22:37:36.814] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_server where gameid='13'and test='0' and servername like '%苹%果%' and status = 1 and (pid is null or  trim(pid) ='')
+[2020-11-25T22:37:36.823] [DEBUG] debugLogger - Executing (default): select max(num), display from (SELECT count(display) as num,
+		case 
+		when display='1' then '流畅'
+		when display='2' then '繁忙'
+		when display='3' then '维护'
+		when display='4' then '爆满'
+		end
+		as display
+		from gm_server where id in ( SELECT id from gm_server  where gameid='13'and test='0' and servername like '%苹%果%' and  status = 1 and (pid is null or  trim(pid) ='')  ORDER BY id limit 20 offset (20*0)  ) GROUP BY display 
+		union 
+		select 0 as num ,'繁忙' as display
+		union 
+		select 0 as num ,'流畅' as display
+		union
+		select 0 as num ,'维护' as display
+		union
+		select 0 as num ,'爆满' as display
+		)a GROUP BY display
+[2020-11-25T22:37:39.640] [DEBUG] debugLogger - Executing (default): select * from gm_server  where gameid='13'and test='0' and servername like '%测%试%' and status = 1 and (pid is null or  trim(pid) ='') order by id limit 20 offset (20*0)
+[2020-11-25T22:37:39.647] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_server where gameid='13'and test='0' and servername like '%测%试%' and status = 1 and (pid is null or  trim(pid) ='')
+[2020-11-25T22:37:39.656] [DEBUG] debugLogger - Executing (default): select max(num), display from (SELECT count(display) as num,
+		case 
+		when display='1' then '流畅'
+		when display='2' then '繁忙'
+		when display='3' then '维护'
+		when display='4' then '爆满'
+		end
+		as display
+		from gm_server where id in ( SELECT id from gm_server  where gameid='13'and test='0' and servername like '%测%试%' and  status = 1 and (pid is null or  trim(pid) ='')  ORDER BY id limit 20 offset (20*0)  ) GROUP BY display 
+		union 
+		select 0 as num ,'繁忙' as display
+		union 
+		select 0 as num ,'流畅' as display
+		union
+		select 0 as num ,'维护' as display
+		union
+		select 0 as num ,'爆满' as display
+		)a GROUP BY display
+[2020-11-25T22:37:40.097] [DEBUG] debugLogger - Executing (default): select * from gm_server  where gameid='13'and test='0' and servername like '%测%试%' and status = 1 and (pid is null or  trim(pid) ='') order by id limit 20 offset (20*0)
+[2020-11-25T22:37:40.104] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_server where gameid='13'and test='0' and servername like '%测%试%' and status = 1 and (pid is null or  trim(pid) ='')
+[2020-11-25T22:37:40.113] [DEBUG] debugLogger - Executing (default): select max(num), display from (SELECT count(display) as num,
+		case 
+		when display='1' then '流畅'
+		when display='2' then '繁忙'
+		when display='3' then '维护'
+		when display='4' then '爆满'
+		end
+		as display
+		from gm_server where id in ( SELECT id from gm_server  where gameid='13'and test='0' and servername like '%测%试%' and  status = 1 and (pid is null or  trim(pid) ='')  ORDER BY id limit 20 offset (20*0)  ) GROUP BY display 
+		union 
+		select 0 as num ,'繁忙' as display
+		union 
+		select 0 as num ,'流畅' as display
+		union
+		select 0 as num ,'维护' as display
+		union
+		select 0 as num ,'爆满' as display
+		)a GROUP BY display
+[2020-11-25T22:37:40.552] [DEBUG] debugLogger - Executing (default): select * from gm_server  where gameid='13'and test='0' and servername like '%测%试%' and status = 1 and (pid is null or  trim(pid) ='') order by id limit 20 offset (20*0)
+[2020-11-25T22:37:40.559] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_server where gameid='13'and test='0' and servername like '%测%试%' and status = 1 and (pid is null or  trim(pid) ='')
+[2020-11-25T22:37:40.567] [DEBUG] debugLogger - Executing (default): select max(num), display from (SELECT count(display) as num,
+		case 
+		when display='1' then '流畅'
+		when display='2' then '繁忙'
+		when display='3' then '维护'
+		when display='4' then '爆满'
+		end
+		as display
+		from gm_server where id in ( SELECT id from gm_server  where gameid='13'and test='0' and servername like '%测%试%' and  status = 1 and (pid is null or  trim(pid) ='')  ORDER BY id limit 20 offset (20*0)  ) GROUP BY display 
+		union 
+		select 0 as num ,'繁忙' as display
+		union 
+		select 0 as num ,'流畅' as display
+		union
+		select 0 as num ,'维护' as display
+		union
+		select 0 as num ,'爆满' as display
+		)a GROUP BY display
+[2020-11-25T22:37:40.801] [DEBUG] debugLogger - Executing (default): select * from gm_server  where gameid='13'and test='0' and servername like '%测%试%' and status = 1 and (pid is null or  trim(pid) ='') order by id limit 20 offset (20*0)
+[2020-11-25T22:37:40.807] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_server where gameid='13'and test='0' and servername like '%测%试%' and status = 1 and (pid is null or  trim(pid) ='')
+[2020-11-25T22:37:40.816] [DEBUG] debugLogger - Executing (default): select max(num), display from (SELECT count(display) as num,
+		case 
+		when display='1' then '流畅'
+		when display='2' then '繁忙'
+		when display='3' then '维护'
+		when display='4' then '爆满'
+		end
+		as display
+		from gm_server where id in ( SELECT id from gm_server  where gameid='13'and test='0' and servername like '%测%试%' and  status = 1 and (pid is null or  trim(pid) ='')  ORDER BY id limit 20 offset (20*0)  ) GROUP BY display 
+		union 
+		select 0 as num ,'繁忙' as display
+		union 
+		select 0 as num ,'流畅' as display
+		union
+		select 0 as num ,'维护' as display
+		union
+		select 0 as num ,'爆满' as display
+		)a GROUP BY display
+[2020-11-25T22:37:41.552] [DEBUG] debugLogger - Executing (default): select * from gm_server  where gameid='13' and test='1'and test='1' and status = 1 and (pid is null or  trim(pid) ='') order by id limit 20 offset (20*0)
+[2020-11-25T22:37:41.559] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_server where gameid='13' and test='1'and test='1' and status = 1 and (pid is null or  trim(pid) ='')
+[2020-11-25T22:37:41.571] [DEBUG] debugLogger - Executing (default): select max(num), display from (SELECT count(display) as num,
+		case 
+		when display='1' then '流畅'
+		when display='2' then '繁忙'
+		when display='3' then '维护'
+		when display='4' then '爆满'
+		end
+		as display
+		from gm_server where id in ( SELECT id from gm_server  where gameid='13' and test='1'and test='1' and  status = 1 and (pid is null or  trim(pid) ='')  ORDER BY id limit 20 offset (20*0)  ) GROUP BY display 
+		union 
+		select 0 as num ,'繁忙' as display
+		union 
+		select 0 as num ,'流畅' as display
+		union
+		select 0 as num ,'维护' as display
+		union
+		select 0 as num ,'爆满' as display
+		)a GROUP BY display
+[2020-11-25T22:37:44.306] [DEBUG] debugLogger - Executing (default): select * from gm_server  where gameid='13'and test='0' and status = 1 and (pid is null or  trim(pid) ='') order by id limit 20 offset (20*0)
+[2020-11-25T22:37:44.312] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_server where gameid='13'and test='0' and status = 1 and (pid is null or  trim(pid) ='')
+[2020-11-25T22:37:44.321] [DEBUG] debugLogger - Executing (default): select max(num), display from (SELECT count(display) as num,
+		case 
+		when display='1' then '流畅'
+		when display='2' then '繁忙'
+		when display='3' then '维护'
+		when display='4' then '爆满'
+		end
+		as display
+		from gm_server where id in ( SELECT id from gm_server  where gameid='13'and test='0' and  status = 1 and (pid is null or  trim(pid) ='')  ORDER BY id limit 20 offset (20*0)  ) GROUP BY display 
+		union 
+		select 0 as num ,'繁忙' as display
+		union 
+		select 0 as num ,'流畅' as display
+		union
+		select 0 as num ,'维护' as display
+		union
+		select 0 as num ,'爆满' as display
+		)a GROUP BY display
+[2020-11-25T22:37:46.217] [DEBUG] debugLogger - Executing (default): select a.id,a.game_name ,a.image_url as img from gm_game a join gm_purview b on b.gid = a.id where b.uids @> '79' and a.status = '1'  and b.status = '1'  and a.game_name = '空翼冒险团' limit 1
+[2020-11-25T22:37:46.227] [DEBUG] debugLogger - Executing (default): with qwe as (select a.url,a.pid,a.name,d.game_name,d.id as gameid, a.id,b.grede , b.purview_id,c.uid,c.gid from gm_url a join gm_url_purview  b on  a.id = b.url_id  join gm_purview c on c.id = b.purview_id join gm_game d on d.id = c.gid where  c.uids @> '79' and d.id = '1' and d.status = 1 and b.grede != 827 and c.status = 1  and a.status = 1 order by id ),
+					qwer as (select * from qwe a where (select count(*) > 1 from qwe b where b.id = a.id )),
+					asd as (select * from qwe a where (select count(*) =  1 from qwe b where b.id = a.id )),
+					zxc as (select * from qwer where grede = '1'),
+					wer as (select * from qwer where id not in (select id from zxc )
+					union 
+					select * from qwer where id not in (select id from zxc )),
+					sdf as (select url,pid,name,gameid,grede,id from asd 
+					union 
+					select url,pid,name,gameid,grede,id from zxc 
+					union 
+					select url,pid,name,gameid,grede,id from wer ),
+					ewq as (select * from sdf ORDER BY id )
+					select name,(select json_agg(concat('{"url":"',url,'","name":"',name,'","meta":"',grede,'"}')::jsonb) from ewq  where ewq.pid = d.id) as children from ewq as d where pid = 0 ORDER BY d.id
+[2020-11-25T22:37:46.236] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(game_name, ','), ',')  as games from (
+			select  DISTINCT game_name,b.id from gm_purview a join gm_game b on a.gid = b.id  where uids @> '79' and b.status = '1' and a.status = '1'   ORDER BY id 
+		) a
+[2020-11-25T22:37:47.731] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(channel, ','), ',')  as values  from gm_game_channel where gameid = '1' and status = '1'
+[2020-11-25T22:37:47.738] [DEBUG] debugLogger - Executing (default): select * from gm_server  where gameid='1'and test='0' and status = 1 and (pid is null or  trim(pid) ='') order by id limit 20 offset (20*0)
+[2020-11-25T22:37:47.745] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_server where gameid='1'and test='0' and status = 1 and (pid is null or  trim(pid) ='')
+[2020-11-25T22:37:47.757] [DEBUG] debugLogger - Executing (default): select max(num), display from (SELECT count(display) as num,
+		case 
+		when display='1' then '流畅'
+		when display='2' then '繁忙'
+		when display='3' then '维护'
+		when display='4' then '爆满'
+		end
+		as display
+		from gm_server where id in ( SELECT id from gm_server  where gameid='1'and test='0' and  status = 1 and (pid is null or  trim(pid) ='')  ORDER BY id limit 20 offset (20*0)  ) GROUP BY display 
+		union 
+		select 0 as num ,'繁忙' as display
+		union 
+		select 0 as num ,'流畅' as display
+		union
+		select 0 as num ,'维护' as display
+		union
+		select 0 as num ,'爆满' as display
+		)a GROUP BY display
+[2020-11-25T22:37:51.691] [DEBUG] debugLogger - Executing (default): select * from gm_server  where gameid='1'and test='0' and servername like '%1%2%' and status = 1 and (pid is null or  trim(pid) ='') order by id limit 20 offset (20*0)
+[2020-11-25T22:37:51.697] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_server where gameid='1'and test='0' and servername like '%1%2%' and status = 1 and (pid is null or  trim(pid) ='')
+[2020-11-25T22:37:51.707] [DEBUG] debugLogger - Executing (default): select max(num), display from (SELECT count(display) as num,
+		case 
+		when display='1' then '流畅'
+		when display='2' then '繁忙'
+		when display='3' then '维护'
+		when display='4' then '爆满'
+		end
+		as display
+		from gm_server where id in ( SELECT id from gm_server  where gameid='1'and test='0' and servername like '%1%2%' and  status = 1 and (pid is null or  trim(pid) ='')  ORDER BY id limit 20 offset (20*0)  ) GROUP BY display 
+		union 
+		select 0 as num ,'繁忙' as display
+		union 
+		select 0 as num ,'流畅' as display
+		union
+		select 0 as num ,'维护' as display
+		union
+		select 0 as num ,'爆满' as display
+		)a GROUP BY display
