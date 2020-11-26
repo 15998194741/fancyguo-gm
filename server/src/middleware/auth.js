@@ -9,12 +9,23 @@ const statusCode = require('../utils/status-code');
 const crypto = require('crypto');
 
 export default async (ctx, next) => {
-	if(ctx.url === '/api/user/login'){
+	let jump = [
+		'/api/user/login',
+		'/api/server/download',
+		'/api/server/upload'
+	];
+	if(jump.some(a=> a===ctx.url)){
 		return next();
 	}
-	if(ctx.url === '/api/server/download'){
-		return next();
-	}
+	// if(ctx.url === '/api/user/login'){
+	
+	// }
+	// if(ctx.url === '/api/server/download' ){
+	// 	return next();
+	// }
+	// if(ctx.url === '/api/server/upload' ){
+	// 	return next();
+	// }
 	const getIp = (req) =>{
 		return req.headers['x-forwarded-for'] || req.headers['x-real-ip'] ||req.socket.remoteAddress ||req.connection.remoteAddress; 
 	};

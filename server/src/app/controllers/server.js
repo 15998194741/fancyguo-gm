@@ -218,4 +218,123 @@ export class UserController {
 		ctx.attachment(fileName);
 		await sendflie(ctx, fileName, { root: __dirname  });
 	}
+	@post('/upload')
+	async upload(ctx){
+		const crypto = require('crypto');
+    	const  path = require('path');
+    	const fs = require('fs');
+    	var md5sum = crypto.createHash('md5');
+		var start = new Date().getTime();
+		
+		let { file } =  ctx.request.files;
+		console.log(ctx.request.files);
+		console.log(ctx.request.body);
+		let {md5} = ctx.request.body;
+    	// let { data : {  md5  } } = ctx;
+		let { originalFilename } = file;
+    	let name = file.name || originalFilename;
+    	let fileFormat = name.replace(/^(.*)\.([a-zA-Z0-9]*)$/, '$2');
+    	// let fileSlice = name.replace(/(.*)\.([a-zA-Z0-9]*)(-*)([0-9]*)/, '$3');
+    	var md5Str;
+    	let filePath = path.join(__dirname, `../../images/upload/${fileFormat}`, md5+'.'+fileFormat);
+    	
+    	// if(fileSlice){
+    	// 	let fileSliceDirName = name.replace(/(.*)\.([a-zA-Z0-9]*)(-*)([0-9]*)/, '$1.$2');
+    	// 	let dirPath = path.join(__dirname, `../../images/upload/user/cache/${fileSliceDirName}`);
+    	// 	try{
+    	// 		fs.accessSync(dirPath, fs.constants.R_OK | fs.constants.W_OK);
+    	// 	}catch (e){
+    	// 		dirPath = path.join(__dirname, '../../images/upload/user');
+    	// 		fs.mkdirSync(dirPath);
+    	// 		dirPath = path.join(__dirname, '../../images/upload/user/cache');
+    	// 		fs.mkdirSync(dirPath);
+    	// 		dirPath = path.join(__dirname, `../../images/upload/user/cache/${fileSliceDirName}`);
+    	// 		fs.mkdirSync(dirPath);
+    	// 	}
+    	// 	let dirNamePath = path.join(__dirname, `../../images/upload/user/cache/${fileSliceDirName}/${name}`);
+    	// 	try{
+    	// 		fs.accessSync(dirNamePath, fs.constants.R_OK | fs.constants.W_OK);
+    	// 		throw {message:false};
+    	// 	}catch ({message}){
+    	// 		if(!message){return {code:200, message:'文件上传成功'};}
+    	// 	}
+    	// 	filePath  =  path.join(__dirname, `../../upload/user/cache/${fileSliceDirName}/${name}`);
+    	// }else {
+			let dirPath = path.join(__dirname, `../../upload/${fileFormat}`);
+			console.log(fileFormat);
+    		try{
+    			fs.accessSync(filePath, fs.constants.R_OK | fs.constants.W_OK);
+    			throw {message:false};
+    		}catch ({message}){
+				console.log(message);
+    			if(!message){return {code:200, message:'文件上传成功'};}
+    		}
+    		//判断文件类型是否存在
+    		try{
+    			fs.accessSync(dirPath, fs.constants.R_OK | fs.constants.W_OK);
+    		}catch (e){
+    			fs.mkdirSync(dirPath);
+    		}
+    		// let typeRestrictions = async (fileName, list, allow)=>{
+    		// 	allow = allow === undefined ? true : allow;
+    		// 	let fileFormat = fileName.replace(/^(.*)\.([a-zA-Z0-9]*)$/, '$2');
+    		// 	let a = (Feedback) => {
+    		// 		throw  allow ? Feedback :!Feedback;
+    		// 	};
+    		// 	list.some(a => a === fileFormat) ? a(false) : a(true);
+    		// };
+    		// //文件类型判断  
+    		// let c = await typeRestrictions(name, ['jpg', 'png']).catch(a=>a);
+    		// if(c){
+    		// 	throw {message:'文件类型错误'};
+    		// }
+    	// }
+    
+    	//判断文件是否存在
+    	
+    	//文件类型校验函数 filename是文件名  list是允许的文件类型 allow为是否在list中 默认为true  在list内返回true
+    	//返回true 为通过校验
+    	
+    	let uploadSize = 0;
+    	let fileSize = file.size;
+    	let fileSetsize =  ~~(file.size/100) > 64*1024 ? 64*1024: ~~(file.size/100);
+    	fs.open(filePath, 'a', async(e, f)=>{
+    		if(e){throw {code:500, message:e};}
+    		const rs = fs.createReadStream(file.path, {
+    			flags: 'r', //指定用什么模式打开文件，’w’代表写，’r’代表读，类似的还有’r+’、’w+’、’a’等
+    			// encoding: 'utf8', //指定打开文件时使用编码格式，默认就是“utf8”，你还可以为它指定”ascii”或”base64”
+    			fd: null, //fd属性默认为null，当你指定了这个属性时，createReadableStream会根据传入的fd创建一个流，忽略path。另外你要是想读取一个文件的特定区域，可以配置start、end属性，指定起始和结束（包含在内）的字节偏移
+    			autoClose: true, //autoClose属性为true（默认行为）时，当发生错误或文件读取结束时会自动关闭文件描述符
+    			// highWaterMark:32 * 1024, //文件一次读多少字节,默认 64*1024
+    			highWaterMark:fileSetsize, //文件一次读多少字节,默认 64*1024
+    		});
+    		
+				  rs.on('data', a =>{
+    					uploadSize += a.byteLength;
+    					md5sum.update(a);
+    			//   console.log(uploadSize);
+    			   console.log(`文件上传进度为${((uploadSize/fileSize)*100).toFixed(2)}%`);
+    				fs.write(f, a, (e)=>{
+    					if(e){console.log(e);}
+    				});
+				  });
+    		rs.on('end', () => {
+    			console.log('文件读取结束');
+    			md5Str = md5sum.digest('hex').toLowerCase();
+    			console.log('MD5码为：', md5Str);
+    			fs.close(f, e => {
+    				if(e){throw {code:500, message:e};}
+    				if(md5Str !== md5){
+    					fs.unlinkSync(filePath);
+    					throw {code:500, message:'文件MD5校验失败'};
+    				}
+    				// console.log('文件写入完毕');
+    				console.log('文件写入共耗时:'+(new Date().getTime()-start)/1000.00+'秒');
+    				// a(ctx, {code:200, message:'文件写入共耗时:'+(new Date().getTime()-start)/1000.00+'秒'});
+    			});
+    		});
+    	});
+    	ctx.body = statusCode.SUCCESS_200('文件上传成功');
+    	return ctx.body;
+	}
 }

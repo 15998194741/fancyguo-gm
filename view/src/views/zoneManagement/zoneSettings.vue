@@ -785,7 +785,7 @@ v-model="dialogFormchangeStopBecauseObject.dialogFormchangeStopBecause"
         :data="batchCreateData" 
         row-key="key"
       >
-       <el-table-column label="行数" >
+       <el-table-column label="序号" >
           <template slot-scope="scope">
             <div > {{ scope.$index+1 }}</div> 
             </template>
@@ -1242,6 +1242,81 @@ v-for="(value,index) in  ipList" :key="index" :label="`IP地址 ${index+1}:`" cl
     </el-dialog>
 
     <el-dialog title="区服停用" :visible.sync="fuwenceshi"  :close-on-click-modal="false" class="ipAddClass">
+      <div >
+      <el-table ref="multipleTable" :data="allselectchange">
+          <el-table-column  label="合服ID" >
+          <template slot-scope="scope">{{ scope.row.childrens?scope.row.id:'' }} </template>
+        </el-table-column>
+        <el-table-column label="区服ID" >
+          <template slot-scope="scope">{{ scope.row.childrens?'': scope.row.serverid||scope.row.id  }} </template>
+        </el-table-column>
+        <el-table-column label="名称" >
+          <template slot-scope="scope">{{ scope.row.servername }} </template>
+        </el-table-column>
+        <el-table-column   label="平台"   name='plaform'>
+          <!-- <template slot-scope="scope">{{ scope.row.plaform|plaform }} </template> -->
+          <template slot-scope="scope"> 
+            <el-tag v-for='(i,index) in  scope.row["plaform"]' :key="index">{{ i |plaform}}</el-tag>
+            </template>
+        </el-table-column>
+        <el-table-column label="渠道"  >
+          <template slot-scope="scope" >
+            <el-tooltip effect='light'  placement="top" class="aasdhjkahskdhjk">
+              <div slot="content" :ref="'contentCssTableHover'+scope.$index" class="contentCssTableHover" > <el-tag v-for='(i,index) in  scope.row["channel"]' :key="index" >{{ i }}</el-tag></div>
+            <div class="contentCssTableHidden" style="max-height:30px"><el-tag v-for='(i,index) in  scope.row["channel"]' :key="index">{{ i }}</el-tag></div> 
+            </el-tooltip>
+            <!-- <el-tag v-for='(i,index) in  scope.row["channel"]' :key="index">{{ i }}</el-tag> -->
+          </template>
+        </el-table-column>
+         <el-table-column label="安全组"  >
+          <template slot-scope="scope" >
+            <el-tooltip effect='light'  placement="top" class="aasdhjkahskdhjk">
+              <div slot="content" :ref="'contentCssTableHover'+scope.$index" class="contentCssTableHover" > <el-tag v-for='(i,index) in  scope.row["securityGroup"]' :key="index" >{{ i }}</el-tag></div>
+            <div class="contentCssTableHidden" style="max-height:30px"><el-tag v-for='(i,index) in  scope.row["securityGroup"]' :key="index">{{ i }}</el-tag></div> 
+            </el-tooltip>
+            <!-- <el-tag v-for='(i,index) in  scope.row["channel"]' :key="index">{{ i }}</el-tag> -->
+          </template>
+        </el-table-column>
+        <el-table-column  label="显示状态"   >
+          <template slot-scope="scope">
+            <span v-if="scope.row.showstatusIsShow" :key="scope.row.id">
+            <el-select v-model="scope.row.display"  :focus='true'  placeholder="请选择活动区域" @blur='showStatusChangeCancel(scope.$index,scope.row)'  @change="showStatusChangeSubmit(scope.$index,scope.row)" @visible-change='showStatusChangeBlur'>
+              <el-option label="流畅" value="1"></el-option>
+              <el-option label="繁忙" value="2"></el-option>
+              <el-option label="爆满" value="4"></el-option>
+              <el-option label="维护" value="3"></el-option>
+            </el-select> 
+            </span>
+            <span v-else :key="scope.row.id" style="width:50px;" @dblclick="showStatusChange(scope.$index,scope.row)"> {{ scope.row.display|display }} </span>
+             </template>
+        </el-table-column>
+        <el-table-column   label="负载状态">
+          <template slot-scope="scope">{{ scope.row.load|display }} </template>
+        </el-table-column>
+        <el-table-column label="开服时间"  >
+          <template slot-scope="scope">{{scope.row.srttime?scope.row.srttime:scope.row.create_time | timeFormate }} </template>
+       
+      
+       
+        </el-table-column>
+         <el-table-column   label="客户端可见情况">
+          <template slot-scope="scope">{{ scope.row.clientshow|clientshow }} </template>
+        </el-table-column>
+ <!-- <el-table-column v-if="grade" prop='status' label="操作">
+          <template slot-scope="scope">
+            <div class="tableFlex">
+            <el-button
+              size="mini" style="color: red;"
+              icon="el-icon-video-pause" class="button-with-header" @click="piliangcaozuoCancel(scope.$index,scope.row)">取消
+            </el-button>
+            </div>
+          </template>
+
+        </el-table-column> -->
+
+        </el-table>
+
+      </div>
        <div slot="footer" class="dialog-footer">
 <el-form ref="dialogFormchangeStopBecauses" :model="dialogFormchangeStopBecauseObjects"  class="demo-ruleForm">
                     <el-form-item  
@@ -2184,16 +2259,29 @@ export default {
     },
     async handleCommandcaozuo(c) {
       switch (c) {
-        case 'a':this.dialogFormchange = true; break;
+        case 'a':this.dialogChangeFormAlert(); break;
         case 'b':this.dialogFormchangeStopAlert(); break;
         case 'c':this.mergeServer(); break;
         case 'd':this.showstatusChange(); break;
       }
     },
+    dialogChangeFormAlert() {
+      let alertTrue = this.allselectchange.some(a => +a.stopshow !== 0);
+      if (alertTrue) {
+        this.$message.warning('当前选择区服中，存在审核中或审核未通过区服~');
+        return;
+      }
+      this.dialogFormchange = true;
+    },
     showstatusChange() {
       let clientshowTrue = this.allselectchange.some(a => +a.clientshow === 1);
       if (clientshowTrue) {
-        this.$message.info('已可见区服不可重复设置');
+        this.$message.info('已可见区服不可重复设置~');
+        return;
+      }
+      clientshowTrue = this.allselectchange.some(a => +a.stopshow === 1);
+      if (clientshowTrue) {
+        this.$message.info('审核中区服或者审核未通过区服不可操作~');
         return;
       }
       this.showstatusdialog = true;
@@ -2553,7 +2641,14 @@ export default {
     },
     ondchangeHandleEdit() {
       let row = this.allselectchange[0];
+      switch (+row.stopshow) {
+        case 1:this.$message.warning('正在审核中区服不可修改~'); return;
+        case 3:this.$message.warning('审核未通过区服不可修改~'); return;
+      }
       this.changeHandleEdit(this.tableData.findIndex(a => JSON.stringify(a) === JSON.stringify(row)), row);
+      
+        
+      
     },
     //修改传参
     changeHandleEdit(index, row) {
@@ -2681,7 +2776,9 @@ export default {
       this.allselectchange = a;
     },
     async setClientShow() {
-      let sendtrue = await secondConfirmation(this, `是否确认将 ${this.allselectchange.map(a => `【${a.serverid} ` + ` ${a.servername}】`)}设置为可见？`);
+      let sendtrue = this.allselectchange.some(a => +a.stopshow !== 0);
+      if (sendtrue) {this.$message.warning('处于审核中与审核未通过的区服不可设置可见~'); return;}
+      sendtrue = await secondConfirmation(this, `是否确认将 ${this.allselectchange.map(a => `【${a.serverid} ` + ` ${a.servername}】`)}设置为可见？`);
       if (!sendtrue) {return;}
       loading(this);
       let { code } = await setClientShow({ value: this.allselectchange });

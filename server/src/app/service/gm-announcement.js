@@ -152,12 +152,13 @@ class GmAnnouncementService extends BaseService{
 		  VALUES
 		  (${data.stime},${data.etime},${data.gameid},${plaform?`'${plaform}'::jsonb` :null},${channel},${data.bulletinid},${id},1,${data.weights} ,${data.interval},${servername} ,2 ,$text$${text}$text$) returning id `;
 		let res = await dbSequelize.query(sql);
+		let CpRes = {};
 		try{
-			let {code} = await this.SenClient.get('anno', 'marquee', {body:res[0][0]}).catch(a=>({data:500}));
-			if(+code !== 200 )throw {message:'交互失败'};
+			CpRes = await this.SenClient.get('anno', 'marquee', {body:res[0][0]}).catch(a=>({data:500}));
+			if(+CpRes.code !== 200 )throw {message:'交互失败'};
 		}catch({message}) {
 			let sql = `
-			update  gm_announcement set  status =0 where id = '${res[0][0]['id']}'`; 
+			update  gm_announcement set  status =0 where id = '${res[0][0]['id']}' ,callback = '${JSON.stringify(CpRes)}' `; 
 			await dbSequelize.query(sql);
 			throw {message};
 		}

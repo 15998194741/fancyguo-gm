@@ -72,6 +72,8 @@ import 'fancy-tinymce/plugins/autosave';
 // 插件-编辑器尺寸自适应
 import 'fancy-tinymce/plugins/autoresize';
   
+//导入MD5校验
+import SparkMD5 from 'spark-md5';
 // 引入图片上传 api
 // import { uploadImg } from '@/api/file-server';
 
@@ -192,24 +194,62 @@ export default {
         // 'toolbar_sticky': true,
         // 自定义图片上传方法
         'images_upload_handler': async(blobInfo, success, failure) => {
-          // 创建 formData
-          let formData = new FormData();
-          // 添加文件
-          formData.append('file', blobInfo.blob(), blobInfo.filename());
-          // 发送请求
-          let url = `${origin}api/file/server/uploadImage/${orgId}`;
-          let { code, data, message } = await request({
-            url: url,
-            method: 'post',
-            headers: { 'Content-Type': 'multipart/form-data' },
-            data: formData
-          });
-          if (code === 200) {
+         
+          var dataFile = blobInfo.blob();
+          var fileReader = new FileReader();
+          var spark = new SparkMD5.ArrayBuffer();
+          fileReader.readAsArrayBuffer(dataFile);
+          let a = async(formData, md5, kz)=> {
+            let url = `${origin}api/server/upload`;
+            let { code, message } = await request({
+              url: url,
+              method: 'post',
+              headers: { 'Content-Type': 'multipart/form-data' },
+              data: formData
+            });
+            if (code === 200) {
             // console.log(data.imageUrl);
-            success(data.imageUrl);
-          } else {
-            failure(`HTTP Error: ${message}`);
-          }
+              // success(data.imageUrl);
+              success(`http://${window.location.host}/images/upload/${kz.slice(1)}/${md5}${kz}`);
+            } else {
+              failure(`HTTP Error: ${message}`);
+            }
+          };
+      
+          fileReader.onload = async e => {
+            spark.append(e.target.result);
+            var md5 = spark.end();
+            
+            //此处this指向发生改变，需提前声明const _this = this
+            // _this.imgdata.md5 = md5; //此处是将文件的md5值放入imgdata中
+            //上传图片，如手动上传可不在此处执行
+            // 创建 formData
+            let formData = new FormData();
+            // 添加文件
+            formData.append('file', blobInfo.blob(), blobInfo.filename());
+            console.log(blobInfo);
+            formData.append('md5', md5);
+            a(formData, md5, blobInfo.filename().slice(blobInfo.name().length));
+          };
+        
+
+          // var md5 = 
+          // formData.append('md5', blobInfo.blob(), blobInfo.filename());
+          // 发送请求
+          // let url = `${origin}api/server/upload/${orgId}`;
+          // let url = `${origin}api/server/upload`;
+          // let { code, data, message } = await request({
+          //   url: url,
+          //   method: 'post',
+          //   headers: { 'Content-Type': 'multipart/form-data' },
+          //   data: formData
+          // });
+          // if (code === 200) {
+          //   // console.log(data.imageUrl);
+          //   success(data.imageUrl);
+          // } else {
+          //   failure(`HTTP Error: ${message}`);
+          // }
         },
         'init_instance_callback': (editor) =>{
           editor.on('input change keydown blur focus paste', ({ type }) => {
