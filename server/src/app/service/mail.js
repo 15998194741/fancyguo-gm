@@ -24,7 +24,7 @@ class MailService{
 		// channel = channel ?typeof channel === 'string'? [channel]:channel:false;
 		servername = servername ?typeof servername === 'string'? [servername]:servername:false;
 		annex = annex ?typeof annex === 'string'? [annex]:annex:false;
-		where += !createTime?'':` and create_time between '${dayjs(new Date(createTime[0])).format('YYYY-MM-DD HH:mm:ss')}' and  '${dayjs(new Date(createTime[1])).format('YYYY-MM-DD HH:mm:ss')}'`;
+		where += !createTime?'':` and sendtime between '${dayjs(new Date(createTime[0])).format('YYYY-MM-DD HH:mm:ss')}' and  '${dayjs(new Date(createTime[1])).format('YYYY-MM-DD HH:mm:ss')}'`;
 		// where += !channel ? '': ` and channel @> '[${channel.map(item => `"${item}"`)}]'::jsonb  `;
 		where += !annex ? '': ` and annex @> '[${annex.map(item => `{"ID":"${item}"}`).join(',')}]'::jsonb  `;
 		// where += !servername ? '': ` and servername @> '[${servername.map(item => `${item}`).join(',')}]'::jsonb  `;
