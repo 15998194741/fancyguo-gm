@@ -260,8 +260,8 @@ export class UserController {
     	// 	}
     	// 	filePath  =  path.join(__dirname, `../../upload/user/cache/${fileSliceDirName}/${name}`);
     	// }else {
-			let dirPath = path.join(__dirname, `../../upload/${fileFormat}`);
-			console.log(fileFormat);
+			let dirPath = path.join(__dirname, `../../images/upload/${fileFormat}`);
+	
     		try{
     			fs.accessSync(filePath, fs.constants.R_OK | fs.constants.W_OK);
     			throw {message:false};
