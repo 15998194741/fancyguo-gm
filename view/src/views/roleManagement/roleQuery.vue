@@ -169,8 +169,8 @@
         <el-form-item label="封禁时长" class="createFormAlertBodys"   prop='long'  hide-required-asterisk required>
           <el-input v-model="insertForm.long" placeholder="请输入内容"></el-input>
           <el-select  v-model.number='insertForm.time' class="alertcontant"  placeholder="请选择内容">
-            <el-option  label='小时' value='1' ></el-option>
-            <el-option  label='天' value='24' ></el-option>
+            <el-option  label='小时' :value='1' ></el-option>
+            <el-option  label='天' :value='24' ></el-option>
           </el-select>
       </el-form-item>
       </el-form>     
@@ -192,6 +192,15 @@ export default {
 
   name: 'rolequery',
   data() {
+    let createFormRulesLong = (rule, value, callback) =>{
+      if (!value) {
+        return callback(new Error('封禁时长不可为空'));
+      }
+      if (!/^[0-9]+$/.test(value)) {
+        return callback(new Error('封禁时长只能为数字'));
+      }
+      callback();
+    };
     return {
       loading: false,
       serverCreatedialogFormVisible: false,
@@ -232,14 +241,15 @@ export default {
           { required: true, message: '请输入原因', trigger: ['blur', 'change'] }
         ],
         long: [
-          { type: 'number', required: true, message: '请输入时长', trigger: ['blur', 'change'] }
+          { required: true, message: '请输入时长', trigger: 'blur' },
+          { validator: createFormRulesLong, trigger: 'blur' }
         ]
         
       },
       insertForm: {
         type: '1',
         area: '1',
-        time: '1',
+        time: 1,
         beacuse: '',
         long: ''
         

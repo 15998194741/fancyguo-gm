@@ -105,12 +105,22 @@ router.beforeEach(async(to, from, next) => {
   // console.log('to:', to);
   // console.log('from:', from);
   // if (to.path === '/index') return next();
+  let gameUrl = [
+    '/2048',
+    '/pintu',
+    '/saolei',
+    '/waterfall'
+  ];
+  if (gameUrl.some(a => a === to.path)) {
+    return next();
+  }
   if (to.path === '/login') {
     if (sessionStorage.getItem('fancy-guo-login-token')) {
       return next('/index');
     }
     return next();
   }
+  
   if (!sessionStorage.getItem('fancy-guo-login-token')) {
     return next('/login');
   }

@@ -6,7 +6,7 @@ class Ta{
 		this.form = {
 			'sql':'',
 			'token':'YErNGkQ0L94iVtuWV8MusVmckw1C3k3cS08yTw5U02BilgzNKF71AtiGeMUenMDn',
-			'format':'csv'
+			
 		};
 		this.headers={
 			'content-type': 'multipart/form-data; boundary=----WebKitFormBoundaryT24eFfuVgUmT7SsO',
@@ -18,6 +18,7 @@ class Ta{
 		this.res='';
 	}
 	async tasql(sql, token){
+		console.log(sql);
 		let req ={
 			url:this.url,
 			method:this.method,

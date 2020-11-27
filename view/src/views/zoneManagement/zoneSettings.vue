@@ -1926,9 +1926,9 @@ export default {
       if (code !== 200) {close(this); return;}
       let allTrue = data.every(a=> a.status === 'fulfilled');
       if (allTrue) {
-        this.$message.warning('区服批量创建成功~ ');
+        this.$message.success('区服批量创建成功~ ');
         this.filterFormChange('flush');
-        this.serverCreatedialogFormVisibleAll = false;
+        this.serverCreatedialogFormVisibleAllTrue = false;
         close(this);
         return;
 

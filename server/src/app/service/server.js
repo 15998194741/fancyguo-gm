@@ -277,9 +277,9 @@ class GmServerService extends BaseService{
 		value.map(a => {
 			let b ;
 			switch(a.platform){
-				case '安卓':b = [1] ;break;
-				case '苹果':b = [2] ; break;
-				case '全平台':b = [1, 2];break;
+				case '安卓':b = ['1'] ;break;
+				case '苹果':b = ['2'] ; break;
+				case '全平台':b = ['1', '2'];break;
 			} 
 			a['plaform'] = b;
 			switch(a.display){
