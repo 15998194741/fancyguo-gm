@@ -12,7 +12,9 @@ export default async (ctx, next) => {
 	let jump = [
 		'/api/user/login',
 		'/api/server/download',
-		'/api/server/upload'
+		'/api/server/upload',
+		'/api/user/token',
+		'/api/user/permission'
 	];
 	if(jump.some(a=> a===ctx.url)){
 		return next();
