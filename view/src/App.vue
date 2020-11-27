@@ -8,6 +8,7 @@
 <script>
 // 引入 js-cookie 库
 import Cookies from 'js-cookie';
+import layx from 'vue-layx';
 export default {
   name: 'App',
   data() {
@@ -92,6 +93,7 @@ export default {
       } 
     }
     browserRedirect();
+    layx.html('str', '欢迎你', 'hello阿');
     // document.addEventListener('contextmenu', event=>{
     //   this.menuVisible = false; // 先把模态框关死，目的是 第二次或者第n次右键鼠标的时候 它默认的是true
     //   this.menuVisible = true; // 显示模态窗口，跳出自定义菜单栏

@@ -19,6 +19,7 @@ class BackpackService {
             plain: true,
             type: 'SELECT'
         });
+        if(!ip)throw {message:'区服不存在'};
         let url = `http://${ip}:${port}/gmswap/BackPackQuery`;
         console.log(url);
         let reqData = { role_id: roleid };

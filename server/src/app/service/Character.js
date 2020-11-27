@@ -39,7 +39,7 @@ class CharacterService{
 		let keyss= ['update_time', 'ip', 'distinct_id', 'account_id'];
 		if(whereObj){
 			for(let [key, value] of Object.entries(whereObj)){
-				wheres.push(` and  "${keyss.includes(key)?'#':''}${key}" BETWEEN '${new Date(dayjs(value[0]).add(8, 'hour')).toJSON() }' and '${new Date(dayjs(value[1]).add(8, 'hour')).toJSON()}' `);
+				wheres.push(` and  "${keyss.includes(key)?'#':''}${key}" BETWEEN  CAST(  '${dayjs(value[0]).format('YYYY-MM-DD HH:mm:ss') }' as TIMESTAMP) and CAST( '${dayjs(value[1]).format('YYYY-MM-DD HH:mm:ss')}'as TIMESTAMP) `);
 			}
 		}
 		wheres = wheres.join('  ');
@@ -124,6 +124,7 @@ class CharacterService{
 		let {
 			key,
 			value,
+			'regtime[]':regtims,
 			regtime,
 			stime,
 			platform,
@@ -139,8 +140,9 @@ class CharacterService{
 		  let tablename = token.tablename;
 		  token = token.token;
 		let many = true;
+		 let reg_time  =  regtime || regtims;
 		let between ={
-			regtime,
+			reg_time,
 			stime
 		}; 
 		if(stime || banned_type ||  banned_area){

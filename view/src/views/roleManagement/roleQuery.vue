@@ -432,6 +432,8 @@ export default {
       }
     },
     async BannedAskCancel() {
+      let sendTrue = this.tableTrue.some(a => !a['banned_type']);
+      if (sendTrue) {this.$message.info('未被封禁不可解封'); return;}
       let doubleTrue = await this.$confirm('是否确认解除封禁?', '提示', {
         confirmButtonText: '确定',
         cancelButtonText: '取消',

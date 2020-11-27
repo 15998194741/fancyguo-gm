@@ -2779,7 +2779,7 @@ export default {
       let sendtrue = this.allselectchange.some(a => +a.stopshow !== 0);
       if (sendtrue) {this.$message.warning('处于审核中与审核未通过的区服不可设置可见~'); return;}
       sendtrue = this.allselectchange.some(a => +a.clientshow !== 0);
-      if (sendtrue) {this.$message.warning('已经可见了，不可再设置~'); return;}
+      if (sendtrue) {this.$message.warning('该区服已设置为可见，不可进行重复操作~'); return;}
       sendtrue = await secondConfirmation(this, `是否确认将 ${this.allselectchange.map(a => `【${a.serverid} ` + ` ${a.servername}】`)}设置为可见？`);
       if (!sendtrue) {return;}
       loading(this);
