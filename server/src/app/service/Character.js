@@ -194,13 +194,16 @@ class CharacterService{
 			}else{
 				let sql = `select * from gm_character  where gameid='${gameid}' and status = 1 and roleid in (${res.map(item => `'${item.role_id}'`)})  `;
 				console.log(sql);
-				let children =  await CharacterService.byMany(sql);
-				if(children.length>0){
-					res = res.map(item =>{
-						let a = children.find(_item => _item.roleid === item.role_id);
-						return {...item, ...a};
-					});
+				if(res.map(item => `'${item.role_id}'`).length !== 0){
+					let children =  await CharacterService.byMany(sql);
+					if(children.length>0){
+						res = res.map(item =>{
+							let a = children.find(_item => _item.roleid === item.role_id);
+							return {...item, ...a};
+						});
+					}
 				}
+				
 			
 			}
 		}

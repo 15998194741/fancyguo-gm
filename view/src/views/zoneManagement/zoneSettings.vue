@@ -281,7 +281,7 @@
               <el-option label="维护" value="3"></el-option>
             </el-select> 
             </span>
-            <span v-else :key="scope.row.id" style="width:50px;" @dblclick="showStatusChange(scope.$index,scope.row)"> {{ scope.row.display|display }} </span>
+            <span v-else :key="scope.row.id" style="width:50px;" > {{ scope.row.display|display }} </span>
              </template>
         </el-table-column>
         <el-table-column   label="负载状态">
@@ -1927,8 +1927,8 @@ export default {
       let allTrue = data.every(a=> a.status === 'fulfilled');
       if (allTrue) {
         this.$message.success('区服批量创建成功~ ');
-        this.filterFormChange('flush');
         this.serverCreatedialogFormVisibleAllTrue = false;
+        this.filterFormChange('flush');
         close(this);
         return;
 
@@ -2778,6 +2778,8 @@ export default {
     async setClientShow() {
       let sendtrue = this.allselectchange.some(a => +a.stopshow !== 0);
       if (sendtrue) {this.$message.warning('处于审核中与审核未通过的区服不可设置可见~'); return;}
+      sendtrue = this.allselectchange.some(a => +a.clientshow !== 0);
+      if (sendtrue) {this.$message.warning('已经可见了，不可再设置~'); return;}
       sendtrue = await secondConfirmation(this, `是否确认将 ${this.allselectchange.map(a => `【${a.serverid} ` + ` ${a.servername}】`)}设置为可见？`);
       if (!sendtrue) {return;}
       loading(this);

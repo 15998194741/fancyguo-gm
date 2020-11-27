@@ -8,8 +8,8 @@ var tabConf;
 const mongoose = require('./mongo-config.js');
 import cache from './redis-config.js';
 // const cache = require('../utils/cache-utils');
-// var conStr = 'postgres://postgres:Ll789456@123.57.86.38:5432/xiaolu';
-var conStr = 'postgres://postgres:Ll789456@127.0.0.1:5432/xiaolu';
+var conStr = 'postgres://postgres:Ll789456@123.57.86.38:5432/xiaolu';
+// var conStr = 'postgres://postgres:Ll789456@127.0.0.1:5432/xiaolu';
 var pgOpt = require('pg');
 var client = new pgOpt.Client(conStr);
 // console.log(tabConf);
@@ -33,8 +33,8 @@ function connectPgWithoutPool() {
 }
 
 function addJsons(name, datas) {
-	// var conStr = 'postgres://postgres:Ll789456@123.57.86.38:5432/xiaolu';
-	var conStr = 'postgres://postgres:Ll789456@127.0.0.1:5432/xiaolu';
+	var conStr = 'postgres://postgres:Ll789456@123.57.86.38:5432/xiaolu';
+	// var conStr = 'postgres://postgres:Ll789456@127.0.0.1:5432/xiaolu';
 	var pgOpt = require('pg');
 	var client = new pgOpt.Client(conStr);
 	client.connect(function (isErr) {
