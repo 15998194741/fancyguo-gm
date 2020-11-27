@@ -14,7 +14,6 @@ export default async (ctx, next) => {
 		'/api/server/download',
 		'/api/server/upload',
 		'/api/user/token',
-		'/api/user/permission'
 	];
 	if(jump.some(a=> a===ctx.url)){
 		return next();
@@ -79,7 +78,7 @@ oHiLOo285vG5ZtmXiY58tAiPVQXa7eU8hPQHTHWa9qp6
 		console.log(e);
 		let {message} =e;
 		console.log(message);
-		throw {code:590, message:'你没有该系统使用权限'};
+		// throw {code:590, message:'你没有该系统使用权限'};
 	}
 	if ( token === undefined ) {
 		throw {code:500, message:'权限异常'};
