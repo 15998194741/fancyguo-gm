@@ -310,3 +310,57 @@ err message: 你没有该系统使用权限
 err stack: undefined
 *************** error log end ***************
 
+[2020-11-27T14:43:49.087] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/backpack/queryServer?roleid=1
+request client ip:  ::ffff:127.0.0.1
+request query:  {"roleid":"1","gameid":"1"}
+response time: 1606459429086
+err name: TypeError
+err message: Cannot read property 'ip' of null
+err stack: TypeError: Cannot read property 'ip' of null
+    at _callee$ (H:\致命代码\fancyguo-gm\server\src\app\service\/backpack.js:18:15)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+*************** error log end ***************
+
+[2020-11-27T14:48:01.360] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/backpack/queryServer?roleid=123
+request client ip:  ::ffff:127.0.0.1
+request query:  {"roleid":"123","gameid":"1"}
+response time: 1606459681360
+err name: TypeError
+err message: Cannot read property 'ip' of null
+err stack: TypeError: Cannot read property 'ip' of null
+    at _callee$ (H:\致命代码\fancyguo-gm\server\src\app\service\/backpack.js:17:15)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+*************** error log end ***************
+
+[2020-11-27T14:48:01.470] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/backpack/queryServer?roleid=123
+request client ip:  ::ffff:127.0.0.1
+request query:  {"roleid":"123","gameid":"1"}
+response time: 1606459681470
+err name: TypeError
+err message: Cannot read property 'ip' of null
+err stack: TypeError: Cannot read property 'ip' of null
+    at _callee$ (H:\致命代码\fancyguo-gm\server\src\app\service\/backpack.js:17:15)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+*************** error log end ***************
+
