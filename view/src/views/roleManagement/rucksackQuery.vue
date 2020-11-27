@@ -11,8 +11,6 @@
   <div class="role-container-search">
     <div class="server-container">
       角色ID：
-      <el-input v-model="filterForm.serverid" placeholder="请输入区服ID" size='small' class="input-with-select">
-      </el-input>
       <el-input v-model="filterForm.roleid" placeholder="请输入角色ID" size='small' class="input-with-select">
       </el-input>
       <el-button slot="append" icon="el-icon-search" size='small' class="button-with-select" name='truesearch' @click="filterFormChange('click')">
@@ -420,12 +418,12 @@ export default {
       margin-left: -5px;
       border-radius: 30px 0 0 30px;
 
-      // input {
-      //   border-radius: 30px 0 0 30px;
-      // }
       input {
-        border-radius: 0;
+        border-radius: 30px 0 0 30px;
       }
+      // input {
+      //   border-radius: 0;
+      // }
     }
     .comprehensive-container .select-item {
       margin-left: 10px;

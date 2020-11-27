@@ -364,3 +364,41 @@ err stack: TypeError: Cannot read property 'ip' of null
     at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
 *************** error log end ***************
 
+[2020-11-27T14:51:18.664] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/backpack/BackPackRecycle
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"value":[{"articleName":"金币","articleId":5000000,"articleAmount":17678,"articleClass":"货币","recycleAmount":17678},{"articleName":"序列项链","articleId":260030011,"articleAmount":8,"articleClass":"装备","recycleAmount":8},{"articleName":"序列长裤","articleId":220030011,"articleAmount":3,"articleClass":"装备","recycleAmount":3},{"articleName":"序列手套","articleId":230030011,"articleAmount":3,"articleClass":"装备","recycleAmount":3},{"articleName":"序列上衣","articleId":210030011,"articleAmount":1,"articleClass":"装备","recycleAmount":1},{"articleName":"序列头盔","articleId":250030011,"articleAmount":1,"articleClass":"装备","recycleAmount":1},{"articleName":"序列太刀","articleId":310030011,"articleAmount":1,"articleClass":"武器","recycleAmount":1}],"roleid":"399991","gameid":"1"}
+response time: 1606459878664
+err name: TypeError
+err message: Cannot read property 'ip' of null
+err stack: TypeError: Cannot read property 'ip' of null
+    at _callee3$ (H:\致命代码\fancyguo-gm\server\src\app\service\/backpack.js:70:15)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+*************** error log end ***************
+
+[2020-11-27T14:51:34.129] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/backpack/BackPackRecycle
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"value":[{"articleName":"金币","articleId":5000000,"articleAmount":17678,"articleClass":"货币","recycleAmount":17678},{"articleName":"序列项链","articleId":260030011,"articleAmount":8,"articleClass":"装备","recycleAmount":8},{"articleName":"序列长裤","articleId":220030011,"articleAmount":3,"articleClass":"装备","recycleAmount":3},{"articleName":"序列手套","articleId":230030011,"articleAmount":3,"articleClass":"装备","recycleAmount":3},{"articleName":"序列上衣","articleId":210030011,"articleAmount":1,"articleClass":"装备","recycleAmount":1},{"articleName":"序列头盔","articleId":250030011,"articleAmount":1,"articleClass":"装备","recycleAmount":1},{"articleName":"序列太刀","articleId":310030011,"articleAmount":1,"articleClass":"武器","recycleAmount":1}],"roleid":"399991","gameid":"1"}
+response time: 1606459894129
+err name: TypeError
+err message: Cannot read property 'ip' of null
+err stack: TypeError: Cannot read property 'ip' of null
+    at _callee3$ (H:\致命代码\fancyguo-gm\server\src\app\service\/backpack.js:70:15)
+    at tryCatch (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (H:\致命代码\fancyguo-gm\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (H:\致命代码\fancyguo-gm\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+*************** error log end ***************
+
