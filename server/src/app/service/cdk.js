@@ -36,7 +36,7 @@ class CDKService{
 	}
 	async cdkOnly(data){
 		let {cdkkey, id} =data;
-		await mongodb.create(cdkkey, {'key':'String',
+		await mongodb.create(String(cdkkey), {'key':'String',
 			'isUse':'Boolean',
 			'roleid':'String',
 			'plaform':'String',

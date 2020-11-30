@@ -8,7 +8,8 @@
 <script>
 // 引入 js-cookie 库
 import Cookies from 'js-cookie';
-import layx from 'vue-layx';
+import game from './views/telephone/index';
+// import layx from 'vue-layx';
 export default {
   name: 'App',
   data() {
@@ -93,7 +94,31 @@ export default {
       } 
     }
     browserRedirect();
-    layx.html('str', '欢迎你', 'hello阿');
+    let icon = '<svg t="1606553020615" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5100" width="20" height="20"><path d="M892.773889 977.742273a381.747979 381.747979 0 0 0-232.749406-349.124108 389.538754 389.538754 0 0 0-48.692344-16.555398 314.065621 314.065621 0 0 0 122.704707-520.034236 314.065621 314.065621 0 1 0-323.317166 520.034236 374.444127 374.444127 0 0 0-48.692344 16.555398A379.800285 379.800285 0 0 0 131.225624 977.742273a40.901569 40.901569 0 0 0 12.173086 29.215407 45.28388 45.28388 0 0 0 33.597718 15.58155H847.003085a45.28388 45.28388 0 0 0 33.597718-15.58155 40.901569 40.901569 0 0 0 12.173086-29.215407z" fill="#5E5C5C" p-id="5101"></path></svg>';
+    let layerConfig = {
+      content: {
+        content: game, //传递的组件对象
+        parent: this, //当前的vue对象
+        data: {}//props
+      },
+      type: 2,
+      icon,
+      title: '调试者工具',
+      maxmin: true,
+      resize: false,
+      shadeClose: false,
+      shade: false,
+      btn: '确定',
+      area: ['807px', '485px'],
+      cancel: ()=>{//关闭事件
+        alert('关闭iframe');
+      }
+    };
+    let a = this.$layer.iframe(layerConfig);
+    // this.$layer.close(a);
+    console.log('layer', a);
+    console.log(this);
+    // layx.open(layxConfig);
     // document.addEventListener('contextmenu', event=>{
     //   this.menuVisible = false; // 先把模态框关死，目的是 第二次或者第n次右键鼠标的时候 它默认的是true
     //   this.menuVisible = true; // 显示模态窗口，跳出自定义菜单栏

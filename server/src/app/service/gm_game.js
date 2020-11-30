@@ -47,7 +47,7 @@ class gmGameService {
 		});
 		let {gameName, userId} = data;
 		let sql = `
-		with qwe as (insert into gm_game ( game_name,image_url,super_user_id) values('${gameName}','http://106.75.7.83/images/game/${filePath}','${userId}') RETURNING id ),
+		with qwe as (insert into gm_game ( game_name,image_url,super_user_id) values('${gameName}','http://${JSON.parse(process.env.gmconfig).serverip}/images/game/${filePath}','${userId}') RETURNING id ),
 		asd as (insert into gm_purview (uids,gid)values('[${userId}]',(select * from qwe )) returning id),
 		ert as (select * from 
 								(select id as purview_id, 1 as  joinnum  from asd ) a join 
@@ -88,7 +88,7 @@ class gmGameService {
 		// let res =await dbSequelize.query(sql);
 		// console.log(res);
 		let a = async ( file, id) =>{
-			let filePath = 'http://106.75.7.83/images/game/' + await this.fileUpload(file);
+			let filePath = `http://${JSON.parse(process.env.gmconfig).serverip}/images/game/` + await this.fileUpload(file);
 			let sql = `update gm_game set  image_url = '${filePath}'  where id ='${id}'::int;`;
 			return sql;
 		};

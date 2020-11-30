@@ -57,7 +57,7 @@ class GmAnnouncementService extends BaseService{
 		  const reader = fs.createReadStream(file.path);
 		  let a = `${new Date().getTime()}+${file.name}`;
 		  let filePath = path.join(__dirname, '../../images/anno/') + a;
-		  let fileWebUrl = 'http://106.75.7.83/images/anno/' + a;
+		  let fileWebUrl = `http://${JSON.parse(process.env.gmconfig).serverip}/images/anno/` + a;
 		  const upStream = fs.createWriteStream(filePath);
 		  reader.pipe(upStream);
 		  reader.on('end', async(err)=>{

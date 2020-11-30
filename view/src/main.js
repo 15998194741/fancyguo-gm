@@ -1,5 +1,8 @@
 import Vue from 'vue';
-console.log(11111111111);
+import layer from 'vue-layer';
+import 'vue-layer/lib/vue-layer.css';
+Vue.prototype.$layer = layer(Vue);
+
 // import 'normalize.css/normalize.css'; // A modern alternative to CSS resets
 // import 'element-ui/lib/theme-chalk/index.css';
 import ElementUI from 'element-ui';
@@ -15,7 +18,7 @@ import '@/styles/index.scss'; // global css
 import App from './App';
 import store from './store';
 import router from './router';
-console.log('router: ', router);
+// console.log('router: ', router);
 // import particles from 'particles.js';
 // Vue.use(particles);
 // import VueParticles from 'vue-particles';

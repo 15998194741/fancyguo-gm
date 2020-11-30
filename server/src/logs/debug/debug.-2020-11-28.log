@@ -1,0 +1,2067 @@
+[2020-11-28T14:02:08.462] [DEBUG] debugLogger - Executing (default): CREATE TABLE IF NOT EXISTS "gm_cdk_depot" ("id" INTEGER NOT NULL , "status" INTEGER DEFAULT 1, "create_user_id" INTEGER, "update_user_id" INTEGER, "create_time" TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP, "update_time" TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP, "cdkid" INTEGER, "value" VARCHAR(255), PRIMARY KEY ("id"));
+[2020-11-28T14:02:08.464] [DEBUG] debugLogger - Executing (default): CREATE TABLE IF NOT EXISTS "gm_cdk" ("id" INTEGER NOT NULL , "status" INTEGER DEFAULT 1, "create_user_id" INTEGER, "update_user_id" INTEGER, "create_time" TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP, "update_time" TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP, "cdkid" INTEGER, "name " VARCHAR(255), "platform" VARCHAR(255), "client" VARCHAR(255), "type" VARCHAR(255), "num" INTEGER, "start_time" TIMESTAMP WITH TIME ZONE, "end_time " TIMESTAMP WITH TIME ZONE, "content" VARCHAR(255), "game_id" INTEGER, PRIMARY KEY ("id"));
+[2020-11-28T14:02:08.466] [DEBUG] debugLogger - Executing (default): CREATE TABLE IF NOT EXISTS "gm_dict" ("id" INTEGER NOT NULL , "status" INTEGER DEFAULT 1, "create_user_id" INTEGER, "update_user_id" INTEGER, "create_time" TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP, "update_time" TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP, "code" VARCHAR(255), "desc" VARCHAR(255), "priority" VARCHAR(255), "values" VARCHAR(255)[], "gameid" INTEGER, PRIMARY KEY ("id"));
+[2020-11-28T14:02:08.466] [DEBUG] debugLogger - Executing (default): CREATE TABLE IF NOT EXISTS "gm_game" ("id" INTEGER NOT NULL , "status" INTEGER DEFAULT 1, "create_user_id" INTEGER, "update_user_id" INTEGER, "create_time" TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP, "update_time" TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP, "game_name" VARCHAR(255), "code" VARCHAR(255), PRIMARY KEY ("id"));
+[2020-11-28T14:02:08.469] [DEBUG] debugLogger - Executing (default): CREATE TABLE IF NOT EXISTS "gm_purview" ("id" INTEGER NOT NULL , "status" INTEGER DEFAULT 1, "create_user_id" INTEGER, "update_user_id" INTEGER, "create_time" TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP, "update_time" TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP, "uid" INTEGER, "gid" INTEGER, PRIMARY KEY ("id"));
+[2020-11-28T14:02:08.471] [DEBUG] debugLogger - Executing (default): CREATE TABLE IF NOT EXISTS "gm_smtp" ("id" INTEGER NOT NULL , "status" INTEGER DEFAULT 1, "create_user_id" INTEGER, "update_user_id" INTEGER, "create_time" TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP, "update_time" TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP, "smtp_id" VARCHAR(255), "title" VARCHAR(255), "platform" VARCHAR(255), "client" VARCHAR(255), "player" VARCHAR(255), "content" VARCHAR(255), "sendtime" TIMESTAMP WITH TIME ZONE, "annex" VARCHAR(255)[], "game_id" INTEGER, PRIMARY KEY ("id"));
+[2020-11-28T14:02:08.475] [DEBUG] debugLogger - Executing (default): CREATE TABLE IF NOT EXISTS "gm_url_purview" ("id" INTEGER NOT NULL , "status" INTEGER DEFAULT 1, "create_user_id" INTEGER, "update_user_id" INTEGER, "create_time" TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP, "update_time" TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP, "purview_id" INTEGER, "url_id" INTEGER, "grede" INTEGER, PRIMARY KEY ("id"));
+[2020-11-28T14:02:08.476] [DEBUG] debugLogger - Executing (default): CREATE TABLE IF NOT EXISTS "gm_url" ("id" INTEGER NOT NULL , "status" INTEGER DEFAULT 1, "create_user_id" INTEGER, "update_user_id" INTEGER, "create_time" TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP, "update_time" TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP, "purview" VARCHAR(255), "url" VARCHAR(255), "pid" INTEGER, "name" VARCHAR(255), "priority" INTEGER, PRIMARY KEY ("id"));
+[2020-11-28T14:02:08.477] [DEBUG] debugLogger - Executing (default): CREATE TABLE IF NOT EXISTS "gm_user" ("status" INTEGER NOT NULL DEFAULT 1 , "create_user_id" INTEGER, "update_user_id" INTEGER, "create_time" TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP, "update_time" TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP, "username" VARCHAR(255), "password" VARCHAR(255), "nick_name" VARCHAR(255), "avatar" VARCHAR(255), "email" VARCHAR(255), "source" INTEGER NOT NULL DEFAULT 1, "alias" VARCHAR(255), "phone" VARCHAR(255), "wechat_user_id" VARCHAR(255), "id" INTEGER NOT NULL, PRIMARY KEY ("status"));
+[2020-11-28T14:02:08.479] [DEBUG] debugLogger - Executing (default): CREATE TABLE IF NOT EXISTS "gm_server" ("id"  SERIAL , "status" INTEGER DEFAULT 1, "create_user_id" INTEGER, "update_user_id" INTEGER, "create_time" TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP, "update_time" TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP, "servername" VARCHAR(255), "ip" VARCHAR(255), "address" VARCHAR(255), "plaform" VARCHAR(255), "display" VARCHAR(255), "srttime" TIMESTAMP WITH TIME ZONE, "channel" VARCHAR(255)[], "gamename" VARCHAR(255), "pid" VARCHAR(255), "serverid" VARCHAR(255), "test" VARCHAR(255), "load" VARCHAR(255), "gameid" INTEGER, PRIMARY KEY ("id"));
+[2020-11-28T14:02:08.479] [DEBUG] debugLogger - Executing (default): CREATE TABLE IF NOT EXISTS "auth_user" ("id"   SERIAL , "username" VARCHAR(255) NOT NULL, "password" VARCHAR(255) NOT NULL, "source" VARCHAR(255), "nick_name" VARCHAR(255), "status" VARCHAR(255), "version" VARCHAR(255), "create_time" TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP, "update_time" TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP, PRIMARY KEY ("id"));
+[2020-11-28T14:02:08.481] [DEBUG] debugLogger - Executing (default): SELECT i.relname AS name, ix.indisprimary AS primary, ix.indisunique AS unique, ix.indkey AS indkey, array_agg(a.attnum) as column_indexes, array_agg(a.attname) AS column_names, pg_get_indexdef(ix.indexrelid) AS definition FROM pg_class t, pg_class i, pg_index ix, pg_attribute a WHERE t.oid = ix.indrelid AND i.oid = ix.indexrelid AND a.attrelid = t.oid AND t.relkind = 'r' and t.relname = 'gm_cdk_depot' GROUP BY i.relname, ix.indexrelid, ix.indisprimary, ix.indisunique, ix.indkey ORDER BY i.relname;
+[2020-11-28T14:02:08.482] [DEBUG] debugLogger - Executing (default): SELECT i.relname AS name, ix.indisprimary AS primary, ix.indisunique AS unique, ix.indkey AS indkey, array_agg(a.attnum) as column_indexes, array_agg(a.attname) AS column_names, pg_get_indexdef(ix.indexrelid) AS definition FROM pg_class t, pg_class i, pg_index ix, pg_attribute a WHERE t.oid = ix.indrelid AND i.oid = ix.indexrelid AND a.attrelid = t.oid AND t.relkind = 'r' and t.relname = 'gm_cdk' GROUP BY i.relname, ix.indexrelid, ix.indisprimary, ix.indisunique, ix.indkey ORDER BY i.relname;
+[2020-11-28T14:02:08.483] [DEBUG] debugLogger - Executing (default): SELECT i.relname AS name, ix.indisprimary AS primary, ix.indisunique AS unique, ix.indkey AS indkey, array_agg(a.attnum) as column_indexes, array_agg(a.attname) AS column_names, pg_get_indexdef(ix.indexrelid) AS definition FROM pg_class t, pg_class i, pg_index ix, pg_attribute a WHERE t.oid = ix.indrelid AND i.oid = ix.indexrelid AND a.attrelid = t.oid AND t.relkind = 'r' and t.relname = 'gm_dict' GROUP BY i.relname, ix.indexrelid, ix.indisprimary, ix.indisunique, ix.indkey ORDER BY i.relname;
+[2020-11-28T14:02:08.485] [DEBUG] debugLogger - Executing (default): SELECT i.relname AS name, ix.indisprimary AS primary, ix.indisunique AS unique, ix.indkey AS indkey, array_agg(a.attnum) as column_indexes, array_agg(a.attname) AS column_names, pg_get_indexdef(ix.indexrelid) AS definition FROM pg_class t, pg_class i, pg_index ix, pg_attribute a WHERE t.oid = ix.indrelid AND i.oid = ix.indexrelid AND a.attrelid = t.oid AND t.relkind = 'r' and t.relname = 'gm_game' GROUP BY i.relname, ix.indexrelid, ix.indisprimary, ix.indisunique, ix.indkey ORDER BY i.relname;
+[2020-11-28T14:02:08.488] [DEBUG] debugLogger - Executing (default): SELECT i.relname AS name, ix.indisprimary AS primary, ix.indisunique AS unique, ix.indkey AS indkey, array_agg(a.attnum) as column_indexes, array_agg(a.attname) AS column_names, pg_get_indexdef(ix.indexrelid) AS definition FROM pg_class t, pg_class i, pg_index ix, pg_attribute a WHERE t.oid = ix.indrelid AND i.oid = ix.indexrelid AND a.attrelid = t.oid AND t.relkind = 'r' and t.relname = 'gm_purview' GROUP BY i.relname, ix.indexrelid, ix.indisprimary, ix.indisunique, ix.indkey ORDER BY i.relname;
+[2020-11-28T14:02:08.492] [DEBUG] debugLogger - Executing (default): SELECT i.relname AS name, ix.indisprimary AS primary, ix.indisunique AS unique, ix.indkey AS indkey, array_agg(a.attnum) as column_indexes, array_agg(a.attname) AS column_names, pg_get_indexdef(ix.indexrelid) AS definition FROM pg_class t, pg_class i, pg_index ix, pg_attribute a WHERE t.oid = ix.indrelid AND i.oid = ix.indexrelid AND a.attrelid = t.oid AND t.relkind = 'r' and t.relname = 'gm_smtp' GROUP BY i.relname, ix.indexrelid, ix.indisprimary, ix.indisunique, ix.indkey ORDER BY i.relname;
+[2020-11-28T14:02:08.494] [DEBUG] debugLogger - Executing (default): SELECT i.relname AS name, ix.indisprimary AS primary, ix.indisunique AS unique, ix.indkey AS indkey, array_agg(a.attnum) as column_indexes, array_agg(a.attname) AS column_names, pg_get_indexdef(ix.indexrelid) AS definition FROM pg_class t, pg_class i, pg_index ix, pg_attribute a WHERE t.oid = ix.indrelid AND i.oid = ix.indexrelid AND a.attrelid = t.oid AND t.relkind = 'r' and t.relname = 'gm_url_purview' GROUP BY i.relname, ix.indexrelid, ix.indisprimary, ix.indisunique, ix.indkey ORDER BY i.relname;
+[2020-11-28T14:02:08.495] [DEBUG] debugLogger - Executing (default): SELECT i.relname AS name, ix.indisprimary AS primary, ix.indisunique AS unique, ix.indkey AS indkey, array_agg(a.attnum) as column_indexes, array_agg(a.attname) AS column_names, pg_get_indexdef(ix.indexrelid) AS definition FROM pg_class t, pg_class i, pg_index ix, pg_attribute a WHERE t.oid = ix.indrelid AND i.oid = ix.indexrelid AND a.attrelid = t.oid AND t.relkind = 'r' and t.relname = 'gm_url' GROUP BY i.relname, ix.indexrelid, ix.indisprimary, ix.indisunique, ix.indkey ORDER BY i.relname;
+[2020-11-28T14:02:08.501] [DEBUG] debugLogger - Executing (default): SELECT i.relname AS name, ix.indisprimary AS primary, ix.indisunique AS unique, ix.indkey AS indkey, array_agg(a.attnum) as column_indexes, array_agg(a.attname) AS column_names, pg_get_indexdef(ix.indexrelid) AS definition FROM pg_class t, pg_class i, pg_index ix, pg_attribute a WHERE t.oid = ix.indrelid AND i.oid = ix.indexrelid AND a.attrelid = t.oid AND t.relkind = 'r' and t.relname = 'gm_user' GROUP BY i.relname, ix.indexrelid, ix.indisprimary, ix.indisunique, ix.indkey ORDER BY i.relname;
+[2020-11-28T14:02:08.504] [DEBUG] debugLogger - Executing (default): SELECT i.relname AS name, ix.indisprimary AS primary, ix.indisunique AS unique, ix.indkey AS indkey, array_agg(a.attnum) as column_indexes, array_agg(a.attname) AS column_names, pg_get_indexdef(ix.indexrelid) AS definition FROM pg_class t, pg_class i, pg_index ix, pg_attribute a WHERE t.oid = ix.indrelid AND i.oid = ix.indexrelid AND a.attrelid = t.oid AND t.relkind = 'r' and t.relname = 'gm_server' GROUP BY i.relname, ix.indexrelid, ix.indisprimary, ix.indisunique, ix.indkey ORDER BY i.relname;
+[2020-11-28T14:02:08.505] [DEBUG] debugLogger - Executing (default): SELECT i.relname AS name, ix.indisprimary AS primary, ix.indisunique AS unique, ix.indkey AS indkey, array_agg(a.attnum) as column_indexes, array_agg(a.attname) AS column_names, pg_get_indexdef(ix.indexrelid) AS definition FROM pg_class t, pg_class i, pg_index ix, pg_attribute a WHERE t.oid = ix.indrelid AND i.oid = ix.indexrelid AND a.attrelid = t.oid AND t.relkind = 'r' and t.relname = 'auth_user' GROUP BY i.relname, ix.indexrelid, ix.indisprimary, ix.indisunique, ix.indkey ORDER BY i.relname;
+[2020-11-28T14:03:29.731] [DEBUG] debugLogger - Executing (default): select * from auth_user where username = 'zhangzongchu' and password = md5(encode('281317', 'BASE64'))
+[2020-11-28T14:03:29.871] [DEBUG] debugLogger - Executing (default): with qwe as (select   jsonb_array_elements_text(uids) as id  from gm_purview   ),
+asd as (select a.* from gm_user a  where a.username = 'zhangzongchu')
+select * from asd where id::varchar in (select id from qwe GROUP BY id )
+[2020-11-28T14:03:29.942] [DEBUG] debugLogger - Executing (default): select a.id,a.game_name ,a.image_url as img from gm_game a join gm_purview b on b.gid = a.id where b.uids @> '79' and a.status = '1'  and b.status = '1'   limit 1
+[2020-11-28T14:03:29.949] [DEBUG] debugLogger - Executing (default): with qwe as (select a.url,a.pid,a.name,d.game_name,d.id as gameid, a.id,b.grede , b.purview_id,c.uid,c.gid from gm_url a join gm_url_purview  b on  a.id = b.url_id  join gm_purview c on c.id = b.purview_id join gm_game d on d.id = c.gid where  c.uids @> '79' and d.id = '1' and d.status = 1 and b.grede != 827 and c.status = 1  and a.status = 1 order by id ),
+					qwer as (select * from qwe a where (select count(*) > 1 from qwe b where b.id = a.id )),
+					asd as (select * from qwe a where (select count(*) =  1 from qwe b where b.id = a.id )),
+					zxc as (select * from qwer where grede = '1'),
+					wer as (select * from qwer where id not in (select id from zxc )
+					union 
+					select * from qwer where id not in (select id from zxc )),
+					sdf as (select url,pid,name,gameid,grede,id from asd 
+					union 
+					select url,pid,name,gameid,grede,id from zxc 
+					union 
+					select url,pid,name,gameid,grede,id from wer ),
+					ewq as (select * from sdf ORDER BY id )
+					select name,(select json_agg(concat('{"url":"',url,'","name":"',name,'","meta":"',grede,'"}')::jsonb) from ewq  where ewq.pid = d.id) as children from ewq as d where pid = 0 ORDER BY d.id
+[2020-11-28T14:03:29.960] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(game_name, ','), ',')  as games from (
+			select  DISTINCT game_name,b.id from gm_purview a join gm_game b on a.gid = b.id  where uids @> '79' and b.status = '1' and a.status = '1'   ORDER BY id 
+		) a
+[2020-11-28T14:03:32.931] [DEBUG] debugLogger - Executing (default): select cdkid from gm_cdk where game_id = 1 and type = '1'
+[2020-11-28T14:03:32.943] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(channel, ','), ',')  as values  from gm_game_channel where gameid = '1' and status = '1'
+[2020-11-28T14:03:33.307] [DEBUG] debugLogger - Executing (default): with asd as (select (jsonb_array_elements(annex) ->> 'annexName')::jsonb ->> 1  as name, jsonb_array_elements(annex) ->> 'annexNumber' as numbers ,id  from  gm_cdk),
+		dsa as (select  asd.id, string_to_array(string_agg(concat(art.name,'  ',asd.numbers,'个'),','),',')  as annexs  from asd  left join gm_article art on art.article_id = asd.name GROUP BY asd.id ),
+	sda as (select cdk.*,dsa.annexs   from dsa left join  gm_cdk cdk on dsa.id = cdk.id where cdk.game_id='1' and cdk.status = 1     limit 10 offset 0   ),
+	pla as (select  jsonb_array_elements(plaform) as plaform ,id from gm_cdk  where id in (select id from sda)),
+	pls as (select id,string_to_array(string_agg((case 
+	when pla.plaform = '"1"' then '安卓'
+	when pla.plaform = '"2"' then '苹果'
+	end),','),',') as plaforms  from pla  GROUP BY pla.id)
+	select  sda.*,pls.plaforms ,(case 
+		when sda.type = '1' then '唯一'
+		when sda.type = '2' then '互斥'
+		when sda.type = '3' then '通用'
+		end
+		) as types  from sda left JOIN pls on pls.id=sda.id  ORDER BY id desc
+[2020-11-28T14:03:33.319] [DEBUG] debugLogger - Executing (default): select count(id) as total  from gm_cdk cdk where cdk.game_id='1' and cdk.status = 1
+[2020-11-28T14:03:35.188] [DEBUG] debugLogger - Executing (default): select classification as label , classification as value from gm_article where gameid =1 GROUP BY classification
+[2020-11-28T14:03:35.493] [DEBUG] debugLogger - Executing (default): select name as label , article_id as value  , TRUE as leaf  from gm_article where gameid =1 and classification = 'undefined'
+[2020-11-28T14:03:48.146] [DEBUG] debugLogger - Executing (default): select name as label , article_id as value  , TRUE as leaf  from gm_article where gameid =1 and classification = '特殊道具'
+[2020-11-28T14:03:48.542] [DEBUG] debugLogger - Executing (default): select name as label , article_id as value  , TRUE as leaf  from gm_article where gameid =1 and classification = '6阶装备'
+[2020-11-28T14:03:49.707] [DEBUG] debugLogger - Executing (default): select name as label , article_id as value  , TRUE as leaf  from gm_article where gameid =1 and classification = '1-4阶装备'
+[2020-11-28T14:03:51.732] [DEBUG] debugLogger - Executing (default): INSERT into gm_cdk  
+		 ( "name",type ,num,plaform,channel,start_time,end_time,content,title,game_id,annex)
+		 values
+		 ('123','1','1','["1"]','["测试渠道二渠道"]','Sat, 28 Nov 2020 14:03:43 GMT','Sat, 05 Dec 2020 00:00:00 GMT','12','1',1,'[{"annexName":["特殊道具","9002"],"annexNumber":12,"id":0}]') returning id
+[2020-11-28T14:03:51.757] [DEBUG] debugLogger - Executing (default): INSERT into gm_logs 
+				(user_id,ip,nick_name,instructions,classification,"text",game_id,alias,kwargs)
+				VALUES
+				('79','127.0.0.1','','CDK生成','CDK管理','生成了1个唯一CDK。','1','长澜月','{"name":"123","type":"1","cdkkey":111,"quantity":1,"plaform":["1"],"channel":["测试渠道二渠道"],"takeEffectTime":"2020-11-28T06:03:43.000Z","failureTime":"2020-12-04T16:00:00.000Z","title":"1","text":"12","annexList":[{"annexName":["特殊道具","9002"],"annexNumber":12,"id":0}],"gameid":"1"}')
+[2020-11-28T14:03:51.767] [DEBUG] debugLogger - Executing (default): update  gm_cdk set cdkid = '111' where id =  156
+[2020-11-28T14:03:52.180] [DEBUG] debugLogger - Executing (default): with asd as (select (jsonb_array_elements(annex) ->> 'annexName')::jsonb ->> 1  as name, jsonb_array_elements(annex) ->> 'annexNumber' as numbers ,id  from  gm_cdk),
+		dsa as (select  asd.id, string_to_array(string_agg(concat(art.name,'  ',asd.numbers,'个'),','),',')  as annexs  from asd  left join gm_article art on art.article_id = asd.name GROUP BY asd.id ),
+	sda as (select cdk.*,dsa.annexs   from dsa left join  gm_cdk cdk on dsa.id = cdk.id where cdk.game_id='1' and cdk.status = 1     limit 10 offset 0   ),
+	pla as (select  jsonb_array_elements(plaform) as plaform ,id from gm_cdk  where id in (select id from sda)),
+	pls as (select id,string_to_array(string_agg((case 
+	when pla.plaform = '"1"' then '安卓'
+	when pla.plaform = '"2"' then '苹果'
+	end),','),',') as plaforms  from pla  GROUP BY pla.id)
+	select  sda.*,pls.plaforms ,(case 
+		when sda.type = '1' then '唯一'
+		when sda.type = '2' then '互斥'
+		when sda.type = '3' then '通用'
+		end
+		) as types  from sda left JOIN pls on pls.id=sda.id  ORDER BY id desc
+[2020-11-28T14:03:52.195] [DEBUG] debugLogger - Executing (default): select count(id) as total  from gm_cdk cdk where cdk.game_id='1' and cdk.status = 1
+[2020-11-28T14:48:50.193] [DEBUG] debugLogger - Executing (default): select * from auth_user where username = 'zhangzongchu' and password = md5(encode('281317', 'BASE64'))
+[2020-11-28T14:48:50.271] [DEBUG] debugLogger - Executing (default): with qwe as (select   jsonb_array_elements_text(uids) as id  from gm_purview   ),
+asd as (select a.* from gm_user a  where a.username = 'zhangzongchu')
+select * from asd where id::varchar in (select id from qwe GROUP BY id )
+[2020-11-28T14:48:50.420] [DEBUG] debugLogger - Executing (default): select a.id,a.game_name ,a.image_url as img from gm_game a join gm_purview b on b.gid = a.id where b.uids @> '79' and a.status = '1'  and b.status = '1'   limit 1
+[2020-11-28T14:48:50.429] [DEBUG] debugLogger - Executing (default): with qwe as (select a.url,a.pid,a.name,d.game_name,d.id as gameid, a.id,b.grede , b.purview_id,c.uid,c.gid from gm_url a join gm_url_purview  b on  a.id = b.url_id  join gm_purview c on c.id = b.purview_id join gm_game d on d.id = c.gid where  c.uids @> '79' and d.id = '1' and d.status = 1 and b.grede != 827 and c.status = 1  and a.status = 1 order by id ),
+					qwer as (select * from qwe a where (select count(*) > 1 from qwe b where b.id = a.id )),
+					asd as (select * from qwe a where (select count(*) =  1 from qwe b where b.id = a.id )),
+					zxc as (select * from qwer where grede = '1'),
+					wer as (select * from qwer where id not in (select id from zxc )
+					union 
+					select * from qwer where id not in (select id from zxc )),
+					sdf as (select url,pid,name,gameid,grede,id from asd 
+					union 
+					select url,pid,name,gameid,grede,id from zxc 
+					union 
+					select url,pid,name,gameid,grede,id from wer ),
+					ewq as (select * from sdf ORDER BY id )
+					select name,(select json_agg(concat('{"url":"',url,'","name":"',name,'","meta":"',grede,'"}')::jsonb) from ewq  where ewq.pid = d.id) as children from ewq as d where pid = 0 ORDER BY d.id
+[2020-11-28T14:48:50.442] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(game_name, ','), ',')  as games from (
+			select  DISTINCT game_name,b.id from gm_purview a join gm_game b on a.gid = b.id  where uids @> '79' and b.status = '1' and a.status = '1'   ORDER BY id 
+		) a
+[2020-11-28T14:48:53.478] [DEBUG] debugLogger - Executing (default): select cdkid from gm_cdk where game_id = 1 and type = '1'
+[2020-11-28T14:48:53.493] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(channel, ','), ',')  as values  from gm_game_channel where gameid = '1' and status = '1'
+[2020-11-28T14:48:53.847] [DEBUG] debugLogger - Executing (default): with asd as (select (jsonb_array_elements(annex) ->> 'annexName')::jsonb ->> 1  as name, jsonb_array_elements(annex) ->> 'annexNumber' as numbers ,id  from  gm_cdk),
+		dsa as (select  asd.id, string_to_array(string_agg(concat(art.name,'  ',asd.numbers,'个'),','),',')  as annexs  from asd  left join gm_article art on art.article_id = asd.name GROUP BY asd.id ),
+	sda as (select cdk.*,dsa.annexs   from dsa left join  gm_cdk cdk on dsa.id = cdk.id where cdk.game_id='1' and cdk.status = 1     limit 10 offset 0   ),
+	pla as (select  jsonb_array_elements(plaform) as plaform ,id from gm_cdk  where id in (select id from sda)),
+	pls as (select id,string_to_array(string_agg((case 
+	when pla.plaform = '"1"' then '安卓'
+	when pla.plaform = '"2"' then '苹果'
+	end),','),',') as plaforms  from pla  GROUP BY pla.id)
+	select  sda.*,pls.plaforms ,(case 
+		when sda.type = '1' then '唯一'
+		when sda.type = '2' then '互斥'
+		when sda.type = '3' then '通用'
+		end
+		) as types  from sda left JOIN pls on pls.id=sda.id  ORDER BY id desc
+[2020-11-28T14:48:53.860] [DEBUG] debugLogger - Executing (default): select count(id) as total  from gm_cdk cdk where cdk.game_id='1' and cdk.status = 1
+[2020-11-28T14:48:55.166] [DEBUG] debugLogger - Executing (default): select classification as label , classification as value from gm_article where gameid =1 GROUP BY classification
+[2020-11-28T14:48:55.479] [DEBUG] debugLogger - Executing (default): select name as label , article_id as value  , TRUE as leaf  from gm_article where gameid =1 and classification = 'undefined'
+[2020-11-28T14:49:12.187] [DEBUG] debugLogger - Executing (default): select name as label , article_id as value  , TRUE as leaf  from gm_article where gameid =1 and classification = '特殊道具'
+[2020-11-28T14:49:12.542] [DEBUG] debugLogger - Executing (default): select name as label , article_id as value  , TRUE as leaf  from gm_article where gameid =1 and classification = '6阶装备'
+[2020-11-28T14:49:13.191] [DEBUG] debugLogger - Executing (default): select name as label , article_id as value  , TRUE as leaf  from gm_article where gameid =1 and classification = '1-4阶装备'
+[2020-11-28T14:49:14.796] [DEBUG] debugLogger - Executing (default): INSERT into gm_cdk  
+		 ( "name",type ,num,plaform,channel,start_time,end_time,content,title,game_id,annex)
+		 values
+		 ('123','1','1','["1"]','["测试渠道二渠道"]','Sat, 28 Nov 2020 14:49:08 GMT','Sat, 05 Dec 2020 00:00:00 GMT','123','123',1,'[{"annexName":["特殊道具","9001"],"annexNumber":1,"id":0}]') returning id
+[2020-11-28T14:49:14.809] [DEBUG] debugLogger - Executing (default): INSERT into gm_logs 
+				(user_id,ip,nick_name,instructions,classification,"text",game_id,alias,kwargs)
+				VALUES
+				('79','127.0.0.1','','CDK生成','CDK管理','生成了1个唯一CDK。','1','长澜月','{"name":"123","type":"1","cdkkey":1,"quantity":1,"plaform":["1"],"channel":["测试渠道二渠道"],"takeEffectTime":"2020-11-28T06:49:08.000Z","failureTime":"2020-12-04T16:00:00.000Z","title":"123","text":"123","annexList":[{"annexName":["特殊道具","9001"],"annexNumber":1,"id":0}],"gameid":"1"}')
+[2020-11-28T14:49:14.816] [DEBUG] debugLogger - Executing (default): update  gm_cdk set cdkid = '1' where id =  157
+[2020-11-28T14:49:15.216] [DEBUG] debugLogger - Executing (default): with asd as (select (jsonb_array_elements(annex) ->> 'annexName')::jsonb ->> 1  as name, jsonb_array_elements(annex) ->> 'annexNumber' as numbers ,id  from  gm_cdk),
+		dsa as (select  asd.id, string_to_array(string_agg(concat(art.name,'  ',asd.numbers,'个'),','),',')  as annexs  from asd  left join gm_article art on art.article_id = asd.name GROUP BY asd.id ),
+	sda as (select cdk.*,dsa.annexs   from dsa left join  gm_cdk cdk on dsa.id = cdk.id where cdk.game_id='1' and cdk.status = 1     limit 10 offset 0   ),
+	pla as (select  jsonb_array_elements(plaform) as plaform ,id from gm_cdk  where id in (select id from sda)),
+	pls as (select id,string_to_array(string_agg((case 
+	when pla.plaform = '"1"' then '安卓'
+	when pla.plaform = '"2"' then '苹果'
+	end),','),',') as plaforms  from pla  GROUP BY pla.id)
+	select  sda.*,pls.plaforms ,(case 
+		when sda.type = '1' then '唯一'
+		when sda.type = '2' then '互斥'
+		when sda.type = '3' then '通用'
+		end
+		) as types  from sda left JOIN pls on pls.id=sda.id  ORDER BY id desc
+[2020-11-28T14:49:15.228] [DEBUG] debugLogger - Executing (default): select count(id) as total  from gm_cdk cdk where cdk.game_id='1' and cdk.status = 1
+[2020-11-28T16:33:08.757] [DEBUG] debugLogger - Executing (default): select * from auth_user where username = 'zhangzongchu' and password = md5(encode('281317', 'BASE64'))
+[2020-11-28T16:33:08.838] [DEBUG] debugLogger - Executing (default): with qwe as (select   jsonb_array_elements_text(uids) as id  from gm_purview   ),
+asd as (select a.* from gm_user a  where a.username = 'zhangzongchu')
+select * from asd where id::varchar in (select id from qwe GROUP BY id )
+[2020-11-28T16:33:09.178] [DEBUG] debugLogger - Executing (default): select a.id,a.game_name ,a.image_url as img from gm_game a join gm_purview b on b.gid = a.id where b.uids @> '79' and a.status = '1'  and b.status = '1'   limit 1
+[2020-11-28T16:33:09.185] [DEBUG] debugLogger - Executing (default): with qwe as (select a.url,a.pid,a.name,d.game_name,d.id as gameid, a.id,b.grede , b.purview_id,c.uid,c.gid from gm_url a join gm_url_purview  b on  a.id = b.url_id  join gm_purview c on c.id = b.purview_id join gm_game d on d.id = c.gid where  c.uids @> '79' and d.id = '1' and d.status = 1 and b.grede != 827 and c.status = 1  and a.status = 1 order by id ),
+					qwer as (select * from qwe a where (select count(*) > 1 from qwe b where b.id = a.id )),
+					asd as (select * from qwe a where (select count(*) =  1 from qwe b where b.id = a.id )),
+					zxc as (select * from qwer where grede = '1'),
+					wer as (select * from qwer where id not in (select id from zxc )
+					union 
+					select * from qwer where id not in (select id from zxc )),
+					sdf as (select url,pid,name,gameid,grede,id from asd 
+					union 
+					select url,pid,name,gameid,grede,id from zxc 
+					union 
+					select url,pid,name,gameid,grede,id from wer ),
+					ewq as (select * from sdf ORDER BY id )
+					select name,(select json_agg(concat('{"url":"',url,'","name":"',name,'","meta":"',grede,'"}')::jsonb) from ewq  where ewq.pid = d.id) as children from ewq as d where pid = 0 ORDER BY d.id
+[2020-11-28T16:33:09.197] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(game_name, ','), ',')  as games from (
+			select  DISTINCT game_name,b.id from gm_purview a join gm_game b on a.gid = b.id  where uids @> '79' and b.status = '1' and a.status = '1'   ORDER BY id 
+		) a
+[2020-11-28T16:33:12.905] [DEBUG] debugLogger - Executing (default): select a.id,a.game_name ,a.image_url as img from gm_game a join gm_purview b on b.gid = a.id where b.uids @> '79' and a.status = '1'  and b.status = '1'   limit 1
+[2020-11-28T16:33:13.129] [DEBUG] debugLogger - Executing (default): with qwe as (select a.url,a.pid,a.name,d.game_name,d.id as gameid, a.id,b.grede , b.purview_id,c.uid,c.gid from gm_url a join gm_url_purview  b on  a.id = b.url_id  join gm_purview c on c.id = b.purview_id join gm_game d on d.id = c.gid where  c.uids @> '79' and d.id = '1' and d.status = 1 and b.grede != 827 and c.status = 1  and a.status = 1 order by id ),
+					qwer as (select * from qwe a where (select count(*) > 1 from qwe b where b.id = a.id )),
+					asd as (select * from qwe a where (select count(*) =  1 from qwe b where b.id = a.id )),
+					zxc as (select * from qwer where grede = '1'),
+					wer as (select * from qwer where id not in (select id from zxc )
+					union 
+					select * from qwer where id not in (select id from zxc )),
+					sdf as (select url,pid,name,gameid,grede,id from asd 
+					union 
+					select url,pid,name,gameid,grede,id from zxc 
+					union 
+					select url,pid,name,gameid,grede,id from wer ),
+					ewq as (select * from sdf ORDER BY id )
+					select name,(select json_agg(concat('{"url":"',url,'","name":"',name,'","meta":"',grede,'"}')::jsonb) from ewq  where ewq.pid = d.id) as children from ewq as d where pid = 0 ORDER BY d.id
+[2020-11-28T16:33:13.400] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(game_name, ','), ',')  as games from (
+			select  DISTINCT game_name,b.id from gm_purview a join gm_game b on a.gid = b.id  where uids @> '79' and b.status = '1' and a.status = '1'   ORDER BY id 
+		) a
+[2020-11-28T16:46:54.629] [DEBUG] debugLogger - Executing (default): select * from auth_user where username = 'zhangzongchu' and password = md5(encode('281317', 'BASE64'))
+[2020-11-28T16:46:55.537] [DEBUG] debugLogger - Executing (default): with qwe as (select   jsonb_array_elements_text(uids) as id  from gm_purview   ),
+asd as (select a.* from gm_user a  where a.username = 'zhangzongchu')
+select * from asd where id::varchar in (select id from qwe GROUP BY id )
+[2020-11-28T16:46:55.893] [DEBUG] debugLogger - Executing (default): select a.id,a.game_name ,a.image_url as img from gm_game a join gm_purview b on b.gid = a.id where b.uids @> '79' and a.status = '1'  and b.status = '1'   limit 1
+[2020-11-28T16:46:55.900] [DEBUG] debugLogger - Executing (default): with qwe as (select a.url,a.pid,a.name,d.game_name,d.id as gameid, a.id,b.grede , b.purview_id,c.uid,c.gid from gm_url a join gm_url_purview  b on  a.id = b.url_id  join gm_purview c on c.id = b.purview_id join gm_game d on d.id = c.gid where  c.uids @> '79' and d.id = '1' and d.status = 1 and b.grede != 827 and c.status = 1  and a.status = 1 order by id ),
+					qwer as (select * from qwe a where (select count(*) > 1 from qwe b where b.id = a.id )),
+					asd as (select * from qwe a where (select count(*) =  1 from qwe b where b.id = a.id )),
+					zxc as (select * from qwer where grede = '1'),
+					wer as (select * from qwer where id not in (select id from zxc )
+					union 
+					select * from qwer where id not in (select id from zxc )),
+					sdf as (select url,pid,name,gameid,grede,id from asd 
+					union 
+					select url,pid,name,gameid,grede,id from zxc 
+					union 
+					select url,pid,name,gameid,grede,id from wer ),
+					ewq as (select * from sdf ORDER BY id )
+					select name,(select json_agg(concat('{"url":"',url,'","name":"',name,'","meta":"',grede,'"}')::jsonb) from ewq  where ewq.pid = d.id) as children from ewq as d where pid = 0 ORDER BY d.id
+[2020-11-28T16:46:55.912] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(game_name, ','), ',')  as games from (
+			select  DISTINCT game_name,b.id from gm_purview a join gm_game b on a.gid = b.id  where uids @> '79' and b.status = '1' and a.status = '1'   ORDER BY id 
+		) a
+[2020-11-28T16:46:57.776] [DEBUG] debugLogger - Executing (default): SELECT id,super_user_id as userId,game_name as gamename ,image_url as url ,false as movehover FROM "gm_game"  where case when 5 = '1'::int then id != '5' else id = '1' end and status = '1'
+[2020-11-28T16:47:04.293] [DEBUG] debugLogger - Executing (default): SELECT id,super_user_id as userId,game_name as gamename ,image_url as url ,false as movehover FROM "gm_game"  where case when 5 = '1'::int then id != '5' else id = '1' end and status = '1'
+[2020-11-28T16:47:05.389] [DEBUG] debugLogger - Executing (default): select a.id,a.game_name ,a.image_url as img from gm_game a join gm_purview b on b.gid = a.id where b.uids @> '79' and a.status = '1'  and b.status = '1'   limit 1
+[2020-11-28T16:47:05.399] [DEBUG] debugLogger - Executing (default): with qwe as (select a.url,a.pid,a.name,d.game_name,d.id as gameid, a.id,b.grede , b.purview_id,c.uid,c.gid from gm_url a join gm_url_purview  b on  a.id = b.url_id  join gm_purview c on c.id = b.purview_id join gm_game d on d.id = c.gid where  c.uids @> '79' and d.id = '1' and d.status = 1 and b.grede != 827 and c.status = 1  and a.status = 1 order by id ),
+					qwer as (select * from qwe a where (select count(*) > 1 from qwe b where b.id = a.id )),
+					asd as (select * from qwe a where (select count(*) =  1 from qwe b where b.id = a.id )),
+					zxc as (select * from qwer where grede = '1'),
+					wer as (select * from qwer where id not in (select id from zxc )
+					union 
+					select * from qwer where id not in (select id from zxc )),
+					sdf as (select url,pid,name,gameid,grede,id from asd 
+					union 
+					select url,pid,name,gameid,grede,id from zxc 
+					union 
+					select url,pid,name,gameid,grede,id from wer ),
+					ewq as (select * from sdf ORDER BY id )
+					select name,(select json_agg(concat('{"url":"',url,'","name":"',name,'","meta":"',grede,'"}')::jsonb) from ewq  where ewq.pid = d.id) as children from ewq as d where pid = 0 ORDER BY d.id
+[2020-11-28T16:47:05.408] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(game_name, ','), ',')  as games from (
+			select  DISTINCT game_name,b.id from gm_purview a join gm_game b on a.gid = b.id  where uids @> '79' and b.status = '1' and a.status = '1'   ORDER BY id 
+		) a
+[2020-11-28T16:47:05.664] [DEBUG] debugLogger - Executing (default): SELECT id,super_user_id as userId,game_name as gamename ,image_url as url ,false as movehover FROM "gm_game"  where case when 5 = '1'::int then id != '5' else id = '1' end and status = '1'
+[2020-11-28T16:47:38.518] [DEBUG] debugLogger - Executing (default): SELECT id,super_user_id as userId,game_name as gamename ,image_url as url ,false as movehover FROM "gm_game"  where case when 5 = '1'::int then id != '5' else id = '1' end and status = '1'
+[2020-11-28T16:47:41.118] [DEBUG] debugLogger - Executing (default): select a.id,a.game_name ,a.image_url as img from gm_game a join gm_purview b on b.gid = a.id where b.uids @> '79' and a.status = '1'  and b.status = '1'   limit 1
+[2020-11-28T16:47:41.129] [DEBUG] debugLogger - Executing (default): with qwe as (select a.url,a.pid,a.name,d.game_name,d.id as gameid, a.id,b.grede , b.purview_id,c.uid,c.gid from gm_url a join gm_url_purview  b on  a.id = b.url_id  join gm_purview c on c.id = b.purview_id join gm_game d on d.id = c.gid where  c.uids @> '79' and d.id = '1' and d.status = 1 and b.grede != 827 and c.status = 1  and a.status = 1 order by id ),
+					qwer as (select * from qwe a where (select count(*) > 1 from qwe b where b.id = a.id )),
+					asd as (select * from qwe a where (select count(*) =  1 from qwe b where b.id = a.id )),
+					zxc as (select * from qwer where grede = '1'),
+					wer as (select * from qwer where id not in (select id from zxc )
+					union 
+					select * from qwer where id not in (select id from zxc )),
+					sdf as (select url,pid,name,gameid,grede,id from asd 
+					union 
+					select url,pid,name,gameid,grede,id from zxc 
+					union 
+					select url,pid,name,gameid,grede,id from wer ),
+					ewq as (select * from sdf ORDER BY id )
+					select name,(select json_agg(concat('{"url":"',url,'","name":"',name,'","meta":"',grede,'"}')::jsonb) from ewq  where ewq.pid = d.id) as children from ewq as d where pid = 0 ORDER BY d.id
+[2020-11-28T16:47:41.141] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(game_name, ','), ',')  as games from (
+			select  DISTINCT game_name,b.id from gm_purview a join gm_game b on a.gid = b.id  where uids @> '79' and b.status = '1' and a.status = '1'   ORDER BY id 
+		) a
+[2020-11-28T16:47:41.480] [DEBUG] debugLogger - Executing (default): SELECT id,super_user_id as userId,game_name as gamename ,image_url as url ,false as movehover FROM "gm_game"  where case when 5 = '1'::int then id != '5' else id = '1' end and status = '1'
+[2020-11-28T17:05:47.638] [DEBUG] debugLogger - Executing (default): select * from auth_user where username = 'zhangzongchu' and password = md5(encode('281317', 'BASE64'))
+[2020-11-28T17:05:47.720] [DEBUG] debugLogger - Executing (default): with qwe as (select   jsonb_array_elements_text(uids) as id  from gm_purview   ),
+asd as (select a.* from gm_user a  where a.username = 'zhangzongchu')
+select * from asd where id::varchar in (select id from qwe GROUP BY id )
+[2020-11-28T17:05:47.858] [DEBUG] debugLogger - Executing (default): select a.id,a.game_name ,a.image_url as img from gm_game a join gm_purview b on b.gid = a.id where b.uids @> '79' and a.status = '1'  and b.status = '1'   limit 1
+[2020-11-28T17:05:47.866] [DEBUG] debugLogger - Executing (default): with qwe as (select a.url,a.pid,a.name,d.game_name,d.id as gameid, a.id,b.grede , b.purview_id,c.uid,c.gid from gm_url a join gm_url_purview  b on  a.id = b.url_id  join gm_purview c on c.id = b.purview_id join gm_game d on d.id = c.gid where  c.uids @> '79' and d.id = '1' and d.status = 1 and b.grede != 827 and c.status = 1  and a.status = 1 order by id ),
+					qwer as (select * from qwe a where (select count(*) > 1 from qwe b where b.id = a.id )),
+					asd as (select * from qwe a where (select count(*) =  1 from qwe b where b.id = a.id )),
+					zxc as (select * from qwer where grede = '1'),
+					wer as (select * from qwer where id not in (select id from zxc )
+					union 
+					select * from qwer where id not in (select id from zxc )),
+					sdf as (select url,pid,name,gameid,grede,id from asd 
+					union 
+					select url,pid,name,gameid,grede,id from zxc 
+					union 
+					select url,pid,name,gameid,grede,id from wer ),
+					ewq as (select * from sdf ORDER BY id )
+					select name,(select json_agg(concat('{"url":"',url,'","name":"',name,'","meta":"',grede,'"}')::jsonb) from ewq  where ewq.pid = d.id) as children from ewq as d where pid = 0 ORDER BY d.id
+[2020-11-28T17:05:47.876] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(game_name, ','), ',')  as games from (
+			select  DISTINCT game_name,b.id from gm_purview a join gm_game b on a.gid = b.id  where uids @> '79' and b.status = '1' and a.status = '1'   ORDER BY id 
+		) a
+[2020-11-28T17:06:28.922] [DEBUG] debugLogger - Executing (default): select a.id,a.game_name ,a.image_url as img from gm_game a join gm_purview b on b.gid = a.id where b.uids @> '79' and a.status = '1'  and b.status = '1'   limit 1
+[2020-11-28T17:06:28.932] [DEBUG] debugLogger - Executing (default): with qwe as (select a.url,a.pid,a.name,d.game_name,d.id as gameid, a.id,b.grede , b.purview_id,c.uid,c.gid from gm_url a join gm_url_purview  b on  a.id = b.url_id  join gm_purview c on c.id = b.purview_id join gm_game d on d.id = c.gid where  c.uids @> '79' and d.id = '1' and d.status = 1 and b.grede != 827 and c.status = 1  and a.status = 1 order by id ),
+					qwer as (select * from qwe a where (select count(*) > 1 from qwe b where b.id = a.id )),
+					asd as (select * from qwe a where (select count(*) =  1 from qwe b where b.id = a.id )),
+					zxc as (select * from qwer where grede = '1'),
+					wer as (select * from qwer where id not in (select id from zxc )
+					union 
+					select * from qwer where id not in (select id from zxc )),
+					sdf as (select url,pid,name,gameid,grede,id from asd 
+					union 
+					select url,pid,name,gameid,grede,id from zxc 
+					union 
+					select url,pid,name,gameid,grede,id from wer ),
+					ewq as (select * from sdf ORDER BY id )
+					select name,(select json_agg(concat('{"url":"',url,'","name":"',name,'","meta":"',grede,'"}')::jsonb) from ewq  where ewq.pid = d.id) as children from ewq as d where pid = 0 ORDER BY d.id
+[2020-11-28T17:06:28.942] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(game_name, ','), ',')  as games from (
+			select  DISTINCT game_name,b.id from gm_purview a join gm_game b on a.gid = b.id  where uids @> '79' and b.status = '1' and a.status = '1'   ORDER BY id 
+		) a
+[2020-11-28T17:06:46.148] [DEBUG] debugLogger - Executing (default): select a.id,a.game_name ,a.image_url as img from gm_game a join gm_purview b on b.gid = a.id where b.uids @> '79' and a.status = '1'  and b.status = '1'   limit 1
+[2020-11-28T17:06:46.157] [DEBUG] debugLogger - Executing (default): with qwe as (select a.url,a.pid,a.name,d.game_name,d.id as gameid, a.id,b.grede , b.purview_id,c.uid,c.gid from gm_url a join gm_url_purview  b on  a.id = b.url_id  join gm_purview c on c.id = b.purview_id join gm_game d on d.id = c.gid where  c.uids @> '79' and d.id = '1' and d.status = 1 and b.grede != 827 and c.status = 1  and a.status = 1 order by id ),
+					qwer as (select * from qwe a where (select count(*) > 1 from qwe b where b.id = a.id )),
+					asd as (select * from qwe a where (select count(*) =  1 from qwe b where b.id = a.id )),
+					zxc as (select * from qwer where grede = '1'),
+					wer as (select * from qwer where id not in (select id from zxc )
+					union 
+					select * from qwer where id not in (select id from zxc )),
+					sdf as (select url,pid,name,gameid,grede,id from asd 
+					union 
+					select url,pid,name,gameid,grede,id from zxc 
+					union 
+					select url,pid,name,gameid,grede,id from wer ),
+					ewq as (select * from sdf ORDER BY id )
+					select name,(select json_agg(concat('{"url":"',url,'","name":"',name,'","meta":"',grede,'"}')::jsonb) from ewq  where ewq.pid = d.id) as children from ewq as d where pid = 0 ORDER BY d.id
+[2020-11-28T17:06:46.167] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(game_name, ','), ',')  as games from (
+			select  DISTINCT game_name,b.id from gm_purview a join gm_game b on a.gid = b.id  where uids @> '79' and b.status = '1' and a.status = '1'   ORDER BY id 
+		) a
+[2020-11-28T17:07:09.392] [DEBUG] debugLogger - Executing (default): select a.id,a.game_name ,a.image_url as img from gm_game a join gm_purview b on b.gid = a.id where b.uids @> '79' and a.status = '1'  and b.status = '1'   limit 1
+[2020-11-28T17:07:09.404] [DEBUG] debugLogger - Executing (default): with qwe as (select a.url,a.pid,a.name,d.game_name,d.id as gameid, a.id,b.grede , b.purview_id,c.uid,c.gid from gm_url a join gm_url_purview  b on  a.id = b.url_id  join gm_purview c on c.id = b.purview_id join gm_game d on d.id = c.gid where  c.uids @> '79' and d.id = '1' and d.status = 1 and b.grede != 827 and c.status = 1  and a.status = 1 order by id ),
+					qwer as (select * from qwe a where (select count(*) > 1 from qwe b where b.id = a.id )),
+					asd as (select * from qwe a where (select count(*) =  1 from qwe b where b.id = a.id )),
+					zxc as (select * from qwer where grede = '1'),
+					wer as (select * from qwer where id not in (select id from zxc )
+					union 
+					select * from qwer where id not in (select id from zxc )),
+					sdf as (select url,pid,name,gameid,grede,id from asd 
+					union 
+					select url,pid,name,gameid,grede,id from zxc 
+					union 
+					select url,pid,name,gameid,grede,id from wer ),
+					ewq as (select * from sdf ORDER BY id )
+					select name,(select json_agg(concat('{"url":"',url,'","name":"',name,'","meta":"',grede,'"}')::jsonb) from ewq  where ewq.pid = d.id) as children from ewq as d where pid = 0 ORDER BY d.id
+[2020-11-28T17:07:09.416] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(game_name, ','), ',')  as games from (
+			select  DISTINCT game_name,b.id from gm_purview a join gm_game b on a.gid = b.id  where uids @> '79' and b.status = '1' and a.status = '1'   ORDER BY id 
+		) a
+[2020-11-28T17:07:28.278] [DEBUG] debugLogger - Executing (default): select a.id,a.game_name ,a.image_url as img from gm_game a join gm_purview b on b.gid = a.id where b.uids @> '79' and a.status = '1'  and b.status = '1'   limit 1
+[2020-11-28T17:07:28.287] [DEBUG] debugLogger - Executing (default): with qwe as (select a.url,a.pid,a.name,d.game_name,d.id as gameid, a.id,b.grede , b.purview_id,c.uid,c.gid from gm_url a join gm_url_purview  b on  a.id = b.url_id  join gm_purview c on c.id = b.purview_id join gm_game d on d.id = c.gid where  c.uids @> '79' and d.id = '1' and d.status = 1 and b.grede != 827 and c.status = 1  and a.status = 1 order by id ),
+					qwer as (select * from qwe a where (select count(*) > 1 from qwe b where b.id = a.id )),
+					asd as (select * from qwe a where (select count(*) =  1 from qwe b where b.id = a.id )),
+					zxc as (select * from qwer where grede = '1'),
+					wer as (select * from qwer where id not in (select id from zxc )
+					union 
+					select * from qwer where id not in (select id from zxc )),
+					sdf as (select url,pid,name,gameid,grede,id from asd 
+					union 
+					select url,pid,name,gameid,grede,id from zxc 
+					union 
+					select url,pid,name,gameid,grede,id from wer ),
+					ewq as (select * from sdf ORDER BY id )
+					select name,(select json_agg(concat('{"url":"',url,'","name":"',name,'","meta":"',grede,'"}')::jsonb) from ewq  where ewq.pid = d.id) as children from ewq as d where pid = 0 ORDER BY d.id
+[2020-11-28T17:07:28.300] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(game_name, ','), ',')  as games from (
+			select  DISTINCT game_name,b.id from gm_purview a join gm_game b on a.gid = b.id  where uids @> '79' and b.status = '1' and a.status = '1'   ORDER BY id 
+		) a
+[2020-11-28T17:07:49.942] [DEBUG] debugLogger - Executing (default): select * from auth_user where username = 'zhangzongchu' and password = md5(encode('281317', 'BASE64'))
+[2020-11-28T17:07:50.011] [DEBUG] debugLogger - Executing (default): with qwe as (select   jsonb_array_elements_text(uids) as id  from gm_purview   ),
+asd as (select a.* from gm_user a  where a.username = 'zhangzongchu')
+select * from asd where id::varchar in (select id from qwe GROUP BY id )
+[2020-11-28T17:07:50.169] [DEBUG] debugLogger - Executing (default): select a.id,a.game_name ,a.image_url as img from gm_game a join gm_purview b on b.gid = a.id where b.uids @> '79' and a.status = '1'  and b.status = '1'   limit 1
+[2020-11-28T17:07:50.176] [DEBUG] debugLogger - Executing (default): with qwe as (select a.url,a.pid,a.name,d.game_name,d.id as gameid, a.id,b.grede , b.purview_id,c.uid,c.gid from gm_url a join gm_url_purview  b on  a.id = b.url_id  join gm_purview c on c.id = b.purview_id join gm_game d on d.id = c.gid where  c.uids @> '79' and d.id = '1' and d.status = 1 and b.grede != 827 and c.status = 1  and a.status = 1 order by id ),
+					qwer as (select * from qwe a where (select count(*) > 1 from qwe b where b.id = a.id )),
+					asd as (select * from qwe a where (select count(*) =  1 from qwe b where b.id = a.id )),
+					zxc as (select * from qwer where grede = '1'),
+					wer as (select * from qwer where id not in (select id from zxc )
+					union 
+					select * from qwer where id not in (select id from zxc )),
+					sdf as (select url,pid,name,gameid,grede,id from asd 
+					union 
+					select url,pid,name,gameid,grede,id from zxc 
+					union 
+					select url,pid,name,gameid,grede,id from wer ),
+					ewq as (select * from sdf ORDER BY id )
+					select name,(select json_agg(concat('{"url":"',url,'","name":"',name,'","meta":"',grede,'"}')::jsonb) from ewq  where ewq.pid = d.id) as children from ewq as d where pid = 0 ORDER BY d.id
+[2020-11-28T17:07:50.187] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(game_name, ','), ',')  as games from (
+			select  DISTINCT game_name,b.id from gm_purview a join gm_game b on a.gid = b.id  where uids @> '79' and b.status = '1' and a.status = '1'   ORDER BY id 
+		) a
+[2020-11-28T17:08:01.094] [DEBUG] debugLogger - Executing (default): select a.id,a.game_name ,a.image_url as img from gm_game a join gm_purview b on b.gid = a.id where b.uids @> '79' and a.status = '1'  and b.status = '1'   limit 1
+[2020-11-28T17:08:01.104] [DEBUG] debugLogger - Executing (default): with qwe as (select a.url,a.pid,a.name,d.game_name,d.id as gameid, a.id,b.grede , b.purview_id,c.uid,c.gid from gm_url a join gm_url_purview  b on  a.id = b.url_id  join gm_purview c on c.id = b.purview_id join gm_game d on d.id = c.gid where  c.uids @> '79' and d.id = '1' and d.status = 1 and b.grede != 827 and c.status = 1  and a.status = 1 order by id ),
+					qwer as (select * from qwe a where (select count(*) > 1 from qwe b where b.id = a.id )),
+					asd as (select * from qwe a where (select count(*) =  1 from qwe b where b.id = a.id )),
+					zxc as (select * from qwer where grede = '1'),
+					wer as (select * from qwer where id not in (select id from zxc )
+					union 
+					select * from qwer where id not in (select id from zxc )),
+					sdf as (select url,pid,name,gameid,grede,id from asd 
+					union 
+					select url,pid,name,gameid,grede,id from zxc 
+					union 
+					select url,pid,name,gameid,grede,id from wer ),
+					ewq as (select * from sdf ORDER BY id )
+					select name,(select json_agg(concat('{"url":"',url,'","name":"',name,'","meta":"',grede,'"}')::jsonb) from ewq  where ewq.pid = d.id) as children from ewq as d where pid = 0 ORDER BY d.id
+[2020-11-28T17:08:01.117] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(game_name, ','), ',')  as games from (
+			select  DISTINCT game_name,b.id from gm_purview a join gm_game b on a.gid = b.id  where uids @> '79' and b.status = '1' and a.status = '1'   ORDER BY id 
+		) a
+[2020-11-28T17:08:04.196] [DEBUG] debugLogger - Executing (default): select a.id,a.game_name ,a.image_url as img from gm_game a join gm_purview b on b.gid = a.id where b.uids @> '79' and a.status = '1'  and b.status = '1'   limit 1
+[2020-11-28T17:08:04.205] [DEBUG] debugLogger - Executing (default): with qwe as (select a.url,a.pid,a.name,d.game_name,d.id as gameid, a.id,b.grede , b.purview_id,c.uid,c.gid from gm_url a join gm_url_purview  b on  a.id = b.url_id  join gm_purview c on c.id = b.purview_id join gm_game d on d.id = c.gid where  c.uids @> '79' and d.id = '1' and d.status = 1 and b.grede != 827 and c.status = 1  and a.status = 1 order by id ),
+					qwer as (select * from qwe a where (select count(*) > 1 from qwe b where b.id = a.id )),
+					asd as (select * from qwe a where (select count(*) =  1 from qwe b where b.id = a.id )),
+					zxc as (select * from qwer where grede = '1'),
+					wer as (select * from qwer where id not in (select id from zxc )
+					union 
+					select * from qwer where id not in (select id from zxc )),
+					sdf as (select url,pid,name,gameid,grede,id from asd 
+					union 
+					select url,pid,name,gameid,grede,id from zxc 
+					union 
+					select url,pid,name,gameid,grede,id from wer ),
+					ewq as (select * from sdf ORDER BY id )
+					select name,(select json_agg(concat('{"url":"',url,'","name":"',name,'","meta":"',grede,'"}')::jsonb) from ewq  where ewq.pid = d.id) as children from ewq as d where pid = 0 ORDER BY d.id
+[2020-11-28T17:08:04.215] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(game_name, ','), ',')  as games from (
+			select  DISTINCT game_name,b.id from gm_purview a join gm_game b on a.gid = b.id  where uids @> '79' and b.status = '1' and a.status = '1'   ORDER BY id 
+		) a
+[2020-11-28T17:08:52.847] [DEBUG] debugLogger - Executing (default): select a.id,a.game_name ,a.image_url as img from gm_game a join gm_purview b on b.gid = a.id where b.uids @> '79' and a.status = '1'  and b.status = '1'   limit 1
+[2020-11-28T17:08:52.858] [DEBUG] debugLogger - Executing (default): with qwe as (select a.url,a.pid,a.name,d.game_name,d.id as gameid, a.id,b.grede , b.purview_id,c.uid,c.gid from gm_url a join gm_url_purview  b on  a.id = b.url_id  join gm_purview c on c.id = b.purview_id join gm_game d on d.id = c.gid where  c.uids @> '79' and d.id = '1' and d.status = 1 and b.grede != 827 and c.status = 1  and a.status = 1 order by id ),
+					qwer as (select * from qwe a where (select count(*) > 1 from qwe b where b.id = a.id )),
+					asd as (select * from qwe a where (select count(*) =  1 from qwe b where b.id = a.id )),
+					zxc as (select * from qwer where grede = '1'),
+					wer as (select * from qwer where id not in (select id from zxc )
+					union 
+					select * from qwer where id not in (select id from zxc )),
+					sdf as (select url,pid,name,gameid,grede,id from asd 
+					union 
+					select url,pid,name,gameid,grede,id from zxc 
+					union 
+					select url,pid,name,gameid,grede,id from wer ),
+					ewq as (select * from sdf ORDER BY id )
+					select name,(select json_agg(concat('{"url":"',url,'","name":"',name,'","meta":"',grede,'"}')::jsonb) from ewq  where ewq.pid = d.id) as children from ewq as d where pid = 0 ORDER BY d.id
+[2020-11-28T17:08:52.872] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(game_name, ','), ',')  as games from (
+			select  DISTINCT game_name,b.id from gm_purview a join gm_game b on a.gid = b.id  where uids @> '79' and b.status = '1' and a.status = '1'   ORDER BY id 
+		) a
+[2020-11-28T17:09:01.004] [DEBUG] debugLogger - Executing (default): select a.id,a.game_name ,a.image_url as img from gm_game a join gm_purview b on b.gid = a.id where b.uids @> '79' and a.status = '1'  and b.status = '1'   limit 1
+[2020-11-28T17:09:01.223] [DEBUG] debugLogger - Executing (default): with qwe as (select a.url,a.pid,a.name,d.game_name,d.id as gameid, a.id,b.grede , b.purview_id,c.uid,c.gid from gm_url a join gm_url_purview  b on  a.id = b.url_id  join gm_purview c on c.id = b.purview_id join gm_game d on d.id = c.gid where  c.uids @> '79' and d.id = '1' and d.status = 1 and b.grede != 827 and c.status = 1  and a.status = 1 order by id ),
+					qwer as (select * from qwe a where (select count(*) > 1 from qwe b where b.id = a.id )),
+					asd as (select * from qwe a where (select count(*) =  1 from qwe b where b.id = a.id )),
+					zxc as (select * from qwer where grede = '1'),
+					wer as (select * from qwer where id not in (select id from zxc )
+					union 
+					select * from qwer where id not in (select id from zxc )),
+					sdf as (select url,pid,name,gameid,grede,id from asd 
+					union 
+					select url,pid,name,gameid,grede,id from zxc 
+					union 
+					select url,pid,name,gameid,grede,id from wer ),
+					ewq as (select * from sdf ORDER BY id )
+					select name,(select json_agg(concat('{"url":"',url,'","name":"',name,'","meta":"',grede,'"}')::jsonb) from ewq  where ewq.pid = d.id) as children from ewq as d where pid = 0 ORDER BY d.id
+[2020-11-28T17:09:01.233] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(game_name, ','), ',')  as games from (
+			select  DISTINCT game_name,b.id from gm_purview a join gm_game b on a.gid = b.id  where uids @> '79' and b.status = '1' and a.status = '1'   ORDER BY id 
+		) a
+[2020-11-28T17:11:29.290] [DEBUG] debugLogger - Executing (default): select a.id,a.game_name ,a.image_url as img from gm_game a join gm_purview b on b.gid = a.id where b.uids @> '79' and a.status = '1'  and b.status = '1'   limit 1
+[2020-11-28T17:11:29.298] [DEBUG] debugLogger - Executing (default): with qwe as (select a.url,a.pid,a.name,d.game_name,d.id as gameid, a.id,b.grede , b.purview_id,c.uid,c.gid from gm_url a join gm_url_purview  b on  a.id = b.url_id  join gm_purview c on c.id = b.purview_id join gm_game d on d.id = c.gid where  c.uids @> '79' and d.id = '1' and d.status = 1 and b.grede != 827 and c.status = 1  and a.status = 1 order by id ),
+					qwer as (select * from qwe a where (select count(*) > 1 from qwe b where b.id = a.id )),
+					asd as (select * from qwe a where (select count(*) =  1 from qwe b where b.id = a.id )),
+					zxc as (select * from qwer where grede = '1'),
+					wer as (select * from qwer where id not in (select id from zxc )
+					union 
+					select * from qwer where id not in (select id from zxc )),
+					sdf as (select url,pid,name,gameid,grede,id from asd 
+					union 
+					select url,pid,name,gameid,grede,id from zxc 
+					union 
+					select url,pid,name,gameid,grede,id from wer ),
+					ewq as (select * from sdf ORDER BY id )
+					select name,(select json_agg(concat('{"url":"',url,'","name":"',name,'","meta":"',grede,'"}')::jsonb) from ewq  where ewq.pid = d.id) as children from ewq as d where pid = 0 ORDER BY d.id
+[2020-11-28T17:11:29.309] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(game_name, ','), ',')  as games from (
+			select  DISTINCT game_name,b.id from gm_purview a join gm_game b on a.gid = b.id  where uids @> '79' and b.status = '1' and a.status = '1'   ORDER BY id 
+		) a
+[2020-11-28T17:11:33.314] [DEBUG] debugLogger - Executing (default): select a.id,a.game_name ,a.image_url as img from gm_game a join gm_purview b on b.gid = a.id where b.uids @> '79' and a.status = '1'  and b.status = '1'   limit 1
+[2020-11-28T17:11:33.322] [DEBUG] debugLogger - Executing (default): with qwe as (select a.url,a.pid,a.name,d.game_name,d.id as gameid, a.id,b.grede , b.purview_id,c.uid,c.gid from gm_url a join gm_url_purview  b on  a.id = b.url_id  join gm_purview c on c.id = b.purview_id join gm_game d on d.id = c.gid where  c.uids @> '79' and d.id = '1' and d.status = 1 and b.grede != 827 and c.status = 1  and a.status = 1 order by id ),
+					qwer as (select * from qwe a where (select count(*) > 1 from qwe b where b.id = a.id )),
+					asd as (select * from qwe a where (select count(*) =  1 from qwe b where b.id = a.id )),
+					zxc as (select * from qwer where grede = '1'),
+					wer as (select * from qwer where id not in (select id from zxc )
+					union 
+					select * from qwer where id not in (select id from zxc )),
+					sdf as (select url,pid,name,gameid,grede,id from asd 
+					union 
+					select url,pid,name,gameid,grede,id from zxc 
+					union 
+					select url,pid,name,gameid,grede,id from wer ),
+					ewq as (select * from sdf ORDER BY id )
+					select name,(select json_agg(concat('{"url":"',url,'","name":"',name,'","meta":"',grede,'"}')::jsonb) from ewq  where ewq.pid = d.id) as children from ewq as d where pid = 0 ORDER BY d.id
+[2020-11-28T17:11:33.331] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(game_name, ','), ',')  as games from (
+			select  DISTINCT game_name,b.id from gm_purview a join gm_game b on a.gid = b.id  where uids @> '79' and b.status = '1' and a.status = '1'   ORDER BY id 
+		) a
+[2020-11-28T17:12:31.325] [DEBUG] debugLogger - Executing (default): select a.id,a.game_name ,a.image_url as img from gm_game a join gm_purview b on b.gid = a.id where b.uids @> '79' and a.status = '1'  and b.status = '1'   limit 1
+[2020-11-28T17:12:31.332] [DEBUG] debugLogger - Executing (default): with qwe as (select a.url,a.pid,a.name,d.game_name,d.id as gameid, a.id,b.grede , b.purview_id,c.uid,c.gid from gm_url a join gm_url_purview  b on  a.id = b.url_id  join gm_purview c on c.id = b.purview_id join gm_game d on d.id = c.gid where  c.uids @> '79' and d.id = '1' and d.status = 1 and b.grede != 827 and c.status = 1  and a.status = 1 order by id ),
+					qwer as (select * from qwe a where (select count(*) > 1 from qwe b where b.id = a.id )),
+					asd as (select * from qwe a where (select count(*) =  1 from qwe b where b.id = a.id )),
+					zxc as (select * from qwer where grede = '1'),
+					wer as (select * from qwer where id not in (select id from zxc )
+					union 
+					select * from qwer where id not in (select id from zxc )),
+					sdf as (select url,pid,name,gameid,grede,id from asd 
+					union 
+					select url,pid,name,gameid,grede,id from zxc 
+					union 
+					select url,pid,name,gameid,grede,id from wer ),
+					ewq as (select * from sdf ORDER BY id )
+					select name,(select json_agg(concat('{"url":"',url,'","name":"',name,'","meta":"',grede,'"}')::jsonb) from ewq  where ewq.pid = d.id) as children from ewq as d where pid = 0 ORDER BY d.id
+[2020-11-28T17:12:31.342] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(game_name, ','), ',')  as games from (
+			select  DISTINCT game_name,b.id from gm_purview a join gm_game b on a.gid = b.id  where uids @> '79' and b.status = '1' and a.status = '1'   ORDER BY id 
+		) a
+[2020-11-28T17:12:57.846] [DEBUG] debugLogger - Executing (default): select a.id,a.game_name ,a.image_url as img from gm_game a join gm_purview b on b.gid = a.id where b.uids @> '79' and a.status = '1'  and b.status = '1'   limit 1
+[2020-11-28T17:12:57.853] [DEBUG] debugLogger - Executing (default): with qwe as (select a.url,a.pid,a.name,d.game_name,d.id as gameid, a.id,b.grede , b.purview_id,c.uid,c.gid from gm_url a join gm_url_purview  b on  a.id = b.url_id  join gm_purview c on c.id = b.purview_id join gm_game d on d.id = c.gid where  c.uids @> '79' and d.id = '1' and d.status = 1 and b.grede != 827 and c.status = 1  and a.status = 1 order by id ),
+					qwer as (select * from qwe a where (select count(*) > 1 from qwe b where b.id = a.id )),
+					asd as (select * from qwe a where (select count(*) =  1 from qwe b where b.id = a.id )),
+					zxc as (select * from qwer where grede = '1'),
+					wer as (select * from qwer where id not in (select id from zxc )
+					union 
+					select * from qwer where id not in (select id from zxc )),
+					sdf as (select url,pid,name,gameid,grede,id from asd 
+					union 
+					select url,pid,name,gameid,grede,id from zxc 
+					union 
+					select url,pid,name,gameid,grede,id from wer ),
+					ewq as (select * from sdf ORDER BY id )
+					select name,(select json_agg(concat('{"url":"',url,'","name":"',name,'","meta":"',grede,'"}')::jsonb) from ewq  where ewq.pid = d.id) as children from ewq as d where pid = 0 ORDER BY d.id
+[2020-11-28T17:12:57.863] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(game_name, ','), ',')  as games from (
+			select  DISTINCT game_name,b.id from gm_purview a join gm_game b on a.gid = b.id  where uids @> '79' and b.status = '1' and a.status = '1'   ORDER BY id 
+		) a
+[2020-11-28T17:12:58.959] [DEBUG] debugLogger - Executing (default): select a.id,a.game_name ,a.image_url as img from gm_game a join gm_purview b on b.gid = a.id where b.uids @> '79' and a.status = '1'  and b.status = '1'   limit 1
+[2020-11-28T17:12:58.968] [DEBUG] debugLogger - Executing (default): with qwe as (select a.url,a.pid,a.name,d.game_name,d.id as gameid, a.id,b.grede , b.purview_id,c.uid,c.gid from gm_url a join gm_url_purview  b on  a.id = b.url_id  join gm_purview c on c.id = b.purview_id join gm_game d on d.id = c.gid where  c.uids @> '79' and d.id = '1' and d.status = 1 and b.grede != 827 and c.status = 1  and a.status = 1 order by id ),
+					qwer as (select * from qwe a where (select count(*) > 1 from qwe b where b.id = a.id )),
+					asd as (select * from qwe a where (select count(*) =  1 from qwe b where b.id = a.id )),
+					zxc as (select * from qwer where grede = '1'),
+					wer as (select * from qwer where id not in (select id from zxc )
+					union 
+					select * from qwer where id not in (select id from zxc )),
+					sdf as (select url,pid,name,gameid,grede,id from asd 
+					union 
+					select url,pid,name,gameid,grede,id from zxc 
+					union 
+					select url,pid,name,gameid,grede,id from wer ),
+					ewq as (select * from sdf ORDER BY id )
+					select name,(select json_agg(concat('{"url":"',url,'","name":"',name,'","meta":"',grede,'"}')::jsonb) from ewq  where ewq.pid = d.id) as children from ewq as d where pid = 0 ORDER BY d.id
+[2020-11-28T17:12:58.981] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(game_name, ','), ',')  as games from (
+			select  DISTINCT game_name,b.id from gm_purview a join gm_game b on a.gid = b.id  where uids @> '79' and b.status = '1' and a.status = '1'   ORDER BY id 
+		) a
+[2020-11-28T17:13:01.524] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(channel, ','), ',')  as values  from gm_game_channel where gameid = '1' and status = '1'
+[2020-11-28T17:13:01.531] [DEBUG] debugLogger - Executing (default): select "id",
+        "status",
+        "create_user_id",
+        "update_user_id",
+        "create_time",
+        "update_time",
+        "servername",
+        "ip_port",
+        "address",
+        "plaform",
+        "display",
+        "srttime",
+        "gamename",
+        "pid" ,
+        "serverid",
+        "test",
+        "load",
+        "gameid",
+        "childrens",
+        "port",
+        "ip",
+        "channel",
+        "serverTrue",
+        "securityGroup",
+        "clientshow",
+        "stopshow"  from gm_server  where gameid='1'and test='0' and status = 1 and (pid is null or  trim(pid) ='') order by id limit 20 offset (20*0)
+[2020-11-28T17:13:01.544] [DEBUG] debugLogger - Executing (default): select count(id) as total from gm_server where gameid='1'and test='0' and status = 1 and (pid is null or  trim(pid) ='')
+[2020-11-28T17:13:01.561] [DEBUG] debugLogger - Executing (default): select max(num), display from (SELECT count(display) as num,
+		case 
+		when display='1' then '流畅'
+		when display='2' then '繁忙'
+		when display='3' then '维护'
+		when display='4' then '爆满'
+		end
+		as display
+		from gm_server where id in ( SELECT id from gm_server  where gameid='1'and test='0' and  status = 1 and (pid is null or  trim(pid) ='')  ORDER BY id limit 20 offset (20*0)  ) GROUP BY display 
+		union 
+		select 0 as num ,'繁忙' as display
+		union 
+		select 0 as num ,'流畅' as display
+		union
+		select 0 as num ,'维护' as display
+		union
+		select 0 as num ,'爆满' as display
+		)a GROUP BY display
+[2020-11-28T17:13:36.320] [DEBUG] debugLogger - Executing (default): select a.id,a.game_name ,a.image_url as img from gm_game a join gm_purview b on b.gid = a.id where b.uids @> '79' and a.status = '1'  and b.status = '1'   limit 1
+[2020-11-28T17:13:36.329] [DEBUG] debugLogger - Executing (default): with qwe as (select a.url,a.pid,a.name,d.game_name,d.id as gameid, a.id,b.grede , b.purview_id,c.uid,c.gid from gm_url a join gm_url_purview  b on  a.id = b.url_id  join gm_purview c on c.id = b.purview_id join gm_game d on d.id = c.gid where  c.uids @> '79' and d.id = '1' and d.status = 1 and b.grede != 827 and c.status = 1  and a.status = 1 order by id ),
+					qwer as (select * from qwe a where (select count(*) > 1 from qwe b where b.id = a.id )),
+					asd as (select * from qwe a where (select count(*) =  1 from qwe b where b.id = a.id )),
+					zxc as (select * from qwer where grede = '1'),
+					wer as (select * from qwer where id not in (select id from zxc )
+					union 
+					select * from qwer where id not in (select id from zxc )),
+					sdf as (select url,pid,name,gameid,grede,id from asd 
+					union 
+					select url,pid,name,gameid,grede,id from zxc 
+					union 
+					select url,pid,name,gameid,grede,id from wer ),
+					ewq as (select * from sdf ORDER BY id )
+					select name,(select json_agg(concat('{"url":"',url,'","name":"',name,'","meta":"',grede,'"}')::jsonb) from ewq  where ewq.pid = d.id) as children from ewq as d where pid = 0 ORDER BY d.id
+[2020-11-28T17:13:36.341] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(game_name, ','), ',')  as games from (
+			select  DISTINCT game_name,b.id from gm_purview a join gm_game b on a.gid = b.id  where uids @> '79' and b.status = '1' and a.status = '1'   ORDER BY id 
+		) a
+[2020-11-28T17:13:37.219] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(channel, ','), ',')  as values  from gm_game_channel where gameid = '1' and status = '1'
+[2020-11-28T17:13:37.245] [DEBUG] debugLogger - Executing (default): select "id",
+        "status",
+        "create_user_id",
+        "update_user_id",
+        "create_time",
+        "update_time",
+        "servername",
+        "ip_port",
+        "address",
+        "plaform",
+        "display",
+        "srttime",
+        "gamename",
+        "pid" ,
+        "serverid",
+        "test",
+        "load",
+        "gameid",
+        "childrens",
+        "port",
+        "ip",
+        "channel",
+        "serverTrue",
+        "securityGroup",
+        "clientshow",
+        "stopshow"  from gm_server  where gameid='1'and test='0' and status = 1 and (pid is null or  trim(pid) ='') order by id limit 20 offset (20*0)
+[2020-11-28T17:13:37.267] [DEBUG] debugLogger - Executing (default): select count(id) as total from gm_server where gameid='1'and test='0' and status = 1 and (pid is null or  trim(pid) ='')
+[2020-11-28T17:13:37.293] [DEBUG] debugLogger - Executing (default): select max(num), display from (SELECT count(display) as num,
+		case 
+		when display='1' then '流畅'
+		when display='2' then '繁忙'
+		when display='3' then '维护'
+		when display='4' then '爆满'
+		end
+		as display
+		from gm_server where id in ( SELECT id from gm_server  where gameid='1'and test='0' and  status = 1 and (pid is null or  trim(pid) ='')  ORDER BY id limit 20 offset (20*0)  ) GROUP BY display 
+		union 
+		select 0 as num ,'繁忙' as display
+		union 
+		select 0 as num ,'流畅' as display
+		union
+		select 0 as num ,'维护' as display
+		union
+		select 0 as num ,'爆满' as display
+		)a GROUP BY display
+[2020-11-28T17:13:54.922] [DEBUG] debugLogger - Executing (default): select a.id,a.game_name ,a.image_url as img from gm_game a join gm_purview b on b.gid = a.id where b.uids @> '79' and a.status = '1'  and b.status = '1'   limit 1
+[2020-11-28T17:13:54.930] [DEBUG] debugLogger - Executing (default): with qwe as (select a.url,a.pid,a.name,d.game_name,d.id as gameid, a.id,b.grede , b.purview_id,c.uid,c.gid from gm_url a join gm_url_purview  b on  a.id = b.url_id  join gm_purview c on c.id = b.purview_id join gm_game d on d.id = c.gid where  c.uids @> '79' and d.id = '1' and d.status = 1 and b.grede != 827 and c.status = 1  and a.status = 1 order by id ),
+					qwer as (select * from qwe a where (select count(*) > 1 from qwe b where b.id = a.id )),
+					asd as (select * from qwe a where (select count(*) =  1 from qwe b where b.id = a.id )),
+					zxc as (select * from qwer where grede = '1'),
+					wer as (select * from qwer where id not in (select id from zxc )
+					union 
+					select * from qwer where id not in (select id from zxc )),
+					sdf as (select url,pid,name,gameid,grede,id from asd 
+					union 
+					select url,pid,name,gameid,grede,id from zxc 
+					union 
+					select url,pid,name,gameid,grede,id from wer ),
+					ewq as (select * from sdf ORDER BY id )
+					select name,(select json_agg(concat('{"url":"',url,'","name":"',name,'","meta":"',grede,'"}')::jsonb) from ewq  where ewq.pid = d.id) as children from ewq as d where pid = 0 ORDER BY d.id
+[2020-11-28T17:13:54.941] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(game_name, ','), ',')  as games from (
+			select  DISTINCT game_name,b.id from gm_purview a join gm_game b on a.gid = b.id  where uids @> '79' and b.status = '1' and a.status = '1'   ORDER BY id 
+		) a
+[2020-11-28T17:13:55.829] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(channel, ','), ',')  as values  from gm_game_channel where gameid = '1' and status = '1'
+[2020-11-28T17:13:55.836] [DEBUG] debugLogger - Executing (default): select "id",
+        "status",
+        "create_user_id",
+        "update_user_id",
+        "create_time",
+        "update_time",
+        "servername",
+        "ip_port",
+        "address",
+        "plaform",
+        "display",
+        "srttime",
+        "gamename",
+        "pid" ,
+        "serverid",
+        "test",
+        "load",
+        "gameid",
+        "childrens",
+        "port",
+        "ip",
+        "channel",
+        "serverTrue",
+        "securityGroup",
+        "clientshow",
+        "stopshow"  from gm_server  where gameid='1'and test='0' and status = 1 and (pid is null or  trim(pid) ='') order by id limit 20 offset (20*0)
+[2020-11-28T17:13:55.846] [DEBUG] debugLogger - Executing (default): select count(id) as total from gm_server where gameid='1'and test='0' and status = 1 and (pid is null or  trim(pid) ='')
+[2020-11-28T17:13:55.859] [DEBUG] debugLogger - Executing (default): select max(num), display from (SELECT count(display) as num,
+		case 
+		when display='1' then '流畅'
+		when display='2' then '繁忙'
+		when display='3' then '维护'
+		when display='4' then '爆满'
+		end
+		as display
+		from gm_server where id in ( SELECT id from gm_server  where gameid='1'and test='0' and  status = 1 and (pid is null or  trim(pid) ='')  ORDER BY id limit 20 offset (20*0)  ) GROUP BY display 
+		union 
+		select 0 as num ,'繁忙' as display
+		union 
+		select 0 as num ,'流畅' as display
+		union
+		select 0 as num ,'维护' as display
+		union
+		select 0 as num ,'爆满' as display
+		)a GROUP BY display
+[2020-11-28T17:14:04.363] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(channel, ','), ',')  as values  from gm_game_channel where gameid = '1' and status = '1'
+[2020-11-28T17:14:04.364] [DEBUG] debugLogger - Executing (default): select "id",
+        "status",
+        "create_user_id",
+        "update_user_id",
+        "create_time",
+        "update_time",
+        "servername",
+        "ip_port",
+        "address",
+        "plaform",
+        "display",
+        "srttime",
+        "gamename",
+        "pid" ,
+        "serverid",
+        "test",
+        "load",
+        "gameid",
+        "childrens",
+        "port",
+        "ip",
+        "channel",
+        "serverTrue",
+        "securityGroup",
+        "clientshow",
+        "stopshow"  from gm_server  where gameid='1'and test='0' and status = 1 and (pid is null or  trim(pid) ='') order by id limit 20 offset (20*0)
+[2020-11-28T17:14:04.379] [DEBUG] debugLogger - Executing (default): select count(id) as total from gm_server where gameid='1'and test='0' and status = 1 and (pid is null or  trim(pid) ='')
+[2020-11-28T17:14:04.397] [DEBUG] debugLogger - Executing (default): select max(num), display from (SELECT count(display) as num,
+		case 
+		when display='1' then '流畅'
+		when display='2' then '繁忙'
+		when display='3' then '维护'
+		when display='4' then '爆满'
+		end
+		as display
+		from gm_server where id in ( SELECT id from gm_server  where gameid='1'and test='0' and  status = 1 and (pid is null or  trim(pid) ='')  ORDER BY id limit 20 offset (20*0)  ) GROUP BY display 
+		union 
+		select 0 as num ,'繁忙' as display
+		union 
+		select 0 as num ,'流畅' as display
+		union
+		select 0 as num ,'维护' as display
+		union
+		select 0 as num ,'爆满' as display
+		)a GROUP BY display
+[2020-11-28T17:14:06.852] [DEBUG] debugLogger - Executing (default): select a.id,a.game_name ,a.image_url as img from gm_game a join gm_purview b on b.gid = a.id where b.uids @> '79' and a.status = '1'  and b.status = '1'   limit 1
+[2020-11-28T17:14:06.861] [DEBUG] debugLogger - Executing (default): with qwe as (select a.url,a.pid,a.name,d.game_name,d.id as gameid, a.id,b.grede , b.purview_id,c.uid,c.gid from gm_url a join gm_url_purview  b on  a.id = b.url_id  join gm_purview c on c.id = b.purview_id join gm_game d on d.id = c.gid where  c.uids @> '79' and d.id = '1' and d.status = 1 and b.grede != 827 and c.status = 1  and a.status = 1 order by id ),
+					qwer as (select * from qwe a where (select count(*) > 1 from qwe b where b.id = a.id )),
+					asd as (select * from qwe a where (select count(*) =  1 from qwe b where b.id = a.id )),
+					zxc as (select * from qwer where grede = '1'),
+					wer as (select * from qwer where id not in (select id from zxc )
+					union 
+					select * from qwer where id not in (select id from zxc )),
+					sdf as (select url,pid,name,gameid,grede,id from asd 
+					union 
+					select url,pid,name,gameid,grede,id from zxc 
+					union 
+					select url,pid,name,gameid,grede,id from wer ),
+					ewq as (select * from sdf ORDER BY id )
+					select name,(select json_agg(concat('{"url":"',url,'","name":"',name,'","meta":"',grede,'"}')::jsonb) from ewq  where ewq.pid = d.id) as children from ewq as d where pid = 0 ORDER BY d.id
+[2020-11-28T17:14:06.871] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(game_name, ','), ',')  as games from (
+			select  DISTINCT game_name,b.id from gm_purview a join gm_game b on a.gid = b.id  where uids @> '79' and b.status = '1' and a.status = '1'   ORDER BY id 
+		) a
+[2020-11-28T17:14:07.974] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(channel, ','), ',')  as values  from gm_game_channel where gameid = '1' and status = '1'
+[2020-11-28T17:14:07.974] [DEBUG] debugLogger - Executing (default): select "id",
+        "status",
+        "create_user_id",
+        "update_user_id",
+        "create_time",
+        "update_time",
+        "servername",
+        "ip_port",
+        "address",
+        "plaform",
+        "display",
+        "srttime",
+        "gamename",
+        "pid" ,
+        "serverid",
+        "test",
+        "load",
+        "gameid",
+        "childrens",
+        "port",
+        "ip",
+        "channel",
+        "serverTrue",
+        "securityGroup",
+        "clientshow",
+        "stopshow"  from gm_server  where gameid='1'and test='0' and status = 1 and (pid is null or  trim(pid) ='') order by id limit 20 offset (20*0)
+[2020-11-28T17:14:07.990] [DEBUG] debugLogger - Executing (default): select count(id) as total from gm_server where gameid='1'and test='0' and status = 1 and (pid is null or  trim(pid) ='')
+[2020-11-28T17:14:08.006] [DEBUG] debugLogger - Executing (default): select max(num), display from (SELECT count(display) as num,
+		case 
+		when display='1' then '流畅'
+		when display='2' then '繁忙'
+		when display='3' then '维护'
+		when display='4' then '爆满'
+		end
+		as display
+		from gm_server where id in ( SELECT id from gm_server  where gameid='1'and test='0' and  status = 1 and (pid is null or  trim(pid) ='')  ORDER BY id limit 20 offset (20*0)  ) GROUP BY display 
+		union 
+		select 0 as num ,'繁忙' as display
+		union 
+		select 0 as num ,'流畅' as display
+		union
+		select 0 as num ,'维护' as display
+		union
+		select 0 as num ,'爆满' as display
+		)a GROUP BY display
+[2020-11-28T17:14:09.022] [DEBUG] debugLogger - Executing (default): select a.id,a.game_name ,a.image_url as img from gm_game a join gm_purview b on b.gid = a.id where b.uids @> '79' and a.status = '1'  and b.status = '1'   limit 1
+[2020-11-28T17:14:09.030] [DEBUG] debugLogger - Executing (default): with qwe as (select a.url,a.pid,a.name,d.game_name,d.id as gameid, a.id,b.grede , b.purview_id,c.uid,c.gid from gm_url a join gm_url_purview  b on  a.id = b.url_id  join gm_purview c on c.id = b.purview_id join gm_game d on d.id = c.gid where  c.uids @> '79' and d.id = '1' and d.status = 1 and b.grede != 827 and c.status = 1  and a.status = 1 order by id ),
+					qwer as (select * from qwe a where (select count(*) > 1 from qwe b where b.id = a.id )),
+					asd as (select * from qwe a where (select count(*) =  1 from qwe b where b.id = a.id )),
+					zxc as (select * from qwer where grede = '1'),
+					wer as (select * from qwer where id not in (select id from zxc )
+					union 
+					select * from qwer where id not in (select id from zxc )),
+					sdf as (select url,pid,name,gameid,grede,id from asd 
+					union 
+					select url,pid,name,gameid,grede,id from zxc 
+					union 
+					select url,pid,name,gameid,grede,id from wer ),
+					ewq as (select * from sdf ORDER BY id )
+					select name,(select json_agg(concat('{"url":"',url,'","name":"',name,'","meta":"',grede,'"}')::jsonb) from ewq  where ewq.pid = d.id) as children from ewq as d where pid = 0 ORDER BY d.id
+[2020-11-28T17:14:09.040] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(game_name, ','), ',')  as games from (
+			select  DISTINCT game_name,b.id from gm_purview a join gm_game b on a.gid = b.id  where uids @> '79' and b.status = '1' and a.status = '1'   ORDER BY id 
+		) a
+[2020-11-28T17:14:09.922] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(channel, ','), ',')  as values  from gm_game_channel where gameid = '1' and status = '1'
+[2020-11-28T17:14:09.925] [DEBUG] debugLogger - Executing (default): select "id",
+        "status",
+        "create_user_id",
+        "update_user_id",
+        "create_time",
+        "update_time",
+        "servername",
+        "ip_port",
+        "address",
+        "plaform",
+        "display",
+        "srttime",
+        "gamename",
+        "pid" ,
+        "serverid",
+        "test",
+        "load",
+        "gameid",
+        "childrens",
+        "port",
+        "ip",
+        "channel",
+        "serverTrue",
+        "securityGroup",
+        "clientshow",
+        "stopshow"  from gm_server  where gameid='1'and test='0' and status = 1 and (pid is null or  trim(pid) ='') order by id limit 20 offset (20*0)
+[2020-11-28T17:14:09.939] [DEBUG] debugLogger - Executing (default): select count(id) as total from gm_server where gameid='1'and test='0' and status = 1 and (pid is null or  trim(pid) ='')
+[2020-11-28T17:14:09.953] [DEBUG] debugLogger - Executing (default): select max(num), display from (SELECT count(display) as num,
+		case 
+		when display='1' then '流畅'
+		when display='2' then '繁忙'
+		when display='3' then '维护'
+		when display='4' then '爆满'
+		end
+		as display
+		from gm_server where id in ( SELECT id from gm_server  where gameid='1'and test='0' and  status = 1 and (pid is null or  trim(pid) ='')  ORDER BY id limit 20 offset (20*0)  ) GROUP BY display 
+		union 
+		select 0 as num ,'繁忙' as display
+		union 
+		select 0 as num ,'流畅' as display
+		union
+		select 0 as num ,'维护' as display
+		union
+		select 0 as num ,'爆满' as display
+		)a GROUP BY display
+[2020-11-28T17:14:22.591] [DEBUG] debugLogger - Executing (default): select a.id,a.game_name ,a.image_url as img from gm_game a join gm_purview b on b.gid = a.id where b.uids @> '79' and a.status = '1'  and b.status = '1'   limit 1
+[2020-11-28T17:14:22.598] [DEBUG] debugLogger - Executing (default): with qwe as (select a.url,a.pid,a.name,d.game_name,d.id as gameid, a.id,b.grede , b.purview_id,c.uid,c.gid from gm_url a join gm_url_purview  b on  a.id = b.url_id  join gm_purview c on c.id = b.purview_id join gm_game d on d.id = c.gid where  c.uids @> '79' and d.id = '1' and d.status = 1 and b.grede != 827 and c.status = 1  and a.status = 1 order by id ),
+					qwer as (select * from qwe a where (select count(*) > 1 from qwe b where b.id = a.id )),
+					asd as (select * from qwe a where (select count(*) =  1 from qwe b where b.id = a.id )),
+					zxc as (select * from qwer where grede = '1'),
+					wer as (select * from qwer where id not in (select id from zxc )
+					union 
+					select * from qwer where id not in (select id from zxc )),
+					sdf as (select url,pid,name,gameid,grede,id from asd 
+					union 
+					select url,pid,name,gameid,grede,id from zxc 
+					union 
+					select url,pid,name,gameid,grede,id from wer ),
+					ewq as (select * from sdf ORDER BY id )
+					select name,(select json_agg(concat('{"url":"',url,'","name":"',name,'","meta":"',grede,'"}')::jsonb) from ewq  where ewq.pid = d.id) as children from ewq as d where pid = 0 ORDER BY d.id
+[2020-11-28T17:14:22.609] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(game_name, ','), ',')  as games from (
+			select  DISTINCT game_name,b.id from gm_purview a join gm_game b on a.gid = b.id  where uids @> '79' and b.status = '1' and a.status = '1'   ORDER BY id 
+		) a
+[2020-11-28T17:14:23.474] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(channel, ','), ',')  as values  from gm_game_channel where gameid = '1' and status = '1'
+[2020-11-28T17:14:23.501] [DEBUG] debugLogger - Executing (default): select "id",
+        "status",
+        "create_user_id",
+        "update_user_id",
+        "create_time",
+        "update_time",
+        "servername",
+        "ip_port",
+        "address",
+        "plaform",
+        "display",
+        "srttime",
+        "gamename",
+        "pid" ,
+        "serverid",
+        "test",
+        "load",
+        "gameid",
+        "childrens",
+        "port",
+        "ip",
+        "channel",
+        "serverTrue",
+        "securityGroup",
+        "clientshow",
+        "stopshow"  from gm_server  where gameid='1'and test='0' and status = 1 and (pid is null or  trim(pid) ='') order by id limit 20 offset (20*0)
+[2020-11-28T17:14:23.512] [DEBUG] debugLogger - Executing (default): select count(id) as total from gm_server where gameid='1'and test='0' and status = 1 and (pid is null or  trim(pid) ='')
+[2020-11-28T17:14:23.529] [DEBUG] debugLogger - Executing (default): select max(num), display from (SELECT count(display) as num,
+		case 
+		when display='1' then '流畅'
+		when display='2' then '繁忙'
+		when display='3' then '维护'
+		when display='4' then '爆满'
+		end
+		as display
+		from gm_server where id in ( SELECT id from gm_server  where gameid='1'and test='0' and  status = 1 and (pid is null or  trim(pid) ='')  ORDER BY id limit 20 offset (20*0)  ) GROUP BY display 
+		union 
+		select 0 as num ,'繁忙' as display
+		union 
+		select 0 as num ,'流畅' as display
+		union
+		select 0 as num ,'维护' as display
+		union
+		select 0 as num ,'爆满' as display
+		)a GROUP BY display
+[2020-11-28T17:15:49.177] [DEBUG] debugLogger - Executing (default): select a.id,a.game_name ,a.image_url as img from gm_game a join gm_purview b on b.gid = a.id where b.uids @> '79' and a.status = '1'  and b.status = '1'   limit 1
+[2020-11-28T17:15:49.185] [DEBUG] debugLogger - Executing (default): with qwe as (select a.url,a.pid,a.name,d.game_name,d.id as gameid, a.id,b.grede , b.purview_id,c.uid,c.gid from gm_url a join gm_url_purview  b on  a.id = b.url_id  join gm_purview c on c.id = b.purview_id join gm_game d on d.id = c.gid where  c.uids @> '79' and d.id = '1' and d.status = 1 and b.grede != 827 and c.status = 1  and a.status = 1 order by id ),
+					qwer as (select * from qwe a where (select count(*) > 1 from qwe b where b.id = a.id )),
+					asd as (select * from qwe a where (select count(*) =  1 from qwe b where b.id = a.id )),
+					zxc as (select * from qwer where grede = '1'),
+					wer as (select * from qwer where id not in (select id from zxc )
+					union 
+					select * from qwer where id not in (select id from zxc )),
+					sdf as (select url,pid,name,gameid,grede,id from asd 
+					union 
+					select url,pid,name,gameid,grede,id from zxc 
+					union 
+					select url,pid,name,gameid,grede,id from wer ),
+					ewq as (select * from sdf ORDER BY id )
+					select name,(select json_agg(concat('{"url":"',url,'","name":"',name,'","meta":"',grede,'"}')::jsonb) from ewq  where ewq.pid = d.id) as children from ewq as d where pid = 0 ORDER BY d.id
+[2020-11-28T17:15:49.195] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(game_name, ','), ',')  as games from (
+			select  DISTINCT game_name,b.id from gm_purview a join gm_game b on a.gid = b.id  where uids @> '79' and b.status = '1' and a.status = '1'   ORDER BY id 
+		) a
+[2020-11-28T17:15:50.615] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(channel, ','), ',')  as values  from gm_game_channel where gameid = '1' and status = '1'
+[2020-11-28T17:15:50.646] [DEBUG] debugLogger - Executing (default): select "id",
+        "status",
+        "create_user_id",
+        "update_user_id",
+        "create_time",
+        "update_time",
+        "servername",
+        "ip_port",
+        "address",
+        "plaform",
+        "display",
+        "srttime",
+        "gamename",
+        "pid" ,
+        "serverid",
+        "test",
+        "load",
+        "gameid",
+        "childrens",
+        "port",
+        "ip",
+        "channel",
+        "serverTrue",
+        "securityGroup",
+        "clientshow",
+        "stopshow"  from gm_server  where gameid='1'and test='0' and status = 1 and (pid is null or  trim(pid) ='') order by id limit 20 offset (20*0)
+[2020-11-28T17:15:50.655] [DEBUG] debugLogger - Executing (default): select count(id) as total from gm_server where gameid='1'and test='0' and status = 1 and (pid is null or  trim(pid) ='')
+[2020-11-28T17:15:50.677] [DEBUG] debugLogger - Executing (default): select max(num), display from (SELECT count(display) as num,
+		case 
+		when display='1' then '流畅'
+		when display='2' then '繁忙'
+		when display='3' then '维护'
+		when display='4' then '爆满'
+		end
+		as display
+		from gm_server where id in ( SELECT id from gm_server  where gameid='1'and test='0' and  status = 1 and (pid is null or  trim(pid) ='')  ORDER BY id limit 20 offset (20*0)  ) GROUP BY display 
+		union 
+		select 0 as num ,'繁忙' as display
+		union 
+		select 0 as num ,'流畅' as display
+		union
+		select 0 as num ,'维护' as display
+		union
+		select 0 as num ,'爆满' as display
+		)a GROUP BY display
+[2020-11-28T17:15:58.971] [DEBUG] debugLogger - Executing (default): select a.id,a.game_name ,a.image_url as img from gm_game a join gm_purview b on b.gid = a.id where b.uids @> '79' and a.status = '1'  and b.status = '1'   limit 1
+[2020-11-28T17:15:58.977] [DEBUG] debugLogger - Executing (default): with qwe as (select a.url,a.pid,a.name,d.game_name,d.id as gameid, a.id,b.grede , b.purview_id,c.uid,c.gid from gm_url a join gm_url_purview  b on  a.id = b.url_id  join gm_purview c on c.id = b.purview_id join gm_game d on d.id = c.gid where  c.uids @> '79' and d.id = '1' and d.status = 1 and b.grede != 827 and c.status = 1  and a.status = 1 order by id ),
+					qwer as (select * from qwe a where (select count(*) > 1 from qwe b where b.id = a.id )),
+					asd as (select * from qwe a where (select count(*) =  1 from qwe b where b.id = a.id )),
+					zxc as (select * from qwer where grede = '1'),
+					wer as (select * from qwer where id not in (select id from zxc )
+					union 
+					select * from qwer where id not in (select id from zxc )),
+					sdf as (select url,pid,name,gameid,grede,id from asd 
+					union 
+					select url,pid,name,gameid,grede,id from zxc 
+					union 
+					select url,pid,name,gameid,grede,id from wer ),
+					ewq as (select * from sdf ORDER BY id )
+					select name,(select json_agg(concat('{"url":"',url,'","name":"',name,'","meta":"',grede,'"}')::jsonb) from ewq  where ewq.pid = d.id) as children from ewq as d where pid = 0 ORDER BY d.id
+[2020-11-28T17:15:58.987] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(game_name, ','), ',')  as games from (
+			select  DISTINCT game_name,b.id from gm_purview a join gm_game b on a.gid = b.id  where uids @> '79' and b.status = '1' and a.status = '1'   ORDER BY id 
+		) a
+[2020-11-28T17:15:59.991] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(channel, ','), ',')  as values  from gm_game_channel where gameid = '1' and status = '1'
+[2020-11-28T17:15:59.994] [DEBUG] debugLogger - Executing (default): select "id",
+        "status",
+        "create_user_id",
+        "update_user_id",
+        "create_time",
+        "update_time",
+        "servername",
+        "ip_port",
+        "address",
+        "plaform",
+        "display",
+        "srttime",
+        "gamename",
+        "pid" ,
+        "serverid",
+        "test",
+        "load",
+        "gameid",
+        "childrens",
+        "port",
+        "ip",
+        "channel",
+        "serverTrue",
+        "securityGroup",
+        "clientshow",
+        "stopshow"  from gm_server  where gameid='1'and test='0' and status = 1 and (pid is null or  trim(pid) ='') order by id limit 20 offset (20*0)
+[2020-11-28T17:16:00.009] [DEBUG] debugLogger - Executing (default): select count(id) as total from gm_server where gameid='1'and test='0' and status = 1 and (pid is null or  trim(pid) ='')
+[2020-11-28T17:16:00.041] [DEBUG] debugLogger - Executing (default): select max(num), display from (SELECT count(display) as num,
+		case 
+		when display='1' then '流畅'
+		when display='2' then '繁忙'
+		when display='3' then '维护'
+		when display='4' then '爆满'
+		end
+		as display
+		from gm_server where id in ( SELECT id from gm_server  where gameid='1'and test='0' and  status = 1 and (pid is null or  trim(pid) ='')  ORDER BY id limit 20 offset (20*0)  ) GROUP BY display 
+		union 
+		select 0 as num ,'繁忙' as display
+		union 
+		select 0 as num ,'流畅' as display
+		union
+		select 0 as num ,'维护' as display
+		union
+		select 0 as num ,'爆满' as display
+		)a GROUP BY display
+[2020-11-28T17:16:29.810] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(channel, ','), ',')  as values  from gm_game_channel where gameid = '1' and status = '1'
+[2020-11-28T17:16:29.817] [DEBUG] debugLogger - Executing (default): select "id",
+        "status",
+        "create_user_id",
+        "update_user_id",
+        "create_time",
+        "update_time",
+        "servername",
+        "ip_port",
+        "address",
+        "plaform",
+        "display",
+        "srttime",
+        "gamename",
+        "pid" ,
+        "serverid",
+        "test",
+        "load",
+        "gameid",
+        "childrens",
+        "port",
+        "ip",
+        "channel",
+        "serverTrue",
+        "securityGroup",
+        "clientshow",
+        "stopshow"  from gm_server  where gameid='1'and test='0' and status = 1 and (pid is null or  trim(pid) ='') order by id limit 20 offset (20*0)
+[2020-11-28T17:16:29.825] [DEBUG] debugLogger - Executing (default): select count(id) as total from gm_server where gameid='1'and test='0' and status = 1 and (pid is null or  trim(pid) ='')
+[2020-11-28T17:16:29.836] [DEBUG] debugLogger - Executing (default): select max(num), display from (SELECT count(display) as num,
+		case 
+		when display='1' then '流畅'
+		when display='2' then '繁忙'
+		when display='3' then '维护'
+		when display='4' then '爆满'
+		end
+		as display
+		from gm_server where id in ( SELECT id from gm_server  where gameid='1'and test='0' and  status = 1 and (pid is null or  trim(pid) ='')  ORDER BY id limit 20 offset (20*0)  ) GROUP BY display 
+		union 
+		select 0 as num ,'繁忙' as display
+		union 
+		select 0 as num ,'流畅' as display
+		union
+		select 0 as num ,'维护' as display
+		union
+		select 0 as num ,'爆满' as display
+		)a GROUP BY display
+[2020-11-28T17:16:30.193] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(channel, ','), ',')  as values  from gm_game_channel where gameid = '1' and status = '1'
+[2020-11-28T17:16:30.194] [DEBUG] debugLogger - Executing (default): select "id",
+        "status",
+        "create_user_id",
+        "update_user_id",
+        "create_time",
+        "update_time",
+        "servername",
+        "ip_port",
+        "address",
+        "plaform",
+        "display",
+        "srttime",
+        "gamename",
+        "pid" ,
+        "serverid",
+        "test",
+        "load",
+        "gameid",
+        "childrens",
+        "port",
+        "ip",
+        "channel",
+        "serverTrue",
+        "securityGroup",
+        "clientshow",
+        "stopshow"  from gm_server  where gameid='1'and test='0' and status = 1 and (pid is null or  trim(pid) ='') order by id limit 20 offset (20*0)
+[2020-11-28T17:16:30.204] [DEBUG] debugLogger - Executing (default): select count(id) as total from gm_server where gameid='1'and test='0' and status = 1 and (pid is null or  trim(pid) ='')
+[2020-11-28T17:16:30.220] [DEBUG] debugLogger - Executing (default): select max(num), display from (SELECT count(display) as num,
+		case 
+		when display='1' then '流畅'
+		when display='2' then '繁忙'
+		when display='3' then '维护'
+		when display='4' then '爆满'
+		end
+		as display
+		from gm_server where id in ( SELECT id from gm_server  where gameid='1'and test='0' and  status = 1 and (pid is null or  trim(pid) ='')  ORDER BY id limit 20 offset (20*0)  ) GROUP BY display 
+		union 
+		select 0 as num ,'繁忙' as display
+		union 
+		select 0 as num ,'流畅' as display
+		union
+		select 0 as num ,'维护' as display
+		union
+		select 0 as num ,'爆满' as display
+		)a GROUP BY display
+[2020-11-28T17:16:32.554] [DEBUG] debugLogger - Executing (default): select a.id,a.game_name ,a.image_url as img from gm_game a join gm_purview b on b.gid = a.id where b.uids @> '79' and a.status = '1'  and b.status = '1'   limit 1
+[2020-11-28T17:16:32.563] [DEBUG] debugLogger - Executing (default): with qwe as (select a.url,a.pid,a.name,d.game_name,d.id as gameid, a.id,b.grede , b.purview_id,c.uid,c.gid from gm_url a join gm_url_purview  b on  a.id = b.url_id  join gm_purview c on c.id = b.purview_id join gm_game d on d.id = c.gid where  c.uids @> '79' and d.id = '1' and d.status = 1 and b.grede != 827 and c.status = 1  and a.status = 1 order by id ),
+					qwer as (select * from qwe a where (select count(*) > 1 from qwe b where b.id = a.id )),
+					asd as (select * from qwe a where (select count(*) =  1 from qwe b where b.id = a.id )),
+					zxc as (select * from qwer where grede = '1'),
+					wer as (select * from qwer where id not in (select id from zxc )
+					union 
+					select * from qwer where id not in (select id from zxc )),
+					sdf as (select url,pid,name,gameid,grede,id from asd 
+					union 
+					select url,pid,name,gameid,grede,id from zxc 
+					union 
+					select url,pid,name,gameid,grede,id from wer ),
+					ewq as (select * from sdf ORDER BY id )
+					select name,(select json_agg(concat('{"url":"',url,'","name":"',name,'","meta":"',grede,'"}')::jsonb) from ewq  where ewq.pid = d.id) as children from ewq as d where pid = 0 ORDER BY d.id
+[2020-11-28T17:16:32.574] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(game_name, ','), ',')  as games from (
+			select  DISTINCT game_name,b.id from gm_purview a join gm_game b on a.gid = b.id  where uids @> '79' and b.status = '1' and a.status = '1'   ORDER BY id 
+		) a
+[2020-11-28T17:16:33.812] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(channel, ','), ',')  as values  from gm_game_channel where gameid = '1' and status = '1'
+[2020-11-28T17:16:33.816] [DEBUG] debugLogger - Executing (default): select "id",
+        "status",
+        "create_user_id",
+        "update_user_id",
+        "create_time",
+        "update_time",
+        "servername",
+        "ip_port",
+        "address",
+        "plaform",
+        "display",
+        "srttime",
+        "gamename",
+        "pid" ,
+        "serverid",
+        "test",
+        "load",
+        "gameid",
+        "childrens",
+        "port",
+        "ip",
+        "channel",
+        "serverTrue",
+        "securityGroup",
+        "clientshow",
+        "stopshow"  from gm_server  where gameid='1'and test='0' and status = 1 and (pid is null or  trim(pid) ='') order by id limit 20 offset (20*0)
+[2020-11-28T17:16:33.835] [DEBUG] debugLogger - Executing (default): select count(id) as total from gm_server where gameid='1'and test='0' and status = 1 and (pid is null or  trim(pid) ='')
+[2020-11-28T17:16:33.848] [DEBUG] debugLogger - Executing (default): select max(num), display from (SELECT count(display) as num,
+		case 
+		when display='1' then '流畅'
+		when display='2' then '繁忙'
+		when display='3' then '维护'
+		when display='4' then '爆满'
+		end
+		as display
+		from gm_server where id in ( SELECT id from gm_server  where gameid='1'and test='0' and  status = 1 and (pid is null or  trim(pid) ='')  ORDER BY id limit 20 offset (20*0)  ) GROUP BY display 
+		union 
+		select 0 as num ,'繁忙' as display
+		union 
+		select 0 as num ,'流畅' as display
+		union
+		select 0 as num ,'维护' as display
+		union
+		select 0 as num ,'爆满' as display
+		)a GROUP BY display
+[2020-11-28T17:16:37.175] [DEBUG] debugLogger - Executing (default): select a.id,a.game_name ,a.image_url as img from gm_game a join gm_purview b on b.gid = a.id where b.uids @> '79' and a.status = '1'  and b.status = '1'   limit 1
+[2020-11-28T17:16:37.185] [DEBUG] debugLogger - Executing (default): with qwe as (select a.url,a.pid,a.name,d.game_name,d.id as gameid, a.id,b.grede , b.purview_id,c.uid,c.gid from gm_url a join gm_url_purview  b on  a.id = b.url_id  join gm_purview c on c.id = b.purview_id join gm_game d on d.id = c.gid where  c.uids @> '79' and d.id = '1' and d.status = 1 and b.grede != 827 and c.status = 1  and a.status = 1 order by id ),
+					qwer as (select * from qwe a where (select count(*) > 1 from qwe b where b.id = a.id )),
+					asd as (select * from qwe a where (select count(*) =  1 from qwe b where b.id = a.id )),
+					zxc as (select * from qwer where grede = '1'),
+					wer as (select * from qwer where id not in (select id from zxc )
+					union 
+					select * from qwer where id not in (select id from zxc )),
+					sdf as (select url,pid,name,gameid,grede,id from asd 
+					union 
+					select url,pid,name,gameid,grede,id from zxc 
+					union 
+					select url,pid,name,gameid,grede,id from wer ),
+					ewq as (select * from sdf ORDER BY id )
+					select name,(select json_agg(concat('{"url":"',url,'","name":"',name,'","meta":"',grede,'"}')::jsonb) from ewq  where ewq.pid = d.id) as children from ewq as d where pid = 0 ORDER BY d.id
+[2020-11-28T17:16:37.194] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(game_name, ','), ',')  as games from (
+			select  DISTINCT game_name,b.id from gm_purview a join gm_game b on a.gid = b.id  where uids @> '79' and b.status = '1' and a.status = '1'   ORDER BY id 
+		) a
+[2020-11-28T17:16:38.276] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(channel, ','), ',')  as values  from gm_game_channel where gameid = '1' and status = '1'
+[2020-11-28T17:16:38.278] [DEBUG] debugLogger - Executing (default): select "id",
+        "status",
+        "create_user_id",
+        "update_user_id",
+        "create_time",
+        "update_time",
+        "servername",
+        "ip_port",
+        "address",
+        "plaform",
+        "display",
+        "srttime",
+        "gamename",
+        "pid" ,
+        "serverid",
+        "test",
+        "load",
+        "gameid",
+        "childrens",
+        "port",
+        "ip",
+        "channel",
+        "serverTrue",
+        "securityGroup",
+        "clientshow",
+        "stopshow"  from gm_server  where gameid='1'and test='0' and status = 1 and (pid is null or  trim(pid) ='') order by id limit 20 offset (20*0)
+[2020-11-28T17:16:38.291] [DEBUG] debugLogger - Executing (default): select count(id) as total from gm_server where gameid='1'and test='0' and status = 1 and (pid is null or  trim(pid) ='')
+[2020-11-28T17:16:38.312] [DEBUG] debugLogger - Executing (default): select max(num), display from (SELECT count(display) as num,
+		case 
+		when display='1' then '流畅'
+		when display='2' then '繁忙'
+		when display='3' then '维护'
+		when display='4' then '爆满'
+		end
+		as display
+		from gm_server where id in ( SELECT id from gm_server  where gameid='1'and test='0' and  status = 1 and (pid is null or  trim(pid) ='')  ORDER BY id limit 20 offset (20*0)  ) GROUP BY display 
+		union 
+		select 0 as num ,'繁忙' as display
+		union 
+		select 0 as num ,'流畅' as display
+		union
+		select 0 as num ,'维护' as display
+		union
+		select 0 as num ,'爆满' as display
+		)a GROUP BY display
+[2020-11-28T17:16:43.107] [DEBUG] debugLogger - Executing (default): select a.id,a.game_name ,a.image_url as img from gm_game a join gm_purview b on b.gid = a.id where b.uids @> '79' and a.status = '1'  and b.status = '1'   limit 1
+[2020-11-28T17:16:43.117] [DEBUG] debugLogger - Executing (default): with qwe as (select a.url,a.pid,a.name,d.game_name,d.id as gameid, a.id,b.grede , b.purview_id,c.uid,c.gid from gm_url a join gm_url_purview  b on  a.id = b.url_id  join gm_purview c on c.id = b.purview_id join gm_game d on d.id = c.gid where  c.uids @> '79' and d.id = '1' and d.status = 1 and b.grede != 827 and c.status = 1  and a.status = 1 order by id ),
+					qwer as (select * from qwe a where (select count(*) > 1 from qwe b where b.id = a.id )),
+					asd as (select * from qwe a where (select count(*) =  1 from qwe b where b.id = a.id )),
+					zxc as (select * from qwer where grede = '1'),
+					wer as (select * from qwer where id not in (select id from zxc )
+					union 
+					select * from qwer where id not in (select id from zxc )),
+					sdf as (select url,pid,name,gameid,grede,id from asd 
+					union 
+					select url,pid,name,gameid,grede,id from zxc 
+					union 
+					select url,pid,name,gameid,grede,id from wer ),
+					ewq as (select * from sdf ORDER BY id )
+					select name,(select json_agg(concat('{"url":"',url,'","name":"',name,'","meta":"',grede,'"}')::jsonb) from ewq  where ewq.pid = d.id) as children from ewq as d where pid = 0 ORDER BY d.id
+[2020-11-28T17:16:43.128] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(game_name, ','), ',')  as games from (
+			select  DISTINCT game_name,b.id from gm_purview a join gm_game b on a.gid = b.id  where uids @> '79' and b.status = '1' and a.status = '1'   ORDER BY id 
+		) a
+[2020-11-28T17:16:44.087] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(channel, ','), ',')  as values  from gm_game_channel where gameid = '1' and status = '1'
+[2020-11-28T17:16:44.097] [DEBUG] debugLogger - Executing (default): select "id",
+        "status",
+        "create_user_id",
+        "update_user_id",
+        "create_time",
+        "update_time",
+        "servername",
+        "ip_port",
+        "address",
+        "plaform",
+        "display",
+        "srttime",
+        "gamename",
+        "pid" ,
+        "serverid",
+        "test",
+        "load",
+        "gameid",
+        "childrens",
+        "port",
+        "ip",
+        "channel",
+        "serverTrue",
+        "securityGroup",
+        "clientshow",
+        "stopshow"  from gm_server  where gameid='1'and test='0' and status = 1 and (pid is null or  trim(pid) ='') order by id limit 20 offset (20*0)
+[2020-11-28T17:16:44.109] [DEBUG] debugLogger - Executing (default): select count(id) as total from gm_server where gameid='1'and test='0' and status = 1 and (pid is null or  trim(pid) ='')
+[2020-11-28T17:16:44.132] [DEBUG] debugLogger - Executing (default): select max(num), display from (SELECT count(display) as num,
+		case 
+		when display='1' then '流畅'
+		when display='2' then '繁忙'
+		when display='3' then '维护'
+		when display='4' then '爆满'
+		end
+		as display
+		from gm_server where id in ( SELECT id from gm_server  where gameid='1'and test='0' and  status = 1 and (pid is null or  trim(pid) ='')  ORDER BY id limit 20 offset (20*0)  ) GROUP BY display 
+		union 
+		select 0 as num ,'繁忙' as display
+		union 
+		select 0 as num ,'流畅' as display
+		union
+		select 0 as num ,'维护' as display
+		union
+		select 0 as num ,'爆满' as display
+		)a GROUP BY display
+[2020-11-28T17:17:01.423] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(channel, ','), ',')  as values  from gm_game_channel where gameid = '1' and status = '1'
+[2020-11-28T17:17:01.427] [DEBUG] debugLogger - Executing (default): select "id",
+        "status",
+        "create_user_id",
+        "update_user_id",
+        "create_time",
+        "update_time",
+        "servername",
+        "ip_port",
+        "address",
+        "plaform",
+        "display",
+        "srttime",
+        "gamename",
+        "pid" ,
+        "serverid",
+        "test",
+        "load",
+        "gameid",
+        "childrens",
+        "port",
+        "ip",
+        "channel",
+        "serverTrue",
+        "securityGroup",
+        "clientshow",
+        "stopshow"  from gm_server  where gameid='1'and test='0' and status = 1 and (pid is null or  trim(pid) ='') order by id limit 20 offset (20*0)
+[2020-11-28T17:17:01.438] [DEBUG] debugLogger - Executing (default): select count(id) as total from gm_server where gameid='1'and test='0' and status = 1 and (pid is null or  trim(pid) ='')
+[2020-11-28T17:17:01.449] [DEBUG] debugLogger - Executing (default): select max(num), display from (SELECT count(display) as num,
+		case 
+		when display='1' then '流畅'
+		when display='2' then '繁忙'
+		when display='3' then '维护'
+		when display='4' then '爆满'
+		end
+		as display
+		from gm_server where id in ( SELECT id from gm_server  where gameid='1'and test='0' and  status = 1 and (pid is null or  trim(pid) ='')  ORDER BY id limit 20 offset (20*0)  ) GROUP BY display 
+		union 
+		select 0 as num ,'繁忙' as display
+		union 
+		select 0 as num ,'流畅' as display
+		union
+		select 0 as num ,'维护' as display
+		union
+		select 0 as num ,'爆满' as display
+		)a GROUP BY display
+[2020-11-28T17:17:07.935] [DEBUG] debugLogger - Executing (default): select a.id,a.game_name ,a.image_url as img from gm_game a join gm_purview b on b.gid = a.id where b.uids @> '79' and a.status = '1'  and b.status = '1'   limit 1
+[2020-11-28T17:17:07.943] [DEBUG] debugLogger - Executing (default): with qwe as (select a.url,a.pid,a.name,d.game_name,d.id as gameid, a.id,b.grede , b.purview_id,c.uid,c.gid from gm_url a join gm_url_purview  b on  a.id = b.url_id  join gm_purview c on c.id = b.purview_id join gm_game d on d.id = c.gid where  c.uids @> '79' and d.id = '1' and d.status = 1 and b.grede != 827 and c.status = 1  and a.status = 1 order by id ),
+					qwer as (select * from qwe a where (select count(*) > 1 from qwe b where b.id = a.id )),
+					asd as (select * from qwe a where (select count(*) =  1 from qwe b where b.id = a.id )),
+					zxc as (select * from qwer where grede = '1'),
+					wer as (select * from qwer where id not in (select id from zxc )
+					union 
+					select * from qwer where id not in (select id from zxc )),
+					sdf as (select url,pid,name,gameid,grede,id from asd 
+					union 
+					select url,pid,name,gameid,grede,id from zxc 
+					union 
+					select url,pid,name,gameid,grede,id from wer ),
+					ewq as (select * from sdf ORDER BY id )
+					select name,(select json_agg(concat('{"url":"',url,'","name":"',name,'","meta":"',grede,'"}')::jsonb) from ewq  where ewq.pid = d.id) as children from ewq as d where pid = 0 ORDER BY d.id
+[2020-11-28T17:17:07.956] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(game_name, ','), ',')  as games from (
+			select  DISTINCT game_name,b.id from gm_purview a join gm_game b on a.gid = b.id  where uids @> '79' and b.status = '1' and a.status = '1'   ORDER BY id 
+		) a
+[2020-11-28T17:17:08.879] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(channel, ','), ',')  as values  from gm_game_channel where gameid = '1' and status = '1'
+[2020-11-28T17:17:08.885] [DEBUG] debugLogger - Executing (default): select "id",
+        "status",
+        "create_user_id",
+        "update_user_id",
+        "create_time",
+        "update_time",
+        "servername",
+        "ip_port",
+        "address",
+        "plaform",
+        "display",
+        "srttime",
+        "gamename",
+        "pid" ,
+        "serverid",
+        "test",
+        "load",
+        "gameid",
+        "childrens",
+        "port",
+        "ip",
+        "channel",
+        "serverTrue",
+        "securityGroup",
+        "clientshow",
+        "stopshow"  from gm_server  where gameid='1'and test='0' and status = 1 and (pid is null or  trim(pid) ='') order by id limit 20 offset (20*0)
+[2020-11-28T17:17:08.896] [DEBUG] debugLogger - Executing (default): select count(id) as total from gm_server where gameid='1'and test='0' and status = 1 and (pid is null or  trim(pid) ='')
+[2020-11-28T17:17:08.912] [DEBUG] debugLogger - Executing (default): select max(num), display from (SELECT count(display) as num,
+		case 
+		when display='1' then '流畅'
+		when display='2' then '繁忙'
+		when display='3' then '维护'
+		when display='4' then '爆满'
+		end
+		as display
+		from gm_server where id in ( SELECT id from gm_server  where gameid='1'and test='0' and  status = 1 and (pid is null or  trim(pid) ='')  ORDER BY id limit 20 offset (20*0)  ) GROUP BY display 
+		union 
+		select 0 as num ,'繁忙' as display
+		union 
+		select 0 as num ,'流畅' as display
+		union
+		select 0 as num ,'维护' as display
+		union
+		select 0 as num ,'爆满' as display
+		)a GROUP BY display
+[2020-11-28T17:17:11.322] [DEBUG] debugLogger - Executing (default): select a.id,a.game_name ,a.image_url as img from gm_game a join gm_purview b on b.gid = a.id where b.uids @> '79' and a.status = '1'  and b.status = '1'   limit 1
+[2020-11-28T17:17:11.332] [DEBUG] debugLogger - Executing (default): with qwe as (select a.url,a.pid,a.name,d.game_name,d.id as gameid, a.id,b.grede , b.purview_id,c.uid,c.gid from gm_url a join gm_url_purview  b on  a.id = b.url_id  join gm_purview c on c.id = b.purview_id join gm_game d on d.id = c.gid where  c.uids @> '79' and d.id = '1' and d.status = 1 and b.grede != 827 and c.status = 1  and a.status = 1 order by id ),
+					qwer as (select * from qwe a where (select count(*) > 1 from qwe b where b.id = a.id )),
+					asd as (select * from qwe a where (select count(*) =  1 from qwe b where b.id = a.id )),
+					zxc as (select * from qwer where grede = '1'),
+					wer as (select * from qwer where id not in (select id from zxc )
+					union 
+					select * from qwer where id not in (select id from zxc )),
+					sdf as (select url,pid,name,gameid,grede,id from asd 
+					union 
+					select url,pid,name,gameid,grede,id from zxc 
+					union 
+					select url,pid,name,gameid,grede,id from wer ),
+					ewq as (select * from sdf ORDER BY id )
+					select name,(select json_agg(concat('{"url":"',url,'","name":"',name,'","meta":"',grede,'"}')::jsonb) from ewq  where ewq.pid = d.id) as children from ewq as d where pid = 0 ORDER BY d.id
+[2020-11-28T17:17:11.344] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(game_name, ','), ',')  as games from (
+			select  DISTINCT game_name,b.id from gm_purview a join gm_game b on a.gid = b.id  where uids @> '79' and b.status = '1' and a.status = '1'   ORDER BY id 
+		) a
+[2020-11-28T17:17:12.239] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(channel, ','), ',')  as values  from gm_game_channel where gameid = '1' and status = '1'
+[2020-11-28T17:17:12.245] [DEBUG] debugLogger - Executing (default): select "id",
+        "status",
+        "create_user_id",
+        "update_user_id",
+        "create_time",
+        "update_time",
+        "servername",
+        "ip_port",
+        "address",
+        "plaform",
+        "display",
+        "srttime",
+        "gamename",
+        "pid" ,
+        "serverid",
+        "test",
+        "load",
+        "gameid",
+        "childrens",
+        "port",
+        "ip",
+        "channel",
+        "serverTrue",
+        "securityGroup",
+        "clientshow",
+        "stopshow"  from gm_server  where gameid='1'and test='0' and status = 1 and (pid is null or  trim(pid) ='') order by id limit 20 offset (20*0)
+[2020-11-28T17:17:12.257] [DEBUG] debugLogger - Executing (default): select count(id) as total from gm_server where gameid='1'and test='0' and status = 1 and (pid is null or  trim(pid) ='')
+[2020-11-28T17:17:12.270] [DEBUG] debugLogger - Executing (default): select max(num), display from (SELECT count(display) as num,
+		case 
+		when display='1' then '流畅'
+		when display='2' then '繁忙'
+		when display='3' then '维护'
+		when display='4' then '爆满'
+		end
+		as display
+		from gm_server where id in ( SELECT id from gm_server  where gameid='1'and test='0' and  status = 1 and (pid is null or  trim(pid) ='')  ORDER BY id limit 20 offset (20*0)  ) GROUP BY display 
+		union 
+		select 0 as num ,'繁忙' as display
+		union 
+		select 0 as num ,'流畅' as display
+		union
+		select 0 as num ,'维护' as display
+		union
+		select 0 as num ,'爆满' as display
+		)a GROUP BY display
+[2020-11-28T18:22:25.242] [DEBUG] debugLogger - Executing (default): select * from auth_user where username = 'zhangzongchu' and password = md5(encode('281317', 'BASE64'))
+[2020-11-28T18:22:25.346] [DEBUG] debugLogger - Executing (default): with qwe as (select   jsonb_array_elements_text(uids) as id  from gm_purview   ),
+asd as (select a.* from gm_user a  where a.username = 'zhangzongchu')
+select * from asd where id::varchar in (select id from qwe GROUP BY id )
+[2020-11-28T18:22:25.470] [DEBUG] debugLogger - Executing (default): select a.id,a.game_name ,a.image_url as img from gm_game a join gm_purview b on b.gid = a.id where b.uids @> '79' and a.status = '1'  and b.status = '1'   limit 1
+[2020-11-28T18:22:25.478] [DEBUG] debugLogger - Executing (default): with qwe as (select a.url,a.pid,a.name,d.game_name,d.id as gameid, a.id,b.grede , b.purview_id,c.uid,c.gid from gm_url a join gm_url_purview  b on  a.id = b.url_id  join gm_purview c on c.id = b.purview_id join gm_game d on d.id = c.gid where  c.uids @> '79' and d.id = '1' and d.status = 1 and b.grede != 827 and c.status = 1  and a.status = 1 order by id ),
+					qwer as (select * from qwe a where (select count(*) > 1 from qwe b where b.id = a.id )),
+					asd as (select * from qwe a where (select count(*) =  1 from qwe b where b.id = a.id )),
+					zxc as (select * from qwer where grede = '1'),
+					wer as (select * from qwer where id not in (select id from zxc )
+					union 
+					select * from qwer where id not in (select id from zxc )),
+					sdf as (select url,pid,name,gameid,grede,id from asd 
+					union 
+					select url,pid,name,gameid,grede,id from zxc 
+					union 
+					select url,pid,name,gameid,grede,id from wer ),
+					ewq as (select * from sdf ORDER BY id )
+					select name,(select json_agg(concat('{"url":"',url,'","name":"',name,'","meta":"',grede,'"}')::jsonb) from ewq  where ewq.pid = d.id) as children from ewq as d where pid = 0 ORDER BY d.id
+[2020-11-28T18:22:25.488] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(game_name, ','), ',')  as games from (
+			select  DISTINCT game_name,b.id from gm_purview a join gm_game b on a.gid = b.id  where uids @> '79' and b.status = '1' and a.status = '1'   ORDER BY id 
+		) a
+[2020-11-28T18:24:50.092] [DEBUG] debugLogger - Executing (default): select a.id,a.game_name ,a.image_url as img from gm_game a join gm_purview b on b.gid = a.id where b.uids @> '79' and a.status = '1'  and b.status = '1'   limit 1
+[2020-11-28T18:24:50.100] [DEBUG] debugLogger - Executing (default): with qwe as (select a.url,a.pid,a.name,d.game_name,d.id as gameid, a.id,b.grede , b.purview_id,c.uid,c.gid from gm_url a join gm_url_purview  b on  a.id = b.url_id  join gm_purview c on c.id = b.purview_id join gm_game d on d.id = c.gid where  c.uids @> '79' and d.id = '1' and d.status = 1 and b.grede != 827 and c.status = 1  and a.status = 1 order by id ),
+					qwer as (select * from qwe a where (select count(*) > 1 from qwe b where b.id = a.id )),
+					asd as (select * from qwe a where (select count(*) =  1 from qwe b where b.id = a.id )),
+					zxc as (select * from qwer where grede = '1'),
+					wer as (select * from qwer where id not in (select id from zxc )
+					union 
+					select * from qwer where id not in (select id from zxc )),
+					sdf as (select url,pid,name,gameid,grede,id from asd 
+					union 
+					select url,pid,name,gameid,grede,id from zxc 
+					union 
+					select url,pid,name,gameid,grede,id from wer ),
+					ewq as (select * from sdf ORDER BY id )
+					select name,(select json_agg(concat('{"url":"',url,'","name":"',name,'","meta":"',grede,'"}')::jsonb) from ewq  where ewq.pid = d.id) as children from ewq as d where pid = 0 ORDER BY d.id
+[2020-11-28T18:24:50.117] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(game_name, ','), ',')  as games from (
+			select  DISTINCT game_name,b.id from gm_purview a join gm_game b on a.gid = b.id  where uids @> '79' and b.status = '1' and a.status = '1'   ORDER BY id 
+		) a
+[2020-11-28T18:26:12.117] [DEBUG] debugLogger - Executing (default): select a.id,a.game_name ,a.image_url as img from gm_game a join gm_purview b on b.gid = a.id where b.uids @> '79' and a.status = '1'  and b.status = '1'   limit 1
+[2020-11-28T18:26:12.129] [DEBUG] debugLogger - Executing (default): with qwe as (select a.url,a.pid,a.name,d.game_name,d.id as gameid, a.id,b.grede , b.purview_id,c.uid,c.gid from gm_url a join gm_url_purview  b on  a.id = b.url_id  join gm_purview c on c.id = b.purview_id join gm_game d on d.id = c.gid where  c.uids @> '79' and d.id = '1' and d.status = 1 and b.grede != 827 and c.status = 1  and a.status = 1 order by id ),
+					qwer as (select * from qwe a where (select count(*) > 1 from qwe b where b.id = a.id )),
+					asd as (select * from qwe a where (select count(*) =  1 from qwe b where b.id = a.id )),
+					zxc as (select * from qwer where grede = '1'),
+					wer as (select * from qwer where id not in (select id from zxc )
+					union 
+					select * from qwer where id not in (select id from zxc )),
+					sdf as (select url,pid,name,gameid,grede,id from asd 
+					union 
+					select url,pid,name,gameid,grede,id from zxc 
+					union 
+					select url,pid,name,gameid,grede,id from wer ),
+					ewq as (select * from sdf ORDER BY id )
+					select name,(select json_agg(concat('{"url":"',url,'","name":"',name,'","meta":"',grede,'"}')::jsonb) from ewq  where ewq.pid = d.id) as children from ewq as d where pid = 0 ORDER BY d.id
+[2020-11-28T18:26:12.142] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(game_name, ','), ',')  as games from (
+			select  DISTINCT game_name,b.id from gm_purview a join gm_game b on a.gid = b.id  where uids @> '79' and b.status = '1' and a.status = '1'   ORDER BY id 
+		) a
+[2020-11-28T18:26:41.840] [DEBUG] debugLogger - Executing (default): select a.id,a.game_name ,a.image_url as img from gm_game a join gm_purview b on b.gid = a.id where b.uids @> '79' and a.status = '1'  and b.status = '1'   limit 1
+[2020-11-28T18:26:41.847] [DEBUG] debugLogger - Executing (default): with qwe as (select a.url,a.pid,a.name,d.game_name,d.id as gameid, a.id,b.grede , b.purview_id,c.uid,c.gid from gm_url a join gm_url_purview  b on  a.id = b.url_id  join gm_purview c on c.id = b.purview_id join gm_game d on d.id = c.gid where  c.uids @> '79' and d.id = '1' and d.status = 1 and b.grede != 827 and c.status = 1  and a.status = 1 order by id ),
+					qwer as (select * from qwe a where (select count(*) > 1 from qwe b where b.id = a.id )),
+					asd as (select * from qwe a where (select count(*) =  1 from qwe b where b.id = a.id )),
+					zxc as (select * from qwer where grede = '1'),
+					wer as (select * from qwer where id not in (select id from zxc )
+					union 
+					select * from qwer where id not in (select id from zxc )),
+					sdf as (select url,pid,name,gameid,grede,id from asd 
+					union 
+					select url,pid,name,gameid,grede,id from zxc 
+					union 
+					select url,pid,name,gameid,grede,id from wer ),
+					ewq as (select * from sdf ORDER BY id )
+					select name,(select json_agg(concat('{"url":"',url,'","name":"',name,'","meta":"',grede,'"}')::jsonb) from ewq  where ewq.pid = d.id) as children from ewq as d where pid = 0 ORDER BY d.id
+[2020-11-28T18:26:41.860] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(game_name, ','), ',')  as games from (
+			select  DISTINCT game_name,b.id from gm_purview a join gm_game b on a.gid = b.id  where uids @> '79' and b.status = '1' and a.status = '1'   ORDER BY id 
+		) a
+[2020-11-28T18:35:43.264] [DEBUG] debugLogger - Executing (default): select a.id,a.game_name ,a.image_url as img from gm_game a join gm_purview b on b.gid = a.id where b.uids @> '79' and a.status = '1'  and b.status = '1'   limit 1
+[2020-11-28T18:35:43.274] [DEBUG] debugLogger - Executing (default): with qwe as (select a.url,a.pid,a.name,d.game_name,d.id as gameid, a.id,b.grede , b.purview_id,c.uid,c.gid from gm_url a join gm_url_purview  b on  a.id = b.url_id  join gm_purview c on c.id = b.purview_id join gm_game d on d.id = c.gid where  c.uids @> '79' and d.id = '1' and d.status = 1 and b.grede != 827 and c.status = 1  and a.status = 1 order by id ),
+					qwer as (select * from qwe a where (select count(*) > 1 from qwe b where b.id = a.id )),
+					asd as (select * from qwe a where (select count(*) =  1 from qwe b where b.id = a.id )),
+					zxc as (select * from qwer where grede = '1'),
+					wer as (select * from qwer where id not in (select id from zxc )
+					union 
+					select * from qwer where id not in (select id from zxc )),
+					sdf as (select url,pid,name,gameid,grede,id from asd 
+					union 
+					select url,pid,name,gameid,grede,id from zxc 
+					union 
+					select url,pid,name,gameid,grede,id from wer ),
+					ewq as (select * from sdf ORDER BY id )
+					select name,(select json_agg(concat('{"url":"',url,'","name":"',name,'","meta":"',grede,'"}')::jsonb) from ewq  where ewq.pid = d.id) as children from ewq as d where pid = 0 ORDER BY d.id
+[2020-11-28T18:35:43.287] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(game_name, ','), ',')  as games from (
+			select  DISTINCT game_name,b.id from gm_purview a join gm_game b on a.gid = b.id  where uids @> '79' and b.status = '1' and a.status = '1'   ORDER BY id 
+		) a
+[2020-11-28T18:37:06.871] [DEBUG] debugLogger - Executing (default): select a.id,a.game_name ,a.image_url as img from gm_game a join gm_purview b on b.gid = a.id where b.uids @> '79' and a.status = '1'  and b.status = '1'   limit 1
+[2020-11-28T18:37:06.879] [DEBUG] debugLogger - Executing (default): with qwe as (select a.url,a.pid,a.name,d.game_name,d.id as gameid, a.id,b.grede , b.purview_id,c.uid,c.gid from gm_url a join gm_url_purview  b on  a.id = b.url_id  join gm_purview c on c.id = b.purview_id join gm_game d on d.id = c.gid where  c.uids @> '79' and d.id = '1' and d.status = 1 and b.grede != 827 and c.status = 1  and a.status = 1 order by id ),
+					qwer as (select * from qwe a where (select count(*) > 1 from qwe b where b.id = a.id )),
+					asd as (select * from qwe a where (select count(*) =  1 from qwe b where b.id = a.id )),
+					zxc as (select * from qwer where grede = '1'),
+					wer as (select * from qwer where id not in (select id from zxc )
+					union 
+					select * from qwer where id not in (select id from zxc )),
+					sdf as (select url,pid,name,gameid,grede,id from asd 
+					union 
+					select url,pid,name,gameid,grede,id from zxc 
+					union 
+					select url,pid,name,gameid,grede,id from wer ),
+					ewq as (select * from sdf ORDER BY id )
+					select name,(select json_agg(concat('{"url":"',url,'","name":"',name,'","meta":"',grede,'"}')::jsonb) from ewq  where ewq.pid = d.id) as children from ewq as d where pid = 0 ORDER BY d.id
+[2020-11-28T18:37:06.891] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(game_name, ','), ',')  as games from (
+			select  DISTINCT game_name,b.id from gm_purview a join gm_game b on a.gid = b.id  where uids @> '79' and b.status = '1' and a.status = '1'   ORDER BY id 
+		) a
+[2020-11-28T18:37:18.838] [DEBUG] debugLogger - Executing (default): select a.id,a.game_name ,a.image_url as img from gm_game a join gm_purview b on b.gid = a.id where b.uids @> '79' and a.status = '1'  and b.status = '1'   limit 1
+[2020-11-28T18:37:18.846] [DEBUG] debugLogger - Executing (default): with qwe as (select a.url,a.pid,a.name,d.game_name,d.id as gameid, a.id,b.grede , b.purview_id,c.uid,c.gid from gm_url a join gm_url_purview  b on  a.id = b.url_id  join gm_purview c on c.id = b.purview_id join gm_game d on d.id = c.gid where  c.uids @> '79' and d.id = '1' and d.status = 1 and b.grede != 827 and c.status = 1  and a.status = 1 order by id ),
+					qwer as (select * from qwe a where (select count(*) > 1 from qwe b where b.id = a.id )),
+					asd as (select * from qwe a where (select count(*) =  1 from qwe b where b.id = a.id )),
+					zxc as (select * from qwer where grede = '1'),
+					wer as (select * from qwer where id not in (select id from zxc )
+					union 
+					select * from qwer where id not in (select id from zxc )),
+					sdf as (select url,pid,name,gameid,grede,id from asd 
+					union 
+					select url,pid,name,gameid,grede,id from zxc 
+					union 
+					select url,pid,name,gameid,grede,id from wer ),
+					ewq as (select * from sdf ORDER BY id )
+					select name,(select json_agg(concat('{"url":"',url,'","name":"',name,'","meta":"',grede,'"}')::jsonb) from ewq  where ewq.pid = d.id) as children from ewq as d where pid = 0 ORDER BY d.id
+[2020-11-28T18:37:18.860] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(game_name, ','), ',')  as games from (
+			select  DISTINCT game_name,b.id from gm_purview a join gm_game b on a.gid = b.id  where uids @> '79' and b.status = '1' and a.status = '1'   ORDER BY id 
+		) a
+[2020-11-28T18:37:21.681] [DEBUG] debugLogger - Executing (default): select a.id,a.game_name ,a.image_url as img from gm_game a join gm_purview b on b.gid = a.id where b.uids @> '79' and a.status = '1'  and b.status = '1'   limit 1
+[2020-11-28T18:37:21.689] [DEBUG] debugLogger - Executing (default): with qwe as (select a.url,a.pid,a.name,d.game_name,d.id as gameid, a.id,b.grede , b.purview_id,c.uid,c.gid from gm_url a join gm_url_purview  b on  a.id = b.url_id  join gm_purview c on c.id = b.purview_id join gm_game d on d.id = c.gid where  c.uids @> '79' and d.id = '1' and d.status = 1 and b.grede != 827 and c.status = 1  and a.status = 1 order by id ),
+					qwer as (select * from qwe a where (select count(*) > 1 from qwe b where b.id = a.id )),
+					asd as (select * from qwe a where (select count(*) =  1 from qwe b where b.id = a.id )),
+					zxc as (select * from qwer where grede = '1'),
+					wer as (select * from qwer where id not in (select id from zxc )
+					union 
+					select * from qwer where id not in (select id from zxc )),
+					sdf as (select url,pid,name,gameid,grede,id from asd 
+					union 
+					select url,pid,name,gameid,grede,id from zxc 
+					union 
+					select url,pid,name,gameid,grede,id from wer ),
+					ewq as (select * from sdf ORDER BY id )
+					select name,(select json_agg(concat('{"url":"',url,'","name":"',name,'","meta":"',grede,'"}')::jsonb) from ewq  where ewq.pid = d.id) as children from ewq as d where pid = 0 ORDER BY d.id
+[2020-11-28T18:37:21.699] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(game_name, ','), ',')  as games from (
+			select  DISTINCT game_name,b.id from gm_purview a join gm_game b on a.gid = b.id  where uids @> '79' and b.status = '1' and a.status = '1'   ORDER BY id 
+		) a
+[2020-11-28T18:37:22.852] [DEBUG] debugLogger - Executing (default): select a.id,a.game_name ,a.image_url as img from gm_game a join gm_purview b on b.gid = a.id where b.uids @> '79' and a.status = '1'  and b.status = '1'   limit 1
+[2020-11-28T18:37:22.861] [DEBUG] debugLogger - Executing (default): with qwe as (select a.url,a.pid,a.name,d.game_name,d.id as gameid, a.id,b.grede , b.purview_id,c.uid,c.gid from gm_url a join gm_url_purview  b on  a.id = b.url_id  join gm_purview c on c.id = b.purview_id join gm_game d on d.id = c.gid where  c.uids @> '79' and d.id = '1' and d.status = 1 and b.grede != 827 and c.status = 1  and a.status = 1 order by id ),
+					qwer as (select * from qwe a where (select count(*) > 1 from qwe b where b.id = a.id )),
+					asd as (select * from qwe a where (select count(*) =  1 from qwe b where b.id = a.id )),
+					zxc as (select * from qwer where grede = '1'),
+					wer as (select * from qwer where id not in (select id from zxc )
+					union 
+					select * from qwer where id not in (select id from zxc )),
+					sdf as (select url,pid,name,gameid,grede,id from asd 
+					union 
+					select url,pid,name,gameid,grede,id from zxc 
+					union 
+					select url,pid,name,gameid,grede,id from wer ),
+					ewq as (select * from sdf ORDER BY id )
+					select name,(select json_agg(concat('{"url":"',url,'","name":"',name,'","meta":"',grede,'"}')::jsonb) from ewq  where ewq.pid = d.id) as children from ewq as d where pid = 0 ORDER BY d.id
+[2020-11-28T18:37:22.870] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(game_name, ','), ',')  as games from (
+			select  DISTINCT game_name,b.id from gm_purview a join gm_game b on a.gid = b.id  where uids @> '79' and b.status = '1' and a.status = '1'   ORDER BY id 
+		) a
+[2020-11-28T18:37:24.678] [DEBUG] debugLogger - Executing (default): select a.id,a.game_name ,a.image_url as img from gm_game a join gm_purview b on b.gid = a.id where b.uids @> '79' and a.status = '1'  and b.status = '1'   limit 1
+[2020-11-28T18:37:24.685] [DEBUG] debugLogger - Executing (default): with qwe as (select a.url,a.pid,a.name,d.game_name,d.id as gameid, a.id,b.grede , b.purview_id,c.uid,c.gid from gm_url a join gm_url_purview  b on  a.id = b.url_id  join gm_purview c on c.id = b.purview_id join gm_game d on d.id = c.gid where  c.uids @> '79' and d.id = '1' and d.status = 1 and b.grede != 827 and c.status = 1  and a.status = 1 order by id ),
+					qwer as (select * from qwe a where (select count(*) > 1 from qwe b where b.id = a.id )),
+					asd as (select * from qwe a where (select count(*) =  1 from qwe b where b.id = a.id )),
+					zxc as (select * from qwer where grede = '1'),
+					wer as (select * from qwer where id not in (select id from zxc )
+					union 
+					select * from qwer where id not in (select id from zxc )),
+					sdf as (select url,pid,name,gameid,grede,id from asd 
+					union 
+					select url,pid,name,gameid,grede,id from zxc 
+					union 
+					select url,pid,name,gameid,grede,id from wer ),
+					ewq as (select * from sdf ORDER BY id )
+					select name,(select json_agg(concat('{"url":"',url,'","name":"',name,'","meta":"',grede,'"}')::jsonb) from ewq  where ewq.pid = d.id) as children from ewq as d where pid = 0 ORDER BY d.id
+[2020-11-28T18:37:24.695] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(game_name, ','), ',')  as games from (
+			select  DISTINCT game_name,b.id from gm_purview a join gm_game b on a.gid = b.id  where uids @> '79' and b.status = '1' and a.status = '1'   ORDER BY id 
+		) a
+[2020-11-28T18:37:39.537] [DEBUG] debugLogger - Executing (default): select a.id,a.game_name ,a.image_url as img from gm_game a join gm_purview b on b.gid = a.id where b.uids @> '79' and a.status = '1'  and b.status = '1'   limit 1
+[2020-11-28T18:37:39.545] [DEBUG] debugLogger - Executing (default): with qwe as (select a.url,a.pid,a.name,d.game_name,d.id as gameid, a.id,b.grede , b.purview_id,c.uid,c.gid from gm_url a join gm_url_purview  b on  a.id = b.url_id  join gm_purview c on c.id = b.purview_id join gm_game d on d.id = c.gid where  c.uids @> '79' and d.id = '1' and d.status = 1 and b.grede != 827 and c.status = 1  and a.status = 1 order by id ),
+					qwer as (select * from qwe a where (select count(*) > 1 from qwe b where b.id = a.id )),
+					asd as (select * from qwe a where (select count(*) =  1 from qwe b where b.id = a.id )),
+					zxc as (select * from qwer where grede = '1'),
+					wer as (select * from qwer where id not in (select id from zxc )
+					union 
+					select * from qwer where id not in (select id from zxc )),
+					sdf as (select url,pid,name,gameid,grede,id from asd 
+					union 
+					select url,pid,name,gameid,grede,id from zxc 
+					union 
+					select url,pid,name,gameid,grede,id from wer ),
+					ewq as (select * from sdf ORDER BY id )
+					select name,(select json_agg(concat('{"url":"',url,'","name":"',name,'","meta":"',grede,'"}')::jsonb) from ewq  where ewq.pid = d.id) as children from ewq as d where pid = 0 ORDER BY d.id
+[2020-11-28T18:37:39.557] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(game_name, ','), ',')  as games from (
+			select  DISTINCT game_name,b.id from gm_purview a join gm_game b on a.gid = b.id  where uids @> '79' and b.status = '1' and a.status = '1'   ORDER BY id 
+		) a
+[2020-11-28T18:37:57.954] [DEBUG] debugLogger - Executing (default): select a.id,a.game_name ,a.image_url as img from gm_game a join gm_purview b on b.gid = a.id where b.uids @> '79' and a.status = '1'  and b.status = '1'   limit 1
+[2020-11-28T18:37:57.963] [DEBUG] debugLogger - Executing (default): with qwe as (select a.url,a.pid,a.name,d.game_name,d.id as gameid, a.id,b.grede , b.purview_id,c.uid,c.gid from gm_url a join gm_url_purview  b on  a.id = b.url_id  join gm_purview c on c.id = b.purview_id join gm_game d on d.id = c.gid where  c.uids @> '79' and d.id = '1' and d.status = 1 and b.grede != 827 and c.status = 1  and a.status = 1 order by id ),
+					qwer as (select * from qwe a where (select count(*) > 1 from qwe b where b.id = a.id )),
+					asd as (select * from qwe a where (select count(*) =  1 from qwe b where b.id = a.id )),
+					zxc as (select * from qwer where grede = '1'),
+					wer as (select * from qwer where id not in (select id from zxc )
+					union 
+					select * from qwer where id not in (select id from zxc )),
+					sdf as (select url,pid,name,gameid,grede,id from asd 
+					union 
+					select url,pid,name,gameid,grede,id from zxc 
+					union 
+					select url,pid,name,gameid,grede,id from wer ),
+					ewq as (select * from sdf ORDER BY id )
+					select name,(select json_agg(concat('{"url":"',url,'","name":"',name,'","meta":"',grede,'"}')::jsonb) from ewq  where ewq.pid = d.id) as children from ewq as d where pid = 0 ORDER BY d.id
+[2020-11-28T18:37:57.975] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(game_name, ','), ',')  as games from (
+			select  DISTINCT game_name,b.id from gm_purview a join gm_game b on a.gid = b.id  where uids @> '79' and b.status = '1' and a.status = '1'   ORDER BY id 
+		) a
+[2020-11-28T18:40:04.683] [DEBUG] debugLogger - Executing (default): select a.id,a.game_name ,a.image_url as img from gm_game a join gm_purview b on b.gid = a.id where b.uids @> '79' and a.status = '1'  and b.status = '1'   limit 1
+[2020-11-28T18:40:04.690] [DEBUG] debugLogger - Executing (default): with qwe as (select a.url,a.pid,a.name,d.game_name,d.id as gameid, a.id,b.grede , b.purview_id,c.uid,c.gid from gm_url a join gm_url_purview  b on  a.id = b.url_id  join gm_purview c on c.id = b.purview_id join gm_game d on d.id = c.gid where  c.uids @> '79' and d.id = '1' and d.status = 1 and b.grede != 827 and c.status = 1  and a.status = 1 order by id ),
+					qwer as (select * from qwe a where (select count(*) > 1 from qwe b where b.id = a.id )),
+					asd as (select * from qwe a where (select count(*) =  1 from qwe b where b.id = a.id )),
+					zxc as (select * from qwer where grede = '1'),
+					wer as (select * from qwer where id not in (select id from zxc )
+					union 
+					select * from qwer where id not in (select id from zxc )),
+					sdf as (select url,pid,name,gameid,grede,id from asd 
+					union 
+					select url,pid,name,gameid,grede,id from zxc 
+					union 
+					select url,pid,name,gameid,grede,id from wer ),
+					ewq as (select * from sdf ORDER BY id )
+					select name,(select json_agg(concat('{"url":"',url,'","name":"',name,'","meta":"',grede,'"}')::jsonb) from ewq  where ewq.pid = d.id) as children from ewq as d where pid = 0 ORDER BY d.id
+[2020-11-28T18:40:04.703] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(game_name, ','), ',')  as games from (
+			select  DISTINCT game_name,b.id from gm_purview a join gm_game b on a.gid = b.id  where uids @> '79' and b.status = '1' and a.status = '1'   ORDER BY id 
+		) a
+[2020-11-28T18:41:14.812] [DEBUG] debugLogger - Executing (default): select a.id,a.game_name ,a.image_url as img from gm_game a join gm_purview b on b.gid = a.id where b.uids @> '79' and a.status = '1'  and b.status = '1'   limit 1
+[2020-11-28T18:41:14.822] [DEBUG] debugLogger - Executing (default): with qwe as (select a.url,a.pid,a.name,d.game_name,d.id as gameid, a.id,b.grede , b.purview_id,c.uid,c.gid from gm_url a join gm_url_purview  b on  a.id = b.url_id  join gm_purview c on c.id = b.purview_id join gm_game d on d.id = c.gid where  c.uids @> '79' and d.id = '1' and d.status = 1 and b.grede != 827 and c.status = 1  and a.status = 1 order by id ),
+					qwer as (select * from qwe a where (select count(*) > 1 from qwe b where b.id = a.id )),
+					asd as (select * from qwe a where (select count(*) =  1 from qwe b where b.id = a.id )),
+					zxc as (select * from qwer where grede = '1'),
+					wer as (select * from qwer where id not in (select id from zxc )
+					union 
+					select * from qwer where id not in (select id from zxc )),
+					sdf as (select url,pid,name,gameid,grede,id from asd 
+					union 
+					select url,pid,name,gameid,grede,id from zxc 
+					union 
+					select url,pid,name,gameid,grede,id from wer ),
+					ewq as (select * from sdf ORDER BY id )
+					select name,(select json_agg(concat('{"url":"',url,'","name":"',name,'","meta":"',grede,'"}')::jsonb) from ewq  where ewq.pid = d.id) as children from ewq as d where pid = 0 ORDER BY d.id
+[2020-11-28T18:41:14.834] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(game_name, ','), ',')  as games from (
+			select  DISTINCT game_name,b.id from gm_purview a join gm_game b on a.gid = b.id  where uids @> '79' and b.status = '1' and a.status = '1'   ORDER BY id 
+		) a
+[2020-11-28T18:41:35.865] [DEBUG] debugLogger - Executing (default): select a.id,a.game_name ,a.image_url as img from gm_game a join gm_purview b on b.gid = a.id where b.uids @> '79' and a.status = '1'  and b.status = '1'   limit 1
+[2020-11-28T18:41:35.875] [DEBUG] debugLogger - Executing (default): with qwe as (select a.url,a.pid,a.name,d.game_name,d.id as gameid, a.id,b.grede , b.purview_id,c.uid,c.gid from gm_url a join gm_url_purview  b on  a.id = b.url_id  join gm_purview c on c.id = b.purview_id join gm_game d on d.id = c.gid where  c.uids @> '79' and d.id = '1' and d.status = 1 and b.grede != 827 and c.status = 1  and a.status = 1 order by id ),
+					qwer as (select * from qwe a where (select count(*) > 1 from qwe b where b.id = a.id )),
+					asd as (select * from qwe a where (select count(*) =  1 from qwe b where b.id = a.id )),
+					zxc as (select * from qwer where grede = '1'),
+					wer as (select * from qwer where id not in (select id from zxc )
+					union 
+					select * from qwer where id not in (select id from zxc )),
+					sdf as (select url,pid,name,gameid,grede,id from asd 
+					union 
+					select url,pid,name,gameid,grede,id from zxc 
+					union 
+					select url,pid,name,gameid,grede,id from wer ),
+					ewq as (select * from sdf ORDER BY id )
+					select name,(select json_agg(concat('{"url":"',url,'","name":"',name,'","meta":"',grede,'"}')::jsonb) from ewq  where ewq.pid = d.id) as children from ewq as d where pid = 0 ORDER BY d.id
+[2020-11-28T18:41:35.889] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(game_name, ','), ',')  as games from (
+			select  DISTINCT game_name,b.id from gm_purview a join gm_game b on a.gid = b.id  where uids @> '79' and b.status = '1' and a.status = '1'   ORDER BY id 
+		) a
+[2020-11-28T18:46:34.951] [DEBUG] debugLogger - Executing (default): select a.id,a.game_name ,a.image_url as img from gm_game a join gm_purview b on b.gid = a.id where b.uids @> '79' and a.status = '1'  and b.status = '1'   limit 1
+[2020-11-28T18:46:34.962] [DEBUG] debugLogger - Executing (default): with qwe as (select a.url,a.pid,a.name,d.game_name,d.id as gameid, a.id,b.grede , b.purview_id,c.uid,c.gid from gm_url a join gm_url_purview  b on  a.id = b.url_id  join gm_purview c on c.id = b.purview_id join gm_game d on d.id = c.gid where  c.uids @> '79' and d.id = '1' and d.status = 1 and b.grede != 827 and c.status = 1  and a.status = 1 order by id ),
+					qwer as (select * from qwe a where (select count(*) > 1 from qwe b where b.id = a.id )),
+					asd as (select * from qwe a where (select count(*) =  1 from qwe b where b.id = a.id )),
+					zxc as (select * from qwer where grede = '1'),
+					wer as (select * from qwer where id not in (select id from zxc )
+					union 
+					select * from qwer where id not in (select id from zxc )),
+					sdf as (select url,pid,name,gameid,grede,id from asd 
+					union 
+					select url,pid,name,gameid,grede,id from zxc 
+					union 
+					select url,pid,name,gameid,grede,id from wer ),
+					ewq as (select * from sdf ORDER BY id )
+					select name,(select json_agg(concat('{"url":"',url,'","name":"',name,'","meta":"',grede,'"}')::jsonb) from ewq  where ewq.pid = d.id) as children from ewq as d where pid = 0 ORDER BY d.id
+[2020-11-28T18:46:34.976] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(game_name, ','), ',')  as games from (
+			select  DISTINCT game_name,b.id from gm_purview a join gm_game b on a.gid = b.id  where uids @> '79' and b.status = '1' and a.status = '1'   ORDER BY id 
+		) a
+[2020-11-28T18:47:26.987] [DEBUG] debugLogger - Executing (default): select a.id,a.game_name ,a.image_url as img from gm_game a join gm_purview b on b.gid = a.id where b.uids @> '79' and a.status = '1'  and b.status = '1'   limit 1
+[2020-11-28T18:47:26.995] [DEBUG] debugLogger - Executing (default): with qwe as (select a.url,a.pid,a.name,d.game_name,d.id as gameid, a.id,b.grede , b.purview_id,c.uid,c.gid from gm_url a join gm_url_purview  b on  a.id = b.url_id  join gm_purview c on c.id = b.purview_id join gm_game d on d.id = c.gid where  c.uids @> '79' and d.id = '1' and d.status = 1 and b.grede != 827 and c.status = 1  and a.status = 1 order by id ),
+					qwer as (select * from qwe a where (select count(*) > 1 from qwe b where b.id = a.id )),
+					asd as (select * from qwe a where (select count(*) =  1 from qwe b where b.id = a.id )),
+					zxc as (select * from qwer where grede = '1'),
+					wer as (select * from qwer where id not in (select id from zxc )
+					union 
+					select * from qwer where id not in (select id from zxc )),
+					sdf as (select url,pid,name,gameid,grede,id from asd 
+					union 
+					select url,pid,name,gameid,grede,id from zxc 
+					union 
+					select url,pid,name,gameid,grede,id from wer ),
+					ewq as (select * from sdf ORDER BY id )
+					select name,(select json_agg(concat('{"url":"',url,'","name":"',name,'","meta":"',grede,'"}')::jsonb) from ewq  where ewq.pid = d.id) as children from ewq as d where pid = 0 ORDER BY d.id
+[2020-11-28T18:47:27.007] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(game_name, ','), ',')  as games from (
+			select  DISTINCT game_name,b.id from gm_purview a join gm_game b on a.gid = b.id  where uids @> '79' and b.status = '1' and a.status = '1'   ORDER BY id 
+		) a
+[2020-11-28T18:47:34.529] [DEBUG] debugLogger - Executing (default): select a.id,a.game_name ,a.image_url as img from gm_game a join gm_purview b on b.gid = a.id where b.uids @> '79' and a.status = '1'  and b.status = '1'   limit 1
+[2020-11-28T18:47:34.537] [DEBUG] debugLogger - Executing (default): with qwe as (select a.url,a.pid,a.name,d.game_name,d.id as gameid, a.id,b.grede , b.purview_id,c.uid,c.gid from gm_url a join gm_url_purview  b on  a.id = b.url_id  join gm_purview c on c.id = b.purview_id join gm_game d on d.id = c.gid where  c.uids @> '79' and d.id = '1' and d.status = 1 and b.grede != 827 and c.status = 1  and a.status = 1 order by id ),
+					qwer as (select * from qwe a where (select count(*) > 1 from qwe b where b.id = a.id )),
+					asd as (select * from qwe a where (select count(*) =  1 from qwe b where b.id = a.id )),
+					zxc as (select * from qwer where grede = '1'),
+					wer as (select * from qwer where id not in (select id from zxc )
+					union 
+					select * from qwer where id not in (select id from zxc )),
+					sdf as (select url,pid,name,gameid,grede,id from asd 
+					union 
+					select url,pid,name,gameid,grede,id from zxc 
+					union 
+					select url,pid,name,gameid,grede,id from wer ),
+					ewq as (select * from sdf ORDER BY id )
+					select name,(select json_agg(concat('{"url":"',url,'","name":"',name,'","meta":"',grede,'"}')::jsonb) from ewq  where ewq.pid = d.id) as children from ewq as d where pid = 0 ORDER BY d.id
+[2020-11-28T18:47:34.555] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(game_name, ','), ',')  as games from (
+			select  DISTINCT game_name,b.id from gm_purview a join gm_game b on a.gid = b.id  where uids @> '79' and b.status = '1' and a.status = '1'   ORDER BY id 
+		) a
+[2020-11-28T18:48:23.664] [DEBUG] debugLogger - Executing (default): select a.id,a.game_name ,a.image_url as img from gm_game a join gm_purview b on b.gid = a.id where b.uids @> '79' and a.status = '1'  and b.status = '1'   limit 1
+[2020-11-28T18:48:23.674] [DEBUG] debugLogger - Executing (default): with qwe as (select a.url,a.pid,a.name,d.game_name,d.id as gameid, a.id,b.grede , b.purview_id,c.uid,c.gid from gm_url a join gm_url_purview  b on  a.id = b.url_id  join gm_purview c on c.id = b.purview_id join gm_game d on d.id = c.gid where  c.uids @> '79' and d.id = '1' and d.status = 1 and b.grede != 827 and c.status = 1  and a.status = 1 order by id ),
+					qwer as (select * from qwe a where (select count(*) > 1 from qwe b where b.id = a.id )),
+					asd as (select * from qwe a where (select count(*) =  1 from qwe b where b.id = a.id )),
+					zxc as (select * from qwer where grede = '1'),
+					wer as (select * from qwer where id not in (select id from zxc )
+					union 
+					select * from qwer where id not in (select id from zxc )),
+					sdf as (select url,pid,name,gameid,grede,id from asd 
+					union 
+					select url,pid,name,gameid,grede,id from zxc 
+					union 
+					select url,pid,name,gameid,grede,id from wer ),
+					ewq as (select * from sdf ORDER BY id )
+					select name,(select json_agg(concat('{"url":"',url,'","name":"',name,'","meta":"',grede,'"}')::jsonb) from ewq  where ewq.pid = d.id) as children from ewq as d where pid = 0 ORDER BY d.id
+[2020-11-28T18:48:23.688] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(game_name, ','), ',')  as games from (
+			select  DISTINCT game_name,b.id from gm_purview a join gm_game b on a.gid = b.id  where uids @> '79' and b.status = '1' and a.status = '1'   ORDER BY id 
+		) a
+[2020-11-28T18:48:46.197] [DEBUG] debugLogger - Executing (default): select a.id,a.game_name ,a.image_url as img from gm_game a join gm_purview b on b.gid = a.id where b.uids @> '79' and a.status = '1'  and b.status = '1'   limit 1
+[2020-11-28T18:48:46.205] [DEBUG] debugLogger - Executing (default): with qwe as (select a.url,a.pid,a.name,d.game_name,d.id as gameid, a.id,b.grede , b.purview_id,c.uid,c.gid from gm_url a join gm_url_purview  b on  a.id = b.url_id  join gm_purview c on c.id = b.purview_id join gm_game d on d.id = c.gid where  c.uids @> '79' and d.id = '1' and d.status = 1 and b.grede != 827 and c.status = 1  and a.status = 1 order by id ),
+					qwer as (select * from qwe a where (select count(*) > 1 from qwe b where b.id = a.id )),
+					asd as (select * from qwe a where (select count(*) =  1 from qwe b where b.id = a.id )),
+					zxc as (select * from qwer where grede = '1'),
+					wer as (select * from qwer where id not in (select id from zxc )
+					union 
+					select * from qwer where id not in (select id from zxc )),
+					sdf as (select url,pid,name,gameid,grede,id from asd 
+					union 
+					select url,pid,name,gameid,grede,id from zxc 
+					union 
+					select url,pid,name,gameid,grede,id from wer ),
+					ewq as (select * from sdf ORDER BY id )
+					select name,(select json_agg(concat('{"url":"',url,'","name":"',name,'","meta":"',grede,'"}')::jsonb) from ewq  where ewq.pid = d.id) as children from ewq as d where pid = 0 ORDER BY d.id
+[2020-11-28T18:48:46.217] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(game_name, ','), ',')  as games from (
+			select  DISTINCT game_name,b.id from gm_purview a join gm_game b on a.gid = b.id  where uids @> '79' and b.status = '1' and a.status = '1'   ORDER BY id 
+		) a
+[2020-11-28T18:51:26.534] [DEBUG] debugLogger - Executing (default): select a.id,a.game_name ,a.image_url as img from gm_game a join gm_purview b on b.gid = a.id where b.uids @> '79' and a.status = '1'  and b.status = '1'   limit 1
+[2020-11-28T18:51:26.545] [DEBUG] debugLogger - Executing (default): with qwe as (select a.url,a.pid,a.name,d.game_name,d.id as gameid, a.id,b.grede , b.purview_id,c.uid,c.gid from gm_url a join gm_url_purview  b on  a.id = b.url_id  join gm_purview c on c.id = b.purview_id join gm_game d on d.id = c.gid where  c.uids @> '79' and d.id = '1' and d.status = 1 and b.grede != 827 and c.status = 1  and a.status = 1 order by id ),
+					qwer as (select * from qwe a where (select count(*) > 1 from qwe b where b.id = a.id )),
+					asd as (select * from qwe a where (select count(*) =  1 from qwe b where b.id = a.id )),
+					zxc as (select * from qwer where grede = '1'),
+					wer as (select * from qwer where id not in (select id from zxc )
+					union 
+					select * from qwer where id not in (select id from zxc )),
+					sdf as (select url,pid,name,gameid,grede,id from asd 
+					union 
+					select url,pid,name,gameid,grede,id from zxc 
+					union 
+					select url,pid,name,gameid,grede,id from wer ),
+					ewq as (select * from sdf ORDER BY id )
+					select name,(select json_agg(concat('{"url":"',url,'","name":"',name,'","meta":"',grede,'"}')::jsonb) from ewq  where ewq.pid = d.id) as children from ewq as d where pid = 0 ORDER BY d.id
+[2020-11-28T18:51:26.556] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(game_name, ','), ',')  as games from (
+			select  DISTINCT game_name,b.id from gm_purview a join gm_game b on a.gid = b.id  where uids @> '79' and b.status = '1' and a.status = '1'   ORDER BY id 
+		) a
+[2020-11-28T18:55:40.531] [DEBUG] debugLogger - Executing (default): select a.id,a.game_name ,a.image_url as img from gm_game a join gm_purview b on b.gid = a.id where b.uids @> '79' and a.status = '1'  and b.status = '1'   limit 1
+[2020-11-28T18:55:40.538] [DEBUG] debugLogger - Executing (default): with qwe as (select a.url,a.pid,a.name,d.game_name,d.id as gameid, a.id,b.grede , b.purview_id,c.uid,c.gid from gm_url a join gm_url_purview  b on  a.id = b.url_id  join gm_purview c on c.id = b.purview_id join gm_game d on d.id = c.gid where  c.uids @> '79' and d.id = '1' and d.status = 1 and b.grede != 827 and c.status = 1  and a.status = 1 order by id ),
+					qwer as (select * from qwe a where (select count(*) > 1 from qwe b where b.id = a.id )),
+					asd as (select * from qwe a where (select count(*) =  1 from qwe b where b.id = a.id )),
+					zxc as (select * from qwer where grede = '1'),
+					wer as (select * from qwer where id not in (select id from zxc )
+					union 
+					select * from qwer where id not in (select id from zxc )),
+					sdf as (select url,pid,name,gameid,grede,id from asd 
+					union 
+					select url,pid,name,gameid,grede,id from zxc 
+					union 
+					select url,pid,name,gameid,grede,id from wer ),
+					ewq as (select * from sdf ORDER BY id )
+					select name,(select json_agg(concat('{"url":"',url,'","name":"',name,'","meta":"',grede,'"}')::jsonb) from ewq  where ewq.pid = d.id) as children from ewq as d where pid = 0 ORDER BY d.id
+[2020-11-28T18:55:40.549] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(game_name, ','), ',')  as games from (
+			select  DISTINCT game_name,b.id from gm_purview a join gm_game b on a.gid = b.id  where uids @> '79' and b.status = '1' and a.status = '1'   ORDER BY id 
+		) a
+[2020-11-28T18:56:07.411] [DEBUG] debugLogger - Executing (default): select a.id,a.game_name ,a.image_url as img from gm_game a join gm_purview b on b.gid = a.id where b.uids @> '79' and a.status = '1'  and b.status = '1'   limit 1
+[2020-11-28T18:56:07.418] [DEBUG] debugLogger - Executing (default): with qwe as (select a.url,a.pid,a.name,d.game_name,d.id as gameid, a.id,b.grede , b.purview_id,c.uid,c.gid from gm_url a join gm_url_purview  b on  a.id = b.url_id  join gm_purview c on c.id = b.purview_id join gm_game d on d.id = c.gid where  c.uids @> '79' and d.id = '1' and d.status = 1 and b.grede != 827 and c.status = 1  and a.status = 1 order by id ),
+					qwer as (select * from qwe a where (select count(*) > 1 from qwe b where b.id = a.id )),
+					asd as (select * from qwe a where (select count(*) =  1 from qwe b where b.id = a.id )),
+					zxc as (select * from qwer where grede = '1'),
+					wer as (select * from qwer where id not in (select id from zxc )
+					union 
+					select * from qwer where id not in (select id from zxc )),
+					sdf as (select url,pid,name,gameid,grede,id from asd 
+					union 
+					select url,pid,name,gameid,grede,id from zxc 
+					union 
+					select url,pid,name,gameid,grede,id from wer ),
+					ewq as (select * from sdf ORDER BY id )
+					select name,(select json_agg(concat('{"url":"',url,'","name":"',name,'","meta":"',grede,'"}')::jsonb) from ewq  where ewq.pid = d.id) as children from ewq as d where pid = 0 ORDER BY d.id
+[2020-11-28T18:56:07.431] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(game_name, ','), ',')  as games from (
+			select  DISTINCT game_name,b.id from gm_purview a join gm_game b on a.gid = b.id  where uids @> '79' and b.status = '1' and a.status = '1'   ORDER BY id 
+		) a
+[2020-11-28T18:57:30.873] [DEBUG] debugLogger - Executing (default): select * from auth_user where username = 'zhangzongchu' and password = md5(encode('281317', 'BASE64'))
+[2020-11-28T18:57:30.989] [DEBUG] debugLogger - Executing (default): with qwe as (select   jsonb_array_elements_text(uids) as id  from gm_purview   ),
+asd as (select a.* from gm_user a  where a.username = 'zhangzongchu')
+select * from asd where id::varchar in (select id from qwe GROUP BY id )
+[2020-11-28T18:57:31.098] [DEBUG] debugLogger - Executing (default): select a.id,a.game_name ,a.image_url as img from gm_game a join gm_purview b on b.gid = a.id where b.uids @> '79' and a.status = '1'  and b.status = '1'   limit 1
+[2020-11-28T18:57:31.106] [DEBUG] debugLogger - Executing (default): with qwe as (select a.url,a.pid,a.name,d.game_name,d.id as gameid, a.id,b.grede , b.purview_id,c.uid,c.gid from gm_url a join gm_url_purview  b on  a.id = b.url_id  join gm_purview c on c.id = b.purview_id join gm_game d on d.id = c.gid where  c.uids @> '79' and d.id = '1' and d.status = 1 and b.grede != 827 and c.status = 1  and a.status = 1 order by id ),
+					qwer as (select * from qwe a where (select count(*) > 1 from qwe b where b.id = a.id )),
+					asd as (select * from qwe a where (select count(*) =  1 from qwe b where b.id = a.id )),
+					zxc as (select * from qwer where grede = '1'),
+					wer as (select * from qwer where id not in (select id from zxc )
+					union 
+					select * from qwer where id not in (select id from zxc )),
+					sdf as (select url,pid,name,gameid,grede,id from asd 
+					union 
+					select url,pid,name,gameid,grede,id from zxc 
+					union 
+					select url,pid,name,gameid,grede,id from wer ),
+					ewq as (select * from sdf ORDER BY id )
+					select name,(select json_agg(concat('{"url":"',url,'","name":"',name,'","meta":"',grede,'"}')::jsonb) from ewq  where ewq.pid = d.id) as children from ewq as d where pid = 0 ORDER BY d.id
+[2020-11-28T18:57:31.116] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(game_name, ','), ',')  as games from (
+			select  DISTINCT game_name,b.id from gm_purview a join gm_game b on a.gid = b.id  where uids @> '79' and b.status = '1' and a.status = '1'   ORDER BY id 
+		) a
+[2020-11-28T18:59:13.942] [DEBUG] debugLogger - Executing (default): select a.id,a.game_name ,a.image_url as img from gm_game a join gm_purview b on b.gid = a.id where b.uids @> '79' and a.status = '1'  and b.status = '1'   limit 1
+[2020-11-28T18:59:13.951] [DEBUG] debugLogger - Executing (default): with qwe as (select a.url,a.pid,a.name,d.game_name,d.id as gameid, a.id,b.grede , b.purview_id,c.uid,c.gid from gm_url a join gm_url_purview  b on  a.id = b.url_id  join gm_purview c on c.id = b.purview_id join gm_game d on d.id = c.gid where  c.uids @> '79' and d.id = '1' and d.status = 1 and b.grede != 827 and c.status = 1  and a.status = 1 order by id ),
+					qwer as (select * from qwe a where (select count(*) > 1 from qwe b where b.id = a.id )),
+					asd as (select * from qwe a where (select count(*) =  1 from qwe b where b.id = a.id )),
+					zxc as (select * from qwer where grede = '1'),
+					wer as (select * from qwer where id not in (select id from zxc )
+					union 
+					select * from qwer where id not in (select id from zxc )),
+					sdf as (select url,pid,name,gameid,grede,id from asd 
+					union 
+					select url,pid,name,gameid,grede,id from zxc 
+					union 
+					select url,pid,name,gameid,grede,id from wer ),
+					ewq as (select * from sdf ORDER BY id )
+					select name,(select json_agg(concat('{"url":"',url,'","name":"',name,'","meta":"',grede,'"}')::jsonb) from ewq  where ewq.pid = d.id) as children from ewq as d where pid = 0 ORDER BY d.id
+[2020-11-28T18:59:13.962] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(game_name, ','), ',')  as games from (
+			select  DISTINCT game_name,b.id from gm_purview a join gm_game b on a.gid = b.id  where uids @> '79' and b.status = '1' and a.status = '1'   ORDER BY id 
+		) a
+[2020-11-28T19:00:17.253] [DEBUG] debugLogger - Executing (default): select a.id,a.game_name ,a.image_url as img from gm_game a join gm_purview b on b.gid = a.id where b.uids @> '79' and a.status = '1'  and b.status = '1'   limit 1
+[2020-11-28T19:00:17.264] [DEBUG] debugLogger - Executing (default): with qwe as (select a.url,a.pid,a.name,d.game_name,d.id as gameid, a.id,b.grede , b.purview_id,c.uid,c.gid from gm_url a join gm_url_purview  b on  a.id = b.url_id  join gm_purview c on c.id = b.purview_id join gm_game d on d.id = c.gid where  c.uids @> '79' and d.id = '1' and d.status = 1 and b.grede != 827 and c.status = 1  and a.status = 1 order by id ),
+					qwer as (select * from qwe a where (select count(*) > 1 from qwe b where b.id = a.id )),
+					asd as (select * from qwe a where (select count(*) =  1 from qwe b where b.id = a.id )),
+					zxc as (select * from qwer where grede = '1'),
+					wer as (select * from qwer where id not in (select id from zxc )
+					union 
+					select * from qwer where id not in (select id from zxc )),
+					sdf as (select url,pid,name,gameid,grede,id from asd 
+					union 
+					select url,pid,name,gameid,grede,id from zxc 
+					union 
+					select url,pid,name,gameid,grede,id from wer ),
+					ewq as (select * from sdf ORDER BY id )
+					select name,(select json_agg(concat('{"url":"',url,'","name":"',name,'","meta":"',grede,'"}')::jsonb) from ewq  where ewq.pid = d.id) as children from ewq as d where pid = 0 ORDER BY d.id
+[2020-11-28T19:00:17.277] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(game_name, ','), ',')  as games from (
+			select  DISTINCT game_name,b.id from gm_purview a join gm_game b on a.gid = b.id  where uids @> '79' and b.status = '1' and a.status = '1'   ORDER BY id 
+		) a
+[2020-11-28T19:00:18.715] [DEBUG] debugLogger - Executing (default): select a.id,a.game_name ,a.image_url as img from gm_game a join gm_purview b on b.gid = a.id where b.uids @> '79' and a.status = '1'  and b.status = '1'   limit 1
+[2020-11-28T19:00:18.722] [DEBUG] debugLogger - Executing (default): with qwe as (select a.url,a.pid,a.name,d.game_name,d.id as gameid, a.id,b.grede , b.purview_id,c.uid,c.gid from gm_url a join gm_url_purview  b on  a.id = b.url_id  join gm_purview c on c.id = b.purview_id join gm_game d on d.id = c.gid where  c.uids @> '79' and d.id = '1' and d.status = 1 and b.grede != 827 and c.status = 1  and a.status = 1 order by id ),
+					qwer as (select * from qwe a where (select count(*) > 1 from qwe b where b.id = a.id )),
+					asd as (select * from qwe a where (select count(*) =  1 from qwe b where b.id = a.id )),
+					zxc as (select * from qwer where grede = '1'),
+					wer as (select * from qwer where id not in (select id from zxc )
+					union 
+					select * from qwer where id not in (select id from zxc )),
+					sdf as (select url,pid,name,gameid,grede,id from asd 
+					union 
+					select url,pid,name,gameid,grede,id from zxc 
+					union 
+					select url,pid,name,gameid,grede,id from wer ),
+					ewq as (select * from sdf ORDER BY id )
+					select name,(select json_agg(concat('{"url":"',url,'","name":"',name,'","meta":"',grede,'"}')::jsonb) from ewq  where ewq.pid = d.id) as children from ewq as d where pid = 0 ORDER BY d.id
+[2020-11-28T19:00:18.732] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(game_name, ','), ',')  as games from (
+			select  DISTINCT game_name,b.id from gm_purview a join gm_game b on a.gid = b.id  where uids @> '79' and b.status = '1' and a.status = '1'   ORDER BY id 
+		) a
+[2020-11-28T19:05:50.571] [DEBUG] debugLogger - Executing (default): select a.id,a.game_name ,a.image_url as img from gm_game a join gm_purview b on b.gid = a.id where b.uids @> '79' and a.status = '1'  and b.status = '1'   limit 1
+[2020-11-28T19:05:50.580] [DEBUG] debugLogger - Executing (default): with qwe as (select a.url,a.pid,a.name,d.game_name,d.id as gameid, a.id,b.grede , b.purview_id,c.uid,c.gid from gm_url a join gm_url_purview  b on  a.id = b.url_id  join gm_purview c on c.id = b.purview_id join gm_game d on d.id = c.gid where  c.uids @> '79' and d.id = '1' and d.status = 1 and b.grede != 827 and c.status = 1  and a.status = 1 order by id ),
+					qwer as (select * from qwe a where (select count(*) > 1 from qwe b where b.id = a.id )),
+					asd as (select * from qwe a where (select count(*) =  1 from qwe b where b.id = a.id )),
+					zxc as (select * from qwer where grede = '1'),
+					wer as (select * from qwer where id not in (select id from zxc )
+					union 
+					select * from qwer where id not in (select id from zxc )),
+					sdf as (select url,pid,name,gameid,grede,id from asd 
+					union 
+					select url,pid,name,gameid,grede,id from zxc 
+					union 
+					select url,pid,name,gameid,grede,id from wer ),
+					ewq as (select * from sdf ORDER BY id )
+					select name,(select json_agg(concat('{"url":"',url,'","name":"',name,'","meta":"',grede,'"}')::jsonb) from ewq  where ewq.pid = d.id) as children from ewq as d where pid = 0 ORDER BY d.id
+[2020-11-28T19:05:50.596] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(game_name, ','), ',')  as games from (
+			select  DISTINCT game_name,b.id from gm_purview a join gm_game b on a.gid = b.id  where uids @> '79' and b.status = '1' and a.status = '1'   ORDER BY id 
+		) a
+[2020-11-28T19:06:11.353] [DEBUG] debugLogger - Executing (default): select a.id,a.game_name ,a.image_url as img from gm_game a join gm_purview b on b.gid = a.id where b.uids @> '79' and a.status = '1'  and b.status = '1'   limit 1
+[2020-11-28T19:06:11.363] [DEBUG] debugLogger - Executing (default): with qwe as (select a.url,a.pid,a.name,d.game_name,d.id as gameid, a.id,b.grede , b.purview_id,c.uid,c.gid from gm_url a join gm_url_purview  b on  a.id = b.url_id  join gm_purview c on c.id = b.purview_id join gm_game d on d.id = c.gid where  c.uids @> '79' and d.id = '1' and d.status = 1 and b.grede != 827 and c.status = 1  and a.status = 1 order by id ),
+					qwer as (select * from qwe a where (select count(*) > 1 from qwe b where b.id = a.id )),
+					asd as (select * from qwe a where (select count(*) =  1 from qwe b where b.id = a.id )),
+					zxc as (select * from qwer where grede = '1'),
+					wer as (select * from qwer where id not in (select id from zxc )
+					union 
+					select * from qwer where id not in (select id from zxc )),
+					sdf as (select url,pid,name,gameid,grede,id from asd 
+					union 
+					select url,pid,name,gameid,grede,id from zxc 
+					union 
+					select url,pid,name,gameid,grede,id from wer ),
+					ewq as (select * from sdf ORDER BY id )
+					select name,(select json_agg(concat('{"url":"',url,'","name":"',name,'","meta":"',grede,'"}')::jsonb) from ewq  where ewq.pid = d.id) as children from ewq as d where pid = 0 ORDER BY d.id
+[2020-11-28T19:06:11.375] [DEBUG] debugLogger - Executing (default): select string_to_array(string_agg(game_name, ','), ',')  as games from (
+			select  DISTINCT game_name,b.id from gm_purview a join gm_game b on a.gid = b.id  where uids @> '79' and b.status = '1' and a.status = '1'   ORDER BY id 
+		) a

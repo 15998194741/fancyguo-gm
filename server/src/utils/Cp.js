@@ -83,7 +83,7 @@ class Cp{
 		if(data['channel'].indexOf(',') != -1){
 			data['channel'] = data['channel'].split(',');
 		}
-		data['images'] = name?'http://106.75.7.83:12345/bulletin/images/'+name:'';
+		data['images'] = name?`http://${JSON.parse(process.env.gmconfig).serverip}:12345/bulletin/images/`+name:'';
 		let urls =await dbSequelize.query(`select url from gm_game_token where gameid=${gameid} and type = 'cp'`);
 		urls = urls[0][0].url;
 		let res = {

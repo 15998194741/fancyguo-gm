@@ -366,7 +366,7 @@ export default {
         label: 'CDKID',
         value: 'CDKID'
       }, {
-        label: 'CDKKEY',
+        label: 'CDKEY',
         value: 'CDKKEY'
       }
       ],
